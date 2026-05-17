@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/search_trash_fragment">
+
+    <fragment
+        android:id="@+id/search_trash_fragment"
+        android:name="com.simpleweb.affaldsguidedanmark.SearchTrashFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout="@layout/fragment_search_trash"
+        />
+
+    <fragment
+        android:id="@+id/fragment_contact_information"
+        android:name="com.simpleweb.affaldsguidedanmark.ContactInformationFragment"
+        android:label="Kontaktinformation"
+        tools:layout="@layout/fragment_contact_information" />
+
+    <fragment
+        android:id="@+id/fragment_about"
+        android:name="com.simpleweb.affaldsguidedanmark.AboutFragment"
+        android:label="Om"
+        tools:layout="@layout/fragment_about" />
+
+    <fragment
+        android:id="@+id/fragment_qa"
+        android:name="com.simpleweb.affaldsguidedanmark.QAFragment"
+        android:label="Spørgsmål og svar"
+        tools:layout="@layout/fragment_qa" />
+
+    <fragment
+        android:id="@+id/fragment_trash_types"
+        android:name="com.simpleweb.affaldsguidedanmark.TrashTypesFragment"
+        android:label="Affaldsfraktioner"
+        tools:layout="@layout/fragment_trash_types" />
+
+    <fragment
+        android:id="@+id/fragment_trash_type_details"
+        android:name="com.simpleweb.affaldsguidedanmark.TrashTypeDetailsFragment"
+        android:label="Affaldsfraktioner"
+        tools:layout="@layout/fragment_trash_types"
+        app:popUpTo="@id/fragment_trash_types"
+        app:popUpToInclusive="true" />
+
+    <fragment
+        android:id="@+id/fragment_recent_searches"
+        android:name="com.simpleweb.affaldsguidedanmark.RecentSearchesFragment"
+        android:label="Seneste søgninger"
+        tools:layout="@layout/fragment_recent_searches" />
+
+    <fragment
+        android:id="@+id/fragment_language"
+        android:name="com.simpleweb.affaldsguidedanmark.LanguageFragment"
+        android:label="Sprog"
+        tools:layout="@layout/fragment_language" />
+
+    <fragment
+        android:id="@+id/fragment_municipalities"
+        android:name="com.simpleweb.affaldsguidedanmark.MunicipalitiesFragment"
+        android:label="Kommuner"
+        tools:layout="@layout/fragment_municipalities" />
+
+    <fragment
+        android:id="@+id/fragment_municipality_details"
+        android:name="com.simpleweb.affaldsguidedanmark.MunicipalityDetailsFragment"
+        android:label="Kommuner"
+        tools:layout="@layout/fragment_municipality_details" />
+
+    <fragment
+        android:id="@+id/fragment_privacy_policy"
+        android:name="com.simpleweb.affaldsguidedanmark.PrivacyPolicyFragment"
+        android:label="Privatlivspolitik"
+        tools:layout="@layout/fragment_privacy_policy" />
+
+    <fragment
+        android:id="@+id/fragment_terms_of_service"
+        android:name="com.simpleweb.affaldsguidedanmark.TermsOfServiceFragment"
+        android:label="Vilkår og betingelser"
+        tools:layout="@layout/fragment_terms_of_service" />
+
+    <action
+        android:id="@+id/action_to_searchTrash"
+        app:destination="@id/search_trash_fragment"
+        app:popUpTo="@id/nav_graph"
+        app:popUpToInclusive="true" />
+
+</navigation>

@@ -1,0 +1,392 @@
+[
+  {
+    "Navn": "Pap",
+    "Beskrivelse": "Mængderne af pap er stigende, da vi oftere handler på internettet. Pap afsættes både til danske og udenlandske sorterings- og behandlingsanlæg, hvor det genanvendes.",
+    "UdvidetBeskrivelse": "<h2 style='font-size: 1.25rem; font-weight: bold; color: #76ad61;'>Mængden af papaffald</h2><p>Mængden af papaffald er stigende, ikke mindst på grund af vores stigende forbrug af internetbaseret handel, hvor varer ofte bliver leveret i papkasser. Pap er en vigtig ressource i affaldssorteringen, da det er et materiale, der kan genanvendes flere gange og dermed bidrage til at reducere forbruget af nye råvarer og energiforbruget i produktionen af nyt pap og papir.</p><h2 style='font-size: 1.25rem; font-weight: bold; color: #76ad61; margin-top: 20px;'>Processen for genanvendelse af pap</h2><p>Når pap sorteres korrekt, sendes det til sorterings- og behandlingsanlæg, både i Danmark og udlandet, hvor det gennemgår en proces, der gør det muligt at genanvende fibrene i pap til at producere nyt pap eller papirprodukter. Dette reducerer behovet for at fælde træer til fremstilling af nyt papir, hvilket igen hjælper med at bevare skovene og reducere CO₂-udledningerne fra papirindustrien. Pap kan genanvendes op til syv gange, før fibrene bliver for korte til at genbruges.</p><h2 style='font-size: 1.25rem; font-weight: bold; color: #76ad61; margin-top: 20px;'>Eksempler på typisk papaffald</h2><p>Typisk papaffald inkluderer papkasser fra leveringer, bølgepap, emballage fra elektronik, fødevarer og andre produkter.</p><h2 style='font-size: 1.25rem; font-weight: bold; color: #76ad61; margin-top: 20px;'>Vigtigheden af korrekt sortering</h2><p>For at sikre, at papet kan genanvendes korrekt, er det vigtigt, at det er rent og tørt. Pap skal tømmes for plastindlæg, flamingo og andre fremmedmaterialer, der ikke hører til i papaffaldet. Små mængder tape og etiketter er som regel acceptable, da de bliver fjernet i genanvendelsesprocessen, men større mængder plast, metal eller madrester kan forstyrre sorteringen og reducere kvaliteten af det genanvendte pap.</p><h2 style='font-size: 1.25rem; font-weight: bold; color: #76ad61; margin-top: 20px;'>Fordele ved genanvendelse af pap</h2><p>Genanvendelse af pap er ikke kun miljøvenlig, men også en økonomisk fordelagtig proces. Ved at reducere behovet for at fremstille nyt pap fra træfibre mindskes omkostningerne og energiforbruget i produktionskæden. Derudover sparer det også plads på deponier og mindsker affaldsforbrændingen, hvilket reducerer luftforureningen og CO₂-udledningen.</p><h2 style='font-size: 1.25rem; font-weight: bold; color: #76ad61; margin-top: 20px;'>Hvad kan ikke genanvendes?</h2><p>Det er vigtigt at bemærke, at ikke alt pap kan genanvendes. For eksempel bør fedtede pizzabakker og pap med stor forurening fra madrester ikke sorteres som genanvendeligt pap, da fedt og madrester kan ødelægge genanvendelsesprocessen. Disse genstande bør i stedet behandles som restaffald, medmindre der er en specifik ordning for fødevareforurenet pap i din kommune.</p><h2 style='font-size: 1.25rem; font-weight: bold; color: #76ad61; margin-top: 20px;'>Bidrag til en bæredygtig fremtid</h2><p>Ved at sortere pap korrekt og sikre, at det afleveres til genanvendelse, er man med til at reducere affaldsmængderne, spare energi og råstoffer, og bidrage til en mere bæredygtig ressourceforvaltning. Paps store potentiale for genbrug gør det til en vigtig del af den cirkulære økonomi, hvor materialer holdes i kredsløb og genanvendes igen og igen.</p>",
+    "pros": [
+      "Papkasser, paprør og papemballage",
+      "Skotøjsæsker",
+      "Karton",
+      "Æggebakker (rene og tørre)"
+    ],
+    "cons": [
+      "Beskidt mademballage (RESTAFFALD)",
+      "Vådt og snavset pap (RESTAFFALD)",
+      "Papkrus (RESTAFFALD)",
+      "Mad- og drikkekartoner (MAD- OG DRIKKEKARTONER)"
+    ],
+    "imageResourceName": "pap_ikon",
+    "Navn_en": "Cardboard",
+    "Beskrivelse_en": "Cardboard amounts are increasing as more people shop online. Cardboard is sent to Danish and international sorting and treatment facilities, where it can be recycled.",
+    "pros_en": [
+      "Cardboard boxes, cardboard tubes and cardboard packaging",
+      "Shoe boxes",
+      "Cardboard packaging",
+      "Egg trays, if clean and dry"
+    ],
+    "cons_en": [
+      "Dirty food packaging (residual waste)",
+      "Wet or dirty cardboard (residual waste)",
+      "Paper cups (residual waste)",
+      "Food and beverage cartons (food and beverage cartons)"
+    ],
+    "UdvidetBeskrivelse_en": "<h2 style='font-size: 1.25rem; font-weight: bold; color: #76ad61;'>Cardboard waste in Denmark</h2><p>Cardboard is an important recyclable material in the Danish waste system. It is commonly used for boxes, packaging and online deliveries, and the amount of cardboard waste has grown as more people shop online.</p><h2 style='font-size: 1.25rem; font-weight: bold; color: #76ad61; margin-top: 20px;'>How cardboard is recycled</h2><p>When cardboard is sorted correctly, it is sent to sorting and treatment facilities in Denmark or abroad. The fibres can be reused to make new cardboard and paper products. To keep the recycling quality high, cardboard should be clean and dry. Wet, greasy or food-contaminated cardboard should usually be sorted as residual waste.</p>"
+  },
+  {
+    "Navn": "Papir",
+    "Beskrivelse": "Papir er en af de typer af affald, der er blevet indsamlet i længst tid med en høj genanvendelsesprocent. Papir afsættes til danske og udenlandske behandlingsanlæg, hvor det bliver til nyt papir.",
+    "UdvidetBeskrivelse": "<h2 style='font-size: 1.25rem; font-weight: bold; color: #76ad61;'>Papir: en vigtig affaldsfraktion</h2><p>Papir er en af de mest velkendte affaldsfraktioner, og det er blevet indsamlet og genanvendt i mange år. Papir har en høj genanvendelsesprocent, hvilket betyder, at en stor del af det indsamlede papir bliver genbrugt og omdannet til nyt papir. Dette gør papirgenanvendelse til en vigtig del af affaldshåndteringen og den cirkulære økonomi.</p><h2 style='font-size: 1.25rem; font-weight: bold; color: #76ad61; margin-top: 20px;'>Processen for genanvendelse af papir</h2><p>Papir indsamles og sendes til både danske og udenlandske behandlingsanlæg, hvor det gennemgår en proces, hvor papirfibrene adskilles, renses og omdannes til nyt papir eller papirmasse. Denne papirmasse kan derefter bruges til at fremstille nye produkter som aviser, kontorpapir, papkasser og toiletpapir. Genanvendelse af papir er yderst ressourcebesparende, da det kræver betydeligt mindre energi og vand at fremstille nyt papir fra genbrugsmateriale end fra træfibre. Ved at genanvende papir sparer vi også træer, hvilket bidrager til at bevare verdens skove og reducere CO₂-udledningerne.</p><h2 style='font-size: 1.25rem; font-weight: bold; color: #76ad61; margin-top: 20px;'>Typer af papir til genanvendelse</h2><p>Der findes mange typer af papir, der kan genanvendes, herunder aviser, reklamer, breve, kuverter (uden plastvinduer), magasiner, notesbøger og kontorpapir. Det er dog vigtigt at sikre, at papiret er rent og fri for forurening fra fødevarer eller andre materialer. Forurenet papir, såsom fedtede pizzabakker eller papir med store mængder plastbelægning, kan ikke genanvendes og bør sorteres som restaffald.</p><h2 style='font-size: 1.25rem; font-weight: bold; color: #76ad61; margin-top: 20px;'>Begrænsninger ved genanvendelse af papir</h2><p>Selvom papir kan genanvendes mange gange, bliver fibrene med tiden kortere og svagere, hvilket betyder, at papirfibrene til sidst ikke længere kan bruges til at lave nyt papir. Dog kan selv de kortere fibre stadig anvendes til at producere produkter af lavere kvalitet, som for eksempel toiletpapir eller æggebakker, før de til sidst må kasseres.</p><h2 style='font-size: 1.25rem; font-weight: bold; color: #76ad61; margin-top: 20px;'>Materialer, der ikke skal sorteres som papir</h2><p>Det er også vigtigt at være opmærksom på, hvad der ikke skal sorteres som papir. For eksempel bør gavepapir, der ofte indeholder plast eller metalfolie, ikke sorteres som papir, ligesom papirservietter, køkkenrulle og vådt papir heller ikke skal i papirgenanvendelsen. Disse materialer forringer kvaliteten af det genanvendte papir og kan forstyrre genanvendelsesprocessen.</p><h2 style='font-size: 1.25rem; font-weight: bold; color: #76ad61; margin-top: 20px;'>Bidrag til bæredygtighed gennem papirgenanvendelse</h2><p>Ved at sortere papir korrekt bidrager vi til en bæredygtig affaldshåndtering og sikrer, at værdifulde ressourcer bliver udnyttet optimalt. Papirgenanvendelse er en af de mest effektive måder at reducere affaldsmængden på og samtidig spare energi og råmaterialer. Dette gør papir til en vigtig komponent i den cirkulære økonomi, hvor materialer genbruges så længe som muligt for at mindske miljøbelastningen.</p>",
+    "pros": [
+      "Aviser, reklamer, magasiner, brochurer",
+      "Kontorpapir og kvitteringer",
+      "Kuverter med eller uden rude",
+      "Poser i papir"
+    ],
+    "cons": [
+      "Vådt og beskidt papir (RESTAFFALD)",
+      "Vådstærkt papir, fx havregrynsrester (RESTAFFALD)",
+      "Gavepapir og bagepapir (RESTAFFALD)",
+      "Bøger (GENBRUGSPLADS)"
+    ],
+    "imageResourceName": "papir_ikon",
+    "Navn_en": "Paper",
+    "Beskrivelse_en": "Paper has been collected for recycling for many years and has a high recycling rate. It is sent to treatment facilities where it becomes new paper.",
+    "pros_en": [
+      "Newspapers, advertisements, magazines and brochures",
+      "Office paper and receipts",
+      "Envelopes with or without windows",
+      "Paper bags"
+    ],
+    "cons_en": [
+      "Wet or dirty paper (residual waste)",
+      "Wet-strength paper, for example oatmeal bags (residual waste)",
+      "Gift wrap and baking paper (residual waste)",
+      "Books (recycling centre)"
+    ],
+    "UdvidetBeskrivelse_en": "<h2 style='font-size: 1.25rem; font-weight: bold; color: #76ad61;'>Paper as a waste category</h2><p>Paper is one of the best-known recyclable waste categories. In Denmark, newspapers, office paper, envelopes, magazines and paper bags can often be collected separately and recycled into new paper products.</p><h2 style='font-size: 1.25rem; font-weight: bold; color: #76ad61; margin-top: 20px;'>What to remember</h2><p>Paper should be reasonably clean and dry. Dirty, wet, greasy or coated paper can reduce the quality of recycling and may need to go in residual waste. Books, baking paper and gift wrap are often handled differently, so always follow the specific sorting result.</p>"
+  },
+  {
+    "Navn": "Farligt affald",
+    "Beskrivelse": "For meget farligt affald ender i restaffaldet eller i andre affaldsstrømme, hvor det kan gøre skade. Derfor er det vigtigt, at farligt affald bliver sorteret korrekt.",
+    "UdvidetBeskrivelse": "<h2 style='font-size: 1.25rem; font-weight: bold; color: #76ad61;'>Hvad er farligt affald?</h2><p>Farligt affald dækker over en bred vifte af affaldstyper, der kan udgøre en betydelig risiko for miljø og sundhed, hvis de ikke håndteres korrekt. Dette inkluderer kemikalier, maling, opløsningsmidler, pesticider, batterier, elpærer, elektroniske enheder, medicinrester og visse typer rengøringsmidler. Disse materialer indeholder ofte giftige, ætsende, brændbare eller miljøskadelige stoffer, som kan forurene jorden, vandløb og luften, hvis de ender i det almindelige restaffald eller andre uhensigtsmæssige affaldsstrømme.</p><h2 style='font-size: 1.25rem; font-weight: bold; color: #76ad61; margin-top: 20px;'>Konsekvenser af forkert håndtering af farligt affald</h2><p>Når farligt affald ikke bliver sorteret og behandlet korrekt, kan det føre til alvorlige konsekvenser. Hvis det for eksempel ender i deponi eller forbrændingsanlæg, kan giftstofferne slippe ud i naturen og forurene drikkevandskilder, skade økosystemer og i sidste ende påvirke både dyreliv og menneskers sundhed. Desuden kan visse typer farligt affald, som eksempelvis batterier og elektronik, forårsage brand eller eksplosioner på affaldsanlæg, hvilket udgør en ekstra risiko.</p><h2 style='font-size: 1.25rem; font-weight: bold; color: #76ad61; margin-top: 20px;'>Vigtigheden af korrekt sortering</h2><p>Derfor er korrekt sortering af farligt affald afgørende. Forbrugere og virksomheder bør altid aflevere farligt affald til specielt designede modtageanlæg, typisk genbrugsstationer, hvor affaldet kan håndteres sikkert og effektivt. Her bliver affaldet sorteret og behandlet, så miljø- og sundhedsskadelige stoffer kan neutraliseres, og visse komponenter kan genanvendes, hvor det er muligt. For eksempel kan metaller fra elektronik eller kemiske stoffer i maling og rengøringsmidler i nogle tilfælde udvindes og genbruges i nye produkter.</p><h2 style='font-size: 1.25rem; font-weight: bold; color: #76ad61; margin-top: 20px;'>Kommunernes indsamlingsordninger</h2><p>Kommunerne tilbyder ofte indsamlingsordninger for farligt affald, enten i form af afhentning ved husstande eller særlige afleveringssteder. For at sikre, at farligt affald ikke ender det forkerte sted, er det vigtigt at være opmærksom på de advarselssymboler, der er trykt på produkterne, og følge anvisningerne for korrekt bortskaffelse. Små mængder, som for eksempel gamle medicinrester eller neglelak, skal også håndteres korrekt, selvom det kan virke som ubetydelige mængder – over tid kan selv små mængder farligt affald have store konsekvenser for miljøet.</p><h2 style='font-size: 1.25rem; font-weight: bold; color: #76ad61; margin-top: 20px;'>Bidrag til bæredygtig affaldshåndtering</h2><p>Ved at sortere farligt affald korrekt beskytter vi vores natur, sundhed og fremtidige generationer, samtidig med at vi understøtter en mere bæredygtig affaldshåndtering og ressourcegenvinding.</p>",
+    "pros": [
+      "Spraydåser, maling- og olierester",
+      "Lyskilder, fx elpærer, LED-pærer m.m.",
+      "Gødning og afkalkningsmidler",
+      "Emballage fra neglelak og neglelakfjerner"
+    ],
+    "cons": [
+      "Selvantændelige klude og væsker (GENBRUGSPLADS)",
+      "Affyret fyrværkeri (RESTAFFALD)",
+      "Skarpe genstande (GENBRUGSPLADS)",
+      "Gamle knive (METAL)"
+    ],
+    "imageResourceName": "farligt_affald_ikon",
+    "Navn_en": "Hazardous waste",
+    "Beskrivelse_en": "Hazardous waste can cause harm if it ends up in residual waste or other waste streams. That is why it must be sorted and handed in correctly.",
+    "pros_en": [
+      "Spray cans, paint and oil residues",
+      "Light sources such as bulbs and LED bulbs",
+      "Fertiliser and descaling products",
+      "Packaging from nail polish and nail polish remover"
+    ],
+    "cons_en": [
+      "Self-igniting cloths and liquids (recycling centre)",
+      "Used fireworks (residual waste)",
+      "Sharp objects (recycling centre)",
+      "Old knives (metal)"
+    ],
+    "UdvidetBeskrivelse_en": "<h2 style='font-size: 1.25rem; font-weight: bold; color: #76ad61;'>What is hazardous waste?</h2><p>Hazardous waste includes items and substances that can harm people, animals or the environment if they are handled incorrectly. Examples include chemicals, paint, solvents, pesticides, spray cans, certain light bulbs, batteries and some cleaning products.</p><h2 style='font-size: 1.25rem; font-weight: bold; color: #76ad61; margin-top: 20px;'>Why correct sorting matters</h2><p>Hazardous waste should not be placed in ordinary residual waste. If it ends up in the wrong waste stream, harmful substances can pollute soil, water or air, or create risks during transport and treatment. In Denmark, hazardous waste is usually handed in through special municipal schemes, collection boxes or recycling centres.</p>"
+  },
+  {
+    "Navn": "Tekstilaffald",
+    "Beskrivelse": "I tekstilaffald sorteres det tøj og tekstil, andre ikke kan få glæde af, fx ødelagt, hullet eller plettet tøj og tekstil. Tekstilaffaldet skal være tørt - ellers kan det mugne. Der må ikke være rester fra maling, olie, sprit eller lignende.",
+    "UdvidetBeskrivelse": "<p>Tekstilaffald omfatter tøj og andre tekstiler, der ikke længere kan genbruges eller gives videre, fordi de er ødelagte, hullet, plettede eller på anden måde uegnede til genbrug. Det kan være alt fra gamle lagner og håndklæder til slidte t-shirts og bukser, som ikke længere kan repareres eller doneres til velgørenhed. Tekstilaffald er en vigtig fraktion, der kræver korrekt sortering, da det kan udnyttes i forskellige genanvendelsesprocesser.</p> <h2 style='font-size: 20px; font-weight: bold; color: #76ad61; margin-top: 20px;'>Tørre tekstiler er vigtige</h2> <p>Tekstilaffald skal være tørt, da fugtigt eller vådt tekstil kan begynde at mugne og dermed blive uegnet til videre genanvendelse. Når tekstiler mugner, ødelægges fibrene, og det bliver sværere at genanvende dem, samtidig med at de kan sprede dårlig lugt og forurene andet affald. Det er også vigtigt, at tekstilerne ikke er forurenet med farlige stoffer som maling, olie, sprit eller kemikalier, da disse stoffer kan påvirke genanvendelsesprocessen negativt og udgøre en risiko for arbejdere og miljøet.</p> <h2 style='font-size: 20px; font-weight: bold; color: #76ad61; margin-top: 20px;'>Fordele ved genanvendelse af tekstil</h2> <p>Genanvendelse af tekstilaffald har mange fordele. Selvom ødelagt tøj og tekstiler ikke kan genbruges direkte, kan de ofte nedbrydes og genanvendes til nye produkter. Tekstilaffald kan for eksempel omdannes til fiberfyld til møbler, isoleringsmateriale eller genbruges som industrielle klude. Ved at genanvende tekstiler reducerer vi mængden af affald, der ender på deponier, og mindsker behovet for nye materialer som bomuld og syntetiske fibre, hvilket sparer ressourcer som vand og energi i tekstilproduktionen.</p> <h2 style='font-size: 20px; font-weight: bold; color: #76ad61; margin-top: 20px;'>Processen for tekstilgenanvendelse</h2> <p>Tekstilaffald, der sorteres korrekt, sendes til behandlingsanlæg, hvor det først gennemgår en sorteringsproces for at identificere, hvilke materialer der kan genanvendes. Naturlige materialer som bomuld og uld kan ofte genanvendes til nye tekstilprodukter, mens syntetiske materialer som polyester og nylon kan bruges i andre industrier. Det er dog vigtigt at sortere affaldet omhyggeligt, da tekstiler, der indeholder skadelige stoffer eller er for beskadigede, måske ikke kan genanvendes og i stedet må bortskaffes på anden vis.</p> <h2 style='font-size: 20px; font-weight: bold; color: #76ad61; margin-top: 20px;'>Sådan minimerer du tekstilaffald</h2> <p>For at minimere mængden af tekstilaffald, der skal genanvendes, er det altid en god idé at overveje at reparere, opfriske eller give tøj videre, inden det ender som affald. Mange tekstiler kan få nyt liv gennem reparation eller genbrug i andre sammenhænge. Derudover opfordres der til at vælge holdbare materialer, når man køber nyt tøj, og at undgå overforbrug af tekstiler, da dette kan reducere den samlede mængde tekstilaffald.</p> <h2 style='font-size: 20px; font-weight: bold; color: #76ad61; margin-top: 20px;'>Bæredygtig affaldshåndtering</h2> <p>Ved at sortere tekstilaffald korrekt hjælper vi med at sikre, at de materialer, der stadig har værdi, genanvendes, og at vi reducerer belastningen på miljøet fra tekstilproduktionen. Det er en vigtig del af en bæredygtig livsstil og affaldshåndtering, hvor ressourcerne bevares så længe som muligt, og affaldsmængderne minimeres.</p>",
+    "pros": [
+      "Hullet, plettet og slidt tøj og tekstil",
+      "Enlige sokker, udtjente underbukser, ødelagte strømpebukser",
+      "Håndklæder, klude, gardiner, tæpper, viskestykker med indtørrede pletter fra fx mad og vin - ikke maling, sprit og olie"
+    ],
+    "cons": [
+      "Tøj, sko, bælter og tasker, andre kan få glæde af (aflever det til genbrug som du plejer)",
+      "Slidte og ødelagte sko, bælter og tasker (RESTAFFALD eller GENBRUGSPLADS)",
+      "Vådt eller jordslået tøj eller tekstiler (RESTAFFALD)",
+      "Tøj eller tekstiler med rester af maling, olie, sprit eller lignende (RESTAFFALD eller GENBRUGSPLADS)",
+      "Imprægnerede eller vandafvisende tekstiler (RESTAFFALD eller GENBRUGSPLADS)"
+    ],
+    "imageResourceName": "tekstilaffald_ikon",
+    "Navn_en": "Textile waste",
+    "Beskrivelse_en": "Textile waste is clothing and textiles that others cannot reuse, for example items that are damaged, torn or stained. It must be dry and free from paint, oil, spirits or similar residues.",
+    "pros_en": [
+      "Torn, stained and worn clothing and textiles",
+      "Single socks, worn underwear and broken tights",
+      "Towels, cloths, curtains, blankets and tea towels with dried stains from food or wine"
+    ],
+    "cons_en": [
+      "Clothing, shoes, belts and bags that others can reuse (donate them as usual)",
+      "Worn or broken shoes, belts and bags (residual waste or recycling centre)",
+      "Wet or mouldy clothing and textiles (residual waste)",
+      "Textiles with paint, oil, spirits or similar residues (residual waste or recycling centre)",
+      "Impregnated or water-repellent textiles (residual waste or recycling centre)"
+    ],
+    "UdvidetBeskrivelse_en": "<h2 style='font-size: 1.25rem; font-weight: bold; color: #76ad61;'>Textile waste</h2><p>Textile waste is clothing and textiles that can no longer be reused by others, for example because they are torn, worn out, stained or damaged. Items that are still usable should normally be donated for reuse instead.</p><h2 style='font-size: 1.25rem; font-weight: bold; color: #76ad61; margin-top: 20px;'>Keep textiles dry</h2><p>Textile waste must be dry. Wet or mouldy textiles can ruin other textiles and make recycling difficult. Textiles with paint, oil, chemicals or similar residues should not be placed with ordinary textile waste and may need to be handled as residual waste or taken to a recycling centre.</p>"
+  },
+  {
+    "Navn": "Plast",
+    "Beskrivelse": "Plastemballage udgør en stor andel af husholdningsaffaldet, og genanvendelsespotentialet er stort. Nogle typer indeholder kemikalier og skal håndteres anderledes. Emballage skal tømmes og skrabes rent.",
+    "UdvidetBeskrivelse": "<p>Plastemballage udgør en betydelig del af husholdningsaffaldet, og med et stort genanvendelsespotentiale er det afgørende, at plast sorteres korrekt for at sikre en mere bæredygtig affaldshåndtering. Plast bruges i mange produkter, primært som emballage til madvarer, drikkevarer, rengøringsmidler og personlige plejeprodukter. Men på grund af de mange forskellige typer plast og deres indhold af forskellige stoffer, skal plastaffald sorteres med omhu for at sikre, at det bliver genanvendt korrekt.</p> <h2 style='font-size: 20px; font-weight: bold; color: #76ad61; margin-top: 20px;'>Sådan skal plastemballage håndteres</h2> <p>Plastemballage skal tømmes og skrabes rent for at sikre, at madrester og andre forurenende stoffer ikke forhindrer genanvendelsen. Emballagen behøver ikke at være skinnende ren, men den skal være fri for store mængder madrester eller væsker. Når plastaffald sorteres korrekt, sendes det til genanvendelsesanlæg, hvor det bliver sorteret efter type og kvalitet. Her smeltes det om og genbruges til at lave nye plastprodukter som emballage, byggematerialer og andre varer.</p> <h2 style='font-size: 20px; font-weight: bold; color: #76ad61; margin-top: 20px;'>Forskellige plasttyper og deres genanvendelighed</h2> <p>Plast findes i mange forskellige typer, hvoraf nogle er mere genanvendelige end andre. De mest almindelige typer, der kan genanvendes, er PET (bruges ofte til vandflasker), HDPE (bruges til shampoo- og rengøringsflasker) og LDPE (bruges til plastposer og folie). Nogle typer plast, især dem der indeholder kemikalier, farlige stoffer eller blandingsmaterialer, kræver særskilt behandling og må ikke komme i den almindelige plastsortering. Eksempler på dette kan være hård plast fra elektronik eller plast, der har været brugt til farlige kemikalier, som skal afleveres til farligt affald.</p> <h2 style='font-size: 20px; font-weight: bold; color: #76ad61; margin-top: 20px;'>Plastaffaldets miljømæssige udfordringer</h2> <p>Plastaffaldets store miljømæssige udfordring skyldes, at plast er fremstillet af olie og derfor har en høj miljøbelastning ved nyproduktion. Derudover nedbrydes plast meget langsomt i naturen, hvilket kan føre til forurening af havmiljøer og skade på dyreliv. Genanvendelse af plast hjælper med at reducere behovet for at producere ny plast og mindsker dermed både ressourceforbruget og CO₂-udledningen. Det er dog stadig en udfordring at øge genanvendelsesraten, da meget plast stadig ender i restaffaldet eller ikke kan genanvendes på grund af forurening eller kompleksitet i materialerne.</p> <h2 style='font-size: 20px; font-weight: bold; color: #76ad61; margin-top: 20px;'>Fokus på forbedret plastgenanvendelse</h2> <p>For at forbedre plastgenanvendelsen er der i dag et stigende fokus på udvikling af nye teknologier og metoder til at sortere og genanvende plast mere effektivt. Forbrugerne kan bidrage til denne indsats ved at være opmærksomme på at sortere plast korrekt og reducere brugen af engangsplast, hvor det er muligt.</p> <h2 style='font-size: 20px; font-weight: bold; color: #76ad61; margin-top: 20px;'>Bidrag til en bæredygtig affaldshåndtering</h2> <p>Ved at sortere plastemballage korrekt er vi med til at sikre, at værdifulde materialer bliver genanvendt og ikke går til spilde. Dette mindsker presset på naturens ressourcer og bidrager til en mere bæredygtig affaldshåndtering, hvor plast holdes i kredsløb og ikke blot ender som affald i miljøet.</p>",
+    "pros": [
+      "Plastbakker -bøtter og plastlåg",
+      "Plastikposer (uden metalfilm)",
+      "Plastikfolier og -film",
+      "Plastlegetøj uden elektronik"
+    ],
+    "cons": [
+      "Gummistøvler, regntøj og luftmadrasser (GENBRUGSPLADS)",
+      "Nedløbsrør og tagrender (GENBRUGSPLADS)",
+      "Medicinemballage i plast (APOTEK)",
+      "Poser med metalfilm fx chipsposer, visse slikposer og bag-in-a-box vinpose (RESTAFFALD)"
+    ],
+    "imageResourceName": "plast_ikon",
+    "Navn_en": "Plastic",
+    "Beskrivelse_en": "Plastic packaging makes up a large part of household waste and has significant recycling potential. Packaging should be emptied and scraped clean.",
+    "pros_en": [
+      "Plastic trays, tubs and lids",
+      "Plastic bags without metal film",
+      "Plastic foil and film",
+      "Plastic toys without electronics"
+    ],
+    "cons_en": [
+      "Rubber boots, rainwear and air mattresses (recycling centre)",
+      "Drainpipes and gutters (recycling centre)",
+      "Plastic medicine packaging (pharmacy)",
+      "Bags with metal film such as crisp bags and some sweet bags (residual waste)"
+    ],
+    "UdvidetBeskrivelse_en": "<h2 style='font-size: 1.25rem; font-weight: bold; color: #76ad61;'>Plastic waste</h2><p>Plastic packaging is a large part of household waste and has significant recycling potential. Danish plastic sorting mainly focuses on packaging and plastic items that can be processed into new plastic materials.</p><h2 style='font-size: 1.25rem; font-weight: bold; color: #76ad61; margin-top: 20px;'>How to prepare plastic</h2><p>Plastic packaging should be emptied and scraped clean. It does not need to be perfectly washed, but large amounts of food, liquid or product residue should be removed. Some plastic-like items, such as rubber boots, rainwear, PVC pipes or packaging with metal film, do not belong in ordinary plastic sorting.</p>"
+  },
+  {
+    "Navn": "Restaffald",
+    "Beskrivelse": "Til restaffald sorteres affald, som ikke er omfattet af etablerede indsamlings- eller anvisningsordninger, dvs. affald, som ikke egner sig til genbrug eller genanvendelse.",
+    "UdvidetBeskrivelse": "<p>Restaffald er den affaldsfraktion, der omfatter affald, som ikke kan genbruges eller genanvendes og derfor ikke passer ind i de eksisterende indsamlings- eller sorteringsordninger. Dette betyder, at restaffald er en blandet kategori, der består af materialer og genstande, som ikke egner sig til genanvendelse, eller som ikke har en særskilt affaldsordning.</p> <h2 style='font-size: 20px; font-weight: bold; color: #76ad61; margin-top: 20px;'>Eksempler på restaffald</h2> <p>Typiske eksempler på restaffald inkluderer støvsugerposer, hygiejneaffald som bind og bleer, beskidt emballage, der er for forurenet til genanvendelse (for eksempel meget fedtede pizzabakker), samt små mængder plastik, der ikke kan sorteres som plastemballage, og genstande fremstillet af sammensatte materialer, som ikke kan adskilles til genanvendelse. Restaffald kan også omfatte mindre stykker keramik, porcelæn og spejle, som ikke kan genanvendes som glas.</p> <h2 style='font-size: 20px; font-weight: bold; color: #76ad61; margin-top: 20px;'>Hvad sker der med restaffald?</h2> <p>Selvom restaffald ikke genanvendes, bliver det typisk sendt til forbrændingsanlæg, hvor det omdannes til energi i form af elektricitet og fjernvarme. Denne energiudnyttelse er dog ikke så bæredygtig som genanvendelse, da det stadig kræver store mængder ressourcer at producere de materialer, der brændes. Desuden udledes der CO₂ og andre forurenende stoffer under forbrændingsprocessen, hvilket gør det mindre miljøvenligt sammenlignet med genanvendelse.</p> <h2 style='font-size: 20px; font-weight: bold; color: #76ad61; margin-top: 20px;'>Formål med restaffaldsordningen</h2> <p>Formålet med restaffaldsordningen er at sikre, at affald, som ikke kan genbruges eller genanvendes, bliver håndteret på en forsvarlig måde, uden at det forurener miljøet. Da affaldsmængderne i denne kategori helst skal minimeres, er det vigtigt at forsøge at sortere så meget affald som muligt i de relevante genanvendelige fraktioner, såsom plast, papir, glas, metal og organisk affald, for at mindske restaffaldets størrelse.</p> <h2 style='font-size: 20px; font-weight: bold; color: #76ad61; margin-top: 20px;'>Udfordringer ved restaffald</h2> <p>En af de største udfordringer ved restaffald er, at det ofte indeholder materialer, der kunne være blevet genanvendt, hvis de var blevet sorteret korrekt. Dette gør det vigtigt at være opmærksom på korrekt sortering, så kun de genstande, der virkelig ikke kan genanvendes, ender som restaffald. På den måde mindsker vi affaldsmængden og reducerer miljøpåvirkningen.</p> <h2 style='font-size: 20px; font-weight: bold; color: #76ad61; margin-top: 20px;'>Bidrag til ressourceudnyttelse</h2> <p>Ved at holde restaffaldsfraktionen så lille som muligt bidrager vi til en mere effektiv ressourceudnyttelse og understøtter den cirkulære økonomi, hvor fokus er på at genbruge og genanvende så meget som muligt, inden affald sendes til forbrænding eller deponi.</p>",
+    "pros": [
+      "Beskidt emballage af pap og papir",
+      "Chips- og kaffeposer",
+      "Gavepapir og servietter",
+      "Cigaretskod"
+    ],
+    "cons": [
+      "Kemikalier (FARLIGT AFFALD)",
+      "Elpærer (FARLIGT AFFALD)",
+      "Store flamingokasser (GENBRUGSPLADS)",
+      "Trykflasker (GENBRUGSPLADS)"
+    ],
+    "imageResourceName": "restaffald_ikon",
+    "Navn_en": "Residual waste",
+    "Beskrivelse_en": "Residual waste is waste that does not belong in established collection or recycling schemes, meaning waste that is not suitable for reuse or recycling.",
+    "pros_en": [
+      "Dirty cardboard and paper packaging",
+      "Crisp bags and coffee bags",
+      "Gift wrap and napkins",
+      "Cigarette butts"
+    ],
+    "cons_en": [
+      "Chemicals (hazardous waste)",
+      "Light bulbs (hazardous waste)",
+      "Large polystyrene boxes (recycling centre)",
+      "Pressurised containers (recycling centre)"
+    ],
+    "UdvidetBeskrivelse_en": "<h2 style='font-size: 1.25rem; font-weight: bold; color: #76ad61;'>Residual waste</h2><p>Residual waste is the waste that remains when recyclable, reusable, hazardous and special waste has been sorted out. It is for items that do not fit into the other Danish waste categories or cannot currently be recycled through normal household schemes.</p><h2 style='font-size: 1.25rem; font-weight: bold; color: #76ad61; margin-top: 20px;'>Use residual waste last</h2><p>Residual waste is usually sent for incineration with energy recovery. It should therefore be used only when the item cannot be sorted into a more specific category. Hazardous waste, batteries, electronics, glass, metal, paper, cardboard and food waste should not be placed in residual waste when a separate sorting option exists.</p>"
+  },
+  {
+    "Navn": "Småt elektronik",
+    "Beskrivelse": "Småt elektronik omfatter omfatter kasserede elektroniske apparater samt udstyr med ledning, solceller eller batteri (batteri må dog godt sorteres for sig hvis muligt). Den største dimension på affaldet må dog ikke overskride 50 cm.",
+    "UdvidetBeskrivelse": "<p>Småt elektronik omfatter kasserede elektroniske apparater og udstyr, der har været drevet af ledning, solceller eller batteri. Denne type affald inkluderer en bred vifte af produkter, som vi bruger i hverdagen, såsom mobiltelefoner, fjernbetjeninger, små køkkenapparater, elektriske tandbørster, hårtørrere, legetøj med elektronik, kabler og meget mere. Det særlige ved småt elektronik er, at apparaterne ikke må overstige en maksimal størrelse på 50 cm på deres største led.</p> <h2 style='font-size: 20px; font-weight: bold; color: #76ad61; margin-top: 20px;'>Vigtigheden af korrekt sortering</h2> <p>Det er vigtigt at sortere småt elektronik korrekt, da det indeholder værdifulde materialer, som kan genanvendes, såsom metaller, plast og visse elektroniske komponenter. Desuden kan elektronikaffald indeholde miljøskadelige stoffer som kviksølv, bly og cadmium, som skal håndteres forsvarligt for at undgå forurening af miljøet. Når småt elektronik sorteres korrekt, sendes det til specialiserede anlæg, hvor det bliver adskilt i dets bestanddele, så de genanvendelige materialer kan udvindes og bruges i nye produkter.</p> <h2 style='font-size: 20px; font-weight: bold; color: #76ad61; margin-top: 20px;'>Håndtering af batterier i elektronik</h2> <p>Selvom mange små elektroniske enheder også indeholder batterier, er det bedst at fjerne batterierne og sortere dem separat, hvis det er muligt, da batterier kræver en anden form for behandling. Hvis batteriet ikke kan fjernes, kan hele apparatet stadig afleveres som småt elektronik, hvor batterierne vil blive håndteret forsvarligt.</p> <h2 style='font-size: 20px; font-weight: bold; color: #76ad61; margin-top: 20px;'>Vækst i elektronisk affald</h2> <p>Elektronisk affald er en af de affaldstyper, der vokser hurtigst i verden på grund af vores stigende forbrug af elektroniske produkter og det hurtige tempo, hvormed de bliver erstattet med nyere modeller. Genanvendelse af elektronik er derfor afgørende for at reducere affaldsmængderne og udnytte de værdifulde ressourcer, der er indlejret i apparaterne. Ved at genanvende elektronik minimeres behovet for at udvinde nye råstoffer, som for eksempel sjældne metaller, hvilket er både miljømæssigt og økonomisk fordelagtigt.</p> <h2 style='font-size: 20px; font-weight: bold; color: #76ad61; margin-top: 20px;'>Elektronik må ikke ende i restaffald</h2> <p>Det er vigtigt, at småt elektronik aldrig ender i restaffaldet, da de skadelige stoffer og de værdifulde materialer går tabt, hvis apparaterne brændes eller deponeres. De fleste kommuner har særlige indsamlingsordninger for småt elektronik, herunder afleveringsmuligheder på genbrugsstationer eller i opsamlingsbeholdere, der er placeret ved supermarkeder eller andre offentlige steder. Nogle gange tilbyder kommunerne også afhentning af elektronikaffald fra husholdningerne.</p> <h2 style='font-size: 20px; font-weight: bold; color: #76ad61; margin-top: 20px;'>Bidrag til bæredygtig affaldshåndtering</h2> <p>Ved at sortere småt elektronik korrekt bidrager man til en mere bæredygtig affaldshåndtering og hjælper med at reducere miljøpåvirkningen fra elektronisk affald. Det sikrer samtidig, at de værdifulde materialer i de elektroniske apparater genanvendes, og at farlige stoffer behandles på en måde, der beskytter både miljø og sundhed.</p>",
+    "pros": [
+      "Mobil",
+      "Bærbar",
+      "Konsol",
+      "Elektronisk legetøj"
+    ],
+    "cons": [
+      "Batterier (BATTERIER)",
+      "Stort elektronik (GENBRUGSPLADS)",
+      "Lyskilder (GENBRUGSPLADS)"
+    ],
+    "imageResourceName": "smaat_elektronik",
+    "Navn_en": "Small electronics",
+    "Beskrivelse_en": "Small electronics include discarded electronic devices and equipment with a cable, solar cell or battery. The largest dimension should generally not exceed 50 cm.",
+    "pros_en": [
+      "Mobile phones",
+      "Laptops",
+      "Game consoles",
+      "Electronic toys"
+    ],
+    "cons_en": [
+      "Batteries (batteries)",
+      "Large electronics (recycling centre)",
+      "Light sources (recycling centre)"
+    ],
+    "UdvidetBeskrivelse_en": "<h2 style='font-size: 1.25rem; font-weight: bold; color: #76ad61;'>Small electronics</h2><p>Small electronics include discarded electronic devices and equipment powered by a cable, battery or solar cell. This can include phones, remote controls, small kitchen appliances, cables, electric toothbrushes and electronic toys.</p><h2 style='font-size: 1.25rem; font-weight: bold; color: #76ad61; margin-top: 20px;'>Why electronics are sorted separately</h2><p>Electronics contain valuable materials such as metals and plastics, but they can also contain substances that should not end up in ordinary waste. Sorting small electronics separately makes it possible to recover materials and handle harmful components responsibly. Remove batteries first if possible.</p>"
+  },
+  {
+    "Navn": "Glas",
+    "Beskrivelse": "I glasaffald sorteres glas, som er tømt og skrabet rent. Glasset behøver ikke at være vasket rent. I dag bliver det meste glas knust og smeltet om til nye glasprodukter.",
+    "UdvidetBeskrivelse": "<p>Glasaffald består af brugte glasprodukter, som eksempelvis glasflasker og syltetøjsglas, der kan genanvendes efter korrekt sortering. For at sikre en effektiv genanvendelse skal glas sorteres for sig og afleveres i de særlige glascontainere eller genbrugsstationer, som findes i de fleste kommuner. Glas skal tømmes og skrabes rent, men det behøver ikke at være grundigt vasket – det vigtigste er, at der ikke er rester af mad eller væsker tilbage, da det kan forringe kvaliteten af det genanvendte glas.</p> <h2 style='font-size: 20px; font-weight: bold; color: #76ad61; margin-top: 20px;'>Formål med korrekt sortering af glas</h2> <p>Formålet med at sortere glasaffald er at reducere mængden af affald, der ender som deponi eller brændes, samt at bevare de værdifulde råmaterialer, som glas er lavet af. Glas er et 100 % genanvendeligt materiale, hvilket betyder, at det kan smeltes om og genbruges uendeligt uden at miste sin kvalitet. Når glasaffald bliver sorteret korrekt, sendes det til anlæg, hvor det knuses og smeltes om for at blive brugt til produktionen af nye glasprodukter som flasker, krukker og emballage.</p> <h2 style='font-size: 20px; font-weight: bold; color: #76ad61; margin-top: 20px;'>Miljømæssige fordele ved glasgenanvendelse</h2> <p>Genanvendelse af glas har en række miljømæssige fordele. For det første sparer det energi og ressourcer, da produktionen af nyt glas fra genbrugsglas kræver mindre energi end at fremstille glas fra råmaterialer som sand, soda og kalk. For det andet reducerer det CO₂-udledningen, da genanvendelse kræver mindre opvarmning end ny produktion. Endelig mindsker det behovet for at udvinde og transportere nye råstoffer, hvilket bidrager til en mere bæredygtig udnyttelse af naturens ressourcer.</p> <h2 style='font-size: 20px; font-weight: bold; color: #76ad61; margin-top: 20px;'>Glas der ikke hører til i glasaffald</h2> <p>Der er dog visse typer glas, som ikke hører til i glasaffaldet, såsom vinduesglas, spejle, ovnglas, porcelæn og keramik. Disse materialer har en anden sammensætning og smeltetemperatur end almindeligt emballageglas og kan skade genanvendelsesprocessen. Det er vigtigt at være opmærksom på denne forskel for at sikre en så effektiv genanvendelse som muligt.</p> <h2 style='font-size: 20px; font-weight: bold; color: #76ad61; margin-top: 20px;'>Bidrag til den cirkulære økonomi</h2> <p>Ved at sortere glas korrekt bidrager man ikke kun til at reducere affaldsmængden og bevare ressourcer, men også til at understøtte den cirkulære økonomi, hvor materialer bevares og genanvendes i stedet for blot at blive smidt væk.</p>",
+    "pros": [
+      "Glas og glasflasker uden pant i alle farver",
+      "Konservesglas og drikkeglas",
+      "Vitaminglas",
+      "Glasskår fra alle ovenstående"
+    ],
+    "cons": [
+      "Porcelæn, spejle og keramik (GENBRUGSPLADS)",
+      "Kemikalieflasker (FARLIGT AFFALD)",
+      "Elpærer (GENBRUGSPLADS eller FARLIGT AFFALD)",
+      "Medicinglas (APOTEK eller GENBRUGSPLADS)"
+    ],
+    "imageResourceName": "glas_ikon",
+    "Navn_en": "Glass",
+    "Beskrivelse_en": "Glass waste is glass that has been emptied and scraped clean. It does not need to be washed. Most glass is crushed and melted into new glass products.",
+    "pros_en": [
+      "Glass and non-deposit glass bottles in all colours",
+      "Jars and drinking glasses",
+      "Vitamin jars",
+      "Glass shards from the above"
+    ],
+    "cons_en": [
+      "Porcelain, mirrors and ceramics (recycling centre)",
+      "Chemical bottles (hazardous waste)",
+      "Light bulbs (recycling centre or hazardous waste)",
+      "Medicine glass (pharmacy or recycling centre)"
+    ],
+    "UdvidetBeskrivelse_en": "<h2 style='font-size: 1.25rem; font-weight: bold; color: #76ad61;'>Glass waste</h2><p>Glass waste includes empty glass bottles, jars and similar glass packaging. Glass can be recycled again and again without losing quality, which makes correct sorting valuable.</p><h2 style='font-size: 1.25rem; font-weight: bold; color: #76ad61; margin-top: 20px;'>What belongs with glass?</h2><p>Glass should be emptied and scraped clean, but it does not need to be thoroughly washed. Porcelain, ceramics, mirrors, light bulbs and chemical bottles should not be sorted as ordinary glass, because they can disturb recycling or require special handling.</p>"
+  },
+  {
+    "Navn": "Mad- og drikkekartoner",
+    "Beskrivelse": "Det er nyt at sortere mad- og drikkekartoner. Emballagen består ofte af flere lag, fx plast, metal og karton, derfor får den sin egen sorteringsordning, og skal ikke sorteres som pap eller restaffald.",
+    "UdvidetBeskrivelse": "<p>Mad- og drikkekartoner adskiller sig fra andre typer emballage ved at være sammensat af flere forskellige materialer. Disse kartoner bruges ofte til opbevaring af produkter som mælk, juice, suppe og andre flydende fødevarer. Typisk består de af en kombination af karton, plastik og undertiden et tyndt lag aluminium for at holde indholdet friskt og beskyttet mod lys og luft. Denne særlige sammensætning gør, at kartonerne ikke kan sorteres sammen med almindeligt pap eller papir, da de kræver en særskilt genanvendelsesproces.</p> <h2 style='font-size: 20px; font-weight: bold; color: #76ad61; margin-top: 20px;'>Formål med korrekt sortering af mad- og drikkekartoner</h2> <p>Formålet med at sortere mad- og drikkekartoner separat er at sikre, at de forskellige materialer, som kartonerne er lavet af, kan genvindes effektivt. Når kartonerne indsamles korrekt, sendes de til specialiserede genanvendelsesanlæg, hvor de bliver opdelt i deres bestanddele. Kartonfibrene kan genbruges til at lave nye papirprodukter, plasten kan smeltes om og bruges til fremstilling af plastprodukter, og aluminiummet kan genvindes og bruges i nye metalprodukter.</p> <h2 style='font-size: 20px; font-weight: bold; color: #76ad61; margin-top: 20px;'>Miljømæssige fordele ved genanvendelse</h2> <p>Genanvendelsen af mad- og drikkekartoner har flere miljømæssige fordele. For det første mindsker det mængden af affald, der ender i deponi eller forbrænding, hvilket reducerer miljøbelastningen. For det andet spares der ressourcer og energi ved at genbruge materialerne, sammenlignet med at udvinde og producere nye råstoffer fra bunden. Denne genanvendelse bidrager desuden til en reduktion i CO₂-udledningerne, hvilket gør det til et vigtigt skridt i retning mod en mere bæredygtig affaldshåndtering.</p> <h2 style='font-size: 20px; font-weight: bold; color: #76ad61; margin-top: 20px;'>Optimal sortering af kartoner</h2> <p>For at sikre, at mad- og drikkekartoner kan genanvendes optimalt, skal de tømmes for indhold, men det er ikke nødvendigt at skylle dem grundigt. Dog skal de være fri for større madrester, da dette kan forstyrre genanvendelsesprocessen. Det er også vigtigt at være opmærksom på, hvilke kartoner der kan sorteres som mad- og drikkekartoner – for eksempel skal kartoner fra flydende fødevarer sorteres her, mens kartoner til tørre produkter som æggebakker stadig skal sorteres som pap eller papir, afhængig af den lokale sorteringsordning.</p> <h2 style='font-size: 20px; font-weight: bold; color: #76ad61; margin-top: 20px;'>Bidrag til bæredygtig affaldshåndtering</h2> <p>Ved at deltage aktivt i sorteringen af mad- og drikkekartoner er man med til at sikre, at ressourcerne fra disse komplekse materialer bliver udnyttet bedst muligt, og at vi bevæger os mod en mere bæredygtig og cirkulær affaldshåndtering.</p>",
+    "pros": [
+      "Mælke- og yoghurtkartoner",
+      "Kartoner til drikke, fx juice og saft eller lign.",
+      "Kartoner til mad, fx flåede tomater, bønner eller lign."
+    ],
+    "cons": [
+      "Pizzabakker (RESTAFFALD)",
+      "To-go papkrus (RESTAFFALD)",
+      "Chipsposer og kaffeposer (RESTAFFALD)"
+    ],
+    "imageResourceName": "mad_og_drikkekartoner_ikon",
+    "Navn_en": "Food and beverage cartons",
+    "Beskrivelse_en": "Food and beverage cartons often consist of several layers, such as plastic, metal and cardboard. They therefore have their own sorting category and should not be sorted as cardboard or residual waste.",
+    "pros_en": [
+      "Milk and yoghurt cartons",
+      "Cartons for drinks such as juice",
+      "Cartons for food such as chopped tomatoes or beans"
+    ],
+    "cons_en": [
+      "Pizza boxes (residual waste)",
+      "To-go paper cups (residual waste)",
+      "Crisp bags and coffee bags (residual waste)"
+    ],
+    "UdvidetBeskrivelse_en": "<h2 style='font-size: 1.25rem; font-weight: bold; color: #76ad61;'>Food and beverage cartons</h2><p>Food and beverage cartons are used for products such as milk, yoghurt, juice, soup and chopped tomatoes. They often consist of several layers, including cardboard, plastic and sometimes aluminium.</p><h2 style='font-size: 1.25rem; font-weight: bold; color: #76ad61; margin-top: 20px;'>Why they have their own category</h2><p>Because cartons are made from mixed materials, they should not be sorted as ordinary cardboard or paper. When collected separately, specialised recycling facilities can separate the materials and recover the paper fibres and other components more effectively.</p>"
+  },
+  {
+    "Navn": "Madaffald",
+    "Beskrivelse": "Madaffald har en høj genanvendelighed og kan blive til biogas, kompost og flydende gødning til landmænd. Madaffald er fx madrester, for gamle madvarer, skræller og kaffefiltre.",
+    "UdvidetBeskrivelse": "<p>Madaffald er en vigtig affaldsfraktion, da det har en høj genanvendelighed og kan omdannes til værdifulde ressourcer som biogas, kompost og flydende gødning. Ved at sortere madaffald korrekt sikrer man, at ressourcerne i madresterne bliver genbrugt på en bæredygtig måde og ikke blot ender i restaffald, hvor de ikke kommer til nytte. Madaffald inkluderer typisk rester fra måltider, gamle madvarer, skræller fra frugt og grønt, kaffegrums og kaffefiltre samt æggeskaller.</p> <h2 style='font-size: 20px; font-weight: bold; color: #76ad61; margin-top: 20px;'>Biogasanlæg og genanvendelse</h2> <p>Når madaffald sorteres korrekt og afleveres til genanvendelse, sendes det til et biogasanlæg, hvor det gennemgår en anaerob nedbrydningsproces. I denne proces nedbrydes det organiske materiale af mikroorganismer under iltfattige forhold, hvilket producerer biogas – en vedvarende energikilde, der kan bruges til at generere elektricitet og varme eller opgraderes til biobrændstof. Den resterende biomasse fra processen kan derefter omdannes til kompost eller flydende gødning, som kan bruges af landmænd til at berige jorden og fremme bæredygtigt landbrug.</p> <h2 style='font-size: 20px; font-weight: bold; color: #76ad61; margin-top: 20px;'>Formål med sortering af madaffald</h2> <p>Formålet med at sortere madaffald er at reducere mængden af affald, der ender som deponi eller forbrændes, og i stedet udnytte dets potentiale som en ressource. Forbrænding af organisk affald er ikke særlig effektiv, da det har et højt vandindhold og derfor ikke bidrager væsentligt til energiproduktionen. Derimod kan madaffald gennem genanvendelse omdannes til biogas og andre nyttige produkter, som bidrager til den cirkulære økonomi og reducerer behovet for fossile brændstoffer og kunstgødning.</p> <h2 style='font-size: 20px; font-weight: bold; color: #76ad61; margin-top: 20px;'>Hvad kan sorteres som madaffald?</h2> <p>Ved sorteringen af madaffald er det vigtigt at huske, hvad der kan og ikke kan sorteres som madaffald. Udover madrester og skræller kan man også sortere kaffegrums, teposer, æggeskaller og små knogler. Dog bør emballerede fødevarer, større knogler, plast, metal og andet ikke-organisk materiale ikke komme i madaffaldet, da det kan forstyrre genanvendelsesprocessen. Nogle steder er det også muligt at sortere papirservietter og køkkenrulle sammen med madaffaldet, men dette afhænger af den lokale sorteringsordning.</p> <h2 style='font-size: 20px; font-weight: bold; color: #76ad61; margin-top: 20px;'>Bidrag til miljøvenlig affaldshåndtering</h2> <p>Ved at deltage i sorteringen af madaffald bidrager man til at reducere udledningen af drivhusgasser fra deponier, mindske behovet for fossile brændstoffer og fremme en mere bæredygtig og ressourcebesparende affaldshåndtering. Det er en enkel, men vigtig måde at gøre en forskel for både miljøet og energiproduktionen.</p>",
+    "pros": [
+      "Mad I alle afskygninger, fx madrester og mad med mug",
+      "Kaffefiltre og teposer",
+      "Æggeskaller",
+      "Mindre knogler, fx fra fjerkræ og sparibs",
+      "Afskårne blomster og krydderurter"
+    ],
+    "cons": [
+      "Jord fra potteplanter (GENBRUGSPLADS)",
+      "Servietter (RESTAFFALD)",
+      "Dyrestrøelse, kattegrus, dyreekskrementer (RESTAFFALD)",
+      "Bagepapir og muffinpapir (RESTAFFALD)"
+    ],
+    "imageResourceName": "madaffald_ikon",
+    "Navn_en": "Food waste",
+    "Beskrivelse_en": "Food waste can be reused as biogas, compost and liquid fertiliser. It includes leftovers, expired food, peelings and coffee filters.",
+    "pros_en": [
+      "Food of all kinds, including leftovers and mouldy food",
+      "Coffee filters and tea bags",
+      "Eggshells",
+      "Small bones, for example from poultry",
+      "Cut flowers and herbs"
+    ],
+    "cons_en": [
+      "Soil from potted plants (recycling centre)",
+      "Napkins (residual waste)",
+      "Pet bedding, cat litter and animal droppings (residual waste)",
+      "Baking paper and muffin cups (residual waste)"
+    ],
+    "UdvidetBeskrivelse_en": "<h2 style='font-size: 1.25rem; font-weight: bold; color: #76ad61;'>Food waste</h2><p>Food waste is an important Danish waste category because it can be turned into useful resources such as biogas, compost and fertiliser. It includes leftovers, expired food, fruit and vegetable peelings, coffee grounds, coffee filters and eggshells.</p><h2 style='font-size: 1.25rem; font-weight: bold; color: #76ad61; margin-top: 20px;'>From food waste to resources</h2><p>When food waste is sorted correctly, it can be treated in biogas plants. The process produces renewable energy and leaves nutrients that can be used in agriculture. Packaging, napkins, cat litter and garden soil should not be sorted as food waste unless your local rules say otherwise.</p>"
+  },
+  {
+    "Navn": "Metal",
+    "Beskrivelse": "Metal har høj miljømæssig gevinst, da udvinding af metal fra naturen er meget ressourcekrævende. Potentialet for mere sortering er stort, da meget ender i restaffald. Skal tømmes og skrabes rent.",
+    "UdvidetBeskrivelse": "<p>Metal er en affaldsfraktion med stor miljømæssig gevinst, da genanvendelsen af metal sparer store mængder ressourcer sammenlignet med den energi- og ressourcekrævende udvinding af metal fra råstoffer som malm. Ved at sortere metalaffald korrekt sikrer man, at metaller som jern, aluminium, kobber og stål kan genbruges i produktionen af nye produkter, hvilket reducerer behovet for at udvinde nye materialer fra naturen. Udvinding og forarbejdning af råmaterialer til metal er en proces, der både kræver meget energi og kan have negative konsekvenser for miljøet, herunder skovrydning og forurening af vandressourcer.</p> <h2 style='font-size: 20px; font-weight: bold; color: #76ad61; margin-top: 20px;'>Hvilke typer metalaffald kan genanvendes?</h2> <p>Metalaffald inkluderer en lang række hverdagsgenstande som konservesdåser, øl- og sodavandsdåser, kapsler, alufolie, sølvpapirbakker, tomme spraydåser og små metalgenstande som søm, skruer og metaldele fra legetøj eller køkkenudstyr. For at sikre, at metallet kan genanvendes effektivt, skal det tømmes og skrabes rent for madrester, men det behøver ikke være skinnende rent. Det vigtigste er at undgå, at forurenende stoffer fra madrester eller andre materialer forhindrer genanvendelsen.</p> <h2 style='font-size: 20px; font-weight: bold; color: #76ad61; margin-top: 20px;'>Genanvendelsesprocessen og energibesparelser</h2> <p>Når metalaffald sorteres korrekt, sendes det til et genanvendelsesanlæg, hvor det bliver smeltet om og genbrugt til at lave nye metalprodukter. Aluminium, for eksempel fra sodavandsdåser, er et af de mest genanvendelige metaller og kan genbruges næsten uendeligt uden at miste sin kvalitet. Processen med at genanvende aluminium kræver kun omkring 5 % af den energi, der bruges til at producere nyt aluminium fra bauxitmalm. Dette viser tydeligt den store energibesparelse ved at genanvende metal.</p> <h2 style='font-size: 20px; font-weight: bold; color: #76ad61; margin-top: 20px;'>Udfordringer med metalaffald og vigtigheden af korrekt sortering</h2> <p>Selvom metalgenanvendelse er en effektiv måde at reducere ressourceforbruget og CO₂-udledningen på, ender desværre en stor mængde metal stadig i restaffald, hvor det går til spilde. Der er derfor et stort potentiale for at forbedre sorteringen af metal i husholdningerne. Hvis metal ender i restaffald, bliver det enten brændt sammen med andet affald eller sendt til deponi, hvilket er en unødvendig spild af værdifulde materialer, der kunne have været genanvendt.</p> <h2 style='font-size: 20px; font-weight: bold; color: #76ad61; margin-top: 20px;'>Bidrag til en bæredygtig affaldshåndtering</h2> <p>Ved at sortere metalaffald korrekt og sikre, at alle typer metalgenstande – fra store dåser til små metaldele – bliver afleveret til genanvendelse, er man med til at beskytte miljøet og mindske vores afhængighed af minedrift. Genanvendelse af metal bidrager til en mere bæredygtig affaldshåndtering og understøtter den cirkulære økonomi, hvor materialer bevares og genbruges i stedet for blot at blive smidt væk.</p>",
+    "pros": [
+      "Konservesdåser og låg",
+      "Fyrfadslysholdere",
+      "Gryder, pander og bestik",
+      "Søm og skruer",
+      "Øl- og sodavandsdåser (uden pant)"
+    ],
+    "cons": [
+      "Spraydåser (FARLIGT AFFALD)",
+      "Metal med kemikalier (GENBRUGSPLADS eller FARLIGT AFFALD)",
+      "Kanyler (APOTEK)"
+    ],
+    "imageResourceName": "metal_ikon",
+    "Navn_en": "Metal",
+    "Beskrivelse_en": "Metal has a high environmental value because extracting new metal is resource-intensive. Metal packaging and items should be emptied and scraped clean.",
+    "pros_en": [
+      "Cans and lids",
+      "Tea light holders",
+      "Pots, pans and cutlery",
+      "Nails and screws",
+      "Beer and soft drink cans without deposit"
+    ],
+    "cons_en": [
+      "Spray cans (hazardous waste)",
+      "Metal with chemical residues (recycling centre or hazardous waste)",
+      "Needles (pharmacy)"
+    ],
+    "UdvidetBeskrivelse_en": "<h2 style='font-size: 1.25rem; font-weight: bold; color: #76ad61;'>Metal waste</h2><p>Metal recycling has a high environmental benefit because producing new metal from raw materials requires a lot of energy and resources. Sorting metal correctly helps recover materials such as steel, aluminium and copper.</p><h2 style='font-size: 1.25rem; font-weight: bold; color: #76ad61; margin-top: 20px;'>How to sort metal</h2><p>Metal items and packaging should be emptied and scraped clean. Cans, lids, foil trays, pots, pans, cutlery, nails and screws can often be sorted as metal. Spray cans, metal with chemical residues and needles require special handling and should not be placed with ordinary metal waste.</p>"
+  },
+  {
+    "Navn": "Batterier",
+    "Beskrivelse": "Udtjente batterier skal afleveres i en genbrugsbeholder til batterier og må ikke smides ud i skraldespanden. Dette er for at sikre, at de værdifulde ressourcer i batterierne kan genanvendes samt sikre den rette håndtering af batterierne, så man hindrer miljø- og sundhedsmæssige ricisi.",
+    "UdvidetBeskrivelse": "<p>Udtjente batterier skal afleveres i en særskilt genbrugsbeholder til batterier og må under ingen omstændigheder smides ud sammen med almindeligt husholdningsaffald. Batterier indeholder en række stoffer, herunder tungmetaller som kviksølv, cadmium og bly, der kan udgøre alvorlige miljø- og sundhedsmæssige risici, hvis de håndteres forkert. Når batterier ender i almindeligt affald, risikerer disse farlige stoffer at lække ud i naturen, hvilket kan forurene både jord, vand og luft og skade økosystemer samt menneskers sundhed.</p> <h2 style='font-size: 20px; font-weight: bold; color: #76ad61; margin-top: 20px;'>Hvorfor skal batterier sorteres?</h2> <p>Formålet med sorteringen af batterier er ikke blot at forhindre forurening, men også at sikre, at de værdifulde ressourcer, som findes i batterierne, kan genanvendes. Mange batterier indeholder metaller som nikkel, kobolt og lithium, som kan genvindes og bruges til at producere nye batterier eller andre produkter. Ved at aflevere batterier korrekt til genbrug er man med til at reducere behovet for at udvinde nye råstoffer fra naturen, hvilket mindsker miljøbelastningen fra minedrift og ressourceudvinding.</p> <h2 style='font-size: 20px; font-weight: bold; color: #76ad61; margin-top: 20px;'>Hvordan afleveres batterier korrekt?</h2> <p>Forbrugerne kan normalt aflevere deres brugte batterier i genbrugsstationer, visse butikker eller i særlige beholdere, der stilles til rådighed af kommunen. Denne indsamling sikrer, at batterierne bliver transporteret til specialiserede faciliteter, hvor de behandles korrekt. Her bliver de farlige stoffer adskilt og neutraliseret, mens de genanvendelige materialer udvindes og føres tilbage i produktionen.</p> <h2 style='font-size: 20px; font-weight: bold; color: #76ad61; margin-top: 20px;'>Vær opmærksom på mindre batterier</h2> <p>Det er vigtigt, at man også husker på mindre batterier, som for eksempel dem i fjernbetjeninger, høreapparater og legetøj, da de ofte bliver glemt, selvom de udgør samme risiko og har samme genanvendelsespotentiale. Ved korrekt sortering af batterier bidrager man aktivt til at beskytte miljøet, sikre bæredygtig ressourceforvaltning og understøtte den cirkulære økonomi.</p>",
+    "pros": [
+      "Batterier fra fjernbetjening",
+      "Batterier fra køkkenapparater",
+      "Batterier fra legetøj",
+      "Batterier fra lommelygter"
+    ],
+    "cons": [
+      "Bilbatterier (GENBRUGSPLADS)",
+      "Akkumulatorer (GENBRUGSPLADS)",
+      "Batterier fra cykler og løbehjul (GENBRUGSPPLADS)"
+    ],
+    "imageResourceName": "batterier",
+    "Navn_en": "Batteries",
+    "Beskrivelse_en": "Used batteries must be handed in for battery recycling and must not be thrown in the bin. This protects valuable resources and reduces environmental and health risks.",
+    "pros_en": [
+      "Batteries from remote controls",
+      "Batteries from kitchen appliances",
+      "Batteries from toys",
+      "Batteries from flashlights"
+    ],
+    "cons_en": [
+      "Car batteries (recycling centre)",
+      "Accumulators (recycling centre)",
+      "Batteries from bicycles and scooters (recycling centre)"
+    ],
+    "UdvidetBeskrivelse_en": "<h2 style='font-size: 1.25rem; font-weight: bold; color: #76ad61;'>Batteries</h2><p>Used batteries must be collected separately and should never be thrown in ordinary household waste. Batteries can contain valuable materials, but also substances that may harm the environment or human health if handled incorrectly.</p><h2 style='font-size: 1.25rem; font-weight: bold; color: #76ad61; margin-top: 20px;'>Where batteries go</h2><p>In Denmark, batteries are usually handed in through battery containers, municipal collection schemes or recycling centres. Batteries from remote controls, toys, kitchen appliances and flashlights are typical examples. Larger batteries, such as car batteries and e-bike batteries, are usually taken to a recycling centre.</p>"
+  }
+]

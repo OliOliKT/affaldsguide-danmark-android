@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="MultiAutoCompleteTextViewStyle" parent="Widget.AppCompat.AutoCompleteTextView">
+        <item name="android:background">@drawable/edittext_background</item>
+        <item name="android:paddingStart">18dp</item>
+        <item name="android:paddingEnd">18dp</item>
+        <item name="android:textColor">@color/text_color</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:popupBackground">@drawable/autocomplete_dropdown_background</item>
+        <item name="android:dropDownVerticalOffset">4dp</item>
+    </style>
+
+    <style name="xViewStyle">
+        <item name="android:background">@drawable/x_background</item>
+    </style>
+
+    <style name="ButtonStyle" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/button_background</item>
+    </style>
+
+    <style name="ImageButtonStyle" parent="Widget.AppCompat.ImageButton">
+        <item name="android:background">@drawable/button_background</item>
+    </style>
+
+    <style name="rounded_corner">
+        <item name="cornerSize">8dp</item>
+    </style>
+
+    <style name="rounded_corner_mini">
+        <item name="cornerSize">4dp</item>
+    </style>
+
+</resources>

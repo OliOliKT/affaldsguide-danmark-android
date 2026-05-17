@@ -1,0 +1,108 @@
+<resources>
+    <string name="app_name">Affaldsguide Danmark</string>
+
+    <string name="indtast_skrald">Indtast affald</string>
+
+    <string name="om_del_1" formatted="false">Affaldssortering kan være svær at gennemskue i hverdagen, især når man står med en genstand, der ikke passer tydeligt ind i en bestemt beholder.\n\nI Danmark arbejder kommunerne ud fra mere ensartede affaldsfraktioner som madaffald, papir, pap, metal, glas, plast, mad- og drikkekartoner, tekstilaffald, farligt affald og restaffald. Der kan dog stadig være lokale forskelle i ordninger, beholdere og afleveringssteder.\n\nAffaldsguide Danmark er en uafhængig sorteringsguide og er ikke tilknyttet, godkendt af eller drevet af en offentlig myndighed, kommune eller offentligt affaldsselskab. Appen er lavet for at gøre det lettere at finde et hurtigt og brugbart svar, men officielle og lokale regler bør altid kontrolleres hos kommunen eller relevante offentlige kilder.</string>
+
+    <string name="om_del_3">I Affaldsguide Danmark kan du søge efter en affaldsgenstand og se, hvilken affaldsfraktion den typisk skal sorteres i.\n\nSøgefunktionen bruger en lokal database i appen, så de vigtigste sorteringsoplysninger er tilgængelige hurtigt. Databasen bliver løbende forbedret med flere genstande og mere præcise beskrivelser.\n\nAppen skal ses som en praktisk sorteringsguide. Hvis du er i tvivl om lokale regler, store genstande eller særlige afleveringssteder, bør du altid tjekke din kommunes egne anvisninger.</string>
+
+    <string name="kontaktoplysninger">Affaldsguide Danmark er udviklet af Simple Web, der ejes af Oliver Kronholm Thomsen.\n\nUdover Affaldsguide Danmark står jeg også bag simplecode.dk, whenrocketsfly.com og elis-icebreakers.com.\n\nHvis du har spørgsmål, ris, ros eller forslag til appen, er du velkommen til at kontakte mig på info@simplecode.dk.</string>
+
+    <string name="privatlivspolitik">Affaldsguide Danmark er lavet med fokus på at give enkel og hurtig hjælp til affaldssortering. Appen beder ikke om navn, adresse eller e-mailadresse for at bruge den almindelige søgefunktion.\n\nSøgefunktionen bruger en lokal affaldsdatabase, som ligger i appen. Det betyder, at selve affaldssøgningen ikke kræver, at der hentes sorteringsdata fra eksterne databaser.\n\nAppen bruger Google AdMob til annoncer. AdMob kan behandle tekniske oplysninger som enhedsoplysninger, appversion, annoncedata og generel brugsstatistik. Oplysningerne bruges til at vise og måle annoncer samt til at vedligeholde og forbedre appens drift.\n\nAffaldsguide Danmark sælger ikke dine personlige oplysninger. Oplysninger behandles kun i det omfang, det er nødvendigt for appens drift, annoncering eller hvis det kræves ved lov.\n\nHvis du har spørgsmål til privatlivspolitikken eller ønsker at kontakte os om behandling af oplysninger, kan du skrive til info@simplecode.dk.\n\nVi forbeholder os retten til at opdatere denne privatlivspolitik. Eventuelle ændringer vil blive gjort tilgængelige i appen.</string>
+
+    <string name="vilkårogbetingelser">Affaldsguide Danmark er en uafhængig og vejledende sorteringsguide. Appen er ikke tilknyttet, godkendt af, sponsoreret af eller drevet af en offentlig myndighed, kommune eller et offentligt affaldsselskab.\n\nOplysningerne i appen er udelukkende beregnet som praktisk information og generel vejledning. Vi forsøger at holde oplysningerne så korrekte og brugbare som muligt, men kan ikke garantere, at alle oplysninger altid er fuldstændige, opdaterede eller gældende i alle kommuner.\n\nAffaldsordninger, beholdere, genbrugspladser, kontaktoplysninger og lokale regler kan variere og ændre sig. Ved tvivl, farligt affald, store genstande eller særlige afleveringskrav bør du altid kontrollere reglerne hos din kommune, genbrugsplads eller relevante officielle kilder.\n\nOfficielle kilder og kontrol af information:\nborger.dk: https://www.borger.dk/miljoe-og-energi/Affald-og-genbrug\nMiljøstyrelsen: https://mst.dk\nKommunespecifik information bør kontrolleres på den enkelte kommunes officielle hjemmeside, som der kan linkes til i appen.\n\nBrug af appen sker på eget ansvar. Simple Web påtager sig ikke ansvar for fejl, mangler eller beslutninger truffet på baggrund af appens indhold.</string>
+
+    <string name="introtekst">Søg efter dit affald og se, hvilken affaldsfraktion det typisk skal sorteres i.</string>
+
+    <string name="q1">Hvad gør jeg, hvis min kommune ikke har en beholder til den viste affaldsfraktion?</string>
+
+    <string name="a1">Hvis du ikke har en beholder til en bestemt affaldsfraktion, bør du tjekke din kommunes anvisninger. Mange typer affald kan afleveres på genbrugspladsen eller via særlige indsamlingsordninger. Farligt affald bør aldrig smides i restaffald.</string>
+
+    <string name="q2">Hvad gør jeg, hvis appen ikke kan finde affaldet?</string>
+
+    <string name="a2">Hvis appen ikke kan finde affaldet, kan du prøve et mere almindeligt ord eller en anden stavemåde. Du kan også tjekke mit-affald.dk, din kommunes hjemmeside eller spørge på den lokale genbrugsplads.</string>
+
+    <string name="q3">Hvorfor får jeg ikke tømt min affaldsbeholder?</string>
+
+    <string name="a3">Hvis din affaldsbeholder ikke er blevet tømt som forventet, skal du kontakte din kommune eller dit lokale affaldsselskab. De kan oplyse om tømningsdage, fejlmeldinger og lokale regler.</string>
+
+    <string name="q4">Skal appen bruge mit telefonkamera?</string>
+
+    <string name="a4">Nej. Den nuværende version af appen bruger ikke kameraet. Du kan søge efter affald direkte i søgefeltet.</string>
+
+    <string name="q5">Kan jeg hjælpe med at tilføje affaldsgenstande i appen?</string>
+
+    <string name="a5">Ja. Hvis du opdager en affaldsgenstand, der mangler eller er forkert, må du meget gerne kontakte mig på info@simplecode.dk, så databasen kan blive forbedret.</string>
+
+    <string name="q6">Hvorfor ligner piktogrammerne ikke altid dem på mine beholdere?</string>
+
+    <string name="a6">Piktogrammer kan variere mellem kommuner, beholdere og emballager. Appen bruger piktogrammer som visuel hjælp, men du bør altid følge teksten og din kommunes lokale anvisninger, hvis der er forskel.</string>
+
+    <string name="q7">Kan appen bruges i alle kommuner?</string>
+
+    <string name="a7">Appen kan bruges som generel sorteringsguide i hele Danmark. Der kan dog være lokale forskelle i beholdere, indsamlingsordninger og afleveringssteder, så kommunens egne regler gælder altid først.</string>
+
+    <string name="q8">Hvordan håndterer jeg store genstande eller møbler, jeg ønsker at smide ud?</string>
+
+    <string name="a8">Store genstande og møbler skal som regel afleveres på genbrugspladsen eller håndteres som storskrald. Nogle kommuner tilbyder faste afhentningsdage eller bestilling af afhentning. Tjek derfor reglerne for storskrald i din kommune.</string>
+
+    <string name="q9">Hvilket flydende affald må jeg hælde i vasken?</string>
+
+    <string name="a9">Som udgangspunkt bør du kun hælde små mængder almindelige vandbaserede væsker i vasken. Undgå fedt, olie, maling, opløsningsmidler, kemikalier, stearin, kaffegrums og andet, der kan skade afløb, renseanlæg eller miljø.</string>
+
+    <string name="q10">Hvor kan jeg finde opdaterede oplysninger om affaldssortering og regler i min kommune?</string>
+
+    <string name="a10">Du kan finde opdaterede oplysninger på din kommunes hjemmeside, hos dit lokale affaldsselskab eller på borger.dk. Du kan også bruge mit-affald.dk til at finde links og kontaktoplysninger for mange kommuner.</string>
+
+    <string name="baggrund_for_appen_overskrift">Baggrund for appen</string>
+    <string name="hvordan_appen_virker_overskrift">Hvordan appen virker</string>
+    <string name="kontaktoplysninger_overskrift">Kontaktoplysninger</string>
+    <string name="privatlivspolitik_overskrift">Privatlivspolitik</string>
+    <string name="qa_overskrift">Spørgsmål og svar</string>
+    <string name="vilkår_og_betingelser_overskrift">Vilkår og betingelser</string>
+    <string name="tomt_søgefelt">Skriv venligst noget i søgefeltet</string>
+    <string name="affald_ikke_fundet_med_forslag">Vi fandt ikke "%1$s".\n\nMente du "%2$s"?</string>
+    <string name="affald_ikke_fundet_uden_forslag">Vi fandt ikke "%1$s". Prøv et mere almindeligt ord eller en anden stavemåde.</string>
+    <string name="proev_en_af_disse_soegninger">Prøv en af disse søgninger:</string>
+    <string name="example_pizzabakke">Pizzabakke</string>
+    <string name="example_batteri">Batteri</string>
+    <string name="example_kaffefilter">Kaffefilter</string>
+    <string name="seneste_soegninger">Seneste søgninger</string>
+    <string name="seneste_soegninger_tom">Dine seneste søgninger vises her, når du har brugt søgefeltet.</string>
+    <string name="kommuner">Kommuner</string>
+    <string name="kommuner_intro">Find vejledende information, kontaktoplysninger og links til officielle kommunale kilder. Appen er uafhængig og repræsenterer ikke en kommune eller offentlig myndighed.</string>
+    <string name="indtast_kommune">Indtast kommune</string>
+    <string name="kommuner_kunne_ikke_indlaeses">Kommunedata kunne ikke indlæses.</string>
+    <string name="kommunens_adresse">Kommunens adresse</string>
+    <string name="email_label">E-mail</string>
+    <string name="hjemmeside_label">Hjemmeside</string>
+    <string name="om_kommunen">Om kommunen</string>
+    <string name="kommunens_affaldsregler">Kommunens affaldsregler</string>
+    <string name="velkommen_til_mit_affald">Velkommen til Affaldsguide Danmark</string>
+    <string name="copyright">Ejet af Simple Web | CVR: 41279664 | Copyright 2026</string>
+    <string name="menu1_om_appen">Om appen</string>
+    <string name="menu_2_kontaktinformation">Kontaktinformation</string>
+    <string name="menu_3_spørgsmål_og_svar">Spørgsmål og svar</string>
+    <string name="menu_4_privatlivspolitik">Privatlivspolitik</string>
+    <string name="menu_5_vilkår_og_betingelser">Vilkår og betingelser</string>
+    <string name="affaldsfraktioner">Affaldsfraktioner</string>
+    <string name="affaldsfraktioner_overskrift">Affaldsfraktioner</string>
+    <string name="affaldsfraktioner_kunne_ikke_indlaeses">Affaldsfraktionerne kunne ikke indlæses. Prøv at genstarte appen, eller kontakt info@simplecode.dk hvis problemet fortsætter.</string>
+    <string name="nej_tak">NEJ TAK</string>
+    <string name="ja_tak">JA TAK</string>
+    <string name="indtast_dit_affald_i_s_gefeltet">Indtast dit affald i søgefeltet</string>
+    <string name="information_icon">Information-icon</string>
+    <string name="sprog">Sprog</string>
+    <string name="sprog_intro">Vælg hvilket sprog appen skal bruge.</string>
+    <string name="dansk">Dansk</string>
+    <string name="engelsk">English</string>
+    <string name="bottom_soeg">Søg</string>
+    <string name="bottom_fraktioner">Fraktioner</string>
+    <string name="bottom_kommuner">Kommuner</string>
+    <string name="bottom_mere">Mere</string>
+    <string name="mente_du_prefix">Mente du </string>
+    <string name="laes_mere_om_affaldet">Læs mere om affaldet</string>
+    <string name="skjul_beskrivelse">Skjul beskrivelse</string>
+    <string name="begynd_med_det_samme">Begynd med det samme</string>
+</resources>

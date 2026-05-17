@@ -1,0 +1,1014 @@
+{
+  "da": {
+    "Madaffald": {
+      "summaryTitle": "Kort fortalt",
+      "summary": "Madaffald er spiselige rester og rå madrester uden emballage. Det kan blive til biogas og gødning, hvis det holdes fri for plast, metal, glas og andet restaffald.",
+      "mistakesTitle": "Typiske fejl",
+      "mistakes": [
+        "Mad i emballage skal pakkes ud først. Emballagen sorteres for sig.",
+        "Plastposer, foliebakker, glas og metal må ikke i madaffald.",
+        "Kattegrus, dyrestrøelse og hundeposer er ikke madaffald.",
+        "Større mængder flydende mad eller olie skal håndteres efter kommunens regler."
+      ],
+      "cleanDirtyTitle": "Rent eller beskidt?",
+      "cleanRuleTitle": "Madaffald må gerne være beskidt",
+      "cleanRule": "Madrester, skræller, kaffegrums, teblade, æggeskaller og mindre ben må normalt gerne komme i madaffald, selv om det er vådt eller snasket.",
+      "dirtyRuleTitle": "Men det skal være uden emballage",
+      "dirtyRule": "Hvis maden stadig ligger i plast, glas, metal, pap eller anden emballage, skal emballagen fjernes og sorteres separat.",
+      "municipalityTitle": "Tjek lokale regler",
+      "municipalityNote": "Madaffaldsordninger kan variere lidt fra kommune til kommune, især for poser, køkkenrulle, servietter, fritureolie og sommerhuse.",
+      "municipalityLinkText": "Find din kommune",
+      "faqTitle": "Ofte stillede spørgsmål om madaffald",
+      "faqs": [
+        {
+          "question": "Må kaffefiltre komme i madaffald?",
+          "answer": "Ja, kaffefiltre med kaffegrums må som regel gerne komme i madaffald, fordi både filter og kaffegrums kan behandles sammen med det organiske affald."
+        },
+        {
+          "question": "Må mad i emballage komme i madaffald?",
+          "answer": "Nej. Maden skal tages ud af emballagen først. Plast, glas, metal, pap og mad- og drikkekartoner skal sorteres i deres egne fraktioner."
+        },
+        {
+          "question": "Må køkkenrulle og servietter komme i madaffald?",
+          "answer": "Det afhænger af kommunen. Nogle ordninger accepterer små mængder køkkenrulle eller servietter med madrester, mens andre ikke gør."
+        },
+        {
+          "question": "Må knogler og skaller komme i madaffald?",
+          "answer": "Mindre knogler, æggeskaller og skaller fra frugt og grønt kan normalt komme i madaffald. Store knogler kan i nogle kommuner skulle i restaffald."
+        },
+        {
+          "question": "Hvorfor skal madaffald sorteres?",
+          "answer": "Når madaffald sorteres korrekt, kan det bruges til biogas og gødning i stedet for at ende som restaffald til forbrænding."
+        }
+      ]
+    },
+    "Pap": {
+      "summaryTitle": "Kort fortalt",
+      "summary": "Pap skal være rent, tørt og tømt for indhold. Papkasser, paprør og papemballage kan genanvendes, når plast, flamingo, metal og madrester er fjernet.",
+      "mistakesTitle": "Typiske fejl",
+      "mistakes": [
+        "Fedtede pizzabakker og pap med madrester skal normalt ikke i pap.",
+        "Flamingo, bobleplast og plastindlæg skal fjernes og sorteres for sig.",
+        "Vådt eller meget beskidt pap kan ødelægge kvaliteten af genanvendelsen.",
+        "Papkrus og lamineret pap kan ofte ikke genanvendes som almindeligt pap."
+      ],
+      "cleanDirtyTitle": "Rent eller beskidt?",
+      "cleanRuleTitle": "Rent og tørt pap kan genanvendes",
+      "cleanRule": "Papkasser, bølgepap, paprør og tør papemballage må normalt komme i pap, når de er tømt og foldet sammen.",
+      "dirtyRuleTitle": "Beskidt eller vådt pap skal sorteres anderledes",
+      "dirtyRule": "Pap med fedt, madrester, væske eller plastbelægning skal ofte i restaffald. Hvis kun en lille del er beskidt, kan den rives af, så resten kan sorteres som pap.",
+      "municipalityTitle": "Tjek lokale regler",
+      "municipalityNote": "Kommuner kan have forskellige regler for pizzabakker, papkrus, drikkekartoner og hvor store papkasser må være ved husstanden.",
+      "municipalityLinkText": "Find din kommune",
+      "faqTitle": "Ofte stillede spørgsmål om pap",
+      "faqs": [
+        {
+          "question": "Må pizzabakker komme i pap?",
+          "answer": "Kun hvis de er rene og tørre. Fedtede pizzabakker eller pap med madrester skal normalt i restaffald, fordi fedt og mad kan forringe genanvendelsen."
+        },
+        {
+          "question": "Skal tape og labels fjernes fra papkasser?",
+          "answer": "Små mængder tape og labels er som regel okay. Store plastdele, flamingo, plastindlæg og metal skal fjernes og sorteres separat."
+        },
+        {
+          "question": "Skal pap foldes sammen?",
+          "answer": "Ja, pap bør foldes eller skæres sammen, så det fylder mindre i beholderen og kan håndteres bedre ved indsamling."
+        },
+        {
+          "question": "Er mad- og drikkekartoner pap?",
+          "answer": "Nej. Mad- og drikkekartoner er en særskilt affaldstype i mange kommuner, fordi de består af flere materialer."
+        },
+        {
+          "question": "Må vådt pap komme i pap?",
+          "answer": "Nej, vådt pap skal normalt ikke i papfraktionen. Det kan svække fibrene og forringe kvaliteten af det pap, der skal genanvendes."
+        }
+      ]
+    },
+    "Farligt affald": {
+      "summaryTitle": "Kort fortalt",
+      "summary": "Farligt affald er affald, der kan skade mennesker, miljø eller affaldsanlæg, hvis det smides forkert ud. Det gælder fx kemikalier, maling, batterier, spraydåser, elpærer og produkter med faresymboler.",
+      "mistakesTitle": "Typiske fejl",
+      "mistakes": [
+        "Farligt affald må ikke hældes i afløbet eller smides i restaffald.",
+        "Kemikalier og rengøringsmidler skal afleveres i original emballage, hvis det er muligt.",
+        "Batterier, elpærer og elektronik skal ikke blandes med almindeligt affald.",
+        "Medicinrester skal normalt afleveres på apoteket, ikke i miljøkassen."
+      ],
+      "cleanDirtyTitle": "Sikkert eller risikabelt?",
+      "cleanRuleTitle": "Små mængder kan ofte afleveres lokalt",
+      "cleanRule": "Mindre ting som batterier, små spraydåser, neglelak, malingrester og kemikalier kan ofte afleveres via kommunens miljøkasse, miljøskab eller genbrugsplads.",
+      "dirtyRuleTitle": "Bland aldrig farligt affald",
+      "dirtyRule": "Farligt affald skal holdes adskilt og lukkes forsvarligt. Bland ikke kemikalier, og skriv på emballagen, hvis du ved, hvad den indeholder.",
+      "municipalityTitle": "Tjek lokale regler",
+      "municipalityNote": "Kommuner har forskellige ordninger for miljøkasser, miljøskabe, afhentning, apoteksordninger, asbest, fyrværkeri og større mængder farligt affald.",
+      "municipalityLinkText": "Find din kommune",
+      "faqTitle": "Ofte stillede spørgsmål om farligt affald",
+      "faqs": [
+        {
+          "question": "Hvad er farligt affald?",
+          "answer": "Farligt affald er affald, der kan være giftigt, ætsende, brandfarligt, eksplosivt eller miljøskadeligt. Det kan fx være maling, kemikalier, batterier, spraydåser, elpærer og pesticider."
+        },
+        {
+          "question": "Må farligt affald komme i restaffald?",
+          "answer": "Nej. Farligt affald skal afleveres via kommunens ordning, fx miljøkasse, miljøskab, genbrugsplads eller et særligt indsamlingssted."
+        },
+        {
+          "question": "Hvor skal medicinrester afleveres?",
+          "answer": "Medicinrester skal normalt afleveres på apoteket. Emballage uden medicinrester sorteres efter materialet, hvis den er tom."
+        },
+        {
+          "question": "Hvad gør jeg med ukendte kemikalier?",
+          "answer": "Aflever dem som farligt affald og bland dem ikke med andet. Hvis du kender indholdet, så skriv det tydeligt på beholderen."
+        },
+        {
+          "question": "Er elektronik farligt affald?",
+          "answer": "Elektronik er normalt en særskilt affaldstype, men kan indeholde miljøskadelige stoffer og batterier. Det skal derfor afleveres via elektronikordningen eller på genbrugspladsen."
+        }
+      ]
+    },
+    "Tekstilaffald": {
+      "summaryTitle": "Kort fortalt",
+      "summary": "Tekstilaffald er tøj og tekstiler, der ikke kan bruges af andre. Det skal være tørt og uden maling, olie, sprit, kemikalier eller mug, så fibrene stadig kan genanvendes.",
+      "mistakesTitle": "Typiske fejl",
+      "mistakes": [
+        "Brugbart tøj skal normalt afleveres til genbrug, ikke som tekstilaffald.",
+        "Vådt, jordslået eller muggent tekstil skal ikke i tekstilaffald.",
+        "Sko, tasker og bælter hører ofte til andre ordninger end tekstilaffald.",
+        "Tekstiler med maling, olie, sprit eller kemikalier skal sorteres efter kommunens regler."
+      ],
+      "cleanDirtyTitle": "Tørt eller forurenet?",
+      "cleanRuleTitle": "Tørt og ødelagt tekstil kan genanvendes",
+      "cleanRule": "Slidt, hullet eller plettet tøj, lagner, håndklæder, gardiner og klude kan normalt komme i tekstilaffald, hvis det er tørt og uden farlige rester.",
+      "dirtyRuleTitle": "Vådt eller kemisk forurenet tekstil skal holdes ude",
+      "dirtyRule": "Våde, mugne, imprægnerede eller kemisk forurenede tekstiler kan ødelægge andre tekstiler og skal typisk i restaffald eller afleveres på genbrugspladsen.",
+      "municipalityTitle": "Tjek lokale regler",
+      "municipalityNote": "Kommuner kan have forskellige ordninger for tekstilposer, beholdere, genbrugsbutikker, sko, dyner, puder og tekstiler med imprægnering.",
+      "municipalityLinkText": "Find din kommune",
+      "faqTitle": "Ofte stillede spørgsmål om tekstilaffald",
+      "faqs": [
+        {
+          "question": "Hvad er tekstilaffald?",
+          "answer": "Tekstilaffald er tøj og tekstiler, der ikke længere kan bruges af andre, fx fordi det er hullet, slidt, revet eller plettet."
+        },
+        {
+          "question": "Skal brugbart tøj i tekstilaffald?",
+          "answer": "Nej. Tøj, sko og tekstiler, der stadig kan bruges, bør afleveres til genbrug, donation eller salg, så de får længere levetid."
+        },
+        {
+          "question": "Må vådt tøj komme i tekstilaffald?",
+          "answer": "Nej. Tekstilaffald skal være tørt. Vådt eller jordslået tekstil kan mugne og ødelægge andre tekstiler i indsamlingen."
+        },
+        {
+          "question": "Må sko og tasker komme i tekstilaffald?",
+          "answer": "Det afhænger af kommunen. Brugbare sko og tasker bør afleveres til genbrug, mens ødelagte sko og tasker ofte skal i restaffald eller på genbrugspladsen."
+        },
+        {
+          "question": "Hvad sker der med tekstilaffald?",
+          "answer": "Tekstilaffald sorteres og kan blandt andet bruges til nye fibre, isolering, fyldmaterialer eller industriklude, hvis kvaliteten er god nok."
+        }
+      ]
+    },
+    "Plast": {
+      "summaryTitle": "Kort fortalt",
+      "summary": "Plast skal typisk være tomt og skrabet rent. Plastbakker, bøtter, låg, poser og folie kan genanvendes, når de ikke indeholder store mængder mad, væske, metalfilm eller farlige rester.",
+      "mistakesTitle": "Typiske fejl",
+      "mistakes": [
+        "Plastemballage med kemikalier, maling eller farligt indhold skal ikke i plast.",
+        "Chipsposer, slikposer og poser med metalfilm skal ofte i restaffald.",
+        "PVC, gummistøvler, regntøj, haveslanger og luftmadrasser hører typisk ikke til i plastbeholderen.",
+        "Elektronik, batterier og plastlegetøj med elektronik skal sorteres særskilt."
+      ],
+      "cleanDirtyTitle": "Tømt eller forurenet?",
+      "cleanRuleTitle": "Tømt plastemballage kan genanvendes",
+      "cleanRule": "Plastemballage behøver ikke være skinnende ren, men den skal være tømt og skrabet fri for større mængder madrester, væske eller produktrester.",
+      "dirtyRuleTitle": "Forurenet plast skal holdes ude",
+      "dirtyRule": "Plast med kemikalier, olie, maling, medicinrester eller metalfolie kan forstyrre genanvendelsen og skal sorteres efter kommunens regler.",
+      "municipalityTitle": "Tjek lokale regler",
+      "municipalityNote": "Kommuner kan have forskellige regler for hård plast, blød plast, plastfolie, sort plast, PVC, plastlegetøj og om plast blandes med metal eller mad- og drikkekartoner.",
+      "municipalityLinkText": "Find din kommune",
+      "faqTitle": "Ofte stillede spørgsmål om plast",
+      "faqs": [
+        {
+          "question": "Skal plast vaskes, før det sorteres?",
+          "answer": "Nej, plast behøver normalt ikke vaskes helt rent. Det skal dog tømmes og skrabes fri for større mængder madrester, væske og produktrester."
+        },
+        {
+          "question": "Må chipsposer og slikposer komme i plast?",
+          "answer": "Ofte nej, især hvis posen har metalfilm på indersiden. Den type emballage skal typisk i restaffald, men regler kan variere lokalt."
+        },
+        {
+          "question": "Må plastlegetøj komme i plast?",
+          "answer": "Plastlegetøj uden elektronik kan i nogle kommuner sorteres som plast eller afleveres på genbrugspladsen. Legetøj med batterier eller elektronik skal sorteres som elektronik."
+        },
+        {
+          "question": "Må emballage fra medicin komme i plast?",
+          "answer": "Plastemballage med medicinrester skal normalt håndteres via apoteket eller som farligt affald. Tom emballage kan i nogle tilfælde sorteres efter materialet."
+        },
+        {
+          "question": "Hvad er forskellen på plast og mad- og drikkekartoner?",
+          "answer": "Mad- og drikkekartoner består typisk af flere materialer, blandt andet pap og plast, og har derfor ofte deres egen affaldsfraktion."
+        }
+      ]
+    },
+    "Restaffald": {
+      "summaryTitle": "Kort fortalt",
+      "summary": "Restaffald er det affald, der er tilbage, når genbrug, genanvendelse, madaffald, farligt affald, elektronik og særlige ordninger er sorteret fra. Det bør bruges som sidste løsning.",
+      "mistakesTitle": "Typiske fejl",
+      "mistakes": [
+        "Farligt affald, batterier og elektronik må ikke komme i restaffald.",
+        "Mad, papir, pap, plast, glas og metal skal sorteres fra, hvis din kommune har en ordning.",
+        "Større ting, byggeaffald og haveaffald hører typisk til på genbrugspladsen.",
+        "Skarpe genstande skal pakkes forsvarligt eller afleveres efter kommunens regler."
+      ],
+      "cleanDirtyTitle": "Sidste løsning eller forkert sortering?",
+      "cleanRuleTitle": "Restaffald er til det, der ikke kan sorteres bedre",
+      "cleanRule": "Hygiejneaffald, støvsugerposer, meget beskidt emballage, sammensatte småting og affald uden genanvendelsesmulighed kan typisk komme i restaffald.",
+      "dirtyRuleTitle": "Hold værdifuldt og farligt affald ude",
+      "dirtyRule": "Restaffald sendes normalt til forbrænding. Genanvendelige materialer og farligt affald skal derfor sorteres fra, så ressourcer udnyttes og skadelige stoffer håndteres korrekt.",
+      "municipalityTitle": "Tjek lokale regler",
+      "municipalityNote": "Kommuner kan have forskellige regler for aske, skarpe genstande, keramik, porcelæn, hygiejneaffald, småt brændbart og hvad der er for stort til restaffaldsbeholderen.",
+      "municipalityLinkText": "Find din kommune",
+      "faqTitle": "Ofte stillede spørgsmål om restaffald",
+      "faqs": [
+        {
+          "question": "Hvad er restaffald?",
+          "answer": "Restaffald er affald, der ikke kan genbruges, genanvendes eller afleveres i en særlig ordning. Det er det, der er tilbage, når de andre fraktioner er sorteret fra."
+        },
+        {
+          "question": "Hvad sker der med restaffald?",
+          "answer": "Restaffald sendes typisk til forbrænding, hvor energien udnyttes til el og varme. Det er dog bedre at genbruge og genanvende materialer, når det er muligt."
+        },
+        {
+          "question": "Må batterier komme i restaffald?",
+          "answer": "Nej. Batterier kan give brandfare og indeholde skadelige stoffer. De skal afleveres via batteriordningen, miljøkasse eller genbrugsplads."
+        },
+        {
+          "question": "Må keramik og porcelæn komme i restaffald?",
+          "answer": "Små mængder kan i nogle kommuner komme i restaffald, men større mængder skal ofte på genbrugspladsen. Det må ikke sorteres som glas."
+        },
+        {
+          "question": "Må aske komme i restaffald?",
+          "answer": "Kun hvis den er helt kold og pakket forsvarligt, og hvis kommunen tillader det. Varm aske kan give brandfare."
+        }
+      ]
+    },
+    "Småt elektronik": {
+      "summaryTitle": "Kort fortalt",
+      "summary": "Småt elektronik er udstyr med ledning, batteri eller solceller, som typisk er under 50 cm. Det kan indeholde både værdifulde metaller og skadelige stoffer og må ikke ende i restaffald.",
+      "mistakesTitle": "Typiske fejl",
+      "mistakes": [
+        "Batterier bør fjernes og sorteres separat, hvis det er muligt.",
+        "Større elektronik skal typisk afleveres på genbrugspladsen.",
+        "Lyskilder, pærer og lysstofrør hører normalt ikke til småt elektronik.",
+        "Elektronik må ikke smides i restaffald, selv om det er ødelagt."
+      ],
+      "cleanDirtyTitle": "Batteri eller apparat?",
+      "cleanRuleTitle": "Små apparater sorteres som småt elektronik",
+      "cleanRule": "Mobiltelefoner, fjernbetjeninger, kabler, elektriske tandbørster, små køkkenapparater og elektronisk legetøj kan normalt sorteres som småt elektronik.",
+      "dirtyRuleTitle": "Batterier og farlige dele skal håndteres rigtigt",
+      "dirtyRule": "Fjern løse batterier, hvis du kan gøre det sikkert. Hvis batteriet er indbygget, afleveres hele apparatet som elektronik, så batteriet kan håndteres forsvarligt.",
+      "municipalityTitle": "Tjek lokale regler",
+      "municipalityNote": "Kommuner kan have forskellige ordninger for miljøbokse, elektronikbeholdere, supermarkedsindsamling, afhentning og størrelsesgrænser for elektronik.",
+      "municipalityLinkText": "Find din kommune",
+      "faqTitle": "Ofte stillede spørgsmål om småt elektronik",
+      "faqs": [
+        {
+          "question": "Hvad er småt elektronik?",
+          "answer": "Småt elektronik er kasserede apparater og udstyr, der bruger strøm fra ledning, batteri eller solceller, fx telefoner, fjernbetjeninger, kabler og små køkkenapparater."
+        },
+        {
+          "question": "Må småt elektronik komme i restaffald?",
+          "answer": "Nej. Elektronik kan indeholde værdifulde materialer og miljøskadelige stoffer og skal afleveres via elektronikordningen eller på genbrugspladsen."
+        },
+        {
+          "question": "Skal batterier fjernes først?",
+          "answer": "Ja, hvis det kan gøres sikkert. Løse batterier sorteres som batterier. Hvis batteriet er indbygget, kan hele apparatet afleveres som elektronik."
+        },
+        {
+          "question": "Hvad hvis apparatet er større end 50 cm?",
+          "answer": "Større elektronik skal normalt afleveres på genbrugspladsen eller via kommunens ordning for stort elektronikaffald."
+        },
+        {
+          "question": "Er kabler småt elektronik?",
+          "answer": "Ja, kabler og opladere regnes normalt som småt elektronik og bør afleveres sammen med elektronikaffald."
+        }
+      ]
+    },
+    "Glas": {
+      "summaryTitle": "Kort fortalt",
+      "summary": "Glas er især tomme flasker og emballageglas uden pant. Glasset skal tømmes og skrabes rent, men behøver ikke vaskes grundigt.",
+      "mistakesTitle": "Typiske fejl",
+      "mistakes": [
+        "Porcelæn, keramik og stentøj må ikke sorteres som glas.",
+        "Spejle, vinduesglas og ovnfast glas har en anden sammensætning end emballageglas.",
+        "Elpærer, lysstofrør og lyskilder skal sorteres særskilt.",
+        "Kemikalieflasker og medicinglas kan kræve farligt affald, apotek eller genbrugsplads."
+      ],
+      "cleanDirtyTitle": "Emballageglas eller specialglas?",
+      "cleanRuleTitle": "Tomme flasker og glas kan genanvendes",
+      "cleanRule": "Glasflasker uden pant, syltetøjsglas, konservesglas, vitaminglas og glasskår fra emballageglas kan normalt sorteres som glas.",
+      "dirtyRuleTitle": "Andre glastyper skal holdes ude",
+      "dirtyRule": "Spejle, vinduesglas, keramik, porcelæn, ovnglas og lyskilder kan ødelægge genanvendelsen, fordi de smelter anderledes eller kræver særlig behandling.",
+      "municipalityTitle": "Tjek lokale regler",
+      "municipalityNote": "Kommuner kan have forskellige regler for drikkeglas, glasskår, låg på glas, medicinglas, spejle og om glas indsamles ved husstanden eller i kuber.",
+      "municipalityLinkText": "Find din kommune",
+      "faqTitle": "Ofte stillede spørgsmål om glas",
+      "faqs": [
+        {
+          "question": "Skal glas vaskes, før det sorteres?",
+          "answer": "Nej, glas behøver normalt ikke vaskes grundigt. Det skal bare tømmes og skrabes rent, så der ikke er større mængder mad eller væske tilbage."
+        },
+        {
+          "question": "Må låg blive siddende på glas?",
+          "answer": "Det afhænger af kommunen. Mange steder må låg gerne blive siddende eller sorteres som metal/plast, men lokale regler kan variere."
+        },
+        {
+          "question": "Må drikkeglas komme i glas?",
+          "answer": "Reglerne varierer. Nogle steder accepteres drikkeglas, mens andre kommuner vil have dem på genbrugspladsen eller i restaffald."
+        },
+        {
+          "question": "Må porcelæn og keramik komme i glas?",
+          "answer": "Nej. Porcelæn, keramik og stentøj må ikke i glas, fordi det har en anden sammensætning og kan ødelægge genanvendelsen."
+        },
+        {
+          "question": "Hvor skal elpærer og lysstofrør afleveres?",
+          "answer": "Elpærer, LED-pærer og lysstofrør skal normalt afleveres som lyskilder på genbrugspladsen eller efter kommunens særlige ordning."
+        }
+      ]
+    },
+    "Mad- og drikkekartoner": {
+      "summaryTitle": "Kort fortalt",
+      "summary": "Mad- og drikkekartoner er emballage fra fx mælk, yoghurt, juice, suppe, flåede tomater og bønner. De består af flere lag materialer og skal derfor sorteres særskilt.",
+      "mistakesTitle": "Typiske fejl",
+      "mistakes": [
+        "Mad- og drikkekartoner skal tømmes, men behøver normalt ikke vaskes grundigt.",
+        "Papkasser, æggebakker og almindelig papemballage er pap, ikke mad- og drikkekartoner.",
+        "Meget beskidte kartoner med større madrester kan forringe genanvendelsen.",
+        "Låg og plastdele skal håndteres efter kommunens lokale anvisninger."
+      ],
+      "cleanDirtyTitle": "Tømt eller beskidt?",
+      "cleanRuleTitle": "Tømte kartoner kan genanvendes",
+      "cleanRule": "Mælke-, yoghurt-, juice-, suppe- og tomatkartoner kan normalt sorteres som mad- og drikkekartoner, når de er tømt for indhold.",
+      "dirtyRuleTitle": "Store madrester skal fjernes",
+      "dirtyRule": "Kartoner med større mængder mad eller væske skal tømmes først. Hvis emballagen er meget beskidt eller muggen, kan den i nogle kommuner skulle i restaffald.",
+      "municipalityTitle": "Tjek lokale regler",
+      "municipalityNote": "Kommuner kan have forskellige regler for låg, skylning, sammenpresning og om mad- og drikkekartoner indsamles sammen med plast eller metal.",
+      "municipalityLinkText": "Find din kommune",
+      "faqTitle": "Ofte stillede spørgsmål om mad- og drikkekartoner",
+      "faqs": [
+        {
+          "question": "Er mælkekartoner pap?",
+          "answer": "Nej. Mælkekartoner består typisk af flere materialer, blandt andet karton og plast, og skal sorteres som mad- og drikkekartoner."
+        },
+        {
+          "question": "Skal kartoner skylles?",
+          "answer": "Normalt nej. De skal tømmes og skrabes fri for større madrester, men de behøver ikke vaskes grundigt."
+        },
+        {
+          "question": "Må låget blive siddende?",
+          "answer": "Det afhænger af kommunen. Nogle steder må låget blive siddende, mens andre anbefaler at sortere det separat som plast."
+        },
+        {
+          "question": "Er æggebakker mad- og drikkekartoner?",
+          "answer": "Nej. Æggebakker er normalt pap eller papir afhængigt af materialet og den lokale ordning."
+        },
+        {
+          "question": "Hvorfor har kartoner deres egen fraktion?",
+          "answer": "Fordi de ofte består af flere lag, fx karton, plast og nogle gange aluminium. Særskilt sortering gør det lettere at genanvende materialerne."
+        }
+      ]
+    },
+    "Metal": {
+      "summaryTitle": "Kort fortalt",
+      "summary": "Metal er fx dåser, låg, kapsler, alubakker, stanniol og mindre metaldele. Metal kan genanvendes mange gange og har stor miljøværdi, når det sorteres rigtigt.",
+      "mistakesTitle": "Typiske fejl",
+      "mistakes": [
+        "Spraydåser og beholdere med kemikalier må ikke sorteres som almindeligt metal.",
+        "Metalemballage skal tømmes og skrabes ren for større madrester.",
+        "Elektronik med metaldele skal sorteres som elektronik, ikke metal.",
+        "Kanyler og skarpe medicinske genstande skal afleveres efter særlige regler, ofte på apotek eller genbrugsplads."
+      ],
+      "cleanDirtyTitle": "Rent nok eller særligt affald?",
+      "cleanRuleTitle": "Tømt metal kan genanvendes",
+      "cleanRule": "Konservesdåser, øl- og sodavandsdåser uden pant, metallåg, kapsler, alubakker, stanniol, gryder, pander og små metaldele kan normalt sorteres som metal.",
+      "dirtyRuleTitle": "Kemikalier og trykbeholdere skal holdes ude",
+      "dirtyRule": "Metal med kemikalierester, maling, olie eller trykbeholdere som spraydåser kræver særlig håndtering, fordi de kan være farlige i den almindelige metalindsamling.",
+      "municipalityTitle": "Tjek lokale regler",
+      "municipalityNote": "Kommuner kan have forskellige regler for spraydåser, små metalgenstande, større metaldele, låg, alufolie og om metal indsamles sammen med plast eller kartoner.",
+      "municipalityLinkText": "Find din kommune",
+      "faqTitle": "Ofte stillede spørgsmål om metal",
+      "faqs": [
+        {
+          "question": "Skal metal vaskes, før det sorteres?",
+          "answer": "Nej, metal behøver normalt ikke vaskes grundigt. Det skal tømmes og skrabes rent, så der ikke er større madrester tilbage."
+        },
+        {
+          "question": "Må konservesdåser komme i metal?",
+          "answer": "Ja. Konservesdåser, metallåg, kapsler og alubakker kan normalt sorteres som metal, når de er tømt."
+        },
+        {
+          "question": "Hvor skal spraydåser afleveres?",
+          "answer": "Spraydåser skal ofte afleveres som farligt affald eller på genbrugspladsen, fordi de kan indeholde tryk og rester af kemikalier."
+        },
+        {
+          "question": "Må sølvpapir og alufolie sorteres som metal?",
+          "answer": "Ja, hvis det er tømt og uden større madrester. Meget beskidt folie kan dog i nogle kommuner skulle i restaffald."
+        },
+        {
+          "question": "Hvorfor er metal vigtigt at sortere?",
+          "answer": "Metal kan genanvendes igen og igen, og genanvendelse sparer store mængder energi og råstoffer sammenlignet med at udvinde nyt metal."
+        }
+      ]
+    },
+    "Batterier": {
+      "summaryTitle": "Kort fortalt",
+      "summary": "Batterier skal altid sorteres særskilt, fordi de kan indeholde værdifulde materialer, men også skadelige stoffer. De må ikke komme i restaffald eller almindelige beholdere.",
+      "mistakesTitle": "Typiske fejl",
+      "mistakes": [
+        "Batterier må aldrig smides i restaffald, plast, metal eller elektronikbeholderen.",
+        "Løse batterier fra legetøj, fjernbetjeninger og køkkenudstyr skal tages ud og sorteres for sig.",
+        "Store batterier fra biler, elcykler og løbehjul skal normalt afleveres på genbrugspladsen.",
+        "Beskadigede eller varme batterier skal håndteres ekstra forsigtigt og efter kommunens anvisninger."
+      ],
+      "cleanDirtyTitle": "Almindeligt eller særligt batteri?",
+      "cleanRuleTitle": "Små batterier afleveres i batteriordningen",
+      "cleanRule": "Batterier fra fjernbetjeninger, legetøj, lommelygter, høreapparater og små apparater kan normalt afleveres i batteribokse, miljøkasser, butikker eller på genbrugspladsen.",
+      "dirtyRuleTitle": "Store og beskadigede batterier kræver særlig håndtering",
+      "dirtyRule": "Bilbatterier, cykelbatterier, løbehjulsbatterier, powerbanks og beskadigede lithiumbatterier skal typisk afleveres på genbrugspladsen eller efter kommunens særlige ordning.",
+      "municipalityTitle": "Tjek lokale regler",
+      "municipalityNote": "Kommuner kan have forskellige ordninger for batteriposer, miljøkasser, afhentning, butikker og større batterier fra transportmidler eller elværktøj.",
+      "municipalityLinkText": "Find din kommune",
+      "faqTitle": "Ofte stillede spørgsmål om batterier",
+      "faqs": [
+        {
+          "question": "Må batterier komme i restaffald?",
+          "answer": "Nej. Batterier kan indeholde skadelige stoffer og kan give brandfare, især lithiumbatterier. De skal afleveres via batteriordningen."
+        },
+        {
+          "question": "Skal batterier tages ud af elektronik?",
+          "answer": "Ja, hvis det kan gøres sikkert. Løse batterier sorteres som batterier, mens apparater med indbyggede batterier normalt afleveres som elektronik."
+        },
+        {
+          "question": "Hvor afleverer jeg almindelige små batterier?",
+          "answer": "Små batterier kan ofte afleveres i batteribokse, miljøkasser, butikker med batteriindsamling eller på genbrugspladsen."
+        },
+        {
+          "question": "Hvor skal bilbatterier afleveres?",
+          "answer": "Bilbatterier og andre store akkumulatorer skal normalt afleveres på genbrugspladsen eller hos en forhandler, der tager imod dem."
+        },
+        {
+          "question": "Hvad gør jeg med et beskadiget batteri?",
+          "answer": "Et beskadiget, oppustet eller varmt batteri kan være farligt. Læg det ikke i almindelige beholdere, men kontakt kommunen eller genbrugspladsen for korrekt håndtering."
+        }
+      ]
+    },
+    "Papir": {
+      "summaryTitle": "Kort fortalt",
+      "summary": "Papir er fx aviser, reklamer, magasiner, breve, kuverter og kontorpapir. Det skal være tørt og nogenlunde rent, så papirfibrene kan genanvendes til nye papirprodukter.",
+      "mistakesTitle": "Typiske fejl",
+      "mistakes": [
+        "Vådt, fedtet eller beskidt papir skal ikke sorteres som papir.",
+        "Bagepapir, madpapir og servietter hører normalt ikke til i papirgenanvendelsen.",
+        "Gavepapir kan indeholde plast, metalfolie eller glitter og skal ofte sorteres anderledes.",
+        "Bøger, ringbind og lamineret papir kan kræve genbrugsplads eller anden sortering."
+      ],
+      "cleanDirtyTitle": "Rent og tørt eller forurenet?",
+      "cleanRuleTitle": "Rent og tørt papir kan genanvendes",
+      "cleanRule": "Aviser, reklamer, breve, kuverter, kontorpapir, magasiner, brochurer, notesbøger uden hårde omslag og papirposer kan normalt sorteres som papir.",
+      "dirtyRuleTitle": "Vådt og fedtet papir ødelægger kvaliteten",
+      "dirtyRule": "Papir med mad, fedt, væske, voks, plastbelægning eller store mængder tape kan forringe genanvendelsen og skal ofte sorteres som restaffald eller efter den konkrete anvisning.",
+      "municipalityTitle": "Tjek lokale regler",
+      "municipalityNote": "Kommuner kan have forskellige regler for gavepapir, kuverter med rude, bøger, makuleret papir, papirposer og om papir indsamles sammen med pap.",
+      "municipalityLinkText": "Find din kommune",
+      "faqTitle": "Ofte stillede spørgsmål om papir",
+      "faqs": [
+        {
+          "question": "Skal papir være helt rent?",
+          "answer": "Det behøver ikke være perfekt, men det skal være tørt og fri for større mængder mad, fedt og væske, så fibrene kan genanvendes."
+        },
+        {
+          "question": "Må kuverter med rude komme i papir?",
+          "answer": "Ofte ja, men regler kan variere. Mange sorteringsanlæg kan håndtere små plastvinduer, mens nogle kommuner anbefaler at følge lokale regler."
+        },
+        {
+          "question": "Hvor skal bagepapir sorteres?",
+          "answer": "Bagepapir er ofte behandlet med belægning og fedt og skal normalt ikke i papir. Det sorteres typisk som restaffald."
+        },
+        {
+          "question": "Må gavepapir komme i papir?",
+          "answer": "Ikke altid. Gavepapir kan indeholde plast, metalfolie, farver eller glitter, som kan forringe genanvendelsen. Tjek den konkrete sorteringsanvisning."
+        },
+        {
+          "question": "Er papir og pap det samme?",
+          "answer": "Nej. Papir og pap genanvendes ofte forskelligt. Papkasser og kraftigt karton sorteres normalt som pap, mens aviser og kontorpapir sorteres som papir."
+        }
+      ]
+    }
+  },
+  "en": {
+    "Madaffald": {
+      "summaryTitle": "In short",
+      "summary": "Food waste is edible leftovers and raw food scraps without packaging. In Denmark it can be turned into biogas and fertiliser when kept free from plastic, metal, glass and residual waste.",
+      "mistakesTitle": "Common mistakes",
+      "mistakes": [
+        "Food in packaging must be unpacked first. Sort the packaging separately.",
+        "Plastic bags, foil trays, glass and metal do not belong in food waste.",
+        "Cat litter, animal bedding and dog waste bags are not food waste.",
+        "Large amounts of liquid food or cooking oil must follow local municipal rules."
+      ],
+      "cleanDirtyTitle": "Clean or dirty?",
+      "cleanRuleTitle": "Food waste may be wet or messy",
+      "cleanRule": "Leftovers, peelings, coffee grounds, tea leaves, eggshells and small bones can usually go in food waste, even when wet or messy.",
+      "dirtyRuleTitle": "But it must be unpackaged",
+      "dirtyRule": "If the food is still in plastic, glass, metal, cardboard or other packaging, remove the packaging and sort it separately.",
+      "municipalityTitle": "Check local rules",
+      "municipalityNote": "Food-waste schemes can vary slightly between Danish municipalities, especially for bags, paper towels, napkins, cooking oil and holiday homes.",
+      "municipalityLinkText": "Find your municipality",
+      "faqTitle": "FAQ about food waste",
+      "faqs": [
+        {
+          "question": "Can coffee filters go in food waste?",
+          "answer": "Yes, coffee filters with coffee grounds can usually go in food waste because both the filter and grounds can be treated with organic waste."
+        },
+        {
+          "question": "Can packaged food go in food waste?",
+          "answer": "No. Food must be removed from packaging first. Plastic, glass, metal, cardboard and food and beverage cartons must be sorted separately."
+        },
+        {
+          "question": "Can paper towels and napkins go in food waste?",
+          "answer": "It depends on the municipality. Some schemes accept small amounts of paper towels or napkins with food residue, while others do not."
+        },
+        {
+          "question": "Can bones and shells go in food waste?",
+          "answer": "Small bones, eggshells and fruit or vegetable peelings can normally go in food waste. Large bones may belong in residual waste in some municipalities."
+        },
+        {
+          "question": "Why sort food waste?",
+          "answer": "When food waste is sorted correctly, it can be used for biogas and fertiliser instead of being sent to incineration as residual waste."
+        }
+      ]
+    },
+    "Pap": {
+      "summaryTitle": "In short",
+      "summary": "Cardboard should be clean, dry and empty. Cardboard boxes, tubes and packaging can be recycled when plastic, polystyrene, metal and food residue are removed.",
+      "mistakesTitle": "Common mistakes",
+      "mistakes": [
+        "Greasy pizza boxes and cardboard with food residue usually do not belong in cardboard.",
+        "Polystyrene, bubble wrap and plastic inserts must be removed and sorted separately.",
+        "Wet or very dirty cardboard can reduce the quality of recycling.",
+        "Paper cups and laminated cardboard often cannot be recycled as ordinary cardboard."
+      ],
+      "cleanDirtyTitle": "Clean or dirty?",
+      "cleanRuleTitle": "Clean and dry cardboard can be recycled",
+      "cleanRule": "Cardboard boxes, corrugated cardboard, cardboard tubes and dry cardboard packaging can usually go in cardboard when empty and flattened.",
+      "dirtyRuleTitle": "Dirty or wet cardboard must be sorted differently",
+      "dirtyRule": "Cardboard with grease, food residue, liquid or plastic coating often belongs in residual waste. If only a small part is dirty, tear it off and sort the clean part as cardboard.",
+      "municipalityTitle": "Check local rules",
+      "municipalityNote": "Danish municipalities may have different rules for pizza boxes, paper cups, food and beverage cartons and how large cardboard boxes may be for household collection.",
+      "municipalityLinkText": "Find your municipality",
+      "faqTitle": "FAQ about cardboard",
+      "faqs": [
+        {
+          "question": "Can pizza boxes go in cardboard?",
+          "answer": "Only if they are clean and dry. Greasy pizza boxes or cardboard with food residue usually belong in residual waste because grease and food can reduce recycling quality."
+        },
+        {
+          "question": "Do tape and labels need to be removed from cardboard boxes?",
+          "answer": "Small amounts of tape and labels are usually acceptable. Large plastic parts, polystyrene, plastic inserts and metal must be removed and sorted separately."
+        },
+        {
+          "question": "Should cardboard be flattened?",
+          "answer": "Yes. Cardboard should be folded or cut down so it takes up less space in the bin and is easier to handle during collection."
+        },
+        {
+          "question": "Are food and beverage cartons cardboard?",
+          "answer": "No. Food and beverage cartons are a separate waste type in many Danish municipalities because they are made from several materials."
+        },
+        {
+          "question": "Can wet cardboard go in cardboard recycling?",
+          "answer": "No, wet cardboard usually does not belong in the cardboard fraction. It can weaken the fibres and reduce the quality of cardboard recycling."
+        }
+      ]
+    },
+    "Farligt affald": {
+      "summaryTitle": "In short",
+      "summary": "Hazardous waste is waste that can harm people, the environment or waste facilities if discarded incorrectly. This includes chemicals, paint, batteries, spray cans, light bulbs and products with hazard symbols.",
+      "mistakesTitle": "Common mistakes",
+      "mistakes": [
+        "Hazardous waste must not be poured down the drain or placed in residual waste.",
+        "Chemicals and cleaning products should be delivered in their original packaging when possible.",
+        "Batteries, light bulbs and electronics must not be mixed with ordinary waste.",
+        "Medicine residues usually belong at the pharmacy, not in the hazardous-waste box."
+      ],
+      "cleanDirtyTitle": "Safe or risky?",
+      "cleanRuleTitle": "Small amounts can often be delivered locally",
+      "cleanRule": "Small items such as batteries, small spray cans, nail polish, paint residues and chemicals can often be delivered through the municipality’s red box, hazardous-waste cabinet or recycling centre.",
+      "dirtyRuleTitle": "Never mix hazardous waste",
+      "dirtyRule": "Hazardous waste must be kept separate and closed securely. Do not mix chemicals, and label the container if you know what it contains.",
+      "municipalityTitle": "Check local rules",
+      "municipalityNote": "Danish municipalities have different schemes for hazardous-waste boxes, cabinets, collection, pharmacy drop-off, asbestos, fireworks and larger amounts of hazardous waste.",
+      "municipalityLinkText": "Find your municipality",
+      "faqTitle": "FAQ about hazardous waste",
+      "faqs": [
+        {
+          "question": "What is hazardous waste?",
+          "answer": "Hazardous waste is waste that may be toxic, corrosive, flammable, explosive or harmful to the environment. Examples include paint, chemicals, batteries, spray cans, light bulbs and pesticides."
+        },
+        {
+          "question": "Can hazardous waste go in residual waste?",
+          "answer": "No. Hazardous waste must be delivered through the municipality’s scheme, such as a hazardous-waste box, cabinet, recycling centre or dedicated collection point."
+        },
+        {
+          "question": "Where should medicine residues be delivered?",
+          "answer": "Medicine residues should normally be returned to a pharmacy. Empty packaging without medicine residue is sorted by material."
+        },
+        {
+          "question": "What should I do with unknown chemicals?",
+          "answer": "Deliver them as hazardous waste and do not mix them with anything else. If you know the contents, write it clearly on the container."
+        },
+        {
+          "question": "Is electronics hazardous waste?",
+          "answer": "Electronics is usually a separate waste type, but it can contain environmentally harmful substances and batteries. It should be delivered through the electronics scheme or at a recycling centre."
+        }
+      ]
+    },
+    "Tekstilaffald": {
+      "summaryTitle": "In short",
+      "summary": "Textile waste is clothing and textiles that others can no longer use. It must be dry and free from paint, oil, spirits, chemicals or mould so the fibres can still be recycled.",
+      "mistakesTitle": "Common mistakes",
+      "mistakes": [
+        "Usable clothing should normally be donated for reuse, not placed in textile waste.",
+        "Wet, mouldy or mildewed textiles do not belong in textile waste.",
+        "Shoes, bags and belts often belong in other schemes than textile waste.",
+        "Textiles with paint, oil, spirits or chemicals must follow local municipal rules."
+      ],
+      "cleanDirtyTitle": "Dry or contaminated?",
+      "cleanRuleTitle": "Dry and damaged textiles can be recycled",
+      "cleanRule": "Worn, torn or stained clothing, sheets, towels, curtains and cloths can usually go in textile waste if dry and free from hazardous residues.",
+      "dirtyRuleTitle": "Wet or chemically contaminated textiles must be kept out",
+      "dirtyRule": "Wet, mouldy, impregnated or chemically contaminated textiles can ruin other textiles and usually belong in residual waste or at a recycling centre.",
+      "municipalityTitle": "Check local rules",
+      "municipalityNote": "Danish municipalities may have different schemes for textile bags, bins, reuse shops, shoes, duvets, pillows and impregnated textiles.",
+      "municipalityLinkText": "Find your municipality",
+      "faqTitle": "FAQ about textile waste",
+      "faqs": [
+        {
+          "question": "What is textile waste?",
+          "answer": "Textile waste is clothing and textiles that others can no longer use, for example because they are torn, worn out, ripped or stained."
+        },
+        {
+          "question": "Should usable clothes go in textile waste?",
+          "answer": "No. Clothing, shoes and textiles that can still be used should be donated, sold or passed on so they stay in use for longer."
+        },
+        {
+          "question": "Can wet clothes go in textile waste?",
+          "answer": "No. Textile waste must be dry. Wet or mouldy textiles can spoil other textiles in the collection."
+        },
+        {
+          "question": "Can shoes and bags go in textile waste?",
+          "answer": "It depends on the municipality. Usable shoes and bags should be donated for reuse, while broken shoes and bags often belong in residual waste or at a recycling centre."
+        },
+        {
+          "question": "What happens to textile waste?",
+          "answer": "Textile waste is sorted and can be used for new fibres, insulation, filling materials or industrial cloths if the quality is good enough."
+        }
+      ]
+    },
+    "Plast": {
+      "summaryTitle": "In short",
+      "summary": "Plastic should usually be empty and scraped clean. Plastic trays, tubs, lids, bags and film can be recycled when they do not contain large amounts of food, liquid, metal film or hazardous residue.",
+      "mistakesTitle": "Common mistakes",
+      "mistakes": [
+        "Plastic packaging with chemicals, paint or hazardous contents does not belong in plastic.",
+        "Crisp bags, sweet bags and bags with metal film often belong in residual waste.",
+        "PVC, rubber boots, rainwear, garden hoses and air mattresses usually do not belong in the plastic bin.",
+        "Electronics, batteries and plastic toys with electronics must be sorted separately."
+      ],
+      "cleanDirtyTitle": "Empty or contaminated?",
+      "cleanRuleTitle": "Empty plastic packaging can be recycled",
+      "cleanRule": "Plastic packaging does not need to be perfectly washed, but it should be emptied and scraped free from large amounts of food, liquid or product residue.",
+      "dirtyRuleTitle": "Contaminated plastic must be kept out",
+      "dirtyRule": "Plastic with chemicals, oil, paint, medicine residue or metal foil can disrupt recycling and must follow local municipal rules.",
+      "municipalityTitle": "Check local rules",
+      "municipalityNote": "Danish municipalities may have different rules for hard plastic, soft plastic, plastic film, black plastic, PVC, plastic toys and whether plastic is collected with metal or food and beverage cartons.",
+      "municipalityLinkText": "Find your municipality",
+      "faqTitle": "FAQ about plastic",
+      "faqs": [
+        {
+          "question": "Does plastic need to be washed before sorting?",
+          "answer": "No, plastic usually does not need to be completely washed. It should, however, be emptied and scraped free from larger amounts of food, liquid and product residue."
+        },
+        {
+          "question": "Can crisp bags and sweet bags go in plastic?",
+          "answer": "Often no, especially if the bag has metal film on the inside. This type of packaging usually belongs in residual waste, but local rules can vary."
+        },
+        {
+          "question": "Can plastic toys go in plastic?",
+          "answer": "Plastic toys without electronics may in some municipalities be sorted as plastic or delivered at a recycling centre. Toys with batteries or electronics must be sorted as electronics."
+        },
+        {
+          "question": "Can medicine packaging go in plastic?",
+          "answer": "Plastic packaging with medicine residue should normally be handled through the pharmacy or as hazardous waste. Empty packaging may in some cases be sorted by material."
+        },
+        {
+          "question": "What is the difference between plastic and food and beverage cartons?",
+          "answer": "Food and beverage cartons usually consist of several materials, including cardboard and plastic, and therefore often have their own waste fraction."
+        }
+      ]
+    },
+    "Restaffald": {
+      "summaryTitle": "In short",
+      "summary": "Residual waste is what remains after reuse, recycling, food waste, hazardous waste, electronics and special schemes have been sorted out. It should be used as the last option.",
+      "mistakesTitle": "Common mistakes",
+      "mistakes": [
+        "Hazardous waste, batteries and electronics must not go in residual waste.",
+        "Food, paper, cardboard, plastic, glass and metal should be sorted separately if your municipality has a scheme.",
+        "Large items, construction waste and garden waste usually belong at a recycling centre.",
+        "Sharp objects must be packed safely or delivered according to local municipal rules."
+      ],
+      "cleanDirtyTitle": "Last option or wrong sorting?",
+      "cleanRuleTitle": "Residual waste is for items that cannot be sorted better",
+      "cleanRule": "Hygiene waste, vacuum cleaner bags, very dirty packaging, small composite items and waste without a recycling option can typically go in residual waste.",
+      "dirtyRuleTitle": "Keep valuable and hazardous waste out",
+      "dirtyRule": "Residual waste is normally sent for incineration. Recyclable materials and hazardous waste should therefore be sorted out so resources are used and harmful substances are handled correctly.",
+      "municipalityTitle": "Check local rules",
+      "municipalityNote": "Danish municipalities may have different rules for ash, sharp objects, ceramics, porcelain, hygiene waste, small combustible waste and items too large for the residual-waste bin.",
+      "municipalityLinkText": "Find your municipality",
+      "faqTitle": "FAQ about residual waste",
+      "faqs": [
+        {
+          "question": "What is residual waste?",
+          "answer": "Residual waste is waste that cannot be reused, recycled or delivered through a special scheme. It is what remains after the other fractions have been sorted out."
+        },
+        {
+          "question": "What happens to residual waste?",
+          "answer": "Residual waste is typically sent for incineration, where the energy is used for electricity and heating. Reuse and recycling are still better whenever possible."
+        },
+        {
+          "question": "Can batteries go in residual waste?",
+          "answer": "No. Batteries can create fire risk and contain harmful substances. They must be delivered through the battery scheme, hazardous-waste box or recycling centre."
+        },
+        {
+          "question": "Can ceramics and porcelain go in residual waste?",
+          "answer": "Small amounts may go in residual waste in some municipalities, but larger amounts often belong at a recycling centre. They must not be sorted as glass."
+        },
+        {
+          "question": "Can ash go in residual waste?",
+          "answer": "Only if it is completely cold, packed safely and allowed by the municipality. Hot ash can create a fire risk."
+        }
+      ]
+    },
+    "Småt elektronik": {
+      "summaryTitle": "In short",
+      "summary": "Small electronics are devices with a cable, battery or solar cell, usually below 50 cm. They can contain valuable metals and harmful substances and must not end up in residual waste.",
+      "mistakesTitle": "Common mistakes",
+      "mistakes": [
+        "Batteries should be removed and sorted separately if possible.",
+        "Large electronics usually need to be delivered at a recycling centre.",
+        "Light bulbs, lamps and fluorescent tubes usually do not belong with small electronics.",
+        "Electronics must not be placed in residual waste, even when broken."
+      ],
+      "cleanDirtyTitle": "Battery or device?",
+      "cleanRuleTitle": "Small devices are sorted as small electronics",
+      "cleanRule": "Mobile phones, remote controls, cables, electric toothbrushes, small kitchen appliances and electronic toys can usually be sorted as small electronics.",
+      "dirtyRuleTitle": "Batteries and hazardous parts must be handled correctly",
+      "dirtyRule": "Remove loose batteries if you can do so safely. If the battery is built in, deliver the whole device as electronics so the battery can be handled responsibly.",
+      "municipalityTitle": "Check local rules",
+      "municipalityNote": "Danish municipalities may have different schemes for red boxes, electronics bins, supermarket collection, pickup and size limits for electronics.",
+      "municipalityLinkText": "Find your municipality",
+      "faqTitle": "FAQ about small electronics",
+      "faqs": [
+        {
+          "question": "What is small electronics?",
+          "answer": "Small electronics are discarded devices and equipment powered by a cable, battery or solar cell, such as phones, remote controls, cables and small kitchen appliances."
+        },
+        {
+          "question": "Can small electronics go in residual waste?",
+          "answer": "No. Electronics can contain valuable materials and harmful substances and must be delivered through the electronics scheme or at a recycling centre."
+        },
+        {
+          "question": "Should batteries be removed first?",
+          "answer": "Yes, if it can be done safely. Loose batteries are sorted as batteries. If the battery is built in, the whole device can be delivered as electronics."
+        },
+        {
+          "question": "What if the device is larger than 50 cm?",
+          "answer": "Larger electronics normally need to be delivered at a recycling centre or through the municipality’s scheme for large electronic waste."
+        },
+        {
+          "question": "Are cables small electronics?",
+          "answer": "Yes, cables and chargers are normally considered small electronics and should be delivered with electronic waste."
+        }
+      ]
+    },
+    "Glas": {
+      "summaryTitle": "In short",
+      "summary": "Glass mainly means empty bottles and packaging glass without a deposit. The glass should be emptied and scraped clean, but it does not need to be thoroughly washed.",
+      "mistakesTitle": "Common mistakes",
+      "mistakes": [
+        "Porcelain, ceramics and stoneware must not be sorted as glass.",
+        "Mirrors, window glass and ovenproof glass have a different composition than packaging glass.",
+        "Light bulbs, fluorescent tubes and other light sources must be sorted separately.",
+        "Chemical bottles and medicine glass may require hazardous waste, pharmacy return or recycling centre delivery."
+      ],
+      "cleanDirtyTitle": "Packaging glass or special glass?",
+      "cleanRuleTitle": "Empty bottles and jars can be recycled",
+      "cleanRule": "Non-deposit glass bottles, jam jars, food jars, vitamin jars and shards from packaging glass can usually be sorted as glass.",
+      "dirtyRuleTitle": "Other glass types must be kept out",
+      "dirtyRule": "Mirrors, window glass, ceramics, porcelain, ovenproof glass and light sources can ruin recycling because they melt differently or require special handling.",
+      "municipalityTitle": "Check local rules",
+      "municipalityNote": "Danish municipalities may have different rules for drinking glasses, glass shards, lids on jars, medicine glass, mirrors and whether glass is collected at home or in public containers.",
+      "municipalityLinkText": "Find your municipality",
+      "faqTitle": "FAQ about glass",
+      "faqs": [
+        {
+          "question": "Does glass need to be washed before sorting?",
+          "answer": "No, glass usually does not need to be washed thoroughly. It should simply be emptied and scraped clean so there are no large amounts of food or liquid left."
+        },
+        {
+          "question": "Can lids stay on jars?",
+          "answer": "It depends on the municipality. In many places lids can stay on or be sorted as metal/plastic, but local rules can vary."
+        },
+        {
+          "question": "Can drinking glasses go in glass recycling?",
+          "answer": "Rules vary. Some municipalities accept drinking glasses, while others want them delivered at a recycling centre or placed in residual waste."
+        },
+        {
+          "question": "Can porcelain and ceramics go in glass?",
+          "answer": "No. Porcelain, ceramics and stoneware must not go in glass because they have a different composition and can ruin recycling."
+        },
+        {
+          "question": "Where should light bulbs and fluorescent tubes go?",
+          "answer": "Light bulbs, LED bulbs and fluorescent tubes should normally be delivered as light sources at a recycling centre or through the municipality’s special scheme."
+        }
+      ]
+    },
+    "Mad- og drikkekartoner": {
+      "summaryTitle": "In short",
+      "summary": "Food and beverage cartons are packaging for milk, yoghurt, juice, soup, chopped tomatoes and beans. They consist of several material layers and therefore have their own sorting category.",
+      "mistakesTitle": "Common mistakes",
+      "mistakes": [
+        "Cartons should be emptied, but usually do not need to be thoroughly washed.",
+        "Cardboard boxes, egg cartons and ordinary cardboard packaging are cardboard, not food and beverage cartons.",
+        "Very dirty cartons with larger food residue can reduce recycling quality.",
+        "Caps and plastic parts should follow local municipal instructions."
+      ],
+      "cleanDirtyTitle": "Empty or dirty?",
+      "cleanRuleTitle": "Empty cartons can be recycled",
+      "cleanRule": "Milk, yoghurt, juice, soup and tomato cartons can usually be sorted as food and beverage cartons when empty.",
+      "dirtyRuleTitle": "Large food residue must be removed",
+      "dirtyRule": "Cartons with larger amounts of food or liquid should be emptied first. If packaging is very dirty or mouldy, it may belong in residual waste in some municipalities.",
+      "municipalityTitle": "Check local rules",
+      "municipalityNote": "Danish municipalities may have different rules for caps, rinsing, flattening and whether food and beverage cartons are collected with plastic or metal.",
+      "municipalityLinkText": "Find your municipality",
+      "faqTitle": "FAQ about food and beverage cartons",
+      "faqs": [
+        {
+          "question": "Are milk cartons cardboard?",
+          "answer": "No. Milk cartons usually consist of several materials, including cardboard and plastic, and should be sorted as food and beverage cartons."
+        },
+        {
+          "question": "Do cartons need to be rinsed?",
+          "answer": "Usually no. They should be emptied and scraped free from larger food residue, but they do not need to be washed thoroughly."
+        },
+        {
+          "question": "Can the cap stay on?",
+          "answer": "It depends on the municipality. In some places the cap can stay on, while others recommend sorting it separately as plastic."
+        },
+        {
+          "question": "Are egg cartons food and beverage cartons?",
+          "answer": "No. Egg cartons are normally cardboard or paper depending on the material and local scheme."
+        },
+        {
+          "question": "Why do cartons have their own fraction?",
+          "answer": "Because they often consist of several layers, such as cardboard, plastic and sometimes aluminium. Separate sorting makes the materials easier to recycle."
+        }
+      ]
+    },
+    "Metal": {
+      "summaryTitle": "In short",
+      "summary": "Metal includes cans, lids, caps, aluminium trays, foil and smaller metal parts. Metal can be recycled many times and has high environmental value when sorted correctly.",
+      "mistakesTitle": "Common mistakes",
+      "mistakes": [
+        "Spray cans and containers with chemical residue must not be sorted as ordinary metal.",
+        "Metal packaging should be emptied and scraped clean of larger food residue.",
+        "Electronics with metal parts should be sorted as electronics, not metal.",
+        "Needles and sharp medical items must follow special rules, often pharmacy or recycling centre return."
+      ],
+      "cleanDirtyTitle": "Clean enough or special waste?",
+      "cleanRuleTitle": "Empty metal can be recycled",
+      "cleanRule": "Food cans, non-deposit drink cans, metal lids, caps, aluminium trays, foil, pots, pans and small metal parts can usually be sorted as metal.",
+      "dirtyRuleTitle": "Chemicals and pressurised containers must stay out",
+      "dirtyRule": "Metal with chemical residue, paint, oil or pressurised containers such as spray cans requires special handling because it can be hazardous in ordinary metal collection.",
+      "municipalityTitle": "Check local rules",
+      "municipalityNote": "Danish municipalities may have different rules for spray cans, small metal items, larger metal parts, lids, aluminium foil and whether metal is collected with plastic or cartons.",
+      "municipalityLinkText": "Find your municipality",
+      "faqTitle": "FAQ about metal",
+      "faqs": [
+        {
+          "question": "Does metal need to be washed before sorting?",
+          "answer": "No, metal usually does not need to be washed thoroughly. It should be emptied and scraped clean so no larger food residue remains."
+        },
+        {
+          "question": "Can food cans go in metal recycling?",
+          "answer": "Yes. Food cans, metal lids, caps and aluminium trays can usually be sorted as metal when they are empty."
+        },
+        {
+          "question": "Where should spray cans go?",
+          "answer": "Spray cans often need to be delivered as hazardous waste or at a recycling centre because they may contain pressure and chemical residue."
+        },
+        {
+          "question": "Can aluminium foil be sorted as metal?",
+          "answer": "Yes, if it is empty and without larger food residue. Very dirty foil may belong in residual waste in some municipalities."
+        },
+        {
+          "question": "Why is metal important to sort?",
+          "answer": "Metal can be recycled again and again, and recycling saves large amounts of energy and raw materials compared with extracting new metal."
+        }
+      ]
+    },
+    "Batterier": {
+      "summaryTitle": "In short",
+      "summary": "Batteries must always be sorted separately because they can contain valuable materials, but also harmful substances. They must not go in residual waste or ordinary bins.",
+      "mistakesTitle": "Common mistakes",
+      "mistakes": [
+        "Batteries must never be placed in residual waste, plastic, metal or ordinary electronics bins.",
+        "Loose batteries from toys, remote controls and kitchen devices should be removed and sorted separately.",
+        "Large batteries from cars, e-bikes and scooters usually need to be delivered at a recycling centre.",
+        "Damaged or warm batteries must be handled extra carefully and according to municipal instructions."
+      ],
+      "cleanDirtyTitle": "Ordinary or special battery?",
+      "cleanRuleTitle": "Small batteries go through the battery scheme",
+      "cleanRule": "Batteries from remote controls, toys, flashlights, hearing aids and small devices can usually be delivered in battery boxes, hazardous-waste boxes, shops or at recycling centres.",
+      "dirtyRuleTitle": "Large and damaged batteries need special handling",
+      "dirtyRule": "Car batteries, e-bike batteries, scooter batteries, power banks and damaged lithium batteries usually need to be delivered at a recycling centre or through a special municipal scheme.",
+      "municipalityTitle": "Check local rules",
+      "municipalityNote": "Danish municipalities may have different schemes for battery bags, hazardous-waste boxes, pickup, shops and larger batteries from transport or power tools.",
+      "municipalityLinkText": "Find your municipality",
+      "faqTitle": "FAQ about batteries",
+      "faqs": [
+        {
+          "question": "Can batteries go in residual waste?",
+          "answer": "No. Batteries can contain harmful substances and may create a fire risk, especially lithium batteries. They must be delivered through the battery scheme."
+        },
+        {
+          "question": "Should batteries be removed from electronics?",
+          "answer": "Yes, if it can be done safely. Loose batteries are sorted as batteries, while devices with built-in batteries are normally delivered as electronics."
+        },
+        {
+          "question": "Where do ordinary small batteries go?",
+          "answer": "Small batteries can often be delivered in battery boxes, hazardous-waste boxes, shops with battery collection or at a recycling centre."
+        },
+        {
+          "question": "Where should car batteries go?",
+          "answer": "Car batteries and other large accumulators should normally be delivered at a recycling centre or to a retailer that accepts them."
+        },
+        {
+          "question": "What should I do with a damaged battery?",
+          "answer": "A damaged, swollen or warm battery can be dangerous. Do not place it in ordinary bins. Contact the municipality or recycling centre for correct handling."
+        }
+      ]
+    },
+    "Papir": {
+      "summaryTitle": "In short",
+      "summary": "Paper includes newspapers, advertisements, magazines, letters, envelopes and office paper. It should be dry and reasonably clean so the fibres can be recycled into new paper products.",
+      "mistakesTitle": "Common mistakes",
+      "mistakes": [
+        "Wet, greasy or dirty paper should not be sorted as paper.",
+        "Baking paper, greaseproof paper and napkins normally do not belong in paper recycling.",
+        "Gift wrap may contain plastic, metal foil or glitter and often needs different sorting.",
+        "Books, binders and laminated paper may require recycling centre delivery or another sorting category."
+      ],
+      "cleanDirtyTitle": "Clean and dry or contaminated?",
+      "cleanRuleTitle": "Clean and dry paper can be recycled",
+      "cleanRule": "Newspapers, advertisements, letters, envelopes, office paper, magazines, brochures, notebooks without hard covers and paper bags can usually be sorted as paper.",
+      "dirtyRuleTitle": "Wet and greasy paper lowers the quality",
+      "dirtyRule": "Paper with food, grease, liquid, wax, plastic coating or large amounts of tape can reduce recycling quality and often belongs in residual waste or should follow the specific sorting result.",
+      "municipalityTitle": "Check local rules",
+      "municipalityNote": "Danish municipalities may have different rules for gift wrap, window envelopes, books, shredded paper, paper bags and whether paper is collected together with cardboard.",
+      "municipalityLinkText": "Find your municipality",
+      "faqTitle": "FAQ about paper",
+      "faqs": [
+        {
+          "question": "Does paper need to be completely clean?",
+          "answer": "It does not need to be perfect, but it should be dry and free from larger amounts of food, grease and liquid so the fibres can be recycled."
+        },
+        {
+          "question": "Can window envelopes go in paper recycling?",
+          "answer": "Often yes, but rules can vary. Many sorting facilities can handle small plastic windows, while some municipalities recommend following local rules."
+        },
+        {
+          "question": "Where should baking paper go?",
+          "answer": "Baking paper is often treated with coating and grease and should normally not go in paper recycling. It usually belongs in residual waste."
+        },
+        {
+          "question": "Can gift wrap go in paper recycling?",
+          "answer": "Not always. Gift wrap may contain plastic, metal foil, dyes or glitter that can reduce recycling quality. Check the specific sorting guidance."
+        },
+        {
+          "question": "Are paper and cardboard the same?",
+          "answer": "No. Paper and cardboard are often recycled differently. Cardboard boxes and thick carton usually go with cardboard, while newspapers and office paper go with paper."
+        }
+      ]
+    }
+  }
+}

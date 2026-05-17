@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/search_trash_button"
+        android:title="@string/bottom_soeg"
+        android:icon="@drawable/bottom_menu_search_icon" />
+
+    <item
+        android:id="@+id/trash_types_button"
+        android:title="@string/bottom_fraktioner"
+        android:icon="@drawable/bottom_menu_trash_types_icon" />
+
+    <item
+        android:id="@+id/municipalities_button"
+        android:title="@string/bottom_kommuner"
+        android:icon="@drawable/bottom_menu_municipalities_icon" />
+
+    <item
+        android:id="@+id/navigation_view_button"
+        android:title="@string/bottom_mere"
+        android:icon="@drawable/bottom_menu_settings_icon"/>
+</menu>

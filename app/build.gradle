@@ -1,0 +1,76 @@
+plugins {
+    id 'com.android.application'
+}
+
+def keystorePropertiesFile = rootProject.file("keystore.properties")
+def keystoreProperties = new Properties()
+keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+
+android {
+    namespace 'com.simpleweb.affaldsguidedanmark'
+    compileSdk 36
+
+    aaptOptions {
+        noCompress "json"
+    }
+
+    defaultConfig {
+        applicationId "com.simpleweb.affaldsguidedanmark"
+        minSdk 28
+        targetSdk 36
+        versionCode 28
+        versionName "2.1.2"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    signingConfigs {
+        release {
+            storeFile file(keystoreProperties['storeFile'])
+            storePassword keystoreProperties['storePassword']
+            keyAlias keystoreProperties['keyAlias']
+            keyPassword keystoreProperties['keyPassword']
+        }
+    }
+
+    buildTypes {
+        debug {
+            debuggable true
+            minifyEnabled false
+        }
+        release {
+            debuggable false
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    viewBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+    implementation "androidx.navigation:navigation-fragment:2.8.5"
+    implementation "androidx.navigation:navigation-ui:2.8.5"
+
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+    implementation 'com.google.android.material:material:1.12.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.2.0'
+
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.2.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1'
+
+    implementation 'org.apache.commons:commons-text:1.9'
+    implementation 'com.google.android.gms:play-services-ads:23.2.0'
+    implementation project(':nativetemplates')
+    implementation 'com.google.code.gson:gson:2.10.1'
+}

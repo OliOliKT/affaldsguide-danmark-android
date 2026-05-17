@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="green_light">#76AD61</color>
+    <color name="green_dark">#5F984E</color>
+    <color name="teal_200">#76AD61</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="light_grey">#E5E7EB</color>
+    <color name="text_color">#374151</color>
+    <color name="grey_black">#9CA3AF</color>
+    <color name="page_background">#FFFFFFFF</color>
+    <color name="card_border">#E5E7EB</color>
+    <color name="fragment_details_background_color">#FFFFFFFF</color>
+    <color name="green_tint">#FCFEFB</color>
+    <color name="soft_red_tint">#FFF7F7</color>
+    <color name="soft_red">#B45353</color>
+</resources>
