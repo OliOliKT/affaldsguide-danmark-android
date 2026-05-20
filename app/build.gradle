@@ -18,8 +18,8 @@ android {
         applicationId "com.simpleweb.affaldsguidedanmark"
         minSdk 28
         targetSdk 36
-        versionCode 28
-        versionName "2.1.2"
+        versionCode 30
+        versionName "2.2.1"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -62,7 +62,7 @@ dependencies {
     implementation "androidx.navigation:navigation-ui:2.8.5"
 
     implementation 'androidx.appcompat:appcompat:1.7.0'
-    implementation 'com.google.android.material:material:1.12.0'
+    implementation 'com.google.android.material:material:1.13.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.2.0'
 
     testImplementation 'junit:junit:4.13.2'

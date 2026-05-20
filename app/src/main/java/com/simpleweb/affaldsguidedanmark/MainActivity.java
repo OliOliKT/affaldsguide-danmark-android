@@ -9,9 +9,13 @@ import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
 import androidx.core.view.GravityCompat;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -34,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         LanguageManager.applySavedLanguage(this);
         super.onCreate(savedInstanceState);
+        EdgeToEdge.enable(this);
 
         MobileAds.initialize(this);
 
@@ -42,11 +47,22 @@ public class MainActivity extends AppCompatActivity {
 
         if (!hasSeenGreetingPage) {
             setContentView(R.layout.activity_greeting);
+            applySystemBarInsets(findViewById(R.id.greeting_layout));
             setUpGreetingLayout();
         } else {
             setContentView(R.layout.activity_main);
+            applySystemBarInsets(findViewById(R.id.main_layout));
             setUpMainLayout();
         }
+    }
+
+    private void applySystemBarInsets(View rootView) {
+        ViewCompat.setOnApplyWindowInsetsListener(rootView, (view, windowInsets) -> {
+            Insets insets = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars());
+            view.setPadding(insets.left, insets.top, insets.right, insets.bottom);
+            return windowInsets;
+        });
+        ViewCompat.requestApplyInsets(rootView);
     }
 
     private void setUpGreetingLayout() {
@@ -74,6 +90,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 sharedPref.edit().putBoolean("hasSeenGreetingPage", true).apply();
                 setContentView(R.layout.activity_main);
+                applySystemBarInsets(findViewById(R.id.main_layout));
                 setUpMainLayout();
             }
         });
