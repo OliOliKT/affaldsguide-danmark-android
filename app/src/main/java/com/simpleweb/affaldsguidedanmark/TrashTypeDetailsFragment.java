@@ -53,8 +53,10 @@ public class TrashTypeDetailsFragment extends Fragment {
         TextView DBAffaldTitel = view.findViewById(R.id.all_items_title);
         LinearLayout trashCategoriesLayout = view.findViewById(R.id.trashCategoriesLayout);
         LinearLayout enhancementContainer = view.findViewById(R.id.fractionEnhancementContainer);
+        LinearLayout examplesContainer = view.findViewById(R.id.fractionExamplesContainer);
         LinearLayout practicalContainer = view.findViewById(R.id.fractionPracticalContainer);
         LinearLayout faqContainer = view.findViewById(R.id.fractionFaqContainer);
+        TextView extendedDescriptionToggle = view.findViewById(R.id.extendedDescriptionToggle);
 
         listTrash = view.findViewById(R.id.listTrash);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
@@ -71,14 +73,33 @@ public class TrashTypeDetailsFragment extends Fragment {
 
             boolean useEnglish = LanguageManager.isEnglish(requireContext());
             FractionEnhancement enhancement = FractionEnhancement.get(getResources(), trashType.getDanishNavn(), useEnglish);
-            renderEnhancement(enhancementContainer, practicalContainer, faqContainer, enhancement);
-            descriptionTextView.setVisibility(enhancement != null ? View.GONE : View.VISIBLE);
+            renderEnhancement(enhancementContainer, examplesContainer, practicalContainer, faqContainer, enhancement, trashType);
+            if (enhancement != null && enhancement.summary != null && !enhancement.summary.trim().isEmpty()) {
+                descriptionTextView.setText(enhancement.summary);
+            }
+            descriptionTextView.setVisibility(View.VISIBLE);
             trashCategoriesLayout.setVisibility(enhancement != null ? View.GONE : View.VISIBLE);
 
             if (trashType.getUdvidetBeskrivelse() != null && !trashType.getUdvidetBeskrivelse().isEmpty()) {
                 renderExtendedDescription(extendedDescriptionContainer, trashType.getUdvidetBeskrivelse());
+                if (enhancement != null) {
+                    extendedDescriptionContainer.setVisibility(View.GONE);
+                    extendedDescriptionToggle.setVisibility(View.VISIBLE);
+                    extendedDescriptionToggle.setText(getString(R.string.laes_mere_om_fraktion, trashType.getNavn()));
+                    final boolean[] isExtendedDescriptionOpen = {false};
+                    extendedDescriptionToggle.setOnClickListener(v -> {
+                        isExtendedDescriptionOpen[0] = !isExtendedDescriptionOpen[0];
+                        extendedDescriptionContainer.setVisibility(isExtendedDescriptionOpen[0] ? View.VISIBLE : View.GONE);
+                        extendedDescriptionToggle.setText(isExtendedDescriptionOpen[0]
+                                ? getString(R.string.skjul_detaljer)
+                                : getString(R.string.laes_mere_om_fraktion, trashType.getNavn()));
+                    });
+                } else {
+                    extendedDescriptionToggle.setVisibility(View.GONE);
+                }
             } else {
                 extendedDescriptionContainer.setVisibility(View.GONE);
+                extendedDescriptionToggle.setVisibility(View.GONE);
             }
 
             List<String> prosList = trashType.getPros();
@@ -125,20 +146,25 @@ public class TrashTypeDetailsFragment extends Fragment {
         return view;
     }
 
-    private void renderEnhancement(LinearLayout enhancementContainer, LinearLayout practicalContainer, LinearLayout faqContainer, FractionEnhancement enhancement) {
+    private void renderEnhancement(LinearLayout enhancementContainer, LinearLayout examplesContainer, LinearLayout practicalContainer, LinearLayout faqContainer, FractionEnhancement enhancement, TrashType trashType) {
         enhancementContainer.removeAllViews();
+        examplesContainer.removeAllViews();
         practicalContainer.removeAllViews();
         faqContainer.removeAllViews();
 
         if (enhancement == null) {
             enhancementContainer.setVisibility(View.GONE);
+            examplesContainer.setVisibility(View.GONE);
             practicalContainer.setVisibility(View.GONE);
             faqContainer.setVisibility(View.GONE);
             return;
         }
 
         enhancementContainer.setVisibility(View.VISIBLE);
-        addSectionCard(enhancementContainer, enhancement.summaryTitle, enhancement.summary);
+        addQuickRuleCard(enhancementContainer, enhancement);
+
+        examplesContainer.setVisibility(View.VISIBLE);
+        addExamplesSection(examplesContainer, trashType);
 
         practicalContainer.setVisibility(View.VISIBLE);
         addListCard(practicalContainer, enhancement.mistakesTitle, enhancement.getMistakes());
@@ -164,7 +190,75 @@ public class TrashTypeDetailsFragment extends Fragment {
         container.addView(card);
     }
 
+    private void addQuickRuleCard(LinearLayout container, FractionEnhancement enhancement) {
+        LinearLayout card = createCard();
+        card.setBackgroundResource(R.drawable.result_description_background);
+        card.addView(createTitle(getString(R.string.det_vigtigste)));
+        card.addView(createBulletBody(enhancement.cleanRuleTitle, 10));
+        card.addView(createBulletBody(enhancement.dirtyRuleTitle, 8));
+        card.addView(createBulletBody(getFirstSentence(enhancement.municipalityNote), 8));
+        container.addView(card);
+    }
+
+    private void addExamplesSection(LinearLayout container, TrashType trashType) {
+        TextView title = createTitle(getString(R.string.typiske_eksempler));
+        LinearLayout.LayoutParams titleParams = new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+        );
+        titleParams.setMargins(0, 0, 0, dpToPx(10));
+        title.setLayoutParams(titleParams);
+        container.addView(title);
+
+        LinearLayout row = new LinearLayout(requireContext());
+        row.setOrientation(LinearLayout.HORIZONTAL);
+        LinearLayout.LayoutParams rowParams = new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+        );
+        rowParams.setMargins(0, 0, 0, dpToPx(12));
+        row.setLayoutParams(rowParams);
+
+        row.addView(createExampleColumn(getString(R.string.kan_typisk_komme_i), trashType.getPros(), R.drawable.details_pros_background, R.color.green_light, false));
+        row.addView(createExampleColumn(getString(R.string.skal_typisk_et_andet_sted_hen), trashType.getCons(), R.drawable.details_cons_background, R.color.soft_red, true));
+        container.addView(row);
+    }
+
+    private LinearLayout createExampleColumn(String title, List<String> items, int backgroundResId, int titleColorResId, boolean isLastColumn) {
+        LinearLayout column = createCard();
+        column.setBackgroundResource(backgroundResId);
+
+        LinearLayout.LayoutParams columnParams = new LinearLayout.LayoutParams(
+                0,
+                LinearLayout.LayoutParams.WRAP_CONTENT,
+                1
+        );
+        columnParams.setMargins(isLastColumn ? dpToPx(6) : 0, 0, isLastColumn ? 0 : dpToPx(6), 0);
+        column.setLayoutParams(columnParams);
+
+        TextView titleView = createTitle(title);
+        titleView.setTextColor(getResources().getColor(titleColorResId));
+        titleView.setTextSize(16);
+        column.addView(titleView);
+
+        int itemCount = Math.min(items != null ? items.size() : 0, 3);
+        if (itemCount == 0) {
+            column.addView(createBody(getString(R.string.tjek_detaljer_nedenfor), 8));
+            return column;
+        }
+
+        for (int i = 0; i < itemCount; i++) {
+            column.addView(createBulletBody(items.get(i), 8));
+        }
+
+        return column;
+    }
+
     private void addListCard(LinearLayout container, String title, List<String> items) {
+        if (items == null || items.isEmpty()) {
+            return;
+        }
+
         LinearLayout card = createCard();
         card.addView(createTitle(title));
 
@@ -338,6 +432,20 @@ public class TrashTypeDetailsFragment extends Fragment {
         }
 
         return sections;
+    }
+
+    private String getFirstSentence(String text) {
+        if (text == null || text.trim().isEmpty()) {
+            return "";
+        }
+
+        String trimmed = text.trim();
+        int sentenceEnd = trimmed.indexOf('.');
+        if (sentenceEnd == -1) {
+            return trimmed;
+        }
+
+        return trimmed.substring(0, sentenceEnd + 1);
     }
 
     private void addLeadingParagraphs(List<DescriptionSection> sections, String html) {

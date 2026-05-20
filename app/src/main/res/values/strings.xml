@@ -64,6 +64,7 @@
     <string name="tomt_søgefelt">Skriv venligst noget i søgefeltet</string>
     <string name="affald_ikke_fundet_med_forslag">Vi fandt ikke "%1$s".\n\nMente du "%2$s"?</string>
     <string name="affald_ikke_fundet_uden_forslag">Vi fandt ikke "%1$s". Prøv et mere almindeligt ord eller en anden stavemåde.</string>
+    <string name="mente_du_en_af_disse">Mente du en af disse?</string>
     <string name="proev_en_af_disse_soegninger">Prøv en af disse søgninger:</string>
     <string name="example_pizzabakke">Pizzabakke</string>
     <string name="example_batteri">Batteri</string>
@@ -104,5 +105,12 @@
     <string name="mente_du_prefix">Mente du </string>
     <string name="laes_mere_om_affaldet">Læs mere om affaldet</string>
     <string name="skjul_beskrivelse">Skjul beskrivelse</string>
+    <string name="det_vigtigste">Det vigtigste</string>
+    <string name="typiske_eksempler">Typiske eksempler</string>
+    <string name="kan_typisk_komme_i">Kan typisk komme i</string>
+    <string name="skal_typisk_et_andet_sted_hen">Skal et andet sted hen</string>
+    <string name="tjek_detaljer_nedenfor">Tjek detaljerne nedenfor.</string>
+    <string name="laes_mere_om_fraktion">Læs mere om %1$s</string>
+    <string name="skjul_detaljer">Skjul detaljer</string>
     <string name="begynd_med_det_samme">Begynd med det samme</string>
 </resources>

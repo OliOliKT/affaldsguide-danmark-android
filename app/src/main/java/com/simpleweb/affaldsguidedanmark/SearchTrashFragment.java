@@ -5,10 +5,7 @@ import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.text.Editable;
-import android.text.SpannableString;
 import android.text.TextWatcher;
-import android.text.style.ForegroundColorSpan;
-import android.text.style.UnderlineSpan;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -27,20 +24,27 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 
 import org.apache.commons.text.similarity.JaccardSimilarity;
+import org.apache.commons.text.similarity.JaroWinklerSimilarity;
+import org.apache.commons.text.similarity.LevenshteinDistance;
 
 public class SearchTrashFragment extends Fragment {
 
     private static final String TAG = "SearchTrashFragment";
-    private static final double MIN_JACCARD_SIMILARITY_THRESHOLD = 0.5;
     private static final String RECENT_SEARCHES_PREFS = "RecentSearches";
     private static final String RECENT_SEARCHES_KEY = "queries";
     private static final int MAX_RECENT_SEARCHES = 10;
+    private static final int MAX_EMPTY_STATE_SUGGESTIONS = 3;
+    private static final double MIN_FUZZY_SUGGESTION_SCORE = 0.56;
     private TrashDB trashDB;
     private final List<String> cachedProduktList = new ArrayList<>();
+    private final JaccardSimilarity jaccardSimilarity = new JaccardSimilarity();
+    private final JaroWinklerSimilarity jaroWinklerSimilarity = new JaroWinklerSimilarity();
+    private final LevenshteinDistance levenshteinDistance = LevenshteinDistance.getDefaultInstance();
     private ImageButton search;
     private MultiAutoCompleteTextView inputText;
     private ImageView twoItemsImage1;
@@ -55,6 +59,10 @@ public class SearchTrashFragment extends Fragment {
     private ImageView oneItemIcon1;
     private ImageView insertTrashImage;
     private LinearLayout emptyStateContainer;
+    private TextView emptyStateTitle;
+    private TextView exampleSearchPizza;
+    private TextView exampleSearchBattery;
+    private TextView exampleSearchCoffeeFilter;
     private TextView productDescriptionToggle;
     private TextView productDescriptionText;
 
@@ -83,10 +91,14 @@ public class SearchTrashFragment extends Fragment {
 
         insertTrashImage = v.findViewById(R.id.indtastAffaldBillede);
         emptyStateContainer = v.findViewById(R.id.emptyStateContainer);
+        emptyStateTitle = v.findViewById(R.id.emptyStateTitle);
+        exampleSearchPizza = v.findViewById(R.id.exampleSearchPizza);
+        exampleSearchBattery = v.findViewById(R.id.exampleSearchBattery);
+        exampleSearchCoffeeFilter = v.findViewById(R.id.exampleSearchCoffeeFilter);
         productDescriptionToggle = v.findViewById(R.id.productDescriptionToggle);
         productDescriptionText = v.findViewById(R.id.productDescriptionText);
 
-        insertTrashImage.setImageResource(R.drawable.indtast_affald_billede);
+        setInsertTrashImageForLanguage();
 
         NativeAdHelper.loadNativeAd(requireContext(), v);
 
@@ -141,9 +153,9 @@ public class SearchTrashFragment extends Fragment {
             }
         });
 
-        setupExampleSearch(v, R.id.exampleSearchPizza);
-        setupExampleSearch(v, R.id.exampleSearchBattery);
-        setupExampleSearch(v, R.id.exampleSearchCoffeeFilter);
+        setupExampleSearch(exampleSearchPizza);
+        setupExampleSearch(exampleSearchBattery);
+        setupExampleSearch(exampleSearchCoffeeFilter);
 
         search.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -187,32 +199,8 @@ public class SearchTrashFragment extends Fragment {
                             resultText.setText(R.string.tomt_søgefelt);
                         } else if (sorteringMap.containsKey("not found") && cachedProduktList != null) {
                             emptyStateContainer.setVisibility(View.VISIBLE);
-                            String suggestedCorrection = findSimilarSuggestion(what);
-                            if (suggestedCorrection != null && inputText.length() > 3) {
-                                String suggestionText = getString(R.string.affald_ikke_fundet_med_forslag, what, suggestedCorrection);
-
-                                SpannableString spannableString = new SpannableString(suggestionText);
-                                int startIndex = suggestionText.lastIndexOf(suggestedCorrection);
-
-                                if (startIndex != -1) {
-                                    int endIndex = startIndex + suggestedCorrection.length();
-
-                                    spannableString.setSpan(new UnderlineSpan(), startIndex, endIndex, 0);
-                                    spannableString.setSpan(new ForegroundColorSpan(getResources().getColor(R.color.green_light)), startIndex, endIndex, 0);
-                                }
-
-                                resultText.setText(spannableString);
-
-                                resultText.setOnClickListener(new View.OnClickListener() {
-                                    @Override
-                                    public void onClick(View view) {
-                                        inputText.setText(suggestedCorrection);
-                                        search.performClick();
-                                    }
-                                });
-                            } else {
-                                resultText.setText(getString(R.string.affald_ikke_fundet_uden_forslag, what));
-                            }
+                            resultText.setText(getString(R.string.affald_ikke_fundet_uden_forslag, what));
+                            updateEmptyStateSuggestions(what);
                         } else if (sorteringMap.containsKey("error")) {
                             insertTrashImage.setImageResource(R.drawable.error_image);
                             emptyStateContainer.setVisibility(View.VISIBLE);
@@ -314,6 +302,13 @@ public class SearchTrashFragment extends Fragment {
 
     }
 
+    private void setInsertTrashImageForLanguage() {
+        boolean useEnglish = LanguageManager.isEnglish(requireContext());
+        insertTrashImage.setImageResource(useEnglish
+                ? R.drawable.indtast_affald_billede_en
+                : R.drawable.indtast_affald_billede);
+    }
+
     private void setupProductDescription(String productName, boolean useEnglish) {
         String description = trashDB.getProductDescription(productName, useEnglish);
         if (description == null || description.trim().isEmpty()) {
@@ -333,13 +328,43 @@ public class SearchTrashFragment extends Fragment {
         });
     }
 
-    private void setupExampleSearch(View rootView, int textViewId) {
-        TextView exampleView = rootView.findViewById(textViewId);
+    private void setupExampleSearch(TextView exampleView) {
         exampleView.setOnClickListener(view -> {
             inputText.setText(exampleView.getText().toString());
             inputText.setSelection(inputText.length());
             search.performClick();
         });
+    }
+
+    private void updateEmptyStateSuggestions(String query) {
+        List<String> suggestions = findSimilarSuggestions(query);
+        boolean hasFuzzySuggestions = !suggestions.isEmpty();
+
+        if (!hasFuzzySuggestions) {
+            suggestions = getDefaultSuggestions();
+        }
+
+        emptyStateTitle.setText(hasFuzzySuggestions
+                ? R.string.mente_du_en_af_disse
+                : R.string.proev_en_af_disse_soegninger);
+
+        TextView[] suggestionViews = {exampleSearchPizza, exampleSearchBattery, exampleSearchCoffeeFilter};
+        for (int i = 0; i < suggestionViews.length; i++) {
+            if (i < suggestions.size()) {
+                suggestionViews[i].setText(suggestions.get(i));
+                suggestionViews[i].setVisibility(View.VISIBLE);
+            } else {
+                suggestionViews[i].setVisibility(View.GONE);
+            }
+        }
+    }
+
+    private List<String> getDefaultSuggestions() {
+        List<String> defaults = new ArrayList<>();
+        defaults.add(getString(R.string.example_pizzabakke));
+        defaults.add(getString(R.string.example_batteri));
+        defaults.add(getString(R.string.example_kaffefilter));
+        return defaults;
     }
 
     private void saveRecentSearch(String query) {
@@ -371,35 +396,79 @@ public class SearchTrashFragment extends Fragment {
         inputText.setTokenizer(new SuggestionTokenizer());
     }
 
-    private double calculateJaccardSimilarity(String str1, String str2) {
-        JaccardSimilarity jaccardSimilarity = new JaccardSimilarity();
-        return jaccardSimilarity.apply(str1, str2);
+    private double calculateFuzzyScore(String input, String suggestion) {
+        String normalizedInput = normalizeForFuzzySearch(input);
+        String normalizedSuggestion = normalizeForFuzzySearch(suggestion);
+
+        if (normalizedInput.isEmpty() || normalizedSuggestion.isEmpty()) {
+            return 0.0;
+        }
+
+        if (normalizedInput.equals(normalizedSuggestion)) {
+            return 1.0;
+        }
+
+        double jaccardScore = jaccardSimilarity.apply(normalizedInput, normalizedSuggestion);
+        double jaroScore = jaroWinklerSimilarity.apply(normalizedInput, normalizedSuggestion);
+        int distance = levenshteinDistance.apply(normalizedInput, normalizedSuggestion);
+        double levenshteinScore = 1.0 - ((double) distance / Math.max(normalizedInput.length(), normalizedSuggestion.length()));
+        double containsBoost = normalizedSuggestion.contains(normalizedInput) || normalizedInput.contains(normalizedSuggestion) ? 0.16 : 0.0;
+        double prefixBoost = normalizedSuggestion.startsWith(normalizedInput.substring(0, Math.min(normalizedInput.length(), 2))) ? 0.06 : 0.0;
+
+        return Math.min(1.0, (jaccardScore * 0.25) + (jaroScore * 0.45) + (levenshteinScore * 0.30) + containsBoost + prefixBoost);
     }
 
-    private String findSimilarSuggestion(String input) {
-        String suggestedCorrection = null;
-        double maxSimilarity = 0.0;
+    private String normalizeForFuzzySearch(String value) {
+        return value == null
+                ? ""
+                : value.toLowerCase()
+                .replace("æ", "ae")
+                .replace("ø", "oe")
+                .replace("å", "aa")
+                .replaceAll("[^a-z0-9]+", "");
+    }
 
-        input = input.substring(0, 1).toUpperCase() + input.substring(1);
+    private List<String> findSimilarSuggestions(String input) {
+        List<FuzzySuggestion> rankedSuggestions = new ArrayList<>();
 
-        if (cachedProduktList.contains(input)) {
-            suggestedCorrection = input;
-            return suggestedCorrection;
+        if (input == null || input.trim().length() < 2) {
+            return new ArrayList<>();
         }
 
         for (String suggestion : cachedProduktList) {
-            double similarity = calculateJaccardSimilarity(input, suggestion);
-            if (similarity > maxSimilarity) {
-                maxSimilarity = similarity;
-                suggestedCorrection = suggestion;
+            double score = calculateFuzzyScore(input, suggestion);
+            if (score >= MIN_FUZZY_SUGGESTION_SCORE) {
+                rankedSuggestions.add(new FuzzySuggestion(suggestion, score));
             }
         }
 
-        if (maxSimilarity < MIN_JACCARD_SIMILARITY_THRESHOLD) {
-            suggestedCorrection = null;
+        rankedSuggestions.sort(Comparator
+                .comparingDouble((FuzzySuggestion suggestion) -> suggestion.score)
+                .reversed()
+                .thenComparing(suggestion -> suggestion.value));
+
+        List<String> suggestions = new ArrayList<>();
+        for (FuzzySuggestion suggestion : rankedSuggestions) {
+            if (!suggestions.contains(suggestion.value)) {
+                suggestions.add(suggestion.value);
+            }
+
+            if (suggestions.size() == MAX_EMPTY_STATE_SUGGESTIONS) {
+                break;
+            }
         }
 
-        return suggestedCorrection;
+        return suggestions;
+    }
+
+    private static class FuzzySuggestion {
+        private final String value;
+        private final double score;
+
+        private FuzzySuggestion(String value, double score) {
+            this.value = value;
+            this.score = score;
+        }
     }
 
 }

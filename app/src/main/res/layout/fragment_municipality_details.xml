@@ -51,6 +51,16 @@
             app:layout_constraintTop_toBottomOf="@id/municipalityDetailName">
 
             <TextView
+                android:id="@+id/municipalityContactTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:text="@string/kontaktoplysninger_overskrift"
+                android:textColor="@color/green_light"
+                android:textSize="19sp"
+                android:textStyle="bold" />
+
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/kommunens_adresse"
@@ -106,7 +116,7 @@
             android:id="@+id/municipalityAboutCard"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="24dp"
             android:background="@drawable/details_info_background"
             android:orientation="vertical"
             android:padding="16dp"
@@ -135,47 +145,15 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/municipalityRulesCard"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:background="@drawable/details_info_background"
-            android:orientation="vertical"
-            android:padding="16dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/municipalityAboutCard">
-
-            <TextView
-                android:id="@+id/municipalityRulesTitle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/kommunens_affaldsregler"
-                android:textColor="@color/green_light"
-                android:textSize="19sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/municipalityDetailWasteRules"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:lineSpacingExtra="5dp"
-                android:textColor="@color/text_color"
-                android:textSize="15sp" />
-
-        </LinearLayout>
-
-        <LinearLayout
             android:id="@+id/municipalityExtraInfoContainer"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="0dp"
+            android:layout_marginTop="24dp"
             android:orientation="vertical"
             android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/municipalityRulesCard" />
+            app:layout_constraintTop_toBottomOf="@id/municipalityAboutCard" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

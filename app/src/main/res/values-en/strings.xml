@@ -36,6 +36,7 @@
     <string name="tomt_søgefelt">Please enter something in the search field</string>
     <string name="affald_ikke_fundet_med_forslag">We could not find "%1$s".\n\nDid you mean "%2$s"?</string>
     <string name="affald_ikke_fundet_uden_forslag">We could not find "%1$s". Try a more common word or another spelling.</string>
+    <string name="mente_du_en_af_disse">Did you mean one of these?</string>
     <string name="proev_en_af_disse_soegninger">Try one of these searches:</string>
     <string name="example_pizzabakke">Pizza box</string>
     <string name="example_batteri">Battery</string>
@@ -76,5 +77,12 @@
     <string name="mente_du_prefix">Did you mean </string>
     <string name="laes_mere_om_affaldet">Read more about this item</string>
     <string name="skjul_beskrivelse">Hide description</string>
+    <string name="det_vigtigste">Most important</string>
+    <string name="typiske_eksempler">Typical examples</string>
+    <string name="kan_typisk_komme_i">Usually belongs here</string>
+    <string name="skal_typisk_et_andet_sted_hen">Usually goes elsewhere</string>
+    <string name="tjek_detaljer_nedenfor">Check the details below.</string>
+    <string name="laes_mere_om_fraktion">Read more about %1$s</string>
+    <string name="skjul_detaljer">Hide details</string>
     <string name="begynd_med_det_samme">Get started</string>
 </resources>
