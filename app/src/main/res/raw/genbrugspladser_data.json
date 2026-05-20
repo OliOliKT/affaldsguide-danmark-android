@@ -1,0 +1,3087 @@
+[
+  {
+    "Navn": "Bispeengen Genbrugsstation",
+    "Adresse": "Bispeengen 35, 2000 Frederiksberg",
+    "Kommune": "Frederiksberg Kommune",
+    "lat": 55.69574093,
+    "lng": 12.5291475,
+    "dawaId": "aa33f693-4b44-4b2b-bf63-4533c97ad341",
+    "dawaBetegnelse": "Bispeengen 35, 2000 Frederiksberg"
+  },
+  {
+    "Navn": "Borgervænget Genbrugsstation",
+    "Adresse": "Sibeliusgade 80, 2100 København Ø",
+    "Kommune": "Københavns Kommune",
+    "lat": 55.71675767,
+    "lng": 12.57013182,
+    "dawaId": "1f4baa02-52f4-4c54-b495-961e7955a96f",
+    "dawaBetegnelse": "Sibeliusgade 80, Hf. Borgervænget, 2100 København Ø"
+  },
+  {
+    "Navn": "Kulbanevej Genbrugsstation",
+    "Adresse": "Retortvej 2, 2500 Valby",
+    "Kommune": "Københavns Kommune"
+  },
+  {
+    "Navn": "Vermlandsgade Genbrugsstation",
+    "Adresse": "Herjedalsgade 2, 2300 København S",
+    "Kommune": "Københavns Kommune"
+  },
+  {
+    "Navn": "Sydhavn Genbrugscenter",
+    "Adresse": "Bådehavnsgade 50, 2450 København SV",
+    "Kommune": "Københavns Kommune",
+    "lat": 55.63830948,
+    "lng": 12.54047592,
+    "dawaId": "0a3f507a-5568-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Bådehavnsgade 50, 2450 København SV"
+  },
+  {
+    "Navn": "Enghave Nærgenbrugsstation",
+    "Adresse": "Sønder Boulevard 137, 1720 København V",
+    "Kommune": "Københavns Kommune",
+    "lat": 55.66336141,
+    "lng": 12.53948796,
+    "dawaId": "0a3f507b-0a27-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Sønder Boulevard 137, 1720 København V"
+  },
+  {
+    "Navn": "Møllegade Nærgenbrugsstation",
+    "Adresse": "Møllegade 25, 2200 København N",
+    "Kommune": "Københavns Kommune",
+    "lat": 55.69174335,
+    "lng": 12.55713119,
+    "dawaId": "dfeed34c-8b7d-42b7-a347-c24eb2db3008",
+    "dawaBetegnelse": "Møllegade 25, 2200 København N"
+  },
+  {
+    "Navn": "Haraldsgade Nærgenbrugsstation",
+    "Adresse": "Vermundsgade 47A, 2100 København Ø",
+    "Kommune": "Københavns Kommune",
+    "lat": 55.70796629,
+    "lng": 12.54976783,
+    "dawaId": "18b32b6e-5e7e-431d-83aa-70e15a62a2e4",
+    "dawaBetegnelse": "Vermundsgade 47A, 2100 København Ø"
+  },
+  {
+    "Navn": "Nordhavn Nærgenbrugsstation",
+    "Adresse": "Helsinkigade 26, 2150 Nordhavn",
+    "Kommune": "Københavns Kommune",
+    "lat": 55.70772487,
+    "lng": 12.59845693,
+    "dawaId": "b43f2d68-9707-4b7e-b262-777cd3df1613",
+    "dawaBetegnelse": "Helsinkigade 26, 2150 Nordhavn"
+  },
+  {
+    "Navn": "Gartnergade Nærgenbrugsstation",
+    "Adresse": "Gartnergade 8-14, 2200 København N",
+    "Kommune": "Københavns Kommune"
+  },
+  {
+    "Navn": "Langgade Nærgenbrugsstation",
+    "Adresse": "Herman Bangs Plads 2, 2500 Valby",
+    "Kommune": "Københavns Kommune",
+    "lat": 55.66734699,
+    "lng": 12.50349328,
+    "dawaId": "d480b454-683a-42f0-8389-3912a4b2d6d5",
+    "dawaBetegnelse": "Herman Bangs Plads 2, 2500 Valby"
+  },
+  {
+    "Navn": "Christiania Nærgenbrugsstation",
+    "Adresse": "Sydområdet 32, 1422 København K",
+    "Kommune": "Københavns Kommune"
+  },
+  {
+    "Navn": "Hørgården Nærgenbrugsstation",
+    "Adresse": "Brydes Allé 60A, 2300 København S",
+    "Kommune": "Københavns Kommune",
+    "lat": 55.65721059,
+    "lng": 12.59655676,
+    "dawaId": "81d45444-0aa2-49f4-bdb3-5532725607ed",
+    "dawaBetegnelse": "Brydes Allé 60A, 2300 København S"
+  },
+  {
+    "Navn": "Remiseparken Nærgenbrugsstation",
+    "Adresse": "Urmagerstien 26, 2300 København S",
+    "Kommune": "Københavns Kommune",
+    "lat": 55.64896516,
+    "lng": 12.59582883,
+    "dawaId": "0a3f507b-19c0-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Urmagerstien 26, 2300 København S"
+  },
+  {
+    "Navn": "Tietgensvej Genbrugsplads",
+    "Adresse": "Tietgensvej 7, 8600 Silkeborg",
+    "Kommune": "Silkeborg Kommune",
+    "lat": 56.19731084,
+    "lng": 9.57765199,
+    "dawaId": "0a3f5095-8e0d-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Tietgensvej 7, 8600 Silkeborg"
+  },
+  {
+    "Navn": "Charlotte Ammundsens Plads Nærgenbrugsstation",
+    "Adresse": "Charlotte Ammundsens Plads 3, 1359 København K",
+    "Kommune": "Københavns Kommune",
+    "lat": 55.68361057,
+    "lng": 12.56364839,
+    "dawaId": "6825e2c1-685b-501c-e044-00144f3ead67",
+    "dawaBetegnelse": "Charlotte Ammundsens Plads 3, 1359 København K"
+  },
+  {
+    "Navn": "Østerbrohuset Nærgenbrugsstation",
+    "Adresse": "Århusgade 101, 2100 København Ø",
+    "Kommune": "Københavns Kommune",
+    "lat": 55.7074427,
+    "lng": 12.58759647,
+    "dawaId": "0a3f507b-381d-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Århusgade 101, 2100 København Ø"
+  },
+  {
+    "Navn": "Genbrugsstationen i Brøndby",
+    "Adresse": "Sydgårdsvej 21, 2605 Brøndby",
+    "Kommune": "Brøndby Kommune",
+    "lat": 55.64027161,
+    "lng": 12.41359763,
+    "dawaId": "88e3d6a8-fa09-4d06-a068-d07d3d9388ae",
+    "dawaBetegnelse": "Sydgårdsvej 21, 2605 Brøndby"
+  },
+  {
+    "Navn": "Hvidovre Genbrugsplads",
+    "Adresse": "Avedøreholmen 97, 2650 Hvidovre",
+    "Kommune": "Hvidovre Kommune",
+    "lat": 55.60450123,
+    "lng": 12.46771707,
+    "dawaId": "0a3f507c-b74d-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Avedøreholmen 97, 2650 Hvidovre"
+  },
+  {
+    "Navn": "Glostrup Genbrugsstation",
+    "Adresse": "Paul Bergsøes Vej 39, 2600 Glostrup",
+    "Kommune": "Glostrup Kommune",
+    "lat": 55.67163133,
+    "lng": 12.42001138,
+    "dawaId": "0a3f507c-64c4-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Paul Bergsøes Vej 39, 2600 Glostrup"
+  },
+  {
+    "Navn": "MiljøCenter Greve",
+    "Adresse": "Ventrupparken 16, 2670 Greve",
+    "Kommune": "Greve Kommune",
+    "lat": 55.5917855,
+    "lng": 12.27022949,
+    "dawaId": "0a3f5081-5517-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Ventrupparken 16, 2670 Greve"
+  },
+  {
+    "Navn": "Ballerup Kommunes Genbrugsstation",
+    "Adresse": "Energivej 44, 2750 Ballerup",
+    "Kommune": "Ballerup Kommune",
+    "lat": 55.72545056,
+    "lng": 12.37238757,
+    "dawaId": "0a3f507b-67a1-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Energivej 44, 2750 Ballerup"
+  },
+  {
+    "Navn": "Kirstinehøj Genbrugsplads",
+    "Adresse": "Kirstinehøj 25C, 2770 Kastrup",
+    "Kommune": "Tårnby Kommune",
+    "lat": 55.61631135,
+    "lng": 12.61562313,
+    "dawaId": "0a3f507d-f8dd-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Kirstinehøj 25C, 2770 Kastrup"
+  },
+  {
+    "Navn": "Dragør Genbrugsplads",
+    "Adresse": "Bachersmindevej 15, 2791 Dragør",
+    "Kommune": "Dragør Kommune",
+    "lat": 55.58285237,
+    "lng": 12.62538307,
+    "dawaId": "0a3f507b-b83f-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Bachersmindevej 15, 2791 Dragør"
+  },
+  {
+    "Navn": "Genbrugsstation Marielundvej",
+    "Adresse": "Marielundvej 49, 2730 Herlev",
+    "Kommune": "Herlev Kommune",
+    "lat": 55.71355119,
+    "lng": 12.42966434,
+    "dawaId": "0a3f507c-8564-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Marielundvej 49, 2730 Herlev"
+  },
+  {
+    "Navn": "Herlev Genbrugsstation",
+    "Adresse": "Mileparken 23, 2730 Herlev",
+    "Kommune": "Herlev Kommune",
+    "lat": 55.71683698,
+    "lng": 12.42660653,
+    "dawaId": "0a3f507c-862f-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Mileparken 23, 2730 Herlev"
+  },
+  {
+    "Navn": "Genbrugsplads Blokken",
+    "Adresse": "Blokken 60, 3460 Birkerød",
+    "Kommune": "Rudersdal Kommune",
+    "lat": 55.83607145,
+    "lng": 12.400962,
+    "dawaId": "5f8cef9b-3d8b-4b8f-929a-096d386c5959",
+    "dawaBetegnelse": "Blokken 60, 3460 Birkerød"
+  },
+  {
+    "Navn": "Genbrugsplads Containerhaven",
+    "Adresse": "Rundforbivej 174, 2850 Nærum",
+    "Kommune": "Hørsholm Kommune",
+    "lat": 55.81976798,
+    "lng": 12.52826861,
+    "dawaId": "2724aea2-b5db-465f-b87d-063b45949dc4",
+    "dawaBetegnelse": "Rundforbivej 174, 2850 Nærum"
+  },
+  {
+    "Navn": "Genbrugsplads Allerød",
+    "Adresse": "Nordkranvej 10, 3540 Lynge",
+    "Kommune": "Allerød Kommune",
+    "lat": 55.83462766,
+    "lng": 12.3049141,
+    "dawaId": "0a3f507e-55c8-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Nordkranvej 10, 3540 Lynge"
+  },
+  {
+    "Navn": "Rødovre Genbrugsstation",
+    "Adresse": "Sandbækvej 7, 2610 Rødovre",
+    "Kommune": "Rødovre Kommune",
+    "lat": 55.69322091,
+    "lng": 12.42983021,
+    "dawaBetegnelse": "Sandbækvej 7, 2610 Rødovre",
+    "dawaId": "0a3f507d-9630-32b8-e044-0003ba298018"
+  },
+  {
+    "Navn": "Genbrugsplads Harpesdal",
+    "Adresse": "Nørreskiftevej 41, 8305 Samsø",
+    "Kommune": "Samsø Kommune",
+    "lat": 55.78977592,
+    "lng": 10.63247235,
+    "dawaId": "0a3f5095-3a1b-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Nørreskiftevej 41, Ørby, 8305 Samsø"
+  },
+  {
+    "Navn": "Genbrugsplads Bakkegårdsvej",
+    "Adresse": "Bakkegårdsvej 404b, 3050 Humlebæk",
+    "Kommune": "Fredensborg Kommune",
+    "lat": 55.96312411,
+    "lng": 12.49632653,
+    "dawaId": "fb545d72-1908-4ec8-9cbf-9804033a968e",
+    "dawaBetegnelse": "Bakkegårdsvej 404B, 3050 Humlebæk"
+  },
+  {
+    "Navn": "Genbrugsplads Højvangen",
+    "Adresse": "Højvangen 25a, 3480 Fredensborg",
+    "Kommune": "Fredensborg Kommune"
+  },
+  {
+    "Navn": "Genbrugspladsen Vandtårnsvej",
+    "Adresse": "Vandtårnsvej 2, 2980 Kokkedal",
+    "Kommune": "Fredensborg Kommune",
+    "lat": 55.922253,
+    "lng": 12.47727283,
+    "dawaId": "0a3f5080-99de-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Vandtårnsvej 2, Vejenbrød, 2980 Kokkedal"
+  },
+  {
+    "Navn": "Hillerød Genbrugsstation",
+    "Adresse": "Solrødgårds Allé 2, 3400 Hillerød",
+    "Kommune": "Hillerød Kommune",
+    "lat": 55.90379716,
+    "lng": 12.27914039,
+    "dawaId": "00c54607-207a-4f32-99cf-cea8d6418c11",
+    "dawaBetegnelse": "Solrødgårds Alle 2, Nørre Herlev, 3400 Hillerød"
+  },
+  {
+    "Navn": "Skibstrup Affaldscenter",
+    "Adresse": "Gørlundevej 4, 3140 Ålsgårde",
+    "Kommune": "Helsingør Kommune"
+  },
+  {
+    "Navn": "Helsingør Genbrugsplads Cirklen",
+    "Adresse": "Energivej 6, 3000 Helsingør",
+    "Kommune": "Helsingør Kommune",
+    "lat": 56.02160662,
+    "lng": 12.55725092,
+    "dawaId": "9ae8891f-2e3b-48c5-bfda-b0a23844266b",
+    "dawaBetegnelse": "Energivej 6, 3000 Helsingør"
+  },
+  {
+    "Navn": "Højelt Genbrugsstation",
+    "Adresse": "Bøgebjergvej 84, 3230 Græsted",
+    "Kommune": "Gribskov Kommune",
+    "lat": 56.08484422,
+    "lng": 12.24590623,
+    "dawaId": "0a3f507f-22df-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Bøgebjergvej 84, Højelt, 3230 Græsted"
+  },
+  {
+    "Navn": "Skærød Genbrugsstation",
+    "Adresse": "Industrivej 4, 3200 Helsinge",
+    "Kommune": "Gribskov Kommune",
+    "lat": 56.01740542,
+    "lng": 12.16576024,
+    "dawaId": "0a3f507f-7126-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Industrivej 4, Skærød, 3200 Helsinge"
+  },
+  {
+    "Navn": "Næstved Genbrugsplads",
+    "Adresse": "Fiskerhusvej 22, 4700 Næstved",
+    "Kommune": "Næstved Kommune",
+    "lat": 55.20544644,
+    "lng": 11.73486207,
+    "dawaId": "29d58755-bf00-4983-e044-0003ba298018",
+    "dawaBetegnelse": "Fiskerhusvej 22, 4700 Næstved"
+  },
+  {
+    "Navn": "Næstved Haveaffaldsplads",
+    "Adresse": "Ved Fjorden 15, 4700 Næstved",
+    "Kommune": "Næstved Kommune",
+    "lat": 55.20824506,
+    "lng": 11.72737621,
+    "dawaId": "0a3f5086-4737-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Ved Fjorden 15, 4700 Næstved"
+  },
+  {
+    "Navn": "Fuglebjerg Genbrugsplads",
+    "Adresse": "Miljøvej 2, 4262 Sandved",
+    "Kommune": "Næstved Kommune",
+    "lat": 55.28033708,
+    "lng": 11.55711957,
+    "dawaId": "0a3f5082-d355-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Miljøvej 2, Arløse, 4262 Sandved"
+  },
+  {
+    "Navn": "Herlufmagle Genbrugsplads",
+    "Adresse": "Håndværkervej 24, 4160 Herlufmagle",
+    "Kommune": "Næstved Kommune",
+    "lat": 55.3166871,
+    "lng": 11.74146793,
+    "dawaId": "0a3f5086-f01a-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Håndværkervej 24, 4160 Herlufmagle"
+  },
+  {
+    "Navn": "Holme-Olstrup Genbrugsplads",
+    "Adresse": "Gartnervej 7, 4684 Holmegaard",
+    "Kommune": "Næstved Kommune",
+    "lat": 55.26071522,
+    "lng": 11.8571492,
+    "dawaId": "0a3f5085-489a-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Gartnervej 7, Holme-Olstrup, 4684 Holmegaard"
+  },
+  {
+    "Navn": "Mogenstrup Genbrugsplads",
+    "Adresse": "Bøgesøvej 29, 4700 Næstved",
+    "Kommune": "Næstved Kommune",
+    "lat": 55.18721204,
+    "lng": 11.87019004,
+    "dawaId": "0a3f5085-2f63-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Bøgesøvej 29, Mogenstrup, 4700 Næstved"
+  },
+  {
+    "Navn": "Morsø Kommune Genbrugplads",
+    "Adresse": "Nørrebro 196, 7900 Nykøbing Mors",
+    "Kommune": "Morsø Kommune"
+  },
+  {
+    "Navn": "Vordingborg Genbrugsplads",
+    "Adresse": "Spirevej 4, Ørslev, 4760 Vordingborg",
+    "Kommune": "Vordingborg Kommune"
+  },
+  {
+    "Navn": "Møn Genbrugsplads",
+    "Adresse": "Æbelnæsvej 54, 4780 Stege",
+    "Kommune": "Vordingborg Kommune",
+    "lat": 54.96594629,
+    "lng": 12.22105331,
+    "dawaId": "0a3f5085-a338-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Æbelnæsvej 54, Tjørnemark, 4780 Stege"
+  },
+  {
+    "Navn": "Præstø Genbrugsplads",
+    "Adresse": "Værkstedsvej 4, 4720 Præstø",
+    "Kommune": "Vordingborg Kommune",
+    "lat": 55.1148018,
+    "lng": 12.04043552,
+    "dawaId": "0a3f5086-7162-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Værkstedsvej 4, 4720 Præstø"
+  },
+  {
+    "Navn": "Rønnede Genbrugsplads",
+    "Adresse": "Industrivej 22, 4683 Rønnede",
+    "Kommune": "Faxe Kommune",
+    "lat": 55.26418884,
+    "lng": 12.02644444,
+    "dawaId": "0a3f5086-a8a4-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Industrivej 22, 4683 Rønnede"
+  },
+  {
+    "Navn": "Haslev Genbrugsplads",
+    "Adresse": "Norgesgade 2B, 4690 Haslev",
+    "Kommune": "Faxe Kommune",
+    "lat": 55.32730826,
+    "lng": 11.93439612,
+    "dawaId": "0a3f5083-130c-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Norgesgade 2B, 4690 Haslev"
+  },
+  {
+    "Navn": "Slagelse Genbrugsplads",
+    "Adresse": "Skovsøvej 8, 4200 Slagelse",
+    "Kommune": "Slagelse Kommune",
+    "lat": 55.41479829,
+    "lng": 11.40295968,
+    "dawaId": "0a3f5084-65d5-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Skovsøvej 8, Skovsø, 4200 Slagelse"
+  },
+  {
+    "Navn": "Korsør Genbrugsplads",
+    "Adresse": "Genbrugsvej 6, 4220 Korsør",
+    "Kommune": "Slagelse Kommune",
+    "lat": 55.32774061,
+    "lng": 11.20487014,
+    "dawaId": "0a3f5083-bdda-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Genbrugsvej 6, Hulby, 4220 Korsør"
+  },
+  {
+    "Navn": "Skælskør Genbrugsplads",
+    "Adresse": "Industrivej 47, 4230 Skælskør",
+    "Kommune": "Slagelse Kommune",
+    "lat": 55.25307227,
+    "lng": 11.32373839,
+    "dawaId": "0a3f5084-27df-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Industrivej 47, 4230 Skælskør"
+  },
+  {
+    "Navn": "Dalmose Genbrugsplads",
+    "Adresse": "Lundsgårdsvej 11, 4261 Dalmose",
+    "Kommune": "Slagelse Kommune",
+    "lat": 55.29066501,
+    "lng": 11.40855057,
+    "dawaId": "0a3f5082-f9e5-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Lundsgårdsvej 11, Høve, 4261 Dalmose"
+  },
+  {
+    "Navn": "Sorø Genbrugsplads",
+    "Adresse": "Metalvej 15, 4180 Sorø",
+    "Kommune": "Sorø Kommune",
+    "lat": 55.46397802,
+    "lng": 11.55708464,
+    "dawaId": "0a3f5084-840e-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Metalvej 15, 4180 Sorø"
+  },
+  {
+    "Navn": "Agersø Genbrugsplads",
+    "Adresse": "Agersø Møllevej 15, 4244 Agersø",
+    "Kommune": "Slagelse Kommune",
+    "lat": 55.21002781,
+    "lng": 11.19721734,
+    "dawaId": "6c6bb611-196b-434b-83ec-557c94d4c2fa",
+    "dawaBetegnelse": "Agersø Møllevej 15, 4244 Agersø"
+  },
+  {
+    "Navn": "Omø Genbrugsplads",
+    "Adresse": "Omø Havnevej 105C, 4245 Omø",
+    "Kommune": "Slagelse Kommune",
+    "lat": 55.17087897,
+    "lng": 11.15880749,
+    "dawaId": "0a3f5084-2e7e-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Omø Havnevej 105C, 4245 Omø"
+  },
+  {
+    "Navn": "Dianalund Genbrugsplads",
+    "Adresse": "Industri Vest 15, 4293 Dianalund",
+    "Kommune": "Sorø Kommune",
+    "lat": 55.5315063,
+    "lng": 11.47906516,
+    "dawaId": "0a3f5082-935d-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Industri Vest 15, 4293 Dianalund"
+  },
+  {
+    "Navn": "Stenlille Haveaffaldsplads",
+    "Adresse": "Banevænget 9, 4295 Stenlille",
+    "Kommune": "Sorø Kommune",
+    "lat": 55.53979906,
+    "lng": 11.58445186,
+    "dawaId": "0a3f5084-9285-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Banevænget 9, 4295 Stenlille"
+  },
+  {
+    "Navn": "Orø Genbrugsplads",
+    "Adresse": "Bygaden 27, 4300 Holbæk",
+    "Kommune": "Holbæk Kommune"
+  },
+  {
+    "Navn": "Ringsted Genbrugsplads",
+    "Adresse": "Møllevej 14, 4100 Ringsted",
+    "Kommune": "Ringsted Kommune",
+    "lat": 55.421707,
+    "lng": 11.79433697,
+    "dawaId": "0a3f5084-0a7f-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Møllevej 14, 4100 Ringsted"
+  },
+  {
+    "Navn": "Holbæk Genbrugsplads",
+    "Adresse": "Spånnebæk 34, 4300 Holbæk",
+    "Kommune": "Holbæk Kommune",
+    "lat": 55.70138641,
+    "lng": 11.71026123,
+    "dawaId": "0a3f5083-48a7-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Spånnebæk 34, 4300 Holbæk"
+  },
+  {
+    "Navn": "Tølløse Genbrugsplads",
+    "Adresse": "Digemosevej 3, 4340 Tølløse",
+    "Kommune": "Holbæk Kommune",
+    "lat": 55.6307676,
+    "lng": 11.75095204,
+    "dawaId": "0a3f5085-0445-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Digemosevej 3, 4340 Tølløse"
+  },
+  {
+    "Navn": "Jernløse Selvbetjeningsplads",
+    "Adresse": "Virkelyst 19, 4420 Regstrup",
+    "Kommune": "Holbæk Kommune",
+    "lat": 55.66132829,
+    "lng": 11.6387058,
+    "dawaId": "0a3f5083-7978-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Virkelyst 19, Nørre Jernløse, 4420 Regstrup"
+  },
+  {
+    "Navn": "Tornved Genbrugsplads",
+    "Adresse": "Holbækvej 167, 4440 Mørkøv",
+    "Kommune": "Holbæk Kommune",
+    "lat": 55.6475187,
+    "lng": 11.45677215,
+    "dawaId": "0a3f5084-ace0-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Holbækvej 167, Tornved, 4440 Mørkøv"
+  },
+  {
+    "Navn": "Bjæverskov Genbrugsplads",
+    "Adresse": "Pilebækvej 23, 4632 Bjæverskov",
+    "Kommune": "Køge Kommune",
+    "lat": 55.45258892,
+    "lng": 12.01182923,
+    "dawaId": "0a3f5082-364a-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Pilebækvej 23, 4632 Bjæverskov"
+  },
+  {
+    "Navn": "Hårlev Genbrugsplads",
+    "Adresse": "Toftebovej 11, 4652 Hårlev",
+    "Kommune": "Stevns Kommune",
+    "lat": 55.34113128,
+    "lng": 12.2315826,
+    "dawaId": "1c79fb99-92d5-4b21-8e8b-e08fc6df8228",
+    "dawaBetegnelse": "Toftebovej 11, 4652 Hårlev"
+  },
+  {
+    "Navn": "Struer Genbrugsplads",
+    "Adresse": "Damgårdsvej 3, 7600 Struer",
+    "Kommune": "Struer Kommune",
+    "lat": 56.47517527,
+    "lng": 8.57589733,
+    "dawaId": "93594a35-82b7-4d14-bd34-b2e57ac3ac14",
+    "dawaBetegnelse": "Damgårdsvej 3, 7600 Struer"
+  },
+  {
+    "Navn": "Thyholm Genbrugsplads",
+    "Adresse": "Kalkværksvej 20, 7790 Thyholm",
+    "Kommune": "Struer Kommune",
+    "lat": 56.62671582,
+    "lng": 8.53435072,
+    "dawaId": "0a3f5092-bcd2-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Kalkværksvej 20, Helligkilde, 7790 Thyholm"
+  },
+  {
+    "Navn": "Fredericia Genbrugsplads Nordre Kobbelvej",
+    "Adresse": "Nordre Kobbelvej 9, 7000 Fredericia",
+    "Kommune": "Fredericia Kommune",
+    "lat": 55.59404502,
+    "lng": 9.75882404,
+    "dawaId": "7bc82d32-3e45-4587-8a5a-068a5f2c5115",
+    "dawaBetegnelse": "Nordre Kobbelvej 9, 7000 Fredericia"
+  },
+  {
+    "Navn": "Fredericia Genbrugsplads Bundgårdsvej",
+    "Adresse": "Bundgårdsvej 2, 7000 Fredericia",
+    "Kommune": "Fredericia Kommune",
+    "lat": 55.53967532,
+    "lng": 9.69959968,
+    "dawaId": "0a3f508e-f677-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Bundgårdsvej 2, Brovad, 7000 Fredericia"
+  },
+  {
+    "Navn": "Store Heddinge Genbrugsplads",
+    "Adresse": "Frøslevvej 34, 4660 Store Heddinge",
+    "Kommune": "Stevns Kommune",
+    "lat": 55.30419416,
+    "lng": 12.3821764,
+    "dawaId": "0a3f5086-c93c-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Frøslevvej 34, 4660 Store Heddinge"
+  },
+  {
+    "Navn": "Kalundborg Genbrugsplads",
+    "Adresse": "Genvejen 5, 4400 Kalundborg",
+    "Kommune": "Kalundborg Kommune",
+    "lat": 55.66320216,
+    "lng": 11.11507819,
+    "dawaId": "b40dd3dc-081b-4fa1-9394-eb6c3c1e1724",
+    "dawaBetegnelse": "Genvejen 5, 4400 Kalundborg"
+  },
+  {
+    "Navn": "Gørlev Genbrugsplads",
+    "Adresse": "Agertoften 8, 4281 Gørlev",
+    "Kommune": "Kalundborg Kommune",
+    "lat": 55.54751939,
+    "lng": 11.21979593,
+    "dawaId": "0a3f5082-d8fd-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Agertoften 8, 4281 Gørlev"
+  },
+  {
+    "Navn": "Høng Genbrugsplads",
+    "Adresse": "Karinavej 22, 4270 Høng",
+    "Kommune": "Kalundborg Kommune",
+    "lat": 55.49492186,
+    "lng": 11.28854083,
+    "dawaId": "0a3f5083-66c2-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Karinavej 22, 4270 Høng"
+  },
+  {
+    "Navn": "Bregninge Genbrugsplads",
+    "Adresse": "Vilhelmshøjvej 11A, 4593 Eskebjerg",
+    "Kommune": "Kalundborg Kommune",
+    "lat": 55.68719612,
+    "lng": 11.30836671,
+    "dawaId": "0a3f5082-8d9b-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Vilhelmshøjvej 11A, 4593 Eskebjerg"
+  },
+  {
+    "Navn": "Fårevejle Genbrugsstation",
+    "Adresse": "Storøvej 2, 4540 Fårevejle",
+    "Kommune": "Odsherred Kommune",
+    "lat": 55.77922685,
+    "lng": 11.48471722,
+    "dawaId": "0a3f5082-c21f-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Storøvej 2, Lammefjorden, 4540 Fårevejle"
+  },
+  {
+    "Navn": "Hønsinge Genbrugsstation",
+    "Adresse": "Nykøbing-Slagelsevej 10A, 4560 Vig",
+    "Kommune": "Odsherred Kommune",
+    "lat": 55.8553907,
+    "lng": 11.5429241,
+    "dawaId": "0a3f5084-e335-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Nykøbing-Slagelsevej 10A, Hønsinge, 4560 Vig"
+  },
+  {
+    "Navn": "Nykøbing Sjælland Genbrugsstation",
+    "Adresse": "Vangen 3, 4500 Nykøbing Sjælland",
+    "Kommune": "Odsherred Kommune"
+  },
+  {
+    "Navn": "Askø Containerplads",
+    "Adresse": "Sundsørevej 1, 4930 Maribo",
+    "Kommune": "Lolland Kommune"
+  },
+  {
+    "Navn": "Dannemare Genbrugsplads",
+    "Adresse": "Rudbjergvej 21, 4983 Dannemare",
+    "Kommune": "Lolland Kommune",
+    "lat": 54.75968219,
+    "lng": 11.13688324,
+    "dawaId": "0a3f5086-8cff-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Rudbjergvej 21, 4983 Dannemare"
+  },
+  {
+    "Navn": "Fejø Containerplads",
+    "Adresse": "Dybvigvej 1, 4944 Fejø",
+    "Kommune": "Lolland Kommune",
+    "lat": 54.95085335,
+    "lng": 11.43408993,
+    "dawaId": "0a3f5086-73fb-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Dybvigvej 1, 4944 Fejø"
+  },
+  {
+    "Navn": "Lyngby-Taarbæk Genbrugsstation",
+    "Adresse": "Firskovvej 7, 9, 2800 Kongens Lyngby",
+    "Kommune": "Lyngby-Taarbæk Kommune"
+  },
+  {
+    "Navn": "Læsø Genbrugsplads",
+    "Adresse": "Kokvadgårdsvej 3, 9940 Læsø",
+    "Kommune": "Læsø Kommune",
+    "lat": 57.24498917,
+    "lng": 10.9953535,
+    "dawaId": "0a3f509a-cb8a-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Kokvadgårdsvej 3, Byrum, 9940 Læsø"
+  },
+  {
+    "Navn": "Femø Containerplads",
+    "Adresse": "Femø Havn 1, 4945 Femø",
+    "Kommune": "Lolland Kommune",
+    "lat": 54.97277152,
+    "lng": 11.51337722,
+    "dawaId": "0a3f5086-76f7-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Femø Havn 1, 4945 Femø"
+  },
+  {
+    "Navn": "Holeby Genbrugsplads",
+    "Adresse": "Erhard Frederiksensvej 4A, 4960 Holeby",
+    "Kommune": "Lolland Kommune",
+    "lat": 54.70694799,
+    "lng": 11.4778734,
+    "dawaId": "0a3f5085-3c79-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Erhard Frederiksensvej 4A, 4960 Holeby"
+  },
+  {
+    "Navn": "Horslunde Genbrugsplads",
+    "Adresse": "Tingmarken 5, 4913 Horslunde",
+    "Kommune": "Lolland Kommune",
+    "lat": 54.90516394,
+    "lng": 11.21183531,
+    "dawaId": "0a3f5086-7b84-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Tingmarken 5, 4913 Horslunde"
+  },
+  {
+    "Navn": "Maribo Genbrugsplads",
+    "Adresse": "Skibevej 4, 4930 Maribo",
+    "Kommune": "Lolland Kommune",
+    "lat": 54.79214525,
+    "lng": 11.46996053,
+    "dawaId": "64bd9760-6251-4263-b21e-bfe1b20afb05",
+    "dawaBetegnelse": "Skibevej 4, 4930 Maribo"
+  },
+  {
+    "Navn": "Nakskov Genbrugsplads",
+    "Adresse": "Miljøvej 14, 4900 Nakskov",
+    "Kommune": "Lolland Kommune",
+    "lat": 54.82730791,
+    "lng": 11.1145855,
+    "dawaId": "af576f78-2f05-4dd7-8106-74138dfdb857",
+    "dawaBetegnelse": "Miljøvej 14, 4900 Nakskov"
+  },
+  {
+    "Navn": "Nysted Genbrugsplads",
+    "Adresse": "Egevænget 7, 4880 Nysted",
+    "Kommune": "Guldborgsund Kommune",
+    "lat": 54.67167024,
+    "lng": 11.73578323,
+    "dawaId": "53279ace-c64f-1b90-e044-0003ba298018",
+    "dawaBetegnelse": "Egevænget 7, 4880 Nysted"
+  },
+  {
+    "Navn": "Øster Toreby Genbrugsplads",
+    "Adresse": "Industriparken 23, 4800 Nykøbing F.",
+    "Kommune": "Guldborgsund Kommune",
+    "lat": 54.76223726,
+    "lng": 11.83122584,
+    "dawaId": "0a3f5085-cea1-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Industriparken 23, Ø Toreby, 4800 Nykøbing F"
+  },
+  {
+    "Navn": "Rødby Genbrugsplads",
+    "Adresse": "Kirkenoret 4, 4970 Rødby",
+    "Kommune": "Lolland Kommune",
+    "lat": 54.69866645,
+    "lng": 11.38584436,
+    "dawaId": "53279ace-c5d0-1b90-e044-0003ba298018",
+    "dawaBetegnelse": "Kirkenoret 4, 4970 Rødby"
+  },
+  {
+    "Navn": "Sakskøbing Genbrugsplads",
+    "Adresse": "Flintevej 2, 4990 Sakskøbing",
+    "Kommune": "Guldborgsund Kommune",
+    "lat": 54.79529449,
+    "lng": 11.61552361,
+    "dawaId": "22729a66-8a0c-44d0-e044-0003ba298018",
+    "dawaBetegnelse": "Flintevej 2, 4990 Sakskøbing"
+  },
+  {
+    "Navn": "Søllested Genbrugsplads",
+    "Adresse": "Jernbanegade 19, 4920 Søllested",
+    "Kommune": "Lolland Kommune",
+    "lat": 54.81037771,
+    "lng": 11.26726606,
+    "dawaId": "0a3f5085-5657-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Jernbanegade 19, 4920 Søllested"
+  },
+  {
+    "Navn": "Roskilde Genbrugsplads",
+    "Adresse": "Vestre Hedevej 32, 4000 Roskilde",
+    "Kommune": "Roskilde Kommune",
+    "lat": 55.64133343,
+    "lng": 12.1315486,
+    "dawaId": "53ba2f34-60b9-2505-e044-0003ba298018",
+    "dawaBetegnelse": "Vestre Hedevej 32, 4000 Roskilde"
+  },
+  {
+    "Navn": "Jyllinge Genbrugsplads",
+    "Adresse": "Brohaven 2, 4040 Jyllinge",
+    "Kommune": "Roskilde Kommune",
+    "lat": 55.75694851,
+    "lng": 12.12521428,
+    "dawaId": "11db2423-454d-5796-e044-0003ba298018",
+    "dawaBetegnelse": "Brohaven 2, 4040 Jyllinge"
+  },
+  {
+    "Navn": "Viby Genbrugsplads",
+    "Adresse": "Vestergade 25B, 4130 Viby Sjælland",
+    "Kommune": "Roskilde Kommune",
+    "lat": 55.54681153,
+    "lng": 12.01776594,
+    "dawaId": "0a3f5081-d9b4-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Vestergade 25B, Dåstrup, 4130 Viby Sjælland"
+  },
+  {
+    "Navn": "Viby genbrugsstation",
+    "Adresse": "Eskelundvej 13, 8260 Viby J",
+    "Kommune": "Aarhus Kommune",
+    "lat": 56.14037937,
+    "lng": 10.16374928,
+    "dawaId": "0a3f5096-1f82-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Eskelundvej 13, 8260 Viby J"
+  },
+  {
+    "Navn": "Køge Genbrugsplads",
+    "Adresse": "Tangmosevej 104B, 4600 Køge",
+    "Kommune": "Køge Kommune",
+    "lat": 55.47323723,
+    "lng": 12.19016606,
+    "dawaId": "0a3f5081-b130-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Tangmosevej 104B, 4600 Køge"
+  },
+  {
+    "Navn": "Tandskov Genbrugsplads",
+    "Adresse": "Tandskovvej 17, 8600 Silkeborg",
+    "Kommune": "Silkeborg Kommune"
+  },
+  {
+    "Navn": "Gjern Genbrugsplads",
+    "Adresse": "Lille Amerika 48, 8600 Silkeborg",
+    "Kommune": "Silkeborg Kommune",
+    "lat": 56.19986098,
+    "lng": 9.70568131,
+    "dawaId": "3c63003b-e2c9-4459-b0a8-02bfc480523a",
+    "dawaBetegnelse": "Lille Amerika 48, 8600 Silkeborg"
+  },
+  {
+    "Navn": "Torkilstrup Genbrugsplads",
+    "Adresse": "Landevejen 75, 4060 Kirke Såby",
+    "Kommune": "Lejre Kommune",
+    "lat": 55.64122919,
+    "lng": 11.84727352,
+    "dawaId": "0a3f5081-05e4-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Landevejen 75, Kirke Sonnerup, 4060 Kirke Såby"
+  },
+  {
+    "Navn": "Bullerup Genbrugsstation",
+    "Adresse": "Bullerupvej 84 B, 5240 Odense NØ",
+    "Kommune": "Odense Kommune"
+  },
+  {
+    "Navn": "Højme Genbrugsstation",
+    "Adresse": "Holkebjergvej 132, 5250 Odense SV",
+    "Kommune": "Odense Kommune",
+    "lat": 55.35867803,
+    "lng": 10.33378361,
+    "dawaId": "0a3f5089-48fb-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Holkebjergvej 132, Højme, 5250 Odense SV"
+  },
+  {
+    "Navn": "Næsby Genbrugsstation",
+    "Adresse": "Egestubben 2 F, 5270 Odense N",
+    "Kommune": "Odense Kommune"
+  },
+  {
+    "Navn": "Genbrugsstation Lindved",
+    "Adresse": "Energivej 10, 5260 Odense S",
+    "Kommune": "Odense Kommune",
+    "lat": 55.34637996,
+    "lng": 10.41121254,
+    "dawaId": "0a3f5089-2394-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Energivej 10, Lindved, 5260 Odense S"
+  },
+  {
+    "Navn": "Genbrugsstation Havnegade",
+    "Adresse": "Havnegade 102, 5000 Odense C",
+    "Kommune": "Odense Kommune",
+    "lat": 55.42568646,
+    "lng": 10.3920247,
+    "dawaId": "0a3f5089-3d62-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Havnegade 102, 5000 Odense C"
+  },
+  {
+    "Navn": "Genbrugsstation Snapindvej",
+    "Adresse": "Snapindvej 21, 5200 Odense V",
+    "Kommune": "Odense Kommune",
+    "lat": 55.39746594,
+    "lng": 10.35658896,
+    "dawaId": "0a3f5089-bee5-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Snapindvej 21, Bolbro, 5200 Odense V"
+  },
+  {
+    "Navn": "Genbrugsstation Holkebjergvej",
+    "Adresse": "Holkebjergvej 132, 5250 Odense",
+    "Kommune": "Odense Kommune",
+    "lat": 55.35867803,
+    "lng": 10.33378361,
+    "dawaId": "0a3f5089-48fb-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Holkebjergvej 132, Højme, 5250 Odense SV"
+  },
+  {
+    "Navn": "Assens Genbrugsplads",
+    "Adresse": "Torø Huse Vej 15, 5610 Assens",
+    "Kommune": "Assens Kommune",
+    "lat": 55.25534784,
+    "lng": 9.90244295,
+    "dawaId": "0a3f5087-cec5-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Torø Huse Vej 15, 5610 Assens"
+  },
+  {
+    "Navn": "Haarby Genbrugsplads",
+    "Adresse": "Trunderupvej 3, 5683 Haarby",
+    "Kommune": "Assens Kommune",
+    "lat": 55.22270242,
+    "lng": 10.13464722,
+    "dawaId": "0a3f5088-5dbd-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Trunderupvej 3, 5683 Haarby"
+  },
+  {
+    "Navn": "Vissenbjerg Genbrugsplads",
+    "Adresse": "Højmarken 1, 5492 Vissenbjerg",
+    "Kommune": "Assens Kommune",
+    "lat": 55.39190141,
+    "lng": 10.14644758,
+    "dawaId": "0a3f508a-e161-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Højmarken 1, 5492 Vissenbjerg"
+  },
+  {
+    "Navn": "Tommerup Genbrugsplads",
+    "Adresse": "Ellehaven 52, 5690 Tommerup",
+    "Kommune": "Assens Kommune",
+    "lat": 55.31126218,
+    "lng": 10.21521274,
+    "dawaId": "0a3f508a-bad8-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Ellehaven 52, 5690 Tommerup"
+  },
+  {
+    "Navn": "Glamsbjerg Genbrugsplads",
+    "Adresse": "Kastanievej 24, 5620 Glamsbjerg",
+    "Kommune": "Assens Kommune",
+    "lat": 55.27467504,
+    "lng": 10.09862243,
+    "dawaId": "0ab23a20-c831-61d9-e044-0003ba298018",
+    "dawaBetegnelse": "Kastanievej 24, 5620 Glamsbjerg"
+  },
+  {
+    "Navn": "Aarup Genbrugsplads",
+    "Adresse": "Indre Ringvej 22, 5560 Aarup",
+    "Kommune": "Assens Kommune",
+    "lat": 55.3788969,
+    "lng": 10.05842282,
+    "dawaId": "0a3f508b-16a9-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Indre Ringvej 22, 5560 Aarup"
+  },
+  {
+    "Navn": "Bogense Genbrugsplads",
+    "Adresse": "Industrivej 2, 5400 Bogense",
+    "Kommune": "Nordfyns Kommune",
+    "lat": 55.55067235,
+    "lng": 10.08618074,
+    "dawaId": "0a3f5087-d699-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Industrivej 2, Almindehuse, 5400 Bogense"
+  },
+  {
+    "Navn": "Otterup Genbrugsplads",
+    "Adresse": "Ørkebyvej 15, 5450 Otterup",
+    "Kommune": "Nordfyns Kommune",
+    "lat": 55.50042817,
+    "lng": 10.39231931,
+    "dawaId": "0a3f508a-12da-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Ørkebyvej 15, Otterup, 5450 Otterup"
+  },
+  {
+    "Navn": "Søndersø Genbrugsplads",
+    "Adresse": "Snavevej 25, 5471 Søndersø",
+    "Kommune": "Nordfyns Kommune",
+    "lat": 55.47747564,
+    "lng": 10.25936047,
+    "dawaId": "0a3f508a-b431-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Snavevej 25, 5471 Søndersø"
+  },
+  {
+    "Navn": "Ringe Genbrugsstation",
+    "Adresse": "Kielbergvej 25, 5750 Ringe",
+    "Kommune": "Faaborg-Midtfyn Kommune",
+    "lat": 55.2558009,
+    "lng": 10.47655183,
+    "dawaId": "9d706b39-a49c-46a0-b0fc-bbadbdbb7667",
+    "dawaBetegnelse": "Kielbergvej 25, 5750 Ringe"
+  },
+  {
+    "Navn": "Middelfart Genbrugsplads",
+    "Adresse": "Fynsvej 100, 5500 Middelfart",
+    "Kommune": "Middelfart Kommune",
+    "lat": 55.4959882,
+    "lng": 9.78425678,
+    "dawaId": "6825e2c1-6b1d-501c-e044-00144f3ead67",
+    "dawaBetegnelse": "Fynsvej 100, Skrillinge, 5500 Middelfart"
+  },
+  {
+    "Navn": "Årslev Genbrugsstation",
+    "Adresse": "Lundsmarken 29, 5792 Årslev",
+    "Kommune": "Faaborg-Midtfyn Kommune",
+    "lat": 55.30810495,
+    "lng": 10.46324231,
+    "dawaId": "fab19130-a931-446a-aec3-74b1be816880",
+    "dawaBetegnelse": "Lundsmarken 29, Årslev, 5792 Årslev"
+  },
+  {
+    "Navn": "Gladsaxe Genbrugsstation",
+    "Adresse": "Turbinevej 10, 2860 Søborg",
+    "Kommune": "Gladsaxe Kommune",
+    "lat": 55.73139338,
+    "lng": 12.45627613,
+    "dawaId": "0a3f507c-50ae-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Turbinevej 10, 2860 Søborg"
+  },
+  {
+    "Navn": "Gentofte Genbrugsstation",
+    "Adresse": "Ørnegårdsvej 15, 2820 Gentofte",
+    "Kommune": "Gentofte Kommune",
+    "lat": 55.76039481,
+    "lng": 12.51710269,
+    "dawaId": "0a3f507c-11f1-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Ørnegårdsvej 15, 2820 Gentofte"
+  },
+  {
+    "Navn": "Sandager Minigenbrugsstation",
+    "Adresse": "Sandagervej 21, 5854 Gislev",
+    "Kommune": "Faaborg-Midtfyn Kommune"
+  },
+  {
+    "Navn": "Køstrup Genbrugsplads",
+    "Adresse": "Juelsmindevej 53, 5464 Brenderup",
+    "Kommune": "Middelfart Kommune",
+    "lat": 55.45925534,
+    "lng": 9.97999576,
+    "dawaId": "2edda757-97c3-1605-e044-0003ba298018",
+    "dawaBetegnelse": "Juelsmindevej 53, Køstrup Mk, 5464 Brenderup Fyn"
+  },
+  {
+    "Navn": "Nr. Aaby Genbrugsplads",
+    "Adresse": "Margaardvej 47, 5580 Nørre Aaby",
+    "Kommune": "Middelfart Kommune",
+    "lat": 55.46572506,
+    "lng": 9.87478425,
+    "dawaId": "0a3f5088-e7bc-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Margaardvej 47, 5580 Nørre Aaby"
+  },
+  {
+    "Navn": "Gelsted Genbrugsplads",
+    "Adresse": "Søndergade 78, 5591 Gelsted",
+    "Kommune": "Middelfart Kommune",
+    "lat": 55.39169225,
+    "lng": 9.96761672,
+    "dawaId": "0a3f5088-0e65-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Søndergade 78, Holme, 5591 Gelsted"
+  },
+  {
+    "Navn": "Svendborg Genbrugsplads",
+    "Adresse": "Miljøvej 10, 5700 Svendborg",
+    "Kommune": "Svendborg Kommune",
+    "lat": 55.08700787,
+    "lng": 10.57909826,
+    "dawaId": "383791d9-2e31-4e62-800b-275e9b619308",
+    "dawaBetegnelse": "Miljøvej 10, 5700 Svendborg"
+  },
+  {
+    "Navn": "Hesselager Genbrugsstation",
+    "Adresse": "Industrivænget 1, 5874 Hesselager",
+    "Kommune": "Svendborg Kommune",
+    "lat": 55.16741518,
+    "lng": 10.73282735,
+    "dawaId": "0a3f5088-4aad-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Industrivænget 1, 5874 Hesselager"
+  },
+  {
+    "Navn": "Nyborg Genbrugsstation",
+    "Adresse": "Lollandsvej 6, 5800 Nyborg",
+    "Kommune": "Nyborg Kommune",
+    "lat": 55.31357832,
+    "lng": 10.74914145,
+    "dawaId": "3e0f4ba3-f0c7-497f-b356-574702ca489a",
+    "dawaBetegnelse": "Lollandsvej 6, 5800 Nyborg"
+  },
+  {
+    "Navn": "Lejbølle Genbrugsplads",
+    "Adresse": "Lejbøllevej 9A, 5953 Tranekær",
+    "Kommune": "Langeland Kommune",
+    "lat": 55.01810141,
+    "lng": 10.86910876,
+    "dawaId": "0a3f508a-cd81-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Lejbøllevej 9A, 5953 Tranekær"
+  },
+  {
+    "Navn": "Helsned Genbrugsplads",
+    "Adresse": "Helsnedvej 25, 5932 Humble",
+    "Kommune": "Langeland Kommune",
+    "lat": 54.84120741,
+    "lng": 10.67483768,
+    "dawaId": "f2f91d5e-32ab-4238-809a-873f22d0bf8d",
+    "dawaBetegnelse": "Helsnedvej 25, Helsned, 5932 Humble"
+  },
+  {
+    "Navn": "Lohals Containerplads",
+    "Adresse": "Bræmlevænget 1, 5953 Tranekær",
+    "Kommune": "Langeland Kommune",
+    "lat": 55.1273942,
+    "lng": 10.90730791,
+    "dawaId": "0a3f508a-c869-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Bræmlevænget 1, Lohals, 5953 Tranekær"
+  },
+  {
+    "Navn": "Bagenkop Containerplads",
+    "Adresse": "Vostervej 5, 5935 Bagenkop",
+    "Kommune": "Langeland Kommune",
+    "lat": 54.74548369,
+    "lng": 10.68753084,
+    "dawaId": "0a3f508a-a2cd-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Vostervej 5, 5935 Bagenkop"
+  },
+  {
+    "Navn": "Strynø Containerplads",
+    "Adresse": "Strynø Brovej 14, 5900 Rudkøbing",
+    "Kommune": "Langeland Kommune"
+  },
+  {
+    "Navn": "Kerteminde Genbrugsplads",
+    "Adresse": "Hindsholmvej 279, 5300 Kerteminde",
+    "Kommune": "Kerteminde Kommune",
+    "lat": 55.47382564,
+    "lng": 10.66663139,
+    "dawaId": "0a3f5088-6736-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Hindsholmvej 279, 5300 Kerteminde"
+  },
+  {
+    "Navn": "Munkebo Genbrugs-Ø",
+    "Adresse": "Garbæksvej 6, 5330 Munkebo",
+    "Kommune": "Kerteminde Kommune",
+    "lat": 55.45725832,
+    "lng": 10.54139503,
+    "dawaId": "0a3f5088-b7f6-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Garbæksvej 6, 5330 Munkebo"
+  },
+  {
+    "Navn": "Langeskov Genbrugsplads",
+    "Adresse": "Mariesmindevej 2, 5550 Langeskov",
+    "Kommune": "Kerteminde Kommune",
+    "lat": 55.3474396,
+    "lng": 10.58033184,
+    "dawaId": "0a3f5088-7fe2-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Mariesmindevej 2, 5550 Langeskov"
+  },
+  {
+    "Navn": "Glansager Genbrugsplads",
+    "Adresse": "Foldager 1, 6400 Sønderborg",
+    "Kommune": "Sønderborg Kommune",
+    "lat": 54.93231796,
+    "lng": 9.866051,
+    "dawaId": "bba6ba49-6f2d-41c9-b5ad-2fcc0b2f6c2c",
+    "dawaBetegnelse": "Foldager 1, 6400 Sønderborg"
+  },
+  {
+    "Navn": "Skodsbøl Genbrugsplads",
+    "Adresse": "Nybølnorvej 26, 6310 Broager",
+    "Kommune": "Sønderborg Kommune",
+    "lat": 54.90437476,
+    "lng": 9.65238615,
+    "dawaId": "5c6cf113-a8c8-46e1-be71-dd774154c756",
+    "dawaBetegnelse": "Nybølnorvej 26, Skodsbøl, 6310 Broager"
+  },
+  {
+    "Navn": "Gråsten Genbrugsplads",
+    "Adresse": "Ravnsbjergvej 4A, 6300 Gråsten",
+    "Kommune": "Sønderborg Kommune",
+    "lat": 54.91549078,
+    "lng": 9.5534458,
+    "dawaId": "0a3f508b-7d1f-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Ravnsbjergvej 4A, Rinkenæs, 6300 Gråsten"
+  },
+  {
+    "Navn": "Vesterlund Genbrugsplads",
+    "Adresse": "Genvejen 3, 6430 Nordborg",
+    "Kommune": "Sønderborg Kommune",
+    "lat": 55.04494944,
+    "lng": 9.74206183,
+    "dawaId": "0e0fb4bc-92a9-4889-a026-05378ab72f78",
+    "dawaBetegnelse": "Genvejen 3, 6430 Nordborg"
+  },
+  {
+    "Navn": "Skovby Genbrugsplads",
+    "Adresse": "Skovmosevej 2, 6470 Sydals",
+    "Kommune": "Sønderborg Kommune",
+    "lat": 54.87939618,
+    "lng": 9.9953021,
+    "dawaId": "0a3f508c-601e-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Skovmosevej 2, Skovbygård, 6470 Sydals"
+  },
+  {
+    "Navn": "Guderup Genbrugsplads",
+    "Adresse": "Smedevænget 3, 6430 Nordborg",
+    "Kommune": "Sønderborg Kommune",
+    "lat": 54.99369346,
+    "lng": 9.85985931,
+    "dawaId": "0a3f508b-eb40-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Smedevænget 3, Guderup, 6430 Nordborg"
+  },
+  {
+    "Navn": "Sundeved Genbrugsplads",
+    "Adresse": "Langbroparken 2, 6400 Sønderborg",
+    "Kommune": "Sønderborg Kommune",
+    "lat": 54.9699513,
+    "lng": 9.66459747,
+    "dawaId": "64e20dfb-8a62-4f77-a591-21724dc4aa75",
+    "dawaBetegnelse": "Langbroparken 2, Ullerup, 6400 Sønderborg"
+  },
+  {
+    "Navn": "Nørrekobbel Genbrugsplads",
+    "Adresse": "Nørrekobbel 7, 6400 Sønderborg",
+    "Kommune": "Sønderborg Kommune",
+    "lat": 54.9236731,
+    "lng": 9.79274978,
+    "dawaId": "0a3f508c-7c5f-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Nørrekobbel 7, 6400 Sønderborg"
+  },
+  {
+    "Navn": "Frederiksværk Genbrugsplads",
+    "Adresse": "Havnesvinget 10, 3300 Frederiksværk",
+    "Kommune": "Halsnæs Kommune",
+    "lat": 55.96879565,
+    "lng": 12.00479519,
+    "dawaId": "0a3f507e-f0d9-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Havnesvinget 10, 3300 Frederiksværk"
+  },
+  {
+    "Navn": "Hundested Genbrugsplads",
+    "Adresse": "Håndværkervej 16, 3390 Hundested",
+    "Kommune": "Halsnæs Kommune",
+    "lat": 55.9648536,
+    "lng": 11.88321697,
+    "dawaId": "0a3f5080-2e23-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Håndværkervej 16, 3390 Hundested"
+  },
+  {
+    "Navn": "Haderslev Genbrugsplads",
+    "Adresse": "Knavvej 6, 6100 Haderslev",
+    "Kommune": "Haderslev Kommune",
+    "lat": 55.22400334,
+    "lng": 9.48853234,
+    "dawaId": "49e15efa-0dba-4834-a0dd-6bd55373d0a0",
+    "dawaBetegnelse": "Knavvej 6, 6100 Haderslev"
+  },
+  {
+    "Navn": "Vojens Genbrugsplads",
+    "Adresse": "Tingvejen 29, 6500 Vojens",
+    "Kommune": "Haderslev Kommune",
+    "lat": 55.23856642,
+    "lng": 9.28219389,
+    "dawaId": "0a3f508c-d12d-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Tingvejen 29, Skrydstrup, 6500 Vojens"
+  },
+  {
+    "Navn": "Gram Genbrugsplads",
+    "Adresse": "Industrivej 5, 6510 Gram",
+    "Kommune": "Haderslev Kommune",
+    "lat": 55.28096402,
+    "lng": 9.03997607,
+    "dawaId": "0a3f508b-6d0a-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Industrivej 5, 6510 Gram"
+  },
+  {
+    "Navn": "Aabenraa Genbrugsplads",
+    "Adresse": "Forsyningsvejen 2, 6200 Aabenraa",
+    "Kommune": "Aabenraa Kommune",
+    "lat": 55.07257407,
+    "lng": 9.38381432,
+    "dawaId": "a29fde5b-c1fe-44c3-9ecb-72daa6a05f9c",
+    "dawaBetegnelse": "Forsyningsvejen 2, 6200 Aabenraa"
+  },
+  {
+    "Navn": "Padborg Genbrugsplads",
+    "Adresse": "Visherredsvej 1, 6330 Padborg",
+    "Kommune": "Aabenraa Kommune",
+    "lat": 54.83228986,
+    "lng": 9.3576856,
+    "dawaId": "0a3f508b-3d05-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Visherredsvej 1, 6330 Padborg"
+  },
+  {
+    "Navn": "Tumbøl Genbrugsplads",
+    "Adresse": "Tumbøl Møllegade 1, 6200 Aabenraa",
+    "Kommune": "Aabenraa Kommune",
+    "lat": 54.97785731,
+    "lng": 9.51862917,
+    "dawaId": "0a3f508b-c574-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Tumbøl Møllegade 1, Tumbøl, 6200 Aabenraa"
+  },
+  {
+    "Navn": "Kliplev Genbrugsplads",
+    "Adresse": "Potterhusvej 3, 6200 Aabenraa",
+    "Kommune": "Aabenraa Kommune"
+  },
+  {
+    "Navn": "Kobro Genbrugsplads",
+    "Adresse": "Slogsåvej 20, 6372 Bylderup-Bov",
+    "Kommune": "Aabenraa Kommune",
+    "lat": 54.96947891,
+    "lng": 9.14790574,
+    "dawaId": "0a3f508c-9ca7-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Slogsåvej 20, Heds Mark, 6372 Bylderup-Bov"
+  },
+  {
+    "Navn": "Skærbæk Genbrugsplads",
+    "Adresse": "Biovej 2, 6780 Skærbæk",
+    "Kommune": "Tønder Kommune",
+    "lat": 55.15800127,
+    "lng": 8.78266491,
+    "dawaId": "304911f4-9a74-4a6c-8ed5-22c2890863c3",
+    "dawaBetegnelse": "Biovej 2, 6780 Skærbæk"
+  },
+  {
+    "Navn": "Hølleskov Genbrugsplads",
+    "Adresse": "Hølleskovvej 9A, 6520 Toftlund",
+    "Kommune": "Tønder Kommune"
+  },
+  {
+    "Navn": "Tønder Genbrugsplads",
+    "Adresse": "Skovænget 14, 6270 Tønder",
+    "Kommune": "Tønder Kommune",
+    "lat": 54.95206698,
+    "lng": 8.86174592,
+    "dawaId": "c8033cb3-6290-4d1f-81ed-028d486999b9",
+    "dawaBetegnelse": "Skovænget 14, 6270 Tønder"
+  },
+  {
+    "Navn": "Rømø Genbrugsplads",
+    "Adresse": "Havnebyvej 114, 6792 Rømø",
+    "Kommune": "Tønder Kommune",
+    "lat": 55.12619418,
+    "lng": 8.54704112,
+    "dawaId": "0a3f508c-37e9-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Havnebyvej 114, Kongsmark, 6792 Rømø"
+  },
+  {
+    "Navn": "Løgumkloster Genbrugsplads",
+    "Adresse": "Industrivej 17A, 6240 Løgumkloster",
+    "Kommune": "Tønder Kommune",
+    "lat": 55.04966096,
+    "lng": 8.95343459,
+    "dawaId": "0a3f508b-ce2c-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Industrivej 17A, 6240 Løgumkloster"
+  },
+  {
+    "Navn": "Aarhus Ø Nærgenbrugsstation",
+    "Adresse": "Johanne Bergs Gade 3, 8000 Aarhus Centrum",
+    "Kommune": "Aarhus Kommune"
+  },
+  {
+    "Navn": "Godsbanen Nærgenbrugsstation",
+    "Adresse": "Dirch Passers Gade 5, 8000 Aarhus",
+    "Kommune": "Aarhus Kommune",
+    "lat": 56.15240134,
+    "lng": 10.18686636,
+    "dawaId": "a61fcd43-c508-4c15-b2c7-2e3587c4ad1a",
+    "dawaBetegnelse": "Dirch Passers Gade 5, 8000 Aarhus C"
+  },
+  {
+    "Navn": "Genbrugsstation Lisbjerg",
+    "Adresse": "Ølstedvej 70, 8200 Aarhus N",
+    "Kommune": "Aarhus Kommune"
+  },
+  {
+    "Navn": "Genbrugsstation Malling",
+    "Adresse": "Holmskovvej 66, 8340 Malling",
+    "Kommune": "Aarhus Kommune",
+    "lat": 56.04025471,
+    "lng": 10.18632899,
+    "dawaId": "7b6655d5-84ca-4d22-8dd4-33d735d069cc",
+    "dawaBetegnelse": "Holmskovvej 66, 8340 Malling"
+  },
+  {
+    "Navn": "Herning Genbrugsplads",
+    "Adresse": "Mørupvej 32, 7400 Herning",
+    "Kommune": "Herning Kommune",
+    "lat": 56.12282615,
+    "lng": 8.93878565,
+    "dawaId": "0a3f5091-6e76-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Mørupvej 32, Mørup, 7400 Herning"
+  },
+  {
+    "Navn": "Fasterholt Genbrugsplads",
+    "Adresse": "Fasterholtgårdvej 10, 7400 Herning",
+    "Kommune": "Herning Kommune",
+    "lat": 56.02842977,
+    "lng": 9.05606697,
+    "dawaId": "0a3f5091-4971-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Fasterholtgårdvej 10, Søby, 7400 Herning"
+  },
+  {
+    "Navn": "Kibæk Genbrugsplads",
+    "Adresse": "Lyager 7, 6933 Kibæk",
+    "Kommune": "Herning Kommune",
+    "lat": 56.0374268,
+    "lng": 8.86665154,
+    "dawaId": "0a3f5093-1b99-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Lyager 7, 6933 Kibæk"
+  },
+  {
+    "Navn": "Aulum Genbrugsplads",
+    "Adresse": "Kulvej 9, 7490 Aulum",
+    "Kommune": "Herning Kommune",
+    "lat": 56.27063504,
+    "lng": 8.80685334,
+    "dawaId": "90c0a51d-d804-423d-90c1-d8049334c890",
+    "dawaBetegnelse": "Kulvej 9, 7490 Aulum"
+  },
+  {
+    "Navn": "Viborg Genbrugsstation",
+    "Adresse": "Kirkebækvej 136, 8800 Viborg",
+    "Kommune": "Viborg Kommune",
+    "lat": 56.47594948,
+    "lng": 9.3602267,
+    "dawaId": "0a3f5098-da37-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Kirkebækvej 136, 8800 Viborg"
+  },
+  {
+    "Navn": "Sdr. Felding Genbrugsplads",
+    "Adresse": "Industrivej 12, 7280 Sønder Felding",
+    "Kommune": "Herning Kommune",
+    "lat": 55.93095656,
+    "lng": 8.78344966,
+    "dawaId": "2c768032-8381-459e-a6a0-39343165b57f",
+    "dawaBetegnelse": "Industrivej 12, 7280 Sønder Felding"
+  },
+  {
+    "Navn": "Vinderup Genbrugsplads",
+    "Adresse": "Tværmosevej 11, 7830 Vinderup",
+    "Kommune": "Holstebro Kommune",
+    "lat": 56.51688735,
+    "lng": 8.80829627,
+    "dawaId": "0a3f5093-1146-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Tværmosevej 11, Ejsing Mark, 7830 Vinderup"
+  },
+  {
+    "Navn": "Ulfborg Genbrugsplads",
+    "Adresse": "Torstedvej 8B, 6990 Ulfborg",
+    "Kommune": "Holstebro Kommune",
+    "lat": 56.26773241,
+    "lng": 8.32347433,
+    "dawaId": "4eb89636-fab6-4876-b7ef-7c45f3dc953a",
+    "dawaBetegnelse": "Torstedvej 8B, 6990 Ulfborg"
+  },
+  {
+    "Navn": "Stakroge Genbrugsplads",
+    "Adresse": "Hovenvej 6, 7270 Stakroge",
+    "Kommune": "Herning Kommune",
+    "lat": 55.88787774,
+    "lng": 8.84446226,
+    "dawaId": "78d0c301-ae14-6373-e044-00144f3ead67",
+    "dawaBetegnelse": "Hovenvej 6, 7270 Stakroge"
+  },
+  {
+    "Navn": "Sdr. Nissum Genbrugsplads",
+    "Adresse": "Nørhedevej 26D, 6990 Ulfborg",
+    "Kommune": "Holstebro Kommune",
+    "lat": 56.3097381,
+    "lng": 8.19097504,
+    "dawaId": "0a3f5092-e379-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Nørhedevej 26D, Sdr. Nissum, 6990 Ulfborg"
+  },
+  {
+    "Navn": "Sunds Genbrugsplads",
+    "Adresse": "Bødkervej 1c, 7451 Sunds",
+    "Kommune": "Herning Kommune",
+    "lat": 56.19372438,
+    "lng": 9.02284931,
+    "dawaId": "58e3aaba-6e6d-67b0-e044-0003ba298018",
+    "dawaBetegnelse": "Bødkervej 1C, 7451 Sunds"
+  },
+  {
+    "Navn": "Randers Genbrugsplads",
+    "Adresse": "Ørneborgvej 28, 8960 Randers",
+    "Kommune": "Randers Kommune",
+    "lat": 56.44960612,
+    "lng": 10.06651044,
+    "dawaId": "a5c35c4d-cbaa-41c6-8fa5-542c7c9daab6",
+    "dawaBetegnelse": "Ørneborgvej 28, 8960 Randers SØ"
+  },
+  {
+    "Navn": "Asferg Genbrugsplads",
+    "Adresse": "Hulvejen 3, 8990 Fårup",
+    "Kommune": "Randers Kommune",
+    "lat": 56.54590582,
+    "lng": 9.90661638,
+    "dawaId": "d84a2b27-4499-440f-94ef-6dbe7359a217",
+    "dawaBetegnelse": "Hulvejen 3, Asferg, 8990 Fårup"
+  },
+  {
+    "Navn": "Langå Genbrugsplads",
+    "Adresse": "Kærsangervej 12, 8870 Langå",
+    "Kommune": "Randers Kommune",
+    "lat": 56.3954904,
+    "lng": 9.90191831,
+    "dawaId": "0a3f5094-0430-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Kærsangervej 12, 8870 Langå"
+  },
+  {
+    "Navn": "Øster Tørslev Genbrugsplads",
+    "Adresse": "Udbyhøjvej 506, 8983 Gjerlev J",
+    "Kommune": "Randers Kommune",
+    "lat": 56.56564643,
+    "lng": 10.1817263,
+    "dawaId": "0a3f5094-3db5-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Udbyhøjvej 506, Ø Tørslev, 8983 Gjerlev J"
+  },
+  {
+    "Navn": "Horsens Genbrugsplads",
+    "Adresse": "Endelavevej 24, 8700 Horsens",
+    "Kommune": "Horsens Kommune",
+    "lat": 55.8513672,
+    "lng": 9.85779136,
+    "dawaId": "0a3f508f-99b1-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Endelavevej 24, 8700 Horsens"
+  },
+  {
+    "Navn": "Sørvad Genbrugsplads",
+    "Adresse": "Tyregårdvej 7, 7550 Sørvad",
+    "Kommune": "Herning Kommune",
+    "lat": 56.26903211,
+    "lng": 8.64788228,
+    "dawaId": "645db24a-f5d0-3388-e044-0003ba298018",
+    "dawaBetegnelse": "Tyregårdvej 7, 7550 Sørvad"
+  },
+  {
+    "Navn": "Vedslet Genbrugsplads",
+    "Adresse": "Gl. Århusvej 50, Grumstrup, 8732 Hovedgård",
+    "Kommune": "Horsens Kommune",
+    "lat": 55.96334557,
+    "lng": 10.00221698,
+    "dawaId": "0a3f508f-3cd4-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Gl Århusvej 50, Grumstrup, 8732 Hovedgård"
+  },
+  {
+    "Navn": "Værdipark Skanderborg",
+    "Adresse": "Sverigesvej 13, 8660 Skanderborg",
+    "Kommune": "Skanderborg Kommune",
+    "lat": 56.05387102,
+    "lng": 9.95412134,
+    "dawaId": "0a3f5095-b5a1-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Sverigesvej 13, 8660 Skanderborg"
+  },
+  {
+    "Navn": "Hørning Genbrugsplads",
+    "Adresse": "Nydamsvej 20, 8362 Hørning",
+    "Kommune": "Skanderborg Kommune",
+    "lat": 56.08664844,
+    "lng": 10.0440463,
+    "dawaId": "0a3f5093-f66f-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Nydamsvej 20, 8362 Hørning"
+  },
+  {
+    "Navn": "Galten-Skovby Genbrugsplads",
+    "Adresse": "Hjaltevej 24, 8464 Galten",
+    "Kommune": "Skanderborg Kommune"
+  },
+  {
+    "Navn": "Værdipark Ry",
+    "Adresse": "Bakkelyvej 5, 8680 Ry",
+    "Kommune": "Skanderborg Kommune",
+    "lat": 56.08296262,
+    "lng": 9.78918262,
+    "dawaId": "0a3f5095-0ced-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Bakkelyvej 5, 8680 Ry"
+  },
+  {
+    "Navn": "Ørnhøj Genbrugsplads",
+    "Adresse": "Nordtoften 16, 6973 Ørnhøj",
+    "Kommune": "Herning Kommune",
+    "lat": 56.20234052,
+    "lng": 8.57551572,
+    "dawaId": "6825e2c1-6f22-501c-e044-00144f3ead67",
+    "dawaBetegnelse": "Nordtoften 16, 6973 Ørnhøj"
+  },
+  {
+    "Navn": "Ikast Genbrugsplads",
+    "Adresse": "Femhøje 3, 7430 Ikast",
+    "Kommune": "Ikast-Brande Kommune",
+    "lat": 56.11063601,
+    "lng": 9.1291422,
+    "dawaId": "0a3f5092-05b3-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Femhøje 3, 7430 Ikast"
+  },
+  {
+    "Navn": "Brande Genbrugsplads",
+    "Adresse": "Sjællandsvej 26, 7330 Brande",
+    "Kommune": "Ikast-Brande Kommune",
+    "lat": 55.93563494,
+    "lng": 9.15429973,
+    "dawaId": "11db2423-4b90-5796-e044-0003ba298018",
+    "dawaBetegnelse": "Sjællandsvej 26, 7330 Brande"
+  },
+  {
+    "Navn": "Bording Genbrugsplads",
+    "Adresse": "Firhuse 13, 7441 Bording",
+    "Kommune": "Ikast-Brande Kommune",
+    "lat": 56.1628612,
+    "lng": 9.30508826,
+    "dawaId": "0a3f5092-05fe-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Firhuse 13, 7441 Bording"
+  },
+  {
+    "Navn": "Nørre Snede Genbrugsplads",
+    "Adresse": "Horsensvej 33, 8766 Nørre Snede",
+    "Kommune": "Ikast-Brande Kommune",
+    "lat": 55.95913734,
+    "lng": 9.4111565,
+    "dawaId": "0a3f5090-7b58-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Horsensvej 33, Leret, 8766 Nørre Snede"
+  },
+  {
+    "Navn": "Vildbjerg Genbrugsplads",
+    "Adresse": "Islandsvej 4, 7480 Vildbjerg",
+    "Kommune": "Herning Kommune",
+    "lat": 56.20397915,
+    "lng": 8.76287072,
+    "dawaId": "0a3f5092-c93b-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Islandsvej 4, 7480 Vildbjerg"
+  },
+  {
+    "Navn": "Brædstrup Genbrugsplads",
+    "Adresse": "Energivej 19, 8740 Brædstrup",
+    "Kommune": "Horsens Kommune",
+    "lat": 55.98201771,
+    "lng": 9.62412534,
+    "dawaId": "0a3f508e-aaf6-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Energivej 19, 8740 Brædstrup"
+  },
+  {
+    "Navn": "Hedensted Genbrugsplads",
+    "Adresse": "Remmerslundvej 35, 8723 Løsning",
+    "Kommune": "Hedensted Kommune",
+    "lat": 55.78690301,
+    "lng": 9.70862025,
+    "dawaId": "0a3f508f-7c84-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Remmerslundvej 35, 8723 Løsning"
+  },
+  {
+    "Navn": "Odder Genbrugsplads",
+    "Adresse": "Skovdalsvej 26A, 8300 Odder",
+    "Kommune": "Odder Kommune",
+    "lat": 55.98838031,
+    "lng": 10.14489924,
+    "dawaId": "0a3f5094-7bd2-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Skovdalsvej 26A, 8300 Odder"
+  },
+  {
+    "Navn": "Klakring Genbrugsstation",
+    "Adresse": "Klakring Stationsvej 5, 7130 Juelsminde",
+    "Kommune": "Hedensted Kommune",
+    "lat": 55.70859256,
+    "lng": 9.96729678,
+    "dawaId": "0a3f5090-05d7-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Klakring Stationsvej 5, Klakring, 7130 Juelsminde"
+  },
+  {
+    "Navn": "Hornsyld Genbrugsstation",
+    "Adresse": "Industrivænget 9, 8783 Hornsyld",
+    "Kommune": "Hedensted Kommune",
+    "lat": 55.76042362,
+    "lng": 9.8506365,
+    "dawaId": "0a3f508f-f52b-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Industrivænget 9, 8783 Hornsyld"
+  },
+  {
+    "Navn": "Remmerslund Genbrugsstation",
+    "Adresse": "Remmerslundvej 35, 8723 Løsning",
+    "Kommune": "Hedensted Kommune",
+    "lat": 55.78690301,
+    "lng": 9.70862025,
+    "dawaId": "0a3f508f-7c84-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Remmerslundvej 35, 8723 Løsning"
+  },
+  {
+    "Navn": "Kalhave Genbrugsstation",
+    "Adresse": "Skrædderbakken 1G, 7171 Uldum",
+    "Kommune": "Hedensted Kommune",
+    "lat": 55.85165017,
+    "lng": 9.61658408,
+    "dawaId": "6307ce4b-052b-4101-a2ed-b996626d06fe",
+    "dawaBetegnelse": "Skrædderbakken 1G, Kalhave, 7171 Uldum"
+  },
+  {
+    "Navn": "Skive Genbrugsplads",
+    "Adresse": "Oddervej 9, 7800 Skive",
+    "Kommune": "Skive Kommune",
+    "lat": 56.53689224,
+    "lng": 9.02623201,
+    "dawaId": "0a3f5098-17f9-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Oddervej 9, 7800 Skive"
+  },
+  {
+    "Navn": "Odden Genbrugsplads",
+    "Adresse": "Oddenvej 241, 4583 Sjællands Odde",
+    "Kommune": "Odsherred Kommune",
+    "lat": 55.970789,
+    "lng": 11.35840717,
+    "dawaId": "fb6cdfd8-0d99-441f-b719-f53640540142",
+    "dawaBetegnelse": "Oddenvej 241, Havnebyen, 4583 Sjællands Odde"
+  },
+  {
+    "Navn": "Ringkøbing Genbrugsplads",
+    "Adresse": "Baldersvej 4, 6950 Ringkøbing",
+    "Kommune": "Ringkøbing-Skjern Kommune",
+    "lat": 56.09189029,
+    "lng": 8.28527818,
+    "dawaId": "9ca9f5de-5504-4fb2-8ace-1d7c9465f03b",
+    "dawaBetegnelse": "Baldersvej 4, Rindum, 6950 Ringkøbing"
+  },
+  {
+    "Navn": "Lemvig Genbrugsplads",
+    "Adresse": "Merkurvej 17, 7620 Lemvig",
+    "Kommune": "Lemvig Kommune",
+    "lat": 56.53789884,
+    "lng": 8.30152985,
+    "dawaId": "ff235cf8-bd6f-4e08-a9e7-7bcfa8a7ded8",
+    "dawaBetegnelse": "Merkurvej 17, 7620 Lemvig"
+  },
+  {
+    "Navn": "Harboøre Genbrugsplads",
+    "Adresse": "Thyborønvej 62, 7673 Harboøre",
+    "Kommune": "Lemvig Kommune"
+  },
+  {
+    "Navn": "Bækmarksbro Genbrugsplads",
+    "Adresse": "Søhusvænget 5, 7660 Bækmarksbro",
+    "Kommune": "Lemvig Kommune",
+    "lat": 56.40267657,
+    "lng": 8.31165743,
+    "dawaId": "0a3f5092-44ee-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Søhusvænget 5, 7660 Bækmarksbro"
+  },
+  {
+    "Navn": "Ebeltoft Genbrugsplads",
+    "Adresse": "Hans Winthers Vej 19, 8400 Ebeltoft",
+    "Kommune": "Syddjurs Kommune",
+    "lat": 56.18170975,
+    "lng": 10.68563243,
+    "dawaId": "0a3f5093-37e3-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Hans Winthers Vej 19, 8400 Ebeltoft"
+  },
+  {
+    "Navn": "Billund Genbrugsplads",
+    "Adresse": "Havremarken 8, 7190 Billund",
+    "Kommune": "Billund Kommune",
+    "lat": 55.7152771,
+    "lng": 9.13440809,
+    "dawaId": "0a3f508d-017c-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Havremarken 8, 7190 Billund"
+  },
+  {
+    "Navn": "Grindsted Genbrugsplads",
+    "Adresse": "Ribe Landevej 6, 7200 Grindsted",
+    "Kommune": "Billund Kommune"
+  },
+  {
+    "Navn": "Sørup Genbrugsplads",
+    "Adresse": "Hjedsbækvej 107, 9530 Støvring",
+    "Kommune": "Rebild Kommune",
+    "lat": 56.87439768,
+    "lng": 9.75449584,
+    "dawaId": "0a3f509b-c2bf-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Hjedsbækvej 107, Sørup, 9530 Støvring"
+  },
+  {
+    "Navn": "Mejlby Genbrugsplads",
+    "Adresse": "Ladelundvej 2, Mejlby, 9610 Nørager",
+    "Kommune": "Rebild Kommune"
+  },
+  {
+    "Navn": "Krastrup Genbrugsplads",
+    "Adresse": "Mølholmvej 20B, 9520 Skørping",
+    "Kommune": "Rebild Kommune",
+    "lat": 56.86381098,
+    "lng": 10.03036883,
+    "dawaId": "0a3f509b-b0de-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Mølholmvej 20B, Krastrup, 9520 Skørping"
+  },
+  {
+    "Navn": "Filskov Genbrugsplads",
+    "Adresse": "Industrivangen 5, 7200 Grindsted",
+    "Kommune": "Billund Kommune",
+    "lat": 55.81438027,
+    "lng": 9.01933052,
+    "dawaId": "593622cb-9259-47e4-a7ce-e28f276bc550",
+    "dawaBetegnelse": "Industrivangen 5, Filskov, 7200 Grindsted"
+  },
+  {
+    "Navn": "Sdr. Omme Genbrugsplads",
+    "Adresse": "Nedergårdsvej 17, 7260 Sdr. Omme",
+    "Kommune": "Billund Kommune",
+    "lat": 55.84479637,
+    "lng": 8.88395232,
+    "dawaId": "c84ee819-356d-4104-8b85-9085d71e6276",
+    "dawaBetegnelse": "Nedergårdsvej 17, 7260 Sønder Omme"
+  },
+  {
+    "Navn": "Måde Genbrugsplads",
+    "Adresse": "Måde Kirkevej 35, 6700 Esbjerg",
+    "Kommune": "Esbjerg Kommune",
+    "lat": 55.45927281,
+    "lng": 8.50479496,
+    "dawaId": "0a3f508d-a63d-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Måde Kirkevej 35, 6700 Esbjerg"
+  },
+  {
+    "Navn": "Tarp Genbrugsplads",
+    "Adresse": "Mukkerten 14, 6715 Esbjerg N",
+    "Kommune": "Esbjerg Kommune",
+    "lat": 55.5256877,
+    "lng": 8.45131198,
+    "dawaId": "0a3f508d-a524-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Mukkerten 14, Tarp, 6715 Esbjerg N"
+  },
+  {
+    "Navn": "Ribe Genbrugsplads",
+    "Adresse": "Ørstedsvej 69, 6760 Ribe",
+    "Kommune": "Esbjerg Kommune",
+    "lat": 55.35625247,
+    "lng": 8.76760905,
+    "dawaId": "0a3f508e-4d76-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Ørstedsvej 69, 6760 Ribe"
+  },
+  {
+    "Navn": "Bramming Genbrugsplads",
+    "Adresse": "Sdr. Ilstedmarkvej 3, 6740 Bramming",
+    "Kommune": "Esbjerg Kommune",
+    "lat": 55.46367938,
+    "lng": 8.72129926,
+    "dawaId": "0a3f508d-53fe-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Sdr Ilstedmarkvej 3, Ilsted, 6740 Bramming"
+  },
+  {
+    "Navn": "Brabrand Genbrugsplads",
+    "Adresse": "Sintrupvej 57, 8220 Brabrand",
+    "Kommune": "Aarhus Kommune",
+    "lat": 56.16666485,
+    "lng": 10.09860436,
+    "dawaId": "16bed59f-a4cf-1efc-e044-0003ba298018",
+    "dawaBetegnelse": "Sintrupvej 57, 8220 Brabrand"
+  },
+  {
+    "Navn": "Genbrugsstation Risskov",
+    "Adresse": "Lystrupvej 190, 8240 Risskov",
+    "Kommune": "Aarhus Kommune",
+    "lat": 56.21602257,
+    "lng": 10.23558067,
+    "dawaId": "0a3f5096-8ca3-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Lystrupvej 190, 8240 Risskov"
+  },
+  {
+    "Navn": "Genbrugsstation Hasselager",
+    "Adresse": "Birkegårdsvej 8, 8361 Hasselager",
+    "Kommune": "Aarhus Kommune",
+    "lat": 56.10298421,
+    "lng": 10.11628641,
+    "dawaId": "0a3f5095-ebeb-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Birkegårdsvej 8, 8361 Hasselager"
+  },
+  {
+    "Navn": "Asaa Genbrugsplads",
+    "Adresse": "Skelgårdsvej 55, 9340 Asaa",
+    "Kommune": "Brønderslev Kommune",
+    "lat": 57.15248756,
+    "lng": 10.40013535,
+    "dawaId": "0a3f5099-724d-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Skelgårdsvej 55, 9340 Asaa"
+  },
+  {
+    "Navn": "Bindslev Genbrugsplads",
+    "Adresse": "Barkholtvej 3B, 9881 Bindslev",
+    "Kommune": "Hjørring Kommune",
+    "lat": 57.55708118,
+    "lng": 10.20398842,
+    "dawaId": "0a3f509a-3b02-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Barkholtvej 3B, 9881 Bindslev"
+  },
+  {
+    "Navn": "Genbrugsplads Bjergby",
+    "Adresse": "Asdalvej 53, 9800 Hjørring",
+    "Kommune": "Hjørring Kommune"
+  },
+  {
+    "Navn": "Brønderslev Vest Genbrugsplads",
+    "Adresse": "Enggårdsvej 21, 9700 Brønderslev",
+    "Kommune": "Brønderslev Kommune",
+    "lat": 57.27542645,
+    "lng": 9.9086004,
+    "dawaId": "0a3f5099-3f71-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Enggårdsvej 21, 9700 Brønderslev"
+  },
+  {
+    "Navn": "Brønderslev Øst Genbrugsplads",
+    "Adresse": "Stadevej 140, 9700 Brønderslev",
+    "Kommune": "Brønderslev Kommune",
+    "lat": 57.28361675,
+    "lng": 9.99404436,
+    "dawaId": "0a3f5099-55b5-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Stadevej 140, 9700 Brønderslev"
+  },
+  {
+    "Navn": "Børglum Genbrugsplads",
+    "Adresse": "Børglumvej 427, 9760 Vrå",
+    "Kommune": "Hjørring Kommune",
+    "lat": 57.35971497,
+    "lng": 9.8390979,
+    "dawaId": "0a3f509a-f063-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Børglumvej 427, Børglum, 9760 Vrå"
+  },
+  {
+    "Navn": "Dronninglund Genbrugsplads",
+    "Adresse": "Dregårdsvej 1B, 9330 Dronninglund",
+    "Kommune": "Brønderslev Kommune",
+    "lat": 57.16909958,
+    "lng": 10.29722936,
+    "dawaId": "0a3f5099-63b5-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Dregårdsvej 1B, 9330 Dronninglund"
+  },
+  {
+    "Navn": "Hirtshals Genbrugsplads",
+    "Adresse": "Grævlingevej 13, 9850 Hirtshals",
+    "Kommune": "Hjørring Kommune",
+    "lat": 57.57154317,
+    "lng": 9.98766641,
+    "dawaId": "0a3f509a-41e1-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Grævlingevej 13, Horne Terp, 9850 Hirtshals"
+  },
+  {
+    "Navn": "Hjallerup Genbrugsplads",
+    "Adresse": "Håndværkervej 60, 9320 Hjallerup",
+    "Kommune": "Brønderslev Kommune",
+    "lat": 57.17477167,
+    "lng": 10.16499608,
+    "dawaId": "0a3f5099-6940-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Håndværkervej 60, 9320 Hjallerup"
+  },
+  {
+    "Navn": "Hjørring Vest Genbrugsplads",
+    "Adresse": "Krustrupvej 56, 9800 Hjørring",
+    "Kommune": "Hjørring Kommune",
+    "lat": 57.46626124,
+    "lng": 9.94798935,
+    "dawaId": "0a3f509a-81ba-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Krustrupvej 56, 9800 Hjørring"
+  },
+  {
+    "Navn": "Hjørring Øst Genbrugsplads",
+    "Adresse": "Miljøvej 4, 9800 Hjørring",
+    "Kommune": "Hjørring Kommune",
+    "lat": 57.45070034,
+    "lng": 10.03115676,
+    "dawaId": "a9d04d5d-3222-4f7e-97e5-f7e6f536068c",
+    "dawaBetegnelse": "Miljøvej 4, 9800 Hjørring"
+  },
+  {
+    "Navn": "Jerslev Genbrugsplads",
+    "Adresse": "Sejerøgade 10, 9740 Jerslev",
+    "Kommune": "Brønderslev Kommune",
+    "lat": 57.2869566,
+    "lng": 10.10274166,
+    "dawaId": "0a3f5099-530e-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Sejerøgade 10, 9740 Jerslev J"
+  },
+  {
+    "Navn": "Lendum Genbrugsplads",
+    "Adresse": "Industrivej 3, 9870 Sindal",
+    "Kommune": "Hjørring Kommune",
+    "lat": 57.4116762,
+    "lng": 10.29115442,
+    "dawaId": "0a3f509b-7415-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Industrivej 3, Lendum, 9870 Sindal"
+  },
+  {
+    "Navn": "Løkken Genbrugsplads",
+    "Adresse": "Egevej 49A, 9480 Løkken",
+    "Kommune": "Hjørring Kommune",
+    "lat": 57.37115072,
+    "lng": 9.73329049,
+    "dawaId": "86adb1a5-9c35-4471-86d8-569106896e4b",
+    "dawaBetegnelse": "Egevej 49A, 9480 Løkken"
+  },
+  {
+    "Navn": "Bjergby Genbrugsplads",
+    "Adresse": "Asdalvej 53, 9800 Hjørring",
+    "Kommune": "Hjørring Kommune"
+  },
+  {
+    "Navn": "Poulstrup Genbrugsplads",
+    "Adresse": "Saksagervej 121, 9760 Vrå",
+    "Kommune": "Hjørring Kommune",
+    "lat": 57.33617453,
+    "lng": 9.99572542,
+    "dawaId": "1f289f18-9558-372c-e044-0003ba298018",
+    "dawaBetegnelse": "Saksagervej 121, Årup, 9760 Vrå"
+  },
+  {
+    "Navn": "Sindal Genbrugsplads",
+    "Adresse": "Ledetvej 6, 9870 Sindal",
+    "Kommune": "Hjørring Kommune",
+    "lat": 57.48729215,
+    "lng": 10.20421808,
+    "dawaId": "0a3f509b-7609-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Ledetvej 6, 9870 Sindal"
+  },
+  {
+    "Navn": "Tårs Genbrugsplads",
+    "Adresse": "Postholdervej 34, 9830 Tårs",
+    "Kommune": "Hjørring Kommune",
+    "lat": 57.3843779,
+    "lng": 10.10614205,
+    "dawaId": "0a3f509a-8e0e-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Postholdervej 34, 9830 Tårs"
+  },
+  {
+    "Navn": "Them Genbrugsplads",
+    "Adresse": "Ansøvej 1A, 8653 Them",
+    "Kommune": "Silkeborg Kommune",
+    "lat": 56.07928551,
+    "lng": 9.53298187,
+    "dawaId": "0a3f5095-cd26-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Ansøvej 1A, 8653 Them"
+  },
+  {
+    "Navn": "Vennebjerg Genbrugsplads",
+    "Adresse": "Grønne Klitvej 25, 9800 Hjørring",
+    "Kommune": "Hjørring Kommune",
+    "lat": 57.45365127,
+    "lng": 9.8496387,
+    "dawaId": "0a3f509a-7180-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Grønne Klitvej 25, 9800 Hjørring"
+  },
+  {
+    "Navn": "Genbrugspladsen Over Kæret",
+    "Adresse": "Over Bækken 2, 9220 Aalborg Øst",
+    "Kommune": "Aalborg Kommune"
+  },
+  {
+    "Navn": "Genbrugspladsen Nibe",
+    "Adresse": "Aalborgvej 55, 9240 Nibe",
+    "Kommune": "Aalborg Kommune",
+    "lat": 56.99592715,
+    "lng": 9.66285339,
+    "dawaId": "0a3f509b-0977-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Aalborgvej 55, Binderup, 9240 Nibe"
+  },
+  {
+    "Navn": "Genbrugspladsen Hou",
+    "Adresse": "Skovsgårdsvej 145, 9370 Hals",
+    "Kommune": "Aalborg Kommune",
+    "lat": 57.05756674,
+    "lng": 10.33338158,
+    "dawaId": "0a3f509a-2ea7-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Skovsgårdsvej 145, 9370 Hals"
+  },
+  {
+    "Navn": "Genbrugspladsen Gandrup",
+    "Adresse": "Teglvænget 13, 9362 Gandrup",
+    "Kommune": "Aalborg Kommune",
+    "lat": 57.05979693,
+    "lng": 10.16829313,
+    "dawaId": "437d391f-9fd7-4387-87f7-79c8581e4617",
+    "dawaBetegnelse": "Teglvænget 13, 9362 Gandrup"
+  },
+  {
+    "Navn": "Genbrugspladsen Sundsholmen",
+    "Adresse": "Sundsholmen 20, 9400 Nørresundby",
+    "Kommune": "Aalborg Kommune",
+    "lat": 57.06391574,
+    "lng": 9.95162165,
+    "dawaId": "0a3f509c-c565-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Sundsholmen 20, 9400 Nørresundby"
+  },
+  {
+    "Navn": "Genbrugspladsen Storvorde",
+    "Adresse": "Engvej 26, 9280 Storvorde",
+    "Kommune": "Aalborg Kommune",
+    "lat": 56.99384183,
+    "lng": 10.12732933,
+    "dawaId": "0a3f509b-59b2-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Engvej 26, 9280 Storvorde"
+  },
+  {
+    "Navn": "Danmission Genbrug Svenstrup",
+    "Adresse": "Hobrovej 792, 9230 Svenstrup J",
+    "Kommune": "Aalborg Kommune",
+    "lat": 56.96866502,
+    "lng": 9.8548783,
+    "dawaId": "0a3f509c-5891-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Hobrovej 792, 9230 Svenstrup J"
+  },
+  {
+    "Navn": "Hobro Genbrugsplads",
+    "Adresse": "Humlemarken 5, 9500 Hobro",
+    "Kommune": "Mariagerfjord Kommune",
+    "lat": 56.66007775,
+    "lng": 9.80701995,
+    "dawaId": "4f57979d-459a-4330-aae6-dbca9d5fefea",
+    "dawaBetegnelse": "Humlemarken 5, 9500 Hobro"
+  },
+  {
+    "Navn": "Als Genbrugsplads",
+    "Adresse": "Vestvejen 6, 9560 Hadsund",
+    "Kommune": "Mariagerfjord Kommune",
+    "lat": 56.7515462,
+    "lng": 10.28130411,
+    "dawaId": "2afd0cd1-b64b-4239-8c86-fff786f8294b",
+    "dawaBetegnelse": "Vestvejen 6, Als, 9560 Hadsund"
+  },
+  {
+    "Navn": "Arden Genbrugsplads",
+    "Adresse": "Myhlenbergvej 70, 9510 Arden",
+    "Kommune": "Mariagerfjord Kommune",
+    "lat": 56.7589216,
+    "lng": 9.84362799,
+    "dawaId": "b4cab57c-8dfe-4210-93b5-9beb4b0a6adb",
+    "dawaBetegnelse": "Myhlenbergvej 70, 9510 Arden"
+  },
+  {
+    "Navn": "Hadsund Genbrugsplads",
+    "Adresse": "Finlandsvej 17, 9560 Hadsund",
+    "Kommune": "Mariagerfjord Kommune",
+    "lat": 56.73790514,
+    "lng": 10.09678275,
+    "dawaId": "0a3f5099-f4e4-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Finlandsvej 17, 9560 Hadsund"
+  },
+  {
+    "Navn": "Mariager Genbrugsplads",
+    "Adresse": "Havndalvej 50 B, Edderup, 9550 Mariager",
+    "Kommune": "Mariagerfjord Kommune"
+  },
+  {
+    "Navn": "Thisted Genbrugscenter",
+    "Adresse": "Flintborgvej 5, 7700 Thisted",
+    "Kommune": "Thisted Kommune",
+    "lat": 56.96709446,
+    "lng": 8.71198235,
+    "dawaId": "11db2423-5012-5796-e044-0003ba298018",
+    "dawaBetegnelse": "Flintborgvej 5, 7700 Thisted"
+  },
+  {
+    "Navn": "Hurup Genbrugscenter",
+    "Adresse": "Slyngborgvej 9, 7760 Hurup",
+    "Kommune": "Thisted Kommune",
+    "lat": 56.74006341,
+    "lng": 8.43181733,
+    "dawaId": "7ec956c6-15f0-48c8-97c1-92f2a8864443",
+    "dawaBetegnelse": "Slyngborgvej 9, 7760 Hurup Thy"
+  },
+  {
+    "Navn": "Hanstholm Genbrugscenter",
+    "Adresse": "Industrivangen 20, 7730 Hanstholm",
+    "Kommune": "Thisted Kommune",
+    "lat": 57.10847046,
+    "lng": 8.64527145,
+    "dawaId": "0a40cb13-2659-43ca-8f14-20042eabdfd2",
+    "dawaBetegnelse": "Industrivangen 20, 7730 Hanstholm"
+  },
+  {
+    "Navn": "Frøstrup Genbrugscenter",
+    "Adresse": "Håndværkervej 13A, 7741 Frøstrup",
+    "Kommune": "Thisted Kommune",
+    "lat": 57.09094067,
+    "lng": 8.98074192,
+    "dawaId": "81f705b2-7f45-4973-aef8-517d08bbf4b9",
+    "dawaBetegnelse": "Håndværkervej 13A, 7741 Frøstrup"
+  },
+  {
+    "Navn": "RessourceCenter Vejle",
+    "Adresse": "Voervej 12, 7120 Vejle Øst",
+    "Kommune": "Vejle Kommune",
+    "lat": 55.74776719,
+    "lng": 9.60960599,
+    "dawaId": "6bf3182d-847e-408f-8c50-7b99bc3d3b29",
+    "dawaBetegnelse": "Voervej 12, 7120 Vejle Øst"
+  },
+  {
+    "Navn": "Børkop Genbrugsplads",
+    "Adresse": "Overmøllevej 121, 7080 Børkop",
+    "Kommune": "Vejle Kommune",
+    "lat": 55.63438822,
+    "lng": 9.62317031,
+    "dawaId": "0a3f508e-cc02-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Overmøllevej 121, 7080 Børkop"
+  },
+  {
+    "Navn": "Egtved Genbrugsplads",
+    "Adresse": "Nydamsvej 8, 6040 Egtved",
+    "Kommune": "Vejle Kommune",
+    "lat": 55.62145333,
+    "lng": 9.30511618,
+    "dawaId": "0a3f508e-e466-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Nydamsvej 8, 6040 Egtved"
+  },
+  {
+    "Navn": "Give Genbrugsplads",
+    "Adresse": "Dyrskuevej 2, 7323 Give",
+    "Kommune": "Vejle Kommune",
+    "lat": 55.86030534,
+    "lng": 9.25231646,
+    "dawaId": "0a3f508f-4f3b-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Dyrskuevej 2, Hjortsballe, 7323 Give"
+  },
+  {
+    "Navn": "Farsø Genbrugsplads",
+    "Adresse": "Røjbækvej 2A, 9640 Farsø",
+    "Kommune": "Vesthimmerlands Kommune",
+    "lat": 56.76442541,
+    "lng": 9.34404365,
+    "dawaId": "0a3f5099-8e4e-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Røjbækvej 2A, 9640 Farsø"
+  },
+  {
+    "Navn": "Løgstør Genbrugsplads",
+    "Adresse": "Stengårdsvej 33, 9670 Løgstør",
+    "Kommune": "Vesthimmerlands Kommune",
+    "lat": 56.93243114,
+    "lng": 9.37607945,
+    "dawaId": "0a3f509a-e6f2-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Stengårdsvej 33, Brårup, 9670 Løgstør"
+  },
+  {
+    "Navn": "Aalestrup Genbrugsplads",
+    "Adresse": "Toftegaardsvej 3B, 9620 Aalestrup",
+    "Kommune": "Vesthimmerlands Kommune"
+  },
+  {
+    "Navn": "Aars Genbrugsplads",
+    "Adresse": "Skivumvej 154, 9600 Aars",
+    "Kommune": "Vesthimmerlands Kommune",
+    "lat": 56.81044665,
+    "lng": 9.5476644,
+    "dawaId": "0a3f509d-01c1-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Skivumvej 154, Gundestrup, 9600 Aars"
+  },
+  {
+    "Navn": "Frederikssund Genbrugsstation",
+    "Adresse": "Strandvangen 17, 3600 Frederikssund",
+    "Kommune": "Frederikssund Kommune",
+    "lat": 55.82579088,
+    "lng": 12.10037899,
+    "dawaId": "0a3f507e-d9e9-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Strandvangen 17, 3600 Frederikssund"
+  },
+  {
+    "Navn": "Miljøautomat ved SuperBrugsen Slangerup",
+    "Adresse": "Københavnsvej 5, 3550 Slangerup",
+    "Kommune": "Frederikssund Kommune",
+    "lat": 55.84344218,
+    "lng": 12.17664785,
+    "dawaId": "0a3f5080-c076-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Københavnsvej 5, 3550 Slangerup"
+  },
+  {
+    "Navn": "Røde Kors Butik Slangerup",
+    "Adresse": "Kongensgade 8C, 3550 Slangerup",
+    "Kommune": "Frederikssund Kommune",
+    "lat": 55.84520314,
+    "lng": 12.17228067,
+    "dawaId": "0a3f5080-bede-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Kongensgade 8C, 3550 Slangerup"
+  },
+  {
+    "Navn": "Blå Kors Genbrug Ølstykke",
+    "Adresse": "Bryggertorvet 1, 3650 Ølstykke",
+    "Kommune": "Egedal Kommune"
+  },
+  {
+    "Navn": "Stenløse Genbrugsplads",
+    "Adresse": "Toppevadvej 28, 3660 Stenløse",
+    "Kommune": "Egedal Kommune",
+    "lat": 55.7799907,
+    "lng": 12.26845109,
+    "dawaId": "0a3f5080-de89-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Toppevadvej 28, Søsum, 3660 Stenløse"
+  },
+  {
+    "Navn": "Ølstykke Genbrugsplads",
+    "Adresse": "Tranekærvej 6, 3650 Ølstykke",
+    "Kommune": "Egedal Kommune",
+    "lat": 55.77779901,
+    "lng": 12.14087039,
+    "dawaId": "0a3f5080-f6fa-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Tranekærvej 6, 3650 Ølstykke"
+  },
+  {
+    "Navn": "Høje Taastrup Genbrugsstation",
+    "Adresse": "Lervangen 1, 2630 Taastrup",
+    "Kommune": "Høje-Taastrup Kommune",
+    "lat": 55.66009913,
+    "lng": 12.25612324,
+    "dawaId": "0a3f507d-0827-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Lervangen 1, Høje Taastrup, 2630 Taastrup"
+  },
+  {
+    "Navn": "Skibby Genbrugsstation",
+    "Adresse": "Bronzeager 5, 4050 Skibby",
+    "Kommune": "Frederikssund Kommune",
+    "lat": 55.76286918,
+    "lng": 11.9624662,
+    "dawaId": "0a3f5080-9c26-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Bronzeager 5, 4050 Skibby"
+  },
+  {
+    "Navn": "Bagergårdens Genbrug",
+    "Adresse": "Kirkevej 3, 4070 Kirke Hyllinge",
+    "Kommune": "Lejre Kommune",
+    "lat": 55.70575873,
+    "lng": 11.89950914,
+    "dawaId": "0a3f5081-049d-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Kirkevej 3, 4070 Kirke Hyllinge"
+  },
+  {
+    "Navn": "Folkekirkens Nødhjælps Genbrugsbutik",
+    "Adresse": "Bymidten 1, 4050 Skibby",
+    "Kommune": "Frederikssund Kommune",
+    "lat": 55.75181593,
+    "lng": 11.95798552,
+    "dawaId": "0a3f5080-9c56-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Bymidten 1, 4050 Skibby"
+  },
+  {
+    "Navn": "Røde Kors Butik Hvalsø",
+    "Adresse": "Hovedgaden 62, 4330 Hvalsø",
+    "Kommune": "Lejre Kommune",
+    "lat": 55.59000791,
+    "lng": 11.86229308,
+    "dawaId": "0a3f5081-791e-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Hovedgaden 62, 4330 Hvalsø"
+  },
+  {
+    "Navn": "Blå Kors Genbrug Tølløse",
+    "Adresse": "Industrivej 8, 4340 Tølløse",
+    "Kommune": "Holbæk Kommune"
+  },
+  {
+    "Navn": "Stubbekøbing Genbrugsplads",
+    "Adresse": "Tuemosevej 9, 4850 Stubbekøbing",
+    "Kommune": "Guldborgsund Kommune",
+    "lat": 54.88539134,
+    "lng": 12.02768594,
+    "dawaId": "51768c87-a29c-49ff-9577-91e0e50dd30f",
+    "dawaBetegnelse": "Tuemosevej 9, 4850 Stubbekøbing"
+  },
+  {
+    "Navn": "Nykøbing F. Genbrugsplads",
+    "Adresse": "Energivej 4, 4800 Nykøbing Falster",
+    "Kommune": "Guldborgsund Kommune"
+  },
+  {
+    "Navn": "Nørre Alslev Genbrugsplads",
+    "Adresse": "Herthadalvej 11B, 4840 Nørre Alslev",
+    "Kommune": "Guldborgsund Kommune",
+    "lat": 54.90580141,
+    "lng": 11.88702064,
+    "dawaId": "0a3f5086-52e9-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Herthadalvej 11B, 4840 Nørre Alslev"
+  },
+  {
+    "Navn": "Marielyst Genbrugsplads",
+    "Adresse": "Godthåbs Alle 1A, 4873 Væggerløse",
+    "Kommune": "Guldborgsund Kommune",
+    "lat": 54.67303533,
+    "lng": 11.92957219,
+    "dawaId": "7096f618-6549-5ed1-e044-00144f3ead67",
+    "dawaBetegnelse": "Godthåbs Alle 1A, 4873 Væggerløse"
+  },
+  {
+    "Navn": "Ørbæk Genbrugsstation",
+    "Adresse": "Langemosevænget 11, 5853 Ørbæk",
+    "Kommune": "Nyborg Kommune",
+    "lat": 55.25168256,
+    "lng": 10.6782078,
+    "dawaId": "22729a66-8d73-44d0-e044-0003ba298018",
+    "dawaBetegnelse": "Langemosevænget 11, 5853 Ørbæk"
+  },
+  {
+    "Navn": "Ullerslev Genbrugsstation",
+    "Adresse": "Solholm 8A, 5540 Ullerslev",
+    "Kommune": "Nyborg Kommune",
+    "lat": 55.35447343,
+    "lng": 10.67134712,
+    "dawaId": "0a3f508a-dc6d-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Solholm 8A, 5540 Ullerslev"
+  },
+  {
+    "Navn": "Brobyværk Genbrugsstation",
+    "Adresse": "Rønnevej 6, 5672 Broby",
+    "Kommune": "Faaborg-Midtfyn Kommune",
+    "lat": 55.23143067,
+    "lng": 10.24861979,
+    "dawaId": "0a3f5087-e864-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Rønnevej 6, Brobyværk, 5672 Broby"
+  },
+  {
+    "Navn": "Faaborg Genbrugsstation",
+    "Adresse": "Mørkebjergvej 12, 5600 Faaborg",
+    "Kommune": "Faaborg-Midtfyn Kommune",
+    "lat": 55.11353336,
+    "lng": 10.21488261,
+    "dawaId": "c23fd1c2-db65-4048-9c80-0e1b81226b2e",
+    "dawaBetegnelse": "Mørkebjergvej 12, 5600 Faaborg"
+  },
+  {
+    "Navn": "Vejen Genbrugsplads",
+    "Adresse": "Koldingvej 30G, 6600 Vejen",
+    "Kommune": "Vejen Kommune",
+    "lat": 55.46824092,
+    "lng": 9.17534868,
+    "dawaId": "446aa084-3b03-4973-b430-a231c5263f54",
+    "dawaBetegnelse": "Koldingvej 30G, 6600 Vejen"
+  },
+  {
+    "Navn": "Brørup Genbrugsplads",
+    "Adresse": "Stenbro Allé 14, 6650 Brørup",
+    "Kommune": "Vejen Kommune",
+    "lat": 55.50066191,
+    "lng": 9.02699756,
+    "dawaId": "0ec8dc78-1837-4969-810f-3f94e3b6d246",
+    "dawaBetegnelse": "Stenbro Allè 14, 6650 Brørup"
+  },
+  {
+    "Navn": "Rødding Genbrugsplads",
+    "Adresse": "Nordre Industrivej 14, 6630 Rødding",
+    "Kommune": "Vejen Kommune",
+    "lat": 55.37602341,
+    "lng": 9.04689808,
+    "dawaId": "0a3f508c-14e9-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Nordre Industrivej 14, 6630 Rødding"
+  },
+  {
+    "Navn": "Grenpladsen Rørvig",
+    "Adresse": "Søndervangsvej 13, 4581 Rørvig",
+    "Kommune": "Odsherred Kommune",
+    "lat": 55.93641786,
+    "lng": 11.75297738,
+    "dawaId": "0a3f5083-e887-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Søndervangsvej 13, 4581 Rørvig"
+  },
+  {
+    "Navn": "Ølgod Genbrugsplads",
+    "Adresse": "Energivej 11, 6870 Ølgod",
+    "Kommune": "Varde Kommune",
+    "lat": 55.81490245,
+    "lng": 8.63606256,
+    "dawaId": "0a3f508e-954b-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Energivej 11, 6870 Ølgod"
+  },
+  {
+    "Navn": "Nørre Nebel Genbrugsplads",
+    "Adresse": "Kastkærvej 130, 6830 Nørre Nebel",
+    "Kommune": "Varde Kommune",
+    "lat": 55.77165419,
+    "lng": 8.3172232,
+    "dawaId": "0a3f508d-1755-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Kastkærvej 130, 6830 Nørre Nebel"
+  },
+  {
+    "Navn": "Vorbasse Genbrugsplads",
+    "Adresse": "Bøgelundvej 9, 6623 Vorbasse",
+    "Kommune": "Billund Kommune",
+    "lat": 55.6218073,
+    "lng": 9.07355625,
+    "dawaId": "0a3f508c-fdd7-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Bøgelundvej 9, 6623 Vorbasse"
+  },
+  {
+    "Navn": "Videbæk Genbrugsplads",
+    "Adresse": "Håndværkervej 18, 6920 Videbæk",
+    "Kommune": "Ringkøbing-Skjern Kommune",
+    "lat": 56.09595084,
+    "lng": 8.62688658,
+    "dawaId": "0a3f5092-f640-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Håndværkervej 18, 6920 Videbæk"
+  },
+  {
+    "Navn": "Spjald Genbrugsplads",
+    "Adresse": "Mosevej 4, 6971 Spjald",
+    "Kommune": "Ringkøbing-Skjern Kommune",
+    "lat": 56.12873039,
+    "lng": 8.5137368,
+    "dawaId": "0a3f5092-f99b-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Mosevej 4, 6971 Spjald"
+  },
+  {
+    "Navn": "Tarm Genbrugsplads",
+    "Adresse": "Industriparken 7, 6880 Tarm",
+    "Kommune": "Ringkøbing-Skjern Kommune",
+    "lat": 55.91656832,
+    "lng": 8.5282682,
+    "dawaId": "9118710b-a539-4b55-a6c3-cc0d286a4dd7",
+    "dawaBetegnelse": "Industriparken 7, 6880 Tarm"
+  },
+  {
+    "Navn": "Hvide Sande Genbrugsplads",
+    "Adresse": "Nørregade 84, 6960 Hvide Sande",
+    "Kommune": "Ringkøbing-Skjern Kommune",
+    "lat": 56.01496926,
+    "lng": 8.12930597,
+    "dawaId": "0a3f5091-ae10-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Nørregade 84, 6960 Hvide Sande"
+  },
+  {
+    "Navn": "Skjern Grenplads",
+    "Adresse": "Industrivej 37, 6900 Skjern",
+    "Kommune": "Ringkøbing-Skjern Kommune",
+    "lat": 55.96350213,
+    "lng": 8.49578044,
+    "dawaId": "48036254-5ab2-445d-8117-a1e50c5ed995",
+    "dawaBetegnelse": "Industrivej 37, 6900 Skjern"
+  },
+  {
+    "Navn": "Bork Genbrugsplads",
+    "Adresse": "Sønderbyvej 31, 6893 Hemmet",
+    "Kommune": "Ringkøbing-Skjern Kommune",
+    "lat": 55.83710506,
+    "lng": 8.30079323,
+    "dawaId": "0a3f5091-38ff-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Sønderbyvej 31, Nr Bork, 6893 Hemmet"
+  },
+  {
+    "Navn": "Kloster Genbrugsplads",
+    "Adresse": "Klostervej 144, 6950 Ringkøbing",
+    "Kommune": "Ringkøbing-Skjern Kommune"
+  },
+  {
+    "Navn": "Lem Genbrugsplads",
+    "Adresse": "Energivej 1, 6940 Lem",
+    "Kommune": "Ringkøbing-Skjern Kommune",
+    "lat": 56.02562778,
+    "lng": 8.36966613,
+    "dawaId": "f33d5e46-3e2e-45ec-9390-22d6e309f346",
+    "dawaBetegnelse": "Energivej 1, 6940 Lem St"
+  },
+  {
+    "Navn": "Tim Genbrugsplads",
+    "Adresse": "Høbrovej 9E, 6980 Tim",
+    "Kommune": "Ringkøbing-Skjern Kommune",
+    "lat": 56.193201,
+    "lng": 8.31413651,
+    "dawaId": "0a3f5092-59d1-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Høbrovej 9E, 6980 Tim"
+  },
+  {
+    "Navn": "Troldhede Genbrugsplads",
+    "Adresse": "Industrivej 15, 6920 Videbæk",
+    "Kommune": "Ringkøbing-Skjern Kommune",
+    "lat": 55.99556277,
+    "lng": 8.74516505,
+    "dawaId": "0a3f5092-f656-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Industrivej 15, Troldhede, 6920 Videbæk"
+  },
+  {
+    "Navn": "Karup Genbrugsstation",
+    "Adresse": "Materielvej 3, 7470 Karup J",
+    "Kommune": "Viborg Kommune",
+    "lat": 56.31733804,
+    "lng": 9.17555116,
+    "dawaId": "0a3f5097-852e-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Materielvej 3, 7470 Karup J"
+  },
+  {
+    "Navn": "Bjerringbro Genbrugsstation",
+    "Adresse": "Gamle Tangevej 1, 8850 Bjerringbro",
+    "Kommune": "Viborg Kommune"
+  },
+  {
+    "Navn": "Hammershøj Autoophug",
+    "Adresse": "Nørbækvej 17, 8830 Tjele",
+    "Kommune": "Viborg Kommune",
+    "lat": 56.51894471,
+    "lng": 9.7753003,
+    "dawaId": "0a3f5098-b52f-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Nørbækvej 17, Hvidding, 8830 Tjele"
+  },
+  {
+    "Navn": "Kirkens Korshær Genbrug Nimtofte",
+    "Adresse": "Torvet 1, st. tv, 8581 Nimtofte",
+    "Kommune": "Syddjurs Kommune"
+  },
+  {
+    "Navn": "Ryomgård Genbrugsstation",
+    "Adresse": "Industrivej 19, 8550 Ryomgård",
+    "Kommune": "Syddjurs Kommune",
+    "lat": 56.37896819,
+    "lng": 10.49307342,
+    "dawaId": "0a3f5094-23b0-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Industrivej 19, 8550 Ryomgård"
+  },
+  {
+    "Navn": "Grenaa Genbrugsplads",
+    "Adresse": "Kalorievej 2, 8500 Grenaa",
+    "Kommune": "Norddjurs Kommune",
+    "lat": 56.4237088,
+    "lng": 10.90911942,
+    "dawaId": "72da28e6-8140-4f72-83fd-7dfe6fabfbaf",
+    "dawaBetegnelse": "Kalorievej 2, 8500 Grenaa"
+  },
+  {
+    "Navn": "Feldballe Genbrugsstation",
+    "Adresse": "Lufthavnsvej 121, 8410 Rønde",
+    "Kommune": "Syddjurs Kommune",
+    "lat": 56.2969291,
+    "lng": 10.59095341,
+    "dawaId": "6bf23c33-c62b-4f20-a2db-87f5699e20c6",
+    "dawaBetegnelse": "Lufthavnsvej 121, Møgelmose, 8410 Rønde"
+  },
+  {
+    "Navn": "Hornslet Genbrugsstation",
+    "Adresse": "Holmagervej 7, 8543 Hornslet",
+    "Kommune": "Syddjurs Kommune",
+    "lat": 56.30316166,
+    "lng": 10.30307736,
+    "dawaId": "0a3f5094-e9ab-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Holmagervej 7, 8543 Hornslet"
+  },
+  {
+    "Navn": "Knebel Genbrugsstation",
+    "Adresse": "Møllevej 4B, 8420 Knebel",
+    "Kommune": "Syddjurs Kommune",
+    "lat": 56.21974887,
+    "lng": 10.4841961,
+    "dawaId": "0a3f5093-4a00-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Møllevej 4B, 8420 Knebel"
+  },
+  {
+    "Navn": "Anholt Genbrugsstation",
+    "Adresse": "Gennem Landet 78, 8592 Anholt",
+    "Kommune": "Norddjurs Kommune"
+  },
+  {
+    "Navn": "Drammelstrup Genbrugsstation",
+    "Adresse": "Jordrampen 3, 8961 Allingåbro",
+    "Kommune": "Norddjurs Kommune",
+    "lat": 56.46031547,
+    "lng": 10.30132763,
+    "dawaId": "0a3f5095-c18d-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Jordrampen 3, Drammelstrup, 8961 Allingåbro"
+  },
+  {
+    "Navn": "Glesborg Genbrugsstation",
+    "Adresse": "Håndværkervej 2, 8585 Glesborg",
+    "Kommune": "Norddjurs Kommune",
+    "lat": 56.47200609,
+    "lng": 10.73983152,
+    "dawaId": "0a3f5094-4c5c-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Håndværkervej 2, 8585 Glesborg"
+  },
+  {
+    "Navn": "Ebeltoft Genbrugsstation",
+    "Adresse": "Hans Winthers Vej 19, 8400 Ebeltoft",
+    "Kommune": "Syddjurs Kommune",
+    "lat": 56.18170975,
+    "lng": 10.68563243,
+    "dawaId": "0a3f5093-37e3-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Hans Winthers Vej 19, 8400 Ebeltoft"
+  },
+  {
+    "Navn": "Pandrup Genbrugsplads",
+    "Adresse": "Sigsgaardsvej 12, 9490 Pandrup",
+    "Kommune": "Jammerbugt Kommune",
+    "lat": 57.20386992,
+    "lng": 9.6824334,
+    "dawaId": "9efdf1fd-8571-4cc8-ad6e-9490df009974",
+    "dawaBetegnelse": "Sigsgaardsvej 12, Kaas, 9490 Pandrup"
+  },
+  {
+    "Navn": "Brovst Genbrugsplads",
+    "Adresse": "Terndrupvej 77, 9460 Brovst",
+    "Kommune": "Jammerbugt Kommune",
+    "lat": 57.10172494,
+    "lng": 9.53323181,
+    "dawaId": "0a3f5099-33db-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Terndrupvej 77, 9460 Brovst"
+  },
+  {
+    "Navn": "Aabybro Genbrugsplads",
+    "Adresse": "Møllebækken 2, 9440 Aabybro",
+    "Kommune": "Jammerbugt Kommune",
+    "lat": 57.1502145,
+    "lng": 9.75736687,
+    "dawaId": "0a3f509c-0874-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Møllebækken 2, 9440 Aabybro"
+  },
+  {
+    "Navn": "Fjerritslev Genbrugsplads",
+    "Adresse": "Industrivej 8, 9690 Fjerritslev",
+    "Kommune": "Jammerbugt Kommune",
+    "lat": 57.08571461,
+    "lng": 9.24929305,
+    "dawaId": "fafa356b-f09f-44dc-87eb-bc8e31ba45d4",
+    "dawaBetegnelse": "Industrivej 8, 9690 Fjerritslev"
+  },
+  {
+    "Navn": "Ærø Genbrugsplads",
+    "Adresse": "Husmarken 0, 5970 Ærøskøbing",
+    "Kommune": "Ærø Kommune"
+  },
+  {
+    "Navn": "Smørum Genbrugsstation",
+    "Adresse": "Hassellunden 2B, 2765 Smørum",
+    "Kommune": "Egedal Kommune",
+    "lat": 55.72994211,
+    "lng": 12.2988579,
+    "dawaId": "0a3f507d-29c0-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Hassellunden 2B, Lille Smørum, 2765 Smørum"
+  },
+  {
+    "Navn": "Ørum Genbrugsstation",
+    "Adresse": "Industrivej 18, 8830 Tjele",
+    "Kommune": "Viborg Kommune",
+    "lat": 56.48335646,
+    "lng": 9.61656237,
+    "dawaId": "0a3f5098-b1f3-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Industrivej 18, Ørum, 8830 Tjele"
+  },
+  {
+    "Navn": "Møldrup Genbrugsstation",
+    "Adresse": "Erhvervsparken 6, 9632 Møldrup",
+    "Kommune": "Viborg Kommune",
+    "lat": 56.61789585,
+    "lng": 9.51389652,
+    "dawaId": "3010c983-e13a-417b-806f-7536d8ee31c0",
+    "dawaBetegnelse": "Erhvervsparken 6, 9632 Møldrup"
+  },
+  {
+    "Navn": "Stoholm Genbrugsstation",
+    "Adresse": "Tastumvej 18D, 7850 Stoholm Jylland",
+    "Kommune": "Viborg Kommune"
+  },
+  {
+    "Navn": "Rudkøbing Genbrugsplads",
+    "Adresse": "Dunsbjergvej 10, 5900 Rudkøbing",
+    "Kommune": "Langeland Kommune",
+    "lat": 54.93796242,
+    "lng": 10.73742872,
+    "dawaId": "0a3f508a-2c0d-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Dunsbjergvej 10, 5900 Rudkøbing"
+  },
+  {
+    "Navn": "Aakirkeby Containerplads",
+    "Adresse": "Brovangen 13, 3720 Aakirkeby",
+    "Kommune": "Bornholms Regionskommune",
+    "lat": 55.07441868,
+    "lng": 14.91218858,
+    "dawaId": "15ab4392-abd9-4968-abbb-db15a0f05c16",
+    "dawaBetegnelse": "Brovangen 13, Aakirkeby, 3720 Aakirkeby"
+  },
+  {
+    "Navn": "Østermarie Containerplads",
+    "Adresse": "Lyrsbyvej 6A, 3751 Østermarie",
+    "Kommune": "Bornholms Regionskommune",
+    "lat": 55.13400161,
+    "lng": 15.03122336,
+    "dawaId": "0a3f5087-8088-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Lyrsbyvej 6A, Østermarie, 3751 Østermarie"
+  },
+  {
+    "Navn": "Nexø Genbrugsplads",
+    "Adresse": "Søbækken 3, 3730 Nexø",
+    "Kommune": "Bornholms Regionskommune",
+    "lat": 55.0564511,
+    "lng": 15.13057204,
+    "dawaId": "0a3f5087-aa9a-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Søbækken 3, Nexø, 3730 Nexø"
+  },
+  {
+    "Navn": "Rønne Genbrugsplads",
+    "Adresse": "Almegårdsvej 8, 3700 Rønne",
+    "Kommune": "Bornholms Regionskommune",
+    "lat": 55.11785741,
+    "lng": 14.73295186,
+    "dawaId": "0a3f5087-5198-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Almegårdsvej 8, Rønne, 3700 Rønne"
+  },
+  {
+    "Navn": "Hasle Containerplads",
+    "Adresse": "Bykærvej 12, 3790 Hasle",
+    "Kommune": "Bornholms Regionskommune",
+    "lat": 55.18329629,
+    "lng": 14.71551097,
+    "dawaId": "0a3f5087-5bc2-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Bykærvej 12, Hasle, 3790 Hasle"
+  },
+  {
+    "Navn": "Olsker Containerplads",
+    "Adresse": "Rønnevej 68, 3770 Allinge",
+    "Kommune": "Bornholms Regionskommune",
+    "lat": 55.23410629,
+    "lng": 14.79267594,
+    "dawaId": "0a3f5087-94db-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Rønnevej 68, Olsker, 3770 Allinge"
+  },
+  {
+    "Navn": "Fanø Genbrugsplads",
+    "Adresse": "Sønder Nytoft 7, 6720 Fanø",
+    "Kommune": "Fanø Kommune",
+    "lat": 55.44161668,
+    "lng": 8.38736364,
+    "dawaId": "0a3f508d-e7bb-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Sønder Nytoft 7, Nordby, 6720 Fanø"
+  },
+  {
+    "Navn": "Hammel Genbrugsplads",
+    "Adresse": "Italiensvej 1, 8450 Hammel",
+    "Kommune": "Favrskov Kommune",
+    "lat": 56.23666113,
+    "lng": 9.86173009,
+    "dawaId": "0a3f5093-ccae-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Italiensvej 1, 8450 Hammel"
+  },
+  {
+    "Navn": "Hinnerup Genbrugsplads",
+    "Adresse": "Fanøvej 7, 8382 Hinnerup",
+    "Kommune": "Favrskov Kommune",
+    "lat": 56.24993565,
+    "lng": 10.07569226,
+    "dawaId": "0a3f5093-de16-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Fanøvej 7, 8382 Hinnerup"
+  },
+  {
+    "Navn": "Hadsten Genbrugsplads",
+    "Adresse": "Brogårdsvej 11, 8370 Hadsten",
+    "Kommune": "Favrskov Kommune",
+    "lat": 56.33269974,
+    "lng": 10.02539792,
+    "dawaId": "0a3f5093-b1df-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Brogårdsvej 11, Balle, 8370 Hadsten"
+  },
+  {
+    "Navn": "Hvorslev Genbrugsplads",
+    "Adresse": "Hammervej 9, 8860 Ulstrup",
+    "Kommune": "Favrskov Kommune",
+    "lat": 56.37372053,
+    "lng": 9.77571196,
+    "dawaId": "0a3f5097-75ea-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Hammervej 9, 8860 Ulstrup"
+  },
+  {
+    "Navn": "Kolding Nord Genbrugsplads",
+    "Adresse": "Bronzevej 3, 6000 Kolding",
+    "Kommune": "Kolding Kommune",
+    "lat": 55.51070622,
+    "lng": 9.44631599,
+    "dawaId": "0a3f5090-1887-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Bronzevej 3, 6000 Kolding"
+  },
+  {
+    "Navn": "Kolding Syd Genbrugsplads",
+    "Adresse": "Gejlhavegård 12, 6000 Kolding",
+    "Kommune": "Kolding Kommune",
+    "lat": 55.46746761,
+    "lng": 9.46473004,
+    "dawaId": "0a3f5090-2985-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Gejlhavegård 12, 6000 Kolding"
+  },
+  {
+    "Navn": "Vamdrup Genbrugsplads",
+    "Adresse": "Østermarksvej 2, 6580 Vamdrup",
+    "Kommune": "Kolding Kommune",
+    "lat": 55.42832141,
+    "lng": 9.29589448,
+    "dawaId": "0a3f5090-a8e1-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Østermarksvej 2, 6580 Vamdrup"
+  },
+  {
+    "Navn": "Lunderskov Genbrugsplads",
+    "Adresse": "Slugten 6, 6640 Lunderskov",
+    "Kommune": "Kolding Kommune",
+    "lat": 55.47369731,
+    "lng": 9.30281543,
+    "dawaId": "148c0c26-306a-4158-8994-128a4873ecc9",
+    "dawaBetegnelse": "Slugten 6, 6640 Lunderskov"
+  },
+  {
+    "Navn": "Varde Genbrugsplads",
+    "Adresse": "Ndr. Boulevard 302, 6800 Varde",
+    "Kommune": "Varde Kommune",
+    "lat": 55.61555229,
+    "lng": 8.45777313,
+    "dawaId": "0a3f508e-60a1-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Nordre Boulevard 302, 6800 Varde"
+  },
+  {
+    "Navn": "Christiansfeld Genbrugsplads",
+    "Adresse": "Arlavej 9, 6070 Christiansfeld",
+    "Kommune": "Kolding Kommune",
+    "lat": 55.3533649,
+    "lng": 9.4954068,
+    "dawaId": "362a8595-b349-40ce-91b8-f3a29212908e",
+    "dawaBetegnelse": "Arlavej 9, 6070 Christiansfeld"
+  },
+  {
+    "Navn": "Oksbøl Genbrugsplads",
+    "Adresse": "Industrivej 13, 6840 Oksbøl",
+    "Kommune": "Varde Kommune",
+    "lat": 55.62195149,
+    "lng": 8.29317424,
+    "dawaId": "0a3f508d-3228-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Industrivej 13, 6840 Oksbøl"
+  },
+  {
+    "Navn": "Vrenderup Genbrugsplads",
+    "Adresse": "Hellevej 48, 6818 Årre",
+    "Kommune": "Varde Kommune",
+    "lat": 55.61642506,
+    "lng": 8.72393134,
+    "dawaId": "0a3f508e-1bfb-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Hellevej 48, 6818 Årre"
+  },
+  {
+    "Navn": "Genbrugsplads Niels Juels Vej",
+    "Adresse": "Niels Juels Vej 25, 9900 Frederikshavn",
+    "Kommune": "Frederikshavn Kommune",
+    "lat": 57.44916391,
+    "lng": 10.51700988,
+    "dawaId": "0a3f5099-d2ef-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Niels Juels Vej 25, 9900 Frederikshavn"
+  },
+  {
+    "Navn": "Ravnshøj Genbrugsplads",
+    "Adresse": "Stenvej 8, Ravnshøj, 9900 Frederikshavn",
+    "Kommune": "Frederikshavn Kommune"
+  },
+  {
+    "Navn": "Værløse Genbrugsstation",
+    "Adresse": "Ballerupvej 75, 3500 Værløse",
+    "Kommune": "Furesø Kommune",
+    "lat": 55.77162333,
+    "lng": 12.37074331,
+    "dawaId": "0a3f507e-2be4-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Ballerupvej 75, 3500 Værløse"
+  },
+  {
+    "Navn": "Kåstrup Genbrugsplads",
+    "Adresse": "GreenLab 1, 7860 Spøttrup",
+    "Kommune": "Skive Kommune",
+    "lat": 56.64731373,
+    "lng": 8.97638763,
+    "dawaId": "0a3f5098-3244-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Greenlab 1, Kåstrup, 7860 Spøttrup"
+  },
+  {
+    "Navn": "Fur Genbrugsplads",
+    "Adresse": "Vilietoften 9, 7884 Fur",
+    "Kommune": "Skive Kommune",
+    "lat": 56.8212943,
+    "lng": 9.00629044,
+    "dawaId": "a07fd4f9-82e1-4d73-87b5-d87aee6d001d",
+    "dawaBetegnelse": "Vilietoften 9, Madsbad, 7884 Fur"
+  },
+  {
+    "Navn": "Farum Genbrugsstation",
+    "Adresse": "Gammelgårdsvej 79, 3520 Farum",
+    "Kommune": "Furesø Kommune",
+    "lat": 55.81928464,
+    "lng": 12.37167817,
+    "dawaId": "0a3f507e-8c9f-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Gammelgårdsvej 79, 3520 Farum"
+  },
+  {
+    "Navn": "Jægerspris Genbrugsplads",
+    "Adresse": "Nørhaven 8, Over Dråby, 3630 Jægerspris",
+    "Kommune": "Frederikssund Kommune",
+    "lat": 55.83037169,
+    "lng": 11.99283037,
+    "dawaId": "0a3f5080-757a-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Nørhaven 8, Over Draaby, 3630 Jægerspris"
+  },
+  {
+    "Navn": "Skagen Genbrugsplads",
+    "Adresse": "Buttervej 64, 9990 Skagen",
+    "Kommune": "Frederikshavn Kommune",
+    "lat": 57.73682775,
+    "lng": 10.568554,
+    "dawaId": "0a3f509b-83f8-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Buttervej 64, 9990 Skagen"
+  },
+  {
+    "Navn": "Strandby Genbrugsplads",
+    "Adresse": "Ravmarken 10, 9970 Strandby",
+    "Kommune": "Frederikshavn Kommune",
+    "lat": 57.48791745,
+    "lng": 10.48805506,
+    "dawaId": "0a3f5099-d97f-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Ravmarken 10, 9970 Strandby"
+  },
+  {
+    "Navn": "Sæby Genbrugsplads",
+    "Adresse": "Ousenvej 16, 9300 Sæby",
+    "Kommune": "Frederikshavn Kommune",
+    "lat": 57.33467127,
+    "lng": 10.45706518,
+    "dawaId": "0a3f509b-ebec-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Ousenvej 16, 9300 Sæby"
+  },
+  {
+    "Navn": "Voerså Genbrugsplads",
+    "Adresse": "Kringelhedevej 17, Voerså, 9300 Sæby",
+    "Kommune": "Frederikshavn Kommune"
+  },
+  {
+    "Navn": "Østervrå Genbrugsplads",
+    "Adresse": "Bjeldalsvej 3, 9750 Østervrå",
+    "Kommune": "Frederikshavn Kommune",
+    "lat": 57.34265702,
+    "lng": 10.25704216,
+    "dawaId": "0a3f509b-d585-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Bjeldalsvej 3, 9750 Østervrå"
+  },
+  {
+    "Navn": "Ålbæk Genbrugsplads",
+    "Adresse": "Industrivej 21, 9982 Ålbæk",
+    "Kommune": "Frederikshavn Kommune",
+    "lat": 57.6001296,
+    "lng": 10.41517489,
+    "dawaId": "0a3f509b-8ead-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Industrivej 21, 9982 Ålbæk"
+  },
+  {
+    "Navn": "Albertslund Genbrugsstation",
+    "Adresse": "Holsbjergvej 44, 2620 Albertslund",
+    "Kommune": "Albertslund Kommune",
+    "lat": 55.66267301,
+    "lng": 12.33883358,
+    "dawaId": "3583b339-c88d-4561-b4c1-3643b1a86b10",
+    "dawaBetegnelse": "Holsbjergvej 44, 2620 Albertslund"
+  },
+  {
+    "Navn": "Ubby Genbrugsplads",
+    "Adresse": "Rugvænget 1, Ubby, 4490 Jerslev Sjælland",
+    "Kommune": "Kalundborg Kommune",
+    "lat": 55.61231755,
+    "lng": 11.21981951,
+    "dawaId": "0a3f5083-5dbc-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Rugvænget 1, Ubby, 4490 Jerslev Sjælland"
+  },
+  {
+    "Navn": "Sejerø Genbrugsplads",
+    "Adresse": "Sejerøvej 7B, 4592 Sejerø",
+    "Kommune": "Kalundborg Kommune",
+    "lat": 55.89198381,
+    "lng": 11.14082315,
+    "dawaId": "0a3f5082-88a7-32b8-e044-0003ba298018",
+    "dawaBetegnelse": "Sejerøvej 7B, 4592 Sejerø"
+  }
+]
