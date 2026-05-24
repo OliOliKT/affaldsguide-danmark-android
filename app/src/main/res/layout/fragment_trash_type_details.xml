@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/fragment_details_background_color"
     android:clipToPadding="false"
-    android:paddingTop="16dp"
+    android:paddingTop="34dp"
     android:paddingBottom="0dp"
     android:paddingStart="20dp"
     android:paddingEnd="20dp">

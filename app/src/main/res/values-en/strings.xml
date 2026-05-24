@@ -38,6 +38,10 @@
     <string name="affald_ikke_fundet_uden_forslag">We could not find "%1$s". Try a more common word or another spelling.</string>
     <string name="mente_du_en_af_disse">Did you mean one of these?</string>
     <string name="proev_en_af_disse_soegninger">Try one of these searches:</string>
+    <string name="search_intro_title">Find the right sorting</string>
+    <string name="search_intro_text">Search for a waste item and see which Danish waste category it usually belongs to.</string>
+    <string name="search_intro_examples_label">Try a quick search</string>
+    <string name="search_intro_recent_label">Recent searches</string>
     <string name="example_pizzabakke">Pizza box</string>
     <string name="example_batteri">Battery</string>
     <string name="example_kaffefilter">Coffee filter</string>

@@ -66,6 +66,10 @@
     <string name="affald_ikke_fundet_uden_forslag">Vi fandt ikke "%1$s". Prøv et mere almindeligt ord eller en anden stavemåde.</string>
     <string name="mente_du_en_af_disse">Mente du en af disse?</string>
     <string name="proev_en_af_disse_soegninger">Prøv en af disse søgninger:</string>
+    <string name="search_intro_title">Find den rigtige sortering</string>
+    <string name="search_intro_text">Søg efter en affaldsgenstand og se, hvilken affaldsfraktion den typisk hører til i Danmark.</string>
+    <string name="search_intro_examples_label">Prøv en hurtig søgning</string>
+    <string name="search_intro_recent_label">Seneste søgninger</string>
     <string name="example_pizzabakke">Pizzabakke</string>
     <string name="example_batteri">Batteri</string>
     <string name="example_kaffefilter">Kaffefilter</string>

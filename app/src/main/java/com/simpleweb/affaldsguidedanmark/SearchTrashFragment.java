@@ -37,8 +37,11 @@ public class SearchTrashFragment extends Fragment {
     private static final String TAG = "SearchTrashFragment";
     private static final String RECENT_SEARCHES_PREFS = "RecentSearches";
     private static final String RECENT_SEARCHES_KEY = "queries";
+    private static final String SUCCESSFUL_SEARCH_EXAMPLES_KEY_PREFIX = "successful_queries_";
     private static final int MAX_RECENT_SEARCHES = 10;
     private static final int MAX_EMPTY_STATE_SUGGESTIONS = 3;
+    private static final int MIN_SUCCESSFUL_SEARCHES_FOR_RECENT_CHIPS = 2;
+    private static final int MAX_THREE_CHIP_LABEL_LENGTH = 15;
     private static final double MIN_FUZZY_SUGGESTION_SCORE = 0.56;
     private TrashDB trashDB;
     private final List<String> cachedProduktList = new ArrayList<>();
@@ -49,20 +52,40 @@ public class SearchTrashFragment extends Fragment {
     private MultiAutoCompleteTextView inputText;
     private ImageView twoItemsImage1;
     private ImageView twoItemsImage2;
+    private ImageView threeItemsImage1;
+    private ImageView threeItemsImage2;
+    private ImageView threeItemsImage3;
     private ImageView oneItemImage1;
     private TextView resultText;
     private TextView twoItemsImage1Text;
     private TextView twoItemsImage2Text;
+    private TextView threeItemsImage1Text;
+    private TextView threeItemsImage2Text;
+    private TextView threeItemsImage3Text;
     private TextView oneItemImage1Text;
+    private LinearLayout twoItemsImage1InfoRow;
+    private LinearLayout twoItemsImage2InfoRow;
+    private LinearLayout threeItemsImage1InfoRow;
+    private LinearLayout threeItemsImage2InfoRow;
+    private LinearLayout threeItemsImage3InfoRow;
+    private LinearLayout oneItemImage1InfoRow;
     private ImageView twoItemsIcon1;
     private ImageView twoItemsIcon2;
+    private ImageView threeItemsIcon1;
+    private ImageView threeItemsIcon2;
+    private ImageView threeItemsIcon3;
     private ImageView oneItemIcon1;
     private ImageView insertTrashImage;
+    private LinearLayout searchIntroContainer;
     private LinearLayout emptyStateContainer;
     private TextView emptyStateTitle;
     private TextView exampleSearchPizza;
     private TextView exampleSearchBattery;
     private TextView exampleSearchCoffeeFilter;
+    private TextView introExampleSearchPizza;
+    private TextView introExampleSearchBattery;
+    private TextView introExampleSearchCoffeeFilter;
+    private TextView searchIntroExamplesLabel;
     private TextView productDescriptionToggle;
     private TextView productDescriptionText;
 
@@ -79,26 +102,44 @@ public class SearchTrashFragment extends Fragment {
 
         twoItemsImage1 = v.findViewById(R.id.twoItemsImage1);
         twoItemsImage2 = v.findViewById(R.id.twoItemsImage2);
+        threeItemsImage1 = v.findViewById(R.id.threeItemsImage1);
+        threeItemsImage2 = v.findViewById(R.id.threeItemsImage2);
+        threeItemsImage3 = v.findViewById(R.id.threeItemsImage3);
         oneItemImage1 = v.findViewById(R.id.oneItemImage1);
 
         twoItemsIcon1 = v.findViewById(R.id.twoItemsIcon1);
         twoItemsIcon2 = v.findViewById(R.id.twoItemsIcon2);
+        threeItemsIcon1 = v.findViewById(R.id.threeItemsIcon1);
+        threeItemsIcon2 = v.findViewById(R.id.threeItemsIcon2);
+        threeItemsIcon3 = v.findViewById(R.id.threeItemsIcon3);
         oneItemIcon1 = v.findViewById(R.id.oneItemIcon1);
+        insertTrashImage = v.findViewById(R.id.indtastAffaldBillede);
 
         twoItemsImage1Text = v.findViewById(R.id.twoItemsImage1Text);
         twoItemsImage2Text = v.findViewById(R.id.twoItemsImage2Text);
+        threeItemsImage1Text = v.findViewById(R.id.threeItemsImage1Text);
+        threeItemsImage2Text = v.findViewById(R.id.threeItemsImage2Text);
+        threeItemsImage3Text = v.findViewById(R.id.threeItemsImage3Text);
         oneItemImage1Text = v.findViewById(R.id.oneItemImage1Text);
+        twoItemsImage1InfoRow = v.findViewById(R.id.twoItemsImage1InfoRow);
+        twoItemsImage2InfoRow = v.findViewById(R.id.twoItemsImage2InfoRow);
+        threeItemsImage1InfoRow = v.findViewById(R.id.threeItemsImage1InfoRow);
+        threeItemsImage2InfoRow = v.findViewById(R.id.threeItemsImage2InfoRow);
+        threeItemsImage3InfoRow = v.findViewById(R.id.threeItemsImage3InfoRow);
+        oneItemImage1InfoRow = v.findViewById(R.id.oneItemImage1InfoRow);
 
-        insertTrashImage = v.findViewById(R.id.indtastAffaldBillede);
+        searchIntroContainer = v.findViewById(R.id.searchIntroContainer);
         emptyStateContainer = v.findViewById(R.id.emptyStateContainer);
         emptyStateTitle = v.findViewById(R.id.emptyStateTitle);
         exampleSearchPizza = v.findViewById(R.id.exampleSearchPizza);
         exampleSearchBattery = v.findViewById(R.id.exampleSearchBattery);
         exampleSearchCoffeeFilter = v.findViewById(R.id.exampleSearchCoffeeFilter);
+        introExampleSearchPizza = v.findViewById(R.id.introExampleSearchPizza);
+        introExampleSearchBattery = v.findViewById(R.id.introExampleSearchBattery);
+        introExampleSearchCoffeeFilter = v.findViewById(R.id.introExampleSearchCoffeeFilter);
+        searchIntroExamplesLabel = v.findViewById(R.id.searchIntroExamplesLabel);
         productDescriptionToggle = v.findViewById(R.id.productDescriptionToggle);
         productDescriptionText = v.findViewById(R.id.productDescriptionText);
-
-        setInsertTrashImageForLanguage();
 
         NativeAdHelper.loadNativeAd(requireContext(), v);
 
@@ -156,20 +197,21 @@ public class SearchTrashFragment extends Fragment {
         setupExampleSearch(exampleSearchPizza);
         setupExampleSearch(exampleSearchBattery);
         setupExampleSearch(exampleSearchCoffeeFilter);
+        setupExampleSearch(introExampleSearchPizza);
+        setupExampleSearch(introExampleSearchBattery);
+        setupExampleSearch(introExampleSearchCoffeeFilter);
+        updateIntroExampleSearches();
+        setInsertTrashImageForLanguage();
 
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                insertTrashImage.setImageDrawable(null);
                 clearTextAndImages();
                 resultText.setOnClickListener(null);
                 String what = SuggestionAdapter.getSearchValue(inputText.getText().toString()).trim();
                 boolean useEnglish = LanguageManager.isEnglish(requireContext());
                 inputText.setText(what);
                 inputText.setSelection(inputText.length());
-                if (!what.equals("")) {
-                    saveRecentSearch(what);
-                }
 
                 trashDB.searchProductJson(what, useEnglish, new TrashDB.OnSearchCompleteListener() {
                     @Override
@@ -196,21 +238,51 @@ public class SearchTrashFragment extends Fragment {
                         }
 
                         if (what.equals("")) {
+                            searchIntroContainer.setVisibility(View.VISIBLE);
+                            insertTrashImage.setVisibility(ImageView.VISIBLE);
+                            setInsertTrashImageForLanguage();
                             resultText.setText(R.string.tomt_søgefelt);
                         } else if (sorteringMap.containsKey("not found") && cachedProduktList != null) {
                             emptyStateContainer.setVisibility(View.VISIBLE);
                             resultText.setText(getString(R.string.affald_ikke_fundet_uden_forslag, what));
                             updateEmptyStateSuggestions(what);
                         } else if (sorteringMap.containsKey("error")) {
-                            insertTrashImage.setImageResource(R.drawable.error_image);
                             emptyStateContainer.setVisibility(View.VISIBLE);
                         } else {
                             emptyStateContainer.setVisibility(View.GONE);
+                            saveRecentSearch(what);
+                            saveSuccessfulSearchExample(what, useEnglish);
+                            updateIntroExampleSearches();
                             trashDB.colorProductName(resultText, what, getActivity(), isSpecialText, useEnglish);
                             setupProductDescription(what, useEnglish);
                             int numImages = sorteringMap.size();
 
-                            if (numImages == 2) {
+                            if (numImages >= 3) {
+                                threeItemsImage1.setVisibility(ImageView.VISIBLE);
+                                threeItemsImage2.setVisibility(ImageView.VISIBLE);
+                                threeItemsImage3.setVisibility(ImageView.VISIBLE);
+                                threeItemsImage1InfoRow.setVisibility(View.VISIBLE);
+                                threeItemsImage2InfoRow.setVisibility(View.VISIBLE);
+                                threeItemsImage3InfoRow.setVisibility(View.VISIBLE);
+                                ImageView[] images = {threeItemsImage1, threeItemsImage2, threeItemsImage3};
+                                TextView[] labels = {threeItemsImage1Text, threeItemsImage2Text, threeItemsImage3Text};
+                                ImageView[] icons = {threeItemsIcon1, threeItemsIcon2, threeItemsIcon3};
+                                int index = 0;
+                                for (Map.Entry<String, String> entry : sorteringMap.entrySet()) {
+                                    if (index >= images.length) {
+                                        break;
+                                    }
+                                    String key = entry.getKey();
+                                    String value = entry.getValue();
+                                    trashDB.setImageViewAndText(images[index], labels[index], getResources(), useEnglish ? trashDB.translateSortingKey(key) : key, value, useEnglish);
+                                    icons[index].setVisibility(value == null || value.isEmpty() ? ImageView.INVISIBLE : ImageView.VISIBLE);
+                                    index++;
+                                }
+                            } else if (numImages == 2) {
+                                twoItemsImage1.setVisibility(ImageView.VISIBLE);
+                                twoItemsImage2.setVisibility(ImageView.VISIBLE);
+                                twoItemsImage1InfoRow.setVisibility(View.VISIBLE);
+                                twoItemsImage2InfoRow.setVisibility(View.VISIBLE);
                                 int index = 0;
                                 for (Map.Entry<String, String> entry : sorteringMap.entrySet()) {
                                     String key = entry.getKey();
@@ -226,6 +298,8 @@ public class SearchTrashFragment extends Fragment {
                                     index++;
                                 }
                             } else if (numImages == 1) {
+                                oneItemImage1.setVisibility(ImageView.VISIBLE);
+                                oneItemImage1InfoRow.setVisibility(View.VISIBLE);
                                 for (Map.Entry<String, String> entry : sorteringMap.entrySet()) {
                                     String key = entry.getKey();
                                     String value = "";
@@ -286,13 +360,36 @@ public class SearchTrashFragment extends Fragment {
     private void clearTextAndImages() {
         twoItemsImage1.setImageResource(0);
         twoItemsImage2.setImageResource(0);
+        threeItemsImage1.setImageResource(0);
+        threeItemsImage2.setImageResource(0);
+        threeItemsImage3.setImageResource(0);
         oneItemImage1.setImageResource(0);
+        searchIntroContainer.setVisibility(View.VISIBLE);
+        insertTrashImage.setVisibility(ImageView.GONE);
         emptyStateContainer.setVisibility(View.GONE);
+        oneItemImage1.setVisibility(ImageView.GONE);
+        twoItemsImage1.setVisibility(ImageView.GONE);
+        twoItemsImage2.setVisibility(ImageView.GONE);
+        threeItemsImage1.setVisibility(ImageView.GONE);
+        threeItemsImage2.setVisibility(ImageView.GONE);
+        threeItemsImage3.setVisibility(ImageView.GONE);
+        oneItemImage1InfoRow.setVisibility(View.GONE);
+        twoItemsImage1InfoRow.setVisibility(View.GONE);
+        twoItemsImage2InfoRow.setVisibility(View.GONE);
+        threeItemsImage1InfoRow.setVisibility(View.GONE);
+        threeItemsImage2InfoRow.setVisibility(View.GONE);
+        threeItemsImage3InfoRow.setVisibility(View.GONE);
         oneItemIcon1.setVisibility(ImageView.GONE);
         twoItemsIcon1.setVisibility(ImageView.GONE);
         twoItemsIcon2.setVisibility(ImageView.GONE);
+        threeItemsIcon1.setVisibility(ImageView.GONE);
+        threeItemsIcon2.setVisibility(ImageView.GONE);
+        threeItemsIcon3.setVisibility(ImageView.GONE);
         twoItemsImage1Text.setText("");
         twoItemsImage2Text.setText("");
+        threeItemsImage1Text.setText("");
+        threeItemsImage2Text.setText("");
+        threeItemsImage3Text.setText("");
         oneItemImage1Text.setText("");
         productDescriptionToggle.setVisibility(View.GONE);
         productDescriptionText.setVisibility(View.GONE);
@@ -365,6 +462,86 @@ public class SearchTrashFragment extends Fragment {
         defaults.add(getString(R.string.example_batteri));
         defaults.add(getString(R.string.example_kaffefilter));
         return defaults;
+    }
+
+    private void updateIntroExampleSearches() {
+        List<String> suggestions = getSuccessfulSearchExamples(LanguageManager.isEnglish(requireContext()));
+        boolean usesRecentSearches = suggestions.size() >= MIN_SUCCESSFUL_SEARCHES_FOR_RECENT_CHIPS;
+
+        if (!usesRecentSearches) {
+            suggestions = getDefaultSuggestions();
+        }
+
+        searchIntroExamplesLabel.setText(usesRecentSearches
+                ? R.string.search_intro_recent_label
+                : R.string.search_intro_examples_label);
+
+        TextView[] introViews = {introExampleSearchPizza, introExampleSearchBattery, introExampleSearchCoffeeFilter};
+        int visibleExamples = Math.min(suggestions.size(), shouldUseTwoIntroExamples(suggestions) ? 2 : MAX_EMPTY_STATE_SUGGESTIONS);
+        for (int i = 0; i < introViews.length; i++) {
+            if (i < visibleExamples) {
+                introViews[i].setText(suggestions.get(i));
+                introViews[i].setVisibility(View.VISIBLE);
+            } else {
+                introViews[i].setVisibility(View.GONE);
+            }
+        }
+    }
+
+    private boolean shouldUseTwoIntroExamples(List<String> suggestions) {
+        if (suggestions.size() < MAX_EMPTY_STATE_SUGGESTIONS) {
+            return false;
+        }
+
+        for (String suggestion : suggestions) {
+            if (suggestion.length() > MAX_THREE_CHIP_LABEL_LENGTH) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    private List<String> getSuccessfulSearchExamples(boolean useEnglish) {
+        SharedPreferences preferences = requireContext().getSharedPreferences(RECENT_SEARCHES_PREFS, Context.MODE_PRIVATE);
+        String storedSearches = preferences.getString(getSuccessfulSearchExamplesKey(useEnglish), "");
+        List<String> searches = new ArrayList<>();
+
+        if (!storedSearches.isEmpty()) {
+            for (String storedSearch : storedSearches.split("\\n")) {
+                if (!storedSearch.trim().isEmpty()) {
+                    searches.add(storedSearch);
+                }
+            }
+        }
+
+        return searches;
+    }
+
+    private String getSuccessfulSearchExamplesKey(boolean useEnglish) {
+        return SUCCESSFUL_SEARCH_EXAMPLES_KEY_PREFIX + (useEnglish ? LanguageManager.ENGLISH : LanguageManager.DANISH);
+    }
+
+    private void saveSuccessfulSearchExample(String query, boolean useEnglish) {
+        SharedPreferences preferences = requireContext().getSharedPreferences(RECENT_SEARCHES_PREFS, Context.MODE_PRIVATE);
+        String key = getSuccessfulSearchExamplesKey(useEnglish);
+        List<String> searches = new ArrayList<>();
+        String storedSearches = preferences.getString(key, "");
+
+        if (!storedSearches.isEmpty()) {
+            for (String storedSearch : storedSearches.split("\\n")) {
+                if (!storedSearch.equalsIgnoreCase(query) && !storedSearch.trim().isEmpty()) {
+                    searches.add(storedSearch);
+                }
+            }
+        }
+
+        searches.add(0, query);
+        if (searches.size() > MAX_EMPTY_STATE_SUGGESTIONS) {
+            searches = searches.subList(0, MAX_EMPTY_STATE_SUGGESTIONS);
+        }
+
+        preferences.edit().putString(key, String.join("\n", searches)).apply();
     }
 
     private void saveRecentSearch(String query) {

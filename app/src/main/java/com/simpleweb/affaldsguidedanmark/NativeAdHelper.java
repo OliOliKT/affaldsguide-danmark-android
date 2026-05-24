@@ -16,11 +16,21 @@ import com.google.android.gms.ads.nativead.NativeAd;
 final class NativeAdHelper {
 
     private static final String NATIVE_AD_UNIT_ID = "ca-app-pub-7562137360750567/1519469377";
+    // Temporarily disabled. Set to true when ads should be shown again.
+    private static final boolean ADS_ENABLED = false;
 
     private NativeAdHelper() {
     }
 
     static void loadNativeAd(@NonNull Context context, @NonNull View rootView) {
+        TemplateView template = rootView.findViewById(R.id.my_template);
+        if (!ADS_ENABLED) {
+            if (template != null) {
+                template.setVisibility(View.GONE);
+            }
+            return;
+        }
+
         AdLoader adLoader = new AdLoader.Builder(context, NATIVE_AD_UNIT_ID)
                 .forNativeAd(new NativeAd.OnNativeAdLoadedListener() {
                     @Override
@@ -29,9 +39,11 @@ final class NativeAdHelper {
                         NativeTemplateStyle styles = new NativeTemplateStyle.Builder()
                                 .withMainBackgroundColor(background)
                                 .build();
-                        TemplateView template = rootView.findViewById(R.id.my_template);
-                        template.setStyles(styles);
-                        template.setNativeAd(nativeAd);
+                        if (template != null) {
+                            template.setVisibility(View.VISIBLE);
+                            template.setStyles(styles);
+                            template.setNativeAd(nativeAd);
+                        }
                     }
                 })
                 .build();
