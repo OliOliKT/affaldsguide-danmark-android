@@ -42,7 +42,6 @@ public class SearchTrashFragment extends Fragment {
     private static final int MAX_EMPTY_STATE_SUGGESTIONS = 3;
     private static final int MIN_SUCCESSFUL_SEARCHES_FOR_RECENT_CHIPS = 2;
     private static final int MAX_THREE_CHIP_LABEL_LENGTH = 15;
-    private static final double MIN_FUZZY_SUGGESTION_SCORE = 0.56;
     private TrashDB trashDB;
     private final List<String> cachedProduktList = new ArrayList<>();
     private final JaccardSimilarity jaccardSimilarity = new JaccardSimilarity();
@@ -614,7 +613,7 @@ public class SearchTrashFragment extends Fragment {
 
         for (String suggestion : cachedProduktList) {
             double score = calculateFuzzyScore(input, suggestion);
-            if (score >= MIN_FUZZY_SUGGESTION_SCORE) {
+            if (score > 0.0) {
                 rankedSuggestions.add(new FuzzySuggestion(suggestion, score));
             }
         }

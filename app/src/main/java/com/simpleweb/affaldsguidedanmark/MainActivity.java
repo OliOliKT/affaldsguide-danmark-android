@@ -2,6 +2,7 @@ package com.simpleweb.affaldsguidedanmark;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -39,6 +40,9 @@ public class MainActivity extends AppCompatActivity {
         LanguageManager.applySavedLanguage(this);
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            getWindow().setNavigationBarContrastEnforced(false);
+        }
 
         MobileAds.initialize(this);
 
@@ -57,9 +61,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void applySystemBarInsets(View rootView) {
+        int initialLeft = rootView.getPaddingLeft();
+        int initialTop = rootView.getPaddingTop();
+        int initialRight = rootView.getPaddingRight();
+        int initialBottom = rootView.getPaddingBottom();
+
         ViewCompat.setOnApplyWindowInsetsListener(rootView, (view, windowInsets) -> {
             Insets insets = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars());
-            view.setPadding(insets.left, insets.top, insets.right, insets.bottom);
+            view.setPadding(
+                    initialLeft + insets.left,
+                    initialTop + insets.top,
+                    initialRight + insets.right,
+                    initialBottom + insets.bottom
+            );
             return windowInsets;
         });
         ViewCompat.requestApplyInsets(rootView);
