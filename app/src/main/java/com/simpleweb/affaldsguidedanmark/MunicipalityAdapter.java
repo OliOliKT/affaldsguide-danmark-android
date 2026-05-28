@@ -16,30 +16,65 @@ public class MunicipalityAdapter extends RecyclerView.Adapter<MunicipalityAdapte
     private final List<Municipality> allMunicipalities;
     private final List<Municipality> visibleMunicipalities;
     private final OnItemClickListener onItemClickListener;
+    private String currentQuery = "";
+    private String savedMunicipalityName;
 
-    public MunicipalityAdapter(List<Municipality> municipalities, OnItemClickListener onItemClickListener) {
+    public MunicipalityAdapter(List<Municipality> municipalities, String savedMunicipalityName, OnItemClickListener onItemClickListener) {
         this.allMunicipalities = new ArrayList<>(municipalities);
-        this.visibleMunicipalities = new ArrayList<>(municipalities);
+        this.visibleMunicipalities = new ArrayList<>();
+        this.savedMunicipalityName = savedMunicipalityName;
         this.onItemClickListener = onItemClickListener;
+        rebuildVisibleMunicipalities();
+    }
+
+    public void setSavedMunicipalityName(String savedMunicipalityName) {
+        this.savedMunicipalityName = savedMunicipalityName;
+        rebuildVisibleMunicipalities();
     }
 
     public void filter(String query) {
-        String normalizedQuery = query == null ? "" : query.trim().toLowerCase(new Locale("da", "DK"));
+        currentQuery = query == null ? "" : query;
+        rebuildVisibleMunicipalities();
+    }
+
+    private void rebuildVisibleMunicipalities() {
+        String normalizedQuery = currentQuery.trim().toLowerCase(new Locale("da", "DK"));
         visibleMunicipalities.clear();
 
-        if (normalizedQuery.isEmpty()) {
-            visibleMunicipalities.addAll(allMunicipalities);
-        } else {
-            for (Municipality municipality : allMunicipalities) {
-                String searchableText = (municipality.getMunicipality() + " " + municipality.getFullAddress())
-                        .toLowerCase(new Locale("da", "DK"));
-                if (searchableText.contains(normalizedQuery)) {
-                    visibleMunicipalities.add(municipality);
-                }
+        Municipality savedMunicipality = null;
+        for (Municipality municipality : allMunicipalities) {
+            if (!matchesQuery(municipality, normalizedQuery)) {
+                continue;
+            }
+
+            if (isSavedMunicipality(municipality)) {
+                savedMunicipality = municipality;
+            } else {
+                visibleMunicipalities.add(municipality);
             }
         }
 
+        if (savedMunicipality != null) {
+            visibleMunicipalities.add(0, savedMunicipality);
+        }
+
         notifyDataSetChanged();
+    }
+
+    private boolean matchesQuery(Municipality municipality, String normalizedQuery) {
+        if (normalizedQuery.isEmpty()) {
+            return true;
+        }
+
+        String searchableText = (municipality.getMunicipality() + " " + municipality.getFullAddress())
+                .toLowerCase(new Locale("da", "DK"));
+        return searchableText.contains(normalizedQuery);
+    }
+
+    private boolean isSavedMunicipality(Municipality municipality) {
+        return savedMunicipalityName != null
+                && !savedMunicipalityName.trim().isEmpty()
+                && municipality.getMunicipality().equalsIgnoreCase(savedMunicipalityName);
     }
 
     @NonNull
@@ -52,8 +87,10 @@ public class MunicipalityAdapter extends RecyclerView.Adapter<MunicipalityAdapte
     @Override
     public void onBindViewHolder(@NonNull MunicipalityViewHolder holder, int position) {
         Municipality municipality = visibleMunicipalities.get(position);
+        boolean isSaved = isSavedMunicipality(municipality);
         holder.nameTextView.setText(municipality.getMunicipality());
         holder.addressTextView.setText(municipality.getFullAddress());
+        holder.savedLabelTextView.setVisibility(isSaved ? View.VISIBLE : View.GONE);
         holder.itemView.setOnClickListener(view -> onItemClickListener.onItemClick(municipality));
     }
 
@@ -65,11 +102,13 @@ public class MunicipalityAdapter extends RecyclerView.Adapter<MunicipalityAdapte
     static class MunicipalityViewHolder extends RecyclerView.ViewHolder {
         private final TextView nameTextView;
         private final TextView addressTextView;
+        private final TextView savedLabelTextView;
 
         MunicipalityViewHolder(@NonNull View itemView) {
             super(itemView);
             nameTextView = itemView.findViewById(R.id.municipalityName);
             addressTextView = itemView.findViewById(R.id.municipalityAddress);
+            savedLabelTextView = itemView.findViewById(R.id.municipalitySavedLabel);
         }
     }
 

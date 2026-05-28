@@ -30,7 +30,13 @@ public class LanguageFragment extends Fragment {
             danishButton.setChecked(true);
         }
 
-        danishButton.setOnClickListener(v -> LanguageManager.saveLanguage(requireContext(), LanguageManager.DANISH));
-        englishButton.setOnClickListener(v -> LanguageManager.saveLanguage(requireContext(), LanguageManager.ENGLISH));
+        danishButton.setOnClickListener(v -> {
+            LanguageManager.saveLanguage(requireContext(), LanguageManager.DANISH);
+            requireActivity().recreate();
+        });
+        englishButton.setOnClickListener(v -> {
+            LanguageManager.saveLanguage(requireContext(), LanguageManager.ENGLISH);
+            requireActivity().recreate();
+        });
     }
 }

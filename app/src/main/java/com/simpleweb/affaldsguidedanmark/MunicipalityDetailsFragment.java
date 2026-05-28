@@ -56,6 +56,7 @@ public class MunicipalityDetailsFragment extends Fragment {
         TextView emailTextView = view.findViewById(R.id.municipalityDetailEmail);
         TextView websiteTextView = view.findViewById(R.id.municipalityDetailWebsite);
         TextView descriptionTextView = view.findViewById(R.id.municipalityDetailDescription);
+        TextView saveMunicipalityButton = view.findViewById(R.id.saveMunicipalityButton);
         LinearLayout extraInfoContainer = view.findViewById(R.id.municipalityExtraInfoContainer);
         ImageButton backButton = view.findViewById(R.id.municipalityBackButton);
 
@@ -70,7 +71,26 @@ public class MunicipalityDetailsFragment extends Fragment {
         Linkify.addLinks(emailTextView, Linkify.EMAIL_ADDRESSES);
         Linkify.addLinks(websiteTextView, Linkify.WEB_URLS);
 
+        updateSaveMunicipalityButton(saveMunicipalityButton, municipality);
+        saveMunicipalityButton.setOnClickListener(v -> {
+            if (SavedMunicipalityManager.isSaved(requireContext(), municipality.getMunicipality())) {
+                SavedMunicipalityManager.remove(requireContext());
+            } else {
+                SavedMunicipalityManager.save(requireContext(), municipality.getMunicipality());
+            }
+            updateSaveMunicipalityButton(saveMunicipalityButton, municipality);
+        });
+
         backButton.setOnClickListener(v -> Navigation.findNavController(view).navigateUp());
+    }
+
+    private void updateSaveMunicipalityButton(TextView button, Municipality municipality) {
+        boolean isSaved = SavedMunicipalityManager.isSaved(requireContext(), municipality.getMunicipality());
+        button.setText(isSaved ? R.string.fjern_gemt_kommune : R.string.gem_kommune);
+        button.setTextColor(getResources().getColor(isSaved ? R.color.green_light : R.color.white));
+        button.setBackgroundResource(isSaved
+                ? R.drawable.remove_saved_municipality_button_background
+                : R.drawable.saved_municipality_button_background);
     }
 
     private void renderExtraInfo(LinearLayout container, Municipality municipality, boolean useEnglish) {

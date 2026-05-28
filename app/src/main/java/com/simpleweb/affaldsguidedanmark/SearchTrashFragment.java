@@ -22,6 +22,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -85,6 +86,7 @@ public class SearchTrashFragment extends Fragment {
     private TextView introExampleSearchBattery;
     private TextView introExampleSearchCoffeeFilter;
     private TextView searchIntroExamplesLabel;
+    private TextView savedMunicipalityChip;
     private TextView productDescriptionToggle;
     private TextView productDescriptionText;
 
@@ -137,6 +139,7 @@ public class SearchTrashFragment extends Fragment {
         introExampleSearchBattery = v.findViewById(R.id.introExampleSearchBattery);
         introExampleSearchCoffeeFilter = v.findViewById(R.id.introExampleSearchCoffeeFilter);
         searchIntroExamplesLabel = v.findViewById(R.id.searchIntroExamplesLabel);
+        savedMunicipalityChip = v.findViewById(R.id.savedMunicipalityChip);
         productDescriptionToggle = v.findViewById(R.id.productDescriptionToggle);
         productDescriptionText = v.findViewById(R.id.productDescriptionText);
 
@@ -200,6 +203,7 @@ public class SearchTrashFragment extends Fragment {
         setupExampleSearch(introExampleSearchBattery);
         setupExampleSearch(introExampleSearchCoffeeFilter);
         updateIntroExampleSearches();
+        updateSavedMunicipalityChip();
         setInsertTrashImageForLanguage();
 
         search.setOnClickListener(new View.OnClickListener() {
@@ -333,6 +337,12 @@ public class SearchTrashFragment extends Fragment {
                 search.post(() -> search.performClick());
             }
         }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        updateSavedMunicipalityChip();
     }
 
     private void fetchProduktList() {
@@ -499,6 +509,44 @@ public class SearchTrashFragment extends Fragment {
         }
 
         return false;
+    }
+
+    private void updateSavedMunicipalityChip() {
+        if (savedMunicipalityChip == null || getContext() == null) {
+            return;
+        }
+
+        String savedMunicipalityName = SavedMunicipalityManager.getSavedMunicipalityName(requireContext());
+        if (savedMunicipalityName == null || savedMunicipalityName.trim().isEmpty()) {
+            savedMunicipalityChip.setVisibility(View.GONE);
+            savedMunicipalityChip.setOnClickListener(null);
+            return;
+        }
+
+        savedMunicipalityChip.setText(getString(R.string.saved_municipality_chip, savedMunicipalityName));
+        savedMunicipalityChip.setVisibility(View.VISIBLE);
+        savedMunicipalityChip.setOnClickListener(view -> {
+            Municipality savedMunicipality = findMunicipalityByName(savedMunicipalityName);
+            if (savedMunicipality == null) {
+                Navigation.findNavController(view).navigate(R.id.fragment_municipalities);
+                return;
+            }
+
+            Bundle args = new Bundle();
+            args.putParcelable("municipality", savedMunicipality);
+            Navigation.findNavController(view).navigate(R.id.fragment_municipality_details, args);
+        });
+    }
+
+    private Municipality findMunicipalityByName(String municipalityName) {
+        MunicipalityDB municipalityDB = new MunicipalityDB(getResources());
+        for (Municipality municipality : municipalityDB.getMunicipalities()) {
+            if (municipality.getMunicipality().equalsIgnoreCase(municipalityName)) {
+                return municipality;
+            }
+        }
+
+        return null;
     }
 
     private List<String> getSuccessfulSearchExamples(boolean useEnglish) {

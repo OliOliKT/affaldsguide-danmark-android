@@ -6,6 +6,8 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -26,6 +28,9 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 import com.google.android.material.navigation.NavigationView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
 
     private NavController navController;
@@ -34,6 +39,11 @@ public class MainActivity extends AppCompatActivity {
     private BottomNavigationView bottomNavigationView;
     private NavigationView navigationView;
     private SharedPreferences sharedPref;
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(LanguageManager.wrapContext(newBase));
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,6 +93,8 @@ public class MainActivity extends AppCompatActivity {
         RadioGroup languageRadioGroup = findViewById(R.id.languageRadioGroup);
         RadioButton danishLanguageOption = findViewById(R.id.danishLanguageOption);
         RadioButton englishLanguageOption = findViewById(R.id.englishLanguageOption);
+        AutoCompleteTextView municipalityInput = findViewById(R.id.greetingMunicipalityInput);
+        setUpGreetingMunicipalityPicker(municipalityInput);
 
         if (LanguageManager.isEnglish(this)) {
             englishLanguageOption.setChecked(true);
@@ -103,11 +115,44 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sharedPref.edit().putBoolean("hasSeenGreetingPage", true).apply();
+                saveGreetingMunicipalityIfSelected(municipalityInput);
                 setContentView(R.layout.activity_main);
                 applySystemBarInsets(findViewById(R.id.main_layout));
                 setUpMainLayout();
             }
         });
+    }
+
+    private void setUpGreetingMunicipalityPicker(AutoCompleteTextView municipalityInput) {
+        MunicipalityDB municipalityDB = new MunicipalityDB(getResources());
+        List<String> municipalityNames = new ArrayList<>();
+        for (Municipality municipality : municipalityDB.getMunicipalities()) {
+            municipalityNames.add(municipality.getMunicipality());
+        }
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(
+                this,
+                android.R.layout.simple_dropdown_item_1line,
+                municipalityNames
+        );
+        municipalityInput.setAdapter(adapter);
+        municipalityInput.setThreshold(1);
+        municipalityInput.setText(SavedMunicipalityManager.getSavedMunicipalityName(this), false);
+    }
+
+    private void saveGreetingMunicipalityIfSelected(AutoCompleteTextView municipalityInput) {
+        String selectedMunicipality = municipalityInput.getText().toString().trim();
+        if (selectedMunicipality.isEmpty()) {
+            return;
+        }
+
+        MunicipalityDB municipalityDB = new MunicipalityDB(getResources());
+        for (Municipality municipality : municipalityDB.getMunicipalities()) {
+            if (municipality.getMunicipality().equalsIgnoreCase(selectedMunicipality)) {
+                SavedMunicipalityManager.save(this, municipality.getMunicipality());
+                return;
+            }
+        }
     }
 
     private void setUpMainLayout() {

@@ -2,9 +2,15 @@ package com.simpleweb.affaldsguidedanmark;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
+import android.content.res.Resources;
+import android.os.Build;
+import android.os.LocaleList;
 
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.os.LocaleListCompat;
+
+import java.util.Locale;
 
 public class LanguageManager {
     private static final String PREFS_NAME = "LanguagePreferences";
@@ -31,7 +37,25 @@ public class LanguageManager {
         return ENGLISH.equals(getSavedLanguage(context));
     }
 
+    public static Context wrapContext(Context context) {
+        String language = getSavedLanguage(context);
+        Locale locale = new Locale(language);
+        Locale.setDefault(locale);
+
+        Resources resources = context.getResources();
+        Configuration configuration = new Configuration(resources.getConfiguration());
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            configuration.setLocales(new LocaleList(locale));
+        } else {
+            configuration.locale = locale;
+        }
+
+        return context.createConfigurationContext(configuration);
+    }
+
     private static void setAppLocale(String language) {
+        Locale.setDefault(new Locale(language));
         AppCompatDelegate.setApplicationLocales(LocaleListCompat.forLanguageTags(language));
     }
 }

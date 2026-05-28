@@ -70,6 +70,7 @@
     <string name="search_intro_text">Søg efter en affaldsgenstand og se, hvilken affaldsfraktion den typisk hører til i Danmark.</string>
     <string name="search_intro_examples_label">Prøv en hurtig søgning</string>
     <string name="search_intro_recent_label">Seneste søgninger</string>
+    <string name="saved_municipality_chip">Min kommune: %1$s</string>
     <string name="example_pizzabakke">Pizzabakke</string>
     <string name="example_batteri">Batteri</string>
     <string name="example_kaffefilter">Kaffefilter</string>
@@ -80,6 +81,9 @@
     <string name="indtast_kommune">Indtast kommune</string>
     <string name="kommuner_kunne_ikke_indlaeses">Kommunedata kunne ikke indlæses.</string>
     <string name="kommunens_adresse">Kommunens adresse</string>
+    <string name="gem_kommune">Gem kommune</string>
+    <string name="fjern_gemt_kommune">Fjern gemt kommune</string>
+    <string name="min_kommune">Min kommune</string>
     <string name="email_label">E-mail</string>
     <string name="hjemmeside_label">Hjemmeside</string>
     <string name="om_kommunen">Om kommunen</string>
@@ -100,6 +104,9 @@
     <string name="information_icon">Information-icon</string>
     <string name="sprog">Sprog</string>
     <string name="sprog_intro">Vælg hvilket sprog appen skal bruge.</string>
+    <string name="greeting_municipality_title">Gem din kommune</string>
+    <string name="greeting_municipality_text">Valgfrit: vælg din kommune, så du hurtigt kan finde lokale regler og genbrugspladser.</string>
+    <string name="greeting_municipality_hint">Indtast kommune</string>
     <string name="dansk">Dansk</string>
     <string name="engelsk">English</string>
     <string name="bottom_soeg">Søg</string>

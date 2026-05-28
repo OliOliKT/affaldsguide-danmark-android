@@ -35,6 +35,24 @@
         android:textSize="14sp"
         app:layout_constraintEnd_toStartOf="@id/municipalityClickIndicator"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/municipalitySavedLabel" />
+
+    <TextView
+        android:id="@+id/municipalitySavedLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:background="@drawable/saved_municipality_label_background"
+        android:paddingStart="10dp"
+        android:paddingTop="4dp"
+        android:paddingEnd="10dp"
+        android:paddingBottom="4dp"
+        android:text="@string/min_kommune"
+        android:textColor="@color/green_light"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="@id/municipalityName"
         app:layout_constraintTop_toBottomOf="@id/municipalityName" />
 
     <ImageView

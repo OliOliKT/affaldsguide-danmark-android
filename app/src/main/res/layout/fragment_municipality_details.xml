@@ -51,6 +51,23 @@
             app:layout_constraintTop_toBottomOf="@id/municipalityDetailName">
 
             <TextView
+                android:id="@+id/saveMunicipalityButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="18dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:minHeight="46dp"
+                android:paddingStart="16dp"
+                android:paddingTop="11dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="11dp"
+                android:text="@string/gem_kommune"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
                 android:id="@+id/municipalityContactTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

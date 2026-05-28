@@ -42,6 +42,7 @@
     <string name="search_intro_text">Search for a waste item and see which Danish waste category it usually belongs to.</string>
     <string name="search_intro_examples_label">Try a quick search</string>
     <string name="search_intro_recent_label">Recent searches</string>
+    <string name="saved_municipality_chip">My municipality: %1$s</string>
     <string name="example_pizzabakke">Pizza box</string>
     <string name="example_batteri">Battery</string>
     <string name="example_kaffefilter">Coffee filter</string>
@@ -52,6 +53,9 @@
     <string name="indtast_kommune">Enter municipality</string>
     <string name="kommuner_kunne_ikke_indlaeses">Municipality data could not be loaded.</string>
     <string name="kommunens_adresse">Municipality address</string>
+    <string name="gem_kommune">Save municipality</string>
+    <string name="fjern_gemt_kommune">Remove saved municipality</string>
+    <string name="min_kommune">My municipality</string>
     <string name="email_label">E-mail</string>
     <string name="hjemmeside_label">Website</string>
     <string name="om_kommunen">About the municipality</string>
@@ -72,6 +76,9 @@
     <string name="information_icon">Information icon</string>
     <string name="sprog">Language</string>
     <string name="sprog_intro">Choose the language used in the app.</string>
+    <string name="greeting_municipality_title">Save your municipality</string>
+    <string name="greeting_municipality_text">Optional: choose your municipality for quick access to local rules and recycling centres.</string>
+    <string name="greeting_municipality_hint">Enter municipality</string>
     <string name="dansk">Danish</string>
     <string name="engelsk">English</string>
     <string name="bottom_soeg">Search</string>

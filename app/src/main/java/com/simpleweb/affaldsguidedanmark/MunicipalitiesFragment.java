@@ -39,7 +39,7 @@ public class MunicipalitiesFragment extends Fragment {
         EditText searchInput = view.findViewById(R.id.searchMunicipalityInput);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
-        municipalityAdapter = new MunicipalityAdapter(municipalities, municipality -> {
+        municipalityAdapter = new MunicipalityAdapter(municipalities, SavedMunicipalityManager.getSavedMunicipalityName(requireContext()), municipality -> {
             Bundle args = new Bundle();
             args.putParcelable("municipality", municipality);
             Navigation.findNavController(view).navigate(R.id.fragment_municipality_details, args);
@@ -62,5 +62,13 @@ public class MunicipalitiesFragment extends Fragment {
             public void afterTextChanged(Editable s) {
             }
         });
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (municipalityAdapter != null) {
+            municipalityAdapter.setSavedMunicipalityName(SavedMunicipalityManager.getSavedMunicipalityName(requireContext()));
+        }
     }
 }
