@@ -6,6 +6,7 @@ import android.util.Log;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
+import java.util.ArrayList;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.lang.reflect.Type;
@@ -27,9 +28,22 @@ public class MunicipalityDB {
             Gson gson = new Gson();
             Type listType = new TypeToken<List<Municipality>>() {}.getType();
             List<Municipality> municipalities = gson.fromJson(reader, listType);
-            Collections.sort(municipalities, (first, second) ->
+            if (municipalities == null) {
+                return Collections.emptyList();
+            }
+
+            List<Municipality> validMunicipalities = new ArrayList<>();
+            for (Municipality municipality : municipalities) {
+                if (municipality != null
+                        && municipality.getMunicipality() != null
+                        && !municipality.getMunicipality().trim().isEmpty()) {
+                    validMunicipalities.add(municipality);
+                }
+            }
+
+            Collections.sort(validMunicipalities, (first, second) ->
                     String.CASE_INSENSITIVE_ORDER.compare(first.getMunicipality(), second.getMunicipality()));
-            return municipalities;
+            return validMunicipalities;
         } catch (Exception e) {
             Log.e(TAG, "Error loading municipality JSON file", e);
             return Collections.emptyList();

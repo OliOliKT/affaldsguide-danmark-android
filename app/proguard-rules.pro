@@ -36,11 +36,25 @@
 
 -keepclassmembers class **.R$raw {
     public static final int affald_data;
+    public static final int affaldsfraktioner_data;
+    public static final int fraction_enhancements;
+    public static final int genbrugspladser_data;
+    public static final int kommuner_data;
 }
 
 -keep class com.simpleweb.affaldsguidedanmark.TrashDB$TrashItem {
     *;
 }
+
+-keep class com.simpleweb.affaldsguidedanmark.TrashDB$TrashTypeJson {
+    *;
+}
+
+-keep class com.simpleweb.affaldsguidedanmark.Municipality { *; }
+-keep class com.simpleweb.affaldsguidedanmark.Municipality$* { *; }
+-keep class com.simpleweb.affaldsguidedanmark.MunicipalityDetailsFragment$RecyclingCenter { *; }
+-keep class com.simpleweb.affaldsguidedanmark.FractionEnhancement { *; }
+-keep class com.simpleweb.affaldsguidedanmark.FractionEnhancement$* { *; }
 
 -keep class com.google.gson.reflect.TypeToken { *; }
 -keep class * extends com.google.gson.reflect.TypeToken

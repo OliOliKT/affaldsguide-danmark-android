@@ -210,14 +210,14 @@
             android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_goneMarginTop="0dp"
+            app:layout_goneMarginTop="12dp"
             app:layout_constraintTop_toBottomOf="@+id/extendedDescriptionToggle" />
 
         <LinearLayout
             android:id="@+id/fractionFaqContainer"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="0dp"
+            android:layout_marginTop="12dp"
             android:orientation="vertical"
             android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"

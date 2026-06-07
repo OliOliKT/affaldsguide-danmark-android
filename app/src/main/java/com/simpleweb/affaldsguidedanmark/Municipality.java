@@ -3,10 +3,13 @@ package com.simpleweb.affaldsguidedanmark;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import androidx.annotation.Keep;
+
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
+@Keep
 public class Municipality implements Parcelable {
     @SerializedName("Kommune")
     private String municipality;
@@ -141,6 +144,7 @@ public class Municipality implements Parcelable {
         dest.writeParcelable(details, flags);
     }
 
+    @Keep
     public static class Details implements Parcelable {
         @SerializedName("SidstTjekket")
         private String lastChecked;
@@ -220,6 +224,7 @@ public class Municipality implements Parcelable {
         }
     }
 
+    @Keep
     public static class Scheme implements Parcelable {
         @SerializedName("Titel")
         private String title;
@@ -280,6 +285,7 @@ public class Municipality implements Parcelable {
         }
     }
 
+    @Keep
     public static class QuickFact implements Parcelable {
         @SerializedName("Label")
         private String label;
@@ -340,6 +346,7 @@ public class Municipality implements Parcelable {
         }
     }
 
+    @Keep
     public static class OfficialLink implements Parcelable {
         @SerializedName("Titel")
         private String title;

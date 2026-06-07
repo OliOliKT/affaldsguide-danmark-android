@@ -21,6 +21,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
@@ -242,8 +243,7 @@ public class SearchTrashFragment extends Fragment {
 
                         if (what.equals("")) {
                             searchIntroContainer.setVisibility(View.VISIBLE);
-                            insertTrashImage.setVisibility(ImageView.VISIBLE);
-                            setInsertTrashImageForLanguage();
+                            insertTrashImage.setVisibility(ImageView.GONE);
                             resultText.setText(R.string.tomt_søgefelt);
                         } else if (sorteringMap.containsKey("not found") && cachedProduktList != null) {
                             emptyStateContainer.setVisibility(View.VISIBLE);
@@ -258,6 +258,7 @@ public class SearchTrashFragment extends Fragment {
                             updateIntroExampleSearches();
                             trashDB.colorProductName(resultText, what, getActivity(), isSpecialText, useEnglish);
                             setupProductDescription(what, useEnglish);
+                            setProductDescriptionToggleTopMargin(22);
                             int numImages = sorteringMap.size();
 
                             if (numImages >= 3) {
@@ -302,13 +303,21 @@ public class SearchTrashFragment extends Fragment {
                                 }
                             } else if (numImages == 1) {
                                 oneItemImage1.setVisibility(ImageView.VISIBLE);
-                                oneItemImage1InfoRow.setVisibility(View.VISIBLE);
                                 for (Map.Entry<String, String> entry : sorteringMap.entrySet()) {
                                     String key = entry.getKey();
+                                    String guidance = entry.getValue();
                                     String value = "";
-                                    if (!entry.getValue().equals("Hele genstand")) {
-                                        value = entry.getValue();
+                                    boolean hasGuidance = guidance != null
+                                            && !guidance.isEmpty()
+                                            && !guidance.equals("Hele genstand")
+                                            && !guidance.equals("Whole item");
+                                    if (hasGuidance) {
+                                        value = guidance;
+                                        oneItemImage1InfoRow.setVisibility(View.VISIBLE);
                                         oneItemIcon1.setVisibility(ImageView.VISIBLE);
+                                    } else {
+                                        oneItemImage1InfoRow.setVisibility(View.GONE);
+                                        setProductDescriptionToggleTopMargin(14);
                                     }
                                     trashDB.setImageViewAndText(oneItemImage1, oneItemImage1Text, getResources(), useEnglish ? trashDB.translateSortingKey(key) : key, value, useEnglish);
                                 }
@@ -432,6 +441,15 @@ public class SearchTrashFragment extends Fragment {
             productDescriptionText.setVisibility(shouldShow ? View.VISIBLE : View.GONE);
             productDescriptionToggle.setText(shouldShow ? R.string.skjul_beskrivelse : R.string.laes_mere_om_affaldet);
         });
+    }
+
+    private void setProductDescriptionToggleTopMargin(int marginTopDp) {
+        ViewGroup.LayoutParams currentParams = productDescriptionToggle.getLayoutParams();
+        if (currentParams instanceof ConstraintLayout.LayoutParams) {
+            ConstraintLayout.LayoutParams params = (ConstraintLayout.LayoutParams) currentParams;
+            params.topMargin = Math.round(marginTopDp * getResources().getDisplayMetrics().density);
+            productDescriptionToggle.setLayoutParams(params);
+        }
     }
 
     private void setupExampleSearch(TextView exampleView) {

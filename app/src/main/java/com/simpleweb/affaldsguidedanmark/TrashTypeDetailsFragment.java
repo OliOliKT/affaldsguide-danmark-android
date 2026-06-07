@@ -20,6 +20,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -83,16 +84,19 @@ public class TrashTypeDetailsFragment extends Fragment {
             if (trashType.getUdvidetBeskrivelse() != null && !trashType.getUdvidetBeskrivelse().isEmpty()) {
                 renderExtendedDescription(extendedDescriptionContainer, trashType.getUdvidetBeskrivelse());
                 if (enhancement != null) {
+                    String fractionNameForToggle = getLowercaseFractionName(trashType.getNavn(), useEnglish);
                     extendedDescriptionContainer.setVisibility(View.GONE);
+                    faqContainer.setVisibility(View.GONE);
                     extendedDescriptionToggle.setVisibility(View.VISIBLE);
-                    extendedDescriptionToggle.setText(getString(R.string.laes_mere_om_fraktion, trashType.getNavn()));
+                    extendedDescriptionToggle.setText(getString(R.string.laes_mere_om_fraktion, fractionNameForToggle));
                     final boolean[] isExtendedDescriptionOpen = {false};
                     extendedDescriptionToggle.setOnClickListener(v -> {
                         isExtendedDescriptionOpen[0] = !isExtendedDescriptionOpen[0];
                         extendedDescriptionContainer.setVisibility(isExtendedDescriptionOpen[0] ? View.VISIBLE : View.GONE);
+                        faqContainer.setVisibility(isExtendedDescriptionOpen[0] && faqContainer.getChildCount() > 0 ? View.VISIBLE : View.GONE);
                         extendedDescriptionToggle.setText(isExtendedDescriptionOpen[0]
                                 ? getString(R.string.skjul_detaljer)
-                                : getString(R.string.laes_mere_om_fraktion, trashType.getNavn()));
+                                : getString(R.string.laes_mere_om_fraktion, fractionNameForToggle));
                     });
                 } else {
                     extendedDescriptionToggle.setVisibility(View.GONE);
@@ -144,6 +148,11 @@ public class TrashTypeDetailsFragment extends Fragment {
 
 
         return view;
+    }
+
+    private String getLowercaseFractionName(String fractionName, boolean useEnglish) {
+        Locale locale = useEnglish ? Locale.ENGLISH : new Locale("da", "DK");
+        return fractionName == null ? "" : fractionName.toLowerCase(locale);
     }
 
     private void renderEnhancement(LinearLayout enhancementContainer, LinearLayout examplesContainer, LinearLayout practicalContainer, LinearLayout faqContainer, FractionEnhancement enhancement, TrashType trashType) {

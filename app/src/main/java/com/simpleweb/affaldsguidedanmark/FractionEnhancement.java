@@ -3,6 +3,8 @@ package com.simpleweb.affaldsguidedanmark;
 import android.content.res.Resources;
 import android.util.Log;
 
+import androidx.annotation.Keep;
+
 import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.reflect.TypeToken;
@@ -15,6 +17,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
+@Keep
 public class FractionEnhancement {
     private static final String TAG = "FractionEnhancement";
 
@@ -60,6 +63,7 @@ public class FractionEnhancement {
     @SerializedName("faqs")
     List<Faq> faqs;
 
+    @Keep
     static class Faq {
         @SerializedName("question")
         String question;

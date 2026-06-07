@@ -2,19 +2,28 @@ package com.simpleweb.affaldsguidedanmark;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ArrayAdapter;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.PopupWindow;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
+import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.view.GravityCompat;
 import androidx.core.view.ViewCompat;
@@ -30,6 +39,7 @@ import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -39,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
     private BottomNavigationView bottomNavigationView;
     private NavigationView navigationView;
     private SharedPreferences sharedPref;
+    private PopupWindow greetingMunicipalitySuggestionsPopup;
 
     @Override
     protected void attachBaseContext(Context newBase) {
@@ -47,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         LanguageManager.applySavedLanguage(this);
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
@@ -94,7 +106,8 @@ public class MainActivity extends AppCompatActivity {
         RadioButton danishLanguageOption = findViewById(R.id.danishLanguageOption);
         RadioButton englishLanguageOption = findViewById(R.id.englishLanguageOption);
         AutoCompleteTextView municipalityInput = findViewById(R.id.greetingMunicipalityInput);
-        setUpGreetingMunicipalityPicker(municipalityInput);
+        TextView selectedMunicipalityText = findViewById(R.id.greetingSelectedMunicipality);
+        setUpGreetingMunicipalityPicker(municipalityInput, selectedMunicipalityText);
 
         if (LanguageManager.isEnglish(this)) {
             englishLanguageOption.setChecked(true);
@@ -123,21 +136,166 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void setUpGreetingMunicipalityPicker(AutoCompleteTextView municipalityInput) {
+    private void setUpGreetingMunicipalityPicker(AutoCompleteTextView municipalityInput, TextView selectedMunicipalityText) {
         MunicipalityDB municipalityDB = new MunicipalityDB(getResources());
         List<String> municipalityNames = new ArrayList<>();
         for (Municipality municipality : municipalityDB.getMunicipalities()) {
             municipalityNames.add(municipality.getMunicipality());
         }
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(
-                this,
-                android.R.layout.simple_dropdown_item_1line,
-                municipalityNames
+        municipalityInput.setAdapter(null);
+
+        String savedMunicipalityName = SavedMunicipalityManager.getSavedMunicipalityName(this);
+        if (!savedMunicipalityName.isEmpty()) {
+            municipalityInput.setText(savedMunicipalityName, false);
+            showSelectedMunicipality(selectedMunicipalityText, savedMunicipalityName);
+        }
+
+        municipalityInput.setOnFocusChangeListener((view, hasFocus) -> {
+            if (hasFocus) {
+                renderGreetingMunicipalitySuggestions(
+                        municipalityInput.getText().toString(),
+                        municipalityNames,
+                        municipalityInput,
+                        selectedMunicipalityText
+                );
+            } else {
+                dismissGreetingMunicipalitySuggestions();
+            }
+        });
+        municipalityInput.setOnClickListener(view -> {
+            renderGreetingMunicipalitySuggestions(
+                    municipalityInput.getText().toString(),
+                    municipalityNames,
+                    municipalityInput,
+                    selectedMunicipalityText
+            );
+        });
+        municipalityInput.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (!isExactMunicipalityName(s.toString(), municipalityNames)) {
+                    selectedMunicipalityText.setVisibility(View.GONE);
+                }
+
+                renderGreetingMunicipalitySuggestions(
+                        s.toString(),
+                        municipalityNames,
+                        municipalityInput,
+                        selectedMunicipalityText
+                );
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+            }
+        });
+    }
+
+    private void renderGreetingMunicipalitySuggestions(
+            String query,
+            List<String> municipalityNames,
+            AutoCompleteTextView municipalityInput,
+            TextView selectedMunicipalityText
+    ) {
+        if (!municipalityInput.hasFocus() || query.trim().isEmpty()) {
+            dismissGreetingMunicipalitySuggestions();
+            return;
+        }
+
+        List<String> suggestions = findGreetingMunicipalitySuggestions(query, municipalityNames);
+        if (suggestions.isEmpty()) {
+            dismissGreetingMunicipalitySuggestions();
+            return;
+        }
+
+        LinearLayout suggestionsLayout = new LinearLayout(this);
+        suggestionsLayout.setOrientation(LinearLayout.VERTICAL);
+        suggestionsLayout.setBackgroundResource(R.drawable.autocomplete_dropdown_background);
+
+        for (String suggestion : suggestions) {
+            TextView suggestionView = new TextView(this);
+            suggestionView.setText(suggestion);
+            suggestionView.setTextColor(ContextCompat.getColor(this, R.color.text_color));
+            suggestionView.setTextSize(14);
+            suggestionView.setPadding(dpToPx(14), dpToPx(10), dpToPx(14), dpToPx(10));
+            suggestionView.setOnClickListener(view -> {
+                municipalityInput.setText(suggestion, false);
+                municipalityInput.setSelection(municipalityInput.length());
+                showSelectedMunicipality(selectedMunicipalityText, suggestion);
+                dismissGreetingMunicipalitySuggestions();
+
+                InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                if (imm != null) {
+                    imm.hideSoftInputFromWindow(municipalityInput.getWindowToken(), 0);
+                }
+            });
+            suggestionsLayout.addView(suggestionView);
+        }
+
+        dismissGreetingMunicipalitySuggestions();
+
+        int popupHeight = (suggestions.size() * dpToPx(40)) + dpToPx(8);
+        greetingMunicipalitySuggestionsPopup = new PopupWindow(
+                suggestionsLayout,
+                municipalityInput.getWidth(),
+                LinearLayout.LayoutParams.WRAP_CONTENT,
+                false
         );
-        municipalityInput.setAdapter(adapter);
-        municipalityInput.setThreshold(1);
-        municipalityInput.setText(SavedMunicipalityManager.getSavedMunicipalityName(this), false);
+        greetingMunicipalitySuggestionsPopup.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        greetingMunicipalitySuggestionsPopup.setOutsideTouchable(true);
+        greetingMunicipalitySuggestionsPopup.setElevation(dpToPx(4));
+        greetingMunicipalitySuggestionsPopup.showAsDropDown(
+                municipalityInput,
+                0,
+                -municipalityInput.getHeight() - popupHeight - dpToPx(4)
+        );
+    }
+
+    private void dismissGreetingMunicipalitySuggestions() {
+        if (greetingMunicipalitySuggestionsPopup != null && greetingMunicipalitySuggestionsPopup.isShowing()) {
+            greetingMunicipalitySuggestionsPopup.dismiss();
+        }
+        greetingMunicipalitySuggestionsPopup = null;
+    }
+
+    private List<String> findGreetingMunicipalitySuggestions(String query, List<String> municipalityNames) {
+        String normalizedQuery = normalizeMunicipalityQuery(query);
+        List<String> suggestions = new ArrayList<>();
+
+        if (normalizedQuery.isEmpty()) {
+            return suggestions;
+        }
+
+        for (String municipalityName : municipalityNames) {
+            if (normalizeMunicipalityQuery(municipalityName).contains(normalizedQuery)) {
+                suggestions.add(municipalityName);
+                if (suggestions.size() == 4) {
+                    break;
+                }
+            }
+        }
+
+        return suggestions;
+    }
+
+    private void showSelectedMunicipality(TextView selectedMunicipalityText, String municipalityName) {
+        selectedMunicipalityText.setText(getString(R.string.greeting_municipality_selected, municipalityName));
+        selectedMunicipalityText.setVisibility(View.VISIBLE);
+    }
+
+    private boolean isExactMunicipalityName(String value, List<String> municipalityNames) {
+        for (String municipalityName : municipalityNames) {
+            if (municipalityName.equalsIgnoreCase(value.trim())) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     private void saveGreetingMunicipalityIfSelected(AutoCompleteTextView municipalityInput) {
@@ -153,6 +311,10 @@ public class MainActivity extends AppCompatActivity {
                 return;
             }
         }
+    }
+
+    private int dpToPx(int dp) {
+        return Math.round(dp * getResources().getDisplayMetrics().density);
     }
 
     private void setUpMainLayout() {
@@ -230,5 +392,15 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
+    }
+
+    private static String normalizeMunicipalityQuery(String value) {
+        return value == null
+                ? ""
+                : value.toLowerCase(new Locale("da", "DK"))
+                .replace("æ", "ae")
+                .replace("ø", "oe")
+                .replace("å", "aa")
+                .replaceAll("[^a-z0-9]+", "");
     }
 }

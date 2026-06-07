@@ -10,13 +10,13 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="145dp"
-        android:layout_height="145dp"
-        android:layout_marginTop="54dp"
+        android:layout_width="136dp"
+        android:layout_height="136dp"
+        android:layout_marginTop="24dp"
         android:src="@drawable/logo_til_intro"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,13 +27,13 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="28dp"
         android:gravity="center"
         android:text="@string/velkommen_til_mit_affald"
         android:textAlignment="center"
         android:textColor="@color/green_light"
-        android:textSize="30sp"
+        android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -44,7 +44,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:lineSpacingExtra="8dp"
+        android:lineSpacingExtra="5dp"
         android:paddingLeft="34dp"
         android:paddingRight="34dp"
         android:text="@string/introtekst"
@@ -60,7 +60,7 @@
         style="@style/ButtonStyle"
         android:layout_width="340dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="18dp"
         android:text="@string/begynd_med_det_samme"
         android:textAllCaps="false"
         android:textColor="@color/white"
@@ -73,7 +73,7 @@
         android:id="@+id/languageIntro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="24dp"
         android:text="@string/sprog_intro"
         android:textAlignment="center"
         android:textColor="@color/text_color"
@@ -86,7 +86,7 @@
         android:id="@+id/languageRadioGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="4dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -118,7 +118,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
-        android:layout_marginTop="18dp"
+        android:layout_marginTop="14dp"
         android:layout_marginEnd="28dp"
         android:background="@drawable/details_info_background"
         android:orientation="vertical"
@@ -153,7 +153,7 @@
             android:id="@+id/greetingMunicipalityInput"
             android:layout_width="match_parent"
             android:layout_height="46dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="8dp"
             android:autofillHints=""
             android:background="@drawable/edittext_background"
             android:completionThreshold="1"
@@ -169,19 +169,24 @@
             android:textColorHint="@color/grey_black"
             android:textSize="15sp" />
 
-    </LinearLayout>
+        <TextView
+            android:id="@+id/greetingSelectedMunicipality"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/saved_municipality_label_background"
+            android:paddingStart="12dp"
+            android:paddingTop="7dp"
+            android:paddingEnd="12dp"
+            android:paddingBottom="7dp"
+            android:textColor="@color/green_light"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            tools:text="Valgt kommune: Aarhus Kommune"
+            tools:visibility="visible" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="22dp"
-        android:layout_marginBottom="8dp"
-        android:text="@string/copyright"
-        android:textColor="@color/grey_black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/begynd" />
+    </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

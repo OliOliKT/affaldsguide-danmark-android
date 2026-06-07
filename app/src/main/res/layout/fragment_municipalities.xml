@@ -45,24 +45,51 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/municipalitiesHeader" />
 
-    <EditText
-        android:id="@+id/searchMunicipalityInput"
-        style="@style/MultiAutoCompleteTextViewStyle"
+    <LinearLayout
+        android:id="@+id/searchMunicipalityContainer"
+        style="@style/xViewStyle"
         android:layout_width="0dp"
         android:layout_height="48dp"
         android:layout_marginStart="22dp"
         android:layout_marginTop="18dp"
         android:layout_marginEnd="22dp"
-        android:autofillHints=""
-        android:background="@drawable/x_background"
-        android:hint="@string/indtast_kommune"
-        android:importantForAutofill="no"
-        android:inputType="text"
-        android:maxLines="1"
-        android:textColorHint="@color/grey_black"
+        android:elevation="1dp"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/municipalitiesIntro" />
+        app:layout_constraintTop_toBottomOf="@id/municipalitiesIntro">
+
+        <EditText
+            android:id="@+id/searchMunicipalityInput"
+            style="@style/MultiAutoCompleteTextViewStyle"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:autofillHints=""
+            android:background="@android:color/transparent"
+            android:hint="@string/indtast_kommune"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:maxLines="1"
+            android:textColorHint="@color/grey_black" />
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/clearMunicipalitySearchButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:contentDescription="Clear text"
+                android:paddingEnd="12dp"
+                android:src="@drawable/clear_text_x"
+                android:visibility="gone" />
+
+        </FrameLayout>
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/emptyMunicipalitiesText"
@@ -76,7 +103,7 @@
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/searchMunicipalityInput" />
+        app:layout_constraintTop_toBottomOf="@id/searchMunicipalityContainer" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/listMunicipalities"
@@ -88,6 +115,6 @@
         android:paddingEnd="16dp"
         android:paddingBottom="18dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/searchMunicipalityInput" />
+        app:layout_constraintTop_toBottomOf="@id/searchMunicipalityContainer" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

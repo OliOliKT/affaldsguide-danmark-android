@@ -9,6 +9,7 @@ import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.Keep;
 import androidx.core.content.ContextCompat;
 import androidx.core.content.res.ResourcesCompat;
 
@@ -73,6 +74,7 @@ public class TrashDB {
         }
     }
 
+    @Keep
     static class TrashItem {
         @SerializedName("Produkt")
         String product;
@@ -164,6 +166,7 @@ public class TrashDB {
         }
     }
 
+    @Keep
     private static class TrashTypeJson {
         @SerializedName("Navn")
         String name;

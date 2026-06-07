@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.MitAffaldV4" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.MitAffaldV4" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/green_light</item>
         <item name="colorPrimaryVariant">@color/green_dark</item>
@@ -12,5 +12,6 @@
         <!-- Remove top banner -->
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+        <item name="android:forceDarkAllowed">false</item>
     </style>
 </resources>
