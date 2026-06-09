@@ -143,7 +143,7 @@ public class TrashTypeDetailsFragment extends Fragment {
         if (useEnglish) {
             DBAffaldTitel.setText("Waste items sorted as " + (trashType != null ? trashType.getNavn() : selectedTrashGroup) + ":");
         } else {
-            DBAffaldTitel.setText("Alle genstande som sorteres i " + selectedTrashGroup + ":");
+            DBAffaldTitel.setText("Alle genstande som sorteres i " + getLowercaseFractionName(selectedTrashGroup, false) + ":");
         }
 
 
@@ -219,18 +219,18 @@ public class TrashTypeDetailsFragment extends Fragment {
         title.setLayoutParams(titleParams);
         container.addView(title);
 
-        LinearLayout row = new LinearLayout(requireContext());
-        row.setOrientation(LinearLayout.HORIZONTAL);
-        LinearLayout.LayoutParams rowParams = new LinearLayout.LayoutParams(
+        LinearLayout examplesLayout = new LinearLayout(requireContext());
+        examplesLayout.setOrientation(LinearLayout.VERTICAL);
+        LinearLayout.LayoutParams examplesParams = new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT,
                 LinearLayout.LayoutParams.WRAP_CONTENT
         );
-        rowParams.setMargins(0, 0, 0, dpToPx(12));
-        row.setLayoutParams(rowParams);
+        examplesParams.setMargins(0, 0, 0, dpToPx(12));
+        examplesLayout.setLayoutParams(examplesParams);
 
-        row.addView(createExampleColumn(getString(R.string.kan_typisk_komme_i), trashType.getPros(), R.drawable.details_pros_background, R.color.green_light, false));
-        row.addView(createExampleColumn(getString(R.string.skal_typisk_et_andet_sted_hen), trashType.getCons(), R.drawable.details_cons_background, R.color.soft_red, true));
-        container.addView(row);
+        examplesLayout.addView(createExampleColumn(getString(R.string.kan_typisk_komme_i), trashType.getPros(), R.drawable.details_pros_background, R.color.green_light, false));
+        examplesLayout.addView(createExampleColumn(getString(R.string.skal_typisk_et_andet_sted_hen), trashType.getCons(), R.drawable.details_cons_background, R.color.soft_red, true));
+        container.addView(examplesLayout);
     }
 
     private LinearLayout createExampleColumn(String title, List<String> items, int backgroundResId, int titleColorResId, boolean isLastColumn) {
@@ -238,11 +238,10 @@ public class TrashTypeDetailsFragment extends Fragment {
         column.setBackgroundResource(backgroundResId);
 
         LinearLayout.LayoutParams columnParams = new LinearLayout.LayoutParams(
-                0,
-                LinearLayout.LayoutParams.WRAP_CONTENT,
-                1
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
         );
-        columnParams.setMargins(isLastColumn ? dpToPx(6) : 0, 0, isLastColumn ? 0 : dpToPx(6), 0);
+        columnParams.setMargins(0, 0, 0, isLastColumn ? 0 : dpToPx(10));
         column.setLayoutParams(columnParams);
 
         TextView titleView = createTitle(title);
@@ -257,7 +256,7 @@ public class TrashTypeDetailsFragment extends Fragment {
         }
 
         for (int i = 0; i < itemCount; i++) {
-            column.addView(createBulletBody(items.get(i), 8));
+            column.addView(createBulletBody(items.get(i), 8, titleColorResId));
         }
 
         return column;
@@ -377,6 +376,10 @@ public class TrashTypeDetailsFragment extends Fragment {
     }
 
     private LinearLayout createBulletBody(String text, int topMarginDp) {
+        return createBulletBody(text, topMarginDp, R.color.green_light);
+    }
+
+    private LinearLayout createBulletBody(String text, int topMarginDp, int bulletColorResId) {
         LinearLayout row = new LinearLayout(requireContext());
         row.setOrientation(LinearLayout.HORIZONTAL);
 
@@ -389,7 +392,7 @@ public class TrashTypeDetailsFragment extends Fragment {
 
         TextView bullet = new TextView(requireContext());
         bullet.setText("•");
-        bullet.setTextColor(getResources().getColor(R.color.green_light));
+        bullet.setTextColor(getResources().getColor(bulletColorResId));
         bullet.setTextSize(15);
         bullet.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
 

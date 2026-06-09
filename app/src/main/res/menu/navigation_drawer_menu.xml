@@ -2,6 +2,14 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
+        android:id="@+id/seneste_soegninger"
+        android:title="@string/seneste_soegninger" />
+
+    <item
+        android:id="@+id/sprog"
+        android:title="@string/sprog" />
+
+    <item
         android:id="@+id/om"
         android:title="@string/menu1_om_appen" />
 
@@ -12,14 +20,6 @@
     <item
         android:id="@+id/spørgsmålogsvar"
         android:title="@string/menu_3_spørgsmål_og_svar" />
-
-    <item
-        android:id="@+id/seneste_soegninger"
-        android:title="@string/seneste_soegninger" />
-
-    <item
-        android:id="@+id/sprog"
-        android:title="@string/sprog" />
 
     <item
         android:id="@+id/privatlivspolitik"

@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Affaldsguide Danmark</string>
 
-    <string name="indtast_skrald">Indtast affald</string>
+    <string name="indtast_skrald">Indtast affald...</string>
 
     <string name="om_del_1" formatted="false">Affaldssortering kan være svær at gennemskue i hverdagen, især når man står med en genstand, der ikke passer tydeligt ind i en bestemt beholder.\n\nI Danmark arbejder kommunerne ud fra mere ensartede affaldsfraktioner som madaffald, papir, pap, metal, glas, plast, mad- og drikkekartoner, tekstilaffald, farligt affald og restaffald. Der kan dog stadig være lokale forskelle i ordninger, beholdere og afleveringssteder.\n\nAffaldsguide Danmark er en uafhængig sorteringsguide og er ikke tilknyttet, godkendt af eller drevet af en offentlig myndighed, kommune eller offentligt affaldsselskab. Appen er lavet for at gøre det lettere at finde et hurtigt og brugbart svar, men officielle og lokale regler bør altid kontrolleres hos kommunen eller relevante offentlige kilder.</string>
 
@@ -71,11 +71,15 @@
     <string name="search_intro_examples_label">Prøv en hurtig søgning</string>
     <string name="search_intro_recent_label">Seneste søgninger</string>
     <string name="saved_municipality_chip">Min kommune: %1$s</string>
+    <string name="saved_municipality_label">Min kommune</string>
+    <string name="search">Søg</string>
     <string name="example_pizzabakke">Pizzabakke</string>
     <string name="example_batteri">Batteri</string>
     <string name="example_kaffefilter">Kaffefilter</string>
+    <string name="example_glas">Glas</string>
     <string name="seneste_soegninger">Seneste søgninger</string>
     <string name="seneste_soegninger_tom">Dine seneste søgninger vises her, når du har brugt søgefeltet.</string>
+    <string name="se_alle">Se alle</string>
     <string name="kommuner">Kommuner</string>
     <string name="kommuner_intro">Find vejledende information, kontaktoplysninger og links til officielle kommunale kilder.</string>
     <string name="indtast_kommune">Indtast kommune</string>
@@ -108,6 +112,13 @@
     <string name="greeting_municipality_text">Valgfrit: angiv den kommune som du bor i.</string>
     <string name="greeting_municipality_hint">Indtast kommune</string>
     <string name="greeting_municipality_selected">Valgt kommune: %1$s</string>
+    <string name="onboarding_welcome_subtitle">Din assistent til sortering af affald i hele landet</string>
+    <string name="onboarding_language_title">Angiv dit foretrukne sprog</string>
+    <string name="onboarding_municipality_title">Angiv din kommune</string>
+    <string name="onboarding_municipality_subtitle">Valgfrit, men du kan hurtigere finde lokale regler og genbrugspladser.</string>
+    <string name="onboarding_continue">Fortsæt</string>
+    <string name="onboarding_back">Tilbage</string>
+    <string name="onboarding_skip">Spring over</string>
     <string name="dansk">Dansk</string>
     <string name="engelsk">English</string>
     <string name="bottom_soeg">Søg</string>
@@ -118,11 +129,11 @@
     <string name="laes_mere_om_affaldet">Læs mere om affaldet</string>
     <string name="skjul_beskrivelse">Skjul beskrivelse</string>
     <string name="det_vigtigste">Det vigtigste</string>
-    <string name="typiske_eksempler">Typiske eksempler</string>
+    <string name="typiske_eksempler">Eksempler</string>
     <string name="kan_typisk_komme_i">Kan typisk komme i</string>
     <string name="skal_typisk_et_andet_sted_hen">Skal et andet sted hen</string>
     <string name="tjek_detaljer_nedenfor">Tjek detaljerne nedenfor.</string>
     <string name="laes_mere_om_fraktion">Læs mere om %1$s</string>
     <string name="skjul_detaljer">Skjul detaljer</string>
-    <string name="begynd_med_det_samme">Begynd med det samme</string>
+    <string name="begynd_med_det_samme">Begynd</string>
 </resources>

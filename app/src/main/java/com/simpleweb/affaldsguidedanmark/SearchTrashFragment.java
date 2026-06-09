@@ -42,8 +42,8 @@ public class SearchTrashFragment extends Fragment {
     private static final String SUCCESSFUL_SEARCH_EXAMPLES_KEY_PREFIX = "successful_queries_";
     private static final int MAX_RECENT_SEARCHES = 10;
     private static final int MAX_EMPTY_STATE_SUGGESTIONS = 3;
-    private static final int MIN_SUCCESSFUL_SEARCHES_FOR_RECENT_CHIPS = 2;
-    private static final int MAX_THREE_CHIP_LABEL_LENGTH = 15;
+    private static final int MAX_INTRO_EXAMPLES = 4;
+    private static final int MIN_SUCCESSFUL_SEARCHES_FOR_RECENT_CHIPS = 4;
     private TrashDB trashDB;
     private final List<String> cachedProduktList = new ArrayList<>();
     private final JaccardSimilarity jaccardSimilarity = new JaccardSimilarity();
@@ -86,8 +86,19 @@ public class SearchTrashFragment extends Fragment {
     private TextView introExampleSearchPizza;
     private TextView introExampleSearchBattery;
     private TextView introExampleSearchCoffeeFilter;
+    private TextView introExampleSearchGlass;
+    private LinearLayout introExampleSearchItem1;
+    private LinearLayout introExampleSearchItem2;
+    private LinearLayout introExampleSearchItem3;
+    private LinearLayout introExampleSearchItem4;
+    private ImageView introExampleImage1;
+    private ImageView introExampleImage2;
+    private ImageView introExampleImage3;
+    private ImageView introExampleImage4;
     private TextView searchIntroExamplesLabel;
-    private TextView savedMunicipalityChip;
+    private TextView searchIntroSeeAll;
+    private LinearLayout savedMunicipalityContainer;
+    private TextView savedMunicipalityName;
     private TextView productDescriptionToggle;
     private TextView productDescriptionText;
 
@@ -139,8 +150,19 @@ public class SearchTrashFragment extends Fragment {
         introExampleSearchPizza = v.findViewById(R.id.introExampleSearchPizza);
         introExampleSearchBattery = v.findViewById(R.id.introExampleSearchBattery);
         introExampleSearchCoffeeFilter = v.findViewById(R.id.introExampleSearchCoffeeFilter);
+        introExampleSearchGlass = v.findViewById(R.id.introExampleSearchGlass);
+        introExampleSearchItem1 = v.findViewById(R.id.introExampleSearchItem1);
+        introExampleSearchItem2 = v.findViewById(R.id.introExampleSearchItem2);
+        introExampleSearchItem3 = v.findViewById(R.id.introExampleSearchItem3);
+        introExampleSearchItem4 = v.findViewById(R.id.introExampleSearchItem4);
+        introExampleImage1 = v.findViewById(R.id.introExampleImage1);
+        introExampleImage2 = v.findViewById(R.id.introExampleImage2);
+        introExampleImage3 = v.findViewById(R.id.introExampleImage3);
+        introExampleImage4 = v.findViewById(R.id.introExampleImage4);
         searchIntroExamplesLabel = v.findViewById(R.id.searchIntroExamplesLabel);
-        savedMunicipalityChip = v.findViewById(R.id.savedMunicipalityChip);
+        searchIntroSeeAll = v.findViewById(R.id.searchIntroSeeAll);
+        savedMunicipalityContainer = v.findViewById(R.id.savedMunicipalityContainer);
+        savedMunicipalityName = v.findViewById(R.id.savedMunicipalityName);
         productDescriptionToggle = v.findViewById(R.id.productDescriptionToggle);
         productDescriptionText = v.findViewById(R.id.productDescriptionText);
 
@@ -200,9 +222,11 @@ public class SearchTrashFragment extends Fragment {
         setupExampleSearch(exampleSearchPizza);
         setupExampleSearch(exampleSearchBattery);
         setupExampleSearch(exampleSearchCoffeeFilter);
-        setupExampleSearch(introExampleSearchPizza);
-        setupExampleSearch(introExampleSearchBattery);
-        setupExampleSearch(introExampleSearchCoffeeFilter);
+        setupIntroExampleSearch(introExampleSearchItem1, introExampleSearchPizza);
+        setupIntroExampleSearch(introExampleSearchItem2, introExampleSearchBattery);
+        setupIntroExampleSearch(introExampleSearchItem3, introExampleSearchCoffeeFilter);
+        setupIntroExampleSearch(introExampleSearchItem4, introExampleSearchGlass);
+        searchIntroSeeAll.setOnClickListener(view -> Navigation.findNavController(view).navigate(R.id.fragment_recent_searches));
         updateIntroExampleSearches();
         updateSavedMunicipalityChip();
         setInsertTrashImageForLanguage();
@@ -460,6 +484,14 @@ public class SearchTrashFragment extends Fragment {
         });
     }
 
+    private void setupIntroExampleSearch(View exampleContainer, TextView exampleLabel) {
+        exampleContainer.setOnClickListener(view -> {
+            inputText.setText(exampleLabel.getText().toString());
+            inputText.setSelection(inputText.length());
+            search.performClick();
+        });
+    }
+
     private void updateEmptyStateSuggestions(String query) {
         List<String> suggestions = findSimilarSuggestions(query);
         boolean hasFuzzySuggestions = !suggestions.isEmpty();
@@ -488,6 +520,7 @@ public class SearchTrashFragment extends Fragment {
         defaults.add(getString(R.string.example_pizzabakke));
         defaults.add(getString(R.string.example_batteri));
         defaults.add(getString(R.string.example_kaffefilter));
+        defaults.add(getString(R.string.example_glas));
         return defaults;
     }
 
@@ -502,48 +535,38 @@ public class SearchTrashFragment extends Fragment {
         searchIntroExamplesLabel.setText(usesRecentSearches
                 ? R.string.search_intro_recent_label
                 : R.string.search_intro_examples_label);
+        searchIntroSeeAll.setVisibility(usesRecentSearches ? View.VISIBLE : View.GONE);
 
-        TextView[] introViews = {introExampleSearchPizza, introExampleSearchBattery, introExampleSearchCoffeeFilter};
-        int visibleExamples = Math.min(suggestions.size(), shouldUseTwoIntroExamples(suggestions) ? 2 : MAX_EMPTY_STATE_SUGGESTIONS);
+        TextView[] introViews = {introExampleSearchPizza, introExampleSearchBattery, introExampleSearchCoffeeFilter, introExampleSearchGlass};
+        ImageView[] introImages = {introExampleImage1, introExampleImage2, introExampleImage3, introExampleImage4};
+        LinearLayout[] introContainers = {introExampleSearchItem1, introExampleSearchItem2, introExampleSearchItem3, introExampleSearchItem4};
+        int visibleExamples = Math.min(suggestions.size(), MAX_INTRO_EXAMPLES);
         for (int i = 0; i < introViews.length; i++) {
             if (i < visibleExamples) {
                 introViews[i].setText(suggestions.get(i));
-                introViews[i].setVisibility(View.VISIBLE);
+                introImages[i].setImageResource(getIntroExampleImageResource(suggestions.get(i)));
+                introContainers[i].setVisibility(View.VISIBLE);
             } else {
-                introViews[i].setVisibility(View.GONE);
+                introContainers[i].setVisibility(View.GONE);
             }
         }
-    }
-
-    private boolean shouldUseTwoIntroExamples(List<String> suggestions) {
-        if (suggestions.size() < MAX_EMPTY_STATE_SUGGESTIONS) {
-            return false;
-        }
-
-        for (String suggestion : suggestions) {
-            if (suggestion.length() > MAX_THREE_CHIP_LABEL_LENGTH) {
-                return true;
-            }
-        }
-
-        return false;
     }
 
     private void updateSavedMunicipalityChip() {
-        if (savedMunicipalityChip == null || getContext() == null) {
+        if (savedMunicipalityContainer == null || savedMunicipalityName == null || getContext() == null) {
             return;
         }
 
         String savedMunicipalityName = SavedMunicipalityManager.getSavedMunicipalityName(requireContext());
         if (savedMunicipalityName == null || savedMunicipalityName.trim().isEmpty()) {
-            savedMunicipalityChip.setVisibility(View.GONE);
-            savedMunicipalityChip.setOnClickListener(null);
+            savedMunicipalityContainer.setVisibility(View.GONE);
+            savedMunicipalityContainer.setOnClickListener(null);
             return;
         }
 
-        savedMunicipalityChip.setText(getString(R.string.saved_municipality_chip, savedMunicipalityName));
-        savedMunicipalityChip.setVisibility(View.VISIBLE);
-        savedMunicipalityChip.setOnClickListener(view -> {
+        this.savedMunicipalityName.setText(savedMunicipalityName);
+        savedMunicipalityContainer.setVisibility(View.VISIBLE);
+        savedMunicipalityContainer.setOnClickListener(view -> {
             Municipality savedMunicipality = findMunicipalityByName(savedMunicipalityName);
             if (savedMunicipality == null) {
                 Navigation.findNavController(view).navigate(R.id.fragment_municipalities);
@@ -565,6 +588,29 @@ public class SearchTrashFragment extends Fragment {
         }
 
         return null;
+    }
+
+    private int getIntroExampleImageResource(String productName) {
+        if (productName.equalsIgnoreCase(getString(R.string.example_pizzabakke))) {
+            return R.drawable.mad_og_drikkekartoner_ikon;
+        }
+        if (productName.equalsIgnoreCase(getString(R.string.example_batteri))) {
+            return R.drawable.batterier;
+        }
+        if (productName.equalsIgnoreCase(getString(R.string.example_kaffefilter))) {
+            return R.drawable.madaffald_ikon;
+        }
+        if (productName.equalsIgnoreCase(getString(R.string.example_glas))) {
+            return R.drawable.glas_ikon;
+        }
+
+        boolean useEnglish = LanguageManager.isEnglish(requireContext());
+        String sortingKey = trashDB.getFirstSortingKeyForProduct(productName, useEnglish);
+        if (useEnglish) {
+            sortingKey = trashDB.translateSortingKey(sortingKey);
+        }
+
+        return trashDB.getImageResourceForKey(sortingKey);
     }
 
     private List<String> getSuccessfulSearchExamples(boolean useEnglish) {
@@ -602,8 +648,8 @@ public class SearchTrashFragment extends Fragment {
         }
 
         searches.add(0, query);
-        if (searches.size() > MAX_EMPTY_STATE_SUGGESTIONS) {
-            searches = searches.subList(0, MAX_EMPTY_STATE_SUGGESTIONS);
+        if (searches.size() > MAX_INTRO_EXAMPLES) {
+            searches = searches.subList(0, MAX_INTRO_EXAMPLES);
         }
 
         preferences.edit().putString(key, String.join("\n", searches)).apply();

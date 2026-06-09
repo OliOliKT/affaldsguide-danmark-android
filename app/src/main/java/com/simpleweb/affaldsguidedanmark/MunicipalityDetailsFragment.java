@@ -108,19 +108,18 @@ public class MunicipalityDetailsFragment extends Fragment {
         }
 
         container.setVisibility(View.VISIBLE);
-        addSectionTitle(container, useEnglish ? "Practical waste information" : "Praktisk affaldsinfo");
 
         if (hasWasteRules) {
             addExpandableTextCard(
                     container,
-                    useEnglish ? "Municipality waste rules" : "Kommunens affaldsregler",
+                    getString(R.string.kommunens_affaldsregler),
                     wasteRules,
                     useEnglish
             );
         }
 
         if (details != null && details.getQuickFacts() != null && !details.getQuickFacts().isEmpty()) {
-            addSubTitle(container, useEnglish ? "Quick facts" : "Hurtige fakta", 24);
+            addSectionTitle(container, useEnglish ? "Practical waste information" : "Praktisk affaldsinfo");
             addFactGrid(container, details.getQuickFacts(), useEnglish);
         }
 
@@ -166,7 +165,9 @@ public class MunicipalityDetailsFragment extends Fragment {
 
     private void addExpandableTextCard(LinearLayout container, String title, String rules, boolean useEnglish) {
         LinearLayout card = createCard();
-        card.addView(createCardTitle(title, 0));
+        TextView titleView = createCardTitle(title, 0);
+        titleView.setTextSize(19);
+        card.addView(titleView);
         TextView rulesTextView = createBody("", 8);
         TextView rulesToggle = createToggleTextView();
         String preview = getFirstSentences(rules, 2);
@@ -212,7 +213,7 @@ public class MunicipalityDetailsFragment extends Fragment {
         TextView title = new TextView(requireContext());
         title.setText(text);
         title.setTextColor(getResources().getColor(R.color.green_light));
-        title.setTextSize(16);
+        title.setTextSize(19);
         title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
         title.setLineSpacing(dpToPx(2), 1.0f);
 

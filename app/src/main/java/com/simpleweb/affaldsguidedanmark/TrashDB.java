@@ -139,6 +139,23 @@ public class TrashDB {
         return "";
     }
 
+    public String getFirstSortingKeyForProduct(String productName, boolean useEnglish) {
+        if (trashItems == null || productName == null) {
+            return "";
+        }
+
+        for (TrashItem item : trashItems) {
+            String displayProduct = item.getDisplayProduct(useEnglish);
+            if (displayProduct != null && displayProduct.equalsIgnoreCase(productName) && item.sorting != null) {
+                for (String key : item.sorting.keySet()) {
+                    return key;
+                }
+            }
+        }
+
+        return "";
+    }
+
     public List<TrashType> getLocalTrashTypes(boolean useEnglish) {
         try (InputStream inputStream = resources.openRawResource(R.raw.affaldsfraktioner_data);
              InputStreamReader reader = new InputStreamReader(inputStream, StandardCharsets.UTF_8)) {

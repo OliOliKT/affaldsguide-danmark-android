@@ -43,11 +43,15 @@
     <string name="search_intro_examples_label">Try a quick search</string>
     <string name="search_intro_recent_label">Recent searches</string>
     <string name="saved_municipality_chip">My municipality: %1$s</string>
+    <string name="saved_municipality_label">My municipality</string>
+    <string name="search">Search</string>
     <string name="example_pizzabakke">Pizza box</string>
     <string name="example_batteri">Battery</string>
     <string name="example_kaffefilter">Coffee filter</string>
+    <string name="example_glas">Glass</string>
     <string name="seneste_soegninger">Recent searches</string>
     <string name="seneste_soegninger_tom">Your recent searches will appear here after you use the search field.</string>
+    <string name="se_alle">See all</string>
     <string name="kommuner">Municipalities</string>
     <string name="kommuner_intro">Find guidance, contact details and links to official municipal sources.</string>
     <string name="indtast_kommune">Enter municipality</string>
@@ -80,6 +84,13 @@
     <string name="greeting_municipality_text">Optional: enter the municipality where you live.</string>
     <string name="greeting_municipality_hint">Enter municipality</string>
     <string name="greeting_municipality_selected">Selected municipality: %1$s</string>
+    <string name="onboarding_welcome_subtitle">Your assistant for waste sorting across Denmark</string>
+    <string name="onboarding_language_title">Choose your preferred language</string>
+    <string name="onboarding_municipality_title">Choose your municipality</string>
+    <string name="onboarding_municipality_subtitle">Optional, but it helps you find local rules and recycling centres faster.</string>
+    <string name="onboarding_continue">Continue</string>
+    <string name="onboarding_back">Back</string>
+    <string name="onboarding_skip">Skip</string>
     <string name="dansk">Danish</string>
     <string name="engelsk">English</string>
     <string name="bottom_soeg">Search</string>
@@ -90,11 +101,11 @@
     <string name="laes_mere_om_affaldet">Read more about this item</string>
     <string name="skjul_beskrivelse">Hide description</string>
     <string name="det_vigtigste">Most important</string>
-    <string name="typiske_eksempler">Typical examples</string>
+    <string name="typiske_eksempler">Examples</string>
     <string name="kan_typisk_komme_i">Usually belongs here</string>
     <string name="skal_typisk_et_andet_sted_hen">Usually goes elsewhere</string>
     <string name="tjek_detaljer_nedenfor">Check the details below.</string>
     <string name="laes_mere_om_fraktion">Read more about %1$s</string>
     <string name="skjul_detaljer">Hide details</string>
-    <string name="begynd_med_det_samme">Get started</string>
+    <string name="begynd_med_det_samme">Start</string>
 </resources>

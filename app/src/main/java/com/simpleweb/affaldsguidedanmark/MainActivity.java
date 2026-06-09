@@ -50,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
     private NavigationView navigationView;
     private SharedPreferences sharedPref;
     private PopupWindow greetingMunicipalitySuggestionsPopup;
+    private int greetingOnboardingStep = 0;
 
     @Override
     protected void attachBaseContext(Context newBase) {
@@ -102,6 +103,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setUpGreetingLayout() {
+        View welcomeStep = findViewById(R.id.onboardingWelcomeStep);
+        View languageStep = findViewById(R.id.onboardingLanguageStep);
+        View municipalityStep = findViewById(R.id.onboardingMunicipalityStep);
+        View onboardingDotOne = findViewById(R.id.onboardingDotOne);
+        View onboardingDotTwo = findViewById(R.id.onboardingDotTwo);
+        View onboardingDotThree = findViewById(R.id.onboardingDotThree);
+        TextView backButton = findViewById(R.id.onboardingBackButton);
+        TextView skipButton = findViewById(R.id.onboardingSkipButton);
         RadioGroup languageRadioGroup = findViewById(R.id.languageRadioGroup);
         RadioButton danishLanguageOption = findViewById(R.id.danishLanguageOption);
         RadioButton englishLanguageOption = findViewById(R.id.englishLanguageOption);
@@ -118,22 +127,118 @@ public class MainActivity extends AppCompatActivity {
         languageRadioGroup.setOnCheckedChangeListener((group, checkedId) -> {
             if (checkedId == R.id.englishLanguageOption) {
                 LanguageManager.saveLanguage(this, LanguageManager.ENGLISH);
+                sharedPref.edit().putInt("greetingOnboardingStep", 1).apply();
+                recreate();
             } else if (checkedId == R.id.danishLanguageOption) {
                 LanguageManager.saveLanguage(this, LanguageManager.DANISH);
+                sharedPref.edit().putInt("greetingOnboardingStep", 1).apply();
+                recreate();
             }
         });
 
         begynd = findViewById(R.id.begynd);
+        greetingOnboardingStep = Math.max(0, Math.min(2, sharedPref.getInt("greetingOnboardingStep", 0)));
+        showGreetingOnboardingStep(
+                greetingOnboardingStep,
+                welcomeStep,
+                languageStep,
+                municipalityStep,
+                onboardingDotOne,
+                onboardingDotTwo,
+                onboardingDotThree,
+                backButton,
+                skipButton,
+                begynd
+        );
+
         begynd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                sharedPref.edit().putBoolean("hasSeenGreetingPage", true).apply();
-                saveGreetingMunicipalityIfSelected(municipalityInput);
-                setContentView(R.layout.activity_main);
-                applySystemBarInsets(findViewById(R.id.main_layout));
-                setUpMainLayout();
+                if (greetingOnboardingStep < 2) {
+                    greetingOnboardingStep++;
+                    sharedPref.edit().putInt("greetingOnboardingStep", greetingOnboardingStep).apply();
+                    showGreetingOnboardingStep(
+                            greetingOnboardingStep,
+                            welcomeStep,
+                            languageStep,
+                            municipalityStep,
+                            onboardingDotOne,
+                            onboardingDotTwo,
+                            onboardingDotThree,
+                            backButton,
+                            skipButton,
+                            begynd
+                    );
+                } else {
+                    finishGreetingOnboarding(municipalityInput, true);
+                }
             }
         });
+
+        backButton.setOnClickListener(view -> {
+            if (greetingOnboardingStep == 0) {
+                return;
+            }
+
+            greetingOnboardingStep--;
+            sharedPref.edit().putInt("greetingOnboardingStep", greetingOnboardingStep).apply();
+            showGreetingOnboardingStep(
+                    greetingOnboardingStep,
+                    welcomeStep,
+                    languageStep,
+                    municipalityStep,
+                    onboardingDotOne,
+                    onboardingDotTwo,
+                    onboardingDotThree,
+                    backButton,
+                    skipButton,
+                    begynd
+            );
+        });
+
+        skipButton.setOnClickListener(view -> finishGreetingOnboarding(municipalityInput, false));
+    }
+
+    private void showGreetingOnboardingStep(
+            int step,
+            View welcomeStep,
+            View languageStep,
+            View municipalityStep,
+            View onboardingDotOne,
+            View onboardingDotTwo,
+            View onboardingDotThree,
+            TextView backButton,
+            TextView skipButton,
+            Button continueButton
+    ) {
+        dismissGreetingMunicipalitySuggestions();
+
+        welcomeStep.setVisibility(step == 0 ? View.VISIBLE : View.GONE);
+        languageStep.setVisibility(step == 1 ? View.VISIBLE : View.GONE);
+        municipalityStep.setVisibility(step == 2 ? View.VISIBLE : View.GONE);
+
+        onboardingDotOne.setBackgroundResource(step == 0 ? R.drawable.onboarding_dot_active : R.drawable.onboarding_dot_inactive);
+        onboardingDotTwo.setBackgroundResource(step == 1 ? R.drawable.onboarding_dot_active : R.drawable.onboarding_dot_inactive);
+        onboardingDotThree.setBackgroundResource(step == 2 ? R.drawable.onboarding_dot_active : R.drawable.onboarding_dot_inactive);
+
+        backButton.setVisibility(step == 0 ? View.INVISIBLE : View.VISIBLE);
+        skipButton.setVisibility(step == 2 ? View.VISIBLE : View.GONE);
+        continueButton.setText(step == 2 ? R.string.begynd_med_det_samme : R.string.onboarding_continue);
+    }
+
+    private void finishGreetingOnboarding(AutoCompleteTextView municipalityInput, boolean shouldSaveMunicipality) {
+        dismissGreetingMunicipalitySuggestions();
+        if (shouldSaveMunicipality) {
+            saveGreetingMunicipalityIfSelected(municipalityInput);
+        }
+
+        sharedPref.edit()
+                .putBoolean("hasSeenGreetingPage", true)
+                .remove("greetingOnboardingStep")
+                .apply();
+        setContentView(R.layout.activity_main);
+        applySystemBarInsets(findViewById(R.id.main_layout));
+        setUpMainLayout();
     }
 
     private void setUpGreetingMunicipalityPicker(AutoCompleteTextView municipalityInput, TextView selectedMunicipalityText) {

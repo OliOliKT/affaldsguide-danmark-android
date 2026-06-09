@@ -27,7 +27,8 @@
             android:id="@+id/municipalityDetailName"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginStart="12dp"
+            android:layout_marginStart="52dp"
+            android:layout_marginEnd="52dp"
             android:gravity="center"
             android:includeFontPadding="false"
             android:textColor="@color/green_light"
@@ -35,17 +36,15 @@
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@id/municipalityBackButton"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/municipalityBackButton"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@id/municipalityBackButton" />
 
         <LinearLayout
-            android:id="@+id/municipalityInfoCard"
+            android:id="@+id/saveMunicipalityButtonContainer"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:background="@drawable/details_info_background"
             android:orientation="vertical"
-            android:padding="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/municipalityDetailName">
@@ -54,7 +53,6 @@
                 android:id="@+id/saveMunicipalityButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="18dp"
                 android:clickable="true"
                 android:focusable="true"
                 android:gravity="center"
@@ -66,6 +64,20 @@
                 android:text="@string/gem_kommune"
                 android:textSize="15sp"
                 android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/municipalityInfoCard"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/details_info_background"
+            android:orientation="vertical"
+            android:padding="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/saveMunicipalityButtonContainer">
 
             <TextView
                 android:id="@+id/municipalityContactTitle"
@@ -133,7 +145,7 @@
             android:id="@+id/municipalityAboutCard"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="12dp"
             android:background="@drawable/details_info_background"
             android:orientation="vertical"
             android:padding="16dp"
@@ -165,7 +177,7 @@
             android:id="@+id/municipalityExtraInfoContainer"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="0dp"
             android:orientation="vertical"
             android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
