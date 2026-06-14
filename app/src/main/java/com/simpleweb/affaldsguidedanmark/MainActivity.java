@@ -521,23 +521,18 @@ public class MainActivity extends AppCompatActivity {
 
                 int itemId = item.getItemId();
 
-                switch (itemId) {
-                    case R.id.search_trash_button:
-                        navController.navigate(R.id.action_to_searchTrash);
-                        break;
-                    case R.id.trash_types_button:
-                        navController.navigate(R.id.fragment_trash_types);
-                        break;
-                    case R.id.municipalities_button:
-                        navController.navigate(R.id.fragment_municipalities);
-                        break;
-                    case R.id.navigation_view_button:
-                        if (drawerLayout.isDrawerOpen(GravityCompat.END)) {
-                            drawerLayout.closeDrawer(GravityCompat.END);
-                        } else {
-                            drawerLayout.openDrawer(GravityCompat.END);
-                        }
-                        break;
+                if (itemId == R.id.search_trash_button) {
+                    navController.navigate(R.id.action_to_searchTrash);
+                } else if (itemId == R.id.trash_types_button) {
+                    navController.navigate(R.id.fragment_trash_types);
+                } else if (itemId == R.id.municipalities_button) {
+                    navController.navigate(R.id.fragment_municipalities);
+                } else if (itemId == R.id.navigation_view_button) {
+                    if (drawerLayout.isDrawerOpen(GravityCompat.END)) {
+                        drawerLayout.closeDrawer(GravityCompat.END);
+                    } else {
+                        drawerLayout.openDrawer(GravityCompat.END);
+                    }
                 }
                 return true;
             }
@@ -565,35 +560,34 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 int itemId = item.getItemId();
 
-                switch (itemId) {
-                    case R.id.om:
-                        navController.navigate(R.id.fragment_about);
-                        drawerLayout.closeDrawer(GravityCompat.END);
-                        return true;
-                    case R.id.kontaktinformation:
-                        navController.navigate(R.id.fragment_contact_information);
-                        drawerLayout.closeDrawer(GravityCompat.END);
-                        return true;
-                    case R.id.spørgsmålogsvar:
-                        navController.navigate(R.id.fragment_qa);
-                        drawerLayout.closeDrawer(GravityCompat.END);
-                        return true;
-                    case R.id.seneste_soegninger:
-                        navController.navigate(R.id.fragment_recent_searches);
-                        drawerLayout.closeDrawer(GravityCompat.END);
-                        return true;
-                    case R.id.sprog:
-                        navController.navigate(R.id.fragment_language);
-                        drawerLayout.closeDrawer(GravityCompat.END);
-                        return true;
-                    case R.id.privatlivspolitik:
-                        navController.navigate(R.id.fragment_privacy_policy);
-                        drawerLayout.closeDrawer(GravityCompat.END);
-                        return true;
-                    case R.id.vilkårogbetingelser:
-                        navController.navigate(R.id.fragment_terms_of_service);
-                        drawerLayout.closeDrawer(GravityCompat.END);
-                        return true;
+                if (itemId == R.id.om) {
+                    navController.navigate(R.id.fragment_about);
+                    drawerLayout.closeDrawer(GravityCompat.END);
+                    return true;
+                } else if (itemId == R.id.kontaktinformation) {
+                    navController.navigate(R.id.fragment_contact_information);
+                    drawerLayout.closeDrawer(GravityCompat.END);
+                    return true;
+                } else if (itemId == R.id.spørgsmålogsvar) {
+                    navController.navigate(R.id.fragment_qa);
+                    drawerLayout.closeDrawer(GravityCompat.END);
+                    return true;
+                } else if (itemId == R.id.seneste_soegninger) {
+                    navController.navigate(R.id.fragment_recent_searches);
+                    drawerLayout.closeDrawer(GravityCompat.END);
+                    return true;
+                } else if (itemId == R.id.sprog) {
+                    navController.navigate(R.id.fragment_language);
+                    drawerLayout.closeDrawer(GravityCompat.END);
+                    return true;
+                } else if (itemId == R.id.privatlivspolitik) {
+                    navController.navigate(R.id.fragment_privacy_policy);
+                    drawerLayout.closeDrawer(GravityCompat.END);
+                    return true;
+                } else if (itemId == R.id.vilkårogbetingelser) {
+                    navController.navigate(R.id.fragment_terms_of_service);
+                    drawerLayout.closeDrawer(GravityCompat.END);
+                    return true;
                 }
                 return false;
             }

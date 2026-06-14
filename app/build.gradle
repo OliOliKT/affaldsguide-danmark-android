@@ -7,18 +7,18 @@ def keystoreProperties = new Properties()
 keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
 
 android {
-    namespace 'com.simpleweb.affaldsguidedanmark'
+    namespace = 'com.simpleweb.affaldsguidedanmark'
     compileSdk = 37
 
 
     defaultConfig {
-        applicationId "com.simpleweb.affaldsguidedanmark"
+        applicationId = "com.simpleweb.affaldsguidedanmark"
         minSdk = 28
-        targetSdk = 36
-        versionCode 36
-        versionName "2.8"
+        targetSdk = 37
+        versionCode = 37
+        versionName = "2.9"
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
     signingConfigs {
@@ -32,28 +32,28 @@ android {
 
     buildTypes {
         debug {
-            debuggable true
-            minifyEnabled false
+            debuggable = true
+            minifyEnabled = false
         }
         release {
-            debuggable false
-            minifyEnabled true
-            shrinkResources true
+            debuggable = false
+            minifyEnabled = true
+            shrinkResources = true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.release
+            signingConfig = signingConfigs.release
         }
     }
 
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
     }
     viewBinding {
         enabled = true
     }
     androidResources {
-        noCompress 'json'
+        noCompress += ['json']
     }
 }
 
