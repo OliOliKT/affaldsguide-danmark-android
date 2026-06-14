@@ -18,11 +18,15 @@
         <!-- Trash Group Name -->
         <TextView
             android:id="@+id/detail_name"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
             android:layout_marginTop="12dp"
+            android:layout_marginEnd="48dp"
+            android:gravity="center"
+            android:maxLines="2"
             android:textColor="@color/green_light"
-            android:textSize="28sp"
+            android:textSize="26sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -33,11 +37,11 @@
             android:id="@+id/backButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
             android:background="?android:attr/selectableItemBackground"
             android:src="@drawable/arrow_left"
+            app:layout_constraintBottom_toBottomOf="@id/detail_name"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toTopOf="@id/detail_name"
             app:tint="@color/green_light" />
 
         <!-- Trash Group Image -->

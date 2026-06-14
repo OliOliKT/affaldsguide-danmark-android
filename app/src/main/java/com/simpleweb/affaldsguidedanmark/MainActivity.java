@@ -3,16 +3,19 @@ package com.simpleweb.affaldsguidedanmark;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.graphics.Rect;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.RadioButton;
@@ -51,6 +54,8 @@ public class MainActivity extends AppCompatActivity {
     private SharedPreferences sharedPref;
     private PopupWindow greetingMunicipalitySuggestionsPopup;
     private int greetingOnboardingStep = 0;
+    private int lastSelectedBottomNavigationItemId = R.id.search_trash_button;
+    private boolean isUpdatingBottomNavigationSelection = false;
 
     @Override
     protected void attachBaseContext(Context newBase) {
@@ -78,8 +83,35 @@ public class MainActivity extends AppCompatActivity {
             setUpGreetingLayout();
         } else {
             setContentView(R.layout.activity_main);
-            applySystemBarInsets(findViewById(R.id.main_layout));
+            applyMainSystemBarInsets();
             setUpMainLayout();
+        }
+    }
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent event) {
+        if (event.getAction() == MotionEvent.ACTION_DOWN) {
+            hideKeyboardWhenTouchingOutsideInput(event);
+        }
+
+        return super.dispatchTouchEvent(event);
+    }
+
+    private void hideKeyboardWhenTouchingOutsideInput(MotionEvent event) {
+        View focusedView = getCurrentFocus();
+        if (!(focusedView instanceof EditText)) {
+            return;
+        }
+
+        Rect focusedViewBounds = new Rect();
+        focusedView.getGlobalVisibleRect(focusedViewBounds);
+        if (focusedViewBounds.contains((int) event.getRawX(), (int) event.getRawY())) {
+            return;
+        }
+
+        InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        if (inputMethodManager != null) {
+            inputMethodManager.hideSoftInputFromWindow(focusedView.getWindowToken(), 0);
         }
     }
 
@@ -100,6 +132,56 @@ public class MainActivity extends AppCompatActivity {
             return windowInsets;
         });
         ViewCompat.requestApplyInsets(rootView);
+    }
+
+    private void applyMainSystemBarInsets() {
+        View navHost = findViewById(R.id.nav_host_fragment);
+        View bottomNavigation = findViewById(R.id.bottom_navigation);
+        View navigationDrawer = findViewById(R.id.navigation_view);
+        View mainContentRoot = findViewById(R.id.main_content_root);
+
+        int navHostInitialLeft = navHost.getPaddingLeft();
+        int navHostInitialTop = navHost.getPaddingTop();
+        int navHostInitialRight = navHost.getPaddingRight();
+        int navHostInitialBottom = navHost.getPaddingBottom();
+
+        int bottomNavInitialLeft = bottomNavigation.getPaddingLeft();
+        int bottomNavInitialTop = bottomNavigation.getPaddingTop();
+        int bottomNavInitialRight = bottomNavigation.getPaddingRight();
+        int bottomNavInitialBottom = bottomNavigation.getPaddingBottom();
+
+        int drawerInitialLeft = navigationDrawer.getPaddingLeft();
+        int drawerInitialTop = navigationDrawer.getPaddingTop();
+        int drawerInitialRight = navigationDrawer.getPaddingRight();
+        int drawerInitialBottom = navigationDrawer.getPaddingBottom();
+
+        ViewCompat.setOnApplyWindowInsetsListener(mainContentRoot, (view, windowInsets) -> {
+            Insets insets = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars());
+
+            navHost.setPadding(
+                    navHostInitialLeft + insets.left,
+                    navHostInitialTop + insets.top,
+                    navHostInitialRight + insets.right,
+                    navHostInitialBottom
+            );
+
+            bottomNavigation.setPadding(
+                    bottomNavInitialLeft + insets.left,
+                    bottomNavInitialTop,
+                    bottomNavInitialRight + insets.right,
+                    bottomNavInitialBottom + insets.bottom
+            );
+
+            navigationDrawer.setPadding(
+                    drawerInitialLeft,
+                    drawerInitialTop + insets.top,
+                    drawerInitialRight + insets.right,
+                    drawerInitialBottom + insets.bottom
+            );
+
+            return windowInsets;
+        });
+        ViewCompat.requestApplyInsets(mainContentRoot);
     }
 
     private void setUpGreetingLayout() {
@@ -237,7 +319,7 @@ public class MainActivity extends AppCompatActivity {
                 .remove("greetingOnboardingStep")
                 .apply();
         setContentView(R.layout.activity_main);
-        applySystemBarInsets(findViewById(R.id.main_layout));
+        applyMainSystemBarInsets();
         setUpMainLayout();
     }
 
@@ -433,6 +515,10 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                if (isUpdatingBottomNavigationSelection) {
+                    return true;
+                }
+
                 int itemId = item.getItemId();
 
                 switch (itemId) {
@@ -458,6 +544,21 @@ public class MainActivity extends AppCompatActivity {
         });
 
         navigationView = findViewById(R.id.navigation_view);
+
+        navController.addOnDestinationChangedListener((controller, destination, arguments) -> {
+            updateBottomNavigationSelectionForDestination(destination.getId());
+        });
+
+        drawerLayout.addDrawerListener(new DrawerLayout.SimpleDrawerListener() {
+            @Override
+            public void onDrawerClosed(@NonNull View drawerView) {
+                if (navController.getCurrentDestination() != null) {
+                    updateBottomNavigationSelectionForDestination(navController.getCurrentDestination().getId());
+                } else {
+                    setBottomNavigationSelection(lastSelectedBottomNavigationItemId);
+                }
+            }
+        });
 
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -497,6 +598,47 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
+    }
+
+    private void updateBottomNavigationSelectionForDestination(int destinationId) {
+        int bottomNavigationItemId = getBottomNavigationItemIdForDestination(destinationId);
+        setBottomNavigationSelection(bottomNavigationItemId);
+
+        if (bottomNavigationItemId != R.id.navigation_view_button) {
+            lastSelectedBottomNavigationItemId = bottomNavigationItemId;
+        }
+    }
+
+    private int getBottomNavigationItemIdForDestination(int destinationId) {
+        if (destinationId == R.id.fragment_trash_types || destinationId == R.id.fragment_trash_type_details) {
+            return R.id.trash_types_button;
+        }
+
+        if (destinationId == R.id.fragment_municipalities || destinationId == R.id.fragment_municipality_details) {
+            return R.id.municipalities_button;
+        }
+
+        if (destinationId == R.id.fragment_recent_searches
+                || destinationId == R.id.fragment_language
+                || destinationId == R.id.fragment_about
+                || destinationId == R.id.fragment_contact_information
+                || destinationId == R.id.fragment_qa
+                || destinationId == R.id.fragment_privacy_policy
+                || destinationId == R.id.fragment_terms_of_service) {
+            return R.id.navigation_view_button;
+        }
+
+        return R.id.search_trash_button;
+    }
+
+    private void setBottomNavigationSelection(int itemId) {
+        if (bottomNavigationView == null || bottomNavigationView.getSelectedItemId() == itemId) {
+            return;
+        }
+
+        isUpdatingBottomNavigationSelection = true;
+        bottomNavigationView.setSelectedItemId(itemId);
+        isUpdatingBottomNavigationSelection = false;
     }
 
     private static String normalizeMunicipalityQuery(String value) {

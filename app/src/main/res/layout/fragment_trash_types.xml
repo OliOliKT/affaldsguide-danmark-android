@@ -36,9 +36,9 @@
         android:layout_height="0dp"
         android:clipToPadding="false"
         android:paddingStart="16dp"
-        android:paddingTop="4dp"
+        android:paddingTop="8dp"
         android:paddingEnd="16dp"
-        android:paddingBottom="16dp"
+        android:paddingBottom="96dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textViewHeader" />
 
