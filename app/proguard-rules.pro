@@ -58,3 +58,10 @@
 
 -keep class com.google.gson.reflect.TypeToken { *; }
 -keep class * extends com.google.gson.reflect.TypeToken
+
+# WorkManager uses Room-generated database classes that are created by reflection.
+# Keep them stable in release builds so AndroidX Startup can initialize WorkManager.
+-keep class androidx.work.impl.WorkDatabase { *; }
+-keep class androidx.work.impl.WorkDatabase_Impl { *; }
+-keep class androidx.work.impl.model.** { *; }
+-keep class * extends androidx.room.RoomDatabase { *; }
