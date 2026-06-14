@@ -1,13 +1,12 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdk 36
+    compileSdk = 37
 
     namespace 'com.google.android.ads.nativetemplates'
     
     defaultConfig {
-        minSdk 28
-        targetSdk 36
+        minSdk = 28
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
@@ -20,6 +19,12 @@ android {
             consumerProguardFiles 'proguard-rules.pgcfg'
         }
     }
+    lint {
+        targetSdk 36
+    }
+    testOptions {
+        targetSdk 36
+    }
 
 }
 
@@ -27,12 +32,12 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'androidx.appcompat:appcompat:1.7.0'
-    implementation "androidx.core:core:1.15.0"
+    implementation 'androidx.appcompat:appcompat:1.7.1'
+    implementation "androidx.core:core:1.19.0"
     testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test:runner:1.5.2'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    androidTestImplementation 'androidx.test:runner:1.7.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.7.0'
     implementation 'com.google.android.gms:play-services-ads:25.3.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.2.1'
-    implementation 'com.google.errorprone:error_prone_annotations:2.16'
+    implementation 'com.google.errorprone:error_prone_annotations:2.50.0'
 }
