@@ -24,6 +24,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -54,7 +55,7 @@ public class TrashDB {
             return;
         }
 
-        Map<String, String> sorteringMap = new HashMap<>();
+        Map<String, String> sorteringMap = new LinkedHashMap<>();
         for (TrashItem item : trashItems) {
             String productName = useEnglish && item.productEn != null && !item.productEn.isEmpty() ? item.productEn : item.product;
             if (productName != null && productName.equalsIgnoreCase(what)) {
