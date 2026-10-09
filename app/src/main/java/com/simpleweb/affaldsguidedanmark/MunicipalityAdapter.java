@@ -68,7 +68,22 @@ public class MunicipalityAdapter extends RecyclerView.Adapter<MunicipalityAdapte
 
         String searchableText = (municipality.getMunicipality() + " " + municipality.getFullAddress())
                 .toLowerCase(new Locale("da", "DK"));
-        return searchableText.contains(normalizedQuery);
+        if (searchableText.contains(normalizedQuery)) {
+            return true;
+        }
+
+        if (municipality.getPostalPlaces() == null) {
+            return false;
+        }
+
+        for (Municipality.PostalPlace postalPlace : municipality.getPostalPlaces()) {
+            String postalPlaceText = postalPlace.getDisplayName().toLowerCase(new Locale("da", "DK"));
+            if (postalPlaceText.contains(normalizedQuery)) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     private boolean isSavedMunicipality(Municipality municipality) {

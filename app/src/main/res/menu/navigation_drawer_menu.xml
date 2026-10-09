@@ -10,16 +10,16 @@
         android:title="@string/sprog" />
 
     <item
+        android:id="@+id/achievements"
+        android:title="@string/achievements_page" />
+
+    <item
         android:id="@+id/om"
         android:title="@string/menu1_om_appen" />
 
     <item
         android:id="@+id/kontaktinformation"
         android:title="@string/menu_2_kontaktinformation" />
-
-    <item
-        android:id="@+id/spørgsmålogsvar"
-        android:title="@string/menu_3_spørgsmål_og_svar" />
 
     <item
         android:id="@+id/privatlivspolitik"

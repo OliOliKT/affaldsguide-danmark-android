@@ -62,18 +62,24 @@ public class TrashTypeDetailsFragment extends Fragment {
         listTrash = view.findViewById(R.id.listTrash);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
         listTrash.setLayoutManager(layoutManager);
-        trashAdapter = new TrashAdapter();
+        trashAdapter = new TrashAdapter(trashName -> {
+            Bundle args = new Bundle();
+            args.putString("initialQuery", trashName);
+            Navigation.findNavController(view).navigate(R.id.search_trash_fragment, args);
+        });
         listTrash.setAdapter(trashAdapter);
 
         TrashType trashType = getArguments().getParcelable(ARG_TRASH_TYPE);
 
         if (trashType != null) {
+            AchievementStore.get(requireContext()).recordFraction(trashType.getDanishNavn());
             nameTextView.setText(trashType.getNavn());
             descriptionTextView.setText(trashType.getBeskrivelse());
             imageView.setImageResource(trashType.getImageResId());
 
-            boolean useEnglish = LanguageManager.isEnglish(requireContext());
-            FractionEnhancement enhancement = FractionEnhancement.get(getResources(), trashType.getDanishNavn(), useEnglish);
+            boolean useEnglish = LanguageManager.usesNonDanishContent(requireContext());
+            FractionEnhancement enhancement = LanguageManager.isArabic(requireContext())
+                    ? null : FractionEnhancement.get(getResources(), trashType.getDanishNavn(), useEnglish);
             renderEnhancement(enhancementContainer, examplesContainer, practicalContainer, faqContainer, enhancement, trashType);
             if (enhancement != null && enhancement.summary != null && !enhancement.summary.trim().isEmpty()) {
                 descriptionTextView.setText(enhancement.summary);
@@ -134,13 +140,18 @@ public class TrashTypeDetailsFragment extends Fragment {
         String selectedTrashGroup = getArguments().getString(ARG_SELECTED_TRASH_GROUP);
 
         TrashDB trashDB = new TrashDB(getResources());
-        boolean useEnglish = LanguageManager.isEnglish(requireContext());
+        boolean useEnglish = LanguageManager.usesNonDanishContent(requireContext());
         String sortingLookupName = trashType != null ? trashType.getDanishNavn() : selectedTrashGroup;
-        List<String> trashProducts = trashDB.getProductNamesForCategory(sortingLookupName, useEnglish);
+        List<String> trashProducts = trashDB.getProductNamesForCategory(
+                sortingLookupName, useEnglish,
+                SavedMunicipalityManager.getSavedMunicipalityName(requireContext()));
         trashAdapter.setTrashNames(trashProducts);
         trashAdapter.notifyDataSetChanged();
 
-        if (useEnglish) {
+        if (LanguageManager.isArabic(requireContext())) {
+            String template = ArabicText.value(getResources(), "fractionsview.013", "كل العناصر المصنفة ضمن {0}");
+            DBAffaldTitel.setText(template.replace("{0}", trashType != null ? trashType.getNavn() : selectedTrashGroup));
+        } else if (useEnglish) {
             DBAffaldTitel.setText("Waste items sorted as " + (trashType != null ? trashType.getNavn() : selectedTrashGroup) + ":");
         } else {
             DBAffaldTitel.setText("Alle genstande som sorteres i " + getLowercaseFractionName(selectedTrashGroup, false) + ":");

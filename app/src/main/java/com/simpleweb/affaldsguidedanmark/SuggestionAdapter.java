@@ -26,6 +26,7 @@ import org.apache.commons.text.similarity.LevenshteinDistance;
 public class SuggestionAdapter extends ArrayAdapter<String> implements Filterable {
     public static final String FUZZY_SUGGESTION_PREFIX = "Mente du ";
     public static final String FUZZY_SUGGESTION_PREFIX_EN = "Did you mean ";
+    public static final String FUZZY_SUGGESTION_PREFIX_AR = "هل تقصد ";
 
     private static final int MAX_SUGGESTIONS = 5;
     private static final int MIN_FUZZY_QUERY_LENGTH = 3;
@@ -127,6 +128,10 @@ public class SuggestionAdapter extends ArrayAdapter<String> implements Filterabl
 
         if (suggestion.startsWith(FUZZY_SUGGESTION_PREFIX_EN.trim())) {
             return suggestion.substring(FUZZY_SUGGESTION_PREFIX_EN.trim().length()).trim();
+        }
+
+        if (suggestion.startsWith(FUZZY_SUGGESTION_PREFIX_AR.trim())) {
+            return suggestion.substring(FUZZY_SUGGESTION_PREFIX_AR.trim().length()).trim();
         }
 
         return suggestion;

@@ -31,11 +31,13 @@ public class TrashDB {
     private static final String TAG = "TrashDB";
 
     private final Resources resources;
+    private final MunicipalitySortingRuleDB municipalityRules;
     public List<TrashItem> trashItems;
     private static final Map<String, String> GUIDANCE_TRANSLATIONS = createGuidanceTranslations();
 
     public TrashDB(Resources resources) {
         this.resources = resources;
+        this.municipalityRules = new MunicipalitySortingRuleDB(resources);
         try (InputStream inputStream = resources.openRawResource(R.raw.affald_data);
              InputStreamReader reader = new InputStreamReader(inputStream, StandardCharsets.UTF_8)) {
             Gson gson = new Gson();
@@ -47,7 +49,7 @@ public class TrashDB {
         }
     }
 
-    public void searchProductJson(String what, boolean useEnglish, OnSearchCompleteListener listener) {
+    public void searchProductJson(String what, boolean useEnglish, String municipalityName, OnSearchCompleteListener listener) {
         if (trashItems == null) {
             Log.w(TAG, "JSON data is unavailable.");
             listener.onSearchComplete(Collections.singletonMap("error", ""));
@@ -56,11 +58,20 @@ public class TrashDB {
 
         Map<String, String> sorteringMap = new HashMap<>();
         for (TrashItem item : trashItems) {
-            String productName = useEnglish && item.productEn != null && !item.productEn.isEmpty() ? item.productEn : item.product;
+            String productName = item.getDisplayProduct(useEnglish);
             if (productName != null && productName.equalsIgnoreCase(what)) {
-                if (item.sorting != null) {
-                    for (Map.Entry<String, String> entry : item.sorting.entrySet()) {
-                        sorteringMap.put(entry.getKey(), useEnglish ? translateGuidance(entry.getValue()) : entry.getValue());
+                MunicipalitySortingRuleDB.Rule localRule = municipalityRules.ruleFor(municipalityName, item);
+                boolean useArabic = LanguageManager.isArabic(resources);
+                Map<String, String> sorting = localRule != null ? localRule.sortingFor(useEnglish && !useArabic) : item.sorting;
+                if (sorting != null) {
+                    for (Map.Entry<String, String> entry : sorting.entrySet()) {
+                        String guidance = entry.getValue();
+                        // English local rules already include translated guidance in Sortering_en.
+                        boolean needsTranslation = useEnglish && (localRule == null || localRule.sortingEnglish == null);
+                        String displayedGuidance = useArabic
+                                ? ArabicText.value(resources, "guidance." + guidance, guidance)
+                                : needsTranslation ? translateGuidance(guidance) : guidance;
+                        sorteringMap.put(entry.getKey(), displayedGuidance);
                     }
                 }
                 break;
@@ -82,6 +93,9 @@ public class TrashDB {
         @SerializedName("Produkt_en")
         String productEn;
 
+        @SerializedName("Produkt_ar")
+        String productAr;
+
         @SerializedName("Sortering")
         Map<String, String> sorting;
 
@@ -91,7 +105,13 @@ public class TrashDB {
         @SerializedName("beskrivelse_en")
         String descriptionEn;
 
+        @SerializedName("beskrivelse_ar")
+        String descriptionAr;
+
         String getDisplayProduct(boolean useEnglish) {
+            if ("ar".equals(java.util.Locale.getDefault().getLanguage()) && productAr != null && !productAr.isEmpty()) {
+                return productAr;
+            }
             if (useEnglish && productEn != null && !productEn.isEmpty()) {
                 return productEn;
             }
@@ -103,7 +123,7 @@ public class TrashDB {
         void onSearchComplete(Map<String, String> sorteringMap);
     }
 
-    public List<String> getProductNamesForCategory(String selectedTrashGroup, boolean useEnglish) {
+    public List<String> getProductNamesForCategory(String selectedTrashGroup, boolean useEnglish, String municipalityName) {
         if (trashItems == null || selectedTrashGroup == null) {
             return Collections.emptyList();
         }
@@ -112,7 +132,9 @@ public class TrashDB {
         List<String> productNames = new ArrayList<>();
         for (TrashItem item : trashItems) {
             String productName = item.getDisplayProduct(useEnglish);
-            if (productName != null && item.sorting != null && item.sorting.containsKey(danishTrashGroup)) {
+            MunicipalitySortingRuleDB.Rule localRule = municipalityRules.ruleFor(municipalityName, item);
+            Map<String, String> sorting = localRule != null ? localRule.sorting : item.sorting;
+            if (productName != null && sorting != null && sorting.containsKey(danishTrashGroup)) {
                 productNames.add(productName);
             }
         }
@@ -129,6 +151,9 @@ public class TrashDB {
         for (TrashItem item : trashItems) {
             String displayProduct = item.getDisplayProduct(useEnglish);
             if (displayProduct != null && displayProduct.equalsIgnoreCase(productName)) {
+                if (LanguageManager.isArabic(resources) && item.descriptionAr != null && !item.descriptionAr.isEmpty()) {
+                    return item.descriptionAr;
+                }
                 if (useEnglish && item.descriptionEn != null && !item.descriptionEn.isEmpty()) {
                     return item.descriptionEn;
                 }
@@ -137,6 +162,26 @@ public class TrashDB {
         }
 
         return "";
+    }
+
+    String getDanishProductName(String displayName, boolean useEnglish) {
+        if (trashItems == null || displayName == null) return displayName;
+        for (TrashItem item : trashItems) {
+            String name = item.getDisplayProduct(useEnglish);
+            if (name != null && name.equalsIgnoreCase(displayName)) return item.product;
+        }
+        return displayName;
+    }
+
+    MunicipalitySortingRuleDB.Rule getLocalRule(String productName, boolean useEnglish, String municipalityName) {
+        if (trashItems == null) return null;
+        for (TrashItem item : trashItems) {
+            String displayProduct = item.getDisplayProduct(useEnglish);
+            if (displayProduct != null && displayProduct.equalsIgnoreCase(productName)) {
+                return municipalityRules.ruleFor(municipalityName, item);
+            }
+        }
+        return null;
     }
 
     public String getFirstSortingKeyForProduct(String productName, boolean useEnglish) {
@@ -166,13 +211,14 @@ public class TrashDB {
 
             for (TrashTypeJson trashTypeJson : trashTypeJsonList) {
                 TrashType trashType = new TrashType();
-                trashType.setNavn(useEnglish && trashTypeJson.nameEn != null && !trashTypeJson.nameEn.isEmpty() ? trashTypeJson.nameEn : trashTypeJson.name);
+                boolean useArabic = LanguageManager.isArabic(resources);
+                trashType.setNavn(useArabic && trashTypeJson.nameAr != null && !trashTypeJson.nameAr.isEmpty() ? trashTypeJson.nameAr : useEnglish && trashTypeJson.nameEn != null && !trashTypeJson.nameEn.isEmpty() ? trashTypeJson.nameEn : trashTypeJson.name);
                 trashType.setDanishNavn(trashTypeJson.name);
-                trashType.setBeskrivelse(useEnglish && trashTypeJson.descriptionEn != null && !trashTypeJson.descriptionEn.isEmpty() ? trashTypeJson.descriptionEn : trashTypeJson.description);
-                trashType.setUdvidetBeskrivelse(useEnglish && trashTypeJson.extendedDescriptionEn != null && !trashTypeJson.extendedDescriptionEn.isEmpty() ? trashTypeJson.extendedDescriptionEn : trashTypeJson.extendedDescription);
-                trashType.setPros(useEnglish && trashTypeJson.prosEn != null ? trashTypeJson.prosEn : trashTypeJson.pros != null ? trashTypeJson.pros : Collections.emptyList());
-                trashType.setCons(useEnglish && trashTypeJson.consEn != null ? trashTypeJson.consEn : trashTypeJson.cons != null ? trashTypeJson.cons : Collections.emptyList());
-                trashType.setImageResId(getImageResourceForName(trashTypeJson.imageResourceName));
+                trashType.setBeskrivelse(useArabic && trashTypeJson.descriptionAr != null ? trashTypeJson.descriptionAr : useEnglish && trashTypeJson.descriptionEn != null && !trashTypeJson.descriptionEn.isEmpty() ? trashTypeJson.descriptionEn : trashTypeJson.description);
+                trashType.setUdvidetBeskrivelse(useArabic && trashTypeJson.extendedDescriptionAr != null ? trashTypeJson.extendedDescriptionAr : useEnglish && trashTypeJson.extendedDescriptionEn != null && !trashTypeJson.extendedDescriptionEn.isEmpty() ? trashTypeJson.extendedDescriptionEn : trashTypeJson.extendedDescription);
+                trashType.setPros(useArabic && trashTypeJson.prosAr != null ? trashTypeJson.prosAr : useEnglish && trashTypeJson.prosEn != null ? trashTypeJson.prosEn : trashTypeJson.pros != null ? trashTypeJson.pros : Collections.emptyList());
+                trashType.setCons(useArabic && trashTypeJson.consAr != null ? trashTypeJson.consAr : useEnglish && trashTypeJson.consEn != null ? trashTypeJson.consEn : trashTypeJson.cons != null ? trashTypeJson.cons : Collections.emptyList());
+                trashType.setImageResId(getImageResourceForName(trashTypeJson.imageResourceName, useEnglish));
                 trashTypes.add(trashType);
             }
 
@@ -191,11 +237,17 @@ public class TrashDB {
         @SerializedName("Navn_en")
         String nameEn;
 
+        @SerializedName("Navn_ar")
+        String nameAr;
+
         @SerializedName("Beskrivelse")
         String description;
 
         @SerializedName("Beskrivelse_en")
         String descriptionEn;
+
+        @SerializedName("Beskrivelse_ar")
+        String descriptionAr;
 
         @SerializedName("UdvidetBeskrivelse")
         String extendedDescription;
@@ -203,17 +255,26 @@ public class TrashDB {
         @SerializedName("UdvidetBeskrivelse_en")
         String extendedDescriptionEn;
 
+        @SerializedName("UdvidetBeskrivelse_ar")
+        String extendedDescriptionAr;
+
         @SerializedName("pros")
         List<String> pros;
 
         @SerializedName("pros_en")
         List<String> prosEn;
 
+        @SerializedName("pros_ar")
+        List<String> prosAr;
+
         @SerializedName("cons")
         List<String> cons;
 
         @SerializedName("cons_en")
         List<String> consEn;
+
+        @SerializedName("cons_ar")
+        List<String> consAr;
 
         @SerializedName("imageResourceName")
         String imageResourceName;
@@ -242,6 +303,14 @@ public class TrashDB {
     }
 
     public void colorProductName(TextView textView, String text, Context context, String isSpecialText, boolean useEnglish) {
+        if (LanguageManager.isArabic(context)) {
+            String suffix = isSpecialText.isEmpty() ? " يجب فرزه ضمن:" : " يمكن التخلص منه بالطريقة التالية:";
+            SpannableString title = new SpannableString(text + suffix);
+            title.setSpan(new ForegroundColorSpan(ContextCompat.getColor(context, R.color.green_light)),
+                    0, text.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+            textView.setText(title);
+            return;
+        }
         if (!useEnglish) {
             colorProductName(textView, text, context, isSpecialText);
             return;
@@ -266,108 +335,129 @@ public class TrashDB {
     }
 
     public void setImageViewAndText(ImageView imageView, TextView textView, Resources resources, String key, String value, boolean useEnglish) {
-        int imageResource = getImageResourceForKey(key);
+        int imageResource = getImageResourceForKey(toDanishSortingKey(key), useEnglish);
         imageView.setImageDrawable(ResourcesCompat.getDrawable(resources, imageResource, null));
 
         textView.setText(value);
     }
 
-    int getImageResourceForKey(String key) {
+    static int getImageResourceForKey(String key, boolean useEnglish) {
         switch (key) {
             case "Madaffald":
             case "Food waste":
-                return R.drawable.madaffald_ikon;
+                return useEnglish ? R.drawable.madaffald_en : R.drawable.madaffald_ikon;
             case "Pap":
             case "Cardboard":
-                return R.drawable.pap_ikon;
+                return useEnglish ? R.drawable.pap_en : R.drawable.pap_ikon;
             case "Papir":
             case "Paper":
-                return R.drawable.papir_ikon;
+                return useEnglish ? R.drawable.papir_en : R.drawable.papir_ikon;
             case "Farligt affald":
             case "Hazardous waste":
-                return R.drawable.farligt_affald_ikon;
+                return useEnglish ? R.drawable.farligt_affald_en : R.drawable.farligt_affald_ikon;
             case "Plast":
             case "Plastic":
-                return R.drawable.plast_ikon;
+                return useEnglish ? R.drawable.plast_en : R.drawable.plast_ikon;
             case "Metal":
-                return R.drawable.metal_ikon;
+                return useEnglish ? R.drawable.metal_en : R.drawable.metal_ikon;
             case "Glas":
             case "Glass":
-                return R.drawable.glas_ikon;
+                return useEnglish ? R.drawable.glas_en : R.drawable.glas_ikon;
             case "Mad- og drikkekartoner":
             case "Food and beverage cartons":
-                return R.drawable.mad_og_drikkekartoner_ikon;
+            case "Food and drink cartons":
+                return useEnglish ? R.drawable.mad_og_drikkekartoner_en : R.drawable.mad_og_drikkekartoner_ikon;
+            case "Haveaffald":
+            case "Garden waste":
+                return useEnglish ? R.drawable.haveaffald_en : R.drawable.haveaffald_dk;
             case "Tekstilaffald":
             case "Textile waste":
-                return R.drawable.tekstilaffald_ikon;
+                return useEnglish ? R.drawable.tekstilaffald_en : R.drawable.tekstilaffald_ikon;
             case "Restaffald":
             case "Residual waste":
-                return R.drawable.restaffald_ikon;
+                return useEnglish ? R.drawable.restaffald_en : R.drawable.restaffald_ikon;
             case "Genbrugsplads":
             case "Recycling centre":
-                return R.drawable.genbrugsplads;
+            case "Recycling station":
+                return useEnglish ? R.drawable.genbrugsplads_en : R.drawable.genbrugsplads;
             case "Vask":
             case "Sink":
-                return R.drawable.vask;
+                return useEnglish ? R.drawable.vask_en : R.drawable.vask;
             case "Genbrug":
             case "Reuse":
-                return R.drawable.genbrug;
+                return useEnglish ? R.drawable.genbrug_en : R.drawable.genbrug;
             case "Politistation":
             case "Police station":
-                return R.drawable.politistation;
+                return useEnglish ? R.drawable.politistation_en : R.drawable.politistation;
             case "Apotek":
             case "Pharmacy":
-                return R.drawable.apotek;
+                return useEnglish ? R.drawable.apotek_en : R.drawable.apotek;
             case "Batterier":
             case "Batteries":
-                return R.drawable.batterier;
+                return useEnglish ? R.drawable.batterier_en : R.drawable.batterier;
             case "Småt elektronik":
             case "Small electronics":
-                return R.drawable.smaat_elektronik;
+                return useEnglish ? R.drawable.smaat_elektronik_en : R.drawable.smaat_elektronik;
             case "Pant":
             case "Deposit":
-                return R.drawable.pant;
+            case "Deposit return":
+                return useEnglish ? R.drawable.pant_en : R.drawable.pant;
             default:
                 return R.drawable.fejl;
         }
     }
 
-    private int getImageResourceForName(String resourceName) {
+    private int getImageResourceForName(String resourceName, boolean useEnglish) {
         if (resourceName == null) {
             return R.drawable.fejl;
         }
 
         switch (resourceName) {
+            case "madaffald_dk":
             case "madaffald_ikon":
-                return R.drawable.madaffald_ikon;
+                return useEnglish ? R.drawable.madaffald_en : R.drawable.madaffald_ikon;
+            case "pap_dk":
             case "pap_ikon":
-                return R.drawable.pap_ikon;
+                return useEnglish ? R.drawable.pap_en : R.drawable.pap_ikon;
+            case "papir_dk":
             case "papir_ikon":
-                return R.drawable.papir_ikon;
+                return useEnglish ? R.drawable.papir_en : R.drawable.papir_ikon;
+            case "farligt_affald_dk":
             case "farligt_affald_ikon":
-                return R.drawable.farligt_affald_ikon;
+                return useEnglish ? R.drawable.farligt_affald_en : R.drawable.farligt_affald_ikon;
+            case "plast_dk":
             case "plast_ikon":
-                return R.drawable.plast_ikon;
+                return useEnglish ? R.drawable.plast_en : R.drawable.plast_ikon;
+            case "metal_dk":
             case "metal_ikon":
-                return R.drawable.metal_ikon;
+                return useEnglish ? R.drawable.metal_en : R.drawable.metal_ikon;
+            case "glas_dk":
             case "glas_ikon":
-                return R.drawable.glas_ikon;
+                return useEnglish ? R.drawable.glas_en : R.drawable.glas_ikon;
+            case "mad_og_drikkekartoner_dk":
             case "mad_og_drikkekartoner_ikon":
-                return R.drawable.mad_og_drikkekartoner_ikon;
+                return useEnglish ? R.drawable.mad_og_drikkekartoner_en : R.drawable.mad_og_drikkekartoner_ikon;
+            case "tekstilaffald_dk":
             case "tekstilaffald_ikon":
-                return R.drawable.tekstilaffald_ikon;
+                return useEnglish ? R.drawable.tekstilaffald_en : R.drawable.tekstilaffald_ikon;
+            case "restaffald_dk":
             case "restaffald_ikon":
-                return R.drawable.restaffald_ikon;
+                return useEnglish ? R.drawable.restaffald_en : R.drawable.restaffald_ikon;
+            case "batterier_dk":
             case "batterier":
-                return R.drawable.batterier;
+                return useEnglish ? R.drawable.batterier_en : R.drawable.batterier;
+            case "smaat_elektronik_dk":
             case "smaat_elektronik":
-                return R.drawable.smaat_elektronik;
+                return useEnglish ? R.drawable.smaat_elektronik_en : R.drawable.smaat_elektronik;
             default:
                 return R.drawable.fejl;
         }
     }
 
     public String translateSortingKey(String key) {
+        if (LanguageManager.isArabic(resources)) {
+            return ArabicText.value(resources, "category." + toDanishSortingKey(key), key);
+        }
         switch (key) {
             case "Madaffald": return "Food waste";
             case "Pap": return "Cardboard";
@@ -376,6 +466,7 @@ public class TrashDB {
             case "Plast": return "Plastic";
             case "Glas": return "Glass";
             case "Mad- og drikkekartoner": return "Food and beverage cartons";
+            case "Haveaffald": return "Garden waste";
             case "Tekstilaffald": return "Textile waste";
             case "Restaffald": return "Residual waste";
             case "Genbrugsplads": return "Recycling centre";
@@ -391,6 +482,14 @@ public class TrashDB {
     }
 
     public String toDanishSortingKey(String key) {
+        if (LanguageManager.isArabic(resources)) {
+            String[] danishKeys = {"Madaffald", "Pap", "Papir", "Farligt affald", "Plast", "Glas",
+                    "Mad- og drikkekartoner", "Haveaffald", "Tekstilaffald", "Restaffald",
+                    "Genbrugsplads", "Vask", "Genbrug", "Politistation", "Apotek", "Batterier", "Småt elektronik", "Pant"};
+            for (String danishKey : danishKeys) {
+                if (key.equals(ArabicText.lookup(resources, "category." + danishKey))) return danishKey;
+            }
+        }
         switch (key) {
             case "Food waste": return "Madaffald";
             case "Cardboard": return "Pap";

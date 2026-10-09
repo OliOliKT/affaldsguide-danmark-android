@@ -12,6 +12,11 @@ import java.util.List;
 
 public class TrashAdapter extends RecyclerView.Adapter<TrashAdapter.TrashViewHolder> {
     private List<String> trashNames;
+    private final java.util.function.Consumer<String> onItemClick;
+
+    public TrashAdapter(java.util.function.Consumer<String> onItemClick) {
+        this.onItemClick = onItemClick;
+    }
 
     public void setTrashNames(List<String> trashNames) {
         this.trashNames = trashNames;
@@ -28,6 +33,7 @@ public class TrashAdapter extends RecyclerView.Adapter<TrashAdapter.TrashViewHol
     public void onBindViewHolder(@NonNull TrashViewHolder holder, int position) {
         String trashName = trashNames.get(position);
         holder.bind(trashName);
+        holder.itemView.setOnClickListener(view -> onItemClick.accept(trashName));
     }
 
     @Override

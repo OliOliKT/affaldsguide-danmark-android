@@ -28,11 +28,11 @@
                 android:paddingTop="16dp"/>
 
             <TextView
+                android:id="@+id/privacyPageBody"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/privatlivspolitik"
                 android:textSize="16sp"
-                android:autoLink="all"
                 android:lineSpacingExtra="8dp"
                 android:layout_marginBottom="16dp"
                 android:textColor="@color/text_color"

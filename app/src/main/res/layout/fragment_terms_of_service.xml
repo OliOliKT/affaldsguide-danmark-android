@@ -28,15 +28,22 @@
                 android:paddingTop="16dp"/>
 
             <TextView
+                android:id="@+id/termsIntro"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/vilkårogbetingelser"
                 android:textSize="16sp"
-                android:autoLink="all"
                 android:lineSpacingExtra="8dp"
                 android:layout_marginBottom="16dp"
                 android:textColor="@color/text_color"
                 android:padding="16dp" />
+
+            <LinearLayout
+                android:id="@+id/termsSections"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="16dp" />
 
         </LinearLayout>
 

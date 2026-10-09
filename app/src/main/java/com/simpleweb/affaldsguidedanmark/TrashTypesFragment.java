@@ -42,7 +42,7 @@ public class TrashTypesFragment extends Fragment {
         recyclerView.setAdapter(trashTypeAdapter);
 
         TrashDB trashDB = new TrashDB(getResources());
-        List<TrashType> trashTypes = trashDB.getLocalTrashTypes(LanguageManager.isEnglish(requireContext()));
+        List<TrashType> trashTypes = trashDB.getLocalTrashTypes(LanguageManager.usesNonDanishContent(requireContext()));
         trashTypeAdapter.setData(trashTypes);
         updateEmptyState(trashTypes.isEmpty());
 

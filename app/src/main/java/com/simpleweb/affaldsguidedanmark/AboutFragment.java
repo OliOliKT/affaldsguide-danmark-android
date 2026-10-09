@@ -17,6 +17,13 @@ public class AboutFragment extends Fragment {
 
         final View v = inflater.inflate(R.layout.fragment_about, container, false);
 
+        InfoPageText.set(v.findViewById(R.id.aboutBackgroundTitle), "moreinfoview.007");
+        InfoPageText.set(v.findViewById(R.id.aboutBackgroundBody), "moreinfoview.008");
+        InfoPageText.set(v.findViewById(R.id.aboutSortingTitle), "moreinfoview.025");
+        InfoPageText.set(v.findViewById(R.id.aboutSortingBody), "moreinfoview.026");
+        InfoPageText.set(v.findViewById(R.id.aboutHowTitle), "moreinfoview.009");
+        InfoPageText.set(v.findViewById(R.id.aboutHowBody), "android.about.how.body");
+
         NativeAdHelper.loadNativeAd(requireContext(), v);
 
         return v;

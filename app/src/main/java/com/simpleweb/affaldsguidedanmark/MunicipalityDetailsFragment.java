@@ -1,8 +1,13 @@
 package com.simpleweb.affaldsguidedanmark;
 
 import android.content.ActivityNotFoundException;
+import android.Manifest;
+import android.content.pm.PackageManager;
 import android.content.Intent;
 import android.content.res.Resources;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.graphics.Typeface;
@@ -12,11 +17,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
@@ -28,13 +37,26 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.lang.reflect.Type;
 import java.nio.charset.StandardCharsets;
+import java.text.Normalizer;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Locale;
+import java.util.Set;
+import java.util.HashSet;
 
 public class MunicipalityDetailsFragment extends Fragment {
     private static final String TAG = "MunicipalityDetails";
+    private static final int LOCATION_PERMISSION_REQUEST_CODE = 1001;
+    private static final String[] FRACTIONS = {"Restaffald", "Madaffald", "Pap", "Plast", "Glas", "Farligt affald", "Papir", "Metal", "Tekstilaffald", "Mad- og drikkekartoner"};
+    private static final String[] FRACTIONS_EN = {"Residual waste", "Food waste", "Cardboard", "Plastic", "Glass", "Hazardous waste", "Paper", "Metal", "Textile waste", "Food and beverage cartons"};
+    private LinearLayout recyclingCentersContainer;
+    private Municipality currentMunicipality;
+    private boolean currentUseEnglish;
+    private Location userLocation;
+    private TextView findNearestButton;
+    private TextView fractionOverviewTitle;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -50,6 +72,7 @@ public class MunicipalityDetailsFragment extends Fragment {
             Navigation.findNavController(view).navigateUp();
             return;
         }
+        AchievementStore.get(requireContext()).recordMunicipalityViewed();
 
         TextView nameTextView = view.findViewById(R.id.municipalityDetailName);
         TextView addressTextView = view.findViewById(R.id.municipalityDetailAddress);
@@ -64,9 +87,16 @@ public class MunicipalityDetailsFragment extends Fragment {
         addressTextView.setText(municipality.getFullAddress());
         emailTextView.setText(municipality.getEmail());
         websiteTextView.setText(municipality.getUrl());
-        boolean useEnglish = LanguageManager.isEnglish(requireContext());
+        boolean useEnglish = LanguageManager.usesNonDanishContent(requireContext());
+        currentMunicipality = municipality;
+        currentUseEnglish = useEnglish;
         descriptionTextView.setText(municipality.getDescription(useEnglish));
         renderExtraInfo(extraInfoContainer, municipality, useEnglish);
+        if (getArguments() != null && getArguments().getBoolean("scrollToFractions") && fractionOverviewTitle != null) {
+            androidx.core.widget.NestedScrollView scrollView = (androidx.core.widget.NestedScrollView) view;
+            scrollView.post(() -> scrollView.smoothScrollTo(0,
+                    extraInfoContainer.getTop() + fractionOverviewTitle.getTop()));
+        }
 
         Linkify.addLinks(emailTextView, Linkify.EMAIL_ADDRESSES);
         Linkify.addLinks(websiteTextView, Linkify.WEB_URLS);
@@ -118,48 +148,169 @@ public class MunicipalityDetailsFragment extends Fragment {
             );
         }
 
-        if (details != null && details.getQuickFacts() != null && !details.getQuickFacts().isEmpty()) {
-            addSectionTitle(container, useEnglish ? "Practical waste information" : "Praktisk affaldsinfo");
-            addFactGrid(container, details.getQuickFacts(), useEnglish);
+        if (details != null && details.getWasteFractionCount() != null && details.getWasteFractionTotal() != null) {
+            addFractionOverview(container, municipality, details, useEnglish);
+        }
+
+        if (details != null) {
+            addPracticalWasteInformation(container, details, useEnglish);
         }
 
         if (details != null && details.getSchemes() != null && !details.getSchemes().isEmpty()) {
-            addSubTitle(container, useEnglish ? "Waste services" : "Affaldsordninger", 26);
+            addSubTitle(container, getString(R.string.municipal_waste_service_information), 26);
             for (Municipality.Scheme scheme : details.getSchemes()) {
-                addTextCard(container, scheme.getTitle(useEnglish), scheme.getDescription(useEnglish));
+                addTextCard(container,
+                        municipalityText("municipality.label.", scheme.getTitle(false), scheme.getTitle(useEnglish)),
+                        municipalityText("municipality.scheme.", scheme.getDescription(false), scheme.getDescription(useEnglish)));
             }
         }
 
         if (details != null && details.getLinks() != null && !details.getLinks().isEmpty()) {
-            addSubTitle(container, useEnglish ? "Useful official links" : "Nyttige officielle links", 26);
+            addSubTitle(container, getString(R.string.useful_official_links), 26);
             for (Municipality.OfficialLink link : details.getLinks()) {
-                addLinkCard(container, link.getTitle(useEnglish), link.getUrl(), useEnglish);
+                addLinkCard(container, municipalityText("municipality.label.", link.getTitle(false), link.getTitle(useEnglish)), link.getUrl(), useEnglish);
             }
         }
 
         if (details != null) {
-            String sourceNote = details.getSourceNote(useEnglish);
+            String sourceNote = municipalityText("municipality.source.", details.getSourceNote(false), details.getSourceNote(useEnglish));
             if ((sourceNote != null && !sourceNote.isEmpty()) || (details.getLastChecked() != null && !details.getLastChecked().isEmpty())) {
                 StringBuilder sourceBuilder = new StringBuilder();
                 if (sourceNote != null && !sourceNote.isEmpty()) {
-                    sourceBuilder.append(useEnglish ? "Source: " : "Kilde: ").append(sourceNote);
+                    sourceBuilder.append(getString(R.string.source_prefix).trim()).append(' ').append(sourceNote);
                 }
                 if (details.getLastChecked() != null && !details.getLastChecked().isEmpty()) {
                     if (sourceBuilder.length() > 0) {
                         sourceBuilder.append("\n\n");
                     }
-                    sourceBuilder.append(useEnglish ? "Last checked: " : "Sidst tjekket: ").append(details.getLastChecked());
+                    sourceBuilder.append(getString(R.string.last_checked_prefix).trim()).append(' ').append(details.getLastChecked());
                 }
-                addSubTitle(container, useEnglish ? "Source and date" : "Kilde og dato", 26);
+                addSubTitle(container, getString(R.string.source_and_date), 26);
                 addBodyCard(container, sourceBuilder.toString());
             }
         }
 
         if (!recyclingCenters.isEmpty()) {
-            addSubTitle(container, useEnglish ? "Recycling centres" : "Genbrugspladser", 26);
+            addSubTitle(container, getString(R.string.recycling_centres_count), 26);
+            recyclingCentersContainer = container;
+            addFindNearestButton(container, useEnglish);
             for (RecyclingCenter recyclingCenter : recyclingCenters) {
-                addRecyclingCenterCard(container, recyclingCenter, useEnglish);
+                addRecyclingCenterCard(container, recyclingCenter, useEnglish, userLocation);
             }
+        }
+    }
+
+    private void addFindNearestButton(LinearLayout container, boolean useEnglish) {
+        TextView button = createToggleTextView();
+        button.setText(getString(R.string.find_naermeste_genbrugsplads));
+        button.setOnClickListener(v -> requestUserLocation());
+        findNearestButton = button;
+        container.addView(button);
+    }
+
+    private void requestUserLocation() {
+        if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.ACCESS_FINE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED
+                && ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.ACCESS_COARSE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED) {
+            requestPermissions(
+                    new String[]{Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION},
+                    LOCATION_PERMISSION_REQUEST_CODE
+            );
+            return;
+        }
+
+        findUserLocation();
+    }
+
+    private void findUserLocation() {
+        if (recyclingCentersContainer == null) {
+            return;
+        }
+
+        Toast.makeText(requireContext(), R.string.finder_placering, Toast.LENGTH_SHORT).show();
+        LocationManager locationManager = (LocationManager) requireContext().getSystemService(android.content.Context.LOCATION_SERVICE);
+        LocationListener listener = new LocationListener() {
+            @Override
+            public void onLocationChanged(@NonNull Location location) {
+                userLocation = location;
+                locationManager.removeUpdates(this);
+                renderRecyclingCenters();
+            }
+        };
+
+        try {
+            Location lastKnown = null;
+            for (String provider : locationManager.getProviders(true)) {
+                Location candidate = locationManager.getLastKnownLocation(provider);
+                if (candidate != null && (lastKnown == null || candidate.getTime() > lastKnown.getTime())) {
+                    lastKnown = candidate;
+                }
+            }
+
+            if (lastKnown != null) {
+                userLocation = lastKnown;
+                renderRecyclingCenters();
+                return;
+            }
+
+            locationManager.requestLocationUpdates(
+                    LocationManager.NETWORK_PROVIDER,
+                    0L,
+                    0f,
+                    listener
+            );
+        } catch (SecurityException | IllegalArgumentException e) {
+            Toast.makeText(requireContext(), R.string.placering_ikke_tilgængelig, Toast.LENGTH_LONG).show();
+            Log.w(TAG, "Unable to obtain user location", e);
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode != LOCATION_PERMISSION_REQUEST_CODE) {
+            return;
+        }
+
+        boolean granted = false;
+        for (int result : grantResults) {
+            if (result == PackageManager.PERMISSION_GRANTED) {
+                granted = true;
+                break;
+            }
+        }
+
+        if (granted) {
+            findUserLocation();
+        } else {
+            Toast.makeText(requireContext(), R.string.placeringstilladelse_påkrævet, Toast.LENGTH_LONG).show();
+        }
+    }
+
+    private void renderRecyclingCenters() {
+        if (recyclingCentersContainer == null || currentMunicipality == null) {
+            return;
+        }
+
+        List<RecyclingCenter> centers = getRecyclingCentersForMunicipality(currentMunicipality.getMunicipality());
+        centers.sort((first, second) -> {
+            if (userLocation == null || !first.hasCoordinates()) return first.hasCoordinates() ? 1 : 0;
+            if (!second.hasCoordinates()) return -1;
+            return Double.compare(distanceInKilometres(first), distanceInKilometres(second));
+        });
+
+        int firstCenterIndex = recyclingCentersContainer.indexOfChild(findNearestButton) + 1;
+        recyclingCentersContainer.removeViews(
+                firstCenterIndex,
+                recyclingCentersContainer.getChildCount() - firstCenterIndex
+        );
+        for (RecyclingCenter center : centers) {
+            addRecyclingCenterCard(recyclingCentersContainer, center, currentUseEnglish, userLocation);
+        }
+
+        if (userLocation != null && !centers.isEmpty() && centers.get(0).hasCoordinates()) {
+            openRecyclingCenterInMaps(centers.get(0));
         }
     }
 
@@ -176,14 +327,12 @@ public class MunicipalityDetailsFragment extends Fragment {
         card.addView(rulesTextView);
 
         if (shouldCollapse) {
-            rulesToggle.setText(useEnglish ? "Read all local rules" : "Læs alle lokale regler");
+            rulesToggle.setText(R.string.read_all_local_rules);
             final boolean[] isOpen = {false};
             rulesToggle.setOnClickListener(v -> {
                 isOpen[0] = !isOpen[0];
                 rulesTextView.setText(isOpen[0] ? rules : preview);
-                rulesToggle.setText(isOpen[0]
-                        ? (useEnglish ? "Show less" : "Vis mindre")
-                        : (useEnglish ? "Read all local rules" : "Læs alle lokale regler"));
+                rulesToggle.setText(isOpen[0] ? R.string.show_less : R.string.read_all_local_rules);
             });
             card.addView(rulesToggle);
         }
@@ -209,7 +358,7 @@ public class MunicipalityDetailsFragment extends Fragment {
         container.addView(title);
     }
 
-    private void addSubTitle(LinearLayout container, String text, int topMarginDp) {
+    private TextView addSubTitle(LinearLayout container, String text, int topMarginDp) {
         TextView title = new TextView(requireContext());
         title.setText(text);
         title.setTextColor(getResources().getColor(R.color.green_light));
@@ -225,70 +374,156 @@ public class MunicipalityDetailsFragment extends Fragment {
         title.setLayoutParams(params);
 
         container.addView(title);
+        return title;
     }
 
-    private void addFactGrid(LinearLayout container, List<Municipality.QuickFact> facts, boolean useEnglish) {
-        LinearLayout currentRow = null;
-
-        for (int i = 0; i < facts.size(); i++) {
-            if (i % 2 == 0) {
-                currentRow = new LinearLayout(requireContext());
-                currentRow.setOrientation(LinearLayout.HORIZONTAL);
-                LinearLayout.LayoutParams rowParams = new LinearLayout.LayoutParams(
-                        LinearLayout.LayoutParams.MATCH_PARENT,
-                        LinearLayout.LayoutParams.WRAP_CONTENT
-                );
-                rowParams.setMargins(0, dpToPx(10), 0, 0);
-                currentRow.setLayoutParams(rowParams);
-                container.addView(currentRow);
+    private void addPracticalWasteInformation(LinearLayout container, Municipality.Details details, boolean useEnglish) {
+        String operator = details.getWasteOperator(useEnglish);
+        String officialPage = municipalityText("municipality.label.", details.getOfficialWastePageTitle(false), details.getOfficialWastePageTitle(useEnglish));
+        String centers = details.getRecyclingCenters(useEnglish);
+        if (LanguageManager.isArabic(requireContext()) && hasText(details.getRecyclingCenters(false))) {
+            String count = details.getRecyclingCenters(false).replaceAll("[^0-9]", "");
+            if (!count.isEmpty()) {
+                centers = ArabicText.value(getResources(), "municipality.recyclingCenterCount", "{0} من مراكز إعادة التدوير")
+                        .replace("{0}", count);
             }
+        }
+        String selfServiceTitle = municipalityText("municipality.label.", details.getDigitalSelfServiceTitle(false), details.getDigitalSelfServiceTitle(useEnglish));
+        String selfService = municipalityText("municipality.detail.", details.getDigitalSelfService(false), details.getDigitalSelfService(useEnglish));
 
-            LinearLayout factCard = createCompactFactCard(
-                    facts.get(i).getLabel(useEnglish),
-                    facts.get(i).getValue(useEnglish)
-            );
-            LinearLayout.LayoutParams cardParams = new LinearLayout.LayoutParams(
-                    0,
-                    LinearLayout.LayoutParams.MATCH_PARENT,
-                    1
-            );
-            boolean isLeft = i % 2 == 0;
-            cardParams.setMargins(isLeft ? 0 : dpToPx(6), 0, isLeft ? dpToPx(6) : 0, 0);
-            factCard.setLayoutParams(cardParams);
-            currentRow.addView(factCard);
+        if (!hasText(operator) && !hasText(details.getOfficialWastePageUrl())
+                && !hasText(centers) && (!hasText(selfServiceTitle) || !hasText(selfService))) {
+            return;
         }
 
-        if (facts.size() % 2 == 1 && currentRow != null) {
-            View spacer = new View(requireContext());
-            LinearLayout.LayoutParams spacerParams = new LinearLayout.LayoutParams(
-                    0,
-                    1,
-                    1
-            );
-            spacerParams.setMargins(dpToPx(6), 0, 0, 0);
-            spacer.setLayoutParams(spacerParams);
-            currentRow.addView(spacer);
+        addSectionTitle(container, getString(R.string.practical_waste_info));
+        if (hasText(operator)) {
+            addPracticalInfoCard(container, getString(R.string.waste_operator), operator, null);
+        }
+        if (hasText(details.getOfficialWastePageUrl())) {
+            addPracticalInfoCard(container, getString(R.string.official_waste_page),
+                    hasText(officialPage) ? officialPage : getString(R.string.official_waste_page),
+                    details.getOfficialWastePageUrl());
+        }
+        if (hasText(centers)) {
+            addPracticalInfoCard(container, getString(R.string.recycling_centres_count), centers, null);
+        }
+        if (hasText(selfServiceTitle) && hasText(selfService)) {
+            addPracticalInfoCard(container, selfServiceTitle, selfService, details.getDigitalSelfServiceUrl());
         }
     }
 
-    private LinearLayout createCompactFactCard(String label, String value) {
-        LinearLayout card = createCard();
-        card.setPadding(dpToPx(12), dpToPx(12), dpToPx(12), dpToPx(12));
-
-        TextView labelView = createCardTitle(label, 0);
-        labelView.setTextSize(14);
-        TextView valueView = createBody(value, 4);
-        valueView.setTextSize(14);
-        card.addView(labelView);
-        card.addView(valueView);
-        return card;
+    private String municipalityText(String prefix, String danish, String fallback) {
+        if (LanguageManager.isArabic(requireContext()) && danish != null) {
+            return ArabicText.value(getResources(), prefix + danish, fallback);
+        }
+        return fallback;
     }
 
-    private void addFactCard(LinearLayout container, String label, String value) {
+    private void addFractionOverview(LinearLayout container, Municipality municipality, Municipality.Details details, boolean useEnglish) {
+        int count = details.getWasteFractionCount();
+        int total = details.getWasteFractionTotal();
+        fractionOverviewTitle = addSubTitle(container, getString(R.string.waste_fractions_overview, count, total), 26);
+
+        StringBuilder source = new StringBuilder();
+        source.append(municipality.getWasteRules()).append(' ').append(municipality.getWasteRules(true));
+        if (details.getSchemes() != null) {
+            for (Municipality.Scheme scheme : details.getSchemes()) {
+                source.append(' ').append(scheme.getTitle(false)).append(' ').append(scheme.getDescription(false));
+                source.append(' ').append(scheme.getTitle(true)).append(' ').append(scheme.getDescription(true));
+            }
+        }
+        String normalized = Normalizer.normalize(source.toString().toLowerCase(Locale.ROOT), Normalizer.Form.NFD)
+                .replaceAll("\\p{M}+", "").replace('ø', 'o').replace("æ", "ae");
+        String[] words = normalized.split("[^\\p{L}]+");
+        Set<Integer> detected = new HashSet<>();
+        for (String word : words) {
+            if (word.startsWith("restaffald") || word.startsWith("dagrenovation")) detected.add(0);
+            if (word.startsWith("madaffald") || word.startsWith("bioaffald")) detected.add(1);
+            if (word.equals("pap")) detected.add(2);
+            if (word.startsWith("plast")) detected.add(3);
+            if (word.startsWith("glas")) detected.add(4);
+            if (word.startsWith("miljoboks") || word.startsWith("miljokasse")) detected.add(5);
+            if (word.startsWith("papir")) detected.add(6);
+            if (word.startsWith("metal")) detected.add(7);
+            if (word.startsWith("tekstil")) detected.add(8);
+            if (word.startsWith("karton")) detected.add(9);
+        }
+        if (normalized.contains("farligt affald")) detected.add(5);
+
+        boolean hasUnconfirmed = false;
+        for (int i = 0; i < FRACTIONS.length; i += 2) {
+            LinearLayout row = new LinearLayout(requireContext());
+            row.setOrientation(LinearLayout.HORIZONTAL);
+            LinearLayout.LayoutParams rowParams = new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+            rowParams.setMargins(0, dpToPx(8), 0, 0);
+            row.setLayoutParams(rowParams);
+            for (int j = i; j < Math.min(i + 2, FRACTIONS.length); j++) {
+                int status = count >= FRACTIONS.length || detected.contains(j) ? 0 : detected.size() == count ? 1 : 2;
+                if (status == 2) hasUnconfirmed = true;
+                row.addView(createFractionTile(j, status, useEnglish));
+            }
+            container.addView(row);
+        }
+        if (hasUnconfirmed) {
+            TextView note = createBody(getString(R.string.fraction_unconfirmed_explanation), 8);
+            container.addView(note);
+        }
+    }
+
+    private View createFractionTile(int index, int status, boolean useEnglish) {
+        LinearLayout tile = new LinearLayout(requireContext());
+        tile.setOrientation(LinearLayout.HORIZONTAL);
+        tile.setGravity(android.view.Gravity.CENTER_VERTICAL);
+        tile.setBackgroundResource(R.drawable.details_info_background);
+        tile.setPadding(dpToPx(10), dpToPx(10), dpToPx(10), dpToPx(10));
+        LinearLayout.LayoutParams tileParams = new LinearLayout.LayoutParams(0, dpToPx(76), 1);
+        tileParams.setMargins(dpToPx(4), 0, dpToPx(4), 0);
+        tile.setLayoutParams(tileParams);
+
+        ImageView image = new ImageView(requireContext());
+        image.setImageResource(TrashDB.getImageResourceForKey(FRACTIONS[index], useEnglish));
+        image.setScaleType(ImageView.ScaleType.FIT_CENTER);
+        image.setAlpha(status == 0 ? 1f : 0.5f);
+        tile.addView(image, new LinearLayout.LayoutParams(dpToPx(48), dpToPx(48)));
+
+        LinearLayout labels = new LinearLayout(requireContext());
+        labels.setOrientation(LinearLayout.VERTICAL);
+        LinearLayout.LayoutParams labelsParams = new LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1);
+        labelsParams.setMargins(dpToPx(8), 0, 0, 0);
+        tile.addView(labels, labelsParams);
+        TextView name = new TextView(requireContext());
+        name.setText(LanguageManager.isArabic(requireContext())
+                ? ArabicText.value(getResources(), "category." + FRACTIONS[index], FRACTIONS_EN[index])
+                : useEnglish ? FRACTIONS_EN[index] : FRACTIONS[index]);
+        name.setTextColor(getResources().getColor(R.color.text_color));
+        name.setTextSize(13);
+        name.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+        labels.addView(name);
+        TextView statusText = new TextView(requireContext());
+        statusText.setText(status == 0 ? R.string.fraction_used : status == 1 ? R.string.fraction_not_used : R.string.fraction_unconfirmed);
+        statusText.setTextColor(getResources().getColor(status == 0 ? R.color.green_light : R.color.grey_black));
+        statusText.setTextSize(12);
+        labels.addView(statusText);
+        tile.setContentDescription(name.getText() + ", " + statusText.getText());
+        return tile;
+    }
+
+    private boolean hasText(String value) {
+        return value != null && !value.trim().isEmpty();
+    }
+
+    private void addPracticalInfoCard(LinearLayout container, String label, String value, String url) {
         LinearLayout card = createCard();
-        TextView labelView = createCardTitle(label, 0);
+        card.addView(createCardTitle(label, 0));
         TextView valueView = createBody(value, 5);
-        card.addView(labelView);
+        if (hasText(url)) {
+            valueView.setTextColor(getResources().getColor(R.color.green_light));
+            card.setClickable(true);
+            card.setFocusable(true);
+            card.setOnClickListener(v -> openUrl(url));
+        }
         card.addView(valueView);
         container.addView(card);
     }
@@ -313,7 +548,7 @@ public class MunicipalityDetailsFragment extends Fragment {
         card.setOnClickListener(v -> openUrl(url));
 
         TextView titleView = createCardTitle(title, 0);
-        TextView helperView = createBody(useEnglish ? "Open official page" : "Åbn officiel side", 5);
+        TextView helperView = createBody(getString(R.string.open_official_page), 5);
         helperView.setTextColor(getResources().getColor(R.color.green_light));
 
         card.addView(titleView);
@@ -321,7 +556,12 @@ public class MunicipalityDetailsFragment extends Fragment {
         container.addView(card);
     }
 
-    private void addRecyclingCenterCard(LinearLayout container, RecyclingCenter recyclingCenter, boolean useEnglish) {
+    private void addRecyclingCenterCard(
+            LinearLayout container,
+            RecyclingCenter recyclingCenter,
+            boolean useEnglish,
+            Location userLocation
+    ) {
         LinearLayout card = createCard();
         card.setClickable(true);
         card.setFocusable(true);
@@ -329,14 +569,42 @@ public class MunicipalityDetailsFragment extends Fragment {
 
         TextView titleView = createCardTitle(recyclingCenter.name, 0);
         TextView addressView = createBody(recyclingCenter.address, 5);
-        TextView helperView = createBody(useEnglish ? "Show on map" : "Vis på kort", 8);
+        TextView helperView = createBody(getString(R.string.show_on_map), 8);
         helperView.setTextColor(getResources().getColor(R.color.green_light));
         helperView.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
 
         card.addView(titleView);
         card.addView(addressView);
+        if (userLocation != null && recyclingCenter.hasCoordinates()) {
+            String distance = formatDistance(distanceInKilometres(recyclingCenter), useEnglish);
+            card.addView(createBody(
+                    getString(R.string.afstand_fra_dig, distance),
+                    5
+            ));
+        }
         card.addView(helperView);
         container.addView(card);
+    }
+
+    private double distanceInKilometres(RecyclingCenter recyclingCenter) {
+        float[] results = new float[1];
+        Location.distanceBetween(
+                userLocation.getLatitude(),
+                userLocation.getLongitude(),
+                recyclingCenter.lat,
+                recyclingCenter.lng,
+                results
+        );
+        return results[0] / 1000.0;
+    }
+
+    private String formatDistance(double distance, boolean useEnglish) {
+        String formatted = String.format(
+                java.util.Locale.getDefault(),
+                distance < 10 ? "%.1f km" : "%.0f km",
+                distance
+        );
+        return formatted;
     }
 
     private void openUrl(String url) {
@@ -366,6 +634,8 @@ public class MunicipalityDetailsFragment extends Fragment {
         Intent intent = new Intent(Intent.ACTION_VIEW, mapUri);
         try {
             startActivity(intent);
+            AchievementStore.get(requireContext()).recordRecyclingCenterMap(
+                    recyclingCenter.municipality + ":" + recyclingCenter.name);
         } catch (ActivityNotFoundException e) {
             Log.w(TAG, "No map app available to open recycling centre", e);
         }

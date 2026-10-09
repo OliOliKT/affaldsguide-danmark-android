@@ -23,6 +23,7 @@
                 app:gnt_template_type="@layout/gnt_small_template_view" />
 
             <TextView
+                android:id="@+id/aboutBackgroundTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/baggrund_for_appen_overskrift"
@@ -35,6 +36,7 @@
                 android:paddingTop="16dp"/>
 
             <TextView
+                android:id="@+id/aboutBackgroundBody"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/om_del_1"
@@ -44,6 +46,27 @@
                 android:padding="16dp" />
 
             <TextView
+                android:id="@+id/aboutSortingTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                android:textColor="@color/green_light"
+                android:paddingRight="16dp"
+                android:paddingLeft="16dp"
+                android:paddingTop="16dp" />
+
+            <TextView
+                android:id="@+id/aboutSortingBody"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:lineSpacingExtra="8dp"
+                android:textColor="@color/text_color"
+                android:padding="16dp" />
+
+            <TextView
+                android:id="@+id/aboutHowTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/hvordan_appen_virker_overskrift"
@@ -56,6 +79,7 @@
                 android:paddingTop="16dp"/>
 
             <TextView
+                android:id="@+id/aboutHowBody"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/om_del_3"

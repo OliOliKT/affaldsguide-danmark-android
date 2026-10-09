@@ -23,8 +23,11 @@ public class LanguageFragment extends Fragment {
 
         RadioButton danishButton = view.findViewById(R.id.danishLanguageButton);
         RadioButton englishButton = view.findViewById(R.id.englishLanguageButton);
+        RadioButton arabicButton = view.findViewById(R.id.arabicLanguageButton);
 
-        if (LanguageManager.isEnglish(requireContext())) {
+        if (LanguageManager.isArabic(requireContext())) {
+            arabicButton.setChecked(true);
+        } else if (LanguageManager.isEnglish(requireContext())) {
             englishButton.setChecked(true);
         } else {
             danishButton.setChecked(true);
@@ -36,6 +39,10 @@ public class LanguageFragment extends Fragment {
         });
         englishButton.setOnClickListener(v -> {
             LanguageManager.saveLanguage(requireContext(), LanguageManager.ENGLISH);
+            requireActivity().recreate();
+        });
+        arabicButton.setOnClickListener(v -> {
+            LanguageManager.saveLanguage(requireContext(), LanguageManager.ARABIC);
             requireActivity().recreate();
         });
     }

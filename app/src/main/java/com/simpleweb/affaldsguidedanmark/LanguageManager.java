@@ -17,6 +17,7 @@ public class LanguageManager {
     private static final String LANGUAGE_KEY = "language";
     public static final String DANISH = "da";
     public static final String ENGLISH = "en";
+    public static final String ARABIC = "ar";
 
     public static void applySavedLanguage(Context context) {
         setAppLocale(getSavedLanguage(context));
@@ -35,6 +36,18 @@ public class LanguageManager {
 
     public static boolean isEnglish(Context context) {
         return ENGLISH.equals(getSavedLanguage(context));
+    }
+
+    public static boolean isArabic(Context context) {
+        return ARABIC.equals(getSavedLanguage(context));
+    }
+
+    public static boolean usesNonDanishContent(Context context) {
+        return !DANISH.equals(getSavedLanguage(context));
+    }
+
+    public static boolean isArabic(Resources resources) {
+        return ARABIC.equals(resources.getConfiguration().getLocales().get(0).getLanguage());
     }
 
     public static Context wrapContext(Context context) {

@@ -4,11 +4,19 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.Rect;
+import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.VibrationEffect;
+import android.os.Vibrator;
 import android.text.Editable;
+import android.text.SpannableStringBuilder;
+import android.text.Spanned;
 import android.text.TextWatcher;
+import android.text.style.RelativeSizeSpan;
+import android.text.style.StyleSpan;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
@@ -39,6 +47,8 @@ import com.google.android.gms.ads.MobileAds;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 import com.google.android.material.navigation.NavigationView;
+import com.google.android.material.snackbar.Snackbar;
+import com.google.android.material.snackbar.BaseTransientBottomBar;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -56,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
     private int greetingOnboardingStep = 0;
     private int lastSelectedBottomNavigationItemId = R.id.search_trash_button;
     private boolean isUpdatingBottomNavigationSelection = false;
+    private boolean achievementBannerShowing = false;
 
     @Override
     protected void attachBaseContext(Context newBase) {
@@ -86,6 +97,21 @@ public class MainActivity extends AppCompatActivity {
             applyMainSystemBarInsets();
             setUpMainLayout();
         }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        AchievementStore store = AchievementStore.get(this);
+        store.setUnlockListener(this::showPendingAchievement);
+        store.recordAppUse();
+        showPendingAchievement();
+    }
+
+    @Override
+    protected void onPause() {
+        AchievementStore.get(this).setUnlockListener(null);
+        super.onPause();
     }
 
     @Override
@@ -196,11 +222,14 @@ public class MainActivity extends AppCompatActivity {
         RadioGroup languageRadioGroup = findViewById(R.id.languageRadioGroup);
         RadioButton danishLanguageOption = findViewById(R.id.danishLanguageOption);
         RadioButton englishLanguageOption = findViewById(R.id.englishLanguageOption);
+        RadioButton arabicLanguageOption = findViewById(R.id.arabicLanguageOption);
         AutoCompleteTextView municipalityInput = findViewById(R.id.greetingMunicipalityInput);
         TextView selectedMunicipalityText = findViewById(R.id.greetingSelectedMunicipality);
         setUpGreetingMunicipalityPicker(municipalityInput, selectedMunicipalityText);
 
-        if (LanguageManager.isEnglish(this)) {
+        if (LanguageManager.isArabic(this)) {
+            arabicLanguageOption.setChecked(true);
+        } else if (LanguageManager.isEnglish(this)) {
             englishLanguageOption.setChecked(true);
         } else {
             danishLanguageOption.setChecked(true);
@@ -209,6 +238,10 @@ public class MainActivity extends AppCompatActivity {
         languageRadioGroup.setOnCheckedChangeListener((group, checkedId) -> {
             if (checkedId == R.id.englishLanguageOption) {
                 LanguageManager.saveLanguage(this, LanguageManager.ENGLISH);
+                sharedPref.edit().putInt("greetingOnboardingStep", 1).apply();
+                recreate();
+            } else if (checkedId == R.id.arabicLanguageOption) {
+                LanguageManager.saveLanguage(this, LanguageManager.ARABIC);
                 sharedPref.edit().putInt("greetingOnboardingStep", 1).apply();
                 recreate();
             } else if (checkedId == R.id.danishLanguageOption) {
@@ -325,10 +358,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void setUpGreetingMunicipalityPicker(AutoCompleteTextView municipalityInput, TextView selectedMunicipalityText) {
         MunicipalityDB municipalityDB = new MunicipalityDB(getResources());
-        List<String> municipalityNames = new ArrayList<>();
-        for (Municipality municipality : municipalityDB.getMunicipalities()) {
-            municipalityNames.add(municipality.getMunicipality());
-        }
+        List<Municipality> municipalities = municipalityDB.getMunicipalities();
 
         municipalityInput.setAdapter(null);
 
@@ -342,7 +372,7 @@ public class MainActivity extends AppCompatActivity {
             if (hasFocus) {
                 renderGreetingMunicipalitySuggestions(
                         municipalityInput.getText().toString(),
-                        municipalityNames,
+                        municipalities,
                         municipalityInput,
                         selectedMunicipalityText
                 );
@@ -353,7 +383,7 @@ public class MainActivity extends AppCompatActivity {
         municipalityInput.setOnClickListener(view -> {
             renderGreetingMunicipalitySuggestions(
                     municipalityInput.getText().toString(),
-                    municipalityNames,
+                    municipalities,
                     municipalityInput,
                     selectedMunicipalityText
             );
@@ -365,13 +395,13 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if (!isExactMunicipalityName(s.toString(), municipalityNames)) {
+                if (!isExactMunicipalityName(s.toString(), municipalities)) {
                     selectedMunicipalityText.setVisibility(View.GONE);
                 }
 
                 renderGreetingMunicipalitySuggestions(
                         s.toString(),
-                        municipalityNames,
+                        municipalities,
                         municipalityInput,
                         selectedMunicipalityText
                 );
@@ -385,7 +415,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void renderGreetingMunicipalitySuggestions(
             String query,
-            List<String> municipalityNames,
+            List<Municipality> municipalities,
             AutoCompleteTextView municipalityInput,
             TextView selectedMunicipalityText
     ) {
@@ -394,7 +424,7 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
-        List<String> suggestions = findGreetingMunicipalitySuggestions(query, municipalityNames);
+        List<Municipality> suggestions = findGreetingMunicipalitySuggestions(query, municipalities);
         if (suggestions.isEmpty()) {
             dismissGreetingMunicipalitySuggestions();
             return;
@@ -404,16 +434,31 @@ public class MainActivity extends AppCompatActivity {
         suggestionsLayout.setOrientation(LinearLayout.VERTICAL);
         suggestionsLayout.setBackgroundResource(R.drawable.autocomplete_dropdown_background);
 
-        for (String suggestion : suggestions) {
-            TextView suggestionView = new TextView(this);
-            suggestionView.setText(suggestion);
-            suggestionView.setTextColor(ContextCompat.getColor(this, R.color.text_color));
-            suggestionView.setTextSize(14);
-            suggestionView.setPadding(dpToPx(14), dpToPx(10), dpToPx(14), dpToPx(10));
+        for (Municipality suggestion : suggestions) {
+            LinearLayout suggestionView = new LinearLayout(this);
+            suggestionView.setOrientation(LinearLayout.VERTICAL);
+            suggestionView.setPadding(dpToPx(14), dpToPx(8), dpToPx(14), dpToPx(8));
+
+            TextView municipalityNameView = new TextView(this);
+            municipalityNameView.setText(suggestion.getMunicipality());
+            municipalityNameView.setTextColor(ContextCompat.getColor(this, R.color.text_color));
+            municipalityNameView.setTextSize(14);
+            suggestionView.addView(municipalityNameView);
+
+            String alias = findMatchingPostalPlaceLabel(suggestion, query);
+            if (alias != null) {
+                TextView aliasView = new TextView(this);
+                aliasView.setText(alias);
+                aliasView.setTextColor(ContextCompat.getColor(this, R.color.grey_black));
+                aliasView.setTextSize(12);
+                aliasView.setPadding(0, dpToPx(2), 0, 0);
+                suggestionView.addView(aliasView);
+            }
+
             suggestionView.setOnClickListener(view -> {
-                municipalityInput.setText(suggestion, false);
+                municipalityInput.setText(suggestion.getMunicipality(), false);
                 municipalityInput.setSelection(municipalityInput.length());
-                showSelectedMunicipality(selectedMunicipalityText, suggestion);
+                showSelectedMunicipality(selectedMunicipalityText, suggestion.getMunicipality());
                 dismissGreetingMunicipalitySuggestions();
 
                 InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -426,7 +471,7 @@ public class MainActivity extends AppCompatActivity {
 
         dismissGreetingMunicipalitySuggestions();
 
-        int popupHeight = (suggestions.size() * dpToPx(40)) + dpToPx(8);
+        int popupHeight = (suggestions.size() * dpToPx(54)) + dpToPx(8);
         greetingMunicipalitySuggestionsPopup = new PopupWindow(
                 suggestionsLayout,
                 municipalityInput.getWidth(),
@@ -450,17 +495,17 @@ public class MainActivity extends AppCompatActivity {
         greetingMunicipalitySuggestionsPopup = null;
     }
 
-    private List<String> findGreetingMunicipalitySuggestions(String query, List<String> municipalityNames) {
+    private List<Municipality> findGreetingMunicipalitySuggestions(String query, List<Municipality> municipalities) {
         String normalizedQuery = normalizeMunicipalityQuery(query);
-        List<String> suggestions = new ArrayList<>();
+        List<Municipality> suggestions = new ArrayList<>();
 
         if (normalizedQuery.isEmpty()) {
             return suggestions;
         }
 
-        for (String municipalityName : municipalityNames) {
-            if (normalizeMunicipalityQuery(municipalityName).contains(normalizedQuery)) {
-                suggestions.add(municipalityName);
+        for (Municipality municipality : municipalities) {
+            if (municipalityMatchesQuery(municipality, normalizedQuery)) {
+                suggestions.add(municipality);
                 if (suggestions.size() == 4) {
                     break;
                 }
@@ -470,14 +515,49 @@ public class MainActivity extends AppCompatActivity {
         return suggestions;
     }
 
+    private boolean municipalityMatchesQuery(Municipality municipality, String normalizedQuery) {
+        if (normalizeMunicipalityQuery(municipality.getMunicipality()).contains(normalizedQuery)) {
+            return true;
+        }
+
+        if (municipality.getPostalPlaces() == null) {
+            return false;
+        }
+
+        for (Municipality.PostalPlace postalPlace : municipality.getPostalPlaces()) {
+            if (normalizeMunicipalityQuery(postalPlace.getDisplayName()).contains(normalizedQuery)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    private String findMatchingPostalPlaceLabel(Municipality municipality, String query) {
+        String normalizedQuery = normalizeMunicipalityQuery(query);
+        if (normalizedQuery.isEmpty()
+                || normalizeMunicipalityQuery(municipality.getMunicipality()).contains(normalizedQuery)
+                || municipality.getPostalPlaces() == null) {
+            return null;
+        }
+
+        for (Municipality.PostalPlace postalPlace : municipality.getPostalPlaces()) {
+            if (normalizeMunicipalityQuery(postalPlace.getDisplayName()).contains(normalizedQuery)) {
+                return postalPlace.getDisplayName();
+            }
+        }
+
+        return null;
+    }
+
     private void showSelectedMunicipality(TextView selectedMunicipalityText, String municipalityName) {
         selectedMunicipalityText.setText(getString(R.string.greeting_municipality_selected, municipalityName));
         selectedMunicipalityText.setVisibility(View.VISIBLE);
     }
 
-    private boolean isExactMunicipalityName(String value, List<String> municipalityNames) {
-        for (String municipalityName : municipalityNames) {
-            if (municipalityName.equalsIgnoreCase(value.trim())) {
+    private boolean isExactMunicipalityName(String value, List<Municipality> municipalities) {
+        for (Municipality municipality : municipalities) {
+            if (municipality.getMunicipality().equalsIgnoreCase(value.trim())) {
                 return true;
             }
         }
@@ -509,6 +589,7 @@ public class MainActivity extends AppCompatActivity {
         navController = Navigation.findNavController(this, R.id.nav_host_fragment);
 
         drawerLayout = findViewById(R.id.main_layout);
+        showPendingAchievement();
 
         bottomNavigationView = findViewById(R.id.bottom_navigation);
 
@@ -539,6 +620,8 @@ public class MainActivity extends AppCompatActivity {
         });
 
         navigationView = findViewById(R.id.navigation_view);
+        navigationView.getMenu().findItem(R.id.achievements)
+                .setTitle(InfoPageText.get(this, "achievements.page"));
 
         navController.addOnDestinationChangedListener((controller, destination, arguments) -> {
             updateBottomNavigationSelectionForDestination(destination.getId());
@@ -568,16 +651,16 @@ public class MainActivity extends AppCompatActivity {
                     navController.navigate(R.id.fragment_contact_information);
                     drawerLayout.closeDrawer(GravityCompat.END);
                     return true;
-                } else if (itemId == R.id.spørgsmålogsvar) {
-                    navController.navigate(R.id.fragment_qa);
-                    drawerLayout.closeDrawer(GravityCompat.END);
-                    return true;
                 } else if (itemId == R.id.seneste_soegninger) {
                     navController.navigate(R.id.fragment_recent_searches);
                     drawerLayout.closeDrawer(GravityCompat.END);
                     return true;
                 } else if (itemId == R.id.sprog) {
                     navController.navigate(R.id.fragment_language);
+                    drawerLayout.closeDrawer(GravityCompat.END);
+                    return true;
+                } else if (itemId == R.id.achievements) {
+                    navController.navigate(R.id.fragment_achievements);
                     drawerLayout.closeDrawer(GravityCompat.END);
                     return true;
                 } else if (itemId == R.id.privatlivspolitik) {
@@ -592,6 +675,53 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
+    }
+
+    private void showPendingAchievement() {
+        if (achievementBannerShowing || navController == null) return;
+        View root = findViewById(R.id.main_content_root);
+        if (root == null) return;
+        AchievementStore store = AchievementStore.get(this);
+        String id = store.takePendingUnlock();
+        if (id == null) return;
+        achievementBannerShowing = true;
+        String title = InfoPageText.get(this, "achievements." + id + ".title");
+        String detail = InfoPageText.get(this, "achievements." + id + ".detail");
+        String heading = InfoPageText.get(this, "achievements.unlocked") + ": " + title;
+        SpannableStringBuilder message = new SpannableStringBuilder(heading + "\n" + detail);
+        message.setSpan(new StyleSpan(Typeface.BOLD), 0, heading.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        message.setSpan(new RelativeSizeSpan(1.12f), 0, heading.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        Snackbar banner = Snackbar.make(root, message, 7000);
+        banner.getView().setBackgroundResource(R.drawable.achievement_banner_background);
+        banner.getView().setElevation(getResources().getDisplayMetrics().density * 8);
+        banner.setTextColor(ContextCompat.getColor(this, R.color.white));
+        TextView bannerText = banner.getView().findViewById(com.google.android.material.R.id.snackbar_text);
+        if (bannerText != null) {
+            bannerText.setMaxLines(4);
+            Drawable trophy = ContextCompat.getDrawable(this, R.drawable.achievement_trophy);
+            bannerText.setCompoundDrawablesRelativeWithIntrinsicBounds(trophy, null, null, null);
+            bannerText.setCompoundDrawablePadding(Math.round(getResources().getDisplayMetrics().density * 12));
+        }
+        View bottomNav = findViewById(R.id.bottom_navigation);
+        if (bottomNav != null) banner.setAnchorView(bottomNav);
+        banner.getView().setOnClickListener(view -> {
+            Bundle args = new Bundle();
+            args.putString("highlightAchievement", id);
+            navController.navigate(R.id.fragment_achievements, args);
+            banner.dismiss();
+        });
+        banner.addCallback(new BaseTransientBottomBar.BaseCallback<Snackbar>() {
+            @Override
+            public void onDismissed(Snackbar transientBottomBar, int event) {
+                achievementBannerShowing = false;
+                showPendingAchievement();
+            }
+        });
+        banner.show();
+        Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+        if (vibrator != null && vibrator.hasVibrator()) {
+            vibrator.vibrate(VibrationEffect.createOneShot(35, VibrationEffect.DEFAULT_AMPLITUDE));
+        }
     }
 
     private void updateBottomNavigationSelectionForDestination(int destinationId) {
@@ -615,8 +745,8 @@ public class MainActivity extends AppCompatActivity {
         if (destinationId == R.id.fragment_recent_searches
                 || destinationId == R.id.fragment_language
                 || destinationId == R.id.fragment_about
+                || destinationId == R.id.fragment_achievements
                 || destinationId == R.id.fragment_contact_information
-                || destinationId == R.id.fragment_qa
                 || destinationId == R.id.fragment_privacy_policy
                 || destinationId == R.id.fragment_terms_of_service) {
             return R.id.navigation_view_button;

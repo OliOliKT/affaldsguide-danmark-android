@@ -23,6 +23,7 @@
                 app:gnt_template_type="@layout/gnt_small_template_view" />
 
             <TextView
+                android:id="@+id/contactPageTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingLeft="16dp"
@@ -35,9 +36,9 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/contactPageBody"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:autoLink="all"
                 android:lineSpacingExtra="8dp"
                 android:padding="16dp"
                 android:text="@string/kontaktoplysninger"

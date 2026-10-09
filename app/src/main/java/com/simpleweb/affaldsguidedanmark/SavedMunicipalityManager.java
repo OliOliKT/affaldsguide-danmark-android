@@ -19,6 +19,7 @@ public final class SavedMunicipalityManager {
                 .edit()
                 .putString(KEY_MUNICIPALITY_NAME, municipalityName)
                 .apply();
+        AchievementStore.get(context).recordMunicipalitySelected();
     }
 
     public static void remove(Context context) {

@@ -1,7 +1,44 @@
 <resources>
+    <string name="achievements_page">Præstationer</string>
+    <string name="arabic_language">العربية</string>
+    <string name="useful_official_links">Nyttige officielle links</string>
+    <string name="source_and_date">Kilde og dato</string>
+    <string name="source_prefix">Kilde: </string>
+    <string name="last_checked_prefix">Sidst tjekket: </string>
+    <string name="open_official_page">Åbn officiel side</string>
+    <string name="show_on_map">Vis på kort</string>
+    <string name="read_all_local_rules">Læs alle lokale regler</string>
+    <string name="show_less">Vis mindre</string>
+    <string name="nearest_recycling_centre">Nærmeste genbrugsplads</string>
+    <string name="location_to_find_centre">Tryk for at finde nærmeste genbrugsplads</string>
+    <string name="finding_nearest_centre">Finder nærmeste genbrugsplads…</string>
+    <string name="nearest_centre_unavailable">Ingen genbrugsplads fundet</string>
+    <string name="choose_municipality_prompt">Hvilken kommune bor du i?</string>
+    <string name="choose_municipality">Vælg kommune</string>
+    <string name="uses_fractions">Bruger %1$d ud af %2$d fraktioner</string>
+    <string name="waste_fractions_overview">Affaldsfraktioner: %1$d af %2$d</string>
+    <string name="fraction_used">Bruges</string>
+    <string name="fraction_not_used">Bruges ikke</string>
+    <string name="fraction_unconfirmed">Ikke bekræftet</string>
+    <string name="fraction_unconfirmed_explanation">Ikke bekræftet betyder, at kommunens materiale ikke angiver fraktionen tydeligt.</string>
+    <string name="municipal_waste_service_information">Info om kommunens affaldsordning</string>
+    <string name="practical_waste_info">Praktisk affaldsinfo</string>
+    <string name="waste_operator">Affaldsoperatør</string>
+    <string name="official_waste_page">Officiel affaldsside</string>
+    <string name="recycling_centres_count">Genbrugspladser</string>
+    <string name="local_result_title">I %1$s skal %2$s sorteres som:</string>
+    <string name="local_disposal_title">I %1$s kan %2$s afskaffes således:</string>
+    <string name="local_sorting_description">%1$s skal sorteres som %2$s i %3$s.</string>
+    <string name="local_rule_source">Se kommunens kilde</string>
+    <string name="local_rule_checked">Kilden er tjekket: %1$s</string>
     <string name="app_name">Affaldsguide Danmark</string>
 
     <string name="indtast_skrald">Indtast affald...</string>
+    <string name="find_naermeste_genbrugsplads">Find nærmeste genbrugsplads</string>
+    <string name="finder_placering">Finder din placering…</string>
+    <string name="afstand_fra_dig">%1$s væk</string>
+    <string name="placering_ikke_tilgængelig">Din placering kunne ikke findes. Kontrollér, at placering er slået til, og prøv igen.</string>
+    <string name="placeringstilladelse_påkrævet">Tillad positionsadgang for at finde den nærmeste genbrugsplads.</string>
 
     <string name="om_del_1" formatted="false">Affaldssortering kan være svær at gennemskue i hverdagen, især når man står med en genstand, der ikke passer tydeligt ind i en bestemt beholder.\n\nI Danmark arbejder kommunerne ud fra mere ensartede affaldsfraktioner som madaffald, papir, pap, metal, glas, plast, mad- og drikkekartoner, tekstilaffald, farligt affald og restaffald. Der kan dog stadig være lokale forskelle i ordninger, beholdere og afleveringssteder.\n\nAffaldsguide Danmark er en uafhængig sorteringsguide og er ikke tilknyttet, godkendt af eller drevet af en offentlig myndighed, kommune eller offentligt affaldsselskab. Appen er lavet for at gøre det lettere at finde et hurtigt og brugbart svar, men officielle og lokale regler bør altid kontrolleres hos kommunen eller relevante offentlige kilder.</string>
 
@@ -15,51 +52,10 @@
 
     <string name="introtekst">Søg efter affald og se, hvilken affaldsfraktion det skal sorteres i.</string>
 
-    <string name="q1">Hvad gør jeg, hvis min kommune ikke har en beholder til den viste affaldsfraktion?</string>
-
-    <string name="a1">Hvis du ikke har en beholder til en bestemt affaldsfraktion, bør du tjekke din kommunes anvisninger. Mange typer affald kan afleveres på genbrugspladsen eller via særlige indsamlingsordninger. Farligt affald bør aldrig smides i restaffald.</string>
-
-    <string name="q2">Hvad gør jeg, hvis appen ikke kan finde affaldet?</string>
-
-    <string name="a2">Hvis appen ikke kan finde affaldet, kan du prøve et mere almindeligt ord eller en anden stavemåde. Du kan også tjekke mit-affald.dk, din kommunes hjemmeside eller spørge på den lokale genbrugsplads.</string>
-
-    <string name="q3">Hvorfor får jeg ikke tømt min affaldsbeholder?</string>
-
-    <string name="a3">Hvis din affaldsbeholder ikke er blevet tømt som forventet, skal du kontakte din kommune eller dit lokale affaldsselskab. De kan oplyse om tømningsdage, fejlmeldinger og lokale regler.</string>
-
-    <string name="q4">Skal appen bruge mit telefonkamera?</string>
-
-    <string name="a4">Nej. Den nuværende version af appen bruger ikke kameraet. Du kan søge efter affald direkte i søgefeltet.</string>
-
-    <string name="q5">Kan jeg hjælpe med at tilføje affaldsgenstande i appen?</string>
-
-    <string name="a5">Ja. Hvis du opdager en affaldsgenstand, der mangler eller er forkert, må du meget gerne kontakte mig på info@simplecode.dk, så databasen kan blive forbedret.</string>
-
-    <string name="q6">Hvorfor ligner piktogrammerne ikke altid dem på mine beholdere?</string>
-
-    <string name="a6">Piktogrammer kan variere mellem kommuner, beholdere og emballager. Appen bruger piktogrammer som visuel hjælp, men du bør altid følge teksten og din kommunes lokale anvisninger, hvis der er forskel.</string>
-
-    <string name="q7">Kan appen bruges i alle kommuner?</string>
-
-    <string name="a7">Appen kan bruges som generel sorteringsguide i hele Danmark. Der kan dog være lokale forskelle i beholdere, indsamlingsordninger og afleveringssteder, så kommunens egne regler gælder altid først.</string>
-
-    <string name="q8">Hvordan håndterer jeg store genstande eller møbler, jeg ønsker at smide ud?</string>
-
-    <string name="a8">Store genstande og møbler skal som regel afleveres på genbrugspladsen eller håndteres som storskrald. Nogle kommuner tilbyder faste afhentningsdage eller bestilling af afhentning. Tjek derfor reglerne for storskrald i din kommune.</string>
-
-    <string name="q9">Hvilket flydende affald må jeg hælde i vasken?</string>
-
-    <string name="a9">Som udgangspunkt bør du kun hælde små mængder almindelige vandbaserede væsker i vasken. Undgå fedt, olie, maling, opløsningsmidler, kemikalier, stearin, kaffegrums og andet, der kan skade afløb, renseanlæg eller miljø.</string>
-
-    <string name="q10">Hvor kan jeg finde opdaterede oplysninger om affaldssortering og regler i min kommune?</string>
-
-    <string name="a10">Du kan finde opdaterede oplysninger på din kommunes hjemmeside, hos dit lokale affaldsselskab eller på borger.dk. Du kan også bruge mit-affald.dk til at finde links og kontaktoplysninger for mange kommuner.</string>
-
     <string name="baggrund_for_appen_overskrift">Baggrund for appen</string>
     <string name="hvordan_appen_virker_overskrift">Hvordan appen virker</string>
     <string name="kontaktoplysninger_overskrift">Kontaktoplysninger</string>
     <string name="privatlivspolitik_overskrift">Privatlivspolitik</string>
-    <string name="qa_overskrift">Spørgsmål og svar</string>
     <string name="vilkår_og_betingelser_overskrift">Vilkår og betingelser</string>
     <string name="tomt_søgefelt">Skriv venligst noget i søgefeltet</string>
     <string name="affald_ikke_fundet_med_forslag">Vi fandt ikke "%1$s".\n\nMente du "%2$s"?</string>
@@ -82,7 +78,7 @@
     <string name="se_alle">Se alle</string>
     <string name="kommuner">Kommuner</string>
     <string name="kommuner_intro">Find vejledende information, kontaktoplysninger og links til officielle kommunale kilder.</string>
-    <string name="indtast_kommune">Indtast kommune</string>
+    <string name="indtast_kommune">Søg efter kommune, by eller postnummer</string>
     <string name="kommuner_kunne_ikke_indlaeses">Kommunedata kunne ikke indlæses.</string>
     <string name="kommunens_adresse">Kommunens adresse</string>
     <string name="gem_kommune">Angiv som din kommune</string>
@@ -96,7 +92,6 @@
     <string name="copyright">Ejet af Simple Web | CVR: 41279664 | Copyright 2026</string>
     <string name="menu1_om_appen">Om appen</string>
     <string name="menu_2_kontaktinformation">Kontaktinformation</string>
-    <string name="menu_3_spørgsmål_og_svar">Spørgsmål og svar</string>
     <string name="menu_4_privatlivspolitik">Privatlivspolitik</string>
     <string name="menu_5_vilkår_og_betingelser">Vilkår og betingelser</string>
     <string name="affaldsfraktioner">Affaldsfraktioner</string>
@@ -110,7 +105,7 @@
     <string name="sprog_intro">Vælg appens sprog</string>
     <string name="greeting_municipality_title">Gem din kommune</string>
     <string name="greeting_municipality_text">Valgfrit: angiv den kommune som du bor i.</string>
-    <string name="greeting_municipality_hint">Indtast kommune</string>
+    <string name="greeting_municipality_hint">Søg efter kommune, by eller postnummer</string>
     <string name="greeting_municipality_selected">Valgt kommune: %1$s</string>
     <string name="onboarding_welcome_subtitle">Din assistent til sortering af affald i hele landet</string>
     <string name="onboarding_language_title">Angiv dit foretrukne sprog</string>

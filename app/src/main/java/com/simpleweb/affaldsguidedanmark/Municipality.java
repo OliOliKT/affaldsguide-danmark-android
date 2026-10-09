@@ -23,6 +23,9 @@ public class Municipality implements Parcelable {
     @SerializedName("By")
     private String city;
 
+    @SerializedName("Poststeder")
+    private List<PostalPlace> postalPlaces;
+
     @SerializedName("Mailadresse")
     private String email;
 
@@ -41,6 +44,12 @@ public class Municipality implements Parcelable {
     @SerializedName("Affaldsregler_en")
     private String wasteRulesEn;
 
+    @SerializedName("Beskrivelse_ar")
+    private String descriptionAr;
+
+    @SerializedName("Affaldsregler_ar")
+    private String wasteRulesAr;
+
     @SerializedName("Detaljer")
     private Details details;
 
@@ -49,12 +58,15 @@ public class Municipality implements Parcelable {
         address = in.readString();
         postalCode = in.readString();
         city = in.readString();
+        postalPlaces = in.createTypedArrayList(PostalPlace.CREATOR);
         email = in.readString();
         url = in.readString();
         description = in.readString();
         wasteRules = in.readString();
         descriptionEn = in.readString();
         wasteRulesEn = in.readString();
+        descriptionAr = in.readString();
+        wasteRulesAr = in.readString();
         details = in.readParcelable(Details.class.getClassLoader());
     }
 
@@ -86,6 +98,10 @@ public class Municipality implements Parcelable {
         return city;
     }
 
+    public List<PostalPlace> getPostalPlaces() {
+        return postalPlaces;
+    }
+
     public String getEmail() {
         return email;
     }
@@ -99,6 +115,7 @@ public class Municipality implements Parcelable {
     }
 
     public String getDescription(boolean useEnglish) {
+        if ("ar".equals(java.util.Locale.getDefault().getLanguage()) && descriptionAr != null && !descriptionAr.isEmpty()) return descriptionAr;
         if (useEnglish && descriptionEn != null && !descriptionEn.isEmpty()) {
             return descriptionEn;
         }
@@ -110,6 +127,7 @@ public class Municipality implements Parcelable {
     }
 
     public String getWasteRules(boolean useEnglish) {
+        if ("ar".equals(java.util.Locale.getDefault().getLanguage()) && wasteRulesAr != null && !wasteRulesAr.isEmpty()) return wasteRulesAr;
         if (useEnglish && wasteRulesEn != null && !wasteRulesEn.isEmpty()) {
             return wasteRulesEn;
         }
@@ -135,13 +153,65 @@ public class Municipality implements Parcelable {
         dest.writeString(address);
         dest.writeString(postalCode);
         dest.writeString(city);
+        dest.writeTypedList(postalPlaces);
         dest.writeString(email);
         dest.writeString(url);
         dest.writeString(description);
         dest.writeString(wasteRules);
         dest.writeString(descriptionEn);
         dest.writeString(wasteRulesEn);
+        dest.writeString(descriptionAr);
+        dest.writeString(wasteRulesAr);
         dest.writeParcelable(details, flags);
+    }
+
+    @Keep
+    public static class PostalPlace implements Parcelable {
+        @SerializedName("Postnr")
+        private int postalCode;
+
+        @SerializedName("By")
+        private String city;
+
+        protected PostalPlace(Parcel in) {
+            postalCode = in.readInt();
+            city = in.readString();
+        }
+
+        public static final Creator<PostalPlace> CREATOR = new Creator<PostalPlace>() {
+            @Override
+            public PostalPlace createFromParcel(Parcel in) {
+                return new PostalPlace(in);
+            }
+
+            @Override
+            public PostalPlace[] newArray(int size) {
+                return new PostalPlace[size];
+            }
+        };
+
+        public int getPostalCode() {
+            return postalCode;
+        }
+
+        public String getCity() {
+            return city;
+        }
+
+        public String getDisplayName() {
+            return postalCode + " " + city;
+        }
+
+        @Override
+        public int describeContents() {
+            return 0;
+        }
+
+        @Override
+        public void writeToParcel(Parcel dest, int flags) {
+            dest.writeInt(postalCode);
+            dest.writeString(city);
+        }
     }
 
     @Keep
@@ -161,6 +231,51 @@ public class Municipality implements Parcelable {
         @SerializedName("HurtigeFakta")
         private List<QuickFact> quickFacts;
 
+        @SerializedName("Affaldsoperatør")
+        private String wasteOperator;
+
+        @SerializedName("Affaldsoperatør_en")
+        private String wasteOperatorEn;
+
+        @SerializedName("AffaldsoperatørUrl")
+        private String wasteOperatorUrl;
+
+        @SerializedName("AffaldsfraktionerAntal")
+        private Integer wasteFractionCount;
+
+        @SerializedName("AffaldsfraktionerIAlt")
+        private Integer wasteFractionTotal;
+
+        @SerializedName("OfficielAffaldsside")
+        private String officialWastePageUrl;
+
+        @SerializedName("OfficielAffaldssideTitel")
+        private String officialWastePageTitle;
+
+        @SerializedName("OfficielAffaldssideTitel_en")
+        private String officialWastePageTitleEn;
+
+        @SerializedName("Genbrugspladser")
+        private String recyclingCenters;
+
+        @SerializedName("Genbrugspladser_en")
+        private String recyclingCentersEn;
+
+        @SerializedName("DigitalSelvbetjeningTitel")
+        private String digitalSelfServiceTitle;
+
+        @SerializedName("DigitalSelvbetjeningTitel_en")
+        private String digitalSelfServiceTitleEn;
+
+        @SerializedName("DigitalSelvbetjening")
+        private String digitalSelfService;
+
+        @SerializedName("DigitalSelvbetjening_en")
+        private String digitalSelfServiceEn;
+
+        @SerializedName("DigitalSelvbetjeningUrl")
+        private String digitalSelfServiceUrl;
+
         @SerializedName("Links")
         private List<OfficialLink> links;
 
@@ -171,6 +286,21 @@ public class Municipality implements Parcelable {
             schemes = in.createTypedArrayList(Scheme.CREATOR);
             quickFacts = in.createTypedArrayList(QuickFact.CREATOR);
             links = in.createTypedArrayList(OfficialLink.CREATOR);
+            wasteOperator = in.readString();
+            wasteOperatorEn = in.readString();
+            wasteOperatorUrl = in.readString();
+            wasteFractionCount = (Integer) in.readValue(Integer.class.getClassLoader());
+            wasteFractionTotal = (Integer) in.readValue(Integer.class.getClassLoader());
+            officialWastePageUrl = in.readString();
+            officialWastePageTitle = in.readString();
+            officialWastePageTitleEn = in.readString();
+            recyclingCenters = in.readString();
+            recyclingCentersEn = in.readString();
+            digitalSelfServiceTitle = in.readString();
+            digitalSelfServiceTitleEn = in.readString();
+            digitalSelfService = in.readString();
+            digitalSelfServiceEn = in.readString();
+            digitalSelfServiceUrl = in.readString();
         }
 
         public static final Creator<Details> CREATOR = new Creator<Details>() {
@@ -204,6 +334,50 @@ public class Municipality implements Parcelable {
             return quickFacts;
         }
 
+        public String getWasteOperator(boolean useEnglish) {
+            return localized(wasteOperator, wasteOperatorEn, useEnglish);
+        }
+
+        public String getWasteOperatorUrl() {
+            return wasteOperatorUrl;
+        }
+
+        public Integer getWasteFractionCount() {
+            return wasteFractionCount;
+        }
+
+        public Integer getWasteFractionTotal() {
+            return wasteFractionTotal;
+        }
+
+        public String getOfficialWastePageUrl() {
+            return officialWastePageUrl;
+        }
+
+        public String getOfficialWastePageTitle(boolean useEnglish) {
+            return localized(officialWastePageTitle, officialWastePageTitleEn, useEnglish);
+        }
+
+        public String getRecyclingCenters(boolean useEnglish) {
+            return localized(recyclingCenters, recyclingCentersEn, useEnglish);
+        }
+
+        public String getDigitalSelfServiceTitle(boolean useEnglish) {
+            return localized(digitalSelfServiceTitle, digitalSelfServiceTitleEn, useEnglish);
+        }
+
+        public String getDigitalSelfService(boolean useEnglish) {
+            return localized(digitalSelfService, digitalSelfServiceEn, useEnglish);
+        }
+
+        public String getDigitalSelfServiceUrl() {
+            return digitalSelfServiceUrl;
+        }
+
+        private String localized(String danish, String english, boolean useEnglish) {
+            return useEnglish && english != null && !english.trim().isEmpty() ? english : danish;
+        }
+
         public List<OfficialLink> getLinks() {
             return links;
         }
@@ -221,6 +395,21 @@ public class Municipality implements Parcelable {
             dest.writeTypedList(schemes);
             dest.writeTypedList(quickFacts);
             dest.writeTypedList(links);
+            dest.writeString(wasteOperator);
+            dest.writeString(wasteOperatorEn);
+            dest.writeString(wasteOperatorUrl);
+            dest.writeValue(wasteFractionCount);
+            dest.writeValue(wasteFractionTotal);
+            dest.writeString(officialWastePageUrl);
+            dest.writeString(officialWastePageTitle);
+            dest.writeString(officialWastePageTitleEn);
+            dest.writeString(recyclingCenters);
+            dest.writeString(recyclingCentersEn);
+            dest.writeString(digitalSelfServiceTitle);
+            dest.writeString(digitalSelfServiceTitleEn);
+            dest.writeString(digitalSelfService);
+            dest.writeString(digitalSelfServiceEn);
+            dest.writeString(digitalSelfServiceUrl);
         }
     }
 

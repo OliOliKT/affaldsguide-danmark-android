@@ -112,7 +112,7 @@
                     android:id="@+id/languageIntro"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="82dp"
+                    android:layout_marginTop="40dp"
                     android:gravity="center"
                     android:text="@string/onboarding_language_title"
                     android:textAlignment="center"
@@ -122,27 +122,44 @@
 
                 <RadioGroup
                     android:id="@+id/languageRadioGroup"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="34dp"
-                    android:orientation="horizontal">
+                    android:layout_marginTop="24dp"
+                    android:layoutDirection="ltr"
+                    android:orientation="vertical">
 
                     <RadioButton
                         android:id="@+id/danishLanguageOption"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
                         android:buttonTint="@color/green_light"
+                        android:gravity="start|center_vertical"
+                        android:layoutDirection="ltr"
                         android:text="@string/dansk"
+                        android:textAlignment="viewStart"
                         android:textColor="@color/text_color"
                         android:textSize="22sp" />
 
                     <RadioButton
                         android:id="@+id/englishLanguageOption"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="26dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
                         android:buttonTint="@color/green_light"
+                        android:gravity="start|center_vertical"
+                        android:layoutDirection="ltr"
                         android:text="@string/engelsk"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/text_color"
+                        android:textSize="22sp" />
+                    <RadioButton
+                        android:id="@+id/arabicLanguageOption"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:buttonTint="@color/green_light"
+                        android:gravity="start|center_vertical"
+                        android:layoutDirection="ltr"
+                        android:text="@string/arabic_language"
+                        android:textAlignment="viewStart"
                         android:textColor="@color/text_color"
                         android:textSize="22sp" />
                 </RadioGroup>
@@ -154,8 +171,8 @@
 
                 <ImageView
                     android:id="@+id/onboardingLanguageLogo"
-                    android:layout_width="260dp"
-                    android:layout_height="260dp"
+                    android:layout_width="220dp"
+                    android:layout_height="220dp"
                     android:layout_marginBottom="12dp"
                     android:adjustViewBounds="true"
                     android:src="@drawable/logo_til_intro" />
