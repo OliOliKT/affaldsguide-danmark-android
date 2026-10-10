@@ -1,11 +1,11 @@
 package com.simpleweb.affaldsguidedanmark;
 
+import android.Manifest;
 import android.content.Context;
+import android.content.pm.PackageManager;
 import android.content.SharedPreferences;
-import android.graphics.Color;
 import android.graphics.Rect;
 import android.graphics.Typeface;
-import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
@@ -21,16 +21,13 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.LinearLayout;
-import android.widget.PopupWindow;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
@@ -42,6 +39,8 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -50,9 +49,7 @@ import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.snackbar.BaseTransientBottomBar;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -62,11 +59,18 @@ public class MainActivity extends AppCompatActivity {
     private BottomNavigationView bottomNavigationView;
     private NavigationView navigationView;
     private SharedPreferences sharedPref;
-    private PopupWindow greetingMunicipalitySuggestionsPopup;
-    private int greetingOnboardingStep = 0;
+    private int greetingOnboardingStep = 1;
+    private String greetingSelectedMunicipalityName = "";
     private int lastSelectedBottomNavigationItemId = R.id.search_trash_button;
     private boolean isUpdatingBottomNavigationSelection = false;
     private boolean achievementBannerShowing = false;
+    private final ActivityResultLauncher<String[]> onboardingLocationPermission =
+            registerForActivityResult(new ActivityResultContracts.RequestMultiplePermissions(), result -> {
+                if (sharedPref != null && !sharedPref.getBoolean("hasSeenGreetingPage", false)
+                        && greetingOnboardingStep == 3) {
+                    finishGreetingOnboarding();
+                }
+            });
 
     @Override
     protected void attachBaseContext(Context newBase) {
@@ -211,53 +215,73 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setUpGreetingLayout() {
-        View welcomeStep = findViewById(R.id.onboardingWelcomeStep);
         View languageStep = findViewById(R.id.onboardingLanguageStep);
         View municipalityStep = findViewById(R.id.onboardingMunicipalityStep);
+        View locationStep = findViewById(R.id.onboardingLocationStep);
         View onboardingDotOne = findViewById(R.id.onboardingDotOne);
         View onboardingDotTwo = findViewById(R.id.onboardingDotTwo);
         View onboardingDotThree = findViewById(R.id.onboardingDotThree);
         TextView backButton = findViewById(R.id.onboardingBackButton);
         TextView skipButton = findViewById(R.id.onboardingSkipButton);
-        RadioGroup languageRadioGroup = findViewById(R.id.languageRadioGroup);
-        RadioButton danishLanguageOption = findViewById(R.id.danishLanguageOption);
-        RadioButton englishLanguageOption = findViewById(R.id.englishLanguageOption);
-        RadioButton arabicLanguageOption = findViewById(R.id.arabicLanguageOption);
-        AutoCompleteTextView municipalityInput = findViewById(R.id.greetingMunicipalityInput);
         TextView selectedMunicipalityText = findViewById(R.id.greetingSelectedMunicipality);
-        setUpGreetingMunicipalityPicker(municipalityInput, selectedMunicipalityText);
+        TextView municipalityTitle = findViewById(R.id.greetingMunicipalityTitle);
+        TextView municipalitySubtitle = findViewById(R.id.greetingMunicipalityText);
+        EditText municipalityInput = findViewById(R.id.greetingMunicipalityInput);
+        RecyclerView municipalityList = findViewById(R.id.greetingMunicipalityList);
+        List<Municipality> municipalities = new MunicipalityDB(getResources()).getMunicipalities();
+        greetingSelectedMunicipalityName = SavedMunicipalityManager.getSavedMunicipalityName(this);
 
-        if (LanguageManager.isArabic(this)) {
-            arabicLanguageOption.setChecked(true);
-        } else if (LanguageManager.isEnglish(this)) {
-            englishLanguageOption.setChecked(true);
-        } else {
-            danishLanguageOption.setChecked(true);
+        municipalityList.setLayoutManager(new LinearLayoutManager(this));
+        OnboardingMunicipalityAdapter municipalityAdapter = new OnboardingMunicipalityAdapter(
+                municipalities,
+                greetingSelectedMunicipalityName,
+                municipality -> {
+                    greetingSelectedMunicipalityName = municipality.getMunicipality();
+                    sharedPref.edit().putString("greetingSelectedMunicipality", greetingSelectedMunicipalityName).apply();
+                    showSelectedMunicipality(selectedMunicipalityText, greetingSelectedMunicipalityName);
+                    begynd.setEnabled(true);
+                    begynd.setAlpha(1f);
+                    InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                    if (imm != null) {
+                        imm.hideSoftInputFromWindow(municipalityInput.getWindowToken(), 0);
+                    }
+                    municipalityInput.clearFocus();
+                }
+        );
+        municipalityList.setAdapter(municipalityAdapter);
+        String pendingMunicipality = sharedPref.getString("greetingSelectedMunicipality", "");
+        if (!pendingMunicipality.isEmpty()) {
+            greetingSelectedMunicipalityName = pendingMunicipality;
+            municipalityAdapter.setSelectedMunicipalityName(pendingMunicipality);
         }
-
-        languageRadioGroup.setOnCheckedChangeListener((group, checkedId) -> {
-            if (checkedId == R.id.englishLanguageOption) {
-                LanguageManager.saveLanguage(this, LanguageManager.ENGLISH);
-                sharedPref.edit().putInt("greetingOnboardingStep", 1).apply();
-                recreate();
-            } else if (checkedId == R.id.arabicLanguageOption) {
-                LanguageManager.saveLanguage(this, LanguageManager.ARABIC);
-                sharedPref.edit().putInt("greetingOnboardingStep", 1).apply();
-                recreate();
-            } else if (checkedId == R.id.danishLanguageOption) {
-                LanguageManager.saveLanguage(this, LanguageManager.DANISH);
-                sharedPref.edit().putInt("greetingOnboardingStep", 1).apply();
-                recreate();
+        if (!greetingSelectedMunicipalityName.isEmpty()) {
+            showSelectedMunicipality(selectedMunicipalityText, greetingSelectedMunicipalityName);
+        }
+        municipalityInput.addTextChangedListener(new TextWatcher() {
+            @Override public void beforeTextChanged(CharSequence s, int start, int count, int after) { }
+            @Override public void onTextChanged(CharSequence s, int start, int before, int count) {
+                municipalityAdapter.filter(s.toString());
             }
+            @Override public void afterTextChanged(Editable s) { }
+        });
+        municipalityInput.setOnFocusChangeListener((view, hasFocus) -> {
+            municipalityTitle.setVisibility(hasFocus ? View.GONE : View.VISIBLE);
+            municipalitySubtitle.setVisibility(hasFocus ? View.GONE : View.VISIBLE);
         });
 
+        findViewById(R.id.danishLanguageOption).setOnClickListener(view -> selectGreetingLanguage(LanguageManager.DANISH));
+        findViewById(R.id.englishLanguageOption).setOnClickListener(view -> selectGreetingLanguage(LanguageManager.ENGLISH));
+        findViewById(R.id.arabicLanguageOption).setOnClickListener(view -> selectGreetingLanguage(LanguageManager.ARABIC));
+
         begynd = findViewById(R.id.begynd);
-        greetingOnboardingStep = Math.max(0, Math.min(2, sharedPref.getInt("greetingOnboardingStep", 0)));
+        begynd.setEnabled(!greetingSelectedMunicipalityName.isEmpty());
+        begynd.setAlpha(greetingSelectedMunicipalityName.isEmpty() ? 0.5f : 1f);
+        greetingOnboardingStep = Math.max(1, Math.min(3, sharedPref.getInt("greetingOnboardingStep", 1)));
         showGreetingOnboardingStep(
                 greetingOnboardingStep,
-                welcomeStep,
                 languageStep,
                 municipalityStep,
+                locationStep,
                 onboardingDotOne,
                 onboardingDotTwo,
                 onboardingDotThree,
@@ -269,14 +293,14 @@ public class MainActivity extends AppCompatActivity {
         begynd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (greetingOnboardingStep < 2) {
+                if (greetingOnboardingStep == 2) {
                     greetingOnboardingStep++;
                     sharedPref.edit().putInt("greetingOnboardingStep", greetingOnboardingStep).apply();
                     showGreetingOnboardingStep(
                             greetingOnboardingStep,
-                            welcomeStep,
                             languageStep,
                             municipalityStep,
+                            locationStep,
                             onboardingDotOne,
                             onboardingDotTwo,
                             onboardingDotThree,
@@ -285,13 +309,13 @@ public class MainActivity extends AppCompatActivity {
                             begynd
                     );
                 } else {
-                    finishGreetingOnboarding(municipalityInput, true);
+                    continueFromLocationOnboarding();
                 }
             }
         });
 
-        backButton.setOnClickListener(view -> {
-            if (greetingOnboardingStep == 0) {
+        View.OnClickListener goBack = view -> {
+            if (greetingOnboardingStep == 1) {
                 return;
             }
 
@@ -299,9 +323,9 @@ public class MainActivity extends AppCompatActivity {
             sharedPref.edit().putInt("greetingOnboardingStep", greetingOnboardingStep).apply();
             showGreetingOnboardingStep(
                     greetingOnboardingStep,
-                    welcomeStep,
                     languageStep,
                     municipalityStep,
+                    locationStep,
                     onboardingDotOne,
                     onboardingDotTwo,
                     onboardingDotThree,
@@ -309,16 +333,59 @@ public class MainActivity extends AppCompatActivity {
                     skipButton,
                     begynd
             );
-        });
+        };
+        backButton.setOnClickListener(goBack);
+        findViewById(R.id.onboardingLocationBackButton).setOnClickListener(goBack);
+        findViewById(R.id.onboardingLocationContinueButton).setOnClickListener(view -> continueFromLocationOnboarding());
+        findViewById(R.id.onboardingLocationSkipButton).setOnClickListener(view -> finishGreetingOnboarding());
 
-        skipButton.setOnClickListener(view -> finishGreetingOnboarding(municipalityInput, false));
+        skipButton.setOnClickListener(view -> {
+            if (greetingOnboardingStep == 1) {
+                greetingOnboardingStep = 2;
+                sharedPref.edit().putInt("greetingOnboardingStep", 2).apply();
+                showGreetingOnboardingStep(2, languageStep, municipalityStep, locationStep,
+                        onboardingDotOne, onboardingDotTwo, onboardingDotThree, backButton, skipButton, begynd);
+            } else if (greetingOnboardingStep == 2) {
+                greetingSelectedMunicipalityName = "";
+                sharedPref.edit().remove("greetingSelectedMunicipality").putInt("greetingOnboardingStep", 3).apply();
+                municipalityAdapter.setSelectedMunicipalityName("");
+                selectedMunicipalityText.setVisibility(View.GONE);
+                greetingOnboardingStep = 3;
+                showGreetingOnboardingStep(3, languageStep, municipalityStep, locationStep,
+                        onboardingDotOne, onboardingDotTwo, onboardingDotThree, backButton, skipButton, begynd);
+            } else {
+                finishGreetingOnboarding();
+            }
+        });
+    }
+
+    private void selectGreetingLanguage(String language) {
+        LanguageManager.saveLanguage(this, language);
+        sharedPref.edit().putInt("greetingOnboardingStep", 2).apply();
+        recreate();
+    }
+
+    private void continueFromLocationOnboarding() {
+        boolean hasLocationPermission = ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
+                == PackageManager.PERMISSION_GRANTED
+                || ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION)
+                == PackageManager.PERMISSION_GRANTED;
+        if (!hasLocationPermission && !sharedPref.getBoolean("greetingLocationRequested", false)) {
+            sharedPref.edit().putBoolean("greetingLocationRequested", true).apply();
+            onboardingLocationPermission.launch(new String[]{
+                    Manifest.permission.ACCESS_FINE_LOCATION,
+                    Manifest.permission.ACCESS_COARSE_LOCATION
+            });
+        } else {
+            finishGreetingOnboarding();
+        }
     }
 
     private void showGreetingOnboardingStep(
             int step,
-            View welcomeStep,
             View languageStep,
             View municipalityStep,
+            View locationStep,
             View onboardingDotOne,
             View onboardingDotTwo,
             View onboardingDotThree,
@@ -326,262 +393,52 @@ public class MainActivity extends AppCompatActivity {
             TextView skipButton,
             Button continueButton
     ) {
-        dismissGreetingMunicipalitySuggestions();
-
-        welcomeStep.setVisibility(step == 0 ? View.VISIBLE : View.GONE);
+        if (step == 1) {
+            View focusedView = getCurrentFocus();
+            if (focusedView instanceof EditText) {
+                InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                if (imm != null) {
+                    imm.hideSoftInputFromWindow(focusedView.getWindowToken(), 0);
+                }
+                focusedView.clearFocus();
+            }
+        }
         languageStep.setVisibility(step == 1 ? View.VISIBLE : View.GONE);
         municipalityStep.setVisibility(step == 2 ? View.VISIBLE : View.GONE);
+        locationStep.setVisibility(step == 3 ? View.VISIBLE : View.GONE);
 
-        onboardingDotOne.setBackgroundResource(step == 0 ? R.drawable.onboarding_dot_active : R.drawable.onboarding_dot_inactive);
-        onboardingDotTwo.setBackgroundResource(step == 1 ? R.drawable.onboarding_dot_active : R.drawable.onboarding_dot_inactive);
-        onboardingDotThree.setBackgroundResource(step == 2 ? R.drawable.onboarding_dot_active : R.drawable.onboarding_dot_inactive);
+        onboardingDotOne.setBackgroundResource(step == 1 ? R.drawable.onboarding_dot_active : R.drawable.onboarding_dot_inactive);
+        onboardingDotTwo.setBackgroundResource(step == 2 ? R.drawable.onboarding_dot_active : R.drawable.onboarding_dot_inactive);
+        onboardingDotThree.setBackgroundResource(step == 3 ? R.drawable.onboarding_dot_active : R.drawable.onboarding_dot_inactive);
 
-        backButton.setVisibility(step == 0 ? View.INVISIBLE : View.VISIBLE);
-        skipButton.setVisibility(step == 2 ? View.VISIBLE : View.GONE);
-        continueButton.setText(step == 2 ? R.string.begynd_med_det_samme : R.string.onboarding_continue);
+        findViewById(R.id.onboardingButtonRow).setVisibility(step == 3 ? View.GONE : View.VISIBLE);
+        backButton.setVisibility(step == 1 ? View.INVISIBLE : View.VISIBLE);
+        skipButton.setVisibility(View.VISIBLE);
+        continueButton.setVisibility(step == 2 ? View.VISIBLE : View.GONE);
+        continueButton.setEnabled(!greetingSelectedMunicipalityName.isEmpty());
+        continueButton.setAlpha(continueButton.isEnabled() ? 1f : 0.5f);
+        continueButton.setText(R.string.onboarding_continue);
     }
 
-    private void finishGreetingOnboarding(AutoCompleteTextView municipalityInput, boolean shouldSaveMunicipality) {
-        dismissGreetingMunicipalitySuggestions();
-        if (shouldSaveMunicipality) {
-            saveGreetingMunicipalityIfSelected(municipalityInput);
+    private void finishGreetingOnboarding() {
+        if (!greetingSelectedMunicipalityName.isEmpty()) {
+            SavedMunicipalityManager.save(this, greetingSelectedMunicipalityName);
         }
 
         sharedPref.edit()
                 .putBoolean("hasSeenGreetingPage", true)
                 .remove("greetingOnboardingStep")
+                .remove("greetingSelectedMunicipality")
+                .remove("greetingLocationRequested")
                 .apply();
         setContentView(R.layout.activity_main);
         applyMainSystemBarInsets();
         setUpMainLayout();
     }
 
-    private void setUpGreetingMunicipalityPicker(AutoCompleteTextView municipalityInput, TextView selectedMunicipalityText) {
-        MunicipalityDB municipalityDB = new MunicipalityDB(getResources());
-        List<Municipality> municipalities = municipalityDB.getMunicipalities();
-
-        municipalityInput.setAdapter(null);
-
-        String savedMunicipalityName = SavedMunicipalityManager.getSavedMunicipalityName(this);
-        if (!savedMunicipalityName.isEmpty()) {
-            municipalityInput.setText(savedMunicipalityName, false);
-            showSelectedMunicipality(selectedMunicipalityText, savedMunicipalityName);
-        }
-
-        municipalityInput.setOnFocusChangeListener((view, hasFocus) -> {
-            if (hasFocus) {
-                renderGreetingMunicipalitySuggestions(
-                        municipalityInput.getText().toString(),
-                        municipalities,
-                        municipalityInput,
-                        selectedMunicipalityText
-                );
-            } else {
-                dismissGreetingMunicipalitySuggestions();
-            }
-        });
-        municipalityInput.setOnClickListener(view -> {
-            renderGreetingMunicipalitySuggestions(
-                    municipalityInput.getText().toString(),
-                    municipalities,
-                    municipalityInput,
-                    selectedMunicipalityText
-            );
-        });
-        municipalityInput.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if (!isExactMunicipalityName(s.toString(), municipalities)) {
-                    selectedMunicipalityText.setVisibility(View.GONE);
-                }
-
-                renderGreetingMunicipalitySuggestions(
-                        s.toString(),
-                        municipalities,
-                        municipalityInput,
-                        selectedMunicipalityText
-                );
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-            }
-        });
-    }
-
-    private void renderGreetingMunicipalitySuggestions(
-            String query,
-            List<Municipality> municipalities,
-            AutoCompleteTextView municipalityInput,
-            TextView selectedMunicipalityText
-    ) {
-        if (!municipalityInput.hasFocus() || query.trim().isEmpty()) {
-            dismissGreetingMunicipalitySuggestions();
-            return;
-        }
-
-        List<Municipality> suggestions = findGreetingMunicipalitySuggestions(query, municipalities);
-        if (suggestions.isEmpty()) {
-            dismissGreetingMunicipalitySuggestions();
-            return;
-        }
-
-        LinearLayout suggestionsLayout = new LinearLayout(this);
-        suggestionsLayout.setOrientation(LinearLayout.VERTICAL);
-        suggestionsLayout.setBackgroundResource(R.drawable.autocomplete_dropdown_background);
-
-        for (Municipality suggestion : suggestions) {
-            LinearLayout suggestionView = new LinearLayout(this);
-            suggestionView.setOrientation(LinearLayout.VERTICAL);
-            suggestionView.setPadding(dpToPx(14), dpToPx(8), dpToPx(14), dpToPx(8));
-
-            TextView municipalityNameView = new TextView(this);
-            municipalityNameView.setText(suggestion.getMunicipality());
-            municipalityNameView.setTextColor(ContextCompat.getColor(this, R.color.text_color));
-            municipalityNameView.setTextSize(14);
-            suggestionView.addView(municipalityNameView);
-
-            String alias = findMatchingPostalPlaceLabel(suggestion, query);
-            if (alias != null) {
-                TextView aliasView = new TextView(this);
-                aliasView.setText(alias);
-                aliasView.setTextColor(ContextCompat.getColor(this, R.color.grey_black));
-                aliasView.setTextSize(12);
-                aliasView.setPadding(0, dpToPx(2), 0, 0);
-                suggestionView.addView(aliasView);
-            }
-
-            suggestionView.setOnClickListener(view -> {
-                municipalityInput.setText(suggestion.getMunicipality(), false);
-                municipalityInput.setSelection(municipalityInput.length());
-                showSelectedMunicipality(selectedMunicipalityText, suggestion.getMunicipality());
-                dismissGreetingMunicipalitySuggestions();
-
-                InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-                if (imm != null) {
-                    imm.hideSoftInputFromWindow(municipalityInput.getWindowToken(), 0);
-                }
-            });
-            suggestionsLayout.addView(suggestionView);
-        }
-
-        dismissGreetingMunicipalitySuggestions();
-
-        int popupHeight = (suggestions.size() * dpToPx(54)) + dpToPx(8);
-        greetingMunicipalitySuggestionsPopup = new PopupWindow(
-                suggestionsLayout,
-                municipalityInput.getWidth(),
-                LinearLayout.LayoutParams.WRAP_CONTENT,
-                false
-        );
-        greetingMunicipalitySuggestionsPopup.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        greetingMunicipalitySuggestionsPopup.setOutsideTouchable(true);
-        greetingMunicipalitySuggestionsPopup.setElevation(dpToPx(4));
-        greetingMunicipalitySuggestionsPopup.showAsDropDown(
-                municipalityInput,
-                0,
-                -municipalityInput.getHeight() - popupHeight - dpToPx(4)
-        );
-    }
-
-    private void dismissGreetingMunicipalitySuggestions() {
-        if (greetingMunicipalitySuggestionsPopup != null && greetingMunicipalitySuggestionsPopup.isShowing()) {
-            greetingMunicipalitySuggestionsPopup.dismiss();
-        }
-        greetingMunicipalitySuggestionsPopup = null;
-    }
-
-    private List<Municipality> findGreetingMunicipalitySuggestions(String query, List<Municipality> municipalities) {
-        String normalizedQuery = normalizeMunicipalityQuery(query);
-        List<Municipality> suggestions = new ArrayList<>();
-
-        if (normalizedQuery.isEmpty()) {
-            return suggestions;
-        }
-
-        for (Municipality municipality : municipalities) {
-            if (municipalityMatchesQuery(municipality, normalizedQuery)) {
-                suggestions.add(municipality);
-                if (suggestions.size() == 4) {
-                    break;
-                }
-            }
-        }
-
-        return suggestions;
-    }
-
-    private boolean municipalityMatchesQuery(Municipality municipality, String normalizedQuery) {
-        if (normalizeMunicipalityQuery(municipality.getMunicipality()).contains(normalizedQuery)) {
-            return true;
-        }
-
-        if (municipality.getPostalPlaces() == null) {
-            return false;
-        }
-
-        for (Municipality.PostalPlace postalPlace : municipality.getPostalPlaces()) {
-            if (normalizeMunicipalityQuery(postalPlace.getDisplayName()).contains(normalizedQuery)) {
-                return true;
-            }
-        }
-
-        return false;
-    }
-
-    private String findMatchingPostalPlaceLabel(Municipality municipality, String query) {
-        String normalizedQuery = normalizeMunicipalityQuery(query);
-        if (normalizedQuery.isEmpty()
-                || normalizeMunicipalityQuery(municipality.getMunicipality()).contains(normalizedQuery)
-                || municipality.getPostalPlaces() == null) {
-            return null;
-        }
-
-        for (Municipality.PostalPlace postalPlace : municipality.getPostalPlaces()) {
-            if (normalizeMunicipalityQuery(postalPlace.getDisplayName()).contains(normalizedQuery)) {
-                return postalPlace.getDisplayName();
-            }
-        }
-
-        return null;
-    }
-
     private void showSelectedMunicipality(TextView selectedMunicipalityText, String municipalityName) {
         selectedMunicipalityText.setText(getString(R.string.greeting_municipality_selected, municipalityName));
         selectedMunicipalityText.setVisibility(View.VISIBLE);
-    }
-
-    private boolean isExactMunicipalityName(String value, List<Municipality> municipalities) {
-        for (Municipality municipality : municipalities) {
-            if (municipality.getMunicipality().equalsIgnoreCase(value.trim())) {
-                return true;
-            }
-        }
-
-        return false;
-    }
-
-    private void saveGreetingMunicipalityIfSelected(AutoCompleteTextView municipalityInput) {
-        String selectedMunicipality = municipalityInput.getText().toString().trim();
-        if (selectedMunicipality.isEmpty()) {
-            return;
-        }
-
-        MunicipalityDB municipalityDB = new MunicipalityDB(getResources());
-        for (Municipality municipality : municipalityDB.getMunicipalities()) {
-            if (municipality.getMunicipality().equalsIgnoreCase(selectedMunicipality)) {
-                SavedMunicipalityManager.save(this, municipality.getMunicipality());
-                return;
-            }
-        }
-    }
-
-    private int dpToPx(int dp) {
-        return Math.round(dp * getResources().getDisplayMetrics().density);
     }
 
     private void setUpMainLayout() {
@@ -765,13 +622,4 @@ public class MainActivity extends AppCompatActivity {
         isUpdatingBottomNavigationSelection = false;
     }
 
-    private static String normalizeMunicipalityQuery(String value) {
-        return value == null
-                ? ""
-                : value.toLowerCase(new Locale("da", "DK"))
-                .replace("æ", "ae")
-                .replace("ø", "oe")
-                .replace("å", "aa")
-                .replaceAll("[^a-z0-9]+", "");
-    }
 }

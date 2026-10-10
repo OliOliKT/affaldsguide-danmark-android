@@ -1,339 +1,340 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/greeting_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/page_background"
-    android:fillViewport="true">
+    android:paddingStart="20dp"
+    android:paddingEnd="20dp"
+    android:paddingBottom="20dp">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingStart="28dp"
-        android:paddingEnd="28dp"
-        android:paddingBottom="24dp">
+    <LinearLayout
+        android:id="@+id/onboardingStepIndicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <LinearLayout
-            android:id="@+id/onboardingStepIndicator"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="34dp"
-            android:gravity="center"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+        <View
+            android:id="@+id/onboardingDotOne"
+            android:layout_width="9dp"
+            android:layout_height="9dp"
+            android:background="@drawable/onboarding_dot_active" />
 
-            <View
-                android:id="@+id/onboardingDotOne"
-                android:layout_width="9dp"
-                android:layout_height="9dp"
-                android:background="@drawable/onboarding_dot_active" />
+        <View
+            android:id="@+id/onboardingDotTwo"
+            android:layout_width="9dp"
+            android:layout_height="9dp"
+            android:layout_marginStart="7dp"
+            android:background="@drawable/onboarding_dot_inactive" />
 
-            <View
-                android:id="@+id/onboardingDotTwo"
-                android:layout_width="9dp"
-                android:layout_height="9dp"
-                android:layout_marginStart="7dp"
-                android:background="@drawable/onboarding_dot_inactive" />
+        <View
+            android:id="@+id/onboardingDotThree"
+            android:layout_width="9dp"
+            android:layout_height="9dp"
+            android:layout_marginStart="7dp"
+            android:background="@drawable/onboarding_dot_inactive" />
+    </LinearLayout>
 
-            <View
-                android:id="@+id/onboardingDotThree"
-                android:layout_width="9dp"
-                android:layout_height="9dp"
-                android:layout_marginStart="7dp"
-                android:background="@drawable/onboarding_dot_inactive" />
-        </LinearLayout>
-
-        <FrameLayout
-            android:id="@+id/onboardingStepContainer"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginTop="28dp"
-            app:layout_constraintBottom_toTopOf="@+id/onboardingButtonRow"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/onboardingStepIndicator">
-
-            <LinearLayout
-                android:id="@+id/onboardingWelcomeStep"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center_horizontal"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/onboardingWelcomeTitle"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="36dp"
-                    android:gravity="start"
-                    android:text="@string/velkommen_til_mit_affald"
-                    android:textColor="@color/green_light"
-                    android:textSize="38sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/onboardingWelcomeSubtitle"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
-                    android:lineSpacingExtra="7dp"
-                    android:text="@string/onboarding_welcome_subtitle"
-                    android:textColor="@color/green_light"
-                    android:textSize="24sp" />
-
-                <Space
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1" />
-
-                <ImageView
-                    android:id="@+id/onboardingWelcomeLogo"
-                    android:layout_width="260dp"
-                    android:layout_height="260dp"
-                    android:layout_marginBottom="12dp"
-                    android:adjustViewBounds="true"
-                    android:src="@drawable/logo_til_intro" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/onboardingLanguageStep"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center_horizontal"
-                android:orientation="vertical"
-                android:visibility="gone"
-                tools:visibility="visible">
-
-                <TextView
-                    android:id="@+id/languageIntro"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="40dp"
-                    android:gravity="center"
-                    android:text="@string/onboarding_language_title"
-                    android:textAlignment="center"
-                    android:textColor="@color/green_light"
-                    android:textSize="30sp"
-                    android:textStyle="bold" />
-
-                <RadioGroup
-                    android:id="@+id/languageRadioGroup"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
-                    android:layoutDirection="ltr"
-                    android:orientation="vertical">
-
-                    <RadioButton
-                        android:id="@+id/danishLanguageOption"
-                        android:layout_width="match_parent"
-                        android:layout_height="48dp"
-                        android:buttonTint="@color/green_light"
-                        android:gravity="start|center_vertical"
-                        android:layoutDirection="ltr"
-                        android:text="@string/dansk"
-                        android:textAlignment="viewStart"
-                        android:textColor="@color/text_color"
-                        android:textSize="22sp" />
-
-                    <RadioButton
-                        android:id="@+id/englishLanguageOption"
-                        android:layout_width="match_parent"
-                        android:layout_height="48dp"
-                        android:buttonTint="@color/green_light"
-                        android:gravity="start|center_vertical"
-                        android:layoutDirection="ltr"
-                        android:text="@string/engelsk"
-                        android:textAlignment="viewStart"
-                        android:textColor="@color/text_color"
-                        android:textSize="22sp" />
-                    <RadioButton
-                        android:id="@+id/arabicLanguageOption"
-                        android:layout_width="match_parent"
-                        android:layout_height="48dp"
-                        android:buttonTint="@color/green_light"
-                        android:gravity="start|center_vertical"
-                        android:layoutDirection="ltr"
-                        android:text="@string/arabic_language"
-                        android:textAlignment="viewStart"
-                        android:textColor="@color/text_color"
-                        android:textSize="22sp" />
-                </RadioGroup>
-
-                <Space
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1" />
-
-                <ImageView
-                    android:id="@+id/onboardingLanguageLogo"
-                    android:layout_width="220dp"
-                    android:layout_height="220dp"
-                    android:layout_marginBottom="12dp"
-                    android:adjustViewBounds="true"
-                    android:src="@drawable/logo_til_intro" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/onboardingMunicipalityStep"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center_horizontal"
-                android:orientation="vertical"
-                android:visibility="gone">
-
-                <TextView
-                    android:id="@+id/greetingMunicipalityTitle"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="78dp"
-                    android:gravity="center"
-                    android:text="@string/onboarding_municipality_title"
-                    android:textAlignment="center"
-                    android:textColor="@color/green_light"
-                    android:textSize="28sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/greetingMunicipalityText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="14dp"
-                    android:gravity="center"
-                    android:lineSpacingExtra="4dp"
-                    android:text="@string/onboarding_municipality_subtitle"
-                    android:textColor="@color/text_color"
-                    android:textSize="15sp" />
-
-                <LinearLayout
-                    android:id="@+id/greetingMunicipalityInputContainer"
-                    android:layout_width="match_parent"
-                    android:layout_height="56dp"
-                    android:layout_marginTop="30dp"
-                    android:background="@drawable/x_background"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:paddingStart="14dp"
-                    android:paddingEnd="14dp">
-
-                    <ImageView
-                        android:layout_width="28dp"
-                        android:layout_height="28dp"
-                        android:contentDescription="@string/search"
-                        android:padding="3dp"
-                        android:src="@drawable/search_icon_search_trash"
-                        app:tint="@color/green_light" />
-
-                    <AutoCompleteTextView
-                        android:id="@+id/greetingMunicipalityInput"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginStart="10dp"
-                        android:layout_weight="1"
-                        android:autofillHints=""
-                        android:background="@android:color/transparent"
-                        android:completionThreshold="1"
-                        android:hint="@string/greeting_municipality_hint"
-                        android:importantForAutofill="no"
-                        android:inputType="text"
-                        android:maxLines="1"
-                        android:paddingStart="0dp"
-                        android:paddingEnd="0dp"
-                        android:popupBackground="@drawable/autocomplete_dropdown_background"
-                        android:singleLine="true"
-                        android:textColor="@color/text_color"
-                        android:textColorHint="@color/grey_black"
-                        android:textSize="18sp" />
-                </LinearLayout>
-
-                <TextView
-                    android:id="@+id/greetingSelectedMunicipality"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/saved_municipality_label_background"
-                    android:gravity="center"
-                    android:paddingStart="12dp"
-                    android:paddingTop="8dp"
-                    android:paddingEnd="12dp"
-                    android:paddingBottom="8dp"
-                    android:textColor="@color/green_light"
-                    android:textSize="14sp"
-                    android:textStyle="bold"
-                    android:visibility="gone"
-                    tools:text="Valgt kommune: Aarhus Kommune"
-                    tools:visibility="visible" />
-
-                <Space
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1" />
-
-                <ImageView
-                    android:id="@+id/onboardingMunicipalityLogo"
-                    android:layout_width="260dp"
-                    android:layout_height="260dp"
-                    android:layout_marginBottom="12dp"
-                    android:adjustViewBounds="true"
-                    android:src="@drawable/logo_til_intro" />
-            </LinearLayout>
-        </FrameLayout>
+    <FrameLayout
+        android:id="@+id/onboardingStepContainer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toTopOf="@id/onboardingButtonRow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/onboardingStepIndicator">
 
         <LinearLayout
-            android:id="@+id/onboardingButtonRow"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
+            android:id="@+id/onboardingLanguageStep"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:visibility="visible">
+
+            <ImageView
+                android:id="@+id/onboardingLanguageLogo"
+                android:layout_width="112dp"
+                android:layout_height="112dp"
+                android:layout_marginTop="28dp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/logo_til_intro" />
 
             <TextView
-                android:id="@+id/onboardingBackButton"
-                android:layout_width="wrap_content"
-                android:layout_height="48dp"
-                android:gravity="center"
-                android:paddingStart="8dp"
-                android:paddingEnd="18dp"
-                android:text="@string/onboarding_back"
+                android:id="@+id/languageIntro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/onboarding_language_title"
+                android:textColor="@color/text_color"
+                android:textSize="38sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="@string/onboarding_language_subtitle"
                 android:textColor="@color/grey_black"
-                android:textSize="15sp"
-                android:visibility="invisible" />
+                android:textSize="16sp" />
 
             <Space
-                android:layout_width="0dp"
-                android:layout_height="1dp"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
                 android:layout_weight="1" />
 
-            <TextView
-                android:id="@+id/onboardingSkipButton"
-                android:layout_width="wrap_content"
-                android:layout_height="48dp"
-                android:gravity="center"
-                android:paddingStart="18dp"
-                android:paddingEnd="18dp"
-                android:text="@string/onboarding_skip"
-                android:textColor="@color/grey_black"
-                android:textSize="15sp"
-                android:visibility="gone" />
+            <Button
+                android:id="@+id/danishLanguageOption"
+                style="@style/ButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="68dp"
+                android:layout_marginBottom="12dp"
+                android:background="@drawable/onboarding_language_button_background"
+                android:text="@string/dansk"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold" />
 
             <Button
-                android:id="@+id/begynd"
+                android:id="@+id/englishLanguageOption"
                 style="@style/ButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="68dp"
+                android:layout_marginBottom="12dp"
+                android:background="@drawable/onboarding_language_button_background"
+                android:text="@string/engelsk"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/arabicLanguageOption"
+                style="@style/ButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="68dp"
+                android:background="@drawable/onboarding_language_button_background"
+                android:text="@string/arabic_language"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/onboardingMunicipalityStep"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/greetingMunicipalityTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/onboarding_municipality_title"
+                android:textColor="@color/text_color"
+                android:textSize="34sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/greetingMunicipalityText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/onboarding_municipality_subtitle"
+                android:textColor="@color/grey_black"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:id="@+id/greetingMunicipalityInputContainer"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="18dp"
+                android:background="@drawable/x_background"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:contentDescription="@string/search"
+                    android:src="@drawable/search_icon_search_trash"
+                    app:tint="@color/green_light" />
+
+                <EditText
+                    android:id="@+id/greetingMunicipalityInput"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:autofillHints=""
+                    android:background="@android:color/transparent"
+                    android:hint="@string/greeting_municipality_hint"
+                    android:importantForAutofill="no"
+                    android:imeOptions="actionDone"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textColor="@color/text_color"
+                    android:textColorHint="@color/grey_black"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/greetingSelectedMunicipality"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/green_dark"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:visibility="gone"
+                tools:text="Valgt kommune: Aarhus Kommune" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/greetingMunicipalityList"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="12dp"
+                android:layout_weight="1"
+                android:clipToPadding="false"
+                android:paddingBottom="8dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/onboardingLocationStep"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/onboardingLocationBackButton"
                 android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:minWidth="132dp"
-                android:paddingStart="24dp"
-                android:paddingEnd="24dp"
+                android:layout_height="48dp"
+                android:gravity="center_vertical"
+                android:text="@string/onboarding_back"
+                android:textColor="@color/green_dark"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:contentDescription="@string/onboarding_location_title"
+                android:src="@drawable/onboarding_location_icon" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/onboarding_location_title"
+                android:textColor="@color/text_color"
+                android:textSize="36sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:lineSpacingExtra="4dp"
+                android:text="@string/onboarding_location_subtitle"
+                android:textColor="@color/grey_black"
+                android:textSize="16sp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/onboardingLocationContinueButton"
+                style="@style/ButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="@drawable/onboarding_language_button_background"
                 android:text="@string/onboarding_continue"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
-                android:textSize="16sp" />
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/onboardingLocationSkipButton"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="@string/onboarding_skip"
+                android:textColor="@color/grey_black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
         </LinearLayout>
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.core.widget.NestedScrollView>
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/onboardingButtonRow"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/onboardingBackButton"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:gravity="center"
+            android:paddingStart="8dp"
+            android:paddingEnd="12dp"
+            android:text="@string/onboarding_back"
+            android:textColor="@color/green_dark"
+            android:textSize="16sp"
+            android:visibility="invisible" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/onboardingSkipButton"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:gravity="center"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:text="@string/onboarding_skip"
+            android:textColor="@color/grey_black"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/begynd"
+            style="@style/ButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:minWidth="112dp"
+            android:text="@string/begynd_med_det_samme"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:visibility="gone" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

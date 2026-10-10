@@ -24,6 +24,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
@@ -105,10 +106,25 @@ public class MunicipalityDetailsFragment extends Fragment {
         saveMunicipalityButton.setOnClickListener(v -> {
             if (SavedMunicipalityManager.isSaved(requireContext(), municipality.getMunicipality())) {
                 SavedMunicipalityManager.remove(requireContext());
+                updateSaveMunicipalityButton(saveMunicipalityButton, municipality);
             } else {
-                SavedMunicipalityManager.save(requireContext(), municipality.getMunicipality());
+                String previousMunicipality = SavedMunicipalityManager.getSavedMunicipalityName(requireContext());
+                if (previousMunicipality != null && !previousMunicipality.trim().isEmpty()) {
+                    new AlertDialog.Builder(requireContext())
+                            .setTitle(R.string.replace_municipality_title)
+                            .setMessage(getString(R.string.replace_municipality_message,
+                                    previousMunicipality, municipality.getMunicipality()))
+                            .setPositiveButton(R.string.replace_municipality_confirm, (dialog, which) -> {
+                                SavedMunicipalityManager.save(requireContext(), municipality.getMunicipality());
+                                updateSaveMunicipalityButton(saveMunicipalityButton, municipality);
+                            })
+                            .setNegativeButton(R.string.replace_municipality_cancel, null)
+                            .show();
+                } else {
+                    SavedMunicipalityManager.save(requireContext(), municipality.getMunicipality());
+                    updateSaveMunicipalityButton(saveMunicipalityButton, municipality);
+                }
             }
-            updateSaveMunicipalityButton(saveMunicipalityButton, municipality);
         });
 
         backButton.setOnClickListener(v -> Navigation.findNavController(view).navigateUp());
@@ -116,7 +132,10 @@ public class MunicipalityDetailsFragment extends Fragment {
 
     private void updateSaveMunicipalityButton(TextView button, Municipality municipality) {
         boolean isSaved = SavedMunicipalityManager.isSaved(requireContext(), municipality.getMunicipality());
-        button.setText(isSaved ? R.string.fjern_gemt_kommune : R.string.gem_kommune);
+        String previousMunicipality = SavedMunicipalityManager.getSavedMunicipalityName(requireContext());
+        boolean replacesSaved = !isSaved && previousMunicipality != null && !previousMunicipality.trim().isEmpty();
+        button.setText(isSaved ? R.string.fjern_gemt_kommune
+                : replacesSaved ? R.string.replace_municipality_button : R.string.gem_kommune);
         button.setTextColor(getResources().getColor(isSaved ? R.color.green_light : R.color.white));
         button.setBackgroundResource(isSaved
                 ? R.drawable.remove_saved_municipality_button_background

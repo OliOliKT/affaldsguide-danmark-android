@@ -139,10 +139,6 @@ public class SearchTrashFragment extends Fragment {
     private LinearLayout introExampleSearchItem2;
     private LinearLayout introExampleSearchItem3;
     private LinearLayout introExampleSearchItem4;
-    private ImageView introExampleImage1;
-    private ImageView introExampleImage2;
-    private ImageView introExampleImage3;
-    private ImageView introExampleImage4;
     private TextView searchIntroExamplesLabel;
     private TextView searchIntroSeeAll;
     private LinearLayout savedMunicipalityContainer;
@@ -158,6 +154,8 @@ public class SearchTrashFragment extends Fragment {
     private TextView municipalityOperatorValue;
     private Municipality selectedMunicipality;
     private RecyclingCenter nearestRecyclingCenter;
+    private List<TrashType> fractionPages;
+    private boolean openNearestCenterWhenLocated;
     private boolean showingSearchStart = true;
     private Uri pendingCameraUri;
     private final ActivityResultLauncher<PickVisualMediaRequest> pickPhoto =
@@ -184,10 +182,14 @@ public class SearchTrashFragment extends Fragment {
         trashDB = new TrashDB(resources);
 
         search = v.findViewById(R.id.search_button);
-        TextView takePhotoButton = v.findViewById(R.id.takePhotoButton);
-        TextView choosePhotoButton = v.findViewById(R.id.choosePhotoButton);
-        takePhotoButton.setText(InfoPageText.get(requireContext(), "searchview.017"));
-        choosePhotoButton.setText(InfoPageText.get(requireContext(), "searchview.018"));
+        View takePhotoButton = v.findViewById(R.id.takePhotoButton);
+        View choosePhotoButton = v.findViewById(R.id.choosePhotoButton);
+        String takePhotoText = InfoPageText.get(requireContext(), "searchview.017");
+        String choosePhotoText = InfoPageText.get(requireContext(), "searchview.018");
+        ((TextView) v.findViewById(R.id.takePhotoLabel)).setText(takePhotoText);
+        ((TextView) v.findViewById(R.id.choosePhotoLabel)).setText(choosePhotoText);
+        takePhotoButton.setContentDescription(takePhotoText);
+        choosePhotoButton.setContentDescription(choosePhotoText);
         choosePhotoButton.setOnClickListener(view -> pickPhoto.launch(
                 new PickVisualMediaRequest.Builder()
                         .setMediaType(ActivityResultContracts.PickVisualMedia.ImageOnly.INSTANCE)
@@ -250,10 +252,6 @@ public class SearchTrashFragment extends Fragment {
         introExampleSearchItem2 = v.findViewById(R.id.introExampleSearchItem2);
         introExampleSearchItem3 = v.findViewById(R.id.introExampleSearchItem3);
         introExampleSearchItem4 = v.findViewById(R.id.introExampleSearchItem4);
-        introExampleImage1 = v.findViewById(R.id.introExampleImage1);
-        introExampleImage2 = v.findViewById(R.id.introExampleImage2);
-        introExampleImage3 = v.findViewById(R.id.introExampleImage3);
-        introExampleImage4 = v.findViewById(R.id.introExampleImage4);
         searchIntroExamplesLabel = v.findViewById(R.id.searchIntroExamplesLabel);
         searchIntroSeeAll = v.findViewById(R.id.searchIntroSeeAll);
         savedMunicipalityContainer = v.findViewById(R.id.savedMunicipalityContainer);
@@ -457,6 +455,7 @@ public class SearchTrashFragment extends Fragment {
                                     String key = entry.getKey();
                                     String value = entry.getValue();
                                     trashDB.setImageViewAndText(images[index], labels[index], getResources(), useEnglish ? trashDB.translateSortingKey(key) : key, value, useEnglish);
+                                    configureResultPictogram(images[index], key);
                                     icons[index].setVisibility(value == null || value.isEmpty() ? ImageView.INVISIBLE : ImageView.VISIBLE);
                                     index++;
                                 }
@@ -471,9 +470,11 @@ public class SearchTrashFragment extends Fragment {
                                     String value = entry.getValue();
                                     if (index == 0) {
                                         trashDB.setImageViewAndText(twoItemsImage1, twoItemsImage1Text, getResources(), useEnglish ? trashDB.translateSortingKey(key) : key, value, useEnglish);
+                                        configureResultPictogram(twoItemsImage1, key);
                                         twoItemsIcon1.setVisibility(ImageView.VISIBLE);
                                     } else if (index == 1) {
                                         trashDB.setImageViewAndText(twoItemsImage2, twoItemsImage2Text, getResources(), useEnglish ? trashDB.translateSortingKey(key) : key, value, useEnglish);
+                                        configureResultPictogram(twoItemsImage2, key);
                                         twoItemsIcon2.setVisibility(ImageView.VISIBLE);
                                     }
 
@@ -499,6 +500,7 @@ public class SearchTrashFragment extends Fragment {
                                         setProductDescriptionToggleTopMargin(14);
                                     }
                                     trashDB.setImageViewAndText(oneItemImage1, oneItemImage1Text, getResources(), useEnglish ? trashDB.translateSortingKey(key) : key, value, useEnglish);
+                                    configureResultPictogram(oneItemImage1, key);
                                 }
                             }
                         }
@@ -561,6 +563,12 @@ public class SearchTrashFragment extends Fragment {
 
     private void clearTextAndImages() {
         resultMunicipalityName = null;
+        for (ImageView image : new ImageView[]{oneItemImage1, twoItemsImage1, twoItemsImage2,
+                threeItemsImage1, threeItemsImage2, threeItemsImage3}) {
+            image.setOnClickListener(null);
+            image.setClickable(false);
+            image.setFocusable(false);
+        }
         twoItemsImage1.setImageResource(0);
         twoItemsImage2.setImageResource(0);
         threeItemsImage1.setImageResource(0);
@@ -967,13 +975,11 @@ public class SearchTrashFragment extends Fragment {
         searchIntroSeeAll.setVisibility(usesRecentSearches ? View.VISIBLE : View.GONE);
 
         TextView[] introViews = {introExampleSearchPizza, introExampleSearchBattery, introExampleSearchCoffeeFilter, introExampleSearchGlass};
-        ImageView[] introImages = {introExampleImage1, introExampleImage2, introExampleImage3, introExampleImage4};
         LinearLayout[] introContainers = {introExampleSearchItem1, introExampleSearchItem2, introExampleSearchItem3, introExampleSearchItem4};
         int visibleExamples = Math.min(suggestions.size(), MAX_INTRO_EXAMPLES);
         for (int i = 0; i < introViews.length; i++) {
             if (i < visibleExamples) {
                 introViews[i].setText(suggestions.get(i));
-                introImages[i].setImageResource(getIntroExampleImageResource(suggestions.get(i)));
                 introContainers[i].setVisibility(View.VISIBLE);
             } else {
                 introContainers[i].setVisibility(View.GONE);
@@ -1066,10 +1072,50 @@ public class SearchTrashFragment extends Fragment {
         Navigation.findNavController(view).navigate(R.id.fragment_municipality_details, args);
     }
 
+    private void configureResultPictogram(ImageView image, String category) {
+        String danishCategory = trashDB.toDanishSortingKey(category);
+        if ("Genbrugsplads".equals(danishCategory)) {
+            image.setClickable(true);
+            image.setFocusable(true);
+            image.setContentDescription(getString(R.string.find_naermeste_genbrugsplads));
+            image.setOnClickListener(view -> {
+                if (nearestRecyclingCenter != null) {
+                    openRecyclingCenterInMaps(nearestRecyclingCenter);
+                } else {
+                    openNearestCenterWhenLocated = true;
+                    requestNearestRecyclingCenter();
+                }
+            });
+            return;
+        }
+
+        if (fractionPages == null) {
+            fractionPages = trashDB.getLocalTrashTypes(LanguageManager.usesNonDanishContent(requireContext()));
+        }
+        for (TrashType fraction : fractionPages) {
+            if (!danishCategory.equals(fraction.getDanishNavn())) continue;
+            image.setClickable(true);
+            image.setFocusable(true);
+            image.setContentDescription(getString(R.string.laes_mere_om_fraktion, fraction.getNavn()));
+            image.setOnClickListener(view -> {
+                Bundle args = new Bundle();
+                args.putParcelable("trashType", fraction);
+                args.putString("selectedTrashGroup", fraction.getNavn());
+                Navigation.findNavController(view).navigate(R.id.fragment_trash_type_details, args);
+            });
+            return;
+        }
+
+        image.setClickable(false);
+        image.setFocusable(false);
+        image.setContentDescription(null);
+        image.setOnClickListener(null);
+    }
+
     private void updateNearestRecyclingCenterFromLastLocation() {
         nearestRecyclingCenter = null;
         municipalityNearestValue.setText(R.string.location_to_find_centre);
-        if (selectedMunicipality == null || ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED
+        if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED
                 && ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) return;
         LocationManager manager = (LocationManager) requireContext().getSystemService(Context.LOCATION_SERVICE);
         Location latest = null;
@@ -1092,13 +1138,17 @@ public class SearchTrashFragment extends Fragment {
         }
         LocationManager manager = (LocationManager) requireContext().getSystemService(Context.LOCATION_SERVICE);
         updateNearestRecyclingCenterFromLastLocation();
-        if (nearestRecyclingCenter != null) return;
+        if (nearestRecyclingCenter != null) {
+            openPendingNearestCenter();
+            return;
+        }
         municipalityNearestValue.setText(R.string.finding_nearest_centre);
         try {
             String provider = manager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)
                     ? LocationManager.NETWORK_PROVIDER : LocationManager.GPS_PROVIDER;
             if (!manager.isProviderEnabled(provider)) {
                 municipalityNearestValue.setText(R.string.nearest_centre_unavailable);
+                showNearestCenterUnavailableIfPending();
                 return;
             }
             manager.requestSingleUpdate(provider, new LocationListener() {
@@ -1108,6 +1158,7 @@ public class SearchTrashFragment extends Fragment {
             }, null);
         } catch (SecurityException error) {
             municipalityNearestValue.setText(R.string.location_to_find_centre);
+            showNearestCenterUnavailableIfPending();
         }
     }
 
@@ -1122,11 +1173,11 @@ public class SearchTrashFragment extends Fragment {
                 }
             }
             municipalityNearestValue.setText(R.string.location_to_find_centre);
+            showNearestCenterUnavailableIfPending();
         }
     }
 
     private void showNearestRecyclingCenter(Location location) {
-        if (selectedMunicipality == null) return;
         float closestDistance = Float.MAX_VALUE;
         RecyclingCenter closest = null;
         try (InputStream stream = getResources().openRawResource(R.raw.genbrugspladser_data);
@@ -1134,8 +1185,7 @@ public class SearchTrashFragment extends Fragment {
             Type type = new TypeToken<List<RecyclingCenter>>() {}.getType();
             List<RecyclingCenter> centers = new Gson().fromJson(reader, type);
             for (RecyclingCenter center : centers) {
-                if (!selectedMunicipality.getMunicipality().equals(center.municipality)
-                        || center.latitude == null || center.longitude == null) continue;
+                if (center.latitude == null || center.longitude == null) continue;
                 float[] result = new float[1];
                 Location.distanceBetween(location.getLatitude(), location.getLongitude(), center.latitude, center.longitude, result);
                 if (result[0] < closestDistance) {
@@ -1149,6 +1199,23 @@ public class SearchTrashFragment extends Fragment {
         nearestRecyclingCenter = closest;
         municipalityNearestValue.setText(closest == null ? getString(R.string.nearest_centre_unavailable)
                 : closest.name + " · " + String.format(Locale.getDefault(), "%.1f km", closestDistance / 1000f));
+        if (closest == null) {
+            showNearestCenterUnavailableIfPending();
+        } else {
+            openPendingNearestCenter();
+        }
+    }
+
+    private void openPendingNearestCenter() {
+        if (!openNearestCenterWhenLocated || nearestRecyclingCenter == null || !isAdded()) return;
+        openNearestCenterWhenLocated = false;
+        openRecyclingCenterInMaps(nearestRecyclingCenter);
+    }
+
+    private void showNearestCenterUnavailableIfPending() {
+        if (!openNearestCenterWhenLocated || !isAdded()) return;
+        openNearestCenterWhenLocated = false;
+        Toast.makeText(requireContext(), R.string.nearest_centre_unavailable, Toast.LENGTH_SHORT).show();
     }
 
     private void openRecyclingCenterInMaps(RecyclingCenter center) {
@@ -1175,29 +1242,6 @@ public class SearchTrashFragment extends Fragment {
         }
 
         return null;
-    }
-
-    private int getIntroExampleImageResource(String productName) {
-        boolean useEnglish = LanguageManager.usesNonDanishContent(requireContext());
-        if (productName.equalsIgnoreCase(getString(R.string.example_pizzabakke))) {
-            return trashDB.getImageResourceForKey("Mad- og drikkekartoner", useEnglish);
-        }
-        if (productName.equalsIgnoreCase(getString(R.string.example_batteri))) {
-            return trashDB.getImageResourceForKey("Batterier", useEnglish);
-        }
-        if (productName.equalsIgnoreCase(getString(R.string.example_kaffefilter))) {
-            return trashDB.getImageResourceForKey("Madaffald", useEnglish);
-        }
-        if (productName.equalsIgnoreCase(getString(R.string.example_glas))) {
-            return trashDB.getImageResourceForKey("Glas", useEnglish);
-        }
-
-        String sortingKey = trashDB.getFirstSortingKeyForProduct(productName, useEnglish);
-        if (useEnglish) {
-            sortingKey = trashDB.translateSortingKey(sortingKey);
-        }
-
-        return trashDB.getImageResourceForKey(sortingKey, useEnglish);
     }
 
     private List<String> getSuccessfulSearchExamples(boolean useEnglish) {
