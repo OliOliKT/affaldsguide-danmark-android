@@ -112,10 +112,11 @@ public class AchievementsFragment extends Fragment {
     }
 
     private int iconFor(String id) {
-        if (id.equals("firstAnswer")) return android.R.drawable.checkbox_on_background;
+        if (id.equals("firstAnswer")) return R.drawable.achievement_first_answer;
         if (id.equals("fiveCategories") || id.equals("allFractions")) return android.R.drawable.ic_menu_sort_by_size;
         if (id.equals("localExpert") || id.equals("localRulesExpert")) return android.R.drawable.ic_menu_myplaces;
         if (id.equals("recyclingCenter") || id.equals("neighborhoodRegular")) return android.R.drawable.ic_menu_mapmode;
+        if (id.equals("calendarAddress")) return android.R.drawable.ic_menu_my_calendar;
         if (id.equals("helpfulEye") || id.equals("trueWasteExpert")) return android.R.drawable.ic_menu_edit;
         if (id.equals("tenDayStreak") || id.equals("thirtyDayStreak")) return android.R.drawable.ic_menu_today;
         return android.R.drawable.ic_menu_search;

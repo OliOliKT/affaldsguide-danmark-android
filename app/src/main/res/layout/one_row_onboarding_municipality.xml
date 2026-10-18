@@ -11,13 +11,13 @@
     android:paddingStart="14dp"
     android:paddingEnd="14dp">
 
-    <TextView
+    <ImageView
         android:id="@+id/onboardingMunicipalityIcon"
         android:layout_width="30dp"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:textColor="@color/green_dark"
-        android:textSize="23sp" />
+        android:layout_height="24dp"
+        android:contentDescription="@null"
+        android:src="@drawable/onboarding_city_icon"
+        android:tint="@color/green_dark" />
 
     <TextView
         android:id="@+id/onboardingMunicipalityName"

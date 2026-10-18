@@ -173,6 +173,23 @@ public class TrashDB {
         return displayName;
     }
 
+    String getCurrentProductNameForRecentSearch(String savedName, boolean useEnglish) {
+        if (trashItems == null || savedName == null) return null;
+        for (TrashItem item : trashItems) {
+            if (item.product != null && item.product.equalsIgnoreCase(savedName)) {
+                return item.getDisplayProduct(useEnglish);
+            }
+        }
+        // Older app versions saved the name in the language used at the time.
+        for (TrashItem item : trashItems) {
+            if ((item.productEn != null && item.productEn.equalsIgnoreCase(savedName))
+                    || (item.productAr != null && item.productAr.equalsIgnoreCase(savedName))) {
+                return item.getDisplayProduct(useEnglish);
+            }
+        }
+        return null;
+    }
+
     MunicipalitySortingRuleDB.Rule getLocalRule(String productName, boolean useEnglish, String municipalityName) {
         if (trashItems == null) return null;
         for (TrashItem item : trashItems) {

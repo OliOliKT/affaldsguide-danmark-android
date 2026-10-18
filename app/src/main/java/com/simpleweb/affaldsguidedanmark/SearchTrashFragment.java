@@ -159,10 +159,10 @@ public class SearchTrashFragment extends Fragment {
     private boolean showingSearchStart = true;
     private Uri pendingCameraUri;
     private final ActivityResultLauncher<PickVisualMediaRequest> pickPhoto =
-            registerForActivityResult(new ActivityResultContracts.PickVisualMedia(), this::openPhotoSearch);
+            registerForActivityResult(new ActivityResultContracts.PickVisualMedia(), uri -> openPhotoSearch(uri, "library"));
     private final ActivityResultLauncher<Uri> takePhoto =
             registerForActivityResult(new ActivityResultContracts.TakePicture(), success -> {
-                if (Boolean.TRUE.equals(success)) openPhotoSearch(pendingCameraUri);
+                if (Boolean.TRUE.equals(success)) openPhotoSearch(pendingCameraUri, "camera");
             });
     private TextView productDescriptionToggle;
     private TextView productDescriptionText;
@@ -172,6 +172,7 @@ public class SearchTrashFragment extends Fragment {
     private TextView fallbackSortingToggle;
     private LinearLayout fallbackSortingContent;
     private TextView suggestCorrectionButton;
+    private TextView shareSortingButton;
     private String resultMunicipalityName;
 
     @Override
@@ -273,8 +274,8 @@ public class SearchTrashFragment extends Fragment {
         fallbackSortingToggle = v.findViewById(R.id.fallbackSortingToggle);
         fallbackSortingContent = v.findViewById(R.id.fallbackSortingContent);
         suggestCorrectionButton = v.findViewById(R.id.suggestCorrectionButton);
+        shareSortingButton = v.findViewById(R.id.shareSortingButton);
 
-        NativeAdHelper.loadNativeAd(requireContext(), v);
 
         inputText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
@@ -390,7 +391,7 @@ public class SearchTrashFragment extends Fragment {
                             emptyStateContainer.setVisibility(View.VISIBLE);
                         } else {
                             emptyStateContainer.setVisibility(View.GONE);
-                            saveRecentSearch(what);
+                            saveRecentSearch(trashDB.getDanishProductName(what, useEnglish));
                             saveSuccessfulSearchExample(what, useEnglish);
                             updateIntroExampleSearches();
                             MunicipalitySortingRuleDB.Rule localRule = trashDB.getLocalRule(what, useEnglish, municipalityName);
@@ -434,6 +435,10 @@ public class SearchTrashFragment extends Fragment {
                             suggestCorrectionButton.setVisibility(View.VISIBLE);
                             suggestCorrectionButton.setOnClickListener(view ->
                                     showCorrectionForm(what, sorteringMap, municipalityName, useEnglish));
+                            shareSortingButton.setText(InfoPageText.get(requireContext(), "search.result.share"));
+                            shareSortingButton.setVisibility(View.VISIBLE);
+                            shareSortingButton.setOnClickListener(view ->
+                                    shareSortingResult(what, sorteringMap, municipalityName, localRule != null, useEnglish));
                             setProductDescriptionToggleTopMargin(22);
                             int numImages = sorteringMap.size();
 
@@ -520,6 +525,20 @@ public class SearchTrashFragment extends Fragment {
         setupAutoCompleteAdapter(cachedProduktList);
         fetchProduktList();
         if (getArguments() != null) {
+            boolean openWidgetCamera = getArguments().getBoolean("openWidgetCamera", false);
+            boolean focusWidgetSearch = getArguments().getBoolean("focusWidgetSearch", false);
+            getArguments().remove("openWidgetCamera");
+            getArguments().remove("focusWidgetSearch");
+            if (openWidgetCamera) {
+                View cameraButton = view.findViewById(R.id.takePhotoButton);
+                cameraButton.post(cameraButton::performClick);
+            } else if (focusWidgetSearch) {
+                inputText.post(() -> {
+                    inputText.requestFocus();
+                    InputMethodManager keyboard = (InputMethodManager) requireContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+                    keyboard.showSoftInput(inputText, InputMethodManager.SHOW_IMPLICIT);
+                });
+            }
             String initialQuery = getArguments().getString("initialQuery", "");
             if (!initialQuery.isEmpty()) {
                 inputText.setText(initialQuery);
@@ -615,7 +634,40 @@ public class SearchTrashFragment extends Fragment {
         fallbackSortingContent.removeAllViews();
         suggestCorrectionButton.setVisibility(View.GONE);
         suggestCorrectionButton.setOnClickListener(null);
+        shareSortingButton.setVisibility(View.GONE);
+        shareSortingButton.setOnClickListener(null);
 
+    }
+
+    private void shareSortingResult(String product, Map<String, String> sorting,
+                                    String municipalityName, boolean hasLocalRule, boolean useEnglish) {
+        List<String> sortingLines = new ArrayList<>();
+        for (Map.Entry<String, String> entry : sorting.entrySet()) {
+            String category = useEnglish ? trashDB.translateSortingKey(entry.getKey()) : entry.getKey();
+            String guidance = entry.getValue() == null ? "" : entry.getValue().trim();
+            boolean hasGuidance = !guidance.isEmpty() && !guidance.equals("Hele genstand")
+                    && !guidance.equals("Whole item")
+                    && !guidance.equals(ArabicText.lookup(getResources(), "guidance.Hele genstand"));
+            sortingLines.add(hasGuidance ? category + " — " + guidance : category);
+        }
+        String summary = InfoPageText.get(requireContext(), "search.result.shareSummary")
+                .replace("{0}", product)
+                .replace("{1}", String.join("\n", sortingLines));
+        StringBuilder message = new StringBuilder(summary);
+        if (hasLocalRule && municipalityName != null && !municipalityName.trim().isEmpty()) {
+            message.append("\n\n")
+                    .append(InfoPageText.get(requireContext(), "search.result.shareMunicipality")
+                            .replace("{0}", municipalityName))
+                    .append("\n\n")
+                    .append(InfoPageText.get(requireContext(), "search.result.shareCaution"));
+        }
+        message.append("\n\nAffaldsguide Danmark");
+
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.setType("text/plain");
+        intent.putExtra(Intent.EXTRA_TEXT, message.toString());
+        startActivity(Intent.createChooser(intent,
+                InfoPageText.get(requireContext(), "search.result.share")));
     }
 
     private void setInsertTrashImageForLanguage() {
@@ -673,7 +725,8 @@ public class SearchTrashFragment extends Fragment {
         Uri uri = Uri.parse(source.trim());
         if (!("https".equalsIgnoreCase(uri.getScheme()) || "http".equalsIgnoreCase(uri.getScheme()))
                 || uri.getHost() == null) return;
-        String label = getString(R.string.local_rule_source);
+        String sourceTitle = getString(R.string.local_rule_source);
+        String label = sourceTitle;
         if (rule.lastChecked != null && !rule.lastChecked.trim().isEmpty()) {
             String checkedDate = rule.lastChecked;
             try {
@@ -685,7 +738,10 @@ public class SearchTrashFragment extends Fragment {
             }
             label += "\n" + getString(R.string.local_rule_checked, checkedDate);
         }
-        localRuleSource.setText(label);
+        SpannableString sourceLabel = new SpannableString(label);
+        sourceLabel.setSpan(new StyleSpan(Typeface.BOLD), 0, sourceTitle.length(),
+                Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        localRuleSource.setText(sourceLabel);
         localRuleSource.setVisibility(View.VISIBLE);
         localRuleSource.setOnClickListener(view -> startActivity(new Intent(Intent.ACTION_VIEW, uri)));
     }
@@ -1057,10 +1113,11 @@ public class SearchTrashFragment extends Fragment {
                 + name.substring(firstCodePointEnd);
     }
 
-    private void openPhotoSearch(Uri uri) {
+    private void openPhotoSearch(Uri uri, String source) {
         if (uri == null || !isAdded() || getView() == null) return;
         Bundle args = new Bundle();
         args.putString("photoUri", uri.toString());
+        args.putString("photoSource", source);
         Navigation.findNavController(getView()).navigate(R.id.fragment_photo_search, args);
     }
 

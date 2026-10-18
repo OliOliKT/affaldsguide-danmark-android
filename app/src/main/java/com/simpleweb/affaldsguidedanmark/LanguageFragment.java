@@ -19,7 +19,6 @@ public class LanguageFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        NativeAdHelper.loadNativeAd(requireContext(), view);
 
         RadioButton danishButton = view.findViewById(R.id.danishLanguageButton);
         RadioButton englishButton = view.findViewById(R.id.englishLanguageButton);
@@ -35,14 +34,17 @@ public class LanguageFragment extends Fragment {
 
         danishButton.setOnClickListener(v -> {
             LanguageManager.saveLanguage(requireContext(), LanguageManager.DANISH);
+            PhotoSearchWidgetProvider.updateAll(requireContext());
             requireActivity().recreate();
         });
         englishButton.setOnClickListener(v -> {
             LanguageManager.saveLanguage(requireContext(), LanguageManager.ENGLISH);
+            PhotoSearchWidgetProvider.updateAll(requireContext());
             requireActivity().recreate();
         });
         arabicButton.setOnClickListener(v -> {
             LanguageManager.saveLanguage(requireContext(), LanguageManager.ARABIC);
+            PhotoSearchWidgetProvider.updateAll(requireContext());
             requireActivity().recreate();
         });
     }

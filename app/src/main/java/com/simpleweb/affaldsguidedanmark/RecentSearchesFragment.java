@@ -15,7 +15,9 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class RecentSearchesFragment extends Fragment {
     private static final String RECENT_SEARCHES_PREFS = "RecentSearches";
@@ -29,30 +31,31 @@ public class RecentSearchesFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        NativeAdHelper.loadNativeAd(requireContext(), view);
 
         LinearLayout recentSearchesList = view.findViewById(R.id.recentSearchesList);
         TextView emptyRecentSearchesText = view.findViewById(R.id.emptyRecentSearchesText);
         List<String> recentSearches = getRecentSearches();
-
-        if (recentSearches.isEmpty()) {
-            emptyRecentSearchesText.setVisibility(View.VISIBLE);
-            recentSearchesList.setVisibility(View.GONE);
-            return;
-        }
-
-        emptyRecentSearchesText.setVisibility(View.GONE);
-        recentSearchesList.setVisibility(View.VISIBLE);
+        TrashDB trashDB = new TrashDB(getResources());
+        boolean useEnglish = LanguageManager.usesNonDanishContent(requireContext());
+        Set<String> displayedNames = new HashSet<>();
 
         for (String search : recentSearches) {
-            TextView searchView = createRecentSearchView(search);
+            String currentName = trashDB.getCurrentProductNameForRecentSearch(search, useEnglish);
+            if (currentName == null || !displayedNames.add(currentName.toLowerCase(java.util.Locale.ROOT))) {
+                continue;
+            }
+            TextView searchView = createRecentSearchView(currentName);
             searchView.setOnClickListener(itemView -> {
                 Bundle args = new Bundle();
-                args.putString("initialQuery", search);
-                Navigation.findNavController(view).navigate(R.id.search_trash_fragment, args);
+                args.putString("initialQuery", currentName);
+                Navigation.findNavController(itemView).navigate(R.id.action_to_searchTrash, args);
             });
             recentSearchesList.addView(searchView);
         }
+
+        boolean isEmpty = recentSearchesList.getChildCount() == 0;
+        emptyRecentSearchesText.setVisibility(isEmpty ? View.VISIBLE : View.GONE);
+        recentSearchesList.setVisibility(isEmpty ? View.GONE : View.VISIBLE);
     }
 
     private TextView createRecentSearchView(String search) {

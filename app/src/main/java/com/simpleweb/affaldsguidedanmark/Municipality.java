@@ -276,8 +276,20 @@ public class Municipality implements Parcelable {
         @SerializedName("DigitalSelvbetjeningUrl")
         private String digitalSelfServiceUrl;
 
+        @SerializedName("AffaldSelvbetjeningUrl")
+        private String wasteSelfServiceUrl;
+
+        @SerializedName("AffaldSelvbetjeningKildeUrl")
+        private String wasteSelfServiceSourceUrl;
+
+        @SerializedName("AffaldSelvbetjeningTjekket")
+        private String wasteSelfServiceChecked;
+
         @SerializedName("Links")
         private List<OfficialLink> links;
+
+        @SerializedName("BekræftedeFraktioner")
+        private List<ConfirmedFraction> confirmedFractions;
 
         protected Details(Parcel in) {
             lastChecked = in.readString();
@@ -286,6 +298,7 @@ public class Municipality implements Parcelable {
             schemes = in.createTypedArrayList(Scheme.CREATOR);
             quickFacts = in.createTypedArrayList(QuickFact.CREATOR);
             links = in.createTypedArrayList(OfficialLink.CREATOR);
+            confirmedFractions = in.createTypedArrayList(ConfirmedFraction.CREATOR);
             wasteOperator = in.readString();
             wasteOperatorEn = in.readString();
             wasteOperatorUrl = in.readString();
@@ -301,6 +314,9 @@ public class Municipality implements Parcelable {
             digitalSelfService = in.readString();
             digitalSelfServiceEn = in.readString();
             digitalSelfServiceUrl = in.readString();
+            wasteSelfServiceUrl = in.readString();
+            wasteSelfServiceSourceUrl = in.readString();
+            wasteSelfServiceChecked = in.readString();
         }
 
         public static final Creator<Details> CREATOR = new Creator<Details>() {
@@ -374,12 +390,28 @@ public class Municipality implements Parcelable {
             return digitalSelfServiceUrl;
         }
 
+        public String getWasteSelfServiceUrl() {
+            return wasteSelfServiceUrl;
+        }
+
+        public String getWasteSelfServiceSourceUrl() {
+            return wasteSelfServiceSourceUrl;
+        }
+
+        public String getWasteSelfServiceChecked() {
+            return wasteSelfServiceChecked;
+        }
+
         private String localized(String danish, String english, boolean useEnglish) {
             return useEnglish && english != null && !english.trim().isEmpty() ? english : danish;
         }
 
         public List<OfficialLink> getLinks() {
             return links;
+        }
+
+        public List<ConfirmedFraction> getConfirmedFractions() {
+            return confirmedFractions;
         }
 
         @Override
@@ -395,6 +427,7 @@ public class Municipality implements Parcelable {
             dest.writeTypedList(schemes);
             dest.writeTypedList(quickFacts);
             dest.writeTypedList(links);
+            dest.writeTypedList(confirmedFractions);
             dest.writeString(wasteOperator);
             dest.writeString(wasteOperatorEn);
             dest.writeString(wasteOperatorUrl);
@@ -410,6 +443,44 @@ public class Municipality implements Parcelable {
             dest.writeString(digitalSelfService);
             dest.writeString(digitalSelfServiceEn);
             dest.writeString(digitalSelfServiceUrl);
+            dest.writeString(wasteSelfServiceUrl);
+            dest.writeString(wasteSelfServiceSourceUrl);
+            dest.writeString(wasteSelfServiceChecked);
+        }
+    }
+
+    @Keep
+    public static class ConfirmedFraction implements Parcelable {
+        @SerializedName("Fraktion")
+        private String category;
+
+        @SerializedName("KildeUrl")
+        private String sourceUrl;
+
+        @SerializedName("Tjekket")
+        private String checked;
+
+        protected ConfirmedFraction(Parcel in) {
+            category = in.readString();
+            sourceUrl = in.readString();
+            checked = in.readString();
+        }
+
+        public static final Creator<ConfirmedFraction> CREATOR = new Creator<ConfirmedFraction>() {
+            @Override public ConfirmedFraction createFromParcel(Parcel in) { return new ConfirmedFraction(in); }
+            @Override public ConfirmedFraction[] newArray(int size) { return new ConfirmedFraction[size]; }
+        };
+
+        public String getCategory() { return category; }
+        public String getSourceUrl() { return sourceUrl; }
+        public String getChecked() { return checked; }
+
+        @Override public int describeContents() { return 0; }
+
+        @Override public void writeToParcel(Parcel dest, int flags) {
+            dest.writeString(category);
+            dest.writeString(sourceUrl);
+            dest.writeString(checked);
         }
     }
 

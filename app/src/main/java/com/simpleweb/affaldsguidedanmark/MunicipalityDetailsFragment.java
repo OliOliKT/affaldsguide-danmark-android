@@ -81,6 +81,8 @@ public class MunicipalityDetailsFragment extends Fragment {
         TextView websiteTextView = view.findViewById(R.id.municipalityDetailWebsite);
         TextView descriptionTextView = view.findViewById(R.id.municipalityDetailDescription);
         TextView saveMunicipalityButton = view.findViewById(R.id.saveMunicipalityButton);
+        View selfServiceCard = view.findViewById(R.id.municipalitySelfServiceCard);
+        TextView selfServiceButton = view.findViewById(R.id.municipalitySelfServiceButton);
         LinearLayout extraInfoContainer = view.findViewById(R.id.municipalityExtraInfoContainer);
         ImageButton backButton = view.findViewById(R.id.municipalityBackButton);
 
@@ -92,6 +94,14 @@ public class MunicipalityDetailsFragment extends Fragment {
         currentMunicipality = municipality;
         currentUseEnglish = useEnglish;
         descriptionTextView.setText(municipality.getDescription(useEnglish));
+        String selfServiceUrl = municipality.getDetails() == null ? null : municipality.getDetails().getWasteSelfServiceUrl();
+        Uri selfServiceUri = selfServiceUrl == null ? null : Uri.parse(selfServiceUrl.trim());
+        boolean hasSelfService = selfServiceUri != null && "https".equalsIgnoreCase(selfServiceUri.getScheme())
+                && selfServiceUri.getHost() != null && !selfServiceUri.getHost().isEmpty();
+        selfServiceCard.setVisibility(hasSelfService ? View.VISIBLE : View.GONE);
+        if (hasSelfService) {
+            selfServiceButton.setOnClickListener(v -> openUrl(selfServiceUrl));
+        }
         renderExtraInfo(extraInfoContainer, municipality, useEnglish);
         if (getArguments() != null && getArguments().getBoolean("scrollToFractions") && fractionOverviewTitle != null) {
             androidx.core.widget.NestedScrollView scrollView = (androidx.core.widget.NestedScrollView) view;
@@ -427,7 +437,9 @@ public class MunicipalityDetailsFragment extends Fragment {
         if (hasText(centers)) {
             addPracticalInfoCard(container, getString(R.string.recycling_centres_count), centers, null);
         }
-        if (hasText(selfServiceTitle) && hasText(selfService)) {
+        if (hasText(selfServiceTitle) && hasText(selfService)
+                && !(hasText(details.getDigitalSelfServiceUrl())
+                && details.getDigitalSelfServiceUrl().equals(details.getWasteSelfServiceUrl()))) {
             addPracticalInfoCard(container, selfServiceTitle, selfService, details.getDigitalSelfServiceUrl());
         }
     }
@@ -444,32 +456,6 @@ public class MunicipalityDetailsFragment extends Fragment {
         int total = details.getWasteFractionTotal();
         fractionOverviewTitle = addSubTitle(container, getString(R.string.waste_fractions_overview, count, total), 26);
 
-        StringBuilder source = new StringBuilder();
-        source.append(municipality.getWasteRules()).append(' ').append(municipality.getWasteRules(true));
-        if (details.getSchemes() != null) {
-            for (Municipality.Scheme scheme : details.getSchemes()) {
-                source.append(' ').append(scheme.getTitle(false)).append(' ').append(scheme.getDescription(false));
-                source.append(' ').append(scheme.getTitle(true)).append(' ').append(scheme.getDescription(true));
-            }
-        }
-        String normalized = Normalizer.normalize(source.toString().toLowerCase(Locale.ROOT), Normalizer.Form.NFD)
-                .replaceAll("\\p{M}+", "").replace('ø', 'o').replace("æ", "ae");
-        String[] words = normalized.split("[^\\p{L}]+");
-        Set<Integer> detected = new HashSet<>();
-        for (String word : words) {
-            if (word.startsWith("restaffald") || word.startsWith("dagrenovation")) detected.add(0);
-            if (word.startsWith("madaffald") || word.startsWith("bioaffald")) detected.add(1);
-            if (word.equals("pap")) detected.add(2);
-            if (word.startsWith("plast")) detected.add(3);
-            if (word.startsWith("glas")) detected.add(4);
-            if (word.startsWith("miljoboks") || word.startsWith("miljokasse")) detected.add(5);
-            if (word.startsWith("papir")) detected.add(6);
-            if (word.startsWith("metal")) detected.add(7);
-            if (word.startsWith("tekstil")) detected.add(8);
-            if (word.startsWith("karton")) detected.add(9);
-        }
-        if (normalized.contains("farligt affald")) detected.add(5);
-
         boolean hasUnconfirmed = false;
         for (int i = 0; i < FRACTIONS.length; i += 2) {
             LinearLayout row = new LinearLayout(requireContext());
@@ -479,7 +465,10 @@ public class MunicipalityDetailsFragment extends Fragment {
             rowParams.setMargins(0, dpToPx(8), 0, 0);
             row.setLayoutParams(rowParams);
             for (int j = i; j < Math.min(i + 2, FRACTIONS.length); j++) {
-                int status = count >= FRACTIONS.length || detected.contains(j) ? 0 : detected.size() == count ? 1 : 2;
+                MunicipalityFractionStatus.Status fractionStatus =
+                        MunicipalityFractionStatus.forCategory(municipality, FRACTIONS[j]);
+                int status = fractionStatus == MunicipalityFractionStatus.Status.USED ? 0
+                        : fractionStatus == MunicipalityFractionStatus.Status.NOT_USED ? 1 : 2;
                 if (status == 2) hasUnconfirmed = true;
                 row.addView(createFractionTile(j, status, useEnglish));
             }

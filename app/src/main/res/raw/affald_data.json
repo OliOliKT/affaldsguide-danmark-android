@@ -6273,14 +6273,16 @@
     {
         "Produkt": "Voksdug",
         "Sortering": {
-            "Restaffald": "Små stykker",
-            "Genbrugsplads": "Store stykker"
+            "Restaffald": "Små stykker uden PVC",
+            "Genbrugsplads": "Voksdug af PVC, også små stykker, samt store stykker"
         },
-        "beskrivelse": "Voksdug skal normalt sorteres som restaffald, fordi tekstil, plastbelægning og overfladebehandling ikke kan skilles ad. Store stykker kan afleveres på genbrugspladsen efter lokal anvisning.",
+        "beskrivelse": "Små stykker voksdug uden PVC kan sorteres som restaffald. Er voksdugen lavet af PVC, skal den afleveres på genbrugspladsen, også hvis stykket er lille. Store stykker afleveres også på genbrugspladsen. Følg pladsens anvisning for PVC.",
         "Produkt_en": "Oilcloth",
-        "beskrivelse_ar": "يُفرز المفرش المشمع عادةً مع النفايات المتبقية لأن طبقات النسيج المطلي والبلاستيك لا يمكن فصلها. وقد تحتاج القطع الكبيرة إلى مركز إعادة التدوير.",
+        "beskrivelse_ar": "يمكن وضع القطع الصغيرة من المفرش المشمع الخالية من PVC في النفايات المتبقية. أما المفرش المصنوع من PVC فيجب تسليمه إلى مركز إعادة التدوير حتى لو كانت القطعة صغيرة. وتُسلَّم القطع الكبيرة أيضاً إلى المركز. اتبع تعليمات المركز بشأن PVC.",
         "Produkt_ar": "مفرش مشمع",
-        "beskrivelse_en": "Oilcloth should usually be sorted as residual waste because coated textile and plastic layers cannot be separated. Large pieces may need a recycling centre."
+        "beskrivelse_en": "Small pieces of oilcloth without PVC can go in residual waste. Oilcloth made of PVC must be taken to a recycling centre, even if the piece is small. Take large pieces there too, and follow the centre's PVC sorting instructions.",
+        "KildeUrl": "https://mst.dk/borger/hjem-og-have/byg-og-vedligeholdelse/plast-i-renovering-og-byggeri",
+        "SidstTjekket": "2026-10-11"
     },
     {
         "Produkt": "Myggebalsam",
@@ -9139,13 +9141,15 @@
     {
         "Produkt": "Dødt dyr",
         "Sortering": {
-            "Restaffald": "Hele genstand"
+            "Restaffald": "Kun små døde dyr, forsvarligt pakket i en lukket pose. Større dyr skal håndteres efter kommunens eller dyrlægens anvisning."
         },
         "beskrivelse": "Små døde dyr skal normalt lægges i en lukket pose og sorteres som restaffald. Brug handsker eller redskab af hensyn til hygiejne. Større dyr, kæledyr eller dyr med mistanke om sygdom skal håndteres efter kommunens eller dyrlægens vejledning.",
         "Produkt_en": "Dead animal",
         "beskrivelse_ar": "ضع الحيوان النافق الصغير في كيس مغلق مع النفايات المتبقية، واتبع الإرشادات المحلية للحيوانات الكبيرة أو المرض المشتبه.",
         "Produkt_ar": "حيوان نافق",
-        "beskrivelse_en": "Small dead animals should usually be placed in a closed bag and sorted as residual waste. Use gloves or tools for hygiene. Follow local or veterinary guidance for larger animals or suspected disease."
+        "beskrivelse_en": "Small dead animals should usually be placed in a closed bag and sorted as residual waste. Use gloves or tools for hygiene. Follow local or veterinary guidance for larger animals or suspected disease.",
+        "KildeUrl": "https://affald.kk.dk/affald/dyr-fx-mindre-kaeledyr",
+        "SidstTjekket": "2026-10-14"
     },
     {
         "Produkt": "Afdækningsfilt",
@@ -20059,13 +20063,15 @@
     {
         "Produkt": "Bestik med træskaft",
         "Sortering": {
-            "Restaffald": "Hele genstand"
+            "Metal": "Bestik af metal sorteres som metal, også når skaftet er af træ."
         },
-        "beskrivelse": "Bestik med træskaft skal sorteres som restaffald i Danmark. Dette skyldes, at materialekombinationen af metal og træ gør det uegnet til genanvendelse i metal-affald. Sørg for at placere bestikket i din beholder til restaffald, hvor det vil blive håndteret korrekt af affaldsanlægget.",
+        "beskrivelse": "Bestik, der hovedsageligt er af metal, skal sorteres som metal, også når skaftet er af træ. Metallet kan genanvendes, selv om træskaftet bliver siddende. Bestik helt af træ sorteres efter materialet og den lokale vejledning.",
         "Produkt_en": "Cutlery with wooden handle",
         "Produkt_ar": "أدوات مائدة بمقبض خشبي",
-        "beskrivelse_en": "Cutlery with wooden handles should usually be sorted as residual waste because the materials are combined.",
-        "beskrivelse_ar": "تُفرز أدوات المائدة ذات المقابض الخشبية عادةً مع النفايات المتبقية لأنها مصنوعة من مواد متصلة ببعضها."
+        "beskrivelse_en": "Cutlery made mainly of metal goes in metal recycling, even with a wooden handle. The handle can remain attached. Cutlery made entirely of wood should follow local material guidance.",
+        "beskrivelse_ar": "تُفرز أدوات المائدة المصنوعة أساسًا من المعدن مع النفايات المعدنية، حتى لو كان مقبضها خشبيًا. يمكن إبقاء المقبض متصلًا. أما الأدوات المصنوعة بالكامل من الخشب فتُفرز حسب مادتها والإرشادات المحلية.",
+        "KildeUrl": "https://affald.kk.dk/affaldsfraktion/saadan-sorterer-du-metal",
+        "SidstTjekket": "2026-10-14"
     },
     {
         "Produkt": "Betonbrokke",
@@ -21344,13 +21350,16 @@
     {
         "Produkt": "Grene",
         "Sortering": {
-            "Genbrugsplads": "Hele genstand"
+            "Haveaffald": "Hvis din adresse har en haveaffaldsordning, og grenene overholder kommunens grænser for størrelse og bundtning.",
+            "Genbrugsplads": "Aflever som haveaffald på genbrugspladsen, hvis du ikke har en egnet henteordning eller grenene er for store."
         },
-        "beskrivelse": "Grene og større haveaffald skal afleveres på genbrugspladsen eller i kommunens haveaffaldsordning. Fjern plast, snor og potter, før grenene afleveres.",
+        "beskrivelse": "Grene sorteres som haveaffald. Brug kommunens henteordning, hvis den findes på din adresse og grenene opfylder dens krav til størrelse og bundtning. Ellers afleveres grenene som haveaffald på genbrugspladsen. Undgå plast, ståltråd og potter.",
         "Produkt_en": "Branches",
         "Produkt_ar": "أغصان",
-        "beskrivelse_en": "Branches and larger garden waste should be taken to a recycling centre or handled through the local garden waste scheme.",
-        "beskrivelse_ar": "يجب نقل الأغصان ونفايات الحدائق الكبيرة إلى مركز إعادة التدوير أو تسليمها عبر نظام جمع نفايات الحدائق المحلي."
+        "beskrivelse_en": "Branches are garden waste. Use the local collection service if it is available at your address and the branches meet its size and bundling rules. Otherwise, take them to the garden-waste area at a recycling centre. Keep out plastic, wire and plant pots.",
+        "beskrivelse_ar": "تُفرز الأغصان ضمن نفايات الحدائق. استخدم خدمة الجمع المحلية إذا كانت متاحة لعنوانك وكانت الأغصان ضمن حدود الحجم والربط المسموح بها. وإلا فانقلها إلى قسم نفايات الحدائق في مركز إعادة التدوير. أبعد عنها البلاستيك والأسلاك وأصص النباتات.",
+        "KildeUrl": "https://www2.mst.dk/Udgiv/publikationer/2019/02/978-87-7038-039-3.pdf",
+        "SidstTjekket": "2026-10-14"
     },
     {
         "Produkt": "Kattebakkegrus",

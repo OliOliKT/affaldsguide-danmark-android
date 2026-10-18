@@ -2,6 +2,7 @@ package com.simpleweb.affaldsguidedanmark;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.SharedPreferences;
 import android.graphics.Rect;
@@ -42,7 +43,6 @@ import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.android.gms.ads.MobileAds;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 import com.google.android.material.navigation.NavigationView;
@@ -87,8 +87,6 @@ public class MainActivity extends AppCompatActivity {
             getWindow().setNavigationBarContrastEnforced(false);
         }
 
-        MobileAds.initialize(this);
-
         sharedPref = getSharedPreferences("MyAppPreferences", Context.MODE_PRIVATE);
         boolean hasSeenGreetingPage = sharedPref.getBoolean("hasSeenGreetingPage", false);
 
@@ -100,7 +98,33 @@ public class MainActivity extends AppCompatActivity {
             setContentView(R.layout.activity_main);
             applyMainSystemBarInsets();
             setUpMainLayout();
+            openCalendarFromIntent(getIntent());
+            openWidgetShortcutFromIntent(getIntent());
         }
+    }
+
+    @Override protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        setIntent(intent);
+        openCalendarFromIntent(intent);
+        openWidgetShortcutFromIntent(intent);
+    }
+
+    private void openCalendarFromIntent(Intent intent) {
+        if (intent == null || !intent.getBooleanExtra("open_calendar", false) || navController == null) return;
+        intent.removeExtra("open_calendar");
+        navController.navigate(R.id.fragment_calendar);
+    }
+
+    private void openWidgetShortcutFromIntent(Intent intent) {
+        if (intent == null || navController == null) return;
+        String shortcut = intent.getStringExtra(PhotoSearchWidgetProvider.EXTRA_SHORTCUT);
+        if (shortcut == null) return;
+        intent.removeExtra(PhotoSearchWidgetProvider.EXTRA_SHORTCUT);
+        Bundle args = new Bundle();
+        args.putBoolean("openWidgetCamera", PhotoSearchWidgetProvider.SHORTCUT_CAMERA.equals(shortcut));
+        args.putBoolean("focusWidgetSearch", PhotoSearchWidgetProvider.SHORTCUT_SEARCH.equals(shortcut));
+        navController.navigate(R.id.action_to_searchTrash, args);
     }
 
     @Override
@@ -223,7 +247,8 @@ public class MainActivity extends AppCompatActivity {
         View onboardingDotThree = findViewById(R.id.onboardingDotThree);
         TextView backButton = findViewById(R.id.onboardingBackButton);
         TextView skipButton = findViewById(R.id.onboardingSkipButton);
-        TextView selectedMunicipalityText = findViewById(R.id.greetingSelectedMunicipality);
+        View selectedMunicipalityRow = findViewById(R.id.greetingSelectedMunicipality);
+        TextView selectedMunicipalityText = findViewById(R.id.greetingSelectedMunicipalityName);
         TextView municipalityTitle = findViewById(R.id.greetingMunicipalityTitle);
         TextView municipalitySubtitle = findViewById(R.id.greetingMunicipalityText);
         EditText municipalityInput = findViewById(R.id.greetingMunicipalityInput);
@@ -238,7 +263,7 @@ public class MainActivity extends AppCompatActivity {
                 municipality -> {
                     greetingSelectedMunicipalityName = municipality.getMunicipality();
                     sharedPref.edit().putString("greetingSelectedMunicipality", greetingSelectedMunicipalityName).apply();
-                    showSelectedMunicipality(selectedMunicipalityText, greetingSelectedMunicipalityName);
+                    showSelectedMunicipality(selectedMunicipalityRow, selectedMunicipalityText, greetingSelectedMunicipalityName);
                     begynd.setEnabled(true);
                     begynd.setAlpha(1f);
                     InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -255,7 +280,7 @@ public class MainActivity extends AppCompatActivity {
             municipalityAdapter.setSelectedMunicipalityName(pendingMunicipality);
         }
         if (!greetingSelectedMunicipalityName.isEmpty()) {
-            showSelectedMunicipality(selectedMunicipalityText, greetingSelectedMunicipalityName);
+            showSelectedMunicipality(selectedMunicipalityRow, selectedMunicipalityText, greetingSelectedMunicipalityName);
         }
         municipalityInput.addTextChangedListener(new TextWatcher() {
             @Override public void beforeTextChanged(CharSequence s, int start, int count, int after) { }
@@ -434,11 +459,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         applyMainSystemBarInsets();
         setUpMainLayout();
+        openWidgetShortcutFromIntent(getIntent());
     }
 
-    private void showSelectedMunicipality(TextView selectedMunicipalityText, String municipalityName) {
-        selectedMunicipalityText.setText(getString(R.string.greeting_municipality_selected, municipalityName));
-        selectedMunicipalityText.setVisibility(View.VISIBLE);
+    private void showSelectedMunicipality(View selectedMunicipalityRow, TextView selectedMunicipalityText, String municipalityName) {
+        selectedMunicipalityText.setText(municipalityName);
+        selectedMunicipalityRow.setContentDescription(getString(R.string.greeting_municipality_selected, municipalityName));
+        selectedMunicipalityRow.setVisibility(View.VISIBLE);
     }
 
     private void setUpMainLayout() {
@@ -465,6 +492,8 @@ public class MainActivity extends AppCompatActivity {
                     navController.navigate(R.id.fragment_trash_types);
                 } else if (itemId == R.id.municipalities_button) {
                     navController.navigate(R.id.fragment_municipalities);
+                } else if (itemId == R.id.calendar_button) {
+                    navController.navigate(R.id.fragment_calendar);
                 } else if (itemId == R.id.navigation_view_button) {
                     if (drawerLayout.isDrawerOpen(GravityCompat.END)) {
                         drawerLayout.closeDrawer(GravityCompat.END);
@@ -597,6 +626,10 @@ public class MainActivity extends AppCompatActivity {
 
         if (destinationId == R.id.fragment_municipalities || destinationId == R.id.fragment_municipality_details) {
             return R.id.municipalities_button;
+        }
+
+        if (destinationId == R.id.fragment_calendar) {
+            return R.id.calendar_button;
         }
 
         if (destinationId == R.id.fragment_recent_searches

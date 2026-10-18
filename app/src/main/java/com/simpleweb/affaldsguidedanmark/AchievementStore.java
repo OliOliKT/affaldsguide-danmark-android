@@ -3,6 +3,8 @@ package com.simpleweb.affaldsguidedanmark;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import org.json.JSONObject;
+
 import java.time.LocalDate;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
@@ -37,6 +39,7 @@ final class AchievementStore {
             new Achievement("localExpert", 2),
             new Achievement("localRulesExpert", 25),
             new Achievement("recyclingCenter", 1),
+            new Achievement("calendarAddress", 1),
             new Achievement("neighborhoodRegular", 5),
             new Achievement("helpfulEye", 1),
             new Achievement("trueWasteExpert", 10),
@@ -61,6 +64,17 @@ final class AchievementStore {
         if (!SavedMunicipalityManager.getSavedMunicipalityName(context).isEmpty()
                 && !preferences.getBoolean("municipalitySelected", false)) {
             preferences.edit().putBoolean("municipalitySelected", true).apply();
+        }
+        try {
+            String savedAddress = context.getApplicationContext()
+                    .getSharedPreferences("collection_calendar", Context.MODE_PRIVATE)
+                    .getString("address", "");
+            JSONObject address = new JSONObject(savedAddress);
+            if (!address.optString("id").isEmpty() && !address.optString("municipality").isEmpty()) {
+                preferences.edit().putBoolean("calendarAddressSaved", true).apply();
+            }
+        } catch (Exception ignored) {
+            // No valid saved calendar address yet.
         }
         checkUnlocks();
     }
@@ -93,6 +107,7 @@ final class AchievementStore {
             case "localExpert": return (preferences.getBoolean("municipalitySelected", false) ? 1 : 0)
                     + (preferences.getBoolean("municipalityViewed", false) ? 1 : 0);
             case "recyclingCenter": return preferences.getBoolean("recyclingCenterMapOpened", false) ? 1 : 0;
+            case "calendarAddress": return preferences.getBoolean("calendarAddressSaved", false) ? 1 : 0;
             case "neighborhoodRegular": return Math.min(set("mappedRecyclingCenters").size(), 5);
             case "helpfulEye": return Math.min(preferences.getInt("correctionCount", 0), 1);
             case "trueWasteExpert": return Math.min(preferences.getInt("correctionCount", 0), 10);
@@ -120,6 +135,7 @@ final class AchievementStore {
 
     void recordMunicipalitySelected() { setFlag("municipalitySelected"); }
     void recordMunicipalityViewed() { setFlag("municipalityViewed"); }
+    void recordCalendarAddressSaved() { setFlag("calendarAddressSaved"); }
 
     void recordRecyclingCenterMap(String centerId) {
         boolean changed = !preferences.getBoolean("recyclingCenterMapOpened", false);

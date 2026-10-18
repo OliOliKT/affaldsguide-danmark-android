@@ -3,6 +3,7 @@ package com.simpleweb.affaldsguidedanmark;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -43,16 +44,11 @@ final class OnboardingMunicipalityAdapter extends RecyclerView.Adapter<Onboardin
     private void rebuild() {
         String needle = query.trim().toLowerCase(new Locale("da", "DK"));
         visibleMunicipalities.clear();
-        Municipality selected = null;
         for (Municipality municipality : allMunicipalities) {
-            if (municipality.getMunicipality().equalsIgnoreCase(selectedMunicipalityName)) {
-                selected = municipality;
-            } else if (matches(municipality, needle)) {
+            if (!municipality.getMunicipality().equalsIgnoreCase(selectedMunicipalityName)
+                    && matches(municipality, needle)) {
                 visibleMunicipalities.add(municipality);
             }
-        }
-        if (selected != null) {
-            visibleMunicipalities.add(0, selected);
         }
         notifyDataSetChanged();
     }
@@ -83,15 +79,10 @@ final class OnboardingMunicipalityAdapter extends RecyclerView.Adapter<Onboardin
     @Override
     public void onBindViewHolder(@NonNull Holder holder, int position) {
         Municipality municipality = visibleMunicipalities.get(position);
-        boolean selected = municipality.getMunicipality().equalsIgnoreCase(selectedMunicipalityName);
         holder.name.setText(municipality.getMunicipality());
-        holder.icon.setText(selected ? "✓" : "▦");
-        holder.itemView.setBackgroundResource(selected
-                ? R.drawable.onboarding_municipality_selected
-                : R.drawable.list_item_background);
-        holder.itemView.setContentDescription(selected
-                ? holder.itemView.getContext().getString(R.string.greeting_municipality_selected, municipality.getMunicipality())
-                : municipality.getMunicipality());
+        holder.icon.setImageResource(R.drawable.onboarding_city_icon);
+        holder.itemView.setBackgroundResource(R.drawable.list_item_background);
+        holder.itemView.setContentDescription(municipality.getMunicipality());
         holder.itemView.setOnClickListener(view -> {
             setSelectedMunicipalityName(municipality.getMunicipality());
             onSelectListener.onSelect(municipality);
@@ -104,7 +95,7 @@ final class OnboardingMunicipalityAdapter extends RecyclerView.Adapter<Onboardin
     }
 
     static final class Holder extends RecyclerView.ViewHolder {
-        final TextView icon;
+        final ImageView icon;
         final TextView name;
 
         Holder(@NonNull View itemView) {

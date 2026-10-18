@@ -125,7 +125,10 @@
             "OfficielAffaldssideTitel_en": "Waste",
             "GenbrugspladserAntal": 1,
             "Genbrugspladser": "1 genbrugsplads",
-            "Genbrugspladser_en": "1 recycling centre"
+            "Genbrugspladser_en": "1 recycling centre",
+            "AffaldSelvbetjeningUrl": "https://albertslund.dk/by-og-bolig/affald/mit-affald",
+            "AffaldSelvbetjeningKildeUrl": "https://albertslund.dk/by-og-bolig/affald/mit-affald",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Poststeder": [
             {
@@ -228,12 +231,12 @@
                 },
                 {
                     "Titel": "Bolig med egne affaldsbeholdere",
-                    "Url": "https://alleroed.dk/borger/bolig-affald-og-udearealer/affald-og-genbrug/bolig-med-egne-affaldsbeholdere",
+                    "Url": "https://alleroed.dk/borger/bolig-forsyning-og-udearealer/affald-og-genbrug/bolig-med-egne-affaldsbeholdere",
                     "Title_en": "Homes with individual waste bins"
                 },
                 {
                     "Titel": "Storskrald",
-                    "Url": "https://alleroed.dk/borger/bolig-affald-og-udearealer/affald-og-genbrug/storskrald",
+                    "Url": "https://alleroed.dk/borger/bolig-forsyning-og-udearealer/affald-og-genbrug/storskrald",
                     "Title_en": "Bulky waste"
                 },
                 {
@@ -260,7 +263,10 @@
             "DigitalSelvbetjeningTitel": "Mit affald og Affaldsportal",
             "DigitalSelvbetjeningTitel_en": "My waste and Affaldsportal",
             "DigitalSelvbetjening": "Affaldsportal bruges til tømmedage og beskedservice.",
-            "DigitalSelvbetjening_en": "Affaldsportal is used for collection dates and notifications."
+            "DigitalSelvbetjening_en": "Affaldsportal is used for collection dates and notifications.",
+            "AffaldSelvbetjeningUrl": "https://alleroed.dk/borger/bolig-forsyning-og-udearealer/affald-og-genbrug/selvbetjening-mit-affald",
+            "AffaldSelvbetjeningKildeUrl": "https://alleroed.dk/borger/bolig-forsyning-og-udearealer/affald-og-genbrug/selvbetjening-mit-affald",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Telefon": "48 10 01 00",
         "TelefonLabel": "Kommunens telefon",
@@ -421,7 +427,10 @@
             "DigitalSelvbetjeningTitel_en": "Collection calendar, bins and recycling centres",
             "DigitalSelvbetjening": "Se kommunens digitale affaldsløsning.",
             "DigitalSelvbetjening_en": "Open the municipality's digital waste service.",
-            "DigitalSelvbetjeningUrl": "https://www.assens.dk/borger/affald-og-genbrug/toemningskalender-beholdere-og-genbrugspladser"
+            "DigitalSelvbetjeningUrl": "https://www.assens.dk/borger/affald-og-genbrug/toemningskalender-beholdere-og-genbrugspladser",
+            "AffaldSelvbetjeningUrl": "https://www.assensforsyning.dk/selvbetjening/affald",
+            "AffaldSelvbetjeningKildeUrl": "https://www.assensforsyning.dk/selvbetjening/affald",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Poststeder": [
             {
@@ -587,7 +596,10 @@
             "DigitalSelvbetjeningTitel_en": "Self-service and Perfect Waste",
             "DigitalSelvbetjening": "Perfect Waste bruges til tømmekalender og sortering.",
             "DigitalSelvbetjening_en": "Perfect Waste is used for collection dates and sorting.",
-            "DigitalSelvbetjeningUrl": "https://ballerup.dk/borger/affald/selvbetjening"
+            "DigitalSelvbetjeningUrl": "https://ballerup.dk/borger/affald/selvbetjening",
+            "AffaldSelvbetjeningUrl": "https://ballerup.dk/borger/affald/selvbetjening",
+            "AffaldSelvbetjeningKildeUrl": "https://ballerup.dk/borger/affald/selvbetjening",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Telefon": "44 77 20 00",
         "TelefonLabel": "Kommunens telefon",
@@ -734,7 +746,10 @@
             "DigitalSelvbetjeningTitel": "Selvbetjening",
             "DigitalSelvbetjeningTitel_en": "Self-service",
             "DigitalSelvbetjening": "Affaldsportal fra Billund Vand & Energi",
-            "DigitalSelvbetjening_en": "Waste portal from Billund Vand & Energi"
+            "DigitalSelvbetjening_en": "Waste portal from Billund Vand & Energi",
+            "AffaldSelvbetjeningUrl": "https://www.borger.dk/handlingsside?kommunekode=530&selfserviceId=e9101171-9bcc-43a2-a7ae-85f60f94f94a",
+            "AffaldSelvbetjeningKildeUrl": "https://www.borger.dk/handlingsside?kommunekode=530&selfserviceId=e9101171-9bcc-43a2-a7ae-85f60f94f94a",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Poststeder": [
             {
@@ -777,7 +792,7 @@
         "Postnr": 3700,
         "By": "Rønne",
         "Mailadresse": "post@brk.dk",
-        "URL": "https://bornholm.dk/Sider/Forside.aspx",
+        "URL": "https://bornholm.dk/",
         "Beskrivelse": "Bornholms Regionskommune dækker hele den solrige ø Bornholm, kendt for sin unikke natur, smukke kyststrækninger og rige kulturarv. Øen byder på ikoniske seværdigheder som Hammershus, rundkirker og hyggelige havnebyer, samtidig med at den er en favoritdestination for cyklister, kunstnere og madelskere.",
         "Affaldsregler": "I Bornholms Regionskommune skal husholdningsaffald sorteres i 12 fraktioner: madaffald, restaffald, papir, pap, glas, plast, metal, tekstiler, mad- og drikkekartoner, farligt affald, batterier og småt elektronik. Bornholm sigter mod at blive en affaldsfri ø i 2032, og derfor fokuseres der på genanvendelse i højere grad end tidligere. BOFA, der står for affaldshåndteringen, har implementeret en ordning med både individuelle beholdere og 'MiljØ'-stationer, særligt i sommerhusområder, hvor affald kan afleveres. Information om tømningsdatoer og sorteringsvejledning findes på BOFA’s hjemmeside og app.",
         "Beskrivelse_en": "Bornholm Regional Municipality covers the island of Bornholm, known for its distinctive nature, coastline and cultural heritage. The island includes sights such as Hammershus, round churches and harbour towns, and is popular with cyclists, artists and food lovers.",
@@ -852,7 +867,7 @@
             "Links": [
                 {
                     "Titel": "Bornholms Regionskommune - Affaldshåndtering",
-                    "Url": "https://bornholm.dk/Borger/Miljoe-natur-energi/Sider/Affald.aspx",
+                    "Url": "https://bofa.dk/affaldsordninger/",
                     "Title_en": "Bornholm Regional Municipality - Waste management"
                 },
                 {
@@ -890,12 +905,15 @@
             "Affaldsfraktioner_en": "10 of 10 trash categories",
             "AffaldsfraktionerAntal": 10,
             "AffaldsfraktionerIAlt": 10,
-            "OfficielAffaldsside": "https://bornholm.dk/Borger/Miljoe-natur-energi/Sider/Affald.aspx",
+            "OfficielAffaldsside": "https://bofa.dk/affaldsordninger/",
             "OfficielAffaldssideTitel": "Bornholms Regionskommune - Affaldshåndtering",
             "OfficielAffaldssideTitel_en": "Bornholm Regional Municipality - Waste management",
             "GenbrugspladserAntal": 6,
             "Genbrugspladser": "6 genbrugspladser",
-            "Genbrugspladser_en": "6 recycling centres"
+            "Genbrugspladser_en": "6 recycling centres",
+            "AffaldSelvbetjeningUrl": "https://bofa.dk/selvbetjening/",
+            "AffaldSelvbetjeningKildeUrl": "https://bofa.dk/selvbetjening/",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Telefon": "56 92 00 00",
         "TelefonLabel": "Kommunens telefon",
@@ -1052,7 +1070,10 @@
             "DigitalSelvbetjeningTitel": "Mit Affald og Affaldsportal",
             "DigitalSelvbetjeningTitel_en": "Mit Affald and Affaldsportal",
             "DigitalSelvbetjening": "Mit Affald bruges til kalender, SMS og beholdere.",
-            "DigitalSelvbetjening_en": "Mit Affald is used for calendars, SMS reminders and bins."
+            "DigitalSelvbetjening_en": "Mit Affald is used for calendars, SMS reminders and bins.",
+            "AffaldSelvbetjeningUrl": "https://www.brondby.dk/genveje/selvbetjening/affald-og-genbrug/",
+            "AffaldSelvbetjeningKildeUrl": "https://www.brondby.dk/genveje/selvbetjening/affald-og-genbrug/",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Telefon": "43 28 28 28",
         "TelefonLabel": "Kommunens telefon",
@@ -1167,7 +1188,7 @@
             "Links": [
                 {
                     "Titel": "Affaldsinformation hos Brønderslev Kommune",
-                    "Url": "https://www.bronderslev.dk/om-kommunen/nyheder/nyheder-hoeringer-og-afgoerelser/information-om-affald-findes-fremover-paa-nordvaerks-hjemmeside",
+                    "Url": "https://nordvaerk.dk/borger/broenderslev-kommune-borger/",
                     "Title_en": "Waste information at Brønderslev Municipality"
                 },
                 {
@@ -1190,12 +1211,15 @@
             "Affaldsfraktioner_en": "10 of 10 trash categories",
             "AffaldsfraktionerAntal": 10,
             "AffaldsfraktionerIAlt": 10,
-            "OfficielAffaldsside": "https://www.bronderslev.dk/om-kommunen/nyheder/nyheder-hoeringer-og-afgoerelser/information-om-affald-findes-fremover-paa-nordvaerks-hjemmeside",
+            "OfficielAffaldsside": "https://nordvaerk.dk/borger/broenderslev-kommune-borger/",
             "OfficielAffaldssideTitel": "Affaldsinformation hos Brønderslev Kommune",
             "OfficielAffaldssideTitel_en": "Waste information at Brønderslev Municipality",
             "GenbrugspladserAntal": 6,
             "Genbrugspladser": "6 genbrugspladser",
-            "Genbrugspladser_en": "6 recycling centres"
+            "Genbrugspladser_en": "6 recycling centres",
+            "AffaldSelvbetjeningUrl": "https://nordvaerk.dk/borger/broenderslev-kommune-borger/selvbetjening/",
+            "AffaldSelvbetjeningKildeUrl": "https://nordvaerk.dk/borger/broenderslev-kommune-borger/selvbetjening/",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Poststeder": [
             {
@@ -1363,7 +1387,10 @@
             "OfficielAffaldssideTitel_en": "How to sort",
             "GenbrugspladserAntal": 1,
             "Genbrugspladser": "1 genbrugsplads",
-            "Genbrugspladser_en": "1 recycling centre"
+            "Genbrugspladser_en": "1 recycling centre",
+            "AffaldSelvbetjeningUrl": "https://www.dragoer.dk/by-og-bolig/affald",
+            "AffaldSelvbetjeningKildeUrl": "https://www.dragoer.dk/by-og-bolig/affald",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Poststeder": [
             {
@@ -1486,7 +1513,10 @@
             "OfficielAffaldssideTitel_en": "Egedalsorterer",
             "GenbrugspladserAntal": 4,
             "Genbrugspladser": "4 genbrugspladser",
-            "Genbrugspladser_en": "4 recycling centres"
+            "Genbrugspladser_en": "4 recycling centres",
+            "AffaldSelvbetjeningUrl": "https://egedalsorterer.egedalkommune.dk/private-husholdninger/villa-eller-parcelhus/selvbetjening",
+            "AffaldSelvbetjeningKildeUrl": "https://egedalsorterer.egedalkommune.dk/private-husholdninger/villa-eller-parcelhus/selvbetjening",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Telefon": "72 59 76 64",
         "TelefonLabel": "Telefon til affald",
@@ -1654,7 +1684,10 @@
             "DigitalSelvbetjeningTitel_en": "Mit Affald and collection dates",
             "DigitalSelvbetjening": "Selvbetjening viser kommende tømmedage.",
             "DigitalSelvbetjening_en": "Self-service shows upcoming collection dates.",
-            "DigitalSelvbetjeningUrl": "https://www.esbjerg.dk/affald-og-genbrug/hvornaar-toemmes-spandene"
+            "DigitalSelvbetjeningUrl": "https://www.esbjerg.dk/affald-og-genbrug/hvornaar-toemmes-spandene",
+            "AffaldSelvbetjeningUrl": "https://www.esbjerg.dk/affald-og-genbrug/problemer-med-dit-affald",
+            "AffaldSelvbetjeningKildeUrl": "https://www.esbjerg.dk/affald-og-genbrug/problemer-med-dit-affald",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Telefon": "76 16 16 16",
         "TelefonLabel": "Telefon til kommunen",
@@ -1835,7 +1868,10 @@
             "OfficielAffaldssideTitel_en": "Waste and recycling - Fanø Municipality",
             "GenbrugspladserAntal": 1,
             "Genbrugspladser": "1 genbrugsplads",
-            "Genbrugspladser_en": "1 recycling centre"
+            "Genbrugspladser_en": "1 recycling centre",
+            "AffaldSelvbetjeningUrl": "https://fanoe.dk/borger/affald-og-genbrug/selvbetjening-via-affaldonline",
+            "AffaldSelvbetjeningKildeUrl": "https://fanoe.dk/borger/affald-og-genbrug/selvbetjening-via-affaldonline",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Poststeder": [
             {
@@ -1974,7 +2010,10 @@
             "DigitalSelvbetjeningTitel": "Affaldsapp",
             "DigitalSelvbetjeningTitel_en": "Waste app",
             "DigitalSelvbetjening": "Affald Favrskov viser tømmedage, sortering og nærmeste genbrugsplads",
-            "DigitalSelvbetjening_en": "Affald Favrskov shows collection dates, sorting and nearest recycling centre"
+            "DigitalSelvbetjening_en": "Affald Favrskov shows collection dates, sorting and nearest recycling centre",
+            "AffaldSelvbetjeningUrl": "https://www.favrskovforsyning.dk/dine-beholdere",
+            "AffaldSelvbetjeningKildeUrl": "https://www.favrskovforsyning.dk/dine-beholdere",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Poststeder": [
             {
@@ -2150,7 +2189,10 @@
             "OfficielAffaldssideTitel_en": "Waste management in Faxe Municipality",
             "GenbrugspladserAntal": 2,
             "Genbrugspladser": "2 genbrugspladser",
-            "Genbrugspladser_en": "2 recycling centres"
+            "Genbrugspladser_en": "2 recycling centres",
+            "AffaldSelvbetjeningUrl": "https://affaldplus.dk/faxe-kommune-borger",
+            "AffaldSelvbetjeningKildeUrl": "https://affaldplus.dk/faxe-kommune-borger",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Poststeder": [
             {
@@ -2215,7 +2257,7 @@
         "Detaljer": {
             "SidstTjekket": "2026-09-22",
             "Affaldsoperatør": "Fredensborg Forsyning / Norfors",
-            "AffaldsoperatørUrl": "https://fredensborg.dk/borger/affald-og-miljoe/affald-toemning-skraldespande-vand/regulativer-husholdning-og-erhverv",
+            "AffaldsoperatørUrl": "https://fredensborg.dk/borger/affald-og-miljoe",
             "Affaldsoperatør_en": "Fredensborg Forsyning / Norfors",
             "KildeNote": "Oplysningerne er samlet fra Fredensborg Kommunes officielle affaldssider, Fredensborg Forsyning og Norfors. Affaldsguide Danmark er en uafhængig guide og er ikke en del af kommunen, forsyningen eller Norfors.",
             "KildeNote_en": "The information is based on Fredensborg Municipality's official waste pages, Fredensborg Forsyning and Norfors. Affaldsguide Danmark is an independent guide and is not part of the municipality, the utility or Norfors.",
@@ -2285,13 +2327,13 @@
             ],
             "Links": [
                 {
-                    "Titel": "Regulativer - husholdning og erhverv",
-                    "Url": "https://fredensborg.dk/borger/affald-og-miljoe/affald-toemning-skraldespande-vand/regulativer-husholdning-og-erhverv",
-                    "Title_en": "Regulations - household and business"
+                    "Titel": "Affald og miljø",
+                    "Url": "https://fredensborg.dk/borger/affald-og-miljoe",
+                    "Title_en": "Waste and environment"
                 },
                 {
                     "Titel": "Haveaffald",
-                    "Url": "https://fredensborg.dk/borger/affald-og-miljoe/affald-toemning-skraldespande-vand/haveaffald",
+                    "Url": "https://fredensborg.dk/borger/bolig-og-byggeri/haveaffald",
                     "Title_en": "Garden waste"
                 },
                 {
@@ -2301,7 +2343,7 @@
                 },
                 {
                     "Titel": "Asbest- og farligt affald",
-                    "Url": "https://fredensborg.dk/erhverv/erhvervsaffald/asbest-og-farligt-affald",
+                    "Url": "https://fredensborg.dk/borger/affald-og-miljoe/asbest-og-farligt-affald",
                     "Title_en": "Asbestos and hazardous waste"
                 },
                 {
@@ -2311,7 +2353,7 @@
                 },
                 {
                     "Titel": "Forbrugsafregning - affaldsgebyrer",
-                    "Url": "https://fredensborg.dk/borger/affald-og-miljoe/forbrugsafregning-affaldsgebyrer",
+                    "Url": "https://fredensborgforsyning.dk/mitaffald/priser-affald-2025",
                     "Title_en": "Utility billing - waste fees"
                 }
             ],
@@ -2319,12 +2361,15 @@
             "Affaldsfraktioner_en": "7 of 10 trash categories",
             "AffaldsfraktionerAntal": 7,
             "AffaldsfraktionerIAlt": 10,
-            "OfficielAffaldsside": "https://fredensborg.dk/borger/affald-og-miljoe/affald-toemning-skraldespande-vand/regulativer-husholdning-og-erhverv",
+            "OfficielAffaldsside": "https://fredensborg.dk/borger/affald-og-miljoe",
             "OfficielAffaldssideTitel": "Regulativer - husholdning og erhverv",
             "OfficielAffaldssideTitel_en": "Regulations - household and business",
             "GenbrugspladserAntal": 3,
             "Genbrugspladser": "3 genbrugspladser",
-            "Genbrugspladser_en": "3 recycling centres"
+            "Genbrugspladser_en": "3 recycling centres",
+            "AffaldSelvbetjeningUrl": "https://virk.dk/myndigheder/kommuner/Fredensborg/selvbetjening/Anmeld_afvigelser_i_forhold_til_affaldsordning/",
+            "AffaldSelvbetjeningKildeUrl": "https://virk.dk/myndigheder/kommuner/Fredensborg/selvbetjening/Anmeld_afvigelser_i_forhold_til_affaldsordning/",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Poststeder": [
             {
@@ -2484,7 +2529,10 @@
             "OfficielAffaldssideTitel_en": "Waste and recycling - Fredericia Municipality",
             "GenbrugspladserAntal": 2,
             "Genbrugspladser": "2 genbrugspladser",
-            "Genbrugspladser_en": "2 recycling centres"
+            "Genbrugspladser_en": "2 recycling centres",
+            "AffaldSelvbetjeningUrl": "https://affaldgenbrug-fredericia.dk/selvbetjening",
+            "AffaldSelvbetjeningKildeUrl": "https://affaldgenbrug-fredericia.dk/selvbetjening",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Poststeder": [
             {
@@ -2607,7 +2655,10 @@
             "DigitalSelvbetjeningTitel_en": "Self-service",
             "DigitalSelvbetjening": "Tømmekalender, manglende tømning og ændring af beholdere",
             "DigitalSelvbetjening_en": "Collection calendar, missed collections and container changes",
-            "DigitalSelvbetjeningUrl": "https://www.frederiksberg.dk/by-bolig-og-miljoe/affald-og-genbrug/selvbetjening-mit-affald"
+            "DigitalSelvbetjeningUrl": "https://www.frederiksberg.dk/by-bolig-og-miljoe/affald-og-genbrug/selvbetjening-mit-affald",
+            "AffaldSelvbetjeningUrl": "https://www.frederiksberg.dk/by-bolig-og-miljoe/affald-og-genbrug/selvbetjening-mit-affald",
+            "AffaldSelvbetjeningKildeUrl": "https://www.frederiksberg.dk/by-bolig-og-miljoe/affald-og-genbrug/selvbetjening-mit-affald",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Telefon": "3821 2121",
         "TelefonLabel": "Telefon til Affald og Genbrug",
@@ -3157,9 +3208,9 @@
                     "Title_en": "Recycling centres for business"
                 },
                 {
-                    "Titel": "Affaldsindsamling for foreninger",
-                    "Url": "https://frederikshavn.dk/borger/fritid-og-foreninger/for-foreninger/affaldsindsamling-for-foreninger",
-                    "Title_en": "Waste collection for associations"
+                    "Titel": "Affald og genbrug",
+                    "Url": "https://frederikshavn.dk/borger/bolig-og-byggeri/affald-og-genbrug",
+                    "Title_en": "Waste and recycling"
                 }
             ],
             "Affaldsfraktioner": "10 af 10 fraktioner",
@@ -3171,7 +3222,10 @@
             "OfficielAffaldssideTitel_en": "Waste and recycling - Frederikshavn Municipality",
             "GenbrugspladserAntal": 8,
             "Genbrugspladser": "8 genbrugspladser",
-            "Genbrugspladser_en": "8 recycling centres"
+            "Genbrugspladser_en": "8 recycling centres",
+            "AffaldSelvbetjeningUrl": "https://www.forsyningen.dk/selvbetjening",
+            "AffaldSelvbetjeningKildeUrl": "https://www.forsyningen.dk/selvbetjening",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Poststeder": [
             {
@@ -3352,7 +3406,10 @@
             "DigitalSelvbetjeningTitel_en": "My waste and collection calendar",
             "DigitalSelvbetjening": "Selvbetjening bruges til kalender, beskeder og beholdere.",
             "DigitalSelvbetjening_en": "Self-service is used for calendars, messages and bins.",
-            "DigitalSelvbetjeningUrl": "https://www.frederikssund.dk/Borger/Bolig--byggeri/affald/faa-hjaelp"
+            "DigitalSelvbetjeningUrl": "https://www.frederikssund.dk/Borger/Bolig--byggeri/affald/faa-hjaelp",
+            "AffaldSelvbetjeningUrl": "https://www.frederikssund.dk/Borger/Bolig--byggeri/affald/faa-hjaelp",
+            "AffaldSelvbetjeningKildeUrl": "https://www.frederikssund.dk/Borger/Bolig--byggeri/affald/faa-hjaelp",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Telefon": "47 35 10 00",
         "TelefonLabel": "Telefon til kommunen",
@@ -3502,7 +3559,10 @@
             "OfficielAffaldssideTitel_en": "Waste and recycling",
             "GenbrugspladserAntal": 2,
             "Genbrugspladser": "2 genbrugspladser",
-            "Genbrugspladser_en": "2 recycling centres"
+            "Genbrugspladser_en": "2 recycling centres",
+            "AffaldSelvbetjeningUrl": "https://www.furesoe.dk/borger/affald-og-genbrug/digital-selvbetjening-for-affald",
+            "AffaldSelvbetjeningKildeUrl": "https://www.furesoe.dk/borger/affald-og-genbrug/digital-selvbetjening-for-affald",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Poststeder": [
             {
@@ -3656,7 +3716,10 @@
             "OfficielAffaldssideTitel_en": "Waste and recycling",
             "GenbrugspladserAntal": 5,
             "Genbrugspladser": "5 genbrugspladser",
-            "Genbrugspladser_en": "5 recycling centres"
+            "Genbrugspladser_en": "5 recycling centres",
+            "AffaldSelvbetjeningUrl": "https://www.ffv.dk/selvbetjening/selvbetjening-til-din-affaldsordning/",
+            "AffaldSelvbetjeningKildeUrl": "https://www.ffv.dk/selvbetjening/selvbetjening-til-din-affaldsordning/",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Telefon": "72 53 05 30",
         "TelefonLabel": "Kommunens telefon",
@@ -3844,7 +3907,10 @@
             "OfficielAffaldssideTitel_en": "Waste and recycling",
             "GenbrugspladserAntal": 1,
             "Genbrugspladser": "1 genbrugsplads",
-            "Genbrugspladser_en": "1 recycling centre"
+            "Genbrugspladser_en": "1 recycling centre",
+            "AffaldSelvbetjeningUrl": "https://gentofte.dk/bolig-og-by/affald-og-genbrug/afhentning-af-affald/",
+            "AffaldSelvbetjeningKildeUrl": "https://gentofte.dk/bolig-og-by/affald-og-genbrug/afhentning-af-affald/",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Poststeder": [
             {
@@ -3998,7 +4064,10 @@
             "DigitalSelvbetjeningTitel": "Sorteringsapp",
             "DigitalSelvbetjeningTitel_en": "Sorting app",
             "DigitalSelvbetjening": "Gladsaxe henviser til Perfect Waste til sortering og tømmepåmindelser",
-            "DigitalSelvbetjening_en": "Gladsaxe refers residents to Perfect Waste for sorting guidance and collection reminders"
+            "DigitalSelvbetjening_en": "Gladsaxe refers residents to Perfect Waste for sorting guidance and collection reminders",
+            "AffaldSelvbetjeningUrl": "https://gladsaxe.dk/borger/affald-og-genbrug/ofte-stillede-spoergsmaal-hurtig-hjaelp",
+            "AffaldSelvbetjeningKildeUrl": "https://gladsaxe.dk/borger/affald-og-genbrug/ofte-stillede-spoergsmaal-hurtig-hjaelp",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Poststeder": [
             {
@@ -4142,13 +4211,20 @@
             "Affaldsfraktioner": "9 af 10 fraktioner",
             "Affaldsfraktioner_en": "9 of 10 trash categories",
             "AffaldsfraktionerAntal": 9,
+            "BekræftedeFraktioner": [
+                { "Fraktion": "Tekstilaffald", "KildeUrl": "https://www.glostrup.dk/borger/miljoe-energi-og-affald/affald-og-genbrug/affald-fra-husholdninger", "Tjekket": "2026-10-15" },
+                { "Fraktion": "Mad- og drikkekartoner", "KildeUrl": "https://www.glostrup.dk/borger/miljoe-energi-og-affald/affald-og-genbrug/affald-fra-husholdninger", "Tjekket": "2026-10-15" }
+            ],
             "AffaldsfraktionerIAlt": 10,
             "OfficielAffaldsside": "https://www.glostrup.dk/borger/miljoe-energi-og-affald/affald-og-genbrug",
             "OfficielAffaldssideTitel": "Affald og genbrug - Glostrup Kommune",
             "OfficielAffaldssideTitel_en": "Waste and recycling - Glostrup Municipality",
             "GenbrugspladserAntal": 1,
             "Genbrugspladser": "1 genbrugsplads",
-            "Genbrugspladser_en": "1 recycling centre"
+            "Genbrugspladser_en": "1 recycling centre",
+            "AffaldSelvbetjeningUrl": "https://www.glostrup.dk/borger/miljoe-energi-og-affald/affald-og-genbrug/affald-fra-husholdninger",
+            "AffaldSelvbetjeningKildeUrl": "https://www.glostrup.dk/borger/miljoe-energi-og-affald/affald-og-genbrug/affald-fra-husholdninger",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Poststeder": [
             {
@@ -4182,7 +4258,7 @@
         "Detaljer": {
             "SidstTjekket": "2026-05-14",
             "Affaldsoperatør": "Greve Kommune",
-            "AffaldsoperatørUrl": "https://greve.dk/borger/bolig-byggeri-og-flytning/affald-og-genbrug",
+            "AffaldsoperatørUrl": "https://greve.dk/by-og-bolig/affald",
             "Affaldsoperatør_en": "Greve Municipality",
             "KildeNote": "Oplysningerne er samlet fra Greve Kommunes officielle affaldssider. Affaldsguide Danmark er en uafhængig guide og er ikke en del af kommunen.",
             "KildeNote_en": "The information is based on Greve Municipality's official waste pages. Affaldsguide Danmark is an independent guide and is not part of the municipality.",
@@ -4253,40 +4329,50 @@
             "Links": [
                 {
                     "Titel": "Affald og genbrug",
-                    "Url": "https://greve.dk/borger/bolig-byggeri-og-flytning/affald-og-genbrug",
+                    "Url": "https://greve.dk/by-og-bolig/affald",
                     "Title_en": "Waste and recycling"
                 },
                 {
                     "Titel": "MiljøCenter Greve",
-                    "Url": "https://greve.dk/borger/bolig-byggeri-og-flytning/affald-og-genbrug/miljoecenter-greve",
+                    "Url": "https://klarforsyning.dk/affald/genbrugspladsen-miljoecenter-greve",
                     "Title_en": "MiljøCenter Greve"
                 },
                 {
                     "Titel": "Genbrugshuset",
-                    "Url": "https://greve.dk/borger/bolig-byggeri-og-flytning/affald-og-genbrug/miljoecenter-greve/genbrugshuset",
+                    "Url": "https://greve.dk/klima/nyheder/klimanyheder/danmarksmestrene-i-genanvendelse-elsker-det-nye-genbrugshus",
                     "Title_en": "Reuse house"
                 },
                 {
                     "Titel": "Farligt affald",
-                    "Url": "https://greve.dk/borger/bolig-byggeri-og-flytning/affald-og-genbrug/farligt-affald",
+                    "Url": "https://greve.dk/by-og-bolig/affald/farligt-affald",
                     "Title_en": "Hazardous waste"
                 },
                 {
                     "Titel": "Ressource- og Affaldsplan",
-                    "Url": "https://greve.dk/politik/planer-politikker-og-strategier/ressource-og-affaldsplan",
+                    "Url": "https://greve.dk/media/tfqlj13z/affaldsplan-2023-2034.pdf",
                     "Title_en": "Resource and Waste Plan"
                 }
             ],
             "Affaldsfraktioner": "9 af 10 fraktioner",
             "Affaldsfraktioner_en": "9 of 10 trash categories",
             "AffaldsfraktionerAntal": 9,
+            "BekræftedeFraktioner": [
+                { "Fraktion": "Pap", "KildeUrl": "https://greve.dk/by-og-bolig/affald/affald-fra-din-husholdning", "Tjekket": "2026-10-15" },
+                { "Fraktion": "Tekstilaffald", "KildeUrl": "https://greve.dk/by-og-bolig/affald/affald-fra-din-husholdning", "Tjekket": "2026-10-15" },
+                { "Fraktion": "Mad- og drikkekartoner", "KildeUrl": "https://greve.dk/media/e3rlidid/bilag-til-affaldsplan-2023-2034.pdf", "Tjekket": "2026-10-15" },
+                { "Fraktion": "Småt elektronik", "KildeUrl": "https://greve.dk/media/e3rlidid/bilag-til-affaldsplan-2023-2034.pdf", "Tjekket": "2026-10-15" },
+                { "Fraktion": "Batterier", "KildeUrl": "https://greve.dk/media/e3rlidid/bilag-til-affaldsplan-2023-2034.pdf", "Tjekket": "2026-10-15" }
+            ],
             "AffaldsfraktionerIAlt": 10,
-            "OfficielAffaldsside": "https://greve.dk/borger/bolig-byggeri-og-flytning/affald-og-genbrug",
+            "OfficielAffaldsside": "https://greve.dk/by-og-bolig/affald",
             "OfficielAffaldssideTitel": "Affald og genbrug",
             "OfficielAffaldssideTitel_en": "Waste and recycling",
             "GenbrugspladserAntal": 1,
             "Genbrugspladser": "1 genbrugsplads",
-            "Genbrugspladser_en": "1 recycling centre"
+            "Genbrugspladser_en": "1 recycling centre",
+            "AffaldSelvbetjeningUrl": "https://greve.dk/by-og-bolig/affald/affald-fra-din-husholdning",
+            "AffaldSelvbetjeningKildeUrl": "https://greve.dk/by-og-bolig/affald/affald-fra-din-husholdning",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Poststeder": [
             {
@@ -4404,9 +4490,9 @@
                     "Title_en": "Household waste regulation"
                 },
                 {
-                    "Titel": "Sorteringsvejledning til genbrugsstationer",
-                    "Url": "https://gribskov.dk/Media/637607184835524533/Sorteringsvejledning%20til%20genbrugsstationer.pdf",
-                    "Title_en": "Sorting guide for recycling stations"
+                    "Titel": "Affald og sortering",
+                    "Url": "https://gribskov.dk/borger/flyt-bolig-og-byg/affald",
+                    "Title_en": "Waste and sorting"
                 }
             ],
             "Affaldsfraktioner": "10 af 10 fraktioner",
@@ -4418,7 +4504,10 @@
             "OfficielAffaldssideTitel_en": "Recycling stations",
             "GenbrugspladserAntal": 2,
             "Genbrugspladser": "2 genbrugspladser",
-            "Genbrugspladser_en": "2 recycling centres"
+            "Genbrugspladser_en": "2 recycling centres",
+            "AffaldSelvbetjeningUrl": "https://gribskov.dk/borger/flyt-bolig-og-byg/affald",
+            "AffaldSelvbetjeningKildeUrl": "https://gribskov.dk/borger/flyt-bolig-og-byg/affald",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Poststeder": [
             {
@@ -4580,7 +4669,10 @@
             "DigitalSelvbetjeningTitel_en": "REFA handles waste collection",
             "DigitalSelvbetjening": "REFA håndterer beholdere, tømmedage og genbrugspladser.",
             "DigitalSelvbetjening_en": "REFA handles bins, collection dates and recycling centres.",
-            "DigitalSelvbetjeningUrl": "https://www.refa.dk/indsamlingsordning/"
+            "DigitalSelvbetjeningUrl": "https://www.refa.dk/indsamlingsordning/",
+            "AffaldSelvbetjeningUrl": "https://www.refa.dk/indsamlingsordning/indsamling-af-affald/selvbetjening/",
+            "AffaldSelvbetjeningKildeUrl": "https://www.refa.dk/indsamlingsordning/indsamling-af-affald/selvbetjening/",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Telefon": "54 73 10 00",
         "TelefonLabel": "Kommunens telefon",
@@ -4756,7 +4848,7 @@
                 },
                 {
                     "Titel": "Henteordning for asbest",
-                    "Url": "https://www.provas.dk/affald-og-genbrug/asbest/",
+                    "Url": "https://www.provas.dk/affald-og-genbrug/faa-hentet-dit-asbestaffald/",
                     "Title_en": "Asbestos collection scheme"
                 },
                 {
@@ -4774,7 +4866,10 @@
             "OfficielAffaldssideTitel_en": "Waste and recycling - Haderslev Municipality",
             "GenbrugspladserAntal": 3,
             "Genbrugspladser": "3 genbrugspladser",
-            "Genbrugspladser_en": "3 recycling centres"
+            "Genbrugspladser_en": "3 recycling centres",
+            "AffaldSelvbetjeningUrl": "https://www.provas.dk/affald-og-genbrug/dit-affald/",
+            "AffaldSelvbetjeningKildeUrl": "https://www.provas.dk/affald-og-genbrug/dit-affald/",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Poststeder": [
             {
@@ -4945,7 +5040,10 @@
             "OfficielAffaldssideTitel_en": "Waste - Halsnæs Municipality",
             "GenbrugspladserAntal": 2,
             "Genbrugspladser": "2 genbrugspladser",
-            "Genbrugspladser_en": "2 recycling centres"
+            "Genbrugspladser_en": "2 recycling centres",
+            "AffaldSelvbetjeningUrl": "https://halsnaes.dk/borger/miljoe-og-affald/affald",
+            "AffaldSelvbetjeningKildeUrl": "https://halsnaes.dk/borger/miljoe-og-affald/affald",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Poststeder": [
             {
@@ -5099,7 +5197,10 @@
             "OfficielAffaldssideTitel_en": "Waste and recycling",
             "GenbrugspladserAntal": 5,
             "Genbrugspladser": "5 genbrugspladser",
-            "Genbrugspladser_en": "5 recycling centres"
+            "Genbrugspladser_en": "5 recycling centres",
+            "AffaldSelvbetjeningUrl": "https://www.hedensted.dk/service-og-selvbetjening/affald-bolig-og-miljoe/affald-og-genbrug/husholdningsaffald",
+            "AffaldSelvbetjeningKildeUrl": "https://www.hedensted.dk/service-og-selvbetjening/affald-bolig-og-miljoe/affald-og-genbrug/husholdningsaffald",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Poststeder": [
             {
@@ -5288,7 +5389,10 @@
             "DigitalSelvbetjeningTitel": "Selvbetjening",
             "DigitalSelvbetjeningTitel_en": "Self-service",
             "DigitalSelvbetjening": "Ændringer i afhentning, beholdere og affaldsløsning digitalt",
-            "DigitalSelvbetjening_en": "Digital changes to collection, containers and waste solution"
+            "DigitalSelvbetjening_en": "Digital changes to collection, containers and waste solution",
+            "AffaldSelvbetjeningUrl": "https://virk.dk/myndigheder/kommuner/Helsingoer/selvbetjening/Anmeld_afvigelser_i_forhold_til_affaldsordning/",
+            "AffaldSelvbetjeningKildeUrl": "https://virk.dk/myndigheder/kommuner/Helsingoer/selvbetjening/Anmeld_afvigelser_i_forhold_til_affaldsordning/",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Poststeder": [
             {
@@ -5456,6 +5560,12 @@
             "Affaldsfraktioner": "9 af 10 fraktioner",
             "Affaldsfraktioner_en": "9 of 10 trash categories",
             "AffaldsfraktionerAntal": 9,
+            "BekræftedeFraktioner": [
+                { "Fraktion": "Tekstilaffald", "KildeUrl": "https://herlev.dk/borger/affald/affaldssortering/affaldssortering-i-villa-og-raekkehus", "Tjekket": "2026-10-15" },
+                { "Fraktion": "Mad- og drikkekartoner", "KildeUrl": "https://herlev.dk/borger/affald/affaldssortering/affaldssortering-i-villa-og-raekkehus", "Tjekket": "2026-10-15" },
+                { "Fraktion": "Småt elektronik", "KildeUrl": "https://herlev.dk/borger/affald/affaldssortering/affaldssortering-i-villa-og-raekkehus", "Tjekket": "2026-10-15" },
+                { "Fraktion": "Batterier", "KildeUrl": "https://herlev.dk/borger/affald/affaldssortering/affaldssortering-i-villa-og-raekkehus", "Tjekket": "2026-10-15" }
+            ],
             "AffaldsfraktionerIAlt": 10,
             "OfficielAffaldsside": "https://herlev.dk/borger/affald",
             "OfficielAffaldssideTitel": "Affald",
@@ -5467,7 +5577,10 @@
             "DigitalSelvbetjeningTitel_en": "Mit affald and SMS service",
             "DigitalSelvbetjening": "Selvbetjening viser kalender, ordninger og SMS-service.",
             "DigitalSelvbetjening_en": "Self-service shows calendars, schemes and SMS reminders.",
-            "DigitalSelvbetjeningUrl": "https://herlev.dk/borger/affald/selvbetjening-mit-affald"
+            "DigitalSelvbetjeningUrl": "https://herlev.dk/borger/affald/selvbetjening-mit-affald",
+            "AffaldSelvbetjeningUrl": "https://herlev.dk/borger/affald/selvbetjening-mit-affald",
+            "AffaldSelvbetjeningKildeUrl": "https://herlev.dk/borger/affald/selvbetjening-mit-affald",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Telefon": "44 52 70 00",
         "TelefonLabel": "Kommunens telefon",
@@ -5504,7 +5617,7 @@
         "Detaljer": {
             "SidstTjekket": "2026-05-13",
             "Affaldsoperatør": "Herning Kommune",
-            "AffaldsoperatørUrl": "https://affald.herning.dk/",
+            "AffaldsoperatørUrl": "https://www.herning.dk/borger/genbrug-og-affald",
             "Affaldsoperatør_en": "Herning Municipality",
             "KildeNote": "Oplysningerne er samlet fra Herning Kommunes officielle affaldssider. Affaldsguide Danmark er en uafhængig guide og er ikke en del af kommunen.",
             "KildeNote_en": "The information is based on Herning Municipality's official waste pages. Affaldsguide Danmark is an independent guide and is not part of the municipality.",
@@ -5569,32 +5682,32 @@
             "Links": [
                 {
                     "Titel": "Herning Affald",
-                    "Url": "https://affald.herning.dk/",
+                    "Url": "https://www.herning.dk/borger/genbrug-og-affald",
                     "Title_en": "Herning Waste"
                 },
                 {
                     "Titel": "Genbrugspladser",
-                    "Url": "https://affald.herning.dk/genbrugsplads",
+                    "Url": "https://www.herning.dk/borger/genbrug-og-affald/genbrugspladser",
                     "Title_en": "Recycling centres"
                 },
                 {
                     "Titel": "Affaldsordninger",
-                    "Url": "https://affald.herning.dk/affaldsordninger",
+                    "Url": "https://www.herning.dk/borger/genbrug-og-affald/husholdningsaffald",
                     "Title_en": "Waste schemes"
                 },
                 {
                     "Titel": "Storskrald",
-                    "Url": "https://affald.herning.dk/affaldsordninger/storskrald",
+                    "Url": "https://www.herning.dk/borger/genbrug-og-affald/storskrald",
                     "Title_en": "Bulky waste"
                 },
                 {
                     "Titel": "Mit Affald selvbetjening",
-                    "Url": "https://affald.herning.dk/selvbetjening/mit-affald",
+                    "Url": "https://www.herning.dk/borger/genbrug-og-affald",
                     "Title_en": "Mit Affald self-service"
                 },
                 {
-                    "Titel": "Ressourceportal",
-                    "Url": "https://affald.herning.dk/ressourceportal",
+                    "Titel": "Sådan sorterer du dit affald",
+                    "Url": "https://www.herning.dk/borger/genbrug-og-affald/saadan-sorterer-du-dit-affald",
                     "Title_en": "Resource portal"
                 }
             ],
@@ -5602,7 +5715,7 @@
             "Affaldsfraktioner_en": "7 of 10 trash categories",
             "AffaldsfraktionerAntal": 7,
             "AffaldsfraktionerIAlt": 10,
-            "OfficielAffaldsside": "https://affald.herning.dk/",
+            "OfficielAffaldsside": "https://www.herning.dk/borger/genbrug-og-affald",
             "OfficielAffaldssideTitel": "Herning Affald",
             "OfficielAffaldssideTitel_en": "Herning Waste",
             "GenbrugspladserAntal": 10,
@@ -5612,7 +5725,10 @@
             "DigitalSelvbetjeningTitel_en": "Mit Affald self-service",
             "DigitalSelvbetjening": "Se kommunens digitale affaldsløsning.",
             "DigitalSelvbetjening_en": "Open the municipality's digital waste service.",
-            "DigitalSelvbetjeningUrl": "https://affald.herning.dk/selvbetjening/mit-affald"
+            "DigitalSelvbetjeningUrl": "https://www.herning.dk/borger/genbrug-og-affald",
+            "AffaldSelvbetjeningUrl": "https://www.herning.dk/borger/genbrug-og-affald",
+            "AffaldSelvbetjeningKildeUrl": "https://www.herning.dk/borger/genbrug-og-affald",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Telefon": "96 28 28 28",
         "TelefonLabel": "Telefon til kommunen",
@@ -5957,7 +6073,10 @@
             "OfficielAffaldssideTitel_en": "Hjørring Municipality - Waste",
             "GenbrugspladserAntal": 13,
             "Genbrugspladser": "13 genbrugspladser",
-            "Genbrugspladser_en": "13 recycling centres"
+            "Genbrugspladser_en": "13 recycling centres",
+            "AffaldSelvbetjeningUrl": "https://nordvaerk.dk/borger/hjoerring-kommune-borger/",
+            "AffaldSelvbetjeningKildeUrl": "https://nordvaerk.dk/borger/hjoerring-kommune-borger/",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Telefon": "72 33 33 33",
         "TelefonLabel": "Kommunens telefon",
@@ -6145,7 +6264,10 @@
             "DigitalSelvbetjeningTitel": "Selvbetjening",
             "DigitalSelvbetjeningTitel_en": "Self-service",
             "DigitalSelvbetjening": "Kræver tilmelding, og farligt affald må ikke afleveres i selvbetjeningstid",
-            "DigitalSelvbetjening_en": "Requires registration, and hazardous waste may not be handed in during self-service hours"
+            "DigitalSelvbetjening_en": "Requires registration, and hazardous waste may not be handed in during self-service hours",
+            "AffaldSelvbetjeningUrl": "https://www.fors.dk/affald/afhentning-af-affald/beholdere-bestil-ekstra-eller-ombyt/",
+            "AffaldSelvbetjeningKildeUrl": "https://www.fors.dk/affald/afhentning-af-affald/beholdere-bestil-ekstra-eller-ombyt/",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Poststeder": [
             {
@@ -6342,7 +6464,10 @@
             "DigitalSelvbetjeningTitel": "Selvbetjening",
             "DigitalSelvbetjeningTitel_en": "Self-service",
             "DigitalSelvbetjening": "Tømningsdage, beholdere, storskrald og haveaffald via Nomi4s",
-            "DigitalSelvbetjening_en": "Collection dates, bins, bulky waste and garden waste via Nomi4s"
+            "DigitalSelvbetjening_en": "Collection dates, bins, bulky waste and garden waste via Nomi4s",
+            "AffaldSelvbetjeningUrl": "https://nomi4s.dk/min-side/privat",
+            "AffaldSelvbetjeningKildeUrl": "https://nomi4s.dk/min-side/privat",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Poststeder": [
             {
@@ -6506,7 +6631,10 @@
             "OfficielAffaldssideTitel_en": "Waste",
             "GenbrugspladserAntal": 3,
             "Genbrugspladser": "3 genbrugspladser",
-            "Genbrugspladser_en": "3 recycling centres"
+            "Genbrugspladser_en": "3 recycling centres",
+            "AffaldSelvbetjeningUrl": "https://horsens.dk/bolig/affald/afhentningafaffald",
+            "AffaldSelvbetjeningKildeUrl": "https://horsens.dk/bolig/affald/afhentningafaffald",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Poststeder": [
             {
@@ -6656,7 +6784,7 @@
                 },
                 {
                     "Titel": "Sorteringsvejledning",
-                    "Url": "https://sortering.hvidovre.dk/",
+                    "Url": "https://www.hvidovre.dk/borger/affald-og-genbrug/saadan-sorterer-du-dit-affald/saadan-sorterer-du-korrekt",
                     "Title_en": "Sorting guide"
                 },
                 {
@@ -6678,13 +6806,23 @@
             "Affaldsfraktioner": "9 af 10 fraktioner",
             "Affaldsfraktioner_en": "9 of 10 trash categories",
             "AffaldsfraktionerAntal": 9,
+            "BekræftedeFraktioner": [
+                { "Fraktion": "Pap", "KildeUrl": "https://www.hvidovre.dk/borger/affald-og-genbrug/saadan-sorterer-du-dit-affald/saadan-sorterer-du-korrekt", "Tjekket": "2026-10-15" },
+                { "Fraktion": "Tekstilaffald", "KildeUrl": "https://www.hvidovre.dk/borger/affald-og-genbrug/saadan-sorterer-du-dit-affald/saadan-sorterer-du-korrekt", "Tjekket": "2026-10-15" },
+                { "Fraktion": "Mad- og drikkekartoner", "KildeUrl": "https://www.hvidovre.dk/borger/affald-og-genbrug/saadan-sorterer-du-dit-affald/saadan-sorterer-du-korrekt", "Tjekket": "2026-10-15" },
+                { "Fraktion": "Småt elektronik", "KildeUrl": "https://www.hvidovre.dk/borger/affald-og-genbrug/affaldsordninger/farligt-affald", "Tjekket": "2026-10-15" },
+                { "Fraktion": "Batterier", "KildeUrl": "https://www.hvidovre.dk/borger/affald-og-genbrug/affaldsordninger/farligt-affald", "Tjekket": "2026-10-15" }
+            ],
             "AffaldsfraktionerIAlt": 10,
             "OfficielAffaldsside": "https://www.hvidovre.dk/borger/affald-og-genbrug",
             "OfficielAffaldssideTitel": "Affald og genbrug",
             "OfficielAffaldssideTitel_en": "Waste and recycling",
             "GenbrugspladserAntal": 1,
             "Genbrugspladser": "1 genbrugsplads",
-            "Genbrugspladser_en": "1 recycling centre"
+            "Genbrugspladser_en": "1 recycling centre",
+            "AffaldSelvbetjeningUrl": "https://www.hvidovre.dk/borger/affald-og-genbrug/affaldsordninger/selvbetjening",
+            "AffaldSelvbetjeningKildeUrl": "https://www.hvidovre.dk/borger/affald-og-genbrug/affaldsordninger/selvbetjening",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Poststeder": [
             {
@@ -6821,7 +6959,10 @@
             "OfficielAffaldssideTitel_en": "Household waste",
             "GenbrugspladserAntal": 1,
             "Genbrugspladser": "1 genbrugsplads",
-            "Genbrugspladser_en": "1 recycling centre"
+            "Genbrugspladser_en": "1 recycling centre",
+            "AffaldSelvbetjeningUrl": "https://htkforsyning.dk/selvbetjening/",
+            "AffaldSelvbetjeningKildeUrl": "https://htkforsyning.dk/selvbetjening/",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Telefon": "70 20 51 20",
         "TelefonLabel": "Telefon til affald",
@@ -6962,7 +7103,10 @@
             "OfficielAffaldssideTitel_en": "Waste at Hørsholm Municipality",
             "GenbrugspladserAntal": 1,
             "Genbrugspladser": "1 genbrugsplads",
-            "Genbrugspladser_en": "1 recycling centre"
+            "Genbrugspladser_en": "1 recycling centre",
+            "AffaldSelvbetjeningUrl": "https://www.horsholm.dk/borger/affald-kloak-og-miljoe/affald/mit-affald",
+            "AffaldSelvbetjeningKildeUrl": "https://www.horsholm.dk/borger/affald-kloak-og-miljoe/affald/mit-affald",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Poststeder": [
             {
@@ -7076,7 +7220,7 @@
                 },
                 {
                     "Titel": "Sorteringsguide",
-                    "Url": "https://affald.ikast-brande.dk/borger/ekstra-spand-til-indsamling-202223/ekstra-spand-i-202223",
+                    "Url": "https://affald.ikast-brande.dk/sorteringsguide-og-vejledninger",
                     "Title_en": "Sorting guide"
                 },
                 {
@@ -7093,6 +7237,12 @@
             "Affaldsfraktioner": "7 af 10 fraktioner",
             "Affaldsfraktioner_en": "7 of 10 trash categories",
             "AffaldsfraktionerAntal": 7,
+            "BekræftedeFraktioner": [
+                { "Fraktion": "Restaffald", "KildeUrl": "https://ikast-brande.dk/borger/affald-og-genbrug/indsamling-af-affald/affaldsbeholdere", "Tjekket": "2026-10-15" },
+                { "Fraktion": "Madaffald", "KildeUrl": "https://ikast-brande.dk/borger/affald-og-genbrug/indsamling-af-affald/affaldsbeholdere", "Tjekket": "2026-10-15" },
+                { "Fraktion": "Tekstilaffald", "KildeUrl": "https://ikast-brande.dk/borger/affald-og-genbrug/indsamling-af-affald/affaldsbeholdere", "Tjekket": "2026-10-15" },
+                { "Fraktion": "Mad- og drikkekartoner", "KildeUrl": "https://ikast-brande.dk/borger/affald-og-genbrug/indsamling-af-affald/affaldsbeholdere", "Tjekket": "2026-10-15" }
+            ],
             "AffaldsfraktionerIAlt": 10,
             "OfficielAffaldsside": "https://affald.ikast-brande.dk/",
             "OfficielAffaldssideTitel": "Affald og Genbrug",
@@ -7103,7 +7253,10 @@
             "DigitalSelvbetjeningTitel": "Selvbetjening",
             "DigitalSelvbetjeningTitel_en": "Self-service",
             "DigitalSelvbetjening": "Bording og Nørre Snede har selvbetjent/udvidet adgang",
-            "DigitalSelvbetjening_en": "Bording and Nørre Snede have self-service/extended access"
+            "DigitalSelvbetjening_en": "Bording and Nørre Snede have self-service/extended access",
+            "AffaldSelvbetjeningUrl": "https://affald.ikast-brande.dk/",
+            "AffaldSelvbetjeningKildeUrl": "https://affald.ikast-brande.dk/",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Poststeder": [
             {
@@ -7277,7 +7430,10 @@
             "AffaldsfraktionerIAlt": 10,
             "OfficielAffaldsside": "https://ishoj.dk/borger/bolig/affald-og-genbrug/",
             "OfficielAffaldssideTitel": "Affald og genbrug",
-            "OfficielAffaldssideTitel_en": "Waste and recycling"
+            "OfficielAffaldssideTitel_en": "Waste and recycling",
+            "AffaldSelvbetjeningUrl": "https://ressourceindsamling.dk/selvbetjening/",
+            "AffaldSelvbetjeningKildeUrl": "https://ressourceindsamling.dk/selvbetjening/",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Poststeder": [
             {
@@ -7414,7 +7570,10 @@
             "OfficielAffaldssideTitel_en": "Waste and recycling",
             "GenbrugspladserAntal": 4,
             "Genbrugspladser": "4 genbrugspladser",
-            "Genbrugspladser_en": "4 recycling centres"
+            "Genbrugspladser_en": "4 recycling centres",
+            "AffaldSelvbetjeningUrl": "https://nordvaerk.dk/borger/jammerbugt-kommune-borger/selvbetjening/",
+            "AffaldSelvbetjeningKildeUrl": "https://nordvaerk.dk/borger/jammerbugt-kommune-borger/selvbetjening/",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Telefon": "72 57 77 77",
         "TelefonLabel": "Kommunens telefon",
@@ -7602,7 +7761,10 @@
             "DigitalSelvbetjeningTitel_en": "Waste app",
             "DigitalSelvbetjening": "Perfect Waste bruges til sortering, tømmedage, beskeder og fejlmelding",
             "DigitalSelvbetjening_en": "Perfect Waste is used for sorting, collection dates, notifications and fault reporting",
-            "DigitalSelvbetjeningUrl": "https://www.kalundborg.dk/service-and-selvbetjening/affald-and-genbrug/affaldsapp-og-beskeder"
+            "DigitalSelvbetjeningUrl": "https://www.kalundborg.dk/service-and-selvbetjening/affald-and-genbrug/affaldsapp-og-beskeder",
+            "AffaldSelvbetjeningUrl": "https://www.kalundborg.dk/service-and-selvbetjening/affald-and-genbrug/selvbetjening-for-affald",
+            "AffaldSelvbetjeningKildeUrl": "https://www.kalundborg.dk/service-and-selvbetjening/affald-and-genbrug/selvbetjening-for-affald",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Poststeder": [
             {
@@ -7754,9 +7916,9 @@
             ],
             "Links": [
                 {
-                    "Titel": "Affald - Kerteminde Kommune",
-                    "Url": "https://kerteminde.dk/borger/bolig-byggeri-og-flytning/affald",
-                    "Title_en": "Waste - Kerteminde Municipality"
+                    "Titel": "Regler og vejledninger",
+                    "Url": "https://www.kertemindeforsyning.dk/genbrug-affald/regler-og-vejledninger",
+                    "Title_en": "Rules and guidance"
                 },
                 {
                     "Titel": "Kerteminde Forsyning",
@@ -7765,17 +7927,17 @@
                 },
                 {
                     "Titel": "Genbrugspladser - Kerteminde Forsyning",
-                    "Url": "https://www.kertemindeforsyning.dk/affald/genbrugspladser",
+                    "Url": "https://www.kertemindeforsyning.dk/genbrug-affald/genbrugspladser",
                     "Title_en": "Recycling centres - Kerteminde Forsyning"
                 },
                 {
                     "Titel": "Miljøkassen",
-                    "Url": "https://www.kertemindeforsyning.dk/affald/farligt-affald/miljoekassen",
+                    "Url": "https://www.kertemindeforsyning.dk/genbrug-affald/roed-miljoekasse-til-farligt-affald",
                     "Title_en": "Environmental box"
                 },
                 {
                     "Titel": "Ressourceplan 2022-2034",
-                    "Url": "https://kerteminde.dk/borger/bolig-byggeri-og-flytning/affald/ressourceplan-2022-2034",
+                    "Url": "https://www.kertemindeforsyning.dk/genbrug-affald/regler-og-vejledninger",
                     "Title_en": "Resource Plan 2022-2034"
                 }
             ],
@@ -7783,12 +7945,15 @@
             "Affaldsfraktioner_en": "8 of 10 trash categories",
             "AffaldsfraktionerAntal": 8,
             "AffaldsfraktionerIAlt": 10,
-            "OfficielAffaldsside": "https://kerteminde.dk/borger/bolig-byggeri-og-flytning/affald",
+            "OfficielAffaldsside": "https://www.kertemindeforsyning.dk/genbrug-affald/regler-og-vejledninger",
             "OfficielAffaldssideTitel": "Affald - Kerteminde Kommune",
             "OfficielAffaldssideTitel_en": "Waste - Kerteminde Municipality",
             "GenbrugspladserAntal": 3,
             "Genbrugspladser": "3 genbrugspladser",
-            "Genbrugspladser_en": "3 recycling centres"
+            "Genbrugspladser_en": "3 recycling centres",
+            "AffaldSelvbetjeningUrl": "https://www.kertemindeforsyning.dk/selvbetjening",
+            "AffaldSelvbetjeningKildeUrl": "https://www.kertemindeforsyning.dk/selvbetjening",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Poststeder": [
             {
@@ -7925,11 +8090,6 @@
                     "Title_en": "Hazardous waste"
                 },
                 {
-                    "Titel": "Genbrugsbilen",
-                    "Url": "https://www.kolding.dk/borger/affald-og-genbrug/saadan-kommer-du-af-med-affaldet/genbrugsbilen-faa-hentet-dine-ting-til-genbrug",
-                    "Title_en": "Genbrugsbilen"
-                },
-                {
                     "Titel": "Ny affaldsordning",
                     "Url": "https://www.kolding.dk/borger/affald-og-genbrug/saadan-kommer-du-af-med-affaldet/ny-affaldsordning-nye-beholdere",
                     "Title_en": "New waste scheme"
@@ -7949,7 +8109,10 @@
             "OfficielAffaldssideTitel_en": "Sorting guide",
             "GenbrugspladserAntal": 5,
             "Genbrugspladser": "5 genbrugspladser",
-            "Genbrugspladser_en": "5 recycling centres"
+            "Genbrugspladser_en": "5 recycling centres",
+            "AffaldSelvbetjeningUrl": "https://www.kolding.dk/borger/affald-og-genbrug/selvbetjening-affald-og-genbrug/faa-besked-om-dit-affald",
+            "AffaldSelvbetjeningKildeUrl": "https://www.kolding.dk/borger/affald-og-genbrug/selvbetjening-affald-og-genbrug/faa-besked-om-dit-affald",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Telefon": "79 79 71 00",
         "TelefonLabel": "Telefon til Redux",
@@ -8115,7 +8278,7 @@
                 },
                 {
                     "Titel": "Retningslinjer for husholdningsaffald",
-                    "Url": "https://www.kk.dk/borger/affald-og-miljoe/affald-og-genbrug/retningslinjer-for-husholdningsaffald",
+                    "Url": "https://affald.kk.dk/affaldsordninger/regler-og-retningslinjer-om-affald",
                     "Title_en": "Household waste guidelines"
                 }
             ],
@@ -8128,7 +8291,10 @@
             "OfficielAffaldssideTitel_en": "Waste in Copenhagen",
             "GenbrugspladserAntal": 15,
             "Genbrugspladser": "15 genbrugspladser",
-            "Genbrugspladser_en": "15 recycling centres"
+            "Genbrugspladser_en": "15 recycling centres",
+            "AffaldSelvbetjeningUrl": "https://nemaffaldsservice.kk.dk/",
+            "AffaldSelvbetjeningKildeUrl": "https://affald.kk.dk/",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Telefon": "33 66 10 03",
         "TelefonLabel": "Telefon til affald",
@@ -9822,8 +9988,8 @@
                     "Title_en": "Waste"
                 },
                 {
-                    "Titel": "Sortering af affald",
-                    "Url": "https://www.koege.dk/borger/affald-klima-og-natur/affald/sortering-af-affald",
+                    "Titel": "Sorteringsvejledning",
+                    "Url": "https://www.koege.dk/borger/affald-klima-og-natur/affald/sorteringsvejledning",
                     "Title_en": "Waste sorting"
                 },
                 {
@@ -9851,7 +10017,10 @@
             "OfficielAffaldssideTitel_en": "Waste",
             "GenbrugspladserAntal": 2,
             "Genbrugspladser": "2 genbrugspladser",
-            "Genbrugspladser_en": "2 recycling centres"
+            "Genbrugspladser_en": "2 recycling centres",
+            "AffaldSelvbetjeningUrl": "https://www.koege.dk/borger/affald-klima-og-natur/affald",
+            "AffaldSelvbetjeningKildeUrl": "https://www.koege.dk/borger/affald-klima-og-natur/affald",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Poststeder": [
             {
@@ -10016,6 +10185,9 @@
             "Affaldsfraktioner": "8 af 10 fraktioner",
             "Affaldsfraktioner_en": "8 of 10 trash categories",
             "AffaldsfraktionerAntal": 8,
+            "BekræftedeFraktioner": [
+                { "Fraktion": "Mad- og drikkekartoner", "KildeUrl": "https://langelandkommune.dk/p/Dokumenter/Borger/Affald_Natur_og_Miljoe/Affald_og_Genbrug/Regulativ-for-husholdningsaffald-2024-_-Bilag-1.pdf", "Tjekket": "2026-10-15" }
+            ],
             "AffaldsfraktionerIAlt": 10,
             "OfficielAffaldsside": "https://langelandkommune.dk/mit-liv/affald-natur-og-miljoe/affald-og-genbrug/information-om-affald-og-genbrug",
             "OfficielAffaldssideTitel": "Information om affald og genbrug",
@@ -10026,7 +10198,10 @@
             "DigitalSelvbetjeningTitel": "Sorteringshjælp",
             "DigitalSelvbetjeningTitel_en": "Sorting help",
             "DigitalSelvbetjening": "Mit Affald app fra Langeland Forsyning",
-            "DigitalSelvbetjening_en": "Mit Affald app from Langeland Forsyning"
+            "DigitalSelvbetjening_en": "Mit Affald app from Langeland Forsyning",
+            "AffaldSelvbetjeningUrl": "https://virk.dk/myndigheder/kommuner/Langeland/selvbetjening/Anmeld_manglende_toemning_af_affald/",
+            "AffaldSelvbetjeningKildeUrl": "https://virk.dk/myndigheder/kommuner/Langeland/selvbetjening/Anmeld_manglende_toemning_af_affald/",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Poststeder": [
             {
@@ -10143,17 +10318,12 @@
                 },
                 {
                     "Titel": "Sådan sorterer du",
-                    "Url": "https://www.lejre.dk/borger/bolig-byggeri-og-affald/affald-og-genbrug/saadan-sorterer-du-sorteringsvejledning",
+                    "Url": "https://lejre.dk/borger/bolig-byggeri-og-affald/affald-og-genbrug/sorteringsvejledning",
                     "Title_en": "How to sort"
                 },
                 {
-                    "Titel": "Bestil poser til madaffald",
-                    "Url": "https://www.lejre.dk/borger/bolig-byggeri-og-affald/affald-og-genbrug/bestil-poser-til-madaffald-affaldsbeholdere-and-afhentning-af-roed-miljoeboks-storskrald-og-haveaffald/bestil-poser-til-madaffald",
-                    "Title_en": "Order food-waste bags"
-                },
-                {
                     "Titel": "Bestil afhentning af storskrald",
-                    "Url": "https://www.lejre.dk/borger/bolig-byggeri-og-affald/affald-og-genbrug/bestil-poser-til-madaffald-affaldsbeholdere-and-afhentning-af-roed-miljoeboks-storskrald-og-haveaffald/bestil-afhentning-af-storskrald",
+                    "Url": "https://lejre.dk/borger/bolig-byggeri-og-affald/affald-og-genbrug/afhentning-og-bestilling/bestil-afhentning-af-storskrald",
                     "Title_en": "Book bulky waste collection"
                 },
                 {
@@ -10175,7 +10345,10 @@
             "DigitalSelvbetjeningTitel": "Perfect Waste og tømmekalender",
             "DigitalSelvbetjeningTitel_en": "Perfect Waste and collection calendar",
             "DigitalSelvbetjening": "Perfect Waste bruges til tømmekalender.",
-            "DigitalSelvbetjening_en": "Perfect Waste is used for collection calendars."
+            "DigitalSelvbetjening_en": "Perfect Waste is used for collection calendars.",
+            "AffaldSelvbetjeningUrl": "https://lejre.dk/selvbetjening",
+            "AffaldSelvbetjeningKildeUrl": "https://lejre.dk/selvbetjening",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Poststeder": [
             {
@@ -10301,7 +10474,7 @@
                 },
                 {
                     "Titel": "Affald og genbrug privat",
-                    "Url": "https://lemvig.dk/borger/byg-og-bo/affald-og-genbrug/affald-og-genbrug-privat",
+                    "Url": "https://lemvig.dk/selvbetjening-og-service/natur-miljoe-og-klima/affald-og-genbrug",
                     "Title_en": "Waste and recycling for private residents"
                 },
                 {
@@ -10333,7 +10506,10 @@
             "DigitalSelvbetjeningTitel": "Affaldsapp",
             "DigitalSelvbetjeningTitel_en": "Waste app",
             "DigitalSelvbetjening": "AffaldNomi4s",
-            "DigitalSelvbetjening_en": "AffaldNomi4s"
+            "DigitalSelvbetjening_en": "AffaldNomi4s",
+            "AffaldSelvbetjeningUrl": "https://nomi4s.dk/min-side/privat",
+            "AffaldSelvbetjeningKildeUrl": "https://nomi4s.dk/min-side/privat",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Poststeder": [
             {
@@ -10491,7 +10667,10 @@
             "OfficielAffaldssideTitel_en": "General waste information - Lolland Municipality",
             "GenbrugspladserAntal": 10,
             "Genbrugspladser": "10 genbrugspladser",
-            "Genbrugspladser_en": "10 recycling centres"
+            "Genbrugspladser_en": "10 recycling centres",
+            "AffaldSelvbetjeningUrl": "https://www.refa.dk/indsamlingsordning/indsamling-af-affald/selvbetjening/",
+            "AffaldSelvbetjeningKildeUrl": "https://www.refa.dk/indsamlingsordning/indsamling-af-affald/selvbetjening/",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Poststeder": [
             {
@@ -10684,7 +10863,10 @@
             "OfficielAffaldssideTitel_en": "Household waste",
             "GenbrugspladserAntal": 1,
             "Genbrugspladser": "1 genbrugsplads",
-            "Genbrugspladser_en": "1 recycling centre"
+            "Genbrugspladser_en": "1 recycling centre",
+            "AffaldSelvbetjeningUrl": "https://www.ltk.dk/borger/bolig-og-byggeri/dit-hus-og-grund/affald-fra-boliger",
+            "AffaldSelvbetjeningKildeUrl": "https://www.ltk.dk/borger/bolig-og-byggeri/dit-hus-og-grund/affald-fra-boliger",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Poststeder": [
             {
@@ -10964,7 +11146,10 @@
             "DigitalSelvbetjeningTitel": "Storskrald",
             "DigitalSelvbetjeningTitel_en": "Bulky waste",
             "DigitalSelvbetjening": "Kan bestilles via Dit Affald eller Affaldsportal",
-            "DigitalSelvbetjening_en": "Can be booked through Dit Affald or Affaldsportal"
+            "DigitalSelvbetjening_en": "Can be booked through Dit Affald or Affaldsportal",
+            "AffaldSelvbetjeningUrl": "https://www.renform.dk/affald/dit-affald",
+            "AffaldSelvbetjeningKildeUrl": "https://www.renform.dk/affald/dit-affald",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Poststeder": [
             {
@@ -11122,7 +11307,10 @@
             "OfficielAffaldssideTitel_en": "Middelfart Waste and Recycling",
             "GenbrugspladserAntal": 4,
             "Genbrugspladser": "4 genbrugspladser",
-            "Genbrugspladser_en": "4 recycling centres"
+            "Genbrugspladser_en": "4 recycling centres",
+            "AffaldSelvbetjeningUrl": "https://affald.middelfart.dk/affaldsordninger-for-private/min-beholder-er-ikke-toemt",
+            "AffaldSelvbetjeningKildeUrl": "https://affald.middelfart.dk/affaldsordninger-for-private/min-beholder-er-ikke-toemt",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Telefon": "88 88 55 00",
         "TelefonLabel": "Kommunens telefon",
@@ -11287,7 +11475,10 @@
             "OfficielAffaldssideTitel_en": "Waste and recycling - Morsø Municipality",
             "GenbrugspladserAntal": 1,
             "Genbrugspladser": "1 genbrugsplads",
-            "Genbrugspladser_en": "1 recycling centre"
+            "Genbrugspladser_en": "1 recycling centre",
+            "AffaldSelvbetjeningUrl": "https://mors.dk/borger/by-og-bolig/affald-og-genbrug/affaldssortering",
+            "AffaldSelvbetjeningKildeUrl": "https://mors.dk/borger/by-og-bolig/affald-og-genbrug/affaldssortering",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Poststeder": [
             {
@@ -11437,7 +11628,10 @@
             "OfficielAffaldssideTitel_en": "Recycling stations - Norddjurs Municipality",
             "GenbrugspladserAntal": 4,
             "Genbrugspladser": "4 genbrugspladser",
-            "Genbrugspladser_en": "4 recycling centres"
+            "Genbrugspladser_en": "4 recycling centres",
+            "AffaldSelvbetjeningUrl": "https://minside.renodjurs.dk/",
+            "AffaldSelvbetjeningKildeUrl": "https://minside.renodjurs.dk/",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Poststeder": [
             {
@@ -11615,7 +11809,10 @@
             "DigitalSelvbetjeningTitel": "Affaldsapp",
             "DigitalSelvbetjeningTitel_en": "Waste app",
             "DigitalSelvbetjening": "AffaldNordfyn",
-            "DigitalSelvbetjening_en": "AffaldNordfyn"
+            "DigitalSelvbetjening_en": "AffaldNordfyn",
+            "AffaldSelvbetjeningUrl": "https://www.nordfynskommune.dk/andet/selvbetjening/borger/affald-og-miljoe/genbrug-og-renovation/",
+            "AffaldSelvbetjeningKildeUrl": "https://www.nordfynskommune.dk/andet/selvbetjening/borger/affald-og-miljoe/genbrug-og-renovation/",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Poststeder": [
             {
@@ -11789,7 +11986,10 @@
             "DigitalSelvbetjeningTitel": "Påmindelser",
             "DigitalSelvbetjeningTitel_en": "Reminders",
             "DigitalSelvbetjening": "SMS før affaldet hentes",
-            "DigitalSelvbetjening_en": "SMS before waste collection"
+            "DigitalSelvbetjening_en": "SMS before waste collection",
+            "AffaldSelvbetjeningUrl": "https://www.nfs.as/selvbetjening/",
+            "AffaldSelvbetjeningKildeUrl": "https://www.nfs.as/selvbetjening/",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Poststeder": [
             {
@@ -11938,7 +12138,10 @@
             "DigitalSelvbetjeningTitel": "Selvbetjening",
             "DigitalSelvbetjeningTitel_en": "Self-service",
             "DigitalSelvbetjening": "Min side hos Næstved Affald",
-            "DigitalSelvbetjening_en": "Min side at Næstved Affald"
+            "DigitalSelvbetjening_en": "Min side at Næstved Affald",
+            "AffaldSelvbetjeningUrl": "https://affaldplus.dk/naestved-kommune-borger",
+            "AffaldSelvbetjeningKildeUrl": "https://affaldplus.dk/naestved-kommune-borger",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Poststeder": [
             {
@@ -12128,7 +12331,10 @@
             "OfficielAffaldssideTitel_en": "Waste - private households",
             "GenbrugspladserAntal": 1,
             "Genbrugspladser": "1 genbrugsplads",
-            "Genbrugspladser_en": "1 recycling centre"
+            "Genbrugspladser_en": "1 recycling centre",
+            "AffaldSelvbetjeningUrl": "https://renosyd.dk/kundeservice",
+            "AffaldSelvbetjeningKildeUrl": "https://renosyd.dk/kundeservice",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Poststeder": [
             {
@@ -12285,7 +12491,10 @@
             "OfficielAffaldssideTitel_en": "Odense Municipality - waste sorting",
             "GenbrugspladserAntal": 7,
             "Genbrugspladser": "7 genbrugspladser",
-            "Genbrugspladser_en": "7 recycling centres"
+            "Genbrugspladser_en": "7 recycling centres",
+            "AffaldSelvbetjeningUrl": "https://mit.odenserenovation.dk/",
+            "AffaldSelvbetjeningKildeUrl": "https://www.odenserenovation.dk/om-odense-renovation/organisationen/selvbetjening-bestillinger-kalender/",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Poststeder": [
             {
@@ -12461,6 +12670,12 @@
             "Affaldsfraktioner": "9 af 10 fraktioner",
             "Affaldsfraktioner_en": "9 of 10 trash categories",
             "AffaldsfraktionerAntal": 9,
+            "BekræftedeFraktioner": [
+                { "Fraktion": "Madaffald", "KildeUrl": "https://www.odsherred.dk/da/bo-og-leve/affald-og-en-groen-hverdag/affald-og-genbrug/dit-affald/", "Tjekket": "2026-10-15" },
+                { "Fraktion": "Mad- og drikkekartoner", "KildeUrl": "https://www.odsherred.dk/da/bo-og-leve/affald-og-en-groen-hverdag/affald-og-genbrug/dit-affald/", "Tjekket": "2026-10-15" },
+                { "Fraktion": "Småt elektronik", "KildeUrl": "https://www.odsherred.dk/da/bo-og-leve/affald-og-en-groen-hverdag/affald-og-genbrug/dit-affald/", "Tjekket": "2026-10-15" },
+                { "Fraktion": "Batterier", "KildeUrl": "https://www.odsherred.dk/da/bo-og-leve/affald-og-en-groen-hverdag/affald-og-genbrug/dit-affald/", "Tjekket": "2026-10-15" }
+            ],
             "AffaldsfraktionerIAlt": 10,
             "OfficielAffaldsside": "https://www.odsherred.dk/da/bo-og-leve/affald-og-en-groen-hverdag/affald-og-genbrug/",
             "OfficielAffaldssideTitel": "Affaldsordninger og genbrugsstationer",
@@ -12472,7 +12687,10 @@
             "DigitalSelvbetjeningTitel_en": "Your waste and self-service",
             "DigitalSelvbetjening": "Selvbetjening bruges til kalender, fejlmeldinger og beholdere.",
             "DigitalSelvbetjening_en": "Self-service is used for calendars, reports and bins.",
-            "DigitalSelvbetjeningUrl": "https://www.odsherred.dk/da/selvbetjeningsoversigt/affald-selvbetjening/"
+            "DigitalSelvbetjeningUrl": "https://www.odsherred.dk/da/selvbetjeningsoversigt/affald-selvbetjening/",
+            "AffaldSelvbetjeningUrl": "https://www.odsherred.dk/da/bo-og-leve/affald-og-en-groen-hverdag/affald-og-genbrug/dit-affald/",
+            "AffaldSelvbetjeningKildeUrl": "https://www.odsherred.dk/da/bo-og-leve/affald-og-en-groen-hverdag/affald-og-genbrug/dit-affald/",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Telefon": "59 66 66 66",
         "TelefonLabel": "Telefon til kommunen",
@@ -12659,7 +12877,10 @@
             "DigitalSelvbetjeningTitel_en": "Mit Affald and AffaldRanders",
             "DigitalSelvbetjening": "AffaldRanders bruges til kalender og bestillinger.",
             "DigitalSelvbetjening_en": "AffaldRanders is used for calendars and orders.",
-            "DigitalSelvbetjeningUrl": "https://www.randers.dk/borger/bolig/affald-og-genbrug/mit-affald-og-selvbetjening/"
+            "DigitalSelvbetjeningUrl": "https://www.randers.dk/borger/bolig/affald-og-genbrug/mit-affald-og-selvbetjening/",
+            "AffaldSelvbetjeningUrl": "https://www.randers.dk/borger/bolig/affald-og-genbrug/mit-affald-og-selvbetjening/",
+            "AffaldSelvbetjeningKildeUrl": "https://www.randers.dk/borger/bolig/affald-og-genbrug/mit-affald-og-selvbetjening/",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Telefon": "89 15 15 15",
         "TelefonLabel": "Kommunens telefon",
@@ -12850,7 +13071,10 @@
             "DigitalSelvbetjeningTitel_en": "Waste app",
             "DigitalSelvbetjening": "Rebild Affald",
             "DigitalSelvbetjening_en": "Rebild Affald",
-            "DigitalSelvbetjeningUrl": "https://rebild.dk/affalds-app"
+            "DigitalSelvbetjeningUrl": "https://rebild.dk/affalds-app",
+            "AffaldSelvbetjeningUrl": "https://rebild.dk/affalds-app",
+            "AffaldSelvbetjeningKildeUrl": "https://rebild.dk/affalds-app",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Poststeder": [
             {
@@ -13030,7 +13254,10 @@
             "OfficielAffaldssideTitel_en": "Food waste scheme",
             "GenbrugspladserAntal": 11,
             "Genbrugspladser": "11 genbrugspladser",
-            "Genbrugspladser_en": "11 recycling centres"
+            "Genbrugspladser_en": "11 recycling centres",
+            "AffaldSelvbetjeningUrl": "https://www.rksk.dk/borger/selvbetjening-borger",
+            "AffaldSelvbetjeningKildeUrl": "https://www.rksk.dk/borger/selvbetjening-borger",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Telefon": "99 74 10 14",
         "TelefonLabel": "Telefon til affald",
@@ -13239,7 +13466,10 @@
             "DigitalSelvbetjeningTitel": "Selvbetjent adgang",
             "DigitalSelvbetjeningTitel_en": "Self-service access",
             "DigitalSelvbetjening": "Mulig i ydertimerne efter tilmelding",
-            "DigitalSelvbetjening_en": "Available in outer hours after registration"
+            "DigitalSelvbetjening_en": "Available in outer hours after registration",
+            "AffaldSelvbetjeningUrl": "https://affaldplus.dk/ringsted",
+            "AffaldSelvbetjeningKildeUrl": "https://affaldplus.dk/ringsted",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Poststeder": [
             {
@@ -13411,7 +13641,10 @@
             "DigitalSelvbetjeningTitel_en": "App",
             "DigitalSelvbetjening": "Perfect Waste bruges til tømmedatoer og sorteringshjælp",
             "DigitalSelvbetjening_en": "Perfect Waste is used for collection dates and sorting guidance",
-            "DigitalSelvbetjeningUrl": "https://www.roskilde.dk/da-dk/service-og-selvbetjening/borger/affald-og-genbrug/hvordan-sorterer-jeg-affaldet/"
+            "DigitalSelvbetjeningUrl": "https://www.roskilde.dk/da-dk/service-og-selvbetjening/borger/affald-og-genbrug/hvordan-sorterer-jeg-affaldet/",
+            "AffaldSelvbetjeningUrl": "https://www.roskilde.dk/da-dk/service-og-selvbetjening/borger/affald-og-genbrug/",
+            "AffaldSelvbetjeningKildeUrl": "https://www.roskilde.dk/da-dk/service-og-selvbetjening/borger/affald-og-genbrug/",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Poststeder": [
             {
@@ -13475,9 +13708,9 @@
         "Beskrivelse_ar": "تقع بلدية رودرسدال في شمال زيلاند، وتشتهر بمناطقها السكنية الجذابة ومحيطها الطبيعي الجميل مثل بحيرة Søllerød وغابة Rude. وتوفر مستوى مرتفعًا من الخدمات وأنشطة ثقافية وترفيهية بالقرب من كوبنهاغن.",
         "Affaldsregler_ar": "تُفرز النفايات المنزلية في بلدية رودرسدال ضمن عشر فئات، منها الورق والكرتون والزجاج والبلاستيك والمعادن وعبوات الطعام والشراب والمنسوجات ونفايات الطعام والنفايات المتبقية والنفايات الخطرة. تختلف الحاويات بحسب نوع السكن، فتستخدم المنازل المستقلة حاويات مقسمة، بينما تستخدم المباني السكنية حاويات مشتركة. وتُسلّم النفايات الخطرة والمنسوجات إلى مراكز إعادة التدوير، ويُنصح السكان باستخدام هذه المراكز للإلكترونيات وغيرها من النفايات القابلة لإعادة التدوير.",
         "Detaljer": {
-            "SidstTjekket": "2026-05-14",
+            "SidstTjekket": "2026-10-14",
             "Affaldsoperatør": "Rudersdal Kommune / Norfors",
-            "AffaldsoperatørUrl": "https://rudersdal.dk/borger/affald-og-genbrug",
+            "AffaldsoperatørUrl": "https://rudersdal.dk/borger/affald-miljoe-og-klima/affald-og-genbrug",
             "Affaldsoperatør_en": "Rudersdal Municipality / Norfors",
             "KildeNote": "Oplysningerne er samlet fra Rudersdal Kommunes officielle affaldssider og Norfors' information om genbrugspladser. Affaldsguide Danmark er en uafhængig guide og er ikke en del af kommunen.",
             "KildeNote_en": "The information is based on Rudersdal Municipality's official waste pages and Norfors' information about recycling centres. Affaldsguide Danmark is an independent guide and is not part of the municipality.",
@@ -13554,37 +13787,42 @@
             "Links": [
                 {
                     "Titel": "Affald og genbrug",
-                    "Url": "https://rudersdal.dk/borger/affald-og-genbrug",
+                    "Url": "https://rudersdal.dk/borger/affald-miljoe-og-klima/affald-og-genbrug",
                     "Title_en": "Waste and recycling"
                 },
                 {
                     "Titel": "Affald - villa og rækkehus",
-                    "Url": "https://rudersdal.dk/borger/affald-og-genbrug/affald-villa-og-raekkehus",
+                    "Url": "https://rudersdal.dk/borger/affald-miljoe-og-klima/affald-og-genbrug/jer-med-egne-beholdere",
                     "Title_en": "Waste - detached and terraced houses"
                 },
                 {
                     "Titel": "Bestil afhentning af storskrald",
-                    "Url": "https://rudersdal.dk/borger/affald-og-genbrug/bestil-afhentning-af-storskrald",
+                    "Url": "https://rudersdal.dk/borger/affald-miljoe-og-klima/affald-og-genbrug/storskrald",
                     "Title_en": "Book bulky waste collection"
                 },
                 {
-                    "Titel": "Farligt affald og tekstilaffald",
-                    "Url": "https://rudersdal.dk/borger/affald-og-genbrug/farligt-affald-og-tekstilaffald",
-                    "Title_en": "Hazardous waste and textile waste"
+                    "Titel": "Farligt affald",
+                    "Url": "https://rudersdal.dk/borger/affald-miljoe-og-klima/affald-og-genbrug/farligt-affald",
+                    "Title_en": "Hazardous waste"
+                },
+                {
+                    "Titel": "Tekstilaffald",
+                    "Url": "https://rudersdal.dk/borger/affald-miljoe-og-klima/affald-og-genbrug/tekstilaffald",
+                    "Title_en": "Textile waste"
                 },
                 {
                     "Titel": "Genbrugspladser",
-                    "Url": "https://rudersdal.dk/borger/affald-og-genbrug/genbrugspladser",
+                    "Url": "https://rudersdal.dk/borger/affald-miljoe-og-klima/affald-og-genbrug/tag-paa-genbrugspladsen",
                     "Title_en": "Recycling centres"
                 },
                 {
                     "Titel": "Byggeaffald og asbest",
-                    "Url": "https://rudersdal.dk/borger/affald-og-genbrug/byggeaffald-og-asbest",
+                    "Url": "https://rudersdal.dk/borger/affald-miljoe-og-klima/affald-og-genbrug/byggeaffald",
                     "Title_en": "Construction waste and asbestos"
                 },
                 {
                     "Titel": "Norfors genbrugspladser",
-                    "Url": "https://www.norfors.dk/genbrugspladser/",
+                    "Url": "https://norfors.dk/borger/genbrugspladser",
                     "Title_en": "Norfors recycling centres"
                 }
             ],
@@ -13592,12 +13830,15 @@
             "Affaldsfraktioner_en": "10 of 10 trash categories",
             "AffaldsfraktionerAntal": 10,
             "AffaldsfraktionerIAlt": 10,
-            "OfficielAffaldsside": "https://rudersdal.dk/borger/affald-og-genbrug",
+            "OfficielAffaldsside": "https://rudersdal.dk/borger/affald-miljoe-og-klima/affald-og-genbrug",
             "OfficielAffaldssideTitel": "Affald og genbrug",
             "OfficielAffaldssideTitel_en": "Waste and recycling",
             "GenbrugspladserAntal": 1,
             "Genbrugspladser": "1 genbrugsplads",
-            "Genbrugspladser_en": "1 recycling centre"
+            "Genbrugspladser_en": "1 recycling centre",
+            "AffaldSelvbetjeningUrl": "https://rudersdal.dk/borger/affald-miljoe-og-klima/affald-og-genbrug",
+            "AffaldSelvbetjeningKildeUrl": "https://rudersdal.dk/borger/affald-miljoe-og-klima/affald-og-genbrug/jer-med-egne-beholdere",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Poststeder": [
             {
@@ -13641,7 +13882,7 @@
         "Postnr": 2610,
         "By": "Rødovre",
         "Mailadresse": "rk@rk.dk",
-        "URL": "https://www.rk.dk/forside/",
+        "URL": "https://rk.dk/",
         "Beskrivelse": "Rødovre Kommune ligger vest for København og er kendt for sin blanding af boligområder, erhvervsområder og grønne parker. Med Rødovre Centrum som et af Danmarks største shoppingcentre og gode idrætsfaciliteter, er kommunen et attraktivt område for familier og unge.",
         "Affaldsregler": "I Rødovre Kommune sorteres husholdningsaffald i ti fraktioner, herunder madaffald, papir, pap, glas, plast, metal, mad- og drikkekartoner, tekstiler, restaffald og farligt affald. Kommunen tilbyder to-kammer-beholdere til boliger, hvor affaldet sorteres i to sektioner for rest- og madaffald, mens større fællescontainere anvendes til sortering af plastik, papir, metal og andre materialer i etagebyggeri. Farligt affald og elektronik skal afleveres på genbrugsstationen. Alle borgere får udleveret bioposer specifikt til madaffald, og kommunen sørger for afhentning og vedligehold af beholdere. Rødovre Kommune arbejder aktivt for at øge genanvendelsen og opfylde de nationale mål for genbrug i henhold til affaldsplanen 2022-2033.",
         "Beskrivelse_en": "Rødovre Municipality lies west of Copenhagen and combines residential areas, business areas and green parks. Rødovre Centrum and good sports facilities make the municipality attractive for families and young residents.",
@@ -13722,17 +13963,17 @@
             "Links": [
                 {
                     "Titel": "Affald fra borgere",
-                    "Url": "https://www.rk.dk/borger/affald-fra-borgere/affald-fra-borgere",
+                    "Url": "https://rk.dk/borger/bolig-og-by/affald-miljoe-og-vand/affald-og-genbrug",
                     "Title_en": "Waste from residents"
                 },
                 {
                     "Titel": "Rødovre Genbrugsstation",
-                    "Url": "https://www.rk.dk/borger/affald-fra-borgere/genbrugsstation",
+                    "Url": "https://rk.dk/borger/bolig-og-by/affald-miljoe-og-vand/affald-og-genbrug/genbrugsstation",
                     "Title_en": "Rødovre Recycling Station"
                 },
                 {
                     "Titel": "Affaldsplan 2022-2033",
-                    "Url": "https://www.rk.dk/borger/affald-fra-borgere/affaldsplan",
+                    "Url": "https://rk.dk/borger/bolig-og-by/affald-miljoe-og-vand/affald-og-genbrug/affaldsplan",
                     "Title_en": "Waste plan 2022-2033"
                 },
                 {
@@ -13745,7 +13986,7 @@
             "Affaldsfraktioner_en": "10 of 10 trash categories",
             "AffaldsfraktionerAntal": 10,
             "AffaldsfraktionerIAlt": 10,
-            "OfficielAffaldsside": "https://www.rk.dk/borger/affald-fra-borgere/affald-fra-borgere",
+            "OfficielAffaldsside": "https://rk.dk/borger/bolig-og-by/affald-miljoe-og-vand/affald-og-genbrug",
             "OfficielAffaldssideTitel": "Affald fra borgere",
             "OfficielAffaldssideTitel_en": "Waste from residents",
             "GenbrugspladserAntal": 1,
@@ -13855,7 +14096,7 @@
                 },
                 {
                     "Titel": "Storskrald",
-                    "Url": "https://www.samsoe.dk/borger/natur-miljoe-og-renovation/vores-renovation/storskrald",
+                    "Url": "https://www.samsoe.dk/borger/natur-miljoe-og-renovation/vores-renovation/har-du-brug-for-hjaelp-til-din-renovation",
                     "Title_en": "Bulky waste"
                 },
                 {
@@ -13912,7 +14153,7 @@
         "Detaljer": {
             "SidstTjekket": "2026-05-15",
             "Affaldsoperatør": "Silkeborg Genbrug og Affald",
-            "AffaldsoperatørUrl": "https://www.silkeborg.dk/borger/affald-og-genbrug",
+            "AffaldsoperatørUrl": "https://www.silkeborgforsyning.dk/genbrug-og-affald/affaldsordninger",
             "Affaldsoperatør_en": "Silkeborg Genbrug og Affald",
             "KildeNote": "Oplysningerne er samlet fra Silkeborg Kommunes officielle affaldssider og Silkeborg Genbrug og Affald. Affaldsguide Danmark er en uafhængig guide og er ikke en del af kommunen eller forsyningen.",
             "KildeNote_en": "The information is based on Silkeborg Municipality's official waste pages and Silkeborg Genbrug og Affald. Affaldsguide Danmark is an independent guide and is not part of the municipality or utility company.",
@@ -13983,27 +14224,27 @@
             "Links": [
                 {
                     "Titel": "Affald og genbrug",
-                    "Url": "https://www.silkeborg.dk/borger/affald-og-genbrug",
+                    "Url": "https://www.silkeborgforsyning.dk/genbrug-og-affald/affaldsordninger",
                     "Title_en": "Waste and recycling"
                 },
                 {
                     "Titel": "Genbrugspladser",
-                    "Url": "https://www.silkeborg.dk/borger/affald-og-genbrug/genbrugspladser",
+                    "Url": "https://www.silkeborgforsyning.dk/genbrug-og-affald/affaldsordninger",
                     "Title_en": "Recycling centres"
                 },
                 {
-                    "Titel": "Sortering af affald",
-                    "Url": "https://www.silkeborg.dk/borger/affald-og-genbrug/sortering-af-affald",
-                    "Title_en": "Waste sorting"
+                    "Titel": "Affalds-ABC",
+                    "Url": "https://www.silkeborgforsyning.dk/abc",
+                    "Title_en": "Waste sorting A–Z"
                 },
                 {
                     "Titel": "Farligt affald",
-                    "Url": "https://www.silkeborg.dk/borger/affald-og-genbrug/farligt-affald",
+                    "Url": "https://www.silkeborgforsyning.dk/genbrug-og-affald/affaldsordninger",
                     "Title_en": "Hazardous waste"
                 },
                 {
                     "Titel": "Affalds- og ressourceplan",
-                    "Url": "https://www.silkeborg.dk/borger/affald-og-genbrug/affalds-og-ressourceplan",
+                    "Url": "https://www.silkeborgforsyning.dk/genbrug-og-affald/lovgivning",
                     "Title_en": "Waste and resource plan"
                 }
             ],
@@ -14011,12 +14252,15 @@
             "Affaldsfraktioner_en": "10 of 10 trash categories",
             "AffaldsfraktionerAntal": 10,
             "AffaldsfraktionerIAlt": 10,
-            "OfficielAffaldsside": "https://www.silkeborg.dk/borger/affald-og-genbrug",
+            "OfficielAffaldsside": "https://www.silkeborgforsyning.dk/genbrug-og-affald/affaldsordninger",
             "OfficielAffaldssideTitel": "Affald og genbrug",
             "OfficielAffaldssideTitel_en": "Waste and recycling",
             "GenbrugspladserAntal": 4,
             "Genbrugspladser": "4 genbrugspladser",
-            "Genbrugspladser_en": "4 recycling centres"
+            "Genbrugspladser_en": "4 recycling centres",
+            "AffaldSelvbetjeningUrl": "https://www.silkeborgforsyning.dk/affaldonline",
+            "AffaldSelvbetjeningKildeUrl": "https://www.silkeborgforsyning.dk/affaldonline",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Poststeder": [
             {
@@ -14222,7 +14466,10 @@
             "DigitalSelvbetjeningTitel_en": "Mit Renosyd",
             "DigitalSelvbetjening": "Se kommunens digitale affaldsløsning.",
             "DigitalSelvbetjening_en": "Open the municipality's digital waste service.",
-            "DigitalSelvbetjeningUrl": "https://mit.renosyd.dk/mit-affald"
+            "DigitalSelvbetjeningUrl": "https://mit.renosyd.dk/mit-affald",
+            "AffaldSelvbetjeningUrl": "https://renosyd.dk/kundeservice",
+            "AffaldSelvbetjeningKildeUrl": "https://renosyd.dk/kundeservice",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Poststeder": [
             {
@@ -14393,7 +14640,10 @@
             "DigitalSelvbetjeningTitel": "Affaldsapp",
             "DigitalSelvbetjeningTitel_en": "Waste app",
             "DigitalSelvbetjening": "AffaldNomi4s",
-            "DigitalSelvbetjening_en": "AffaldNomi4s"
+            "DigitalSelvbetjening_en": "AffaldNomi4s",
+            "AffaldSelvbetjeningUrl": "https://nomi4s.dk/min-side/privat",
+            "AffaldSelvbetjeningKildeUrl": "https://nomi4s.dk/min-side/privat",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Poststeder": [
             {
@@ -14542,7 +14792,10 @@
             "DigitalSelvbetjeningTitel": "App",
             "DigitalSelvbetjeningTitel_en": "App",
             "DigitalSelvbetjening": "Affald Slagelse",
-            "DigitalSelvbetjening_en": "Affald Slagelse"
+            "DigitalSelvbetjening_en": "Affald Slagelse",
+            "AffaldSelvbetjeningUrl": "https://www.slagelse.dk/da/service-og-selvbetjening/affald-og-genbrug/affald-fra-husholdningen/mest-stillede-spoergsmaal-om-husholdningsaffald/",
+            "AffaldSelvbetjeningKildeUrl": "https://www.slagelse.dk/da/service-og-selvbetjening/affald-og-genbrug/affald-fra-husholdningen/mest-stillede-spoergsmaal-om-husholdningsaffald/",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Poststeder": [
             {
@@ -14720,7 +14973,10 @@
             "AffaldsfraktionerIAlt": 10,
             "OfficielAffaldsside": "https://solrod.dk/service-og-selvbetjening/affald-miljoe-drikkevand-og-spildevand",
             "OfficielAffaldssideTitel": "Affald, miljø, drikkevand og spildevand",
-            "OfficielAffaldssideTitel_en": "Waste, environment, drinking water and wastewater"
+            "OfficielAffaldssideTitel_en": "Waste, environment, drinking water and wastewater",
+            "AffaldSelvbetjeningUrl": "https://solrod.dk/service-og-selvbetjening/affald-miljoe-drikkevand-og-spildevand/affald",
+            "AffaldSelvbetjeningKildeUrl": "https://solrod.dk/service-og-selvbetjening/affald-miljoe-drikkevand-og-spildevand/affald",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Telefon": "56 18 20 00",
         "TelefonLabel": "Kommunens telefon",
@@ -14870,7 +15126,10 @@
             "OfficielAffaldssideTitel_en": "Household waste",
             "GenbrugspladserAntal": 3,
             "Genbrugspladser": "3 genbrugspladser",
-            "Genbrugspladser_en": "3 recycling centres"
+            "Genbrugspladser_en": "3 recycling centres",
+            "AffaldSelvbetjeningUrl": "https://affaldplus.dk/soroe",
+            "AffaldSelvbetjeningKildeUrl": "https://affaldplus.dk/soroe",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Poststeder": [
             {
@@ -15045,7 +15304,10 @@
             "DigitalSelvbetjeningTitel": "Sorteringshjælp",
             "DigitalSelvbetjeningTitel_en": "Sorting help",
             "DigitalSelvbetjening": "Perfect Waste app",
-            "DigitalSelvbetjening_en": "Perfect Waste app"
+            "DigitalSelvbetjening_en": "Perfect Waste app",
+            "AffaldSelvbetjeningUrl": "https://www.stevns.dk/service-and-selvbetjening/affald-and-genbrug",
+            "AffaldSelvbetjeningKildeUrl": "https://www.stevns.dk/service-and-selvbetjening/affald-and-genbrug",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Poststeder": [
             {
@@ -15202,7 +15464,10 @@
             "DigitalSelvbetjeningTitel": "Selvbetjening",
             "DigitalSelvbetjeningTitel_en": "Self-service",
             "DigitalSelvbetjening": "Tømning, beholdere, storskrald og haveaffald via Nomi4s",
-            "DigitalSelvbetjening_en": "Collection, bins, bulky waste and garden waste via Nomi4s"
+            "DigitalSelvbetjening_en": "Collection, bins, bulky waste and garden waste via Nomi4s",
+            "AffaldSelvbetjeningUrl": "https://nomi4s.dk/min-side/privat",
+            "AffaldSelvbetjeningKildeUrl": "https://nomi4s.dk/min-side/privat",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Poststeder": [
             {
@@ -15373,7 +15638,10 @@
             "DigitalSelvbetjeningTitel": "Affaldsportalen",
             "DigitalSelvbetjeningTitel_en": "Affaldsportalen",
             "DigitalSelvbetjening": "Affaldsportalen samler sortering, kalender og fejlmeldinger.",
-            "DigitalSelvbetjening_en": "Affaldsportalen gathers sorting, calendars and reports."
+            "DigitalSelvbetjening_en": "Affaldsportalen gathers sorting, calendars and reports.",
+            "AffaldSelvbetjeningUrl": "https://www.svendborg.dk/borger/miljoe-og-natur/affald-og-genbrug/",
+            "AffaldSelvbetjeningKildeUrl": "https://www.svendborg.dk/borger/miljoe-og-natur/affald-og-genbrug/",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Telefon": "62 23 30 00",
         "TelefonLabel": "Kommunens telefon",
@@ -15541,7 +15809,10 @@
             "OfficielAffaldssideTitel_en": "Waste at Syddjurs Municipality",
             "GenbrugspladserAntal": 7,
             "Genbrugspladser": "7 genbrugspladser",
-            "Genbrugspladser_en": "7 recycling centres"
+            "Genbrugspladser_en": "7 recycling centres",
+            "AffaldSelvbetjeningUrl": "https://minside.renodjurs.dk/",
+            "AffaldSelvbetjeningKildeUrl": "https://minside.renodjurs.dk/",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Poststeder": [
             {
@@ -15712,7 +15983,10 @@
             "OfficielAffaldssideTitel_en": "Waste and recycling at Sønderborg Municipality",
             "GenbrugspladserAntal": 8,
             "Genbrugspladser": "8 genbrugspladser",
-            "Genbrugspladser_en": "8 recycling centres"
+            "Genbrugspladser_en": "8 recycling centres",
+            "AffaldSelvbetjeningUrl": "https://sonfor.dk/selvbetjening/",
+            "AffaldSelvbetjeningKildeUrl": "https://sonfor.dk/selvbetjening/",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Poststeder": [
             {
@@ -15871,7 +16145,10 @@
             "OfficielAffaldssideTitel_en": "Waste at Thy Forsyning",
             "GenbrugspladserAntal": 4,
             "Genbrugspladser": "4 genbrugspladser",
-            "Genbrugspladser_en": "4 recycling centres"
+            "Genbrugspladser_en": "4 recycling centres",
+            "AffaldSelvbetjeningUrl": "https://www.thyforsyning.dk/selvbetjening/",
+            "AffaldSelvbetjeningKildeUrl": "https://www.thyforsyning.dk/selvbetjening/",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Poststeder": [
             {
@@ -16006,7 +16283,7 @@
                 },
                 {
                     "Titel": "Genbrugspladserne",
-                    "Url": "https://www.tonfor.dk/affald/genbrugspladserne/aabningstider",
+                    "Url": "https://www.tonfor.dk/affald/genbrugspladserne/",
                     "Title_en": "Recycling centres"
                 },
                 {
@@ -16028,7 +16305,10 @@
             "DigitalSelvbetjeningTitel": "App",
             "DigitalSelvbetjeningTitel_en": "App",
             "DigitalSelvbetjening": "Tønder Forsynings app med tømmedatoer og push-beskeder",
-            "DigitalSelvbetjening_en": "Tønder Forsyning's app with collection dates and push notifications"
+            "DigitalSelvbetjening_en": "Tønder Forsyning's app with collection dates and push notifications",
+            "AffaldSelvbetjeningUrl": "https://www.tonfor.dk/selvbetjening/",
+            "AffaldSelvbetjeningKildeUrl": "https://www.tonfor.dk/selvbetjening/",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Poststeder": [
             {
@@ -16184,9 +16464,9 @@
                     "Title_en": "Construction waste"
                 },
                 {
-                    "Titel": "ARC genbrugspladser",
-                    "Url": "https://a-r-c.dk/privat/genbrugspladser/",
-                    "Title_en": "ARC recycling centres"
+                    "Titel": "ARC nærgenbrugsstationer",
+                    "Url": "https://a-r-c.dk/privat/naergenbrugsstationer/",
+                    "Title_en": "ARC local recycling stations"
                 }
             ],
             "Affaldsfraktioner": "9 af 10 fraktioner",
@@ -16202,7 +16482,10 @@
             "DigitalSelvbetjeningTitel": "Tårnby Affald",
             "DigitalSelvbetjeningTitel_en": "Tårnby Affald",
             "DigitalSelvbetjening": "Appen viser kalender, påmindelser og sorteringssøgning.",
-            "DigitalSelvbetjening_en": "The app shows calendars, reminders and sorting search."
+            "DigitalSelvbetjening_en": "The app shows calendars, reminders and sorting search.",
+            "AffaldSelvbetjeningUrl": "https://www.taarnby.dk/om-kommunen/kontakt/kontakt-os/",
+            "AffaldSelvbetjeningKildeUrl": "https://www.taarnby.dk/om-kommunen/kontakt/kontakt-os/",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Telefon": "32 47 11 11",
         "TelefonLabel": "Kommunens telefon",
@@ -16356,7 +16639,10 @@
             "AffaldsfraktionerIAlt": 10,
             "OfficielAffaldsside": "https://www.vallensbaek.dk/borger/by-og-bolig/affald/affald-fra-min-bolig",
             "OfficielAffaldssideTitel": "Affald fra min bolig",
-            "OfficielAffaldssideTitel_en": "Waste from my home"
+            "OfficielAffaldssideTitel_en": "Waste from my home",
+            "AffaldSelvbetjeningUrl": "https://ressourceindsamling.dk/selvbetjening/",
+            "AffaldSelvbetjeningKildeUrl": "https://ressourceindsamling.dk/selvbetjening/",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Poststeder": [
             {
@@ -16478,7 +16764,7 @@
                 },
                 {
                     "Titel": "Priser for affald og genbrug",
-                    "Url": "https://dinforsyning.dk/da-dk/affald/priser-for-affald-2025",
+                    "Url": "https://dinforsyning.dk/da-dk/affald/priser-for-affald-2026",
                     "Title_en": "Waste and recycling prices"
                 },
                 {
@@ -16496,7 +16782,10 @@
             "OfficielAffaldssideTitel_en": "Waste and recycling centres",
             "GenbrugspladserAntal": 5,
             "Genbrugspladser": "5 genbrugspladser",
-            "Genbrugspladser_en": "5 recycling centres"
+            "Genbrugspladser_en": "5 recycling centres",
+            "AffaldSelvbetjeningUrl": "https://dinforsyning.dk/da-dk/selvbetjening/manglende-t%C3%B8mning-og-andre-fejl",
+            "AffaldSelvbetjeningKildeUrl": "https://dinforsyning.dk/da-dk/selvbetjening/manglende-t%C3%B8mning-og-andre-fejl",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Poststeder": [
             {
@@ -16700,7 +16989,10 @@
             "DigitalSelvbetjeningTitel": "Affaldsapp",
             "DigitalSelvbetjeningTitel_en": "Waste app",
             "DigitalSelvbetjening": "AffaldsVejen viser sortering, tømmedage, beskeder og genbrugspladser",
-            "DigitalSelvbetjening_en": "AffaldsVejen shows sorting guidance, collection dates, notifications and recycling centres"
+            "DigitalSelvbetjening_en": "AffaldsVejen shows sorting guidance, collection dates, notifications and recycling centres",
+            "AffaldSelvbetjeningUrl": "https://vejen.dk/borger/natur-miljoe-klima-og-affald/affald-og-genbrug/her-kan-du-finde-information-om-dine-beholdere",
+            "AffaldSelvbetjeningKildeUrl": "https://vejen.dk/borger/natur-miljoe-klima-og-affald/affald-og-genbrug/her-kan-du-finde-information-om-dine-beholdere",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Poststeder": [
             {
@@ -16883,7 +17175,10 @@
             "DigitalSelvbetjeningTitel_en": "Self-service",
             "DigitalSelvbetjening": "AffaldOnline til påmindelser, tømmefrekvens og manglende tømning",
             "DigitalSelvbetjening_en": "AffaldOnline for reminders, collection frequency and missed collections",
-            "DigitalSelvbetjeningUrl": "https://www.vejle.dk/da/oversigt-over-selvbetjening/borger/affald-og-genbrug/hent-appen-affald-vejle/"
+            "DigitalSelvbetjeningUrl": "https://www.vejle.dk/da/oversigt-over-selvbetjening/borger/affald-og-genbrug/hent-appen-affald-vejle/",
+            "AffaldSelvbetjeningUrl": "https://www.vejle.dk/da/oversigt-over-selvbetjening/borger/affald-og-genbrug/log-ind-i-affaldonline/",
+            "AffaldSelvbetjeningKildeUrl": "https://www.vejle.dk/da/oversigt-over-selvbetjening/borger/affald-og-genbrug/log-ind-i-affaldonline/",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Poststeder": [
             {
@@ -16985,7 +17280,7 @@
         "Detaljer": {
             "SidstTjekket": "2026-05-15",
             "Affaldsoperatør": "Vesthimmerlands Forsyning",
-            "AffaldsoperatørUrl": "https://vhforsyning.dk/",
+            "AffaldsoperatørUrl": "https://vesthimmerlandsforsyning.dk/",
             "Affaldsoperatør_en": "Vesthimmerlands Forsyning",
             "KildeNote": "Oplysningerne er samlet fra Vesthimmerlands Kommunes officielle affaldssider og Vesthimmerlands Forsynings information om indsamling, storskrald og genbrugspladser. Affaldsguide Danmark er en uafhængig guide og er ikke en del af kommunen.",
             "KildeNote_en": "The information is based on Vesthimmerland Municipality's official waste pages and Vesthimmerlands Forsyning's information about collection, bulky waste and recycling centres. Affaldsguide Danmark is an independent guide and is not part of the municipality.",
@@ -17071,7 +17366,7 @@
                 },
                 {
                     "Titel": "Vesthimmerlands Forsyning",
-                    "Url": "https://vhforsyning.dk/",
+                    "Url": "https://vesthimmerlandsforsyning.dk/",
                     "Title_en": "Vesthimmerlands Forsyning"
                 }
             ],
@@ -17088,7 +17383,10 @@
             "DigitalSelvbetjeningTitel": "Selvbetjening",
             "DigitalSelvbetjeningTitel_en": "Self-service",
             "DigitalSelvbetjening": "Tømmedage, SMS-service, gebyrer og affaldsordninger via forsyningen",
-            "DigitalSelvbetjening_en": "Collection dates, SMS service, fees and waste schemes via the utility"
+            "DigitalSelvbetjening_en": "Collection dates, SMS service, fees and waste schemes via the utility",
+            "AffaldSelvbetjeningUrl": "https://vesthimmerlandsforsyning.dk/min-side",
+            "AffaldSelvbetjeningKildeUrl": "https://vesthimmerlandsforsyning.dk/min-side",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Poststeder": [
             {
@@ -17244,7 +17542,10 @@
             "DigitalSelvbetjeningTitel_en": "App and reminders",
             "DigitalSelvbetjening": "Mit Revas med tømmekalender, beskedservice og sorteringsguide",
             "DigitalSelvbetjening_en": "Mit Revas with collection calendar, reminders and sorting guide",
-            "DigitalSelvbetjeningUrl": "https://www.revas.dk/info/mit-revas-app"
+            "DigitalSelvbetjeningUrl": "https://www.revas.dk/info/mit-revas-app",
+            "AffaldSelvbetjeningUrl": "https://www.revas.dk/borger/din-affaldsordning/selvbetjening",
+            "AffaldSelvbetjeningKildeUrl": "https://www.revas.dk/borger/din-affaldsordning/selvbetjening",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Poststeder": [
             {
@@ -17442,7 +17743,10 @@
             "OfficielAffaldssideTitel_en": "Recycling centres and drop-off banks",
             "GenbrugspladserAntal": 3,
             "Genbrugspladser": "3 genbrugspladser",
-            "Genbrugspladser_en": "3 recycling centres"
+            "Genbrugspladser_en": "3 recycling centres",
+            "AffaldSelvbetjeningUrl": "https://affaldplus.dk/vordingborg-kommune-borger",
+            "AffaldSelvbetjeningKildeUrl": "https://affaldplus.dk/vordingborg-kommune-borger",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Poststeder": [
             {
@@ -17621,7 +17925,10 @@
             "OfficielAffaldssideTitel_en": "Ærø Forsyning",
             "GenbrugspladserAntal": 1,
             "Genbrugspladser": "1 genbrugsplads",
-            "Genbrugspladser_en": "1 recycling centre"
+            "Genbrugspladser_en": "1 recycling centre",
+            "AffaldSelvbetjeningUrl": "https://aeroeforsyning.dk/selvbetjening",
+            "AffaldSelvbetjeningKildeUrl": "https://aeroeforsyning.dk/selvbetjening",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Poststeder": [
             {
@@ -17768,7 +18075,10 @@
             "OfficielAffaldssideTitel_en": "Waste - Aabenraa Municipality",
             "GenbrugspladserAntal": 5,
             "Genbrugspladser": "5 genbrugspladser",
-            "Genbrugspladser_en": "5 recycling centres"
+            "Genbrugspladser_en": "5 recycling centres",
+            "AffaldSelvbetjeningUrl": "https://arwos.dk/selvbetjening/",
+            "AffaldSelvbetjeningKildeUrl": "https://arwos.dk/selvbetjening/",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Poststeder": [
             {
@@ -17920,7 +18230,7 @@
                 },
                 {
                     "Titel": "Byggeaffald",
-                    "Url": "https://www.aalborg.dk/min-virksomhed/byggeri-og-erhvervsgrunde/er-dit-byggeaffald-farligt-eller-en-ressource",
+                    "Url": "https://www.aalborg.dk/mit-liv/min-bolig/byggeri/anmeld-byggeaffald/",
                     "Title_en": "Construction waste"
                 }
             ],
@@ -17933,7 +18243,10 @@
             "OfficielAffaldssideTitel_en": "Aalborg Municipality Sorts 2026-2037",
             "GenbrugspladserAntal": 7,
             "Genbrugspladser": "7 genbrugspladser",
-            "Genbrugspladser_en": "7 recycling centres"
+            "Genbrugspladser_en": "7 recycling centres",
+            "AffaldSelvbetjeningUrl": "https://nordvaerk.dk/borger/aalborg-kommune-borger/selvbetjening/",
+            "AffaldSelvbetjeningKildeUrl": "https://nordvaerk.dk/borger/aalborg-kommune-borger/selvbetjening/",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Telefon": "99 82 82 99",
         "TelefonLabel": "Aalborg Forsyning kundeservice",
@@ -18135,8 +18448,8 @@
                     "Title_en": "Recycling centres"
                 },
                 {
-                    "Titel": "Affald i tal 2024",
-                    "Url": "https://prod.kredslob.dk/om-os/planer-og-tal/affald-i-tal-2024",
+                    "Titel": "Affald i tal 2025",
+                    "Url": "https://www.kredslob.dk/om-os/planer-og-tal/affald-i-tal-2025",
                     "Title_en": "Waste figures 2024"
                 }
             ],
@@ -18154,7 +18467,10 @@
             "DigitalSelvbetjeningTitel_en": "Collection calendar",
             "DigitalSelvbetjening": "Se kommunens digitale affaldsløsning.",
             "DigitalSelvbetjening_en": "Open the municipality's digital waste service.",
-            "DigitalSelvbetjeningUrl": "https://www.kredslob.dk/privat/genbrug-og-affald/toemmekalender/"
+            "DigitalSelvbetjeningUrl": "https://www.kredslob.dk/privat/genbrug-og-affald/toemmekalender/",
+            "AffaldSelvbetjeningUrl": "https://www.kredslob.dk/privat/genbrug-og-affald/beholdere",
+            "AffaldSelvbetjeningKildeUrl": "https://www.kredslob.dk/privat/genbrug-og-affald/beholdere",
+            "AffaldSelvbetjeningTjekket": "2026-10-14"
         },
         "Telefon": "77 88 10 10",
         "TelefonLabel": "Kundeservice",

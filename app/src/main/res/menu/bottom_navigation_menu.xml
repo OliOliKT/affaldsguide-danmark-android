@@ -17,6 +17,11 @@
         android:icon="@drawable/bottom_menu_municipalities_icon" />
 
     <item
+        android:id="@+id/calendar_button"
+        android:title="@string/bottom_calendar"
+        android:icon="@drawable/bottom_menu_calendar_icon" />
+
+    <item
         android:id="@+id/navigation_view_button"
         android:title="@string/bottom_mere"
         android:icon="@drawable/bottom_menu_settings_icon"/>

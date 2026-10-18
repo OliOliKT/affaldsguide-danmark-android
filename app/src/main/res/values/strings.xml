@@ -1,7 +1,21 @@
 <resources>
+    <string name="fraction_status_used_in">%1$s bruges i %2$s</string>
+    <string name="fraction_status_not_used_in">%1$s bruges ikke i %2$s</string>
+    <string name="fraction_status_unconfirmed">Kommunens oplysninger bekræfter ikke, om denne fraktion bruges. Tjek kommunens officielle vejledning, hvis du er i tvivl.</string>
+    <string name="fraction_status_source">Se kommunens kilde</string>
+    <string name="municipality_self_service_title">Bestil, ændr eller anmeld</string>
+    <string name="municipality_self_service_description">Anmeld manglende afhentning, bestil ekstra tømning eller se mulighederne for at ændre din affaldsordning hos kommunen.</string>
+    <string name="municipality_self_service_open">Åbn kommunens selvbetjening</string>
+    <string name="widget_title">Find den rigtige sortering</string>
+    <string name="widget_search">Søg affald</string>
+    <string name="widget_camera">Tag billede</string>
     <string name="achievements_page">Præstationer</string>
     <string name="arabic_language">العربية</string>
     <string name="useful_official_links">Nyttige officielle links</string>
+    <string name="official_sources_title">Officielle kilder</string>
+    <string name="official_sources_explanation">Appen er en uafhængig guide og repræsenterer ikke en offentlig myndighed. De generelle affaldsfraktioner kan kontrolleres hos Miljøstyrelsen, og borger.dk forklarer de kommunale affaldsordninger. Åbn din kommune i appen for links til kommunens egne regler. Lokale regler i søgeresultater har et særskilt kildelink, når en kilde er registreret.</string>
+    <string name="official_source_environment">Miljøstyrelsen – sorteringsregler\nhttps://mst.dk/borger/affald-og-forurening/sortering-af-affald/stroemlinet-affaldssortering</string>
+    <string name="official_source_citizen">borger.dk – kommunale affaldsordninger\nhttps://www.borger.dk/miljoe-og-energi/Affald-og-genbrug/Affaldsordninger</string>
     <string name="source_and_date">Kilde og dato</string>
     <string name="source_prefix">Kilde: </string>
     <string name="last_checked_prefix">Sidst tjekket: </string>
@@ -46,7 +60,7 @@
 
     <string name="kontaktoplysninger">Affaldsguide Danmark er udviklet af Simple Web, der ejes af Oliver Kronholm Thomsen.\n\nUdover Affaldsguide Danmark står jeg også bag simplecode.dk, whenrocketsfly.com og elis-icebreakers.com.\n\nHvis du har spørgsmål, ris, ros eller forslag til appen, er du velkommen til at kontakte mig på info@simplecode.dk.</string>
 
-    <string name="privatlivspolitik">Affaldsguide Danmark er lavet med fokus på at give enkel og hurtig hjælp til affaldssortering. Appen beder ikke om navn, adresse eller e-mailadresse for at bruge den almindelige søgefunktion.\n\nSøgefunktionen bruger en lokal affaldsdatabase, som ligger i appen. Det betyder, at selve affaldssøgningen ikke kræver, at der hentes sorteringsdata fra eksterne databaser.\n\nAppen bruger Google AdMob til annoncer. AdMob kan behandle tekniske oplysninger som enhedsoplysninger, appversion, annoncedata og generel brugsstatistik. Oplysningerne bruges til at vise og måle annoncer samt til at vedligeholde og forbedre appens drift.\n\nAffaldsguide Danmark sælger ikke dine personlige oplysninger. Oplysninger behandles kun i det omfang, det er nødvendigt for appens drift, annoncering eller hvis det kræves ved lov.\n\nHvis du har spørgsmål til privatlivspolitikken eller ønsker at kontakte os om behandling af oplysninger, kan du skrive til info@simplecode.dk.\n\nVi forbeholder os retten til at opdatere denne privatlivspolitik. Eventuelle ændringer vil blive gjort tilgængelige i appen.</string>
+    <string name="privatlivspolitik">Affaldsguide Danmark er lavet med fokus på at give enkel og hurtig hjælp til affaldssortering. Appen beder ikke om navn, adresse eller e-mailadresse for at bruge den almindelige søgefunktion.\n\nSøgefunktionen bruger en lokal affaldsdatabase, som ligger i appen. Det betyder, at selve affaldssøgningen ikke kræver, at der hentes sorteringsdata fra eksterne databaser.\n\nAffaldsguide Danmark sælger ikke dine personlige oplysninger. Oplysninger behandles kun i det omfang, det er nødvendigt for appens drift, eller hvis det kræves ved lov.\n\nHvis du har spørgsmål til privatlivspolitikken eller ønsker at kontakte os om behandling af oplysninger, kan du skrive til info@simplecode.dk.\n\nVi forbeholder os retten til at opdatere denne privatlivspolitik. Eventuelle ændringer vil blive gjort tilgængelige i appen.\n\nAffaldskalenderen er i øjeblikket kun tilgængelig i iPhone-appen. Hvis du bruger den dér, sendes dine adresseopslag og den valgte adresses id via mit-affald.dk til den relevante lokale affaldsudbyder for at hente afhentningsdatoer. Den valgte adresse og påmindelsesindstillinger gemmes lokalt på iPhone. Flere oplysninger findes i privatlivspolitikken på mit-affald.dk/privatlivspolitik.</string>
 
     <string name="vilkårogbetingelser">Affaldsguide Danmark er en uafhængig og vejledende sorteringsguide. Appen er ikke tilknyttet, godkendt af, sponsoreret af eller drevet af en offentlig myndighed, kommune eller et offentligt affaldsselskab.\n\nOplysningerne i appen er udelukkende beregnet som praktisk information og generel vejledning. Vi forsøger at holde oplysningerne så korrekte og brugbare som muligt, men kan ikke garantere, at alle oplysninger altid er fuldstændige, opdaterede eller gældende i alle kommuner.\n\nAffaldsordninger, beholdere, genbrugspladser, kontaktoplysninger og lokale regler kan variere og ændre sig. Ved tvivl, farligt affald, store genstande eller særlige afleveringskrav bør du altid kontrollere reglerne hos din kommune, genbrugsplads eller relevante officielle kilder.\n\nOfficielle kilder og kontrol af information:\nborger.dk: https://www.borger.dk/miljoe-og-energi/Affald-og-genbrug\nMiljøstyrelsen: https://mst.dk\nKommunespecifik information bør kontrolleres på den enkelte kommunes officielle hjemmeside, som der kan linkes til i appen.\n\nBrug af appen sker på eget ansvar. Simple Web påtager sig ikke ansvar for fejl, mangler eller beslutninger truffet på baggrund af appens indhold.</string>
 
@@ -128,6 +142,7 @@
     <string name="bottom_fraktioner">Fraktioner</string>
     <string name="bottom_kommuner">Kommuner</string>
     <string name="bottom_mere">Mere</string>
+    <string name="bottom_calendar">Kalender</string>
     <string name="mente_du_prefix">Mente du </string>
     <string name="laes_mere_om_affaldet">Læs mere om affaldet</string>
     <string name="skjul_beskrivelse">Skjul beskrivelse</string>

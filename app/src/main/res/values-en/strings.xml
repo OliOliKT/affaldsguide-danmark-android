@@ -1,7 +1,21 @@
 <resources>
+    <string name="fraction_status_used_in">%1$s is used in %2$s</string>
+    <string name="fraction_status_not_used_in">%1$s is not used in %2$s</string>
+    <string name="fraction_status_unconfirmed">The municipality information does not confirm whether this category is used. Check the municipality\'s official guidance if you are unsure.</string>
+    <string name="fraction_status_source">View municipality source</string>
+    <string name="municipality_self_service_title">Order, change or report</string>
+    <string name="municipality_self_service_description">Report a missed collection, order an extra pickup, or see your municipality’s options for changing your waste service.</string>
+    <string name="municipality_self_service_open">Open municipal self-service</string>
+    <string name="widget_title">Find the right sorting</string>
+    <string name="widget_search">Search waste</string>
+    <string name="widget_camera">Take photo</string>
     <string name="achievements_page">Achievements</string>
     <string name="arabic_language">العربية</string>
     <string name="useful_official_links">Useful official links</string>
+    <string name="official_sources_title">Official sources</string>
+    <string name="official_sources_explanation">This app is an independent guide and does not represent a government authority. Check the general waste fractions with the Danish Environmental Protection Agency and municipal waste schemes on borger.dk. Open a municipality in the app for links to its own rules. Local rules in search results have a separate source link when one is recorded.</string>
+    <string name="official_source_environment">Danish Environmental Protection Agency – sorting rules\nhttps://mst.dk/borger/affald-og-forurening/sortering-af-affald/stroemlinet-affaldssortering</string>
+    <string name="official_source_citizen">borger.dk – municipal waste schemes\nhttps://www.borger.dk/miljoe-og-energi/Affald-og-genbrug/Affaldsordninger</string>
     <string name="source_and_date">Source and date</string>
     <string name="source_prefix">Source: </string>
     <string name="last_checked_prefix">Last checked: </string>
@@ -41,7 +55,7 @@
     <string name="om_del_1" formatted="false">Waste sorting can be difficult in everyday life, especially when an item does not clearly belong in one bin.\n\nIn Denmark, municipalities generally use waste fractions such as food waste, paper, cardboard, metal, glass, plastic, food and beverage cartons, textile waste, hazardous waste and residual waste. Local schemes can still vary.\n\nWaste Guide Denmark is an independent sorting guide and is not affiliated with, endorsed by or operated by any government authority, municipality or public waste company. The app is made to help you find a quick and useful answer, but official and local rules should always be checked with the municipality or relevant official sources.</string>
     <string name="om_del_3">In Waste Guide Denmark you can search for a waste item and see which waste fraction it typically belongs to.\n\nThe search function uses a local database in the app, so the most important sorting information is available quickly.\n\nThe app is a practical sorting guide. If you are unsure about local rules, large items or special drop-off points, always check your municipality’s own instructions.</string>
     <string name="kontaktoplysninger">Waste Guide Denmark is developed by Simple Web, owned by Oliver Kronholm Thomsen.\n\nBesides Waste Guide Denmark, I also run simplecode.dk, whenrocketsfly.com and elis-icebreakers.com.\n\nIf you have questions, feedback or suggestions for the app, you are welcome to contact me at info@simplecode.dk.</string>
-    <string name="privatlivspolitik">Waste Guide Denmark is made to provide simple and quick help with waste sorting. The app does not ask for your name, address or e-mail address to use the normal search function.\n\nThe search function uses a local waste database stored in the app. This means the waste search itself does not need to fetch sorting data from external databases.\n\nThe app uses Google AdMob for ads. AdMob may process technical information such as device information, app version, ad data and general usage statistics. The information is used to show and measure ads and to maintain and improve app operation.\n\nWaste Guide Denmark does not sell your personal information. Information is processed only where necessary for app operation, advertising or where required by law.\n\nIf you have questions about this privacy policy, you can write to info@simplecode.dk.\n\nWe reserve the right to update this privacy policy. Changes will be made available in the app.</string>
+    <string name="privatlivspolitik">Waste Guide Denmark is made to provide simple and quick help with waste sorting. The app does not ask for your name, address or e-mail address to use the normal search function.\n\nThe search function uses a local waste database stored in the app. This means the waste search itself does not need to fetch sorting data from external databases.\n\nWaste Guide Denmark does not sell your personal information. Information is processed only where necessary for app operation or where required by law.\n\nIf you have questions about this privacy policy, you can write to info@simplecode.dk.\n\nWe reserve the right to update this privacy policy. Changes will be made available in the app.\n\nThe collection calendar is currently available only in the iPhone app. If you use it there, address searches and the selected address ID are sent through mit-affald.dk to the relevant local waste provider to retrieve pickup dates. The selected address and reminder settings are stored locally on the iPhone. More details are available at mit-affald.dk/en/privatlivspolitik.</string>
     <string name="vilkårogbetingelser">Waste Guide Denmark is an independent guidance app. The app is not affiliated with, endorsed by, sponsored by or operated by any government authority, municipality or public waste company.\n\nThe information in the app is provided for practical guidance and general information only. We try to keep the information correct and useful, but cannot guarantee that all information is always complete, updated or valid in every municipality.\n\nWaste schemes, bins, recycling centres, contact details and local rules may vary and change. If in doubt, especially about hazardous waste, large items or special drop-off requirements, always check the rules with your municipality, recycling centre or relevant official sources.\n\nOfficial sources and verification:\nborger.dk: https://www.borger.dk/miljoe-og-energi/Affald-og-genbrug\nDanish Environmental Protection Agency: https://mst.dk\nMunicipality-specific information should be verified on the official website of the relevant municipality, which may be linked in the app.\n\nUse of the app is at your own responsibility. Simple Web is not liable for errors, omissions or decisions made based on the app’s content.</string>
     <string name="introtekst">Search for waste and see which waste fraction it belongs to.</string>
     <string name="baggrund_for_appen_overskrift">Background</string>
@@ -120,6 +134,7 @@
     <string name="bottom_fraktioner">Fractions</string>
     <string name="bottom_kommuner">Municipalities</string>
     <string name="bottom_mere">More</string>
+    <string name="bottom_calendar">Calendar</string>
     <string name="mente_du_prefix">Did you mean </string>
     <string name="laes_mere_om_affaldet">Read more about this item</string>
     <string name="skjul_beskrivelse">Hide description</string>

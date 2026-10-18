@@ -364,10 +364,50 @@
     "en": "Set as my home municipality",
     "ar": "حفظ البلدية"
   },
+  "municipality.replace.button": {
+    "da": "Skift til denne kommune",
+    "en": "Switch to this municipality",
+    "ar": "التبديل إلى هذه البلدية"
+  },
+  "municipality.replace.title": {
+    "da": "Skift din kommune?",
+    "en": "Change your municipality?",
+    "ar": "هل تريد تغيير بلديتك؟"
+  },
+  "municipality.replace.message": {
+    "da": "{0} bliver erstattet af {1} som din kommune. Du kan kun have én kommune valgt ad gangen.",
+    "en": "{1} will replace {0} as your municipality. You can only have one selected municipality at a time.",
+    "ar": "ستحل {1} محل {0} بصفتها بلديتك. يمكنك اختيار بلدية واحدة فقط في كل مرة."
+  },
+  "municipality.replace.confirm": {
+    "da": "Skift kommune",
+    "en": "Change municipality",
+    "ar": "تغيير البلدية"
+  },
+  "municipality.replace.cancel": {
+    "da": "Annuller",
+    "en": "Cancel",
+    "ar": "إلغاء"
+  },
   "municipalitiesview.011": {
     "da": "Kontakt",
     "en": "Contact",
     "ar": "اتصال"
+  },
+  "municipality.selfService.title": {
+    "da": "Bestil, ændr eller anmeld",
+    "en": "Order, change or report",
+    "ar": "اطلب أو غيّر أو أبلغ"
+  },
+  "municipality.selfService.description": {
+    "da": "Anmeld manglende afhentning, bestil ekstra tømning eller se mulighederne for at ændre din affaldsordning hos kommunen.",
+    "en": "Report a missed collection, order an extra pickup, or see your municipality’s options for changing your waste service.",
+    "ar": "أبلغ عن عدم جمع النفايات، أو اطلب جمعًا إضافيًا، أو اطّلع على خيارات تغيير خدمة النفايات لدى بلديتك."
+  },
+  "municipality.selfService.open": {
+    "da": "Åbn kommunens selvbetjening",
+    "en": "Open municipal self-service",
+    "ar": "فتح الخدمات الذاتية للبلدية"
   },
   "municipalitiesview.012": {
     "da": "Adresse",
@@ -390,9 +430,9 @@
     "ar": "قواعد النفايات في البلدية"
   },
   "municipalitiesview.016": {
-    "da": "Læs lokale regler",
-    "en": "Read local rules",
-    "ar": "اقرأ القواعد المحلية"
+    "da": "Lokale regler",
+    "en": "Local rules",
+    "ar": "القواعد المحلية"
   },
   "municipalitiesview.017": {
     "da": "Affaldsfraktioner: {0} af {1}",
@@ -535,9 +575,9 @@
     "ar": "راسل info@simplecode.dk"
   },
   "moreinfoview.014": {
-    "da": "Affaldsguide Danmark kan bruges uden en konto. Du behøver ikke oplyse navn, adresse eller e-mail for at søge efter affald. Sorteringsdatabasen ligger i appen, og almindelige tekst- og billedsøgninger behandles på din enhed. Billeder, du vælger eller tager til billedsøgning, sendes ikke til os.\n\nHvis du giver adgang til din placering, bruger appen den til at beregne afstand til nærliggende genbrugspladser. Placeringen bruges på din enhed og gemmes ikke af os. Du kan ændre tilladelsen i iPhones indstillinger. Hvis du åbner en adresse i en kortapp, gælder den valgte kortapps egne vilkår og privatlivspolitik.\n\nAppen gemmer dine seneste søgninger, valgte kommune, sprog, onboardingstatus og fremskridt med achievements lokalt på din enhed. Du kan fjerne disse oplysninger ved at slette appen. Der kræves ingen konto, og disse oplysninger sendes ikke til os som led i almindelig brug.\n\nHvis du sender et forslag til rettelse af en sortering, sendes genstandens navn, den viste sortering, dit forslag, en eventuel kommentar, den valgte sprogkode til mit-affald.dk. Vi bruger oplysningerne til at undersøge henvendelsen og forbedre sorteringsguiden. Skriv ikke følsomme oplysninger i kommentarfeltet.\n\nVi opbevarer indsendte henvendelser, så længe det er nødvendigt for at behandle dem og vedligeholde guiden, og sletter eller anonymiserer dem derefter, medmindre lovgivningen kræver længere opbevaring. Du kan bede om indsigt i eller sletning af oplysninger fra din henvendelse ved at skrive til info@simplecode.dk. Oplys nok til, at vi kan finde henvendelsen. Du kan til enhver tid stoppe med at bruge appen og tilbagekalde tilladelser i iPhones indstillinger.\n\nDenne iOS-version indeholder ikke annoncer eller Google AdMob. Vi sælger ikke personoplysninger. Hvis appens databehandling ændres, opdaterer vi denne tekst. Spørgsmål om privatliv og behandling af oplysninger kan sendes til info@simplecode.dk.",
-    "en": "Affaldsguide Danmark can be used without an account. You do not need to provide your name, address or email address to search for waste items. The sorting database is stored in the app, and ordinary text and photo searches are processed on your device. Photos you select or take for a photo search are not sent to us.\n\nIf you allow location access, the app uses your location to calculate the distance to nearby recycling centres. Your location is used on your device and is not stored by us. You can change this permission in your iPhone settings. If you open an address in a maps app, that app's own terms and privacy policy apply.\n\nThe app stores your recent searches, selected municipality, language, onboarding status and achievement progress locally on your device. You can remove this information by deleting the app. No account is required, and this information is not sent to us during ordinary use.\n\nIf you submit a sorting correction, the item's name, the displayed sorting guidance, your suggestion, any comment, the selected language code are sent to mit-affald.dk. We use this information to review your report and improve the guide. Do not include sensitive information in the comment.\n\nWe keep submitted reports for as long as needed to handle them and maintain the guide, then delete or anonymise them unless the law requires longer retention. To request access to or deletion of information in your report, write to info@simplecode.dk and provide enough detail for us to find it. You can stop using the app at any time and revoke permissions in your iPhone settings.\n\nThis iOS version does not contain ads or Google AdMob. We do not sell personal information. If the app's data practices change, we will update this text. Send privacy questions to info@simplecode.dk.",
-    "ar": "يمكن استخدام Affaldsguide Danmark دون إنشاء حساب. ولا تحتاج إلى تقديم اسمك أو عنوانك أو بريدك الإلكتروني للبحث عن النفايات. قاعدة بيانات الفرز محفوظة داخل التطبيق، وتُعالج عمليات البحث النصي والبحث بالصور على جهازك. ولا تُرسل إلينا الصور التي تختارها أو تلتقطها للبحث.\n\nإذا سمحت بالوصول إلى موقعك، يستخدمه التطبيق لحساب المسافة إلى مراكز إعادة التدوير القريبة. يُستخدم الموقع على جهازك ولا نخزنه لدينا. يمكنك تغيير هذا الإذن من إعدادات iPhone. وإذا فتحت عنوانًا في تطبيق خرائط، فتسري شروط ذلك التطبيق وسياسة خصوصيته.\n\nيحفظ التطبيق عمليات البحث الأخيرة والبلدية المختارة واللغة وحالة الإعداد الأولي والتقدم في الإنجازات محليًا على جهازك. يمكنك إزالة هذه المعلومات بحذف التطبيق. لا يلزم إنشاء حساب، ولا تُرسل هذه المعلومات إلينا أثناء الاستخدام المعتاد.\n\nإذا أرسلت اقتراحًا لتصحيح طريقة فرز، يُرسل اسم الغرض وطريقة الفرز المعروضة واقتراحك وأي تعليق ورمز اللغة المختارة إلى mit-affald.dk. نستخدم هذه المعلومات لمراجعة البلاغ وتحسين الدليل. لا تكتب معلومات حساسة في حقل التعليق.\n\nنحتفظ بالبلاغات المرسلة ما دامت ضرورية لمعالجتها وصيانة الدليل، ثم نحذفها أو نجعلها مجهولة الهوية، ما لم يقتضِ القانون الاحتفاظ بها مدة أطول. لطلب الاطلاع على معلومات بلاغك أو حذفها، راسل info@simplecode.dk وقدّم تفاصيل كافية للعثور عليه. يمكنك التوقف عن استخدام التطبيق في أي وقت وإلغاء الأذونات من إعدادات iPhone.\n\nلا تحتوي نسخة iOS هذه على إعلانات أو Google AdMob. ولا نبيع المعلومات الشخصية. إذا تغيرت طريقة معالجة البيانات في التطبيق، فسنحدّث هذا النص. يمكنك إرسال أسئلة الخصوصية إلى info@simplecode.dk."
+    "da": "Affaldsguide Danmark kan bruges uden en konto. Du behøver ikke oplyse navn, adresse eller e-mail for at søge efter affald. Sorteringsdatabasen ligger i appen, og tekstsøgning behandles på din enhed. Når du bruger billedsøgning, sendes et formindsket billede via mit-affald.dk til Google Gemini for at foreslå genstande. Hvis online billedsøgning ikke virker, analyseres billedet på din enhed med Google ML Kit. Sorteringsresultatet findes fortsat i appens lokale database.\n\nHvis du giver adgang til din placering, bruger appen den til at beregne afstanden til nærliggende genbrugspladser. Placeringen bruges på din enhed og gemmes ikke af os. Du kan ændre tilladelsen i Androids indstillinger. Hvis du åbner en adresse i en kortapp, gælder den valgte kortapps egne vilkår og privatlivspolitik.\n\nAppen gemmer dine seneste søgninger, valgte kommune, sprog, onboardingstatus og fremskridt med præstationer lokalt på din enhed. Du kan fjerne disse oplysninger ved at slette appen. Der kræves ingen konto, og oplysningerne sendes ikke til os som led i almindelig brug.\n\nHvis du sender et forslag til rettelse i appen, sendes genstandens navn, den viste sortering, den kategori du foreslår, en eventuel kommentar og den valgte sprogkode til mit-affald.dk. Vi bruger oplysningerne til at undersøge forslaget og forbedre guiden. Skriv ikke følsomme oplysninger i kommentarfeltet.\n\nHvis du kontakter os via e-mail om en sortering eller et andet spørgsmål, behandler vi de oplysninger, du sender, for at kunne besvare og undersøge din henvendelse. Skriv ikke følsomme oplysninger. Vi opbevarer henvendelsen, så længe det er nødvendigt for at behandle den og vedligeholde guiden, og sletter eller anonymiserer den derefter, medmindre lovgivningen kræver længere opbevaring. Du kan bede om indsigt i eller sletning af oplysninger fra din henvendelse ved at skrive til info@simplecode.dk og give oplysninger nok til, at vi kan finde den.\n\nVi sælger ikke personoplysninger. Hvis appens databehandling ændres, opdaterer vi denne tekst. Spørgsmål om privatliv kan sendes til info@simplecode.dk.\n\nI affaldskalenderen sendes den kommune og adresse, du søger efter, via mit-affald.dk til Affald-DK og den lokale affaldsordning for at hente kommende afhentninger. Den valgte adresse og dine indstillinger for påmindelser gemmes på din enhed. Hvis du tillader notifikationer, planlægges påmindelser lokalt på enheden. Du kan slå dem fra eller skifte adresse i kalenderen.",
+    "en": "Affaldsguide Danmark can be used without an account. You do not need to provide your name, address or email address to search for waste items. The sorting database is stored in the app, and text searches are processed on your device. When you use photo search, a reduced photo is sent via mit-affald.dk to Google Gemini to suggest items. If online photo search fails, the photo is analyzed on your device with Google ML Kit. The sorting result still comes from the app’s local database.\n\nIf you allow location access, the app uses your location to calculate the distance to nearby recycling centres. Your location is used on your device and is not stored by us. You can change this permission in your Android settings. If you open an address in a maps app, that app’s own terms and privacy policy apply.\n\nThe app stores your recent searches, selected municipality, language, onboarding status and achievement progress locally on your device. You can remove this information by deleting the app. No account is required, and this information is not sent to us during ordinary use.\n\nIf you submit a sorting correction in the app, the item name, displayed sorting, suggested category, any comment and the selected language code are sent to mit-affald.dk. We use this information to review your suggestion and improve the guide. Do not include sensitive information in the comment.\n\nIf you contact us by email about a sorting result or another question, we process the information you send to investigate and answer your message. Do not include sensitive information. We keep the message for as long as needed to handle it and maintain the guide, then delete or anonymise it unless the law requires longer retention. To request access to or deletion of information in your message, write to info@simplecode.dk and provide enough detail for us to find it.\n\nWe do not sell personal information. If the app’s data practices change, we will update this text. Send privacy questions to info@simplecode.dk.\n\nIn the collection calendar, the municipality and address you search for are sent via mit-affald.dk to Affald-DK and the local waste provider to retrieve upcoming collections. Your selected address and reminder settings are stored on your device. If you allow notifications, reminders are scheduled locally on the device. You can turn them off or change your address in the calendar.",
+    "ar": "يمكن استخدام Affaldsguide Danmark دون إنشاء حساب. ولا تحتاج إلى تقديم اسمك أو عنوانك أو بريدك الإلكتروني للبحث عن النفايات. قاعدة بيانات الفرز محفوظة داخل التطبيق، وتُعالج عمليات البحث النصي على جهازك. عند استخدام البحث بالصورة، تُرسل صورة مصغّرة عبر mit-affald.dk إلى Google Gemini لاقتراح عناصر. وإذا فشل البحث عبر الإنترنت، تُحلَّل الصورة على جهازك باستخدام Google ML Kit. تظل نتيجة الفرز مستمدة من قاعدة البيانات المحلية في التطبيق.\n\nإذا سمحت بالوصول إلى موقعك، يستخدمه التطبيق لحساب المسافة إلى مراكز إعادة التدوير القريبة. يُستخدم الموقع على جهازك ولا نخزنه لدينا. يمكنك تغيير هذا الإذن من إعدادات Android. وإذا فتحت عنوانًا في تطبيق خرائط، فتسري شروط ذلك التطبيق وسياسة خصوصيته.\n\nيحفظ التطبيق عمليات البحث الأخيرة والبلدية المختارة واللغة وحالة الإعداد الأولي والتقدم في الإنجازات محليًا على جهازك. يمكنك إزالة هذه المعلومات بحذف التطبيق. لا يلزم إنشاء حساب، ولا تُرسل هذه المعلومات إلينا أثناء الاستخدام المعتاد.\n\nإذا أرسلت اقتراحًا لتصحيح الفرز من داخل التطبيق، يُرسل اسم الغرض وطريقة الفرز المعروضة والفئة التي تقترحها وأي تعليق ورمز اللغة المختارة إلى mit-affald.dk. نستخدم هذه المعلومات لمراجعة الاقتراح وتحسين الدليل. لا تكتب معلومات حساسة في حقل التعليق.\n\nإذا تواصلت معنا عبر البريد الإلكتروني بشأن نتيجة فرز أو أي سؤال آخر، نعالج المعلومات التي ترسلها للتحقيق في رسالتك والرد عليها. لا ترسل معلومات حساسة. نحتفظ بالرسالة ما دامت ضرورية لمعالجتها وصيانة الدليل، ثم نحذفها أو نجعلها مجهولة الهوية ما لم يقتضِ القانون الاحتفاظ بها مدة أطول. لطلب الاطلاع على معلومات رسالتك أو حذفها، راسل info@simplecode.dk وقدّم تفاصيل كافية للعثور عليها.\n\nلا نبيع المعلومات الشخصية. إذا تغيرت طريقة معالجة البيانات في التطبيق، فسنحدّث هذا النص. يمكنك إرسال أسئلة الخصوصية إلى info@simplecode.dk.\n\nفي تقويم جمع النفايات، تُرسل البلدية والعنوان اللذان تبحث عنهما عبر mit-affald.dk إلى Affald-DK والجهة المحلية المسؤولة عن النفايات لجلب مواعيد الجمع القادمة. يُحفظ العنوان المختار وإعدادات التذكير على جهازك. وإذا سمحت بالإشعارات، تُجدول التذكيرات محليًا على الجهاز. يمكنك إيقافها أو تغيير العنوان في التقويم."
   },
   "moreinfoview.015": {
     "da": "Skriv til info@simplecode.dk",
@@ -600,9 +640,9 @@
     "ar": "نتائج محتملة"
   },
   "photosearchview.004": {
-    "da": "Vælg det forslag, der bedst beskriver genstanden.",
-    "en": "Choose the suggestion that best describes the item.",
-    "ar": "اختر الاقتراح الذي يصف العنصر بأفضل شكل."
+    "da": "Billedsøgning er stadig under udvikling, så forslagene kan være upræcise.",
+    "en": "Photo search is still in development, so suggestions may be inaccurate.",
+    "ar": "البحث بالصور لا يزال قيد التطوير، لذا قد تكون الاقتراحات غير دقيقة."
   },
   "photosearchview.005": {
     "da": "Søg med billede",
@@ -624,10 +664,30 @@
     "en": "The photo could not be analyzed. Try another photo.",
     "ar": "تعذر تحليل الصورة. جرّب صورة أخرى."
   },
+  "photo.onlineProcessingNotice": {
+    "da": "Billedet sendes til Google Gemini via mit-affald.dk. Hvis online søgning ikke virker, analyseres det på din Android-telefon.",
+    "en": "The photo is sent to Google Gemini via mit-affald.dk. If online search fails, it is analyzed on your Android phone.",
+    "ar": "تُرسل الصورة إلى Google Gemini عبر mit-affald.dk. وإذا فشل البحث عبر الإنترنت، تُحلَّل على هاتف Android."
+  },
+  "photo.onlineFallback": {
+    "da": "Online søgning var ikke tilgængelig. Forslagene er fundet på din Android-telefon.",
+    "en": "Online search was unavailable. These suggestions were found on your Android phone.",
+    "ar": "لم يكن البحث عبر الإنترنت متاحًا. تم العثور على هذه الاقتراحات على هاتف Android."
+  },
+  "photo.onlineNoMatch": {
+    "da": "Online søgning fandt ikke et match i sorteringsguiden. Disse forslag er fundet på din Android-telefon.",
+    "en": "Online search found no match in the sorting guide. These suggestions were found on your Android phone.",
+    "ar": "لم يعثر البحث عبر الإنترنت على تطابق في دليل الفرز. تم العثور على هذه الاقتراحات على هاتف Android."
+  },
   "search.photoImportError.title": {
     "da": "Billedet kunne ikke åbnes",
     "en": "Could not open photo",
     "ar": "تعذر فتح الصورة"
+  },
+  "search.photoImportError.message": {
+    "da": "Billedet kunne ikke åbnes. Prøv at vælge en anden billedfil.",
+    "en": "The photo could not be opened. Try choosing a different image file.",
+    "ar": "تعذر فتح الصورة. جرّب اختيار ملف صورة آخر."
   },
   "onboardingview.001": {
     "da": "Genbrugspladser i nærheden",
@@ -708,6 +768,11 @@
     "da": "Matcher {0}",
     "en": "Matches {0}",
     "ar": "مطابقة لـ {0}"
+  },
+  "onboarding.back": {
+    "da": "Tilbage",
+    "en": "Back",
+    "ar": "رجوع"
   },
   "contentview.001": {
     "da": "Søg",
@@ -803,6 +868,41 @@
     "da": "Viser de første 80 genstande.",
     "en": "Showing the first 80 items.",
     "ar": "يتم عرض أول 80 عنصرًا."
+  },
+  "fractionsview.015": {
+    "da": "Bruges fraktionen i din kommune?",
+    "en": "Does your municipality use this category?",
+    "ar": "هل تستخدم بلديتك هذه الفئة؟"
+  },
+  "fractionsview.016": {
+    "da": "Vælg din kommune for at se, om fraktionen bruges lokalt.",
+    "en": "Choose your municipality to see whether this category is used locally.",
+    "ar": "اختر بلديتك لمعرفة ما إذا كانت هذه الفئة مستخدمة محليًا."
+  },
+  "fractionsview.017": {
+    "da": "Kommunens oplysninger bekræfter ikke, om denne fraktion bruges. Tjek kommunens officielle vejledning, hvis du er i tvivl.",
+    "en": "The municipality information does not confirm whether this category is used. Check the municipality's official guidance if you are unsure.",
+    "ar": "لا تؤكد معلومات البلدية ما إذا كانت هذه الفئة مستخدمة. راجع إرشادات البلدية الرسمية إذا لم تكن متأكدًا."
+  },
+  "fractionsview.018": {
+    "da": "Den valgte kommune kunne ikke indlæses.",
+    "en": "The selected municipality could not be loaded.",
+    "ar": "تعذر تحميل البلدية المحددة."
+  },
+  "fractionsview.019": {
+    "da": "Se kommunens kilde",
+    "en": "View municipality source",
+    "ar": "عرض مصدر البلدية"
+  },
+  "fractionsview.020": {
+    "da": "{0} bruges i {1}",
+    "en": "{0} is used in {1}",
+    "ar": "تُستخدم فئة {0} في {1}"
+  },
+  "fractionsview.021": {
+    "da": "{0} bruges ikke i {1}",
+    "en": "{0} is not used in {1}",
+    "ar": "لا تُستخدم فئة {0} في {1}"
   },
   "common.ok": {
     "da": "OK",
@@ -13034,6 +13134,16 @@
     "en": "Know your options",
     "ar": "تعرّف على خياراتك"
   },
+  "achievements.calendarAddress.title": {
+    "da": "Klar til afhentning",
+    "en": "Ready for collection",
+    "ar": "جاهز لجمع النفايات"
+  },
+  "achievements.calendarAddress.detail": {
+    "da": "Tilføj din adresse til affaldskalenderen",
+    "en": "Add your address to the collection calendar",
+    "ar": "أضف عنوانك إلى تقويم جمع النفايات"
+  },
   "achievements.recyclingCenter.detail": {
     "da": "Åbn en genbrugsplads i kortet",
     "en": "Open a recycling centre on the map",
@@ -13075,9 +13185,9 @@
     "ar": "خبير الصور"
   },
   "achievements.hundredCameraItems.detail": {
-    "da": "Vælg et resultat fra 100 forskellige billedsøgninger",
-    "en": "Choose a result from 100 different image searches",
-    "ar": "اختر نتيجة من 100 عملية بحث مختلفة بالصور"
+    "da": "Vælg et resultat fra 100 billedsøgninger",
+    "en": "Choose a result from 100 image searches",
+    "ar": "اختر نتيجة من 100 عملية بحث بالصور"
   },
   "achievements.twoHundredFiftyItems.title": {
     "da": "Sorteringsleksikon",
@@ -17469,6 +17579,16 @@
     "en": "Search using the whole image",
     "ar": "ابحث باستخدام الصورة كاملة"
   },
+  "photo.takeAnother": {
+    "da": "Tag et nyt billede",
+    "en": "Take another photo",
+    "ar": "التقط صورة جديدة"
+  },
+  "photo.chooseAnother": {
+    "da": "Vælg et andet billede",
+    "en": "Choose another photo",
+    "ar": "اختر صورة أخرى"
+  },
   "photo.changeSelection": {
     "da": "Vælg et andet område",
     "en": "Choose another area",
@@ -18704,6 +18824,746 @@
     "en": "The guide is intended as a practical aid and cannot replace official municipal instructions. Nothing in these terms limits any rights you have under mandatory law. If you have a question or have found an error, you can write to info@simplecode.dk.",
     "ar": "يهدف الدليل إلى تقديم مساعدة عملية، ولا يحل محل التعليمات الرسمية للبلدية. لا تحد هذه الشروط من أي حقوق تكفلها لك القوانين الآمرة. إذا كان لديك سؤال أو وجدت خطأ، يمكنك مراسلتنا على info@simplecode.dk."
   },
+  "guidance.Hvis den kan være i en klar plastpose på højst 4 liter, læg posen på låget af affaldsbeholderen før tømning.": {
+    "da": "Hvis den kan være i en klar plastpose på højst 4 liter, læg posen på låget af affaldsbeholderen før tømning.",
+    "en": "If it fits in a clear plastic bag of no more than 4 litres, put the bag on the bin lid before collection.",
+    "ar": "إذا أمكن وضعها في كيس بلاستيكي شفاف بسعة لا تزيد على 4 لترات، فضع الكيس على غطاء حاوية النفايات قبل موعد الجمع."
+  },
+  "guidance.Tag eventuelle løse batterier ud. Hvis den kan være i en klar plastpose på højst 4 liter, læg posen på låget af affaldsbeholderen før tømning.": {
+    "da": "Tag eventuelle løse batterier ud. Hvis den kan være i en klar plastpose på højst 4 liter, læg posen på låget af affaldsbeholderen før tømning.",
+    "en": "Remove any loose batteries. If it fits in a clear plastic bag of no more than 4 litres, put the bag on the bin lid before collection.",
+    "ar": "أزل أي بطاريات قابلة للإزالة. إذا أمكن وضعها في كيس بلاستيكي شفاف بسعة لا تزيد على 4 لترات، فضع الكيس على غطاء حاوية النفايات قبل موعد الجمع."
+  },
+  "guidance.Hvis den er for stor til posen, eller du foretrækker selv at aflevere den.": {
+    "da": "Hvis den er for stor til posen, eller du foretrækker selv at aflevere den.",
+    "en": "If it is too large for the bag, or if you prefer to take it there yourself.",
+    "ar": "إذا كانت أكبر من أن تتسع في الكيس، أو إذا كنت تفضل تسليمها بنفسك."
+  },
+  "guidance.Ved sækkeordningen lægges tømte kartoner løst i en klar sæk kun til mad- og drikkekartoner. Sækken må højst veje 12 kg; stil den ved skel senest kl. 7 på afhentningsdagen. Bind ikke knude på sækken.": {
+    "da": "Ved sækkeordningen lægges tømte kartoner løst i en klar sæk kun til mad- og drikkekartoner. Sækken må højst veje 12 kg; stil den ved skel senest kl. 7 på afhentningsdagen. Bind ikke knude på sækken.",
+    "en": "Under the sack collection scheme, put empty cartons loose in a clear sack for food and beverage cartons only. The sack must weigh no more than 12 kg; place it at the property boundary by 7 a.m. on collection day. Do not tie the sack shut.",
+    "ar": "في نظام جمع الأكياس، ضع العبوات الفارغة دون تغليف إضافي في كيس شفاف مخصص لعبوات الطعام والشراب فقط. يجب ألا يزيد وزن الكيس على 12 كغ؛ ضعه عند حدود العقار قبل الساعة السابعة صباحًا يوم الجمع. لا تربط الكيس بعقدة."
+  },
+  "guidance.Havregrynsposen skal i en lukket pose i beholderen til restaffald, ikke i papirbeholderen.": {
+    "da": "Havregrynsposen skal i en lukket pose i beholderen til restaffald, ikke i papirbeholderen.",
+    "en": "Put the oat bag in a tied bag in the residual-waste bin, not in the paper bin.",
+    "ar": "ضع كيس الشوفان داخل كيس مغلق في حاوية النفايات المتبقية، وليس في حاوية الورق."
+  },
+  "guidance.Melposen skal i en lukket pose i beholderen til restaffald, ikke i papirbeholderen.": {
+    "da": "Melposen skal i en lukket pose i beholderen til restaffald, ikke i papirbeholderen.",
+    "en": "Put the flour bag in a tied bag in the residual-waste bin, not in the paper bin.",
+    "ar": "ضع كيس الطحين داخل كيس مغلق في حاوية النفايات المتبقية، وليس في حاوية الورق."
+  },
+  "guidance.Hvis den kan være i en klar plastpose på højst 4 liter, læg posen på låget af papirbeholderen eller i den røde miljøboks.": {
+    "da": "Hvis den kan være i en klar plastpose på højst 4 liter, læg posen på låget af papirbeholderen eller i den røde miljøboks.",
+    "en": "If it fits in a clear plastic bag of no more than 4 litres, put the bag on the paper-bin lid or in the red hazardous-waste box.",
+    "ar": "إذا أمكن وضعه في كيس بلاستيكي شفاف بسعة لا تزيد على 4 لترات، فضع الكيس على غطاء حاوية الورق أو في الصندوق الأحمر للنفايات الخطرة."
+  },
+  "guidance.Fjern løse batterier. Hvis den kan være i en klar plastpose på højst 4 liter, læg posen på låget af papirbeholderen eller i den røde miljøboks.": {
+    "da": "Fjern løse batterier. Hvis den kan være i en klar plastpose på højst 4 liter, læg posen på låget af papirbeholderen eller i den røde miljøboks.",
+    "en": "Remove loose batteries. If it fits in a clear plastic bag of no more than 4 litres, put the bag on the paper-bin lid or in the red hazardous-waste box.",
+    "ar": "أزل البطاريات القابلة للإزالة. إذا أمكن وضعه في كيس بلاستيكي شفاف بسعة لا تزيد على 4 لترات، فضع الكيس على غطاء حاوية الورق أو في الصندوق الأحمر للنفايات الخطرة."
+  },
+  "guidance.Hvis den er for stor til den klare pose, aflever den på genbrugspladsen.": {
+    "da": "Hvis den er for stor til den klare pose, aflever den på genbrugspladsen.",
+    "en": "If it is too large for the clear bag, take it to a recycling centre.",
+    "ar": "إذا كان أكبر من أن يوضع في الكيس الشفاف، فسلمه إلى مركز إعادة التدوير."
+  },
+  "guidance.Hvis tandbørsten kan være i en klar plastpose på højst 4 liter, læg posen på låget af papirbeholderen eller i den røde miljøboks.": {
+    "da": "Hvis tandbørsten kan være i en klar plastpose på højst 4 liter, læg posen på låget af papirbeholderen eller i den røde miljøboks.",
+    "en": "If the toothbrush fits in a clear plastic bag of no more than 4 litres, put the bag on the paper-bin lid or in the red hazardous-waste box.",
+    "ar": "إذا أمكن وضع فرشاة الأسنان الكهربائية في كيس بلاستيكي شفاف بسعة لا تزيد على 4 لترات، فضع الكيس على غطاء حاوية الورق أو في الصندوق الأحمر للنفايات الخطرة."
+  },
+  "guidance.Hvis batteriet kan tages ud, aflever det særskilt i en klar plastpose på højst 4 liter på låget af papirbeholderen eller i den røde miljøboks.": {
+    "da": "Hvis batteriet kan tages ud, aflever det særskilt i en klar plastpose på højst 4 liter på låget af papirbeholderen eller i den røde miljøboks.",
+    "en": "If the battery can be removed, put it separately in a clear plastic bag of no more than 4 litres on the paper-bin lid or in the red hazardous-waste box.",
+    "ar": "إذا أمكن إخراج البطارية، فضعها منفصلة في كيس بلاستيكي شفاف بسعة لا تزيد على 4 لترات على غطاء حاوية الورق أو في الصندوق الأحمر للنفايات الخطرة."
+  },
+  "guidance.Bærbare batterier afleveres i en særlig batteribeholder ved udvalgte butikker og affaldsøer eller via ordningen for farligt affald.": {
+    "da": "Bærbare batterier afleveres i en særlig batteribeholder ved udvalgte butikker og affaldsøer eller via ordningen for farligt affald.",
+    "en": "Take portable batteries to a dedicated battery container at selected shops and waste stations, or use the hazardous-waste collection scheme.",
+    "ar": "سلّم البطاريات المحمولة في حاوية مخصصة للبطاريات لدى متاجر مختارة أو في نقاط جمع النفايات، أو استخدم نظام جمع النفايات الخطرة."
+  },
+  "guidance.Batterier kan også afleveres på Glostrup Genbrugsstation.": {
+    "da": "Batterier kan også afleveres på Glostrup Genbrugsstation.",
+    "en": "Batteries can also be taken to Glostrup recycling centre.",
+    "ar": "يمكن أيضًا تسليم البطاريات في مركز إعادة التدوير في غلوستروب."
+  },
+  "guidance.Bærbare batterier afleveres i en særlig batteribeholder ved udvalgte butikker og affaldsøer eller via ordningen for farligt affald. De kan også afleveres på genbrugsstationen.": {
+    "da": "Bærbare batterier afleveres i en særlig batteribeholder ved udvalgte butikker og affaldsøer eller via ordningen for farligt affald. De kan også afleveres på genbrugsstationen.",
+    "en": "Take portable batteries to a dedicated battery container at selected shops and waste stations, use the hazardous-waste collection scheme, or take them to a recycling centre.",
+    "ar": "سلّم البطاريات المحمولة في حاوية مخصصة للبطاريات لدى متاجر مختارة أو في نقاط جمع النفايات، أو عبر نظام جمع النفايات الخطرة. ويمكنك أيضًا تسليمها في مركز إعادة التدوير."
+  },
+  "guidance.Aflever som sorteret elektronik i storskraldsordningen. I etageejendomme med en fælles beholder til småt elektronik kan den bruges.": {
+    "da": "Aflever som sorteret elektronik i storskraldsordningen. I etageejendomme med en fælles beholder til småt elektronik kan den bruges.",
+    "en": "Set it out as sorted electronics for bulky-waste collection. In apartment buildings with a shared small-electronics bin, you can use that bin.",
+    "ar": "سلّمه كنفايات إلكترونية مفروزة ضمن خدمة جمع النفايات كبيرة الحجم. وفي المباني السكنية التي تتوفر فيها حاوية مشتركة للإلكترونيات الصغيرة، يمكنك استخدامها."
+  },
+  "guidance.Fjern batterier, der kan tages ud. Aflever som sorteret elektronik i storskraldsordningen, eller brug en fælles beholder til småt elektronik, hvis din ejendom har en.": {
+    "da": "Fjern batterier, der kan tages ud. Aflever som sorteret elektronik i storskraldsordningen, eller brug en fælles beholder til småt elektronik, hvis din ejendom har en.",
+    "en": "Remove batteries that can be taken out. Set it out as sorted electronics for bulky-waste collection, or use a shared small-electronics bin if your building has one.",
+    "ar": "أزل البطاريات القابلة للإزالة. سلّمه كنفايات إلكترونية مفروزة ضمن خدمة جمع النفايات كبيرة الحجم، أو استخدم الحاوية المشتركة للإلكترونيات الصغيرة إن وجدت في مبناك."
+  },
+  "guidance.Elektronik kan også afleveres på Glostrup Genbrugsstation.": {
+    "da": "Elektronik kan også afleveres på Glostrup Genbrugsstation.",
+    "en": "Electronics can also be taken to Glostrup recycling centre.",
+    "ar": "يمكن أيضًا تسليم الإلكترونيات في مركز إعادة التدوير في غلوستروب."
+  },
+  "guidance.Læg et bærbart genopladeligt batteri i en lukket, gennemsigtig pose på højst 4 liter oven på låget af beholderen til papir og glas/dåser. Ved fælles beholdere bruges batteriboksen. Den røde miljøkasse kan også bruges.": {
+    "da": "Læg et bærbart genopladeligt batteri i en lukket, gennemsigtig pose på højst 4 liter oven på låget af beholderen til papir og glas/dåser. Ved fælles beholdere bruges batteriboksen. Den røde miljøkasse kan også bruges.",
+    "en": "Put a portable rechargeable battery in a sealed, clear bag of no more than 4 litres on the lid of the paper and glass/cans bin. At shared bins, use the battery box. You can also use the red hazardous-waste box.",
+    "ar": "ضع البطارية القابلة للشحن المحمولة في كيس شفاف ومغلق لا يتجاوز 4 لترات فوق غطاء حاوية الورق والزجاج/العلب. عند الحاويات المشتركة استخدم صندوق البطاريات. ويمكنك أيضًا استخدام الصندوق الأحمر للنفايات الخطرة."
+  },
+  "guidance.Hvis genstanden ikke kan være i en pose på beholderlåget, kan den afleveres som elektronik på en af ARGOs genbrugspladser.": {
+    "da": "Hvis genstanden ikke kan være i en pose på beholderlåget, kan den afleveres som elektronik på en af ARGOs genbrugspladser.",
+    "en": "If it does not fit in a bag on the bin lid, take it to an ARGO recycling centre as electronics.",
+    "ar": "إذا لم يتسع لكيس فوق غطاء الحاوية، فسلّمه كنفايات إلكترونية في أحد مراكز إعادة التدوير التابعة لـ ARGO."
+  },
+  "guidance.Hvis hårtørreren kan være i en klar pose, læg posen oven på låget af beholderen til papir og glas/dåser. Den kan også afleveres i den røde miljøkasse eller på en mindre modtagestation i Solrød eller Havdrup.": {
+    "da": "Hvis hårtørreren kan være i en klar pose, læg posen oven på låget af beholderen til papir og glas/dåser. Den kan også afleveres i den røde miljøkasse eller på en mindre modtagestation i Solrød eller Havdrup.",
+    "en": "If the hair dryer fits in a clear bag, put it on the lid of the paper and glass/cans bin. You can also use the red hazardous-waste box or a small collection station in Solrød or Havdrup.",
+    "ar": "إذا كان مجفف الشعر يتسع لكيس شفاف، فضعه فوق غطاء حاوية الورق والزجاج/العلب. يمكنك أيضًا استخدام الصندوق الأحمر للنفايات الخطرة أو نقطة جمع صغيرة في سولرود أو هافدروب."
+  },
+  "guidance.Kan også afleveres som elektronik på en af ARGOs genbrugspladser.": {
+    "da": "Kan også afleveres som elektronik på en af ARGOs genbrugspladser.",
+    "en": "You can also take it to an ARGO recycling centre as electronics.",
+    "ar": "يمكنك أيضًا تسليمه كنفايات إلكترونية في أحد مراكز إعادة التدوير التابعة لـ ARGO."
+  },
+  "guidance.Læg opladeren i en klar pose oven på låget af beholderen til papir og glas/dåser. Den kan også afleveres i den røde miljøkasse eller på en mindre modtagestation i Solrød eller Havdrup.": {
+    "da": "Læg opladeren i en klar pose oven på låget af beholderen til papir og glas/dåser. Den kan også afleveres i den røde miljøkasse eller på en mindre modtagestation i Solrød eller Havdrup.",
+    "en": "Put the charger in a clear bag on the lid of the paper and glass/cans bin. You can also use the red hazardous-waste box or a small collection station in Solrød or Havdrup.",
+    "ar": "ضع الشاحن في كيس شفاف فوق غطاء حاوية الورق والزجاج/العلب. يمكنك أيضًا استخدام الصندوق الأحمر للنفايات الخطرة أو نقطة جمع صغيرة في سولرود أو هافدروب."
+  },
+  "guidance.Fjern batterier, der kan tages ud. Læg barbermaskinen i en klar pose oven på låget af beholderen til papir og glas/dåser. Den kan også afleveres i den røde miljøkasse.": {
+    "da": "Fjern batterier, der kan tages ud. Læg barbermaskinen i en klar pose oven på låget af beholderen til papir og glas/dåser. Den kan også afleveres i den røde miljøkasse.",
+    "en": "Remove any removable batteries. Put the shaver in a clear bag on the lid of the paper and glass/cans bin. You can also use the red hazardous-waste box.",
+    "ar": "أزل البطاريات القابلة للإزالة. ضع ماكينة الحلاقة في كيس شفاف فوق غطاء حاوية الورق والزجاج/العلب. ويمكنك أيضًا استخدام الصندوق الأحمر للنفايات الخطرة."
+  },
+  "guidance.Læg genstanden som småt elektronik i en lukket klar pose på højst 4 liter i den røde kasse til farligt affald. Tilmeld afhentning af kassen.": {
+    "da": "Læg genstanden som småt elektronik i en lukket klar pose på højst 4 liter i den røde kasse til farligt affald. Tilmeld afhentning af kassen.",
+    "en": "Put the item in a tied clear bag of no more than 4 litres in the red hazardous-waste box as small electronics. Book collection of the box.",
+    "ar": "ضع الجهاز كنفايات إلكترونية صغيرة في كيس شفاف مغلق لا يتجاوز 4 لترات داخل الصندوق الأحمر للنفايات الخطرة. احجز موعدًا لجمع الصندوق."
+  },
+  "guidance.Kan også afleveres som elektronik på genbrugsstationen.": {
+    "da": "Kan også afleveres som elektronik på genbrugsstationen.",
+    "en": "You can also take it to a recycling centre as electronics.",
+    "ar": "يمكنك أيضًا تسليمه كنفايات إلكترونية في مركز إعادة التدوير."
+  },
+  "guidance.Fjern batterier, der kan tages ud. Læg genstanden som småt elektronik i en lukket klar pose på højst 4 liter i den røde kasse til farligt affald. Tilmeld afhentning af kassen.": {
+    "da": "Fjern batterier, der kan tages ud. Læg genstanden som småt elektronik i en lukket klar pose på højst 4 liter i den røde kasse til farligt affald. Tilmeld afhentning af kassen.",
+    "en": "Remove any removable batteries. Put the item in a tied clear bag of no more than 4 litres in the red hazardous-waste box as small electronics. Book collection of the box.",
+    "ar": "أزل البطاريات القابلة للإزالة. ضع الجهاز كنفايات إلكترونية صغيرة في كيس شفاف مغلق لا يتجاوز 4 لترات داخل الصندوق الأحمر للنفايات الخطرة. احجز موعدًا لجمع الصندوق."
+  },
+  "guidance.Hvis batteriet kan tages ud, læg det separat i en lukket klar pose på højst 4 liter i den røde kasse.": {
+    "da": "Hvis batteriet kan tages ud, læg det separat i en lukket klar pose på højst 4 liter i den røde kasse.",
+    "en": "If the battery can be removed, put it separately in a tied clear bag of no more than 4 litres in the red box.",
+    "ar": "إذا كانت البطارية قابلة للإزالة، فضعها منفصلة في كيس شفاف مغلق لا يتجاوز 4 لترات داخل الصندوق الأحمر."
+  },
+  "guidance.Læg små batterier i en lukket klar pose på højst 4 liter i den røde kasse til farligt affald. Tilmeld afhentning af kassen.": {
+    "da": "Læg små batterier i en lukket klar pose på højst 4 liter i den røde kasse til farligt affald. Tilmeld afhentning af kassen.",
+    "en": "Put small batteries in a tied clear bag of no more than 4 litres in the red hazardous-waste box. Book collection of the box.",
+    "ar": "ضع البطاريات الصغيرة في كيس شفاف مغلق لا يتجاوز 4 لترات داخل الصندوق الأحمر للنفايات الخطرة. احجز موعدًا لجمع الصندوق."
+  },
+  "guidance.Kan også afleveres som batterier på genbrugsstationen.": {
+    "da": "Kan også afleveres som batterier på genbrugsstationen.",
+    "en": "You can also take them to a recycling centre as batteries.",
+    "ar": "يمكنك أيضًا تسليمها كبطاريات في مركز إعادة التدوير."
+  },
+  "guidance.Læg et lille, bærbart genopladeligt batteri i en lukket pose i den røde miljøboks. Bestil afhentning senest to dage før tømmedagen, eller aflever det på genbrugspladsen. Større batterier skal på genbrugspladsen.": {
+    "da": "Læg et lille, bærbart genopladeligt batteri i en lukket pose i den røde miljøboks. Bestil afhentning senest to dage før tømmedagen, eller aflever det på genbrugspladsen. Større batterier skal på genbrugspladsen.",
+    "en": "Put a small portable rechargeable battery in a sealed bag in the red hazardous-waste box. Book collection at least two days before collection day, or take it to a recycling centre. Large batteries go to a recycling centre.",
+    "ar": "ضع البطارية الصغيرة المحمولة القابلة للشحن في كيس مغلق داخل الصندوق الأحمر للنفايات الخطرة. احجز جمع الصندوق قبل يوم الجمع بيومين على الأقل، أو سلّم البطارية في مركز إعادة التدوير. البطاريات الكبيرة تُسلّم في مركز إعادة التدوير."
+  },
+  "guidance.Aflever i original, tæt lukket emballage eller en beholder mærket med indholdet i den røde miljøboks. Brug boksens gennemsigtige foringspose; den fyldte boks må højst veje 4 kg. Bestil afhentning senest to dage før tømmedagen.": {
+    "da": "Aflever i original, tæt lukket emballage eller en beholder mærket med indholdet i den røde miljøboks. Brug boksens gennemsigtige foringspose; den fyldte boks må højst veje 4 kg. Bestil afhentning senest to dage før tømmedagen.",
+    "en": "Put it in its original tightly closed container, or a container labelled with its contents, in the red hazardous-waste box. Use the supplied clear liner; the filled box must weigh no more than 4 kg. Book collection at least two days before collection day.",
+    "ar": "ضعها في عبوتها الأصلية المحكمة الإغلاق أو في عبوة موضّح عليها محتواها داخل الصندوق الأحمر للنفايات الخطرة. استخدم البطانة الشفافة المرفقة؛ يجب ألا يزيد وزن الصندوق الممتلئ على 4 كغ. احجز جمعه قبل يوم الجمع بيومين على الأقل."
+  },
+  "guidance.Læg spraydåsen i den røde miljøboks med den gennemsigtige foringspose. Den fyldte boks må højst veje 4 kg, og afhentning skal bestilles senest to dage før tømmedagen.": {
+    "da": "Læg spraydåsen i den røde miljøboks med den gennemsigtige foringspose. Den fyldte boks må højst veje 4 kg, og afhentning skal bestilles senest to dage før tømmedagen.",
+    "en": "Put the spray can in the red hazardous-waste box with its clear liner. The filled box must weigh no more than 4 kg, and collection must be booked at least two days before collection day.",
+    "ar": "ضع عبوة الرش داخل الصندوق الأحمر للنفايات الخطرة مع البطانة الشفافة. يجب ألا يزيد وزن الصندوق الممتلئ على 4 كغ، ويجب حجز جمعه قبل يوم الجمع بيومين على الأقل."
+  },
+  "guidance.Aflever som småt elektronik i den røde miljøboks, hvis genstanden kan være i den. Hvis ejendommen har et bur til småt elektronik, kan det også bruges.": {
+    "da": "Aflever som småt elektronik i den røde miljøboks, hvis genstanden kan være i den. Hvis ejendommen har et bur til småt elektronik, kan det også bruges.",
+    "en": "Put it in the red hazardous-waste box as small electronics if it fits. If your building has a small-electronics cage, you can use that too.",
+    "ar": "سلّمه كنفايات إلكترونية صغيرة في الصندوق الأحمر للنفايات الخطرة إذا كان يتسع له. وإذا كان في مبناك قفص للإلكترونيات الصغيرة، يمكنك استخدامه أيضًا."
+  },
+  "guidance.Hvis genstanden er for stor til den røde miljøboks, aflever den på genbrugspladsen.": {
+    "da": "Hvis genstanden er for stor til den røde miljøboks, aflever den på genbrugspladsen.",
+    "en": "If it is too large for the red hazardous-waste box, take it to a recycling centre.",
+    "ar": "إذا كان الجهاز كبيرًا جدًا بالنسبة إلى الصندوق الأحمر للنفايات الخطرة، فسلّمه في مركز إعادة التدوير."
+  },
+  "guidance.Fjern batterier, der kan tages ud. Aflever genstanden som småt elektronik i den røde miljøboks, hvis den kan være i den, eller brug ejendommens bur til småt elektronik, hvis der er et.": {
+    "da": "Fjern batterier, der kan tages ud. Aflever genstanden som småt elektronik i den røde miljøboks, hvis den kan være i den, eller brug ejendommens bur til småt elektronik, hvis der er et.",
+    "en": "Remove any removable batteries. Put the item in the red hazardous-waste box as small electronics if it fits, or use your building’s small-electronics cage if there is one.",
+    "ar": "أزل البطاريات القابلة للإزالة. سلّم الجهاز كنفايات إلكترونية صغيرة في الصندوق الأحمر للنفايات الخطرة إذا كان يتسع له، أو استخدم قفص الإلكترونيات الصغيرة في المبنى إن وجد."
+  },
+  "guidance.Lysstofrør skal afleveres på genbrugspladsen; de må ikke lægges i den røde miljøkasse.": {
+    "da": "Lysstofrør skal afleveres på genbrugspladsen; de må ikke lægges i den røde miljøkasse.",
+    "en": "Take fluorescent light tubes to a recycling centre; do not put them in the red hazardous-waste box.",
+    "ar": "يجب تسليم أنابيب الفلورسنت في مركز إعادة التدوير؛ لا تضعها في الصندوق الأحمر للنفايات الخطرة."
+  },
+  "guidance.Hvis genstanden ikke kan være i den røde miljøkasse, aflever den på genbrugspladsen.": {
+    "da": "Hvis genstanden ikke kan være i den røde miljøkasse, aflever den på genbrugspladsen.",
+    "en": "If the item does not fit in the red hazardous-waste box, take it to a recycling centre.",
+    "ar": "إذا لم يتسع الجهاز في الصندوق الأحمر للنفايات الخطرة، فسلّمه إلى مركز إعادة التدوير."
+  },
+  "guidance.Læg et udtjent, rent og tørt lagen i en klar pose med knude. I parcel- og rækkehuse afleveres posen ved skel på afhentningsdagen for tekstilaffald; i ejendomme med fælles løsning bruges tekstilbeholderen.": {
+    "da": "Læg et udtjent, rent og tørt lagen i en klar pose med knude. I parcel- og rækkehuse afleveres posen ved skel på afhentningsdagen for tekstilaffald; i ejendomme med fælles løsning bruges tekstilbeholderen.",
+    "en": "Put a worn-out, clean and dry sheet in a tied clear bag. At detached and terraced houses, place the bag at the property boundary on textile collection day; in buildings with shared collection, use the textile bin.",
+    "ar": "ضع ملاءة السرير البالية والنظيفة والجافة في كيس شفاف مربوط. في المنازل المنفصلة والمتلاصقة ضع الكيس عند حدود العقار يوم جمع نفايات المنسوجات؛ وفي المباني ذات نظام الجمع المشترك استخدم حاوية المنسوجات."
+  },
+  "guidance.Læg en udtjent, ren og tør T-shirt i en klar pose med knude. I parcel- og rækkehuse afleveres posen ved skel på afhentningsdagen for tekstilaffald; i ejendomme med fælles løsning bruges tekstilbeholderen.": {
+    "da": "Læg en udtjent, ren og tør T-shirt i en klar pose med knude. I parcel- og rækkehuse afleveres posen ved skel på afhentningsdagen for tekstilaffald; i ejendomme med fælles løsning bruges tekstilbeholderen.",
+    "en": "Put a worn-out, clean and dry T-shirt in a tied clear bag. At detached and terraced houses, place the bag at the property boundary on textile collection day; in buildings with shared collection, use the textile bin.",
+    "ar": "ضع القميص البالي والنظيف والجاف في كيس شفاف مربوط. في المنازل المنفصلة والمتلاصقة ضع الكيس عند حدود العقار يوم جمع نفايات المنسوجات؛ وفي المباني ذات نظام الجمع المشترك استخدم حاوية المنسوجات."
+  },
+  "guidance.Hvis T-shirten stadig kan bruges, giv den til direkte genbrug.": {
+    "da": "Hvis T-shirten stadig kan bruges, giv den til direkte genbrug.",
+    "en": "If the T-shirt is still usable, give it for direct reuse.",
+    "ar": "إذا كان القميص لا يزال صالحًا للاستخدام، فامنحه لإعادة الاستخدام المباشر."
+  },
+  "guidance.Læg hårtørreren i en klar plastpose til småt elektronik i den røde miljøkasse. Hold posen adskilt fra poser med batterier og elpærer.": {
+    "da": "Læg hårtørreren i en klar plastpose til småt elektronik i den røde miljøkasse. Hold posen adskilt fra poser med batterier og elpærer.",
+    "en": "Put the hair dryer in a clear plastic bag for small electronics in the red hazardous-waste box. Keep it separate from bags of batteries and light bulbs.",
+    "ar": "ضع مجفف الشعر في كيس بلاستيكي شفاف للإلكترونيات الصغيرة داخل الصندوق الأحمر للنفايات الخطرة. أبقِ الكيس منفصلًا عن أكياس البطاريات والمصابيح."
+  },
+  "guidance.Fjern batterier, der kan tages ud. Læg opladeren i en klar plastpose til småt elektronik i den røde miljøkasse. Hold posen adskilt fra poser med batterier og elpærer.": {
+    "da": "Fjern batterier, der kan tages ud. Læg opladeren i en klar plastpose til småt elektronik i den røde miljøkasse. Hold posen adskilt fra poser med batterier og elpærer.",
+    "en": "Remove any removable batteries. Put the charger in a clear plastic bag for small electronics in the red hazardous-waste box. Keep it separate from bags of batteries and light bulbs.",
+    "ar": "أزل البطاريات القابلة للإزالة. ضع الشاحن في كيس بلاستيكي شفاف للإلكترونيات الصغيرة داخل الصندوق الأحمر للنفايات الخطرة. أبقِ الكيس منفصلًا عن أكياس البطاريات والمصابيح."
+  },
+  "guidance.Aflever højst 100 kg (højst 5 hele tagplader) pr. besøg på genbrugspladsen i åbningstiden. Pak alt helt tæt ind i presenning eller kraftig plast; støvende eller knækkede plader skal dobbeltemballeres. Det gælder alle eternitplader, også dem uden asbest.": {
+    "da": "Aflever højst 100 kg (højst 5 hele tagplader) pr. besøg på genbrugspladsen i åbningstiden. Pak alt helt tæt ind i presenning eller kraftig plast; støvende eller knækkede plader skal dobbeltemballeres. Det gælder alle eternitplader, også dem uden asbest.",
+    "en": "Take no more than 100 kg (up to 5 whole roofing sheets) per visit to the recycling centre during opening hours. Seal everything tightly in a tarpaulin or heavy-duty plastic; dusty or broken sheets need two layers. This applies to all Eternit sheets, including asbestos-free ones.",
+    "ar": "سلّم بحد أقصى 100 كغ (ما لا يزيد على 5 ألواح سقف كاملة) في كل زيارة إلى مركز إعادة التدوير خلال ساعات العمل. غلّف جميع الألواح بإحكام بمشمّع أو بلاستيك سميك، وغلّف الألواح المكسورة أو التي تطلق غبارًا بطبقتين. يسري ذلك على جميع ألواح الإترنيت، حتى الخالية من الأسبستوس."
+  },
+  "guidance.Små mængder pakkes forsvarligt, gerne i originalemballagen, i den røde pose til farligt affald. Bind knude på posen og læg den på beholderens låg på tømningsdagen. Kan affaldet ikke være i posen, afleveres det på genbrugspladsen.": {
+    "da": "Små mængder pakkes forsvarligt, gerne i originalemballagen, i den røde pose til farligt affald. Bind knude på posen og læg den på beholderens låg på tømningsdagen. Kan affaldet ikke være i posen, afleveres det på genbrugspladsen.",
+    "en": "Safely pack small amounts, preferably in the original container, in the red hazardous-waste bag. Tie the bag and place it on your bin lid on collection day. If the waste does not fit in the bag, take it to the recycling centre.",
+    "ar": "ضع الكميات الصغيرة بتغليف آمن، ويفضّل في عبواتها الأصلية، داخل الكيس الأحمر للنفايات الخطرة. اربط الكيس وضعه على غطاء حاوية النفايات يوم الجمع. إذا لم تتسع له الحقيبة، فسلّمه إلى مركز إعادة التدوير."
+  },
+  "guidance.Højst 6 hele plader pr. dag på genbrugspladsen. Læg hele plader direkte i den bigbag, der passer til pladetypen. Småstykker og knækkede plader skal pakkes støvtæt ind i klar plast og afleveres i bigbaggen til støvende asbest. Større mængder kræver privat affaldsindsamler.": {
+    "da": "Højst 6 hele plader pr. dag på genbrugspladsen. Læg hele plader direkte i den bigbag, der passer til pladetypen. Småstykker og knækkede plader skal pakkes støvtæt ind i klar plast og afleveres i bigbaggen til støvende asbest. Større mængder kræver privat affaldsindsamler.",
+    "en": "Take no more than 6 whole sheets per day to the recycling centre. Place whole sheets in the big bag for their sheet type. Seal fragments and broken sheets dust-tight in clear plastic and use the big bag for dusty asbestos. Arrange a private waste collector for larger amounts.",
+    "ar": "سلّم ما لا يزيد على 6 ألواح كاملة يوميًا إلى مركز إعادة التدوير. ضع الألواح الكاملة في الكيس الكبير المخصص لنوعها. غلّف القطع والألواح المكسورة بإحكام في بلاستيك شفاف يمنع تسرّب الغبار، وضعها في الكيس الكبير المخصص للأسبستوس المغبر. للكميات الأكبر، استعِن بجهة خاصة لجمع النفايات."
+  },
+  "guidance.Læg pæren i en klar plastpose i den røde miljøkasse. Kassen må højst indeholde 4 kg i alt; stil den oven på en affaldsbeholder, når den skal ombyttes.": {
+    "da": "Læg pæren i en klar plastpose i den røde miljøkasse. Kassen må højst indeholde 4 kg i alt; stil den oven på en affaldsbeholder, når den skal ombyttes.",
+    "en": "Put the bulb in a clear plastic bag inside the red hazardous-waste box. The box may contain no more than 4 kg in total; place it on top of a waste bin when you want it exchanged.",
+    "ar": "ضع المصباح في كيس بلاستيكي شفاف داخل الصندوق الأحمر للنفايات الخطرة. يجب ألا يتجاوز وزن محتويات الصندوق 4 كغ إجمالًا؛ ضعه فوق حاوية النفايات عند طلب استبداله."
+  },
+  "guidance.Hvis den er under 50 cm og kan være i den røde miljøkasse: læg den i kassen (højst 4 kg i alt), og stil kassen oven på en affaldsbeholder til ombytning. Større elektronik afleveres på genbrugspladsen.": {
+    "da": "Hvis den er under 50 cm og kan være i den røde miljøkasse: læg den i kassen (højst 4 kg i alt), og stil kassen oven på en affaldsbeholder til ombytning. Større elektronik afleveres på genbrugspladsen.",
+    "en": "If it is under 50 cm and fits in the red hazardous-waste box, put it there (4 kg maximum in total) and place the box on a waste bin for exchange. Take larger electronics to the recycling centre.",
+    "ar": "إذا كان طول الجهاز أقل من 50 سم ويتسع له الصندوق الأحمر للنفايات الخطرة، فضعه فيه (بحد أقصى 4 كغ لمحتويات الصندوق كلها)، ثم ضع الصندوق فوق حاوية النفايات لاستبداله. سلّم الأجهزة الإلكترونية الأكبر إلى مركز إعادة التدوير."
+  },
+  "guidance.Ved husstande med sækkeordning: læg tørre aviser løst i en klar sæk kun til papir. Sækken må højst veje 12 kg og må ikke bindes med knude eller strip; stil den ved skel senest kl. 7 på afhentningsdagen.": {
+    "da": "Ved husstande med sækkeordning: læg tørre aviser løst i en klar sæk kun til papir. Sækken må højst veje 12 kg og må ikke bindes med knude eller strip; stil den ved skel senest kl. 7 på afhentningsdagen.",
+    "en": "For homes using the sack collection scheme, put dry newspapers loose in a clear sack for paper only. The sack must weigh no more than 12 kg and must not be tied or sealed with a strip; place it at the property boundary by 7 a.m. on collection day.",
+    "ar": "للمنازل التي تستخدم نظام جمع الأكياس: ضع الصحف الجافة دون أكياس داخلية في كيس شفاف مخصص للورق فقط. يجب ألا يزيد وزن الكيس على 12 كغ، ولا تربطه بعقدة أو شريط؛ ضعه عند حدود العقار قبل الساعة 7 صباحًا يوم الجمع."
+  },
+  "guidance.Ved husstande med sækkeordning: tøm dåsen, og læg den løst i en klar sæk kun til metal. Sækken må højst veje 12 kg og må ikke bindes med knude eller strip; stil den ved skel senest kl. 7 på afhentningsdagen.": {
+    "da": "Ved husstande med sækkeordning: tøm dåsen, og læg den løst i en klar sæk kun til metal. Sækken må højst veje 12 kg og må ikke bindes med knude eller strip; stil den ved skel senest kl. 7 på afhentningsdagen.",
+    "en": "For homes using the sack collection scheme, empty the can and put it loose in a clear sack for metal only. The sack must weigh no more than 12 kg and must not be tied or sealed with a strip; place it at the property boundary by 7 a.m. on collection day.",
+    "ar": "للمنازل التي تستخدم نظام جمع الأكياس: أفرغ العلبة وضعها دون كيس داخلي في كيس شفاف مخصص للمعادن فقط. يجب ألا يزيد وزن الكيس على 12 كغ، ولا تربطه بعقدة أو شريط؛ ضعه عند حدود العقار قبل الساعة 7 صباحًا يوم الجمع."
+  },
+  "guidance.Ved husstande med sækkeordning: læg bobleplast løst i en klar sæk kun til blød plast. Sækken må højst veje 12 kg og må ikke bindes med knude eller strip; stil den ved skel senest kl. 7 på afhentningsdagen.": {
+    "da": "Ved husstande med sækkeordning: læg bobleplast løst i en klar sæk kun til blød plast. Sækken må højst veje 12 kg og må ikke bindes med knude eller strip; stil den ved skel senest kl. 7 på afhentningsdagen.",
+    "en": "For homes using the sack collection scheme, put bubble wrap loose in a clear sack for soft plastic only. The sack must weigh no more than 12 kg and must not be tied or sealed with a strip; place it at the property boundary by 7 a.m. on collection day.",
+    "ar": "للمنازل التي تستخدم نظام جمع الأكياس: ضع غلاف الفقاعات دون كيس داخلي في كيس شفاف مخصص للبلاستيك اللين فقط. يجب ألا يزيد وزن الكيس على 12 كغ، ولا تربطه بعقدة أو شريط؛ ضعه عند حدود العقار قبل الساعة 7 صباحًا يوم الجمع."
+  },
+  "guidance.Ved husstande med sækkeordning: læg flasken løst i en klar sæk kun til glas. Sækken må højst veje 12 kg og må ikke bindes med knude eller strip; stil den ved skel senest kl. 7 på afhentningsdagen.": {
+    "da": "Ved husstande med sækkeordning: læg flasken løst i en klar sæk kun til glas. Sækken må højst veje 12 kg og må ikke bindes med knude eller strip; stil den ved skel senest kl. 7 på afhentningsdagen.",
+    "en": "For homes using the sack collection scheme, put the bottle loose in a clear sack for glass only. The sack must weigh no more than 12 kg and must not be tied or sealed with a strip; place it at the property boundary by 7 a.m. on collection day.",
+    "ar": "للمنازل التي تستخدم نظام جمع الأكياس: ضع الزجاجة دون كيس داخلي في كيس شفاف مخصص للزجاج فقط. يجب ألا يزيد وزن الكيس على 12 كغ، ولا تربطه بعقدة أو شريط؛ ضعه عند حدود العقار قبل الساعة 7 صباحًا يوم الجمع."
+  },
+  "guidance.Ved husstande med sækkeordning: aflever små mængder i den røde kasse til farligt affald. Behold originalemballagen, eller mærk en anden tæt beholder tydeligt med indholdet, og stil den oprejst. Kassen må højst veje 4 kg, skal have korrekt adresse på låget og sættes ud med genbrugssækkene på afhentningsdagen. Større mængder afleveres på genbrugspladsen i bemandet åbningstid.": {
+    "da": "Ved husstande med sækkeordning: aflever små mængder i den røde kasse til farligt affald. Behold originalemballagen, eller mærk en anden tæt beholder tydeligt med indholdet, og stil den oprejst. Kassen må højst veje 4 kg, skal have korrekt adresse på låget og sættes ud med genbrugssækkene på afhentningsdagen. Større mængder afleveres på genbrugspladsen i bemandet åbningstid.",
+    "en": "For homes using the sack collection scheme, put small amounts in the red hazardous-waste box. Keep the original container, or clearly label another sealed container, and stand it upright. The box must weigh no more than 4 kg, show the correct address on its lid, and be placed out with the recycling sacks on collection day. Take larger amounts to a recycling centre during staffed hours.",
+    "ar": "للمنازل التي تستخدم نظام جمع الأكياس: ضع الكميات الصغيرة في الصندوق الأحمر للنفايات الخطرة. احتفظ بالعبوة الأصلية، أو ضع ملصقًا واضحًا يبيّن المحتوى على عبوة أخرى محكمة الإغلاق، وضعها بشكل قائم. يجب ألا يزيد وزن الصندوق على 4 كغ، وأن يُكتب العنوان الصحيح على غطائه، وأن يُخرج مع أكياس إعادة التدوير يوم الجمع. سلّم الكميات الأكبر إلى مركز إعادة التدوير خلال ساعات وجود الموظفين."
+  },
+  "guidance.Læg pæren i en lukket, gennemsigtig pose i den røde kasse til farligt affald. Kassen må højst veje 4 kg; når den skal tømmes, lukkes alle fire hasper, og kassen stilles oven på en affaldsbeholder på tømningsdagen.": {
+    "da": "Læg pæren i en lukket, gennemsigtig pose i den røde kasse til farligt affald. Kassen må højst veje 4 kg; når den skal tømmes, lukkes alle fire hasper, og kassen stilles oven på en affaldsbeholder på tømningsdagen.",
+    "en": "Put the bulb in a sealed clear bag inside the red hazardous-waste box. The box must weigh no more than 4 kg. To have it collected, close all four latches and place it on top of a waste bin on collection day.",
+    "ar": "ضع المصباح في كيس شفاف مغلق داخل الصندوق الأحمر للنفايات الخطرة. يجب ألا يزيد وزن الصندوق على 4 كغ. لجمعه، أغلق المشابك الأربعة كلها وضعه فوق حاوية نفايات في يوم التفريغ."
+  },
+  "guidance.Læg småt elektronik i den røde kasse til farligt affald. Løse batterier lægges i en særskilt lukket, gennemsigtig pose i kassen. Kassen må højst veje 4 kg; luk alle fire hasper, og stil den oven på en affaldsbeholder på tømningsdagen, når den skal ombyttes.": {
+    "da": "Læg småt elektronik i den røde kasse til farligt affald. Løse batterier lægges i en særskilt lukket, gennemsigtig pose i kassen. Kassen må højst veje 4 kg; luk alle fire hasper, og stil den oven på en affaldsbeholder på tømningsdagen, når den skal ombyttes.",
+    "en": "Put small electronics in the red hazardous-waste box. Put loose batteries in a separate sealed clear bag inside the box. The box must weigh no more than 4 kg; close all four latches and place it on top of a waste bin on collection day when it needs exchanging.",
+    "ar": "ضع الأجهزة الإلكترونية الصغيرة في الصندوق الأحمر للنفايات الخطرة. ضع البطاريات المنفصلة في كيس شفاف مغلق مستقل داخل الصندوق. يجب ألا يزيد وزن الصندوق على 4 كغ؛ أغلق المشابك الأربعة كلها وضعه فوق حاوية نفايات يوم التفريغ عند الحاجة إلى استبداله."
+  },
+  "guidance.Aflever rester i den røde kasse til farligt affald, helst i originalemballagen. Kassen må højst veje 4 kg; luk alle fire hasper, og stil den oven på en affaldsbeholder på tømningsdagen, når den skal ombyttes.": {
+    "da": "Aflever rester i den røde kasse til farligt affald, helst i originalemballagen. Kassen må højst veje 4 kg; luk alle fire hasper, og stil den oven på en affaldsbeholder på tømningsdagen, når den skal ombyttes.",
+    "en": "Put residues in the red hazardous-waste box, preferably in the original container. The box must weigh no more than 4 kg; close all four latches and place it on top of a waste bin on collection day when it needs exchanging.",
+    "ar": "ضع البقايا في الصندوق الأحمر للنفايات الخطرة، ويفضّل إبقاؤها في عبوتها الأصلية. يجب ألا يزيد وزن الصندوق على 4 كغ؛ أغلق المشابك الأربعة كلها وضعه فوق حاوية نفايات يوم التفريغ عند الحاجة إلى استبداله."
+  },
+  "guidance.Aflever spraydåsen i den røde kasse til farligt affald. Kassen må højst veje 4 kg; luk alle fire hasper, og stil den oven på en affaldsbeholder på tømningsdagen, når den skal ombyttes.": {
+    "da": "Aflever spraydåsen i den røde kasse til farligt affald. Kassen må højst veje 4 kg; luk alle fire hasper, og stil den oven på en affaldsbeholder på tømningsdagen, når den skal ombyttes.",
+    "en": "Put the spray can in the red hazardous-waste box. The box must weigh no more than 4 kg; close all four latches and place it on top of a waste bin on collection day when it needs exchanging.",
+    "ar": "ضع عبوة الرذاذ في الصندوق الأحمر للنفايات الخطرة. يجب ألا يزيد وزن الصندوق على 4 كغ؛ أغلق المشابك الأربعة كلها وضعه فوق حاوية نفايات يوم التفريغ عند الحاجة إلى استبداله."
+  },
+  "guidance.Kun Rudkøbing Genbrugsplads modtager asbest. Pak små mængder tæt i to lag plast før ankomst; få emballagen kontrolleret af personalet. Større mængder kræver en godkendt asbestbigbag fra Langeland Forsyning.": {
+    "da": "Kun Rudkøbing Genbrugsplads modtager asbest. Pak små mængder tæt i to lag plast før ankomst; få emballagen kontrolleret af personalet. Større mængder kræver en godkendt asbestbigbag fra Langeland Forsyning.",
+    "en": "Only Rudkøbing recycling centre accepts asbestos. Seal small amounts in two layers of plastic before arrival and have staff check the wrapping. Larger amounts require an approved asbestos big bag from Langeland Forsyning.",
+    "ar": "يُقبل الأسبستوس فقط في مركز رودكوبينغ لإعادة التدوير. غلّف الكميات الصغيرة بإحكام في طبقتين من البلاستيك قبل الوصول، ودع الموظفين يفحصون التغليف. تتطلب الكميات الأكبر كيس أسبستوس كبيرًا معتمدًا من شركة مرافق لانغلاند."
+  },
+  "guidance.Kun Rudkøbing Genbrugsplads modtager asbest- og eternitplader. Pak 1–15 plader i to lag plast før ankomst; flere end 15 plader kræver en godkendt asbestbigbag fra Langeland Forsyning. Personalet skal kontrollere emballagen.": {
+    "da": "Kun Rudkøbing Genbrugsplads modtager asbest- og eternitplader. Pak 1–15 plader i to lag plast før ankomst; flere end 15 plader kræver en godkendt asbestbigbag fra Langeland Forsyning. Personalet skal kontrollere emballagen.",
+    "en": "Only Rudkøbing recycling centre accepts asbestos and Eternit sheets. Wrap 1–15 sheets in two layers of plastic before arrival; more than 15 sheets require an approved asbestos big bag from Langeland Forsyning. Staff must check the packaging.",
+    "ar": "يُقبل ألواح الأسبستوس والإترنيت فقط في مركز رودكوبينغ لإعادة التدوير. غلّف من 1 إلى 15 لوحًا بطبقتين من البلاستيك قبل الوصول؛ وتتطلب الكميات الأكبر كيس أسبستوس كبيرًا معتمدًا من شركة مرافق لانغلاند. يجب أن يفحص الموظفون التغليف."
+  },
+  "guidance.Genbrugspladsen modtager ikke nødblus. Kontakt politiet for vejledning om sikker håndtering og bortskaffelse; aflever det ikke som almindeligt farligt affald.": {
+    "da": "Genbrugspladsen modtager ikke nødblus. Kontakt politiet for vejledning om sikker håndtering og bortskaffelse; aflever det ikke som almindeligt farligt affald.",
+    "en": "The recycling centre does not accept emergency flares. Contact the police for advice on safe handling and disposal; do not put them with ordinary hazardous waste.",
+    "ar": "لا يقبل مركز إعادة التدوير شعلات الاستغاثة. اتصل بالشرطة للحصول على إرشادات للتعامل معها والتخلص منها بأمان؛ ولا تضعها مع النفايات الخطرة العادية."
+  },
+  "guidance.Små mængder ubrugt almindeligt fyrværkeri kan afleveres på genbrugspladsen. Professionelt fyrværkeri og andet eksplosivt affald modtages ikke; kontakt politiet om det.": {
+    "da": "Små mængder ubrugt almindeligt fyrværkeri kan afleveres på genbrugspladsen. Professionelt fyrværkeri og andet eksplosivt affald modtages ikke; kontakt politiet om det.",
+    "en": "Small amounts of unused consumer fireworks may be taken to the recycling centre. Professional fireworks and other explosive waste are not accepted; contact the police about those.",
+    "ar": "يمكن تسليم كميات صغيرة من الألعاب النارية الاستهلاكية غير المستخدمة إلى مركز إعادة التدوير. لا تُقبل الألعاب النارية الاحترافية أو النفايات المتفجرة الأخرى؛ اتصل بالشرطة بشأنها."
+  },
+  "guidance.Kun helt affyret og afkølet fyrværkeri.": {
+    "da": "Kun helt affyret og afkølet fyrværkeri.",
+    "en": "Only fully spent and cooled fireworks.",
+    "ar": "الألعاب النارية التي اشتعلت بالكامل وبردت فقط."
+  },
+  "guidance.Aflever som brændbart affald på genbrugspladsen, ikke som haveaffald til kompost. Selv små rod- og stængelstykker kan sprede planten.": {
+    "da": "Aflever som brændbart affald på genbrugspladsen, ikke som haveaffald til kompost. Selv små rod- og stængelstykker kan sprede planten.",
+    "en": "Take to the recycling centre as combustible waste, not garden waste for composting. Even small root and stem pieces can spread the plant.",
+    "ar": "سلّمها كنفايات قابلة للحرق في مركز إعادة التدوير، وليس مع نفايات الحديقة المعدّة للتسميد. حتى قطع الجذور والسيقان الصغيرة قد تنشر النبات."
+  },
+  "guidance.Tagrender af hård PVC afleveres på genbrugsstationen som genanvendeligt PVC.": {
+    "da": "Tagrender af hård PVC afleveres på genbrugsstationen som genanvendeligt PVC.",
+    "en": "Take gutters made of rigid PVC to the recycling centre as recyclable PVC.",
+    "ar": "سلّم المزاريب المصنوعة من PVC الصلب في مركز إعادة التدوير ضمن PVC القابل لإعادة التدوير."
+  },
+  "guidance.Tagrender af metal sorteres som metal.": {
+    "da": "Tagrender af metal sorteres som metal.",
+    "en": "Sort metal gutters as metal.",
+    "ar": "افرز المزاريب المعدنية ضمن المعادن."
+  },
+  "guidance.Hvis badebassinet er af blød PVC, afleveres det særskilt på genbrugsstationen som ikke-genanvendeligt PVC.": {
+    "da": "Hvis badebassinet er af blød PVC, afleveres det særskilt på genbrugsstationen som ikke-genanvendeligt PVC.",
+    "en": "If the paddling pool is made of flexible PVC, take it separately to the recycling centre as non-recyclable PVC.",
+    "ar": "إذا كان حوض السباحة مصنوعًا من PVC المرن، فسلّمه منفصلًا في مركز إعادة التدوير ضمن PVC غير القابل لإعادة التدوير."
+  },
+  "guidance.Hele asbest- og eternitplader skal pakkes i lukket plastemballage før aflevering på en genbrugsstation, der modtager dem. Støvende eller knuste plader modtages ikke på Rødovres genbrugsstation.": {
+    "da": "Hele asbest- og eternitplader skal pakkes i lukket plastemballage før aflevering på en genbrugsstation, der modtager dem. Støvende eller knuste plader modtages ikke på Rødovres genbrugsstation.",
+    "en": "Seal whole asbestos and Eternit sheets in plastic before taking them to a recycling centre that accepts them. Rødovre recycling centre does not accept dusty or broken sheets.",
+    "ar": "غلّف ألواح الأسبستوس والإترنيت السليمة في عبوة بلاستيكية محكمة قبل تسليمها إلى مركز إعادة تدوير يقبلها. لا يقبل مركز رودوفره الألواح المتكسرة أو التي تُصدر غبارًا."
+  },
+  "guidance.Hele, ikke-støvende asbestplader skal pakkes i lukket plastemballage og afleveres på en genbrugsstation, der modtager dem.": {
+    "da": "Hele, ikke-støvende asbestplader skal pakkes i lukket plastemballage og afleveres på en genbrugsstation, der modtager dem.",
+    "en": "Seal whole, non-dusty asbestos sheets in plastic and take them to a recycling centre that accepts them.",
+    "ar": "غلّف ألواح الأسبستوس السليمة التي لا تُصدر غبارًا في عبوة بلاستيكية محكمة وسلّمها إلى مركز إعادة تدوير يقبلها."
+  },
+  "guidance.Støvende asbest og knust eternit modtages ikke på Rødovres genbrugsstation; få anvisning om aflevering hos SMOKA.": {
+    "da": "Støvende asbest og knust eternit modtages ikke på Rødovres genbrugsstation; få anvisning om aflevering hos SMOKA.",
+    "en": "Rødovre recycling centre does not accept dusty asbestos or broken Eternit; seek disposal instructions from SMOKA.",
+    "ar": "لا يقبل مركز رودوفره لإعادة التدوير الأسبستوس الذي يُصدر غبارًا أو الإترنيت المتكسر؛ اطلب إرشادات التسليم من SMOKA."
+  },
+  "guidance.Hvis grammofonpladen er af PVC, afleveres den som ikke-genanvendeligt PVC på genbrugsstationen; ikke i restaffald.": {
+    "da": "Hvis grammofonpladen er af PVC, afleveres den som ikke-genanvendeligt PVC på genbrugsstationen; ikke i restaffald.",
+    "en": "If the record is made of PVC, take it to the recycling centre as non-recyclable PVC; do not put it in residual waste.",
+    "ar": "إذا كانت أسطوانة الغراموفون مصنوعة من PVC، فسلّمها في مركز إعادة التدوير ضمن PVC غير القابل لإعادة التدوير؛ ولا تضعها مع النفايات المتبقية."
+  },
+  "guidance.Anmeld asbestholdigt byggeaffald til kommunen. Pak mindre mængder tæt i to lag klar plast hjemmefra; Assens, Vissenbjerg og Haarby genbrugspladser modtager asbest. Støvende asbest skal i en særskilt bigbag. Større mængder kræver bestilt afhentning.": {
+    "da": "Anmeld asbestholdigt byggeaffald til kommunen. Pak mindre mængder tæt i to lag klar plast hjemmefra; Assens, Vissenbjerg og Haarby genbrugspladser modtager asbest. Støvende asbest skal i en særskilt bigbag. Større mængder kræver bestilt afhentning.",
+    "en": "Report asbestos building waste to the municipality. Seal small amounts in two layers of clear plastic before leaving home; Assens, Vissenbjerg and Haarby recycling centres accept asbestos. Dusty asbestos goes in a separate big bag. Arrange collection for larger amounts.",
+    "ar": "أبلغ البلدية عن مخلفات البناء المحتوية على الأسبستوس. غلّف الكميات الصغيرة بإحكام في طبقتين من البلاستيك الشفاف قبل مغادرة المنزل؛ تقبلها مراكز إعادة التدوير في أسينس وفيسنبييرغ وهاربي. ضع الأسبستوس الذي يُصدر غبارًا في كيس كبير منفصل. رتّب استلام الكميات الأكبر."
+  },
+  "guidance.Anmeld arbejdet til kommunen. Højst 20 hele plader pr. husstand om året kan afleveres på genbrugspladserne i Assens, Vissenbjerg eller Haarby. Pak pladerne tæt i to lag klar plast hjemmefra; større mængder kræver bestilt afhentning i bigbag.": {
+    "da": "Anmeld arbejdet til kommunen. Højst 20 hele plader pr. husstand om året kan afleveres på genbrugspladserne i Assens, Vissenbjerg eller Haarby. Pak pladerne tæt i to lag klar plast hjemmefra; større mængder kræver bestilt afhentning i bigbag.",
+    "en": "Report the work to the municipality. A household may take at most 20 whole sheets per year to Assens, Vissenbjerg or Haarby recycling centre. Seal the sheets in two layers of clear plastic before leaving home; arrange big-bag collection for larger amounts.",
+    "ar": "أبلغ البلدية عن العمل. يمكن للأسرة تسليم ما لا يزيد على 20 لوحًا سليمًا سنويًا في مركز أسينس أو فيسنبييرغ أو هاربي لإعادة التدوير. غلّف الألواح بإحكام في طبقتين من البلاستيك الشفاف قبل مغادرة المنزل؛ ورتّب استلام الكميات الأكبر في كيس كبير."
+  },
+  "guidance.Behandl alle eternitplader som asbestaffald, også hvis de er uden asbest. Anmeld arbejdet, og pak højst 20 plader pr. husstand om året i to lag klar plast før aflevering i Assens, Vissenbjerg eller Haarby; større mængder kræver bestilt afhentning.": {
+    "da": "Behandl alle eternitplader som asbestaffald, også hvis de er uden asbest. Anmeld arbejdet, og pak højst 20 plader pr. husstand om året i to lag klar plast før aflevering i Assens, Vissenbjerg eller Haarby; større mængder kræver bestilt afhentning.",
+    "en": "Treat all Eternit sheets as asbestos waste, including asbestos-free sheets. Report the work and wrap up to 20 sheets per household per year in two layers of clear plastic before taking them to Assens, Vissenbjerg or Haarby; arrange collection for larger amounts.",
+    "ar": "تعامل مع جميع ألواح الإترنيت كنفايات أسبستوس، حتى الألواح الخالية منه. أبلغ عن العمل، وغلّف ما يصل إلى 20 لوحًا لكل أسرة سنويًا في طبقتين من البلاستيك الشفاف قبل تسليمها في أسينس أو فيسنبييرغ أو هاربي؛ ورتّب استلام الكميات الأكبر."
+  },
+  "guidance.Ubrugt eller ikke-affyret fyrværkeri afleveres på en bemandet genbrugsplads; det må ikke i den røde miljøboks ved hjemmet.": {
+    "da": "Ubrugt eller ikke-affyret fyrværkeri afleveres på en bemandet genbrugsplads; det må ikke i den røde miljøboks ved hjemmet.",
+    "en": "Take unused or unfired fireworks to a staffed recycling centre; do not put them in the red hazardous-waste box at home.",
+    "ar": "سلّم الألعاب النارية غير المستخدمة أو التي لم تشتعل إلى مركز إعادة تدوير يعمل فيه موظفون؛ ولا تضعها في صندوق النفايات الخطرة الأحمر بالمنزل."
+  },
+  "guidance.Medicinglas afleveres på apoteket, også når glasset er tømt. Det må ikke i beholderen til glas.": {
+    "da": "Medicinglas afleveres på apoteket, også når glasset er tømt. Det må ikke i beholderen til glas.",
+    "en": "Take medicine bottles to a pharmacy, even when empty. Do not put them in the glass collection bin.",
+    "ar": "سلّم زجاجات الدواء إلى الصيدلية حتى لو كانت فارغة. لا تضعها في حاوية الزجاج."
+  },
+  "guidance.Hvis dynen stadig kan bruges, aflever den til direkte genbrug.": {
+    "da": "Hvis dynen stadig kan bruges, aflever den til direkte genbrug.",
+    "en": "If still usable, pass the duvet on for reuse.",
+    "ar": "إذا كان اللحاف لا يزال صالحًا للاستخدام، فسلّمه لإعادة الاستخدام المباشر."
+  },
+  "guidance.Hvis dynen er udtjent eller ødelagt, læg den i restaffald. Den må ikke i tekstilaffald.": {
+    "da": "Hvis dynen er udtjent eller ødelagt, læg den i restaffald. Den må ikke i tekstilaffald.",
+    "en": "If worn out or damaged, put the duvet in residual waste. Do not put it with textile waste.",
+    "ar": "إذا أصبح اللحاف غير صالح أو تالفًا، فضعه مع النفايات المتبقية، وليس مع نفايات المنسوجات."
+  },
+  "guidance.Hvis puden stadig kan bruges, aflever den til direkte genbrug.": {
+    "da": "Hvis puden stadig kan bruges, aflever den til direkte genbrug.",
+    "en": "If still usable, pass the pillow on for reuse.",
+    "ar": "إذا كانت الوسادة لا تزال صالحة للاستخدام، فسلّمها لإعادة الاستخدام المباشر."
+  },
+  "guidance.Hvis puden er udtjent eller ødelagt, læg den i restaffald. Den må ikke i tekstilaffald.": {
+    "da": "Hvis puden er udtjent eller ødelagt, læg den i restaffald. Den må ikke i tekstilaffald.",
+    "en": "If worn out or damaged, put the pillow in residual waste. Do not put it with textile waste.",
+    "ar": "إذا أصبحت الوسادة غير صالحة أو تالفة، فضعها مع النفايات المتبقية، وليس مع نفايات المنسوجات."
+  },
+  "guidance.Hvis hovedpuden stadig kan bruges, aflever den til direkte genbrug.": {
+    "da": "Hvis hovedpuden stadig kan bruges, aflever den til direkte genbrug.",
+    "en": "If still usable, pass the pillow on for reuse.",
+    "ar": "إذا كانت الوسادة لا تزال صالحة للاستخدام، فسلّمها لإعادة الاستخدام المباشر."
+  },
+  "guidance.Hvis hovedpuden er udtjent eller ødelagt, læg den i restaffald. Den må ikke i tekstilaffald.": {
+    "da": "Hvis hovedpuden er udtjent eller ødelagt, læg den i restaffald. Den må ikke i tekstilaffald.",
+    "en": "If worn out or damaged, put the pillow in residual waste. Do not put it with textile waste.",
+    "ar": "إذا أصبحت الوسادة غير صالحة أو تالفة، فضعها مع النفايات المتبقية، وليس مع نفايات المنسوجات."
+  },
+  "guidance.Hvis bogen stadig kan bruges, aflever den til direkte genbrug.": {
+    "da": "Hvis bogen stadig kan bruges, aflever den til direkte genbrug.",
+    "en": "If the book is still usable, pass it on for reuse.",
+    "ar": "إذا كان الكتاب لا يزال صالحًا للاستخدام، فسلّمه لإعادة الاستخدام المباشر."
+  },
+  "guidance.Udtjente bøger afleveres i fraktionen Pap og bøger på genbrugsstationen.": {
+    "da": "Udtjente bøger afleveres i fraktionen Pap og bøger på genbrugsstationen.",
+    "en": "Take worn-out books to the Cardboard and books section at the recycling centre.",
+    "ar": "سلّم الكتب غير الصالحة للاستخدام في قسم الكرتون والكتب في مركز إعادة التدوير."
+  },
+  "guidance.Mindre mængder maling under 4 liter kan afleveres i den røde kasse. Større beholdere op til 30 liter afleveres som farligt affald på genbrugsstationen i bemandet åbningstid.": {
+    "da": "Mindre mængder maling under 4 liter kan afleveres i den røde kasse. Større beholdere op til 30 liter afleveres som farligt affald på genbrugsstationen i bemandet åbningstid.",
+    "en": "Small amounts of paint under 4 litres may go in the red box. Take larger containers up to 30 litres to hazardous waste at the recycling centre during staffed hours.",
+    "ar": "يمكن وضع كميات الطلاء الصغيرة التي تقل عن 4 لترات في الصندوق الأحمر. سلّم العبوات الأكبر، حتى 30 لترًا، كنفايات خطرة في مركز إعادة التدوير خلال ساعات وجود الموظفين."
+  },
+  "guidance.Aflever medicinrester direkte på apoteket; de må ikke i den røde kasse.": {
+    "da": "Aflever medicinrester direkte på apoteket; de må ikke i den røde kasse.",
+    "en": "Take medicine residues directly to a pharmacy; do not put them in the red box.",
+    "ar": "سلّم بقايا الأدوية مباشرة إلى الصيدلية؛ ولا تضعها في الصندوق الأحمر."
+  },
+  "guidance.Kan også afleveres som farligt affald på genbrugsstationen i bemandet åbningstid.": {
+    "da": "Kan også afleveres som farligt affald på genbrugsstationen i bemandet åbningstid.",
+    "en": "They may also be taken to hazardous waste at a recycling centre during staffed hours.",
+    "ar": "يمكن أيضًا تسليمها كنفايات خطرة في مركز إعادة التدوير خلال ساعات وجود الموظفين."
+  },
+  "guidance.Aflever hårfarve i den røde kasse eller som farligt affald på genbrugsstationen. Emballagen skal være lukket og tydeligt mærket.": {
+    "da": "Aflever hårfarve i den røde kasse eller som farligt affald på genbrugsstationen. Emballagen skal være lukket og tydeligt mærket.",
+    "en": "Put hair dye in the red box or take it to hazardous waste at a recycling centre. Keep the container closed and clearly labelled.",
+    "ar": "ضع صبغة الشعر في الصندوق الأحمر أو سلّمها كنفايات خطرة في مركز إعادة التدوير. يجب أن تكون العبوة مغلقة ومعلّمة بوضوح."
+  },
+  "guidance.Læg madaffald i de grønne poser fra AffaldPlus, bind knude på posen, og læg den i madaffaldsrummet.": {
+    "da": "Læg madaffald i de grønne poser fra AffaldPlus, bind knude på posen, og læg den i madaffaldsrummet.",
+    "en": "Put food waste in the green bags supplied by AffaldPlus. Tie the bag before placing it in the food-waste compartment.",
+    "ar": "ضع نفايات الطعام في الأكياس الخضراء التي توفرها AffaldPlus. اربط الكيس قبل وضعه في حجرة نفايات الطعام."
+  },
+  "guidance.Aflever medicinrester på apoteket.": {
+    "da": "Aflever medicinrester på apoteket.",
+    "en": "Take medicine residues to a pharmacy.",
+    "ar": "سلّم بقايا الأدوية إلى الصيدلية."
+  },
+  "guidance.Medicinrester kan også afleveres på genbrugspladsen. De må ikke i den røde miljøkasse.": {
+    "da": "Medicinrester kan også afleveres på genbrugspladsen. De må ikke i den røde miljøkasse.",
+    "en": "Medicine residues may also be taken to a recycling centre. Do not put them in the red hazardous-waste box.",
+    "ar": "يمكن أيضًا تسليم بقايا الأدوية في مركز إعادة التدوير. لا تضعها في الصندوق الأحمر للنفايات الخطرة."
+  },
+  "guidance.Små batterier lægges i en klar pose på højst 4 liter i den røde miljøkasse. Bestil afhentning af kassen.": {
+    "da": "Små batterier lægges i en klar pose på højst 4 liter i den røde miljøkasse. Bestil afhentning af kassen.",
+    "en": "Put small batteries in a clear bag of no more than 4 litres inside the red hazardous-waste box. Book collection of the box.",
+    "ar": "ضع البطاريات الصغيرة في كيس شفاف لا تتجاوز سعته 4 لترات داخل الصندوق الأحمر للنفايات الخطرة. احجز موعدًا لاستلام الصندوق."
+  },
+  "guidance.Store batterier afleveres på genbrugspladsen, ikke i den røde miljøkasse.": {
+    "da": "Store batterier afleveres på genbrugspladsen, ikke i den røde miljøkasse.",
+    "en": "Take large batteries to a recycling centre, not the red hazardous-waste box.",
+    "ar": "سلّم البطاريات الكبيرة في مركز إعادة التدوير، وليس في الصندوق الأحمر للنفايات الخطرة."
+  },
+  "guidance.Læg elpæren i en klar pose på højst 4 liter i den røde miljøkasse, og bestil afhentning. Den kan også afleveres på genbrugspladsen.": {
+    "da": "Læg elpæren i en klar pose på højst 4 liter i den røde miljøkasse, og bestil afhentning. Den kan også afleveres på genbrugspladsen.",
+    "en": "Put the light bulb in a clear bag of no more than 4 litres in the red hazardous-waste box and book collection. You can also take it to a recycling centre.",
+    "ar": "ضع المصباح الكهربائي في كيس شفاف لا تتجاوز سعته 4 لترات داخل الصندوق الأحمر للنفايات الخطرة، واحجز موعدًا لاستلامه. ويمكنك أيضًا تسليمه في مركز إعادة التدوير."
+  },
+  "guidance.Malingrester kan afleveres i den røde miljøkasse, som højst må veje 4 kg inklusive kassen. Bestil afhentning; større mængder afleveres på genbrugspladsen.": {
+    "da": "Malingrester kan afleveres i den røde miljøkasse, som højst må veje 4 kg inklusive kassen. Bestil afhentning; større mængder afleveres på genbrugspladsen.",
+    "en": "Paint residue can go in the red hazardous-waste box, which must weigh no more than 4 kg including the box. Book collection; take larger amounts to a recycling centre.",
+    "ar": "يمكن وضع بقايا الطلاء في الصندوق الأحمر للنفايات الخطرة، بشرط ألا يتجاوز وزن الصندوق مع محتوياته 4 كغ. احجز موعدًا لاستلامه، وسلّم الكميات الأكبر في مركز إعادة التدوير."
+  },
+  "guidance.Pak asbestholdigt affald ind i to lag plast hjemmefra, og aflever det kun i bemandet åbningstid. Højst tre tagplader pr. dag; andet asbestholdigt affald er ikke omfattet af henteordningen for tagplader.": {
+    "da": "Pak asbestholdigt affald ind i to lag plast hjemmefra, og aflever det kun i bemandet åbningstid. Højst tre tagplader pr. dag; andet asbestholdigt affald er ikke omfattet af henteordningen for tagplader.",
+    "en": "Wrap asbestos-containing waste in two layers of plastic before leaving home and deliver it only during staffed hours. At most three roofing sheets per day; other asbestos waste is not covered by the roofing-sheet collection service.",
+    "ar": "غلّف النفايات المحتوية على الأسبستوس بطبقتين من البلاستيك في المنزل، وسلّمها خلال ساعات وجود الموظفين فقط. يُسمح بثلاثة ألواح تسقيف كحد أقصى في اليوم؛ ولا تشمل خدمة جمع ألواح التسقيف غيرها من نفايات الأسبستوس."
+  },
+  "guidance.Pak tagplader ind i to lag plast hjemmefra, også hvis de ikke vides at indeholde asbest. Du må aflevere højst tre plader pr. dag i bemandet åbningstid; ved større mængder kan du bruge Favrskov Forsynings særskilte henteordning for tagplader.": {
+    "da": "Pak tagplader ind i to lag plast hjemmefra, også hvis de ikke vides at indeholde asbest. Du må aflevere højst tre plader pr. dag i bemandet åbningstid; ved større mængder kan du bruge Favrskov Forsynings særskilte henteordning for tagplader.",
+    "en": "Wrap roofing sheets in two layers of plastic before leaving home, even if they are not known to contain asbestos. You may deliver at most three sheets per day during staffed hours; for larger quantities, use Favrskov Forsyning’s separate roofing-sheet collection service.",
+    "ar": "غلّف ألواح التسقيف بطبقتين من البلاستيك في المنزل، حتى إن لم يكن معروفًا أنها تحتوي على الأسبستوس. يمكنك تسليم ثلاثة ألواح كحد أقصى يوميًا خلال ساعات وجود الموظفين؛ وللكميات الأكبر استخدم خدمة جمع ألواح التسقيف المنفصلة لدى فافرسكوف فورسينينغ."
+  },
+  "guidance.Aflever brugte kanyler på apoteket i en godkendt kanyleboks eller anden sikker beholder. De må ikke lægges løst i affaldsbeholderen eller i den røde kasse til farligt affald.": {
+    "da": "Aflever brugte kanyler på apoteket i en godkendt kanyleboks eller anden sikker beholder. De må ikke lægges løst i affaldsbeholderen eller i den røde kasse til farligt affald.",
+    "en": "Take used needles to a pharmacy in an approved sharps container or another secure container. Do not place them loose in a waste bin or in the red hazardous-waste box.",
+    "ar": "سلّم الإبر المستعملة في الصيدلية داخل حاوية معتمدة للأدوات الحادة أو حاوية آمنة أخرى. لا تضعها مكشوفة في حاوية النفايات أو في الصندوق الأحمر للنفايات الخطرة."
+  },
+  "guidance.Læg malingsrester i den røde kasse til farligt affald. Kassen må højst veje 4 kg; når den er fuld, stilles den oven på en affaldsbeholder på tømmedagen, så den byttes til en tom kasse.": {
+    "da": "Læg malingsrester i den røde kasse til farligt affald. Kassen må højst veje 4 kg; når den er fuld, stilles den oven på en affaldsbeholder på tømmedagen, så den byttes til en tom kasse.",
+    "en": "Put paint residue in the red hazardous-waste box. The box must weigh no more than 4 kg; when full, place it on top of a waste bin on collection day to have it exchanged for an empty box.",
+    "ar": "ضع بقايا الطلاء في الصندوق الأحمر للنفايات الخطرة. يجب ألا يزيد وزن الصندوق على 4 كغ؛ وعندما يمتلئ، ضعه فوق حاوية النفايات يوم جمعها ليُستبدل بصندوق فارغ."
+  },
+  "guidance.Brugte eller delvis tomme insulinpenne afleveres på apoteket i original emballage eller en plastpose.": {
+    "da": "Brugte eller delvis tomme insulinpenne afleveres på apoteket i original emballage eller en plastpose.",
+    "en": "Return used or partly empty insulin pens to a pharmacy in their original packaging or a plastic bag.",
+    "ar": "سلّم أقلام الإنسولين المستعملة أو الفارغة جزئيًا إلى الصيدلية في عبوتها الأصلية أو في كيس بلاستيكي."
+  },
+  "guidance.Helt tomme insulinpenne kan lægges i restaffald.": {
+    "da": "Helt tomme insulinpenne kan lægges i restaffald.",
+    "en": "Completely empty insulin pens can go in residual waste.",
+    "ar": "يمكن وضع أقلام الإنسولين الفارغة تمامًا في النفايات المتبقية."
+  },
+  "guidance.Hvis eternitpladen indeholder asbest, skal den fugtes, pakkes i to lag klar plast og mærkes »asbest«. Kun mindre mængder kan afleveres på genbrugsstationen uden kommunal anvisning.": {
+    "da": "Hvis eternitpladen indeholder asbest, skal den fugtes, pakkes i to lag klar plast og mærkes »asbest«. Kun mindre mængder kan afleveres på genbrugsstationen uden kommunal anvisning.",
+    "en": "If the Eternit sheet contains asbestos, dampen it, wrap it in two layers of clear plastic and label it “asbestos”. Only small amounts can be delivered to the recycling centre without a municipal disposal instruction.",
+    "ar": "إذا كان لوح الإترنيت يحتوي على الأسبستوس، فرطّبه وغلّفه بطبقتين من البلاستيك الشفاف وضع عليه ملصق «أسبستوس». يمكن تسليم الكميات الصغيرة فقط إلى مركز إعادة التدوير دون توجيه خاص من البلدية."
+  },
+  "guidance.Aflever malingsrester i tæt, tydeligt mærket emballage, helst originalemballagen. I villa eller rækkehus bruges miljøboksen; den må højst veje 8 kg og stilles på restaffaldsbeholderen til ombytning ved tømning.": {
+    "da": "Aflever malingsrester i tæt, tydeligt mærket emballage, helst originalemballagen. I villa eller rækkehus bruges miljøboksen; den må højst veje 8 kg og stilles på restaffaldsbeholderen til ombytning ved tømning.",
+    "en": "Keep leftover paint in sealed, clearly labelled packaging, preferably its original container. For houses and terraced houses, use the hazardous-waste box; it must weigh no more than 8 kg and be placed on the residual-waste bin for exchange on collection day.",
+    "ar": "سلّم بقايا الطلاء في عبوة محكمة الإغلاق ومكتوب عليها محتواها بوضوح، ويفضّل استخدام العبوة الأصلية. في المنازل والبيوت المتلاصقة، استخدم صندوق النفايات الخطرة؛ يجب ألا يزيد وزنه على 8 كغ، ويوضع فوق حاوية النفايات المتبقية لاستبداله يوم الجمع."
+  },
+  "guidance.Ødelagte tekstiler skal være rene og tørre. Læg dem i en klar plastsæk til storskraldsordningen; i ejendomme med fællesordning bruges den anviste tekstilbeholder.": {
+    "da": "Ødelagte tekstiler skal være rene og tørre. Læg dem i en klar plastsæk til storskraldsordningen; i ejendomme med fællesordning bruges den anviste tekstilbeholder.",
+    "en": "Worn-out textiles must be clean and dry. Put them in a clear plastic bag for bulky-waste collection; in shared housing, use the designated textile bin.",
+    "ar": "يجب أن تكون المنسوجات التالفة نظيفة وجافة. ضعها في كيس بلاستيكي شفاف لجمع النفايات كبيرة الحجم؛ وفي المباني ذات نظام الجمع المشترك، استخدم حاوية المنسوجات المخصصة."
+  },
+  "guidance.Brugbare tekstiler afleveres til direkte genbrug, ikke som tekstilaffald.": {
+    "da": "Brugbare tekstiler afleveres til direkte genbrug, ikke som tekstilaffald.",
+    "en": "Take usable textiles for direct reuse, not textile-waste collection.",
+    "ar": "سلّم المنسوجات الصالحة للاستخدام لإعادة استخدامها مباشرة، وليس ضمن نفايات المنسوجات."
+  },
+  "guidance.Asbestaffald skal anmeldes til kommunen mindst 14 dage før arbejdet. Mindre mængder kan afleveres på genbrugsstationen uden særskilt anvisning, pakket i to lag klar plast og mærket »asbest«.": {
+    "da": "Asbestaffald skal anmeldes til kommunen mindst 14 dage før arbejdet. Mindre mængder kan afleveres på genbrugsstationen uden særskilt anvisning, pakket i to lag klar plast og mærket »asbest«.",
+    "en": "Asbestos waste must be reported to the municipality at least 14 days before work begins. Small amounts can be taken to the recycling centre without a separate disposal instruction, wrapped in two layers of clear plastic and labelled “asbestos”.",
+    "ar": "يجب إبلاغ البلدية بنفايات الأسبستوس قبل بدء العمل بـ14 يومًا على الأقل. يمكن تسليم الكميات الصغيرة إلى مركز إعادة التدوير دون توجيه خاص، بعد تغليفها بطبقتين من البلاستيك الشفاف ووضع ملصق «أسبستوس» عليها."
+  },
+  "guidance.Et intakt kviksølvstermometer afleveres som farligt affald.": {
+    "da": "Et intakt kviksølvstermometer afleveres som farligt affald.",
+    "en": "Take an intact mercury thermometer to a hazardous-waste collection point.",
+    "ar": "سلّم مقياس الحرارة الزئبقي السليم ضمن النفايات الخطرة."
+  },
+  "guidance.Et defekt kviksølvstermometer kan afleveres på apoteket. Oplys, at det indeholder kviksølv.": {
+    "da": "Et defekt kviksølvstermometer kan afleveres på apoteket. Oplys, at det indeholder kviksølv.",
+    "en": "A damaged mercury thermometer can be returned to a pharmacy. Tell the staff that it contains mercury.",
+    "ar": "يمكن تسليم مقياس الحرارة الزئبقي التالف إلى الصيدلية. أخبر الموظفين بأنه يحتوي على الزئبق."
+  },
+  "guidance.Aflever cyklen som metal på genbrugsstationen, eller stil den til storskrald med en tydelig seddel mærket »storskrald«. Ved husstande med egen beholder skal den stilles ud tidligst dagen før og senest kl. 7 på afhentningsdagen.": {
+    "da": "Aflever cyklen som metal på genbrugsstationen, eller stil den til storskrald med en tydelig seddel mærket »storskrald«. Ved husstande med egen beholder skal den stilles ud tidligst dagen før og senest kl. 7 på afhentningsdagen.",
+    "en": "Take the bicycle to the recycling centre as metal, or put it out for bulky-waste collection with a clear label reading “storskrald”. For homes with individual bins, put it out no earlier than the day before collection and by 7 a.m. on collection day.",
+    "ar": "سلّم الدراجة الهوائية ضمن المعادن في مركز إعادة التدوير، أو ضعها لجمع النفايات كبيرة الحجم مع بطاقة واضحة مكتوب عليها «storskrald». في المنازل ذات الحاويات الفردية، ضعها قبل يوم الجمع بيوم واحد على الأكثر وقبل الساعة السابعة صباحًا يوم الجمع."
+  },
+  "guidance.Aflever græsslåmaskinen på genbrugsstationen, eller mærk den »storskrald« til afhentning. En benzindrevet maskine skal være tømt for både benzin og olie før afhentning.": {
+    "da": "Aflever græsslåmaskinen på genbrugsstationen, eller mærk den »storskrald« til afhentning. En benzindrevet maskine skal være tømt for både benzin og olie før afhentning.",
+    "en": "Take the lawn mower to the recycling centre or label it “storskrald” for bulky-waste collection. Drain all petrol and oil from a petrol-powered mower before collection.",
+    "ar": "سلّم جزازة العشب في مركز إعادة التدوير، أو ضع عليها بطاقة مكتوب عليها «storskrald» لجمع النفايات كبيرة الحجم. يجب تفريغ الجزازة التي تعمل بالبنزين من البنزين والزيت قبل جمعها."
+  },
+  "guidance.Afmonterede elektriske dele afleveres som elektronik på genbrugsstationen eller med storskrald.": {
+    "da": "Afmonterede elektriske dele afleveres som elektronik på genbrugsstationen eller med storskrald.",
+    "en": "Take removed electrical components to the recycling centre as electronic waste or put them out with bulky waste.",
+    "ar": "سلّم الأجزاء الكهربائية المفصولة كنفايات إلكترونية في مركز إعادة التدوير أو مع النفايات كبيرة الحجم."
+  },
+  "guidance.En sofa kan afleveres på genbrugsstationen eller hentes som storskrald. Ved afhentning må den højst veje 50 kg; i villaer og rækkehuse med egne beholdere stilles den ud tidligst dagen før og senest kl. 7 på afhentningsdagen.": {
+    "da": "En sofa kan afleveres på genbrugsstationen eller hentes som storskrald. Ved afhentning må den højst veje 50 kg; i villaer og rækkehuse med egne beholdere stilles den ud tidligst dagen før og senest kl. 7 på afhentningsdagen.",
+    "en": "Take a sofa to the recycling centre or use bulky-waste collection. For collection it must weigh no more than 50 kg; at houses and terraced homes with individual bins, put it out no earlier than the day before and by 7 a.m. on collection day.",
+    "ar": "يمكن تسليم الأريكة في مركز إعادة التدوير أو جمعها ضمن النفايات كبيرة الحجم. عند جمعها يجب ألا يزيد وزنها على 50 كغ؛ وفي المنازل والبيوت المتلاصقة ذات الحاويات الفردية، توضع قبل يوم الجمع بيوم واحد على الأكثر وقبل الساعة السابعة صباحًا يوم الجمع."
+  },
+  "guidance.Et køleskab kan afleveres på genbrugsstationen eller hentes som storskrald. Ved afhentning må det højst veje 50 kg; i villaer og rækkehuse med egne beholdere stilles det ud tidligst dagen før og senest kl. 7 på afhentningsdagen.": {
+    "da": "Et køleskab kan afleveres på genbrugsstationen eller hentes som storskrald. Ved afhentning må det højst veje 50 kg; i villaer og rækkehuse med egne beholdere stilles det ud tidligst dagen før og senest kl. 7 på afhentningsdagen.",
+    "en": "Take a refrigerator to the recycling centre or use bulky-waste collection. For collection it must weigh no more than 50 kg; at houses and terraced homes with individual bins, put it out no earlier than the day before and by 7 a.m. on collection day.",
+    "ar": "يمكن تسليم الثلاجة في مركز إعادة التدوير أو جمعها ضمن النفايات كبيرة الحجم. عند جمعها يجب ألا يزيد وزنها على 50 كغ؛ وفي المنازل والبيوت المتلاصقة ذات الحاويات الفردية، توضع قبل يوم الجمع بيوم واحد على الأكثر وقبل الساعة السابعة صباحًا يوم الجمع."
+  },
+  "calendar.tab": {
+    "da": "Kalender",
+    "en": "Calendar",
+    "ar": "التقويم"
+  },
+  "calendar.title": {
+    "da": "Affaldskalender",
+    "en": "Collection calendar",
+    "ar": "تقويم جمع النفايات"
+  },
+  "calendar.helpTitle": {
+    "da": "Om affaldskalenderen",
+    "en": "About the collection calendar",
+    "ar": "حول تقويم جمع النفايات"
+  },
+  "calendar.helpMessage": {
+    "da": "Indtast din adresse for at se kommende afhentninger. Du kan vælge at blive påmindet om en afhentning på et valgfrit tidspunkt, for de affaldsfraktioner du ønsker. Kalenderen kræver internet, og ikke alle kommuner understøttes.",
+    "en": "Enter your address to see upcoming collections. You can choose when to be reminded about a collection and which waste categories to receive reminders for. The calendar requires internet access, and not all municipalities are supported.",
+    "ar": "أدخل عنوانك للاطلاع على مواعيد جمع النفايات القادمة. يمكنك اختيار موعد التذكير بعملية الجمع وفئات النفايات التي تريد تلقي تذكيرات بشأنها. يتطلب التقويم اتصالًا بالإنترنت، ولا يدعم جميع البلديات."
+  },
+  "calendar.intro": {
+    "da": "Indtast din adresse for at se kommende afhentninger.",
+    "en": "Enter your address to see upcoming collections.",
+    "ar": "أدخل عنوانك لمعرفة مواعيد جمع النفايات القادمة."
+  },
+  "calendar.municipality": {
+    "da": "Kommune",
+    "en": "Municipality",
+    "ar": "البلدية"
+  },
+  "calendar.chooseMunicipality": {
+    "da": "Vælg kommune",
+    "en": "Choose municipality",
+    "ar": "اختر البلدية"
+  },
+  "calendar.postcode": {
+    "da": "Postnummer",
+    "en": "Postcode",
+    "ar": "الرمز البريدي"
+  },
+  "calendar.street": {
+    "da": "Vejnavn",
+    "en": "Street",
+    "ar": "اسم الشارع"
+  },
+  "calendar.houseNumber": {
+    "da": "Husnummer (valgfrit)",
+    "en": "House number (optional)",
+    "ar": "رقم المنزل (اختياري)"
+  },
+  "calendar.findAddress": {
+    "da": "Find adresse",
+    "en": "Find address",
+    "ar": "ابحث عن العنوان"
+  },
+  "calendar.chooseAddress": {
+    "da": "Vælg din adresse",
+    "en": "Choose your address",
+    "ar": "اختر عنوانك"
+  },
+  "calendar.yourAddress": {
+    "da": "Din adresse",
+    "en": "Your address",
+    "ar": "عنوانك"
+  },
+  "calendar.changeAddress": {
+    "da": "Skift adresse",
+    "en": "Change address",
+    "ar": "تغيير العنوان"
+  },
+  "calendar.refresh": {
+    "da": "Opdater",
+    "en": "Refresh",
+    "ar": "تحديث"
+  },
+  "calendar.loading": {
+    "da": "Henter afhentninger…",
+    "en": "Loading collections…",
+    "ar": "جارٍ تحميل مواعيد الجمع…"
+  },
+  "calendar.loadingMunicipalities": {
+    "da": "Henter kommuner…",
+    "en": "Loading municipalities…",
+    "ar": "جارٍ تحميل البلديات…"
+  },
+  "calendar.noPickups": {
+    "da": "Ingen kommende afhentninger fundet for denne adresse.",
+    "en": "No upcoming collections found for this address.",
+    "ar": "لم يتم العثور على مواعيد جمع قادمة لهذا العنوان."
+  },
+  "calendar.upcoming": {
+    "da": "Kommende afhentninger",
+    "en": "Upcoming collections",
+    "ar": "مواعيد الجمع القادمة"
+  },
+  "calendar.noAddresses": {
+    "da": "Ingen adresser fundet. Tjek vejnavn og postnummer.",
+    "en": "No addresses found. Check the street and postcode.",
+    "ar": "لم يتم العثور على عناوين. تحقق من الشارع والرمز البريدي."
+  },
+  "calendar.unavailable": {
+    "da": "Kalenderen er ikke tilgængelig lige nu. Prøv igen senere.",
+    "en": "The calendar is unavailable right now. Try again later.",
+    "ar": "التقويم غير متاح الآن. حاول مرة أخرى لاحقًا."
+  },
+  "calendar.pickupsUnavailable": {
+    "da": "Adressen blev fundet, men vi kunne ikke hente afhentningsdatoerne fra den lokale affaldsordning. Prøv at opdatere senere, eller tjek datoerne hos kommunen.",
+    "en": "We found the address, but couldn't retrieve collection dates from the local waste service. Try refreshing later, or check the dates with your municipality.",
+    "ar": "تم العثور على العنوان، لكن تعذّر جلب مواعيد جمع النفايات من خدمة النفايات المحلية. حاول التحديث لاحقًا أو تحقق من المواعيد لدى بلديتك."
+  },
+  "calendar.sourceNote": {
+    "da": "Afhentningsdatoer leveres af den lokale affaldsordning via Affald-DK. Kontrollér altid ændringer hos din kommune. Ikke alle kommuner understøttes.",
+    "en": "Collection dates come from local waste providers via Affald-DK. Check changes with your municipality. Not all municipalities are supported.",
+    "ar": "تأتي مواعيد الجمع من الجهات المحلية عبر Affald-DK. تحقق من التغييرات لدى بلديتك. ليست كل البلديات مدعومة."
+  },
+  "calendar.municipalityWebsite": {
+    "da": "Se kommunens hjemmeside",
+    "en": "Visit municipality website",
+    "ar": "زيارة موقع البلدية"
+  },
+  "calendar.reminders": {
+    "da": "Påmind mig før en afhentning",
+    "en": "Remind me before collection",
+    "ar": "ذكّرني قبل جمع النفايات"
+  },
+  "calendar.reminderTime": {
+    "da": "Tidspunkt",
+    "en": "Time",
+    "ar": "الوقت"
+  },
+  "calendar.eveningBefore": {
+    "da": "Aftenen før · kl. 18",
+    "en": "Evening before · 6 p.m.",
+    "ar": "المساء السابق · ٦ مساءً"
+  },
+  "calendar.morningBefore": {
+    "da": "Dagen før · kl. 9",
+    "en": "Day before · 9 a.m.",
+    "ar": "اليوم السابق · ٩ صباحًا"
+  },
+  "calendar.pickupMorning": {
+    "da": "På dagen · kl. 9",
+    "en": "Collection day · 9 a.m.",
+    "ar": "يوم الجمع · ٩ صباحًا"
+  },
+  "calendar.pickupTypes": {
+    "da": "Affaldsfraktioner",
+    "en": "Waste categories",
+    "ar": "فئات النفايات"
+  },
+  "calendar.pickupTypesDetail": {
+    "da": "Angiv de affaldsfraktioner, som du vil modtage notifikationer for.",
+    "en": "Choose which waste categories you want notifications for.",
+    "ar": "حدد فئات النفايات التي تريد تلقي إشعارات بشأنها."
+  },
+  "calendar.reminderTitle": {
+    "da": "Affald afhentes i morgen",
+    "en": "Waste collection tomorrow",
+    "ar": "جمع النفايات غدًا"
+  },
+  "calendar.reminderTitleToday": {
+    "da": "Affald afhentes i dag",
+    "en": "Waste collection today",
+    "ar": "جمع النفايات اليوم"
+  },
+  "calendar.reminderBody": {
+    "da": "Sæt dette frem: {0}",
+    "en": "Put out: {0}",
+    "ar": "أخرج: {0}"
+  },
+  "calendar.notificationDenied": {
+    "da": "Påmindelser kræver adgang til notifikationer. Du kan ændre det i Indstillinger.",
+    "en": "Reminders need notification access. You can change this in Settings.",
+    "ar": "تتطلب التذكيرات السماح بالإشعارات. يمكنك تغيير ذلك من الإعدادات."
+  },
+  "calendar.offline": {
+    "da": "Du er ikke forbundet til internettet. Opret forbindelse, og prøv igen for at se affaldskalenderen.",
+    "en": "You’re offline. Connect to the internet and try again to view the collection calendar.",
+    "ar": "أنت غير متصل بالإنترنت. اتصل بالإنترنت ثم حاول مرة أخرى لعرض تقويم جمع النفايات."
+  },
+  "calendar.retry": {
+    "da": "Prøv igen",
+    "en": "Try again",
+    "ar": "حاول مرة أخرى"
+  },
   "android.about.how.body": {
     "da": "Skriv navnet på en ting i søgefeltet, eller tag eller vælg et billede. Ved billedsøgning kan du indramme genstanden, så appen bedre kan foreslå mulige matches. Vælg den rigtige genstand for at se, hvordan den skal sorteres.\n\nI Danmark bruger kommunerne mange af de samme affaldstyper, men reglerne kan stadig variere fra sted til sted. Når du vælger din kommune, tager appen højde for de lokale regler, der er registreret for den. Du kan også finde oplysninger om kommunens affaldsordninger og din nærmeste genbrugsplads.\n\nVil du lære systemet lidt bedre at kende, kan du gå på opdagelse i affaldsfraktionerne og blandt andet lære, hvad affaldet bliver til. Dine seneste søgninger gør det nemt at finde tilbage til en genstand, du allerede har slået op. Appen har også præstationer, som giver et lille skulderklap undervejs. Finder du et svar, der ser forkert ud, er du velkommen til at kontakte os.\n\nSorteringsoplysningerne ligger lokalt i appens database, så du hurtigt kan slå ting op. Vi udbygger og retter løbende indholdet, men lokale ordninger kan ændre sig. Er du i tvivl, er din kommunes officielle vejledning altid det bedste sted at dobbelttjekke.",
     "en": "Type an item’s name into the search field, or take or choose a photo. For photo search, you can frame the object to help the app suggest possible matches. Choose the right item to see how to sort it.\n\nMunicipalities across Denmark use many of the same waste categories, but the rules can still vary from place to place. When you select your municipality, the app takes into account the local rules recorded for it. You can also find information about its waste collection schemes and your nearest recycling centre.\n\nWant to understand the system a little better? Explore the waste categories to learn, among other things, what the waste becomes. Your recent searches make it easy to return to something you have already looked up. The app also has achievements to mark your progress along the way. If you find an answer that looks wrong, you are welcome to contact us.\n\nThe sorting information is stored locally in the app’s database, so you can look things up quickly. We continually add to and correct the content, but local schemes can change. If you are unsure, your municipality’s official guidance is always the best place to double-check.",
@@ -18715,8 +19575,8 @@
     "ar": "تُقدَّم نتائج البحث والقواعد المحلية والمعلومات عن البلديات ومراكز إعادة التدوير على سبيل الإرشاد. نعمل على إبقاء المحتوى صحيحًا ومحدَّثًا، لكن قد تكون بعض المعلومات غير مكتملة، وقد تتغير خدمات البلديات.\n\nلا يحدد اقتراح البحث بالصورة الغرض على نحو مؤكد. اختر النتيجة الأنسب.\n\nعندما تختار بلدية أو قاعدة محلية، يعرض الدليل المعلومات التي سجّلناها لها. وهذا لا يضمن شمول جميع الترتيبات الخاصة بمسكنك.\n\nإذا كنت غير متأكد، فاتبع الإرشادات الرسمية لبلديتك. وهذا مهم خصوصًا للنفايات الخطرة والأدوية والبطاريات والنفايات التي تخضع لشروط خاصة عند تسليمها."
   },
   "android.privacy.body": {
-    "da": "Affaldsguide Danmark kan bruges uden en konto. Du behøver ikke oplyse navn, adresse eller e-mail for at søge efter affald. Sorteringsdatabasen ligger i appen, og almindelige tekst- og billedsøgninger behandles på din enhed. Billeder, du tager eller vælger til billedsøgning, sendes ikke til os.\n\nHvis du giver adgang til din placering, bruger appen den til at beregne afstanden til nærliggende genbrugspladser. Placeringen bruges på din enhed og gemmes ikke af os. Du kan ændre tilladelsen i Androids indstillinger. Hvis du åbner en adresse i en kortapp, gælder den valgte kortapps egne vilkår og privatlivspolitik.\n\nAppen gemmer dine seneste søgninger, valgte kommune, sprog, onboardingstatus og fremskridt med præstationer lokalt på din enhed. Du kan fjerne disse oplysninger ved at slette appen. Der kræves ingen konto, og oplysningerne sendes ikke til os som led i almindelig brug.\n\nHvis du sender et forslag til rettelse i appen, sendes genstandens navn, den viste sortering, den kategori du foreslår, en eventuel kommentar og den valgte sprogkode til mit-affald.dk. Vi bruger oplysningerne til at undersøge forslaget og forbedre guiden. Skriv ikke følsomme oplysninger i kommentarfeltet.\n\nAndroid-appen viser annoncer via Google AdMob. Google og deres partnere kan behandle oplysninger som enheds- og annonce-id, IP-adresse og interaktioner med annoncer for at levere og måle annoncer. Du kan administrere annonceringsindstillinger på din enhed. Læs mere i Googles privatlivspolitik på https://policies.google.com/privacy.\n\nHvis du kontakter os via e-mail om en sortering eller et andet spørgsmål, behandler vi de oplysninger, du sender, for at kunne besvare og undersøge din henvendelse. Skriv ikke følsomme oplysninger. Vi opbevarer henvendelsen, så længe det er nødvendigt for at behandle den og vedligeholde guiden, og sletter eller anonymiserer den derefter, medmindre lovgivningen kræver længere opbevaring. Du kan bede om indsigt i eller sletning af oplysninger fra din henvendelse ved at skrive til info@simplecode.dk og give oplysninger nok til, at vi kan finde den.\n\nVi sælger ikke personoplysninger. Hvis appens databehandling ændres, opdaterer vi denne tekst. Spørgsmål om privatliv kan sendes til info@simplecode.dk.",
-    "en": "Affaldsguide Danmark can be used without an account. You do not need to provide your name, address or email address to search for waste items. The sorting database is stored in the app, and ordinary text and photo searches are processed on your device. Photos you take or choose for photo search are not sent to us.\n\nIf you allow location access, the app uses your location to calculate the distance to nearby recycling centres. Your location is used on your device and is not stored by us. You can change this permission in your Android settings. If you open an address in a maps app, that app’s own terms and privacy policy apply.\n\nThe app stores your recent searches, selected municipality, language, onboarding status and achievement progress locally on your device. You can remove this information by deleting the app. No account is required, and this information is not sent to us during ordinary use.\n\nIf you submit a sorting correction in the app, the item name, displayed sorting, suggested category, any comment and the selected language code are sent to mit-affald.dk. We use this information to review your suggestion and improve the guide. Do not include sensitive information in the comment.\n\nThe Android app displays ads through Google AdMob. Google and its partners may process information such as device and advertising identifiers, IP address and interactions with ads to deliver and measure advertising. You can manage advertising settings on your device. Read more in Google’s privacy policy at https://policies.google.com/privacy.\n\nIf you contact us by email about a sorting result or another question, we process the information you send to investigate and answer your message. Do not include sensitive information. We keep the message for as long as needed to handle it and maintain the guide, then delete or anonymise it unless the law requires longer retention. To request access to or deletion of information in your message, write to info@simplecode.dk and provide enough detail for us to find it.\n\nWe do not sell personal information. If the app’s data practices change, we will update this text. Send privacy questions to info@simplecode.dk.",
-    "ar": "يمكن استخدام Affaldsguide Danmark دون إنشاء حساب. ولا تحتاج إلى تقديم اسمك أو عنوانك أو بريدك الإلكتروني للبحث عن النفايات. قاعدة بيانات الفرز محفوظة داخل التطبيق، وتُعالج عمليات البحث النصي والبحث بالصور على جهازك. ولا تُرسل إلينا الصور التي تلتقطها أو تختارها للبحث.\n\nإذا سمحت بالوصول إلى موقعك، يستخدمه التطبيق لحساب المسافة إلى مراكز إعادة التدوير القريبة. يُستخدم الموقع على جهازك ولا نخزنه لدينا. يمكنك تغيير هذا الإذن من إعدادات Android. وإذا فتحت عنوانًا في تطبيق خرائط، فتسري شروط ذلك التطبيق وسياسة خصوصيته.\n\nيحفظ التطبيق عمليات البحث الأخيرة والبلدية المختارة واللغة وحالة الإعداد الأولي والتقدم في الإنجازات محليًا على جهازك. يمكنك إزالة هذه المعلومات بحذف التطبيق. لا يلزم إنشاء حساب، ولا تُرسل هذه المعلومات إلينا أثناء الاستخدام المعتاد.\n\nإذا أرسلت اقتراحًا لتصحيح الفرز من داخل التطبيق، يُرسل اسم الغرض وطريقة الفرز المعروضة والفئة التي تقترحها وأي تعليق ورمز اللغة المختارة إلى mit-affald.dk. نستخدم هذه المعلومات لمراجعة الاقتراح وتحسين الدليل. لا تكتب معلومات حساسة في حقل التعليق.\n\nيعرض تطبيق Android إعلانات عبر Google AdMob. قد تعالج Google وشركاؤها معلومات مثل معرّفات الجهاز والإعلان وعنوان IP والتفاعل مع الإعلانات لتقديم الإعلانات وقياسها. يمكنك إدارة إعدادات الإعلانات على جهازك. يمكنك قراءة المزيد في سياسة خصوصية Google على https://policies.google.com/privacy.\n\nإذا تواصلت معنا عبر البريد الإلكتروني بشأن نتيجة فرز أو أي سؤال آخر، نعالج المعلومات التي ترسلها للتحقيق في رسالتك والرد عليها. لا ترسل معلومات حساسة. نحتفظ بالرسالة ما دامت ضرورية لمعالجتها وصيانة الدليل، ثم نحذفها أو نجعلها مجهولة الهوية ما لم يقتضِ القانون الاحتفاظ بها مدة أطول. لطلب الاطلاع على معلومات رسالتك أو حذفها، راسل info@simplecode.dk وقدّم تفاصيل كافية للعثور عليها.\n\nلا نبيع المعلومات الشخصية. إذا تغيرت طريقة معالجة البيانات في التطبيق، فسنحدّث هذا النص. يمكنك إرسال أسئلة الخصوصية إلى info@simplecode.dk."
+    "da": "Affaldsguide Danmark kan bruges uden en konto. Du behøver ikke oplyse navn, adresse eller e-mail for at søge efter affald. Sorteringsdatabasen ligger i appen, og tekstsøgning behandles på din enhed. Når du bruger billedsøgning, sendes et formindsket billede via mit-affald.dk til Google Gemini for at foreslå genstande. Hvis online billedsøgning ikke virker, analyseres billedet på din enhed med Google ML Kit. Sorteringsresultatet findes fortsat i appens lokale database.\n\nHvis du giver adgang til din placering, bruger appen den til at beregne afstanden til nærliggende genbrugspladser. Placeringen bruges på din enhed og gemmes ikke af os. Du kan ændre tilladelsen i Androids indstillinger. Hvis du åbner en adresse i en kortapp, gælder den valgte kortapps egne vilkår og privatlivspolitik.\n\nAppen gemmer dine seneste søgninger, valgte kommune, sprog, onboardingstatus og fremskridt med præstationer lokalt på din enhed. Du kan fjerne disse oplysninger ved at slette appen. Der kræves ingen konto, og oplysningerne sendes ikke til os som led i almindelig brug.\n\nHvis du sender et forslag til rettelse i appen, sendes genstandens navn, den viste sortering, den kategori du foreslår, en eventuel kommentar og den valgte sprogkode til mit-affald.dk. Vi bruger oplysningerne til at undersøge forslaget og forbedre guiden. Skriv ikke følsomme oplysninger i kommentarfeltet.\n\nHvis du kontakter os via e-mail om en sortering eller et andet spørgsmål, behandler vi de oplysninger, du sender, for at kunne besvare og undersøge din henvendelse. Skriv ikke følsomme oplysninger. Vi opbevarer henvendelsen, så længe det er nødvendigt for at behandle den og vedligeholde guiden, og sletter eller anonymiserer den derefter, medmindre lovgivningen kræver længere opbevaring. Du kan bede om indsigt i eller sletning af oplysninger fra din henvendelse ved at skrive til info@simplecode.dk og give oplysninger nok til, at vi kan finde den.\n\nVi sælger ikke personoplysninger. Hvis appens databehandling ændres, opdaterer vi denne tekst. Spørgsmål om privatliv kan sendes til info@simplecode.dk.\n\nI affaldskalenderen sendes den kommune og adresse, du søger efter, via mit-affald.dk til Affald-DK og den lokale affaldsordning for at hente kommende afhentninger. Den valgte adresse og dine indstillinger for påmindelser gemmes på din enhed. Hvis du tillader notifikationer, planlægges påmindelser lokalt på enheden. Du kan slå dem fra eller skifte adresse i kalenderen.",
+    "en": "Affaldsguide Danmark can be used without an account. You do not need to provide your name, address or email address to search for waste items. The sorting database is stored in the app, and text searches are processed on your device. When you use photo search, a reduced photo is sent via mit-affald.dk to Google Gemini to suggest items. If online photo search fails, the photo is analyzed on your device with Google ML Kit. The sorting result still comes from the app’s local database.\n\nIf you allow location access, the app uses your location to calculate the distance to nearby recycling centres. Your location is used on your device and is not stored by us. You can change this permission in your Android settings. If you open an address in a maps app, that app’s own terms and privacy policy apply.\n\nThe app stores your recent searches, selected municipality, language, onboarding status and achievement progress locally on your device. You can remove this information by deleting the app. No account is required, and this information is not sent to us during ordinary use.\n\nIf you submit a sorting correction in the app, the item name, displayed sorting, suggested category, any comment and the selected language code are sent to mit-affald.dk. We use this information to review your suggestion and improve the guide. Do not include sensitive information in the comment.\n\nIf you contact us by email about a sorting result or another question, we process the information you send to investigate and answer your message. Do not include sensitive information. We keep the message for as long as needed to handle it and maintain the guide, then delete or anonymise it unless the law requires longer retention. To request access to or deletion of information in your message, write to info@simplecode.dk and provide enough detail for us to find it.\n\nWe do not sell personal information. If the app’s data practices change, we will update this text. Send privacy questions to info@simplecode.dk.\n\nIn the collection calendar, the municipality and address you search for are sent via mit-affald.dk to Affald-DK and the local waste provider to retrieve upcoming collections. Your selected address and reminder settings are stored on your device. If you allow notifications, reminders are scheduled locally on the device. You can turn them off or change your address in the calendar.",
+    "ar": "يمكن استخدام Affaldsguide Danmark دون إنشاء حساب. ولا تحتاج إلى تقديم اسمك أو عنوانك أو بريدك الإلكتروني للبحث عن النفايات. قاعدة بيانات الفرز محفوظة داخل التطبيق، وتُعالج عمليات البحث النصي على جهازك. عند استخدام البحث بالصورة، تُرسل صورة مصغّرة عبر mit-affald.dk إلى Google Gemini لاقتراح عناصر. وإذا فشل البحث عبر الإنترنت، تُحلَّل الصورة على جهازك باستخدام Google ML Kit. تظل نتيجة الفرز مستمدة من قاعدة البيانات المحلية في التطبيق.\n\nإذا سمحت بالوصول إلى موقعك، يستخدمه التطبيق لحساب المسافة إلى مراكز إعادة التدوير القريبة. يُستخدم الموقع على جهازك ولا نخزنه لدينا. يمكنك تغيير هذا الإذن من إعدادات Android. وإذا فتحت عنوانًا في تطبيق خرائط، فتسري شروط ذلك التطبيق وسياسة خصوصيته.\n\nيحفظ التطبيق عمليات البحث الأخيرة والبلدية المختارة واللغة وحالة الإعداد الأولي والتقدم في الإنجازات محليًا على جهازك. يمكنك إزالة هذه المعلومات بحذف التطبيق. لا يلزم إنشاء حساب، ولا تُرسل هذه المعلومات إلينا أثناء الاستخدام المعتاد.\n\nإذا أرسلت اقتراحًا لتصحيح الفرز من داخل التطبيق، يُرسل اسم الغرض وطريقة الفرز المعروضة والفئة التي تقترحها وأي تعليق ورمز اللغة المختارة إلى mit-affald.dk. نستخدم هذه المعلومات لمراجعة الاقتراح وتحسين الدليل. لا تكتب معلومات حساسة في حقل التعليق.\n\nإذا تواصلت معنا عبر البريد الإلكتروني بشأن نتيجة فرز أو أي سؤال آخر، نعالج المعلومات التي ترسلها للتحقيق في رسالتك والرد عليها. لا ترسل معلومات حساسة. نحتفظ بالرسالة ما دامت ضرورية لمعالجتها وصيانة الدليل، ثم نحذفها أو نجعلها مجهولة الهوية ما لم يقتضِ القانون الاحتفاظ بها مدة أطول. لطلب الاطلاع على معلومات رسالتك أو حذفها، راسل info@simplecode.dk وقدّم تفاصيل كافية للعثور عليها.\n\nلا نبيع المعلومات الشخصية. إذا تغيرت طريقة معالجة البيانات في التطبيق، فسنحدّث هذا النص. يمكنك إرسال أسئلة الخصوصية إلى info@simplecode.dk.\n\nفي تقويم جمع النفايات، تُرسل البلدية والعنوان اللذان تبحث عنهما عبر mit-affald.dk إلى Affald-DK والجهة المحلية المسؤولة عن النفايات لجلب مواعيد الجمع القادمة. يُحفظ العنوان المختار وإعدادات التذكير على جهازك. وإذا سمحت بالإشعارات، تُجدول التذكيرات محليًا على الجهاز. يمكنك إيقافها أو تغيير العنوان في التقويم."
   }
 }

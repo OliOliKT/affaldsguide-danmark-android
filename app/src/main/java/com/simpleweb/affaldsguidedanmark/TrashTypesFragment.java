@@ -46,7 +46,6 @@ public class TrashTypesFragment extends Fragment {
         trashTypeAdapter.setData(trashTypes);
         updateEmptyState(trashTypes.isEmpty());
 
-        NativeAdHelper.loadNativeAd(requireContext(), view);
 
         return view;
     }

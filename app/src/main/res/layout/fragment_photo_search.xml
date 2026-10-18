@@ -26,10 +26,30 @@
         android:id="@+id/photoHint"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="14dp"
         android:gravity="center"
         android:textColor="@color/text_color"
         android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/photoResultsHeading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/text_color"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/photoResultsNote"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:textColor="@color/grey_black"
+        android:textSize="13sp"
+        android:visibility="gone" />
 
     <LinearLayout
         android:id="@+id/photoCandidates"
@@ -40,16 +60,31 @@
     <Button
         android:id="@+id/analyzeSelection"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:layout_marginTop="12dp"
-        android:backgroundTint="@color/green_light"
-        android:textAllCaps="false" />
+        android:layout_height="52dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/photo_search_primary_button"
+        android:backgroundTint="@null"
+        android:textColor="@color/white"
+        android:textAllCaps="false"
+        android:visibility="gone" />
 
     <Button
         android:id="@+id/analyzeFullImage"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:layout_marginTop="6dp"
-        android:backgroundTint="@color/green_light"
+        android:layout_height="52dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/photo_search_primary_button"
+        android:backgroundTint="@null"
+        android:textColor="@color/white"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/replacePhotoButton"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/photo_search_primary_button"
+        android:backgroundTint="@null"
+        android:textColor="@color/white"
         android:textAllCaps="false" />
 </LinearLayout>

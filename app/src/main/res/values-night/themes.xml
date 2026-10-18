@@ -12,6 +12,5 @@
         <!-- Remove top banner -->
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
-        <item name="android:forceDarkAllowed">false</item>
     </style>
 </resources>

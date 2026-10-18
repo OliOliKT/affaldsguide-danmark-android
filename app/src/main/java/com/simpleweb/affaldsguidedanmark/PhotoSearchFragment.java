@@ -2,6 +2,7 @@ package com.simpleweb.affaldsguidedanmark;
 
 import android.graphics.Bitmap;
 import android.graphics.ImageDecoder;
+import android.graphics.drawable.GradientDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -12,9 +13,14 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.PickVisualMediaRequest;
+import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.core.content.FileProvider;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
@@ -36,6 +42,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.io.File;
 
 public class PhotoSearchFragment extends Fragment {
     private static final String TAG = "PhotoSearch";
@@ -43,8 +50,21 @@ public class PhotoSearchFragment extends Fragment {
     private PhotoSelectionView photoSelection;
     private LinearLayout candidatesContainer;
     private TextView hint;
+    private TextView resultsHeading;
+    private TextView resultsNote;
     private Button analyzeSelection, analyzeFullImage;
+    private Button replacePhotoButton;
     private Bitmap bitmap;
+    private Uri pendingCameraUri;
+    private final ActivityResultLauncher<PickVisualMediaRequest> pickReplacementPhoto =
+            registerForActivityResult(new ActivityResultContracts.PickVisualMedia(), uri -> {
+                if (uri != null) loadReplacementPhoto(uri);
+            });
+    private final ActivityResultLauncher<Uri> takeReplacementPhoto =
+            registerForActivityResult(new ActivityResultContracts.TakePicture(), success -> {
+                if (Boolean.TRUE.equals(success) && pendingCameraUri != null)
+                    loadReplacementPhoto(pendingCameraUri);
+            });
     private boolean recordedSelection;
     private TrashDB trashDB;
     private final ImageLabeler labeler = ImageLabeling.getClient(ImageLabelerOptions.DEFAULT_OPTIONS);
@@ -57,12 +77,29 @@ public class PhotoSearchFragment extends Fragment {
         photoSelection = root.findViewById(R.id.photoSelection);
         candidatesContainer = root.findViewById(R.id.photoCandidates);
         hint = root.findViewById(R.id.photoHint);
+        resultsHeading = root.findViewById(R.id.photoResultsHeading);
+        resultsNote = root.findViewById(R.id.photoResultsNote);
         analyzeSelection = root.findViewById(R.id.analyzeSelection);
         analyzeFullImage = root.findViewById(R.id.analyzeFullImage);
+        replacePhotoButton = root.findViewById(R.id.replacePhotoButton);
+        photoSelection.setOnSelectionChangedListener(hasSelection ->
+                analyzeSelection.setVisibility(hasSelection ? View.VISIBLE : View.GONE));
         ((TextView) root.findViewById(R.id.photoTitle)).setText(InfoPageText.get(requireContext(), "photosearchview.005"));
         hint.setText(InfoPageText.get(requireContext(), "photo.objectSelectionHint"));
+        resultsHeading.setText(InfoPageText.get(requireContext(), "photosearchview.003"));
+        resultsNote.setText(InfoPageText.get(requireContext(), "photosearchview.004"));
         analyzeSelection.setText(InfoPageText.get(requireContext(), "photo.analyzeSelection"));
         analyzeFullImage.setText(InfoPageText.get(requireContext(), "photo.useFullImage"));
+        boolean fromCamera = getArguments() != null
+                && "camera".equals(getArguments().getString("photoSource"));
+        replacePhotoButton.setText(InfoPageText.get(requireContext(),
+                fromCamera ? "photo.takeAnother" : "photo.chooseAnother"));
+        replacePhotoButton.setOnClickListener(view -> {
+            if (fromCamera) openCameraForReplacement();
+            else pickReplacementPhoto.launch(new PickVisualMediaRequest.Builder()
+                    .setMediaType(ActivityResultContracts.PickVisualMedia.ImageOnly.INSTANCE)
+                    .build());
+        });
         analyzeSelection.setOnClickListener(view -> {
             Bitmap cropped = photoSelection.selectedBitmap();
             if (cropped == null) {
@@ -96,6 +133,11 @@ public class PhotoSearchFragment extends Fragment {
             if (isAdded()) requireActivity().runOnUiThread(() -> {
                 bitmap = decoded;
                 photoSelection.setBitmap(decoded);
+                candidatesContainer.removeAllViews();
+                resultsHeading.setVisibility(View.GONE);
+                resultsNote.setVisibility(View.GONE);
+                hint.setText(InfoPageText.get(requireContext(), "photo.objectSelectionHint"));
+                hint.setVisibility(View.VISIBLE);
                 setBusy(false);
             });
         } catch (Exception error) {
@@ -107,7 +149,33 @@ public class PhotoSearchFragment extends Fragment {
     private void analyze(Bitmap image) {
         setBusy(true);
         candidatesContainer.removeAllViews();
+        resultsHeading.setVisibility(View.GONE);
+        resultsNote.setVisibility(View.GONE);
+        hint.setVisibility(View.VISIBLE);
         hint.setText(InfoPageText.get(requireContext(), "photosearchview.001"));
+        imageExecutor.execute(() -> {
+            try {
+                List<String> evidence = OnlinePhotoRecognition.recognize(image);
+                if (!isAdded()) return;
+                List<PhotoCandidate> matches = rankCandidatesFromEvidence(evidence, 0.65, true);
+                if (matches.isEmpty()) {
+                    Log.i(TAG, "Online recognition returned no matching waste item");
+                    requireActivity().runOnUiThread(() -> {
+                        analyzeLocally(image);
+                    });
+                    return;
+                }
+                requireActivity().runOnUiThread(() -> {
+                    if (isAdded()) showAnalysisResults(matches);
+                });
+            } catch (Exception error) {
+                Log.w(TAG, "Online photo recognition unavailable", error);
+                if (isAdded()) requireActivity().runOnUiThread(() -> analyzeLocally(image));
+            }
+        });
+    }
+
+    private void analyzeLocally(Bitmap image) {
         InputImage input = InputImage.fromBitmap(image, 0);
         Task<List<ImageLabel>> labels = labeler.process(input);
         Task<Text> text = recognizer.process(input);
@@ -121,15 +189,21 @@ public class PhotoSearchFragment extends Fragment {
             List<ImageLabel> labelValues = labels.isSuccessful() ? labels.getResult() : Collections.emptyList();
             Text textValue = text.isSuccessful() ? text.getResult() : null;
             List<PhotoCandidate> matches = rankCandidates(labelValues, textValue);
-            if (matches.isEmpty()) {
-                hint.setText(InfoPageText.get(requireContext(), "photosearchview.002") + "\n"
-                        + InfoPageText.get(requireContext(), "photosearchview.007"));
-            } else {
-                hint.setText(InfoPageText.get(requireContext(), "photosearchview.003") + "\n"
-                        + InfoPageText.get(requireContext(), "photosearchview.004"));
-                showCandidates(matches);
-            }
+            showAnalysisResults(matches);
         });
+    }
+
+    private void showAnalysisResults(List<PhotoCandidate> matches) {
+        setBusy(false);
+        if (matches.isEmpty()) {
+            hint.setText(InfoPageText.get(requireContext(), "photosearchview.002") + "\n"
+                    + InfoPageText.get(requireContext(), "photosearchview.007"));
+        } else {
+            hint.setVisibility(View.GONE);
+            resultsHeading.setVisibility(View.VISIBLE);
+            resultsNote.setVisibility(View.VISIBLE);
+            showCandidates(matches);
+        }
     }
 
     private List<PhotoCandidate> rankCandidates(List<ImageLabel> labels, Text recognizedText) {
@@ -151,6 +225,14 @@ public class PhotoSearchFragment extends Fragment {
                 }
             }
         }
+        return rankCandidatesFromEvidence(evidence, 0.70);
+    }
+
+    private List<PhotoCandidate> rankCandidatesFromEvidence(List<String> evidence, double threshold) {
+        return rankCandidatesFromEvidence(evidence, threshold, false);
+    }
+
+    private List<PhotoCandidate> rankCandidatesFromEvidence(List<String> evidence, double threshold, boolean online) {
         if (evidence.isEmpty() || trashDB.trashItems == null) return Collections.emptyList();
         List<PhotoCandidate> results = new ArrayList<>();
         boolean useEnglish = LanguageManager.usesNonDanishContent(requireContext());
@@ -160,10 +242,12 @@ public class PhotoSearchFragment extends Fragment {
             String danish = normalize(item.product);
             double best = 0;
             for (String phrase : evidence) {
-                double score = Math.max(match(phrase, english), match(phrase, danish));
+                String normalized = normalize(phrase);
+                double score = Math.max(online ? onlineMatch(normalized, english) : match(normalized, english),
+                        online ? onlineMatch(normalized, danish) : match(normalized, danish));
                 best = Math.max(best, score);
             }
-            if (best >= 0.70) results.add(new PhotoCandidate(item.getDisplayProduct(useEnglish), best));
+            if (best >= threshold) results.add(new PhotoCandidate(item.getDisplayProduct(useEnglish), best));
         }
         results.sort((a, b) -> Double.compare(b.score, a.score));
         List<PhotoCandidate> distinct = new ArrayList<>();
@@ -195,6 +279,19 @@ public class PhotoSearchFragment extends Fragment {
         return 0;
     }
 
+    private static double onlineMatch(String evidence, String product) {
+        if (evidence.length() < 3 || product.length() < 2) return 0;
+        if (evidence.equals(product)) return 1;
+        if (evidence.contains(product) && product.length() >= 4) return 0.92;
+        if (product.contains(evidence) && evidence.length() >= 4) return 0.84;
+        java.util.Set<String> evidenceWords = new java.util.HashSet<>(java.util.Arrays.asList(evidence.split(" ")));
+        java.util.Set<String> productWords = new java.util.HashSet<>(java.util.Arrays.asList(product.split(" ")));
+        evidenceWords.retainAll(productWords);
+        if (evidenceWords.isEmpty()) return 0;
+        int maxWords = Math.max(evidence.split(" ").length, product.split(" ").length);
+        return 0.58 + 0.25 * evidenceWords.size() / maxWords;
+    }
+
     private static List<String> labelAliases(String label) {
         switch (label) {
             case "cellular telephone":
@@ -213,13 +310,19 @@ public class PhotoSearchFragment extends Fragment {
         for (PhotoCandidate candidate : matches) {
             LinearLayout row = new LinearLayout(requireContext());
             row.setGravity(android.view.Gravity.CENTER_VERTICAL);
-            row.setPadding(12, 8, 12, 8);
+            row.setPadding(dp(12), dp(12), dp(12), dp(12));
             row.setBackgroundResource(R.drawable.search_group_background);
             LinearLayout.LayoutParams rowParams = new LinearLayout.LayoutParams(
-                    ViewGroup.LayoutParams.MATCH_PARENT, dp(60));
+                    ViewGroup.LayoutParams.MATCH_PARENT, dp(70));
             rowParams.topMargin = dp(7);
             ImageView pictogram = new ImageView(requireContext());
             pictogram.setLayoutParams(new LinearLayout.LayoutParams(dp(46), dp(46)));
+            pictogram.setScaleType(ImageView.ScaleType.FIT_CENTER);
+            GradientDrawable roundedPictogram = new GradientDrawable();
+            roundedPictogram.setColor(0xFFFFFFFF);
+            roundedPictogram.setCornerRadius(dp(8));
+            pictogram.setBackground(roundedPictogram);
+            pictogram.setClipToOutline(true);
             trashDB.searchProductJson(candidate.name, useEnglish, municipality, sorting -> {
                 if (!sorting.isEmpty()) {
                     String category = sorting.keySet().iterator().next();
@@ -247,9 +350,29 @@ public class PhotoSearchFragment extends Fragment {
     }
 
     private int dp(int value) { return Math.round(value * getResources().getDisplayMetrics().density); }
+    private void loadReplacementPhoto(Uri uri) {
+        setBusy(true);
+        imageExecutor.execute(() -> decodeImage(uri));
+    }
+
+    private void openCameraForReplacement() {
+        try {
+            File directory = new File(requireContext().getCacheDir(), "photo_search");
+            if (!directory.exists() && !directory.mkdirs()) throw new java.io.IOException("Cannot create camera directory");
+            File image = File.createTempFile("capture_", ".jpg", directory);
+            pendingCameraUri = FileProvider.getUriForFile(requireContext(),
+                    requireContext().getPackageName() + ".fileprovider", image);
+            takeReplacementPhoto.launch(pendingCameraUri);
+        } catch (Exception error) {
+            Log.e(TAG, "Could not open camera", error);
+            Toast.makeText(requireContext(), InfoPageText.get(requireContext(), "photosearchview.008"), Toast.LENGTH_LONG).show();
+        }
+    }
+
     private void setBusy(boolean busy) {
         analyzeSelection.setEnabled(!busy);
         analyzeFullImage.setEnabled(!busy);
+        replacePhotoButton.setEnabled(!busy);
     }
     private void showFailure() {
         setBusy(false);

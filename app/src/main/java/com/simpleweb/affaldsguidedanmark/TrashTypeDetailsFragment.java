@@ -1,7 +1,9 @@
 package com.simpleweb.affaldsguidedanmark;
 
 import android.os.Bundle;
+import android.content.Intent;
 import android.graphics.Typeface;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -47,6 +49,10 @@ public class TrashTypeDetailsFragment extends Fragment {
 
         TextView nameTextView = view.findViewById(R.id.detail_name);
         TextView descriptionTextView = view.findViewById(R.id.affaldsfraktionBeskrivelse);
+        LinearLayout municipalityStatus = view.findViewById(R.id.fractionMunicipalityStatus);
+        TextView municipalityStatusIcon = view.findViewById(R.id.fractionMunicipalityStatusIcon);
+        TextView municipalityStatusText = view.findViewById(R.id.fractionMunicipalityStatusText);
+        TextView municipalityStatusSource = view.findViewById(R.id.fractionMunicipalityStatusSource);
         LinearLayout extendedDescriptionContainer = view.findViewById(R.id.affaldsfraktionUdvidetBeskrivelseContainer);
         ImageView imageView = view.findViewById(R.id.affaldsfraktionBillede);
         TextView pros_description = view.findViewById(R.id.pros_description);
@@ -84,6 +90,8 @@ public class TrashTypeDetailsFragment extends Fragment {
             if (enhancement != null && enhancement.summary != null && !enhancement.summary.trim().isEmpty()) {
                 descriptionTextView.setText(enhancement.summary);
             }
+            showMunicipalityStatus(municipalityStatus, municipalityStatusIcon, municipalityStatusText,
+                    municipalityStatusSource, trashType);
             descriptionTextView.setVisibility(View.VISIBLE);
             trashCategoriesLayout.setVisibility(enhancement != null ? View.GONE : View.VISIBLE);
 
@@ -159,6 +167,50 @@ public class TrashTypeDetailsFragment extends Fragment {
 
 
         return view;
+    }
+
+    private void showMunicipalityStatus(LinearLayout container, TextView icon, TextView label,
+                                        TextView sourceLink, TrashType trashType) {
+        String selectedName = SavedMunicipalityManager.getSavedMunicipalityName(requireContext());
+        if (selectedName == null || selectedName.trim().isEmpty()) {
+            container.setVisibility(View.GONE);
+            return;
+        }
+        Municipality municipality = null;
+        for (Municipality candidate : new MunicipalityDB(getResources()).getMunicipalities()) {
+            if (selectedName.equalsIgnoreCase(candidate.getMunicipality())) {
+                municipality = candidate;
+                break;
+            }
+        }
+        if (municipality == null) {
+            container.setVisibility(View.GONE);
+            return;
+        }
+
+        String category = trashType.getDanishNavn();
+        MunicipalityFractionStatus.Status status = MunicipalityFractionStatus.forCategory(municipality, category);
+        container.setVisibility(View.VISIBLE);
+        if (status == MunicipalityFractionStatus.Status.UNCONFIRMED) {
+            icon.setVisibility(View.GONE);
+            label.setText(R.string.fraction_status_unconfirmed);
+        } else {
+            boolean used = status == MunicipalityFractionStatus.Status.USED;
+            icon.setVisibility(View.VISIBLE);
+            icon.setText(used ? "✓" : "✕");
+            icon.setTextColor(getResources().getColor(used ? R.color.green_light : R.color.soft_red));
+            label.setText(getString(used ? R.string.fraction_status_used_in : R.string.fraction_status_not_used_in,
+                    trashType.getNavn(), municipality.getMunicipality()));
+        }
+
+        String sourceUrl = MunicipalityFractionStatus.confirmedSource(municipality, category);
+        Uri sourceUri = sourceUrl == null ? null : Uri.parse(sourceUrl);
+        if (sourceUri != null && "https".equalsIgnoreCase(sourceUri.getScheme()) && sourceUri.getHost() != null) {
+            sourceLink.setVisibility(View.VISIBLE);
+            sourceLink.setOnClickListener(v -> startActivity(new Intent(Intent.ACTION_VIEW, sourceUri)));
+        } else {
+            sourceLink.setVisibility(View.GONE);
+        }
     }
 
     private String getLowercaseFractionName(String fractionName, boolean useEnglish) {

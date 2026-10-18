@@ -72,6 +72,49 @@
             app:layout_constraintTop_toBottomOf="@+id/affaldsfraktionBillede" />
 
         <LinearLayout
+            android:id="@+id/fractionMunicipalityStatus"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/affaldsfraktionBeskrivelse">
+
+            <TextView
+                android:id="@+id/fractionMunicipalityStatusIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:importantForAccessibility="no"
+                android:textSize="48sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/fractionMunicipalityStatusText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/text_color"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/fractionMunicipalityStatusSource"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:minHeight="44dp"
+                android:gravity="center"
+                android:text="@string/fraction_status_source"
+                android:textColor="@color/green_dark"
+                android:textSize="13sp"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <LinearLayout
             android:id="@+id/fractionEnhancementContainer"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -80,7 +123,7 @@
             android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/affaldsfraktionBeskrivelse" />
+            app:layout_constraintTop_toBottomOf="@+id/fractionMunicipalityStatus" />
 
         <LinearLayout
             android:id="@+id/fractionExamplesContainer"

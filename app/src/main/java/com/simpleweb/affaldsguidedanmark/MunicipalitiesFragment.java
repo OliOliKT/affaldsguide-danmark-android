@@ -32,7 +32,6 @@ public class MunicipalitiesFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        NativeAdHelper.loadNativeAd(requireContext(), view);
 
         MunicipalityDB municipalityDB = new MunicipalityDB(getResources());
         List<Municipality> municipalities = municipalityDB.getMunicipalities();

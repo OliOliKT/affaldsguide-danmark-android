@@ -20,7 +20,6 @@ public class ContactInformationFragment extends Fragment {
         InfoPageText.set(v.findViewById(R.id.contactPageTitle), "moreinfoview.011");
         InfoPageText.set(v.findViewById(R.id.contactPageBody), "moreinfoview.012");
 
-        NativeAdHelper.loadNativeAd(requireContext(), v);
 
         return v;
     }

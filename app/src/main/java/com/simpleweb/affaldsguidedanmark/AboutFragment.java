@@ -24,7 +24,6 @@ public class AboutFragment extends Fragment {
         InfoPageText.set(v.findViewById(R.id.aboutHowTitle), "moreinfoview.009");
         InfoPageText.set(v.findViewById(R.id.aboutHowBody), "android.about.how.body");
 
-        NativeAdHelper.loadNativeAd(requireContext(), v);
 
         return v;
     }

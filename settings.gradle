@@ -14,4 +14,3 @@ dependencyResolutionManagement {
 }
 rootProject.name = "MitAffaldV4"
 include ':app'
-include ':nativetemplates'

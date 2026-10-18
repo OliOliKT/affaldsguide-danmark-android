@@ -99,8 +99,10 @@
                 android:text="@string/dansk"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
+                android:fontFamily="sans-serif"
+                android:textFontWeight="400"
                 android:textSize="22sp"
-                android:textStyle="bold" />
+                android:textStyle="normal" />
 
             <Button
                 android:id="@+id/englishLanguageOption"
@@ -112,8 +114,10 @@
                 android:text="@string/engelsk"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
+                android:fontFamily="sans-serif"
+                android:textFontWeight="400"
                 android:textSize="22sp"
-                android:textStyle="bold" />
+                android:textStyle="normal" />
 
             <Button
                 android:id="@+id/arabicLanguageOption"
@@ -124,8 +128,10 @@
                 android:text="@string/arabic_language"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
+                android:fontFamily="sans-serif"
+                android:textFontWeight="400"
                 android:textSize="22sp"
-                android:textStyle="bold" />
+                android:textStyle="normal" />
         </LinearLayout>
 
         <LinearLayout
@@ -190,22 +196,43 @@
                     android:textSize="16sp" />
             </LinearLayout>
 
-            <TextView
+            <LinearLayout
                 android:id="@+id/greetingSelectedMunicipality"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:textColor="@color/green_dark"
-                android:textSize="14sp"
-                android:textStyle="bold"
-                android:visibility="gone"
-                tools:text="Valgt kommune: Aarhus Kommune" />
+                android:layout_height="58dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/onboarding_municipality_selected"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="24dp"
+                    android:contentDescription="@null"
+                    android:src="@drawable/onboarding_selected_icon"
+                    app:tint="@color/green_dark" />
+
+                <TextView
+                    android:id="@+id/greetingSelectedMunicipalityName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_weight="1"
+                    android:textColor="@color/text_color"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    tools:text="Aarhus Kommune" />
+            </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/greetingMunicipalityList"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="16dp"
                 android:layout_weight="1"
                 android:clipToPadding="false"
                 android:paddingBottom="8dp" />
