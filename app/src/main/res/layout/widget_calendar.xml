@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:id="@+id/calendarWidgetRoot" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:background="@drawable/widget_photo_search_background" android:padding="14dp">
+<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical">
+<ImageView android:id="@+id/calendarWidgetHeaderIcon" android:layout_width="20dp" android:layout_height="20dp" android:layout_marginEnd="7dp" android:src="@drawable/bottom_menu_calendar_icon" android:tint="#FFFFFF" android:visibility="gone" android:importantForAccessibility="no"/>
+<TextView android:id="@+id/calendarWidgetTitle" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="@string/widget_calendar_name" android:textColor="#FFFFFF" android:textSize="16sp" android:textStyle="bold" android:maxLines="1" android:ellipsize="end"/>
+</LinearLayout>
+<TextView android:id="@+id/calendarWidgetAddress" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="3dp" android:textColor="#D9FFFFFF" android:textSize="11sp" android:maxLines="1" android:ellipsize="end"/>
+<LinearLayout android:id="@+id/calendarWidgetRows" android:visibility="gone" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:layout_marginTop="4dp" android:orientation="vertical"><LinearLayout android:id="@+id/calendarWidgetRow0" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:gravity="center_vertical">
+<TextView android:layout_width="10dp" android:layout_height="wrap_content" android:text="•" android:textSize="14sp" android:textColor="#FFFFFF" android:importantForAccessibility="no"/>
+<TextView android:id="@+id/calendarWidgetLabel0" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:textSize="13sp" android:textColor="#FFFFFF" android:maxLines="1" android:ellipsize="end"/>
+<TextView android:id="@+id/calendarWidgetDate0" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="6dp" android:textSize="12sp" android:textStyle="bold" android:textColor="#FFFFFF" android:maxLines="1"/>
+</LinearLayout><LinearLayout android:id="@+id/calendarWidgetRow1" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:gravity="center_vertical">
+<TextView android:layout_width="10dp" android:layout_height="wrap_content" android:text="•" android:textSize="14sp" android:textColor="#FFFFFF" android:importantForAccessibility="no"/>
+<TextView android:id="@+id/calendarWidgetLabel1" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:textSize="13sp" android:textColor="#FFFFFF" android:maxLines="1" android:ellipsize="end"/>
+<TextView android:id="@+id/calendarWidgetDate1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="6dp" android:textSize="12sp" android:textStyle="bold" android:textColor="#FFFFFF" android:maxLines="1"/>
+</LinearLayout><LinearLayout android:id="@+id/calendarWidgetRow2" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:gravity="center_vertical">
+<TextView android:layout_width="10dp" android:layout_height="wrap_content" android:text="•" android:textSize="14sp" android:textColor="#FFFFFF" android:importantForAccessibility="no"/>
+<TextView android:id="@+id/calendarWidgetLabel2" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:textSize="13sp" android:textColor="#FFFFFF" android:maxLines="1" android:ellipsize="end"/>
+<TextView android:id="@+id/calendarWidgetDate2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="6dp" android:textSize="12sp" android:textStyle="bold" android:textColor="#FFFFFF" android:maxLines="1"/>
+</LinearLayout><LinearLayout android:id="@+id/calendarWidgetRow3" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:gravity="center_vertical">
+<TextView android:layout_width="10dp" android:layout_height="wrap_content" android:text="•" android:textSize="14sp" android:textColor="#FFFFFF" android:importantForAccessibility="no"/>
+<TextView android:id="@+id/calendarWidgetLabel3" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:textSize="13sp" android:textColor="#FFFFFF" android:maxLines="1" android:ellipsize="end"/>
+<TextView android:id="@+id/calendarWidgetDate3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="6dp" android:textSize="12sp" android:textStyle="bold" android:textColor="#FFFFFF" android:maxLines="1"/>
+</LinearLayout></LinearLayout>
+<LinearLayout android:id="@+id/calendarWidgetEmpty" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:orientation="vertical" android:gravity="center_vertical">
+<ImageView android:id="@+id/calendarWidgetPin" android:layout_width="28dp" android:layout_height="28dp" android:src="@drawable/municipality_recycling_location_icon" android:tint="#FFFFFF" android:importantForAccessibility="no"/>
+<TextView android:id="@+id/calendarWidgetMessage" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="@string/widget_calendar_choose_address" android:textColor="#FFFFFF" android:textSize="16sp" android:textStyle="bold" android:maxLines="3" android:ellipsize="end"/>
+</LinearLayout>
+</LinearLayout>

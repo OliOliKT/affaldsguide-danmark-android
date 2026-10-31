@@ -1,9 +1,7 @@
 package com.simpleweb.affaldsguidedanmark;
 
-import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.content.SharedPreferences;
 import android.graphics.Rect;
 import android.graphics.Typeface;
@@ -27,8 +25,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
@@ -64,13 +60,33 @@ public class MainActivity extends AppCompatActivity {
     private int lastSelectedBottomNavigationItemId = R.id.search_trash_button;
     private boolean isUpdatingBottomNavigationSelection = false;
     private boolean achievementBannerShowing = false;
-    private final ActivityResultLauncher<String[]> onboardingLocationPermission =
-            registerForActivityResult(new ActivityResultContracts.RequestMultiplePermissions(), result -> {
-                if (sharedPref != null && !sharedPref.getBoolean("hasSeenGreetingPage", false)
-                        && greetingOnboardingStep == 3) {
-                    finishGreetingOnboarding();
-                }
-            });
+    private boolean reviewReady;
+    private final android.os.Handler reviewHandler = new android.os.Handler(android.os.Looper.getMainLooper());
+    private final Runnable reviewRequest = () -> {
+        if (isReviewSurfaceReady()) AppReviewCoordinator.get(this).request(this, this::isReviewSurfaceReady);
+    };
+
+    void completedReviewTask() {
+        reviewReady = true;
+        scheduleReviewRequest();
+    }
+
+    private void scheduleReviewRequest() {
+        reviewHandler.removeCallbacks(reviewRequest);
+        if (reviewReady && AppReviewCoordinator.get(this).eligible(this)) reviewHandler.postDelayed(reviewRequest, 3000);
+    }
+
+    private boolean isReviewSurfaceReady() {
+        if (!reviewReady || !getLifecycle().getCurrentState().isAtLeast(androidx.lifecycle.Lifecycle.State.RESUMED)
+                || isFinishing() || isDestroyed() || !hasWindowFocus() || achievementBannerShowing
+                || navController == null || navController.getCurrentDestination() == null
+                || drawerLayout == null || drawerLayout.isDrawerOpen(GravityCompat.END)) return false;
+        androidx.core.view.WindowInsetsCompat insets = ViewCompat.getRootWindowInsets(getWindow().getDecorView());
+        if (insets != null && insets.isVisible(WindowInsetsCompat.Type.ime())) return false;
+        int destination = navController.getCurrentDestination().getId();
+        return destination == R.id.search_trash_fragment || destination == R.id.fragment_calendar
+                || destination == R.id.fragment_sorting_impact;
+    }
 
     @Override
     protected void attachBaseContext(Context newBase) {
@@ -133,18 +149,23 @@ public class MainActivity extends AppCompatActivity {
         AchievementStore store = AchievementStore.get(this);
         store.setUnlockListener(this::showPendingAchievement);
         store.recordAppUse();
+        AppReviewCoordinator.get(this).recordActiveDay();
         showPendingAchievement();
     }
 
     @Override
     protected void onPause() {
         AchievementStore.get(this).setUnlockListener(null);
+        reviewReady = false;
+        reviewHandler.removeCallbacks(reviewRequest);
         super.onPause();
     }
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent event) {
         if (event.getAction() == MotionEvent.ACTION_DOWN) {
+            reviewReady = false;
+            reviewHandler.removeCallbacks(reviewRequest);
             hideKeyboardWhenTouchingOutsideInput(event);
         }
 
@@ -241,10 +262,10 @@ public class MainActivity extends AppCompatActivity {
     private void setUpGreetingLayout() {
         View languageStep = findViewById(R.id.onboardingLanguageStep);
         View municipalityStep = findViewById(R.id.onboardingMunicipalityStep);
-        View locationStep = findViewById(R.id.onboardingLocationStep);
+        findViewById(R.id.onboardingLocationStep).setVisibility(View.GONE);
         View onboardingDotOne = findViewById(R.id.onboardingDotOne);
         View onboardingDotTwo = findViewById(R.id.onboardingDotTwo);
-        View onboardingDotThree = findViewById(R.id.onboardingDotThree);
+        findViewById(R.id.onboardingDotThree).setVisibility(View.GONE);
         TextView backButton = findViewById(R.id.onboardingBackButton);
         TextView skipButton = findViewById(R.id.onboardingSkipButton);
         View selectedMunicipalityRow = findViewById(R.id.greetingSelectedMunicipality);
@@ -301,43 +322,19 @@ public class MainActivity extends AppCompatActivity {
         begynd = findViewById(R.id.begynd);
         begynd.setEnabled(!greetingSelectedMunicipalityName.isEmpty());
         begynd.setAlpha(greetingSelectedMunicipalityName.isEmpty() ? 0.5f : 1f);
-        greetingOnboardingStep = Math.max(1, Math.min(3, sharedPref.getInt("greetingOnboardingStep", 1)));
+        greetingOnboardingStep = Math.max(1, Math.min(2, sharedPref.getInt("greetingOnboardingStep", 1)));
         showGreetingOnboardingStep(
                 greetingOnboardingStep,
                 languageStep,
                 municipalityStep,
-                locationStep,
                 onboardingDotOne,
                 onboardingDotTwo,
-                onboardingDotThree,
                 backButton,
                 skipButton,
                 begynd
         );
 
-        begynd.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (greetingOnboardingStep == 2) {
-                    greetingOnboardingStep++;
-                    sharedPref.edit().putInt("greetingOnboardingStep", greetingOnboardingStep).apply();
-                    showGreetingOnboardingStep(
-                            greetingOnboardingStep,
-                            languageStep,
-                            municipalityStep,
-                            locationStep,
-                            onboardingDotOne,
-                            onboardingDotTwo,
-                            onboardingDotThree,
-                            backButton,
-                            skipButton,
-                            begynd
-                    );
-                } else {
-                    continueFromLocationOnboarding();
-                }
-            }
-        });
+        begynd.setOnClickListener(view -> finishGreetingOnboarding());
 
         View.OnClickListener goBack = view -> {
             if (greetingOnboardingStep == 1) {
@@ -350,34 +347,25 @@ public class MainActivity extends AppCompatActivity {
                     greetingOnboardingStep,
                     languageStep,
                     municipalityStep,
-                    locationStep,
                     onboardingDotOne,
                     onboardingDotTwo,
-                    onboardingDotThree,
                     backButton,
                     skipButton,
                     begynd
             );
         };
         backButton.setOnClickListener(goBack);
-        findViewById(R.id.onboardingLocationBackButton).setOnClickListener(goBack);
-        findViewById(R.id.onboardingLocationContinueButton).setOnClickListener(view -> continueFromLocationOnboarding());
-        findViewById(R.id.onboardingLocationSkipButton).setOnClickListener(view -> finishGreetingOnboarding());
 
         skipButton.setOnClickListener(view -> {
             if (greetingOnboardingStep == 1) {
                 greetingOnboardingStep = 2;
                 sharedPref.edit().putInt("greetingOnboardingStep", 2).apply();
-                showGreetingOnboardingStep(2, languageStep, municipalityStep, locationStep,
-                        onboardingDotOne, onboardingDotTwo, onboardingDotThree, backButton, skipButton, begynd);
+                showGreetingOnboardingStep(2, languageStep, municipalityStep,
+                        onboardingDotOne, onboardingDotTwo, backButton, skipButton, begynd);
             } else if (greetingOnboardingStep == 2) {
                 greetingSelectedMunicipalityName = "";
-                sharedPref.edit().remove("greetingSelectedMunicipality").putInt("greetingOnboardingStep", 3).apply();
-                municipalityAdapter.setSelectedMunicipalityName("");
-                selectedMunicipalityText.setVisibility(View.GONE);
-                greetingOnboardingStep = 3;
-                showGreetingOnboardingStep(3, languageStep, municipalityStep, locationStep,
-                        onboardingDotOne, onboardingDotTwo, onboardingDotThree, backButton, skipButton, begynd);
+                sharedPref.edit().remove("greetingSelectedMunicipality").apply();
+                finishGreetingOnboarding();
             } else {
                 finishGreetingOnboarding();
             }
@@ -390,30 +378,12 @@ public class MainActivity extends AppCompatActivity {
         recreate();
     }
 
-    private void continueFromLocationOnboarding() {
-        boolean hasLocationPermission = ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
-                == PackageManager.PERMISSION_GRANTED
-                || ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION)
-                == PackageManager.PERMISSION_GRANTED;
-        if (!hasLocationPermission && !sharedPref.getBoolean("greetingLocationRequested", false)) {
-            sharedPref.edit().putBoolean("greetingLocationRequested", true).apply();
-            onboardingLocationPermission.launch(new String[]{
-                    Manifest.permission.ACCESS_FINE_LOCATION,
-                    Manifest.permission.ACCESS_COARSE_LOCATION
-            });
-        } else {
-            finishGreetingOnboarding();
-        }
-    }
-
     private void showGreetingOnboardingStep(
             int step,
             View languageStep,
             View municipalityStep,
-            View locationStep,
             View onboardingDotOne,
             View onboardingDotTwo,
-            View onboardingDotThree,
             TextView backButton,
             TextView skipButton,
             Button continueButton
@@ -430,13 +400,11 @@ public class MainActivity extends AppCompatActivity {
         }
         languageStep.setVisibility(step == 1 ? View.VISIBLE : View.GONE);
         municipalityStep.setVisibility(step == 2 ? View.VISIBLE : View.GONE);
-        locationStep.setVisibility(step == 3 ? View.VISIBLE : View.GONE);
 
         onboardingDotOne.setBackgroundResource(step == 1 ? R.drawable.onboarding_dot_active : R.drawable.onboarding_dot_inactive);
         onboardingDotTwo.setBackgroundResource(step == 2 ? R.drawable.onboarding_dot_active : R.drawable.onboarding_dot_inactive);
-        onboardingDotThree.setBackgroundResource(step == 3 ? R.drawable.onboarding_dot_active : R.drawable.onboarding_dot_inactive);
 
-        findViewById(R.id.onboardingButtonRow).setVisibility(step == 3 ? View.GONE : View.VISIBLE);
+        findViewById(R.id.onboardingButtonRow).setVisibility(View.VISIBLE);
         backButton.setVisibility(step == 1 ? View.INVISIBLE : View.VISIBLE);
         skipButton.setVisibility(View.VISIBLE);
         continueButton.setVisibility(step == 2 ? View.VISIBLE : View.GONE);
@@ -506,10 +474,14 @@ public class MainActivity extends AppCompatActivity {
         });
 
         navigationView = findViewById(R.id.navigation_view);
+        navigationView.getMenu().findItem(R.id.rate_app).setTitle(InfoPageText.get(this, "more.rateApp"));
+        navigationView.getMenu().findItem(R.id.sorting_impact).setTitle(InfoPageText.get(this, "impact.page"));
         navigationView.getMenu().findItem(R.id.achievements)
                 .setTitle(InfoPageText.get(this, "achievements.page"));
 
         navController.addOnDestinationChangedListener((controller, destination, arguments) -> {
+            reviewReady = false;
+            reviewHandler.removeCallbacks(reviewRequest);
             updateBottomNavigationSelectionForDestination(destination.getId());
         });
 
@@ -529,7 +501,17 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 int itemId = item.getItemId();
 
-                if (itemId == R.id.om) {
+                if (itemId == R.id.rate_app) {
+                    reviewReady = false;
+                    reviewHandler.removeCallbacks(reviewRequest);
+                    drawerLayout.closeDrawer(GravityCompat.END);
+                    AppReviewCoordinator.get(MainActivity.this).openStore(MainActivity.this);
+                    return true;
+                } else if (itemId == R.id.sorting_impact) {
+                    navController.navigate(R.id.fragment_sorting_impact);
+                    drawerLayout.closeDrawer(GravityCompat.END);
+                    return true;
+                } else if (itemId == R.id.om) {
                     navController.navigate(R.id.fragment_about);
                     drawerLayout.closeDrawer(GravityCompat.END);
                     return true;
@@ -568,11 +550,14 @@ public class MainActivity extends AppCompatActivity {
         View root = findViewById(R.id.main_content_root);
         if (root == null) return;
         AchievementStore store = AchievementStore.get(this);
-        String id = store.takePendingUnlock();
-        if (id == null) return;
+        AchievementStore.Unlock unlock = store.takePendingUnlock();
+        if (unlock == null) return;
+        String id = unlock.achievement.id;
         achievementBannerShowing = true;
         String title = InfoPageText.get(this, "achievements." + id + ".title");
-        String detail = InfoPageText.get(this, "achievements." + id + ".detail");
+        String detail = AchievementStore.detail(this, unlock.achievement,
+                unlock.achievement.thresholds[unlock.level - 1]);
+        if (unlock.achievement.thresholds.length > 1) title += " " + new String(new char[unlock.level]).replace("\0", "★");
         String heading = InfoPageText.get(this, "achievements.unlocked") + ": " + title;
         SpannableStringBuilder message = new SpannableStringBuilder(heading + "\n" + detail);
         message.setSpan(new StyleSpan(Typeface.BOLD), 0, heading.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
@@ -601,6 +586,7 @@ public class MainActivity extends AppCompatActivity {
             public void onDismissed(Snackbar transientBottomBar, int event) {
                 achievementBannerShowing = false;
                 showPendingAchievement();
+                scheduleReviewRequest();
             }
         });
         banner.show();
@@ -632,7 +618,8 @@ public class MainActivity extends AppCompatActivity {
             return R.id.calendar_button;
         }
 
-        if (destinationId == R.id.fragment_recent_searches
+        if (destinationId == R.id.fragment_sorting_impact
+                || destinationId == R.id.fragment_recent_searches
                 || destinationId == R.id.fragment_language
                 || destinationId == R.id.fragment_about
                 || destinationId == R.id.fragment_achievements

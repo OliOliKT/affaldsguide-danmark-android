@@ -20,6 +20,10 @@ final class ArabicText {
     private ArabicText() {}
 
     static String lookup(Resources resources, String key) {
+        return lookup(resources, key, "ar");
+    }
+
+    static String lookup(Resources resources, String key, String language) {
         if (translations == null) {
             synchronized (ArabicText.class) {
                 if (translations == null) {
@@ -35,7 +39,7 @@ final class ArabicText {
             }
         }
         Map<String, String> entry = translations.get(key);
-        return entry == null ? null : entry.get("ar");
+        return entry == null ? null : entry.get(language);
     }
 
     static String value(Resources resources, String key, String fallback) {

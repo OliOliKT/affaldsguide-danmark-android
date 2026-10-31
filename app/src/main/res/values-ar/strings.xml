@@ -7,8 +7,9 @@
     <string name="municipality_self_service_title">اطلب أو غيّر أو أبلغ</string>
     <string name="municipality_self_service_description">أبلغ عن عدم جمع النفايات، أو اطلب جمعًا إضافيًا، أو اطّلع على خيارات تغيير خدمة النفايات لدى بلديتك.</string>
     <string name="municipality_self_service_open">فتح الخدمات الذاتية للبلدية</string>
-    <string name="widget_title">اعثر على طريقة الفرز الصحيحة</string>
-    <string name="widget_search">ابحث عن نفاية</string>
+    <string name="widget_title">افرز نفاياتك</string>
+    <string name="widget_picker_name">ابحث عن النفايات</string>
+    <string name="widget_search">ابحث</string>
     <string name="widget_camera">التقط صورة</string>
     <string name="achievements_page">الإنجازات</string>
     <string name="arabic_language">العربية</string>
@@ -150,4 +151,12 @@
     <string name="laes_mere_om_fraktion">اقرأ المزيد عن %1$s</string>
     <string name="skjul_detaljer">إخفاء التفاصيل</string>
     <string name="begynd_med_det_samme">ابدأ</string>
+    <string name="sorting_impact_page">ملخص نفاياتي</string>
+    <string name="widget_search_description">ابحث عن النفايات أو افتح الكاميرا من الأداة.</string>
+    <string name="widget_calendar_name">تقويم النفايات</string>
+    <string name="widget_calendar_description">اعرض مواعيد الجمع الأربعة القادمة.</string>
+    <string name="widget_calendar_choose_address">اختر عنوانًا</string>
+    <string name="widget_calendar_empty">لم يتم العثور على مواعيد جمع قادمة</string>
+    <string name="widget_calendar_unavailable">افتح التقويم لتحميل مواعيد الجمع</string>
+    <string name="rate_app">قيّم التطبيق</string>
 </resources>

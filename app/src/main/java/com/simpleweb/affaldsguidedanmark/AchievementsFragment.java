@@ -55,14 +55,30 @@ public class AchievementsFragment extends Fragment {
         cardParams.setMargins(0, 0, 0, dp(10));
         card.setLayoutParams(cardParams);
 
+        int level = store.earnedLevel(achievement);
+        int target = store.nextTarget(achievement);
+        LinearLayout emblem = new LinearLayout(requireContext());
+        emblem.setOrientation(LinearLayout.VERTICAL);
+        emblem.setGravity(Gravity.CENTER_HORIZONTAL);
+        LinearLayout.LayoutParams emblemParams = new LinearLayout.LayoutParams(dp(60), LinearLayout.LayoutParams.WRAP_CONTENT);
+        emblemParams.setMargins(0, dp(3), dp(12), 0);
+        card.addView(emblem, emblemParams);
         ImageView icon = new ImageView(requireContext());
         icon.setImageResource(iconFor(achievement.id));
         icon.setColorFilter(ContextCompat.getColor(requireContext(),
                 store.isUnlocked(achievement) ? R.color.green_light : R.color.grey_black));
         icon.setContentDescription(null);
-        LinearLayout.LayoutParams iconParams = new LinearLayout.LayoutParams(dp(32), dp(32));
-        iconParams.setMargins(0, dp(3), dp(12), 0);
-        card.addView(icon, iconParams);
+        emblem.addView(icon, new LinearLayout.LayoutParams(dp(44), dp(44)));
+        if (achievement.thresholds.length > 1) {
+            TextView stars = new TextView(requireContext());
+            StringBuilder symbols = new StringBuilder();
+            for (int i = 0; i < achievement.thresholds.length; i++) symbols.append(i < level ? "★" : "☆");
+            stars.setText(symbols);
+            stars.setTextSize(18);
+            stars.setTextColor(ContextCompat.getColor(requireContext(), R.color.green_light));
+            stars.setContentDescription(InfoPageText.get(requireContext(), "achievements.stars").replace("{0}", String.valueOf(level)));
+            emblem.addView(stars);
+        }
 
         LinearLayout content = new LinearLayout(requireContext());
         content.setOrientation(LinearLayout.VERTICAL);
@@ -77,28 +93,28 @@ public class AchievementsFragment extends Fragment {
         content.addView(title);
 
         TextView detail = new TextView(requireContext());
-        detail.setText(InfoPageText.get(requireContext(), "achievements." + achievement.id + ".detail"));
+        detail.setText(AchievementStore.detail(requireContext(), achievement, target));
         detail.setTextColor(ContextCompat.getColor(requireContext(), R.color.grey_black));
         detail.setTextSize(14);
         detail.setPadding(0, dp(3), 0, dp(8));
         content.addView(detail);
 
         ProgressBar progress = new ProgressBar(requireContext(), null, android.R.attr.progressBarStyleHorizontal);
-        progress.setMax(achievement.target);
-        progress.setProgress(store.count(achievement));
+        progress.setMax(target);
+        progress.setProgress(Math.min(store.count(achievement), target));
         progress.setProgressTintList(ColorStateList.valueOf(
                 ContextCompat.getColor(requireContext(), R.color.green_light)));
         content.addView(progress, new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT, dp(7)));
 
         TextView count = new TextView(requireContext());
-        count.setText(store.count(achievement) + "/" + achievement.target);
+        count.setText(Math.min(store.count(achievement), target) + "/" + target);
         count.setTextColor(ContextCompat.getColor(requireContext(), R.color.grey_black));
         count.setTextSize(12);
         count.setPadding(0, dp(5), 0, 0);
         content.addView(count);
 
-        if (store.isUnlocked(achievement)) {
+        if (level == achievement.thresholds.length) {
             TextView check = new TextView(requireContext());
             check.setText("✓");
             check.setTextSize(22);
@@ -119,6 +135,9 @@ public class AchievementsFragment extends Fragment {
         if (id.equals("calendarAddress")) return android.R.drawable.ic_menu_my_calendar;
         if (id.equals("helpfulEye") || id.equals("trueWasteExpert")) return android.R.drawable.ic_menu_edit;
         if (id.equals("tenDayStreak") || id.equals("thirtyDayStreak")) return android.R.drawable.ic_menu_today;
+        if (id.equals("tenPhotoSearches")) return android.R.drawable.ic_menu_camera;
+        if (id.equals("tenLoggedItems")) return android.R.drawable.ic_menu_agenda;
+        if (id.equals("tenKgClimateSavings")) return R.drawable.achievement_climate;
         return android.R.drawable.ic_menu_search;
     }
 

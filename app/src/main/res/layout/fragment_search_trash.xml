@@ -13,6 +13,23 @@
         android:minHeight="640dp"
         android:paddingBottom="28dp">
 
+    <TextView
+        android:id="@+id/searchPageHeader"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingStart="16dp"
+        android:paddingTop="24dp"
+        android:paddingEnd="16dp"
+        android:text="@string/search"
+        android:textColor="@color/green_light"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:accessibilityHeading="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <LinearLayout
         android:id="@+id/customLayout"
         style="@style/xViewStyle"
@@ -28,7 +45,7 @@
         android:paddingEnd="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/searchPageHeader">
 
         <ImageButton
             android:id="@+id/search_button"
@@ -448,7 +465,7 @@
         android:paddingStart="18dp"
         android:paddingTop="14dp"
         android:paddingEnd="18dp"
-        android:paddingBottom="14dp"
+        android:paddingBottom="6dp"
         app:layout_constraintEnd_toEndOf="@+id/customLayout"
         app:layout_constraintStart_toStartOf="@+id/customLayout"
         app:layout_constraintTop_toBottomOf="@+id/photoActions">
@@ -474,7 +491,7 @@
                     android:layout_width="36dp"
                     android:layout_height="36dp"
                     android:contentDescription="@null"
-                    android:src="@drawable/bottom_menu_municipalities_icon"
+                    android:src="@drawable/onboarding_city_icon"
                     app:tint="@color/green_light" />
 
                 <LinearLayout
@@ -511,116 +528,46 @@
                     app:tint="@color/grey_black" />
             </LinearLayout>
 
-            <LinearLayout
-                android:id="@+id/municipalityNearestRow"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:clickable="true"
-                android:focusable="true"
-                android:foreground="?android:attr/selectableItemBackground"
-                android:gravity="center_vertical"
-                android:minHeight="48dp"
-                android:orientation="horizontal">
-                <ImageView
-                    android:layout_width="28dp"
-                    android:layout_height="28dp"
-                    android:contentDescription="@null"
-                    android:src="@android:drawable/ic_menu_mylocation"
-                    app:tint="@color/green_light" />
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="14dp"
-                    android:orientation="vertical">
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/nearest_recycling_centre"
-                        android:textColor="@color/grey_black"
-                        android:textSize="12sp" />
-                    <TextView
-                        android:id="@+id/municipalityNearestValue"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/location_to_find_centre"
-                        android:textColor="@color/text_color"
-                        android:textSize="15sp" />
-                </LinearLayout>
+            <LinearLayout android:id="@+id/municipalityNearestRow" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp"
+                android:minHeight="48dp" android:orientation="horizontal" android:gravity="center_vertical"
+                android:clickable="true" android:focusable="true" android:foreground="?android:attr/selectableItemBackground">
+                <FrameLayout android:layout_width="36dp" android:layout_height="36dp">
+                    <ImageView android:layout_width="24dp" android:layout_height="24dp" android:layout_gravity="center"
+                        android:src="@drawable/municipality_recycling_location_icon" android:contentDescription="@null" app:tint="@color/green_light" />
+                </FrameLayout>
+                <TextView android:id="@+id/municipalityNearestValue" android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:layout_marginStart="12dp" android:paddingTop="10dp" android:paddingBottom="10dp"
+                    android:textColor="@color/text_color" android:textSize="16sp" />
+                <ImageView android:layout_width="18dp" android:layout_height="18dp" android:src="@drawable/arrow_right"
+                    android:contentDescription="@null" app:tint="@color/grey_black" />
             </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/municipalityFractionsRow"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
-                android:clickable="true"
-                android:focusable="true"
-                android:foreground="?android:attr/selectableItemBackground"
-                android:gravity="center_vertical"
-                android:minHeight="48dp"
-                android:orientation="horizontal">
-                <ImageView
-                    android:layout_width="28dp"
-                    android:layout_height="28dp"
-                    android:contentDescription="@null"
-                    android:src="@drawable/bottom_menu_trash_types_icon"
-                    app:tint="@color/green_light" />
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="14dp"
-                    android:orientation="vertical">
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/affaldsfraktioner"
-                        android:textColor="@color/grey_black"
-                        android:textSize="12sp" />
-                    <TextView
-                        android:id="@+id/municipalityFractionsValue"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/text_color"
-                        android:textSize="15sp" />
-                </LinearLayout>
+            <View android:id="@+id/municipalityServiceRowDivider" android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/page_background" />
+            <LinearLayout android:id="@+id/municipalityServiceRow" android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:minHeight="48dp" android:orientation="horizontal" android:gravity="center_vertical"
+                android:clickable="true" android:focusable="true" android:foreground="?android:attr/selectableItemBackground">
+                <FrameLayout android:layout_width="36dp" android:layout_height="36dp">
+                    <ImageView android:layout_width="24dp" android:layout_height="24dp" android:layout_gravity="center"
+                        android:src="@drawable/municipality_service_icon" android:contentDescription="@null" app:tint="@color/green_light" />
+                </FrameLayout>
+                <TextView android:id="@+id/municipalityServiceLabel" android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:layout_marginStart="12dp" android:paddingTop="10dp" android:paddingBottom="10dp"
+                    android:textColor="@color/text_color" android:textSize="16sp" />
+                <ImageView android:layout_width="18dp" android:layout_height="18dp" android:src="@drawable/arrow_right"
+                    android:contentDescription="@null" app:tint="@color/grey_black" />
             </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/municipalityOperatorRow"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
-                android:clickable="true"
-                android:focusable="true"
-                android:foreground="?android:attr/selectableItemBackground"
-                android:gravity="center_vertical"
-                android:minHeight="48dp"
-                android:orientation="horizontal">
-                <ImageView
-                    android:layout_width="28dp"
-                    android:layout_height="28dp"
-                    android:contentDescription="@null"
-                    android:src="@android:drawable/ic_menu_info_details"
-                    app:tint="@color/green_light" />
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="14dp"
-                    android:orientation="vertical">
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/waste_operator"
-                        android:textColor="@color/grey_black"
-                        android:textSize="12sp" />
-                    <TextView
-                        android:id="@+id/municipalityOperatorValue"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/text_color"
-                        android:textSize="15sp" />
-                </LinearLayout>
+            <View android:id="@+id/municipalityRulesRowDivider" android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/page_background" />
+            <LinearLayout android:id="@+id/municipalityRulesRow" android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:minHeight="48dp" android:orientation="horizontal" android:gravity="center_vertical"
+                android:clickable="true" android:focusable="true" android:foreground="?android:attr/selectableItemBackground">
+                <FrameLayout android:layout_width="36dp" android:layout_height="36dp">
+                    <ImageView android:layout_width="24dp" android:layout_height="24dp" android:layout_gravity="center"
+                        android:src="@drawable/municipality_rules_icon" android:contentDescription="@null" app:tint="@color/green_light" />
+                </FrameLayout>
+                <TextView android:id="@+id/municipalityRulesLabel" android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:layout_marginStart="12dp" android:paddingTop="10dp" android:paddingBottom="10dp"
+                    android:textColor="@color/text_color" android:textSize="16sp" />
+                <ImageView android:layout_width="18dp" android:layout_height="18dp" android:src="@drawable/arrow_right"
+                    android:contentDescription="@null" app:tint="@color/grey_black" />
             </LinearLayout>
         </LinearLayout>
 
@@ -1073,7 +1020,7 @@
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/suggestCorrectionButton" />
+        app:layout_constraintTop_toBottomOf="@+id/logSortingButton" />
 
     <androidx.constraintlayout.widget.Barrier
         android:id="@+id/correctionButtonTop"
@@ -1135,6 +1082,14 @@
         app:layout_constraintStart_toEndOf="@id/shareSortingButton"
         app:layout_constraintTop_toBottomOf="@+id/correctionButtonTop" />
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/logSortingButton" android:layout_width="0dp" android:layout_height="wrap_content"
+        android:layout_marginStart="32dp" android:layout_marginEnd="32dp" android:layout_marginTop="12dp"
+        android:minHeight="52dp" android:textAllCaps="false" android:textSize="16sp" android:textStyle="bold"
+        android:background="@drawable/calendar_find_address_button" android:textColor="@color/calendar_find_address_text"
+        android:visibility="gone" app:backgroundTint="@null"
+        app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/suggestCorrectionButton" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -2,13 +2,22 @@ package com.simpleweb.affaldsguidedanmark;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
+import android.content.ActivityNotFoundException;
+import android.provider.CalendarContract;
+import android.widget.ImageButton;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Typeface;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.text.InputType;
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.style.RelativeSizeSpan;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.Gravity;
@@ -71,7 +80,18 @@ public final class CalendarFragment extends Fragment {
                 render();
             });
 
+    private final Handler suggestionHandler = new Handler(Looper.getMainLooper());
+    private final ExecutorService suggestionExecutor = Executors.newFixedThreadPool(2);
+    private LinearLayout streetSuggestions, numberSuggestions, candidateViews;
+    private int suggestionGeneration;
+    private boolean applyingSuggestion;
+    private String submittedQuery = "";
     private LinearLayout content;
+    private final ActivityResultLauncher<Intent> calendarEditor = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(), result -> {
+                // Calendar apps may return RESULT_CANCELED even after saving. Never infer saved status.
+                if (isAdded() && content != null) render();
+            });
     private Spinner municipalityInput;
     private EditText postcodeInput, streetInput, numberInput;
     private List<String> municipalities = new ArrayList<>();
@@ -79,7 +99,7 @@ public final class CalendarFragment extends Fragment {
     private List<CalendarApi.Pickup> pickups = new ArrayList<>();
     private CalendarApi.Address address;
     private String formMunicipality = "", formPostcode = "", formStreet = "", formNumber = "";
-    private boolean busy, municipalitiesLoading;
+    private boolean busy, municipalitiesLoading, changingAddress;
     private String errorKey;
     private int requestGeneration;
 
@@ -93,6 +113,9 @@ public final class CalendarFragment extends Fragment {
         content.setPadding(dp(20), dp(22), dp(20), dp(32));
         scroll.addView(content);
         address = savedAddress();
+        changingAddress = false;
+        CalendarWidgetData.Cache cached = CalendarWidgetData.cache(requireContext(), address);
+        pickups = cached == null ? new ArrayList<>() : CalendarWidgetData.allUpcoming(cached.events, LocalDate.now());
         render();
         if (address == null) loadMunicipalities();
         else loadPickups();
@@ -101,17 +124,21 @@ public final class CalendarFragment extends Fragment {
 
     @Override public void onResume() {
         super.onResume();
-        if (content != null && address != null && pickups.isEmpty() && !busy) loadPickups();
+        if (content != null && address != null && !changingAddress && pickups.isEmpty() && !busy) loadPickups();
     }
 
     @Override public void onDestroyView() {
         requestGeneration++;
+        cancelSuggestions();
+        busy = false;
+        municipalitiesLoading = false;
         content = null;
         super.onDestroyView();
     }
 
     @Override public void onDestroy() {
         executor.shutdownNow();
+        suggestionExecutor.shutdownNow();
         super.onDestroy();
     }
 
@@ -127,23 +154,104 @@ public final class CalendarFragment extends Fragment {
     }
 
     private void saveAddress(CalendarApi.Address selected) {
-        try {
-            JSONObject value = new JSONObject().put("municipality", selected.municipality)
-                    .put("id", selected.id).put("label", selected.label);
-            prefs().edit().putString(ADDRESS, value.toString()).apply();
-        } catch (Exception ignored) { return; }
+        if (busy) return;
+        if (CalendarFavouriteAddresses.matches(address, selected)) {
+            cancelAddressChange();
+            return;
+        }
+        if (!CalendarWidgetData.selectAddress(requireContext(), selected)) {
+            showAddressSaveError();
+            return;
+        }
+        requestGeneration++;
+        cancelSuggestions();
+        municipalitiesLoading = false;
         AchievementStore.get(requireContext()).recordCalendarAddressSaved();
         address = selected;
+        CalendarWidgetProvider.addressChanged(requireContext());
+        changingAddress = false;
         candidates.clear();
         pickups.clear();
         errorKey = null;
+        clearAddressFormViews();
         render();
         loadPickups();
     }
 
+    private List<CalendarApi.Address> favouriteAddresses() {
+        try { return CalendarFavouriteAddresses.read(prefs().getString(CalendarFavouriteAddresses.KEY, "[]")); }
+        catch (Exception error) {
+            // Keep damaged data intact rather than silently replacing it on read.
+            return Collections.emptyList();
+        }
+    }
+
+    private void toggleFavourite() {
+        if (address == null) return;
+        try {
+            List<CalendarApi.Address> current = CalendarFavouriteAddresses.read(
+                    prefs().getString(CalendarFavouriteAddresses.KEY, "[]"));
+            List<CalendarApi.Address> updated = CalendarFavouriteAddresses.toggled(current, address);
+            if (!prefs().edit().putString(CalendarFavouriteAddresses.KEY,
+                    CalendarFavouriteAddresses.encode(updated)).commit()) {
+                showAddressSaveError();
+                return;
+            }
+            render();
+        } catch (Exception error) { showAddressSaveError(); }
+    }
+
+    private void showAddressSaveError() {
+        android.widget.Toast.makeText(requireContext(), t("addressSaveError"), android.widget.Toast.LENGTH_LONG).show();
+    }
+
+    private void beginAddressChange() {
+        requestGeneration++;
+        cancelSuggestions();
+        busy = false;
+        municipalitiesLoading = false;
+        changingAddress = true;
+        formMunicipality = address.municipality;
+        submittedQuery = "";
+        candidates.clear();
+        errorKey = null;
+        clearAddressFormViews();
+        render();
+        loadMunicipalities();
+    }
+
+    private void cancelAddressChange() {
+        requestGeneration++;
+        cancelSuggestions();
+        busy = false;
+        municipalitiesLoading = false;
+        changingAddress = false;
+        candidates.clear();
+        errorKey = null;
+        clearAddressFormViews();
+        render();
+        if (address != null && pickups.isEmpty()) loadPickups();
+    }
+
+    private void clearAddressFormViews() {
+        postcodeInput = null;
+        streetInput = null;
+        numberInput = null;
+        municipalityInput = null;
+    }
+
+    private void makeAction(View view, String description, View.OnClickListener action) {
+        view.setFocusable(true);
+        view.setContentDescription(description);
+        android.util.TypedValue ripple = new android.util.TypedValue();
+        requireContext().getTheme().resolveAttribute(android.R.attr.selectableItemBackground, ripple, true);
+        view.setForeground(ContextCompat.getDrawable(requireContext(), ripple.resourceId));
+        view.setOnClickListener(action);
+    }
+
     private void render() {
         if (content == null || !isAdded()) return;
-        if (address == null && postcodeInput != null) {
+        if ((address == null || changingAddress) && postcodeInput != null) {
             formPostcode = postcodeInput.getText().toString();
             formStreet = streetInput.getText().toString();
             formNumber = numberInput.getText().toString();
@@ -155,23 +263,18 @@ public final class CalendarFragment extends Fragment {
         LinearLayout heading = row();
         TextView title = label(t("title"), 26, true);
         title.setTextColor(ContextCompat.getColor(requireContext(), R.color.green_light));
+        title.setGravity(Gravity.CENTER);
         heading.addView(title, new LinearLayout.LayoutParams(0, -2, 1));
-        TextView help = label("ⓘ", 25, false);
-        help.setTextColor(ContextCompat.getColor(requireContext(), R.color.green_light));
-        help.setContentDescription(t("helpTitle"));
-        help.setOnClickListener(v -> new androidx.appcompat.app.AlertDialog.Builder(requireContext())
-                .setTitle(t("helpTitle")).setMessage(t("helpMessage")).setPositiveButton(android.R.string.ok, null).show());
-        heading.addView(help);
         content.addView(heading);
         space(18);
-        if (address == null) renderAddressForm();
+        if (address == null || changingAddress) renderAddressForm();
         else renderSavedAddress();
         if (errorKey != null) {
             TextView error = label(t(errorKey), 14, false);
             error.setTextColor(0xFFB45353);
             error.setPadding(0, dp(12), 0, dp(4));
             content.addView(error);
-            if (address == null && municipalities.isEmpty()) {
+            if ((address == null || changingAddress) && municipalities.isEmpty()) {
                 Button retry = button(t("retry"));
                 retry.setOnClickListener(v -> loadMunicipalities());
                 content.addView(retry);
@@ -189,6 +292,36 @@ public final class CalendarFragment extends Fragment {
         TextView intro = label(t("intro"), 15, false);
         content.addView(intro);
         space(14);
+        List<CalendarApi.Address> favourites = favouriteAddresses();
+        if (!favourites.isEmpty()) {
+            content.addView(label(t("favouriteAddresses"), 19, true));
+            space(8);
+            for (CalendarApi.Address favourite : favourites) {
+                LinearLayout option = row();
+                option.setPadding(dp(14), dp(12), dp(14), dp(12));
+                option.setMinimumHeight(dp(56));
+                LinearLayout details = new LinearLayout(requireContext());
+                details.setOrientation(LinearLayout.VERTICAL);
+                details.addView(label(favourite.label, 16, true));
+                TextView municipality = label(displayMunicipalityName(favourite.municipality), 13, false);
+                municipality.setTextColor(ContextCompat.getColor(requireContext(), R.color.grey_black));
+                details.addView(municipality);
+                option.addView(details, new LinearLayout.LayoutParams(0, -2, 1));
+                TextView arrow = label("›", 22, false);
+                arrow.setTextColor(ContextCompat.getColor(requireContext(), R.color.green_light));
+                arrow.setImportantForAccessibility(View.IMPORTANT_FOR_ACCESSIBILITY_NO);
+                option.addView(arrow);
+                View favouriteCard = card(option);
+                makeAction(favouriteCard, favourite.label + ", " + displayMunicipalityName(favourite.municipality),
+                        v -> saveAddress(favourite));
+                favouriteCard.setEnabled(!busy);
+                content.addView(favouriteCard);
+                space(8);
+            }
+            space(8);
+            content.addView(label(t("newAddress"), 19, true));
+            space(8);
+        }
         municipalityInput = new Spinner(requireContext());
         List<String> options = new ArrayList<>();
         options.add(t(municipalitiesLoading ? "loadingMunicipalities" : "chooseMunicipality"));
@@ -212,10 +345,16 @@ public final class CalendarFragment extends Fragment {
         streetInput = input(t("street"), InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_FLAG_CAP_WORDS);
         streetInput.setText(formStreet);
         content.addView(card(streetInput));
+        streetSuggestions = new LinearLayout(requireContext());
+        streetSuggestions.setOrientation(LinearLayout.VERTICAL);
+        content.addView(streetSuggestions);
         space(10);
         numberInput = input(t("houseNumber"), InputType.TYPE_CLASS_TEXT);
         numberInput.setText(formNumber);
         content.addView(card(numberInput));
+        numberSuggestions = new LinearLayout(requireContext());
+        numberSuggestions.setOrientation(LinearLayout.VERTICAL);
+        content.addView(numberSuggestions);
         space(14);
         Button find = button(t("findAddress"));
         find.setBackgroundResource(R.drawable.calendar_find_address_button);
@@ -228,11 +367,17 @@ public final class CalendarFragment extends Fragment {
         Runnable updateFindButton = () -> find.setEnabled(!busy && !municipalities.isEmpty()
                 && municipalityInput.getSelectedItemPosition() > 0
                 && postcodeInput.getText().toString().trim().matches("[0-9]{4}")
-                && !streetInput.getText().toString().trim().isEmpty()
-                && !numberInput.getText().toString().trim().isEmpty());
+                && !streetInput.getText().toString().trim().isEmpty());
         TextWatcher fieldWatcher = new TextWatcher() {
             @Override public void beforeTextChanged(CharSequence s, int start, int count, int after) { }
-            @Override public void onTextChanged(CharSequence s, int start, int before, int count) { updateFindButton.run(); }
+            @Override public void onTextChanged(CharSequence s, int start, int before, int count) {
+                updateFindButton.run();
+                if (!applyingSuggestion) {
+                    candidates.clear();
+                    if (candidateViews != null) candidateViews.setVisibility(View.GONE);
+                    scheduleSuggestions();
+                }
+            }
             @Override public void afterTextChanged(Editable s) { }
         };
         postcodeInput.addTextChangedListener(fieldWatcher);
@@ -241,23 +386,30 @@ public final class CalendarFragment extends Fragment {
         municipalityInput.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 updateFindButton.run();
+                scheduleSuggestions();
             }
             @Override public void onNothingSelected(AdapterView<?> parent) { updateFindButton.run(); }
         });
+        View.OnFocusChangeListener focusListener = (view, focused) -> scheduleSuggestions();
+        streetInput.setOnFocusChangeListener(focusListener);
+        numberInput.setOnFocusChangeListener(focusListener);
         updateFindButton.run();
         find.setOnClickListener(v -> searchAddresses());
         content.addView(find);
         if (busy) { space(8); content.addView(new ProgressBar(requireContext())); }
+        candidateViews = new LinearLayout(requireContext());
+        candidateViews.setOrientation(LinearLayout.VERTICAL);
+        content.addView(candidateViews);
         if (!candidates.isEmpty()) {
-            space(18);
-            content.addView(label(t("chooseAddress"), 19, true));
-            space(8);
+            spaceIn(candidateViews, 18);
+            candidateViews.addView(label(t("chooseAddress"), 19, true));
+            spaceIn(candidateViews, 8);
             for (CalendarApi.Address candidate : candidates) {
                 TextView option = label(candidate.label + "  ›", 16, false);
                 option.setPadding(dp(15), dp(15), dp(15), dp(15));
                 option.setOnClickListener(v -> saveAddress(candidate));
-                content.addView(card(option));
-                space(8);
+                candidateViews.addView(card(option));
+                spaceIn(candidateViews, 8);
             }
         }
     }
@@ -267,24 +419,46 @@ public final class CalendarFragment extends Fragment {
         summary.addView(label(t("yourAddress"), 13, true));
         summary.addView(label(address.label, 19, true));
         summary.addView(label(address.municipality, 14, false));
-        content.addView(card(summary));
+        LinearLayout addressRow = row();
+        addressRow.addView(summary, new LinearLayout.LayoutParams(0, -2, 1));
+        TextView arrow = label("›", 26, false);
+        arrow.setTextColor(ContextCompat.getColor(requireContext(), R.color.grey_black));
+        arrow.setPadding(0, 0, dp(16), 0);
+        arrow.setImportantForAccessibility(View.IMPORTANT_FOR_ACCESSIBILITY_NO);
+        addressRow.addView(arrow);
+        View addressCard = card(addressRow);
+        addressCard.setFocusable(true);
+        addressCard.setContentDescription(t("changeAddress") + ": " + address.label + ", " + address.municipality);
+        android.util.TypedValue ripple = new android.util.TypedValue();
+        requireContext().getTheme().resolveAttribute(android.R.attr.selectableItemBackground, ripple, true);
+        addressCard.setForeground(ContextCompat.getDrawable(requireContext(), ripple.resourceId));
+        addressCard.setOnClickListener(v -> beginAddressChange());
+        content.addView(addressCard);
         space(10);
-        TextView change = label(t("changeAddress") + "  ›", 16, true);
-        change.setPadding(dp(16), dp(15), dp(16), dp(15));
-        change.setOnClickListener(v -> {
-            CalendarReminderWorker.clear(requireContext());
-            prefs().edit().remove(ADDRESS).putBoolean(ENABLED, false).remove(EXCLUDED).apply();
-            address = null; pickups.clear(); errorKey = null; busy = false;
-            postcodeInput = null; streetInput = null; numberInput = null; municipalityInput = null;
-            render(); loadMunicipalities();
-        });
-        content.addView(card(change));
+        boolean favourite = CalendarFavouriteAddresses.contains(favouriteAddresses(), address);
+        LinearLayout favouriteRow = row();
+        favouriteRow.setPadding(dp(16), dp(8), dp(16), dp(8));
+        favouriteRow.setMinimumHeight(dp(54));
+        ImageView star = new ImageView(requireContext());
+        star.setImageResource(favourite ? R.drawable.calendar_star_filled : R.drawable.calendar_star_outline);
+        star.setColorFilter(ContextCompat.getColor(requireContext(), R.color.green_light));
+        star.setImportantForAccessibility(View.IMPORTANT_FOR_ACCESSIBILITY_NO);
+        favouriteRow.addView(star, new LinearLayout.LayoutParams(dp(24), dp(24)));
+        TextView favouriteLabel = label(t(favourite ? "removeFavourite" : "addFavourite"), 15, true);
+        favouriteLabel.setPadding(dp(10), 0, 0, 0);
+        favouriteRow.addView(favouriteLabel, new LinearLayout.LayoutParams(0, -2, 1));
+        View favouriteCard = card(favouriteRow);
+        makeAction(favouriteCard, favouriteLabel.getText().toString(), v -> toggleFavourite());
+        content.addView(favouriteCard);
         space(12);
         renderReminderControls();
         space(22);
         LinearLayout listHeader = row();
         listHeader.addView(label(t("upcoming"), 20, true), new LinearLayout.LayoutParams(0, -2, 1));
-        TextView refresh = label("↻  " + t("refresh"), 15, true);
+        SpannableString refreshText = new SpannableString("↻  " + t("refresh"));
+        refreshText.setSpan(new RelativeSizeSpan(1.25f), 0, 1, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        TextView refresh = label(refreshText.toString(), 15, true);
+        refresh.setText(refreshText);
         refresh.setTextColor(ContextCompat.getColor(requireContext(), R.color.green_light));
         refresh.setOnClickListener(v -> { if (!busy) loadPickups(); });
         listHeader.addView(refresh);
@@ -346,7 +520,7 @@ public final class CalendarFragment extends Fragment {
             Set<String> excluded = prefs().getStringSet(EXCLUDED, Collections.emptySet());
             for (String value : labels) {
                 CheckBox check = new CheckBox(requireContext());
-                check.setText(value);
+                check.setText(CalendarPickupLabels.display(requireContext(), value));
                 check.setChecked(!excluded.contains(value));
                 check.setOnCheckedChangeListener((button, checked) -> {
                     Set<String> next = new LinkedHashSet<>(prefs().getStringSet(EXCLUDED, Collections.emptySet()));
@@ -404,16 +578,78 @@ public final class CalendarFragment extends Fragment {
         }
         LinearLayout text = column();
         text.setPadding(0, 0, 0, 0);
-        text.addView(label(pickup.label, 16, true));
+        text.addView(label(CalendarPickupLabels.display(requireContext(), pickup.label), 16, true));
         String date = pickup.date;
         try {
             Locale locale = new Locale(LanguageManager.getSavedLanguage(requireContext()));
             date = LocalDate.parse(date).format(DateTimeFormatter.ofLocalizedDate(FormatStyle.FULL).withLocale(locale));
         } catch (Exception ignored) { }
-        text.addView(label(date, 14, false));
-        row.addView(text);
+        TextView dateText = label(date, 14, false);
+        dateText.setSingleLine(true);
+        androidx.core.widget.TextViewCompat.setAutoSizeTextTypeUniformWithConfiguration(
+                dateText, 11, 14, 1, android.util.TypedValue.COMPLEX_UNIT_SP);
+        text.addView(dateText);
+        CalendarApi.Address exportAddress = address;
+        if (exportAddress != null && prefs().getStringSet(PickupCalendarDraft.OPENED_KEY,
+                Collections.emptySet()).contains(PickupCalendarDraft.key(exportAddress, pickup))) {
+            TextView previous = label(t("exportPreviouslyOpened"), 12, false);
+            previous.setTextColor(ContextCompat.getColor(requireContext(), R.color.grey_black));
+            text.addView(previous);
+        }
+        row.addView(text, new LinearLayout.LayoutParams(0, -2, 1));
+        ImageButton add = new ImageButton(requireContext());
+        add.setImageResource(R.drawable.calendar_add_event_icon);
+        add.setColorFilter(ContextCompat.getColor(requireContext(), R.color.green_light));
+        add.setPadding(dp(10), dp(10), dp(10), dp(10));
+        android.util.TypedValue ripple = new android.util.TypedValue();
+        requireContext().getTheme().resolveAttribute(android.R.attr.selectableItemBackgroundBorderless, ripple, true);
+        add.setBackgroundResource(ripple.resourceId);
+        add.setContentDescription(t("exportAdd") + ": " + CalendarPickupLabels.display(requireContext(), pickup.label) + ", " + date);
+        add.setOnClickListener(v -> addPickupToCalendar(exportAddress, pickup));
+        row.addView(add, new LinearLayout.LayoutParams(dp(44), dp(44)));
         content.addView(card(row));
         space(8);
+    }
+
+    private void addPickupToCalendar(CalendarApi.Address selectedAddress, CalendarApi.Pickup pickup) {
+        if (selectedAddress == null) return;
+        PickupCalendarDraft draft;
+        try {
+            String name = CalendarPickupLabels.display(requireContext(), pickup.label);
+            draft = PickupCalendarDraft.create(selectedAddress, pickup,
+                    t("exportTitle").replace("{0}", name), displayMunicipalityName(selectedAddress.municipality),
+                    name, t("exportNotUpdated"));
+        } catch (IllegalArgumentException | java.time.DateTimeException error) {
+            new androidx.appcompat.app.AlertDialog.Builder(requireContext()).setMessage(t("exportDateError"))
+                    .setPositiveButton(android.R.string.ok, null).show();
+            return;
+        }
+        if (prefs().getStringSet(PickupCalendarDraft.OPENED_KEY, Collections.emptySet()).contains(draft.key)) {
+            new androidx.appcompat.app.AlertDialog.Builder(requireContext())
+                    .setTitle(t("exportDuplicateOpenedTitle"))
+                    .setMessage(t("exportDuplicateOpenedMessage"))
+                    .setNegativeButton(t("cancelAddressChange"), null)
+                    .setPositiveButton(t("exportAddAgain"), (dialog, which) -> openCalendarEditor(draft)).show();
+        } else openCalendarEditor(draft);
+    }
+
+    private void openCalendarEditor(PickupCalendarDraft draft) {
+        Intent intent = new Intent(Intent.ACTION_INSERT).setData(CalendarContract.Events.CONTENT_URI)
+                .putExtra(CalendarContract.Events.TITLE, draft.title)
+                .putExtra(CalendarContract.Events.DESCRIPTION, draft.notes)
+                .putExtra(CalendarContract.EXTRA_EVENT_ALL_DAY, true)
+                .putExtra(CalendarContract.Events.EVENT_TIMEZONE, "UTC")
+                .putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, draft.beginMillis)
+                .putExtra(CalendarContract.EXTRA_EVENT_END_TIME, draft.endMillis);
+        try {
+            calendarEditor.launch(intent);
+            Set<String> opened = new LinkedHashSet<>(prefs().getStringSet(PickupCalendarDraft.OPENED_KEY, Collections.emptySet()));
+            opened.add(draft.key);
+            prefs().edit().putStringSet(PickupCalendarDraft.OPENED_KEY, opened).apply();
+        } catch (ActivityNotFoundException | SecurityException error) {
+            new androidx.appcompat.app.AlertDialog.Builder(requireContext()).setMessage(t("exportNoCalendarApp"))
+                    .setPositiveButton(android.R.string.ok, null).show();
+        }
     }
 
     private static List<String> categoriesFor(String kind, String label) {
@@ -457,7 +693,7 @@ public final class CalendarFragment extends Fragment {
     }
 
     private void loadMunicipalities() {
-        if (municipalitiesLoading || address != null) return;
+        if (municipalitiesLoading || (address != null && !changingAddress)) return;
         municipalitiesLoading = true; errorKey = null; render();
         int generation = ++requestGeneration;
         executor.execute(() -> {
@@ -475,7 +711,7 @@ public final class CalendarFragment extends Fragment {
         String postcode = postcodeInput.getText().toString().trim();
         String street = streetInput.getText().toString().trim();
         String number = numberInput.getText().toString().trim();
-        if (!postcode.matches("[0-9]{4}") || street.isEmpty() || number.isEmpty()) return;
+        if (!postcode.matches("[0-9]{4}") || street.isEmpty()) return;
         String municipality = municipalities.get(municipalityInput.getSelectedItemPosition() - 1);
         formMunicipality = municipality; formPostcode = postcode; formStreet = street; formNumber = number;
         View focused = requireActivity().getCurrentFocus();
@@ -484,6 +720,8 @@ public final class CalendarFragment extends Fragment {
                     .hideSoftInputFromWindow(focused.getWindowToken(), 0);
             focused.clearFocus();
         }
+        submittedQuery = suggestionQuery();
+        cancelSuggestions();
         busy = true; errorKey = null; candidates.clear(); render();
         int generation = ++requestGeneration;
         executor.execute(() -> {
@@ -496,6 +734,91 @@ public final class CalendarFragment extends Fragment {
         });
     }
 
+    private String suggestionQuery() {
+        return municipalityInput.getSelectedItemPosition() + "|" + postcodeInput.getText().toString().trim()
+                + "|" + streetInput.getText().toString().trim() + "|" + numberInput.getText().toString().trim();
+    }
+
+    private void cancelSuggestions() {
+        suggestionGeneration++;
+        suggestionHandler.removeCallbacksAndMessages(null);
+        if (streetSuggestions != null) streetSuggestions.removeAllViews();
+        if (numberSuggestions != null) numberSuggestions.removeAllViews();
+    }
+
+    private void scheduleSuggestions() {
+        cancelSuggestions();
+        if (applyingSuggestion || content == null || busy || (address != null && !changingAddress) || municipalityInput == null
+                || municipalityInput.getSelectedItemPosition() < 1) return;
+        boolean forStreet = streetInput.hasFocus();
+        if (!forStreet && !numberInput.hasFocus()) return;
+        String postcode = postcodeInput.getText().toString().trim();
+        String street = streetInput.getText().toString().trim();
+        String number = forStreet ? "" : numberInput.getText().toString().trim();
+        String query = suggestionQuery();
+        if (!postcode.matches("[0-9]{4}") || street.length() < 3 || (!forStreet && number.isEmpty())
+                || query.equals(submittedQuery)) return;
+        String municipality = municipalities.get(municipalityInput.getSelectedItemPosition() - 1);
+        LinearLayout box = forStreet ? streetSuggestions : numberSuggestions;
+        int generation = suggestionGeneration;
+        LinearLayout loading = row();
+        loading.setPadding(0, dp(8), 0, dp(4));
+        ProgressBar spinner = new ProgressBar(requireContext());
+        loading.addView(spinner, new LinearLayout.LayoutParams(dp(20), dp(20)));
+        TextView loadingText = label(t("loadingSuggestions"), 13, false);
+        loadingText.setPadding(dp(8), 0, 0, 0);
+        loading.addView(loadingText);
+        box.addView(loading);
+        suggestionHandler.postDelayed(() -> suggestionExecutor.execute(() -> {
+            try {
+                List<String> labels = CalendarApi.suggestions(municipality, postcode, street, number);
+                List<CalendarAddressSuggestions.Option> options = CalendarAddressSuggestions.options(labels, postcode, forStreet);
+                suggestionHandler.post(() -> {
+                    if (!isAdded() || content == null || generation != suggestionGeneration) return;
+                    box.removeAllViews();
+                    if (options.isEmpty()) box.addView(label(t("noSuggestionsYet"), 13, false));
+                    else showSuggestionOptions(box, options, 0, forStreet);
+                });
+            } catch (Exception error) {
+                suggestionHandler.post(() -> {
+                    if (!isAdded() || content == null || generation != suggestionGeneration) return;
+                    box.removeAllViews();
+                    box.addView(label(t("suggestionsUnavailable"), 13, false));
+                });
+            }
+        }), 600);
+    }
+
+    private void showSuggestionOptions(LinearLayout box, List<CalendarAddressSuggestions.Option> options, int start, boolean forStreet) {
+        int end = Math.min(start + 8, options.size());
+        for (int i = start; i < end; i++) {
+            CalendarAddressSuggestions.Option suggestion = options.get(i);
+            TextView option = label(suggestion.label + "  ›", 15, false);
+            option.setPadding(dp(14), dp(14), dp(14), dp(14));
+            option.setBackgroundResource(R.drawable.result_description_background);
+            option.setOnClickListener(view -> {
+                applyingSuggestion = true;
+                cancelSuggestions();
+                if (forStreet) streetInput.setText(suggestion.value);
+                else numberInput.setText(suggestion.value);
+                submittedQuery = suggestionQuery();
+                applyingSuggestion = false;
+                // Selecting a suggestion only fills the form; Find address submits it.
+            });
+            box.addView(option, new LinearLayout.LayoutParams(-1, -2));
+        }
+        if (end < options.size()) {
+            TextView more = label(t("moreSuggestions"), 15, true);
+            more.setTextColor(ContextCompat.getColor(requireContext(), R.color.green_light));
+            more.setPadding(dp(14), dp(14), dp(14), dp(14));
+            more.setOnClickListener(view -> {
+                box.removeView(more);
+                showSuggestionOptions(box, options, end, forStreet);
+            });
+            box.addView(more);
+        }
+    }
+
     private static String displayMunicipalityName(String name) {
         if (name.equalsIgnoreCase("København")) return "Københavns Kommune";
         if (name.equalsIgnoreCase("Bornholm")) return "Bornholms Regionskommune";
@@ -503,8 +826,9 @@ public final class CalendarFragment extends Fragment {
     }
 
     private void loadPickups() {
-        if (busy || address == null) return;
+        if (busy || address == null || changingAddress) return;
         CalendarApi.Address requested = address;
+        long requestedAt = System.currentTimeMillis();
         busy = true; errorKey = null; render();
         int generation = ++requestGeneration;
         executor.execute(() -> {
@@ -518,8 +842,13 @@ public final class CalendarFragment extends Fragment {
                 }
                 List<CalendarApi.Pickup> finalResult = result;
                 onUi(generation, () -> {
-                    pickups = finalResult; busy = false;
+                    boolean saved = CalendarWidgetData.save(requireContext(), requested, finalResult, requestedAt);
+                    CalendarWidgetData.Cache latest = CalendarWidgetData.cache(requireContext(), requested);
+                    pickups = !saved && latest != null ? CalendarWidgetData.allUpcoming(latest.events, LocalDate.now()) : finalResult;
+                    busy = false;
                     if (prefs().getBoolean(ENABLED, false)) scheduleReminders();
+                    CalendarWidgetProvider.updateAll(requireContext());
+                    AppReviewCoordinator.completedTask(requireContext());
                     render();
                 });
             } catch (Exception error) {

@@ -125,6 +125,7 @@ public class SearchTrashFragment extends Fragment {
     private ImageView threeItemsIcon3;
     private ImageView oneItemIcon1;
     private ImageView insertTrashImage;
+    private android.widget.Button logSortingButton;
     private LinearLayout searchIntroContainer;
     private LinearLayout emptyStateContainer;
     private TextView emptyStateTitle;
@@ -147,11 +148,11 @@ public class SearchTrashFragment extends Fragment {
     private View chooseMunicipalityContent;
     private View municipalityCardHeader;
     private View municipalityNearestRow;
-    private View municipalityFractionsRow;
-    private View municipalityOperatorRow;
+    private View municipalityRulesRow;
+    private View municipalityServiceRow;
     private TextView municipalityNearestValue;
-    private TextView municipalityFractionsValue;
-    private TextView municipalityOperatorValue;
+    private TextView municipalityRulesLabel;
+    private TextView municipalityServiceLabel;
     private Municipality selectedMunicipality;
     private RecyclingCenter nearestRecyclingCenter;
     private List<TrashType> fractionPages;
@@ -174,9 +175,12 @@ public class SearchTrashFragment extends Fragment {
     private TextView suggestCorrectionButton;
     private TextView shareSortingButton;
     private String resultMunicipalityName;
+    private String displayedResultQuery;
+    private boolean restoringResult;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        if (savedInstanceState != null) displayedResultQuery = savedInstanceState.getString("displayedResultQuery");
         final View v = inflater.inflate(R.layout.fragment_search_trash, container, false);
 
         Resources resources = requireContext().getResources();
@@ -261,11 +265,11 @@ public class SearchTrashFragment extends Fragment {
         chooseMunicipalityContent = v.findViewById(R.id.chooseMunicipalityContent);
         municipalityCardHeader = v.findViewById(R.id.municipalityCardHeader);
         municipalityNearestRow = v.findViewById(R.id.municipalityNearestRow);
-        municipalityFractionsRow = v.findViewById(R.id.municipalityFractionsRow);
-        municipalityOperatorRow = v.findViewById(R.id.municipalityOperatorRow);
+        municipalityRulesRow = v.findViewById(R.id.municipalityRulesRow);
+        municipalityServiceRow = v.findViewById(R.id.municipalityServiceRow);
         municipalityNearestValue = v.findViewById(R.id.municipalityNearestValue);
-        municipalityFractionsValue = v.findViewById(R.id.municipalityFractionsValue);
-        municipalityOperatorValue = v.findViewById(R.id.municipalityOperatorValue);
+        municipalityRulesLabel = v.findViewById(R.id.municipalityRulesLabel);
+        municipalityServiceLabel = v.findViewById(R.id.municipalityServiceLabel);
         productDescriptionToggle = v.findViewById(R.id.productDescriptionToggle);
         productDescriptionText = v.findViewById(R.id.productDescriptionText);
         localRuleNote = v.findViewById(R.id.localRuleNote);
@@ -275,6 +279,7 @@ public class SearchTrashFragment extends Fragment {
         fallbackSortingContent = v.findViewById(R.id.fallbackSortingContent);
         suggestCorrectionButton = v.findViewById(R.id.suggestCorrectionButton);
         shareSortingButton = v.findViewById(R.id.shareSortingButton);
+        logSortingButton = v.findViewById(R.id.logSortingButton);
 
 
         inputText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
@@ -321,6 +326,7 @@ public class SearchTrashFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 multiAutoCompleteTextView.setText("");
+                displayedResultQuery = null;
                 clearTextAndImages();
                 resultText.setText("");
                 showStartContent(true);
@@ -339,7 +345,7 @@ public class SearchTrashFragment extends Fragment {
         setupIntroExampleSearch(introExampleSearchItem3, introExampleSearchCoffeeFilter);
         setupIntroExampleSearch(introExampleSearchItem4, introExampleSearchGlass);
         searchIntroSeeAll.setOnClickListener(view -> Navigation.findNavController(view).navigate(R.id.fragment_recent_searches));
-        updateIntroExampleSearches();
+        updateImpactSummary();
         updateSavedMunicipalityChip();
         setInsertTrashImageForLanguage();
 
@@ -349,6 +355,8 @@ public class SearchTrashFragment extends Fragment {
                 clearTextAndImages();
                 resultText.setOnClickListener(null);
                 String what = SuggestionAdapter.getSearchValue(inputText.getText().toString()).trim();
+                displayedResultQuery = what.isEmpty() ? null : what;
+                final boolean recordSearch = !restoringResult;
                 showStartContent(what.isEmpty());
                 boolean useEnglish = LanguageManager.usesNonDanishContent(requireContext());
                 String municipalityName = SavedMunicipalityManager.getSavedMunicipalityName(requireContext());
@@ -391,11 +399,14 @@ public class SearchTrashFragment extends Fragment {
                             emptyStateContainer.setVisibility(View.VISIBLE);
                         } else {
                             emptyStateContainer.setVisibility(View.GONE);
-                            saveRecentSearch(trashDB.getDanishProductName(what, useEnglish));
-                            saveSuccessfulSearchExample(what, useEnglish);
-                            updateIntroExampleSearches();
+                            if (recordSearch) {
+                                AppReviewCoordinator.completedTask(requireContext());
+                                saveRecentSearch(trashDB.getDanishProductName(what, useEnglish));
+                                saveSuccessfulSearchExample(trashDB.getCurrentProductNameForRecentSearch(what, useEnglish), useEnglish);
+                            }
+                            updateImpactSummary();
                             MunicipalitySortingRuleDB.Rule localRule = trashDB.getLocalRule(what, useEnglish, municipalityName);
-                            AchievementStore.get(requireContext()).recordItem(
+                            if (recordSearch) AchievementStore.get(requireContext()).recordItem(
                                     trashDB.getDanishProductName(what, useEnglish),
                                     trashDB.getFirstSortingKeyForProduct(what, useEnglish),
                                     localRule != null);
@@ -427,6 +438,20 @@ public class SearchTrashFragment extends Fragment {
                             } else {
                                 trashDB.colorProductName(resultText, what, getActivity(), isSpecialText, useEnglish);
                             }
+                            android.widget.Button logButton = logSortingButton;
+                            String canonical = trashDB.getDanishProductName(what, useEnglish);
+                            TrashDB.TrashItem logItem = TrashDB.resolveItem(trashDB.trashItems, canonical, false);
+                            java.util.List<String> logFractions = new java.util.ArrayList<>();
+                            for (String key : sorteringMap.keySet()) logFractions.add(trashDB.toDanishSortingKey(key));
+                            SortingImpact impact = new SortingImpact(getResources());
+                            boolean canLog = logItem != null && !impact.choices(logFractions).isEmpty();
+                            logButton.setVisibility(canLog ? View.VISIBLE : View.GONE);
+                            logButton.setText(InfoPageText.get(requireContext(), "impact.logButton"));
+                            logButton.setOnClickListener(button -> SortingLogDialog.show(requireContext(), trashDB,
+                                    logItem, logFractions, municipalityName, () -> {
+                                        logButton.setText("✓ " + InfoPageText.get(requireContext(), "impact.savedConfirmation"));
+                                        updateImpactSummary();
+                                    }));
                             resultMunicipalityName = municipalityName;
                             setupProductDescription(what, useEnglish, municipalityName, localRule);
                             showFallbackSorting(sorteringMap, municipalityName, useEnglish);
@@ -438,7 +463,7 @@ public class SearchTrashFragment extends Fragment {
                             shareSortingButton.setText(InfoPageText.get(requireContext(), "search.result.share"));
                             shareSortingButton.setVisibility(View.VISIBLE);
                             shareSortingButton.setOnClickListener(view ->
-                                    shareSortingResult(what, sorteringMap, municipalityName, localRule != null, useEnglish));
+                                    shareSortingResult(what, municipalityName, useEnglish));
                             setProductDescriptionToggleTopMargin(22);
                             int numImages = sorteringMap.size();
 
@@ -541,6 +566,8 @@ public class SearchTrashFragment extends Fragment {
             }
             String initialQuery = getArguments().getString("initialQuery", "");
             if (!initialQuery.isEmpty()) {
+                getArguments().remove("initialQuery");
+                displayedResultQuery = null;
                 inputText.setText(initialQuery);
                 inputText.setSelection(inputText.length());
                 search.post(() -> search.performClick());
@@ -549,9 +576,35 @@ public class SearchTrashFragment extends Fragment {
     }
 
     @Override
+    public void onViewStateRestored(@Nullable Bundle savedInstanceState) {
+        super.onViewStateRestored(savedInstanceState);
+        // Android restores the input field itself, but the dynamically rendered result
+        // must be rebuilt after the fragment's view is recreated on back navigation.
+        if (displayedResultQuery != null && !displayedResultQuery.isEmpty()) {
+            String draft = inputText.getText().toString();
+            inputText.setText(displayedResultQuery, false);
+            restoringResult = true;
+            try {
+                search.performClick();
+            } finally {
+                restoringResult = false;
+            }
+            inputText.setText(draft, false);
+            inputText.setSelection(inputText.length());
+        }
+    }
+
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString("displayedResultQuery", displayedResultQuery);
+    }
+
+    @Override
     public void onResume() {
         super.onResume();
         updateSavedMunicipalityChip();
+        updateImpactSummary();
         String currentMunicipality = SavedMunicipalityManager.getSavedMunicipalityName(requireContext());
         if (resultMunicipalityName != null && !resultMunicipalityName.equals(currentMunicipality)
                 && inputText != null && inputText.length() > 0 && search != null) {
@@ -567,7 +620,7 @@ public class SearchTrashFragment extends Fragment {
                 for (TrashDB.TrashItem item : trashDB.trashItems) {
                     String productName = item.getDisplayProduct(LanguageManager.usesNonDanishContent(requireContext()));
                     if (productName != null && !productName.isEmpty()) {
-                        cachedProduktList.add(productName);
+                        cachedProduktList.addAll(item.getSearchNames(LanguageManager.usesNonDanishContent(requireContext())));
                     }
                 }
 
@@ -582,6 +635,10 @@ public class SearchTrashFragment extends Fragment {
 
     private void clearTextAndImages() {
         resultMunicipalityName = null;
+        if (logSortingButton != null) {
+            logSortingButton.setVisibility(View.GONE);
+            logSortingButton.setOnClickListener(null);
+        }
         for (ImageView image : new ImageView[]{oneItemImage1, twoItemsImage1, twoItemsImage2,
                 threeItemsImage1, threeItemsImage2, threeItemsImage3}) {
             image.setOnClickListener(null);
@@ -639,33 +696,13 @@ public class SearchTrashFragment extends Fragment {
 
     }
 
-    private void shareSortingResult(String product, Map<String, String> sorting,
-                                    String municipalityName, boolean hasLocalRule, boolean useEnglish) {
-        List<String> sortingLines = new ArrayList<>();
-        for (Map.Entry<String, String> entry : sorting.entrySet()) {
-            String category = useEnglish ? trashDB.translateSortingKey(entry.getKey()) : entry.getKey();
-            String guidance = entry.getValue() == null ? "" : entry.getValue().trim();
-            boolean hasGuidance = !guidance.isEmpty() && !guidance.equals("Hele genstand")
-                    && !guidance.equals("Whole item")
-                    && !guidance.equals(ArabicText.lookup(getResources(), "guidance.Hele genstand"));
-            sortingLines.add(hasGuidance ? category + " — " + guidance : category);
-        }
-        String summary = InfoPageText.get(requireContext(), "search.result.shareSummary")
-                .replace("{0}", product)
-                .replace("{1}", String.join("\n", sortingLines));
-        StringBuilder message = new StringBuilder(summary);
-        if (hasLocalRule && municipalityName != null && !municipalityName.trim().isEmpty()) {
-            message.append("\n\n")
-                    .append(InfoPageText.get(requireContext(), "search.result.shareMunicipality")
-                            .replace("{0}", municipalityName))
-                    .append("\n\n")
-                    .append(InfoPageText.get(requireContext(), "search.result.shareCaution"));
-        }
-        message.append("\n\nAffaldsguide Danmark");
-
+    private void shareSortingResult(String product, String municipalityName, boolean useEnglish) {
+        String canonicalProduct = trashDB.getDanishProductName(product, useEnglish);
+        String url = SortingShareLink.build(canonicalProduct,
+                LanguageManager.getSavedLanguage(requireContext()), municipalityName);
         Intent intent = new Intent(Intent.ACTION_SEND);
         intent.setType("text/plain");
-        intent.putExtra(Intent.EXTRA_TEXT, message.toString());
+        intent.putExtra(Intent.EXTRA_TEXT, url);
         startActivity(Intent.createChooser(intent,
                 InfoPageText.get(requireContext(), "search.result.share")));
     }
@@ -1017,30 +1054,18 @@ public class SearchTrashFragment extends Fragment {
         return defaults;
     }
 
-    private void updateIntroExampleSearches() {
-        List<String> suggestions = getSuccessfulSearchExamples(LanguageManager.usesNonDanishContent(requireContext()));
-        boolean usesRecentSearches = suggestions.size() >= MIN_SUCCESSFUL_SEARCHES_FOR_RECENT_CHIPS;
-
-        if (!usesRecentSearches) {
-            suggestions = getDefaultSuggestions();
-        }
-
-        searchIntroExamplesLabel.setText(usesRecentSearches
-                ? R.string.search_intro_recent_label
-                : R.string.search_intro_examples_label);
-        searchIntroSeeAll.setVisibility(usesRecentSearches ? View.VISIBLE : View.GONE);
-
-        TextView[] introViews = {introExampleSearchPizza, introExampleSearchBattery, introExampleSearchCoffeeFilter, introExampleSearchGlass};
-        LinearLayout[] introContainers = {introExampleSearchItem1, introExampleSearchItem2, introExampleSearchItem3, introExampleSearchItem4};
-        int visibleExamples = Math.min(suggestions.size(), MAX_INTRO_EXAMPLES);
-        for (int i = 0; i < introViews.length; i++) {
-            if (i < visibleExamples) {
-                introViews[i].setText(suggestions.get(i));
-                introContainers[i].setVisibility(View.VISIBLE);
-            } else {
-                introContainers[i].setVisibility(View.GONE);
-            }
-        }
+    private void updateImpactSummary() {
+        if (searchIntroContainer == null || !isAdded()) return;
+        for (int i = 0; i < searchIntroContainer.getChildCount(); i++) searchIntroContainer.getChildAt(i).setVisibility(View.GONE);
+        View oldSummary = searchIntroContainer.findViewWithTag("impactSummary");
+        if (oldSummary != null) searchIntroContainer.removeView(oldSummary);
+        LinearLayout summary = SortingImpactViews.summary(requireContext(), new SortingLogStore(requireContext()), true);
+        summary.setTag("impactSummary");
+        summary.setLayoutParams(new LinearLayout.LayoutParams(-1,-2));
+        summary.setBackgroundColor(android.graphics.Color.TRANSPARENT);
+        summary.setPadding(0,0,0,0);
+        summary.setOnClickListener(view -> Navigation.findNavController(view).navigate(R.id.fragment_sorting_impact));
+        searchIntroContainer.addView(summary);
     }
 
     private void updateSavedMunicipalityChip() {
@@ -1063,35 +1088,27 @@ public class SearchTrashFragment extends Fragment {
 
         savedMunicipalityName.setText(selectedMunicipality.getMunicipality());
         municipalityCardHeader.setOnClickListener(view -> openMunicipalityDetails(view, false));
+        municipalityNearestValue.setText(InfoPageText.get(requireContext(), "municipalityBox.findNearestCentre"));
+        municipalityServiceLabel.setText(InfoPageText.get(requireContext(), "municipalityBox.service"));
+        municipalityRulesLabel.setText(InfoPageText.get(requireContext(), "municipalityBox.rules"));
+        municipalityNearestRow.setOnClickListener(view -> Navigation.findNavController(view).navigate(R.id.fragment_recycling_centres));
+
         Municipality.Details details = selectedMunicipality.getDetails();
-        Integer count = details == null ? null : details.getWasteFractionCount();
-        Integer total = details == null ? null : details.getWasteFractionTotal();
-        municipalityFractionsRow.setVisibility(count != null && total != null ? View.VISIBLE : View.GONE);
-        if (count != null && total != null) {
-            municipalityFractionsValue.setText(getString(R.string.uses_fractions, count, total));
-        }
-        municipalityFractionsRow.setOnClickListener(view -> openMunicipalityDetails(view, true));
-
-        String operator = details == null ? null : details.getWasteOperator(LanguageManager.usesNonDanishContent(requireContext()));
-        municipalityOperatorRow.setVisibility(operator == null || operator.trim().isEmpty() ? View.GONE : View.VISIBLE);
-        municipalityOperatorValue.setText(operator);
-        municipalityOperatorRow.setOnClickListener(view -> {
-            String url = details == null ? null : details.getWasteOperatorUrl();
-            if (url == null || !(url.startsWith("https://") || url.startsWith("http://"))) {
-                openMunicipalityDetails(view, false);
-                return;
-            }
-            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)));
+        String service = details == null ? null : details.getWasteSelfServiceUrl();
+        Uri serviceUri = service == null ? null : Uri.parse(service);
+        boolean hasService = serviceUri != null && "https".equalsIgnoreCase(serviceUri.getScheme())
+                && serviceUri.getHost() != null && !serviceUri.getHost().isEmpty();
+        municipalityServiceRow.setVisibility(hasService ? View.VISIBLE : View.GONE);
+        savedMunicipalityContainer.findViewById(R.id.municipalityServiceRowDivider).setVisibility(hasService ? View.VISIBLE : View.GONE);
+        municipalityServiceRow.setOnClickListener(hasService ? view -> startActivity(new Intent(Intent.ACTION_VIEW, serviceUri)) : null);
+        boolean hasRules = trashDB.hasLocalRules(name);
+        municipalityRulesRow.setVisibility(hasRules ? View.VISIBLE : View.GONE);
+        savedMunicipalityContainer.findViewById(R.id.municipalityRulesRowDivider).setVisibility(hasRules ? View.VISIBLE : View.GONE);
+        municipalityRulesRow.setOnClickListener(view -> {
+            Bundle args = new Bundle();
+            args.putString("municipalityName", name);
+            Navigation.findNavController(view).navigate(R.id.fragment_local_sorting_rules, args);
         });
-
-        municipalityNearestRow.setOnClickListener(view -> {
-            if (nearestRecyclingCenter != null) {
-                openRecyclingCenterInMaps(nearestRecyclingCenter);
-            } else {
-                requestNearestRecyclingCenter();
-            }
-        });
-        updateNearestRecyclingCenterFromLastLocation();
     }
 
     private void showStartContent(boolean show) {
@@ -1171,7 +1188,7 @@ public class SearchTrashFragment extends Fragment {
 
     private void updateNearestRecyclingCenterFromLastLocation() {
         nearestRecyclingCenter = null;
-        municipalityNearestValue.setText(R.string.location_to_find_centre);
+
         if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED
                 && ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) return;
         LocationManager manager = (LocationManager) requireContext().getSystemService(Context.LOCATION_SERVICE);
@@ -1199,12 +1216,12 @@ public class SearchTrashFragment extends Fragment {
             openPendingNearestCenter();
             return;
         }
-        municipalityNearestValue.setText(R.string.finding_nearest_centre);
+
         try {
             String provider = manager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)
                     ? LocationManager.NETWORK_PROVIDER : LocationManager.GPS_PROVIDER;
             if (!manager.isProviderEnabled(provider)) {
-                municipalityNearestValue.setText(R.string.nearest_centre_unavailable);
+
                 showNearestCenterUnavailableIfPending();
                 return;
             }
@@ -1214,7 +1231,7 @@ public class SearchTrashFragment extends Fragment {
                 }
             }, null);
         } catch (SecurityException error) {
-            municipalityNearestValue.setText(R.string.location_to_find_centre);
+
             showNearestCenterUnavailableIfPending();
         }
     }
@@ -1229,7 +1246,7 @@ public class SearchTrashFragment extends Fragment {
                     return;
                 }
             }
-            municipalityNearestValue.setText(R.string.location_to_find_centre);
+
             showNearestCenterUnavailableIfPending();
         }
     }
@@ -1254,8 +1271,6 @@ public class SearchTrashFragment extends Fragment {
             Log.w(TAG, "Could not read recycling centers", error);
         }
         nearestRecyclingCenter = closest;
-        municipalityNearestValue.setText(closest == null ? getString(R.string.nearest_centre_unavailable)
-                : closest.name + " · " + String.format(Locale.getDefault(), "%.1f km", closestDistance / 1000f));
         if (closest == null) {
             showNearestCenterUnavailableIfPending();
         } else {
@@ -1309,7 +1324,8 @@ public class SearchTrashFragment extends Fragment {
         if (!storedSearches.isEmpty()) {
             for (String storedSearch : storedSearches.split("\\n")) {
                 if (!storedSearch.trim().isEmpty()) {
-                    searches.add(storedSearch);
+                    String current = trashDB.getCurrentProductNameForRecentSearch(storedSearch, useEnglish);
+                    if (current != null && !searches.contains(current)) searches.add(current);
                 }
             }
         }
@@ -1365,7 +1381,7 @@ public class SearchTrashFragment extends Fragment {
     }
 
     private void setupAutoCompleteAdapter(List<String> produktList) {
-        SuggestionAdapter suggestionAdapter = new SuggestionAdapter(requireActivity(), produktList);
+        SuggestionAdapter suggestionAdapter = new SuggestionAdapter(requireActivity(), produktList, trashDB.getSuggestionCanonicalNames(LanguageManager.usesNonDanishContent(requireContext())));
 
         inputText.setAdapter(suggestionAdapter);
         inputText.setThreshold(1);
@@ -1424,8 +1440,11 @@ public class SearchTrashFragment extends Fragment {
                 .thenComparing(suggestion -> suggestion.value));
 
         List<String> suggestions = new ArrayList<>();
+        java.util.Set<String> seenItems = new java.util.HashSet<>();
+        Map<String, String> canonicalNames = trashDB.getSuggestionCanonicalNames(LanguageManager.usesNonDanishContent(requireContext()));
         for (FuzzySuggestion suggestion : rankedSuggestions) {
-            if (!suggestions.contains(suggestion.value)) {
+            String canonical = canonicalNames.getOrDefault(suggestion.value.toLowerCase(java.util.Locale.ROOT), suggestion.value);
+            if (seenItems.add(canonical)) {
                 suggestions.add(suggestion.value);
             }
 

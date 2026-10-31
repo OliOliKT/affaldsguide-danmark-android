@@ -3,6 +3,7 @@ package com.simpleweb.affaldsguidedanmark;
 import android.os.Bundle;
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.graphics.drawable.GradientDrawable;
 import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -319,10 +320,48 @@ public class TrashTypeDetailsFragment extends Fragment {
         }
 
         for (int i = 0; i < itemCount; i++) {
-            column.addView(createBulletBody(items.get(i), 8, titleColorResId));
+            column.addView(isLastColumn ? createDestinationExample(items.get(i), titleColorResId)
+                    : createBulletBody(items.get(i), 8, titleColorResId));
         }
 
         return column;
+    }
+
+    private View createDestinationExample(String example, int bulletColorResId) {
+        // Only separate the final parenthesis: earlier parentheses can describe the item.
+        Matcher match = Pattern.compile("^(.*)\\s+\\(([^()]+)\\)\\s*$").matcher(example);
+        if (!match.matches()) return createBulletBody(example, 8, bulletColorResId);
+
+        com.google.android.material.chip.ChipGroup flow = new com.google.android.material.chip.ChipGroup(requireContext());
+        flow.setSingleLine(false);
+        flow.setChipSpacingHorizontal(dpToPx(8));
+        flow.setChipSpacingVertical(dpToPx(4));
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(-1, -2);
+        params.topMargin = dpToPx(8);
+        flow.setLayoutParams(params);
+
+        TextView name = new TextView(requireContext());
+        name.setText("• " + match.group(1).trim());
+        name.setTextSize(15);
+        name.setTextColor(getResources().getColor(R.color.text_color));
+        flow.addView(name);
+
+        TextView destination = new TextView(requireContext());
+        String label = match.group(2).trim();
+        if (label.equals(label.toUpperCase(Locale.getDefault()))) {
+            label = label.toLowerCase(Locale.getDefault());
+        }
+        label = label.substring(0, 1).toUpperCase(Locale.getDefault()) + label.substring(1);
+        destination.setText(label);
+        destination.setTextSize(12);
+        destination.setTextColor(getResources().getColor(R.color.text_color));
+        destination.setPadding(dpToPx(8), dpToPx(3), dpToPx(8), dpToPx(3));
+        GradientDrawable background = new GradientDrawable();
+        background.setColor(0xffeeeeee);
+        background.setCornerRadius(dpToPx(6));
+        destination.setBackground(background);
+        flow.addView(destination);
+        return flow;
     }
 
     private void addListCard(LinearLayout container, String title, List<String> items) {

@@ -25,6 +25,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
+import java.util.LinkedHashMap;
+import java.util.Locale;
 import java.util.Map;
 
 public class TrashDB {
@@ -56,25 +58,30 @@ public class TrashDB {
             return;
         }
 
-        Map<String, String> sorteringMap = new HashMap<>();
-        for (TrashItem item : trashItems) {
-            String productName = item.getDisplayProduct(useEnglish);
-            if (productName != null && productName.equalsIgnoreCase(what)) {
-                MunicipalitySortingRuleDB.Rule localRule = municipalityRules.ruleFor(municipalityName, item);
-                boolean useArabic = LanguageManager.isArabic(resources);
-                Map<String, String> sorting = localRule != null ? localRule.sortingFor(useEnglish && !useArabic) : item.sorting;
-                if (sorting != null) {
-                    for (Map.Entry<String, String> entry : sorting.entrySet()) {
-                        String guidance = entry.getValue();
-                        // English local rules already include translated guidance in Sortering_en.
-                        boolean needsTranslation = useEnglish && (localRule == null || localRule.sortingEnglish == null);
-                        String displayedGuidance = useArabic
-                                ? ArabicText.value(resources, "guidance." + guidance, guidance)
-                                : needsTranslation ? translateGuidance(guidance) : guidance;
-                        sorteringMap.put(entry.getKey(), displayedGuidance);
-                    }
+        Map<String, String> sorteringMap = new LinkedHashMap<>();
+        TrashItem item = resolveItem(trashItems, what, useEnglish);
+        if (item != null) {
+            MunicipalitySortingRuleDB.Rule localRule = municipalityRules.ruleFor(municipalityName, item);
+            boolean useArabic = LanguageManager.isArabic(resources);
+            Map<String, String> sorting = localRule != null ? localRule.sortingFor(useEnglish && !useArabic) : item.sorting;
+            if (sorting != null) {
+                for (Map.Entry<String, String> entry : sorting.entrySet()) {
+                    String guidance = entry.getValue();
+                    // English local rules already include translated guidance in Sortering_en.
+                    boolean needsTranslation = useEnglish && (localRule == null || localRule.sortingEnglish == null);
+                    String displayedGuidance = useArabic
+                            ? ArabicText.value(resources, "guidance." + guidance, guidance)
+                            : needsTranslation ? translateGuidance(guidance) : guidance;
+                    sorteringMap.put(entry.getKey(), displayedGuidance);
                 }
-                break;
+            }
+        }
+        if (sorteringMap.size() > 1) {
+            for (String alternative : java.util.Arrays.asList("Genbrugsplads", "Recycling centre", "Recycling station")) {
+                if (sorteringMap.containsKey(alternative)) {
+                    String guidance = sorteringMap.remove(alternative);
+                    sorteringMap.put(alternative, guidance);
+                }
             }
         }
 
@@ -83,6 +90,46 @@ public class TrashDB {
         } else {
             listener.onSearchComplete(Collections.singletonMap("not found", ""));
         }
+    }
+
+    boolean hasLocalRules(String municipalityName) {
+        return !municipalityRules.rulesForMunicipality(municipalityName).isEmpty();
+    }
+
+    List<MunicipalitySortingRuleDB.Rule> localRulesFor(String municipalityName) {
+        return municipalityRules.rulesForMunicipality(municipalityName);
+    }
+
+    static TrashItem resolveItem(List<TrashItem> items, String name, boolean useEnglish) {
+        if (items == null || name == null) return null;
+        // A canonical name always wins over another item's alias.
+        for (TrashItem item : items) {
+            if (sameName(item.getDisplayProduct(useEnglish), name)) return item;
+        }
+        for (TrashItem item : items) {
+            for (String candidate : item.getSearchNames(useEnglish)) {
+                if (sameName(candidate, name)) return item;
+            }
+        }
+        return null;
+    }
+
+    private static boolean sameName(String first, String second) {
+        return first != null && second != null && java.text.Normalizer.normalize(first.trim(), java.text.Normalizer.Form.NFC)
+                .equalsIgnoreCase(java.text.Normalizer.normalize(second.trim(), java.text.Normalizer.Form.NFC));
+    }
+
+    Map<String, String> getSuggestionCanonicalNames(boolean useEnglish) {
+        Map<String, String> names = new LinkedHashMap<>();
+        if (trashItems == null) return names;
+        for (TrashItem item : trashItems) {
+            String display = item.getDisplayProduct(useEnglish);
+            if (display != null) names.put(display.toLowerCase(Locale.ROOT), item.product);
+        }
+        for (TrashItem item : trashItems) for (String name : item.getSearchNames(useEnglish)) {
+            names.putIfAbsent(name.toLowerCase(Locale.ROOT), item.product);
+        }
+        return names;
     }
 
     @Keep
@@ -96,6 +143,12 @@ public class TrashDB {
         @SerializedName("Produkt_ar")
         String productAr;
 
+        @SerializedName("Type") Map<String, String> type;
+
+        @SerializedName("Synonymer") List<String> synonyms;
+        @SerializedName("Synonymer_en") List<String> synonymsEn;
+        @SerializedName("Synonymer_ar") List<String> synonymsAr;
+
         @SerializedName("Sortering")
         Map<String, String> sorting;
 
@@ -107,6 +160,27 @@ public class TrashDB {
 
         @SerializedName("beskrivelse_ar")
         String descriptionAr;
+
+        List<String> getSearchNames(boolean useEnglish) {
+            List<String> names = new ArrayList<>();
+            addName(names, getDisplayProduct(useEnglish));
+            List<String> aliases = "ar".equals(Locale.getDefault().getLanguage()) ? synonymsAr : useEnglish ? synonymsEn : synonyms;
+            if (aliases != null) for (String alias : aliases) addName(names, alias);
+            return names;
+        }
+
+        List<String> getRecognitionNames() {
+            List<String> names = new ArrayList<>();
+            addName(names, product); addName(names, productEn); addName(names, productAr);
+            for (List<String> aliases : java.util.Arrays.asList(synonyms, synonymsEn, synonymsAr)) {
+                if (aliases != null) for (String alias : aliases) addName(names, alias);
+            }
+            return names;
+        }
+
+        private static void addName(List<String> names, String name) {
+            if (name != null && !name.trim().isEmpty() && !names.contains(name)) names.add(name);
+        }
 
         String getDisplayProduct(boolean useEnglish) {
             if ("ar".equals(java.util.Locale.getDefault().getLanguage()) && productAr != null && !productAr.isEmpty()) {
@@ -144,78 +218,44 @@ public class TrashDB {
     }
 
     public String getProductDescription(String productName, boolean useEnglish) {
-        if (trashItems == null || productName == null) {
-            return "";
-        }
-
-        for (TrashItem item : trashItems) {
-            String displayProduct = item.getDisplayProduct(useEnglish);
-            if (displayProduct != null && displayProduct.equalsIgnoreCase(productName)) {
-                if (LanguageManager.isArabic(resources) && item.descriptionAr != null && !item.descriptionAr.isEmpty()) {
-                    return item.descriptionAr;
-                }
-                if (useEnglish && item.descriptionEn != null && !item.descriptionEn.isEmpty()) {
-                    return item.descriptionEn;
-                }
-                return item.description != null ? item.description : "";
-            }
-        }
-
-        return "";
+        TrashItem item = resolveItem(trashItems, productName, useEnglish);
+        if (item == null) return "";
+        if (LanguageManager.isArabic(resources) && item.descriptionAr != null && !item.descriptionAr.isEmpty()) return item.descriptionAr;
+        if (useEnglish && item.descriptionEn != null && !item.descriptionEn.isEmpty()) return item.descriptionEn;
+        return item.description != null ? item.description : "";
     }
 
     String getDanishProductName(String displayName, boolean useEnglish) {
-        if (trashItems == null || displayName == null) return displayName;
-        for (TrashItem item : trashItems) {
-            String name = item.getDisplayProduct(useEnglish);
-            if (name != null && name.equalsIgnoreCase(displayName)) return item.product;
-        }
-        return displayName;
+        TrashItem item = resolveItem(trashItems, displayName, useEnglish);
+        return item == null ? displayName : item.product;
     }
 
     String getCurrentProductNameForRecentSearch(String savedName, boolean useEnglish) {
         if (trashItems == null || savedName == null) return null;
         for (TrashItem item : trashItems) {
-            if (item.product != null && item.product.equalsIgnoreCase(savedName)) {
+            if (sameName(item.product, savedName) || sameName(item.productEn, savedName) || sameName(item.productAr, savedName)) {
                 return item.getDisplayProduct(useEnglish);
             }
         }
-        // Older app versions saved the name in the language used at the time.
-        for (TrashItem item : trashItems) {
-            if ((item.productEn != null && item.productEn.equalsIgnoreCase(savedName))
-                    || (item.productAr != null && item.productAr.equalsIgnoreCase(savedName))) {
-                return item.getDisplayProduct(useEnglish);
-            }
+        // Merged entries remain accessible through their old names in any language.
+        for (TrashItem item : trashItems) for (String name : item.getRecognitionNames()) {
+            if (sameName(name, savedName)) return item.getDisplayProduct(useEnglish);
         }
         return null;
     }
 
     MunicipalitySortingRuleDB.Rule getLocalRule(String productName, boolean useEnglish, String municipalityName) {
-        if (trashItems == null) return null;
-        for (TrashItem item : trashItems) {
-            String displayProduct = item.getDisplayProduct(useEnglish);
-            if (displayProduct != null && displayProduct.equalsIgnoreCase(productName)) {
-                return municipalityRules.ruleFor(municipalityName, item);
-            }
-        }
-        return null;
+        TrashItem item = resolveItem(trashItems, productName, useEnglish);
+        return item == null ? null : municipalityRules.ruleFor(municipalityName, item);
     }
 
     public String getFirstSortingKeyForProduct(String productName, boolean useEnglish) {
-        if (trashItems == null || productName == null) {
-            return "";
+        TrashItem item = resolveItem(trashItems, productName, useEnglish);
+        if (item == null || item.sorting == null || item.sorting.isEmpty()) return "";
+        for (String key : item.sorting.keySet()) {
+            if (!"Genbrugsplads".equals(key)) return key;
         }
-
-        for (TrashItem item : trashItems) {
-            String displayProduct = item.getDisplayProduct(useEnglish);
-            if (displayProduct != null && displayProduct.equalsIgnoreCase(productName) && item.sorting != null) {
-                for (String key : item.sorting.keySet()) {
-                    return key;
-                }
-            }
-        }
-
-        return "";
+        return item.sorting.keySet().iterator().next();
     }
 
     public List<TrashType> getLocalTrashTypes(boolean useEnglish) {
@@ -530,6 +570,8 @@ public class TrashDB {
     }
 
     private String translateGuidance(String guidance) {
+        String translated = ArabicText.lookup(resources, "guidance." + guidance, "en");
+        if (translated != null && !translated.isEmpty()) return translated;
         return GUIDANCE_TRANSLATIONS.getOrDefault(guidance, guidance);
     }
 

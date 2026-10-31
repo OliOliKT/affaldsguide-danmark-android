@@ -50,6 +50,7 @@ public class PhotoSearchFragment extends Fragment {
     private PhotoSelectionView photoSelection;
     private LinearLayout candidatesContainer;
     private TextView hint;
+    private View loadingIndicator;
     private TextView resultsHeading;
     private TextView resultsNote;
     private Button analyzeSelection, analyzeFullImage;
@@ -77,6 +78,10 @@ public class PhotoSearchFragment extends Fragment {
         photoSelection = root.findViewById(R.id.photoSelection);
         candidatesContainer = root.findViewById(R.id.photoCandidates);
         hint = root.findViewById(R.id.photoHint);
+        loadingIndicator = root.findViewById(R.id.photoLoading);
+        String loadingText = InfoPageText.get(requireContext(), "photosearchview.001");
+        ((TextView) root.findViewById(R.id.photoLoadingText)).setText(loadingText);
+        root.findViewById(R.id.photoLoadingSpinner).setContentDescription(loadingText);
         resultsHeading = root.findViewById(R.id.photoResultsHeading);
         resultsNote = root.findViewById(R.id.photoResultsNote);
         analyzeSelection = root.findViewById(R.id.analyzeSelection);
@@ -108,7 +113,12 @@ public class PhotoSearchFragment extends Fragment {
                 analyze(cropped);
             }
         });
-        analyzeFullImage.setOnClickListener(view -> { if (bitmap != null) analyze(bitmap); });
+        analyzeFullImage.setOnClickListener(view -> {
+            if (bitmap != null) {
+                photoSelection.clearSelection();
+                analyze(bitmap);
+            }
+        });
         setBusy(true);
         String uriValue = getArguments() == null ? null : getArguments().getString("photoUri");
         if (uriValue == null) {
@@ -151,8 +161,7 @@ public class PhotoSearchFragment extends Fragment {
         candidatesContainer.removeAllViews();
         resultsHeading.setVisibility(View.GONE);
         resultsNote.setVisibility(View.GONE);
-        hint.setVisibility(View.VISIBLE);
-        hint.setText(InfoPageText.get(requireContext(), "photosearchview.001"));
+        hint.setVisibility(View.GONE);
         imageExecutor.execute(() -> {
             try {
                 List<String> evidence = OnlinePhotoRecognition.recognize(image);
@@ -196,6 +205,7 @@ public class PhotoSearchFragment extends Fragment {
     private void showAnalysisResults(List<PhotoCandidate> matches) {
         setBusy(false);
         if (matches.isEmpty()) {
+            hint.setVisibility(View.VISIBLE);
             hint.setText(InfoPageText.get(requireContext(), "photosearchview.002") + "\n"
                     + InfoPageText.get(requireContext(), "photosearchview.007"));
         } else {
@@ -238,14 +248,15 @@ public class PhotoSearchFragment extends Fragment {
         boolean useEnglish = LanguageManager.usesNonDanishContent(requireContext());
         for (TrashDB.TrashItem item : trashDB.trashItems) {
             if (item.product == null || item.sorting == null || item.sorting.isEmpty()) continue;
-            String english = normalize(item.productEn);
-            String danish = normalize(item.product);
             double best = 0;
+            List<String> names = item.getRecognitionNames();
             for (String phrase : evidence) {
                 String normalized = normalize(phrase);
-                double score = Math.max(online ? onlineMatch(normalized, english) : match(normalized, english),
-                        online ? onlineMatch(normalized, danish) : match(normalized, danish));
-                best = Math.max(best, score);
+                for (String name : names) {
+                    String candidate = normalize(name);
+                    double score = online ? onlineMatch(normalized, candidate) : match(normalized, candidate);
+                    best = Math.max(best, score);
+                }
             }
             if (best >= threshold) results.add(new PhotoCandidate(item.getDisplayProduct(useEnglish), best));
         }
@@ -370,12 +381,15 @@ public class PhotoSearchFragment extends Fragment {
     }
 
     private void setBusy(boolean busy) {
+        loadingIndicator.setVisibility(busy ? View.VISIBLE : View.GONE);
+        photoSelection.setEnabled(!busy);
         analyzeSelection.setEnabled(!busy);
         analyzeFullImage.setEnabled(!busy);
         replacePhotoButton.setEnabled(!busy);
     }
     private void showFailure() {
         setBusy(false);
+        hint.setVisibility(View.VISIBLE);
         hint.setText(InfoPageText.get(requireContext(), "photosearchview.008"));
     }
 

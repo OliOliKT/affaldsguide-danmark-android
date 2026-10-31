@@ -20,6 +20,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
+import java.util.HashSet;
+import java.util.Set;
 
 import org.apache.commons.text.similarity.LevenshteinDistance;
 
@@ -33,11 +36,13 @@ public class SuggestionAdapter extends ArrayAdapter<String> implements Filterabl
 
     private final List<String> suggestions;
     private final LevenshteinDistance levenshteinDistance = new LevenshteinDistance();
+    private final Map<String, String> canonicalNames;
     private String currentQuery = "";
 
-    public SuggestionAdapter(Context context, List<String> suggestions) {
-        super(context, R.layout.trash_suggestion, suggestions);
+    public SuggestionAdapter(Context context, List<String> suggestions, Map<String, String> canonicalNames) {
+        super(context, R.layout.trash_suggestion, new ArrayList<>(suggestions));
         this.suggestions = new ArrayList<>(suggestions);
+        this.canonicalNames = canonicalNames;
     }
 
     @Override
@@ -72,6 +77,14 @@ public class SuggestionAdapter extends ArrayAdapter<String> implements Filterabl
                 filteredSuggestions.addAll(findSimilarSuggestions(normalizeQuery(constraint)));
             }
 
+            // Keep the best matching name per canonical item, without duplicate rows.
+            Set<String> seenItems = new HashSet<>();
+            List<String> unique = new ArrayList<>();
+            for (String name : filteredSuggestions) {
+                String value = getSearchValue(name).toLowerCase(Locale.ROOT);
+                if (seenItems.add(canonicalNames.getOrDefault(value, value))) unique.add(name);
+            }
+            filteredSuggestions = unique;
             if (filteredSuggestions.size() > MAX_SUGGESTIONS) {
                 filteredSuggestions = new ArrayList<>(filteredSuggestions.subList(0, MAX_SUGGESTIONS));
             }
@@ -182,9 +195,6 @@ public class SuggestionAdapter extends ArrayAdapter<String> implements Filterabl
         List<String> similarSuggestions = new ArrayList<>();
         for (ScoredSuggestion scoredSuggestion : scoredSuggestions) {
             similarSuggestions.add(getFuzzyPrefix() + scoredSuggestion.suggestion);
-            if (similarSuggestions.size() == MAX_SUGGESTIONS) {
-                break;
-            }
         }
 
         return similarSuggestions;

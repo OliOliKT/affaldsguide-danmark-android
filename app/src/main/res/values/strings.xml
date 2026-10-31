@@ -6,8 +6,9 @@
     <string name="municipality_self_service_title">Bestil, ændr eller anmeld</string>
     <string name="municipality_self_service_description">Anmeld manglende afhentning, bestil ekstra tømning eller se mulighederne for at ændre din affaldsordning hos kommunen.</string>
     <string name="municipality_self_service_open">Åbn kommunens selvbetjening</string>
-    <string name="widget_title">Find den rigtige sortering</string>
-    <string name="widget_search">Søg affald</string>
+    <string name="widget_title">Sortér dit affald</string>
+    <string name="widget_picker_name">Søg efter affald</string>
+    <string name="widget_search">Søg</string>
     <string name="widget_camera">Tag billede</string>
     <string name="achievements_page">Præstationer</string>
     <string name="arabic_language">العربية</string>
@@ -110,7 +111,7 @@
     <string name="velkommen_til_mit_affald">Velkommen til\nAffaldsguide Danmark</string>
     <string name="copyright">Ejet af Simple Web | CVR: 41279664 | Copyright 2026</string>
     <string name="menu1_om_appen">Om appen</string>
-    <string name="menu_2_kontaktinformation">Kontaktinformation</string>
+    <string name="menu_2_kontaktinformation">Kontaktoplysninger</string>
     <string name="menu_4_privatlivspolitik">Privatlivspolitik</string>
     <string name="menu_5_vilkår_og_betingelser">Vilkår og betingelser</string>
     <string name="affaldsfraktioner">Affaldsfraktioner</string>
@@ -139,7 +140,7 @@
     <string name="dansk">Dansk</string>
     <string name="engelsk">English</string>
     <string name="bottom_soeg">Søg</string>
-    <string name="bottom_fraktioner">Fraktioner</string>
+    <string name="bottom_fraktioner">Kategorier</string>
     <string name="bottom_kommuner">Kommuner</string>
     <string name="bottom_mere">Mere</string>
     <string name="bottom_calendar">Kalender</string>
@@ -154,4 +155,12 @@
     <string name="laes_mere_om_fraktion">Læs mere om %1$s</string>
     <string name="skjul_detaljer">Skjul detaljer</string>
     <string name="begynd_med_det_samme">Begynd</string>
+    <string name="sorting_impact_page">Mit affaldsoverblik</string>
+    <string name="widget_search_description">Søg efter affald eller åbn kameraet fra widgetten.</string>
+    <string name="widget_calendar_name">Affaldskalender</string>
+    <string name="widget_calendar_description">Se dine næste fire afhentninger.</string>
+    <string name="widget_calendar_choose_address">Vælg adresse</string>
+    <string name="widget_calendar_empty">Ingen kommende afhentninger fundet</string>
+    <string name="widget_calendar_unavailable">Åbn kalenderen for at hente afhentninger</string>
+    <string name="rate_app">Bedøm appen</string>
 </resources>

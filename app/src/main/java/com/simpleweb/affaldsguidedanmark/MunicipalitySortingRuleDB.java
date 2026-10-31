@@ -28,15 +28,32 @@ final class MunicipalitySortingRuleDB {
              InputStreamReader reader = new InputStreamReader(stream, StandardCharsets.UTF_8)) {
             Type type = new TypeToken<List<Rule>>() {}.getType();
             List<Rule> rules = new Gson().fromJson(reader, type);
-            if (rules == null) return;
-            for (Rule rule : rules) {
-                if (rule == null || rule.municipalityName == null) continue;
-                add(rule, rule.product);
-                add(rule, rule.productEnglish);
-            }
+            index(rules);
         } catch (Exception error) {
             Log.e(TAG, "Could not load local sorting rules", error);
         }
+    }
+
+    MunicipalitySortingRuleDB(List<Rule> rules) {
+        index(rules);
+    }
+
+    private void index(List<Rule> rules) {
+        if (rules == null) return;
+        for (Rule rule : rules) {
+            if (rule == null || rule.municipalityName == null) continue;
+            add(rule, rule.product);
+            add(rule, rule.productEnglish);
+        }
+    }
+
+    List<Rule> rulesForMunicipality(String municipalityName) {
+        if (municipalityName == null || municipalityName.trim().isEmpty()) return Collections.emptyList();
+        Map<String, Rule> unique = new java.util.LinkedHashMap<>();
+        for (Rule rule : rulesByMunicipalityAndProduct.values()) {
+            if (rule.product != null && key(rule.municipalityName, "").equals(key(municipalityName, ""))) unique.putIfAbsent(rule.product, rule);
+        }
+        return new java.util.ArrayList<>(unique.values());
     }
 
     Rule ruleFor(String municipalityName, TrashDB.TrashItem item) {

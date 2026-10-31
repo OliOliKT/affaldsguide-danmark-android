@@ -15,12 +15,42 @@
         android:textSize="22sp"
         android:textStyle="bold" />
 
-    <com.simpleweb.affaldsguidedanmark.PhotoSelectionView
-        android:id="@+id/photoSelection"
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="16dp"
-        android:layout_weight="1" />
+        android:layout_weight="1">
+        <com.simpleweb.affaldsguidedanmark.PhotoSelectionView
+            android:id="@+id/photoSelection"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+        <LinearLayout
+            android:id="@+id/photoLoading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/search_group_background"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="20dp"
+            android:visibility="gone">
+            <ProgressBar
+                android:id="@+id/photoLoadingSpinner"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:indeterminate="true"
+                android:indeterminateTint="@color/green_light" />
+            <TextView
+                android:id="@+id/photoLoadingText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:textColor="@color/text_color"
+                android:textSize="14sp"
+                android:accessibilityLiveRegion="polite" />
+        </LinearLayout>
+    </FrameLayout>
 
     <TextView
         android:id="@+id/photoHint"

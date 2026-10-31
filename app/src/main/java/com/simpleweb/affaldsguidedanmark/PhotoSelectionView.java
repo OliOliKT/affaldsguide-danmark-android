@@ -22,6 +22,7 @@ public class PhotoSelectionView extends View {
     private final RectF selection = new RectF();
     private final Paint imagePaint = new Paint(Paint.FILTER_BITMAP_FLAG);
     private final Paint framePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+    private final RectF displayedSelection = new RectF();
     private float downX, downY;
     private OnSelectionChangedListener selectionChangedListener;
 
@@ -70,20 +71,23 @@ public class PhotoSelectionView extends View {
                 (getWidth() + width) / 2, (getHeight() + height) / 2);
         canvas.drawBitmap(bitmap, new Rect(0, 0, bitmap.getWidth(), bitmap.getHeight()), imageBounds, imagePaint);
         if (!selection.isEmpty()) {
-            framePaint.setColor(Color.rgb(104, 165, 91));
-            framePaint.setStyle(Paint.Style.STROKE);
-            framePaint.setStrokeWidth(5);
-            canvas.drawRect(
+            displayedSelection.set(
                     imageBounds.left + selection.left * scale,
                     imageBounds.top + selection.top * scale,
                     imageBounds.left + selection.right * scale,
-                    imageBounds.top + selection.bottom * scale,
-                    framePaint);
+                    imageBounds.top + selection.bottom * scale);
+            framePaint.setStyle(Paint.Style.FILL);
+            framePaint.setColor(Color.argb(46, 104, 165, 91)); // 18%, matching iOS.
+            canvas.drawRect(displayedSelection, framePaint);
+            framePaint.setStyle(Paint.Style.STROKE);
+            framePaint.setColor(Color.rgb(104, 165, 91));
+            framePaint.setStrokeWidth(5);
+            canvas.drawRect(displayedSelection, framePaint);
         }
     }
 
     @Override public boolean onTouchEvent(MotionEvent event) {
-        if (bitmap == null || imageBounds.isEmpty()) return false;
+        if (!isEnabled() || bitmap == null || imageBounds.isEmpty()) return false;
         float x = Math.max(0, Math.min(bitmap.getWidth(),
                 (event.getX() - imageBounds.left) * bitmap.getWidth() / imageBounds.width()));
         float y = Math.max(0, Math.min(bitmap.getHeight(),

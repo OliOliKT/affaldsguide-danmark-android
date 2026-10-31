@@ -19,32 +19,40 @@ import java.util.Set;
 final class AchievementStore {
     static final class Achievement {
         final String id;
-        final int target;
+        final int[] thresholds;
 
-        Achievement(String id, int target) {
+        Achievement(String id, int... thresholds) {
             this.id = id;
-            this.target = target;
+            this.thresholds = thresholds;
+        }
+
+        int levelFor(int count) {
+            int level = 0;
+            for (int threshold : thresholds) if (count >= threshold) level++;
+            return level;
+        }
+    }
+
+    static final class Unlock {
+        final Achievement achievement;
+        final int level;
+        Unlock(Achievement achievement, int level) {
+            this.achievement = achievement;
+            this.level = level;
         }
     }
 
     static final List<Achievement> ALL = Collections.unmodifiableList(Arrays.asList(
-            new Achievement("firstAnswer", 1),
-            new Achievement("tenItems", 50),
-            new Achievement("hundredItems", 100),
-            new Achievement("twoHundredFiftyItems", 500),
-            new Achievement("tenPhotoSearches", 10),
-            new Achievement("hundredCameraItems", 100),
-            new Achievement("fiveCategories", 5),
-            new Achievement("allFractions", 12),
-            new Achievement("localExpert", 2),
+            new Achievement("firstAnswer", 3, 50, 100),
+            new Achievement("tenPhotoSearches", 3, 30, 80),
+            new Achievement("fiveCategories", 5, 8, 12),
             new Achievement("localRulesExpert", 25),
-            new Achievement("recyclingCenter", 1),
+            new Achievement("recyclingCenter", 1, 5, 10),
             new Achievement("calendarAddress", 1),
-            new Achievement("neighborhoodRegular", 5),
-            new Achievement("helpfulEye", 1),
-            new Achievement("trueWasteExpert", 10),
-            new Achievement("tenDayStreak", 7),
-            new Achievement("thirtyDayStreak", 30)
+            new Achievement("helpfulEye", 1, 5, 10),
+            new Achievement("tenDayStreak", 7, 30, 100),
+            new Achievement("tenLoggedItems", 3, 50, 100),
+            new Achievement("tenKgClimateSavings", 10000)
     ));
 
     static List<Achievement> visibleAchievements() {
@@ -56,7 +64,7 @@ final class AchievementStore {
     private static final String PREFS = "achievement_progress_v1";
     private static AchievementStore instance;
     private final SharedPreferences preferences;
-    private final Deque<String> pendingUnlocks = new ArrayDeque<>();
+    private final Deque<Unlock> pendingUnlocks = new ArrayDeque<>();
     private Runnable unlockListener;
 
     private AchievementStore(Context context) {
@@ -76,7 +84,8 @@ final class AchievementStore {
         } catch (Exception ignored) {
             // No valid saved calendar address yet.
         }
-        checkUnlocks();
+        migrateProgress();
+        checkUnlocks(false);
     }
 
     static synchronized AchievementStore get(Context context) {
@@ -89,36 +98,78 @@ final class AchievementStore {
         if (listener != null && !pendingUnlocks.isEmpty()) listener.run();
     }
 
-    String takePendingUnlock() {
+    Unlock takePendingUnlock() {
         return pendingUnlocks.pollFirst();
     }
 
     int count(Achievement achievement) {
         switch (achievement.id) {
-            case "firstAnswer": return Math.min(set("items").size(), 1);
-            case "tenItems": return Math.min(set("items").size(), 50);
-            case "hundredItems": return Math.min(set("items").size(), 100);
-            case "twoHundredFiftyItems": return Math.min(set("items").size(), 500);
-            case "fiveCategories": return Math.min(set("categories").size(), 5);
-            case "tenPhotoSearches": return Math.min(preferences.getInt("photoSearches", 0), 10);
-            case "hundredCameraItems": return Math.min(preferences.getInt("photoSearches", 0), 100);
-            case "allFractions": return Math.min(set("fractions").size(), 12);
-            case "localRulesExpert": return Math.min(set("localRuleItems").size(), 25);
-            case "localExpert": return (preferences.getBoolean("municipalitySelected", false) ? 1 : 0)
-                    + (preferences.getBoolean("municipalityViewed", false) ? 1 : 0);
-            case "recyclingCenter": return preferences.getBoolean("recyclingCenterMapOpened", false) ? 1 : 0;
+            case "firstAnswer": return set("items").size();
+            case "fiveCategories":
+                Set<String> categories = set("categories");
+                categories.addAll(set("fractions"));
+                return categories.size();
+            case "tenPhotoSearches": return preferences.getInt("photoSearches", 0);
+            case "localRulesExpert": return set("localRuleItems").size();
+            case "recyclingCenter": return Math.max(set("mappedRecyclingCenters").size(),
+                    preferences.getBoolean("recyclingCenterMapOpened", false) ? 1 : 0);
             case "calendarAddress": return preferences.getBoolean("calendarAddressSaved", false) ? 1 : 0;
-            case "neighborhoodRegular": return Math.min(set("mappedRecyclingCenters").size(), 5);
-            case "helpfulEye": return Math.min(preferences.getInt("correctionCount", 0), 1);
-            case "trueWasteExpert": return Math.min(preferences.getInt("correctionCount", 0), 10);
-            case "tenDayStreak": return Math.min(preferences.getInt("currentStreak", 0), 7);
-            case "thirtyDayStreak": return Math.min(preferences.getInt("currentStreak", 0), 30);
+            case "helpfulEye": return preferences.getInt("correctionCount", 0);
+            case "tenDayStreak": return Math.max(preferences.getInt("bestStreak", 0), preferences.getInt("currentStreak", 0));
+            case "tenLoggedItems": return preferences.getInt("loggedItemCount", 0);
+            case "tenKgClimateSavings": return preferences.getInt("estimatedSavingsGrams", 0);
             default: return 0;
         }
     }
 
-    boolean isUnlocked(Achievement achievement) {
-        return set("unlocked").contains(achievement.id);
+    int earnedLevel(Achievement achievement) {
+        return preferences.getInt("level." + achievement.id, 0);
+    }
+
+    int nextTarget(Achievement achievement) {
+        return achievement.thresholds[Math.min(earnedLevel(achievement), achievement.thresholds.length - 1)];
+    }
+
+    boolean isUnlocked(Achievement achievement) { return earnedLevel(achievement) > 0; }
+
+    static String detail(Context context, Achievement achievement, int target) {
+        String key = "achievements." + achievement.id + ".detail";
+        String text = target == 1 ? InfoPageText.get(context, key + ".one") : "";
+        if (text.isEmpty()) text = InfoPageText.get(context, key);
+        return text.replace("{0}", String.valueOf(target));
+    }
+
+    // Called by the sorting log when that feature is available on Android.
+    void recordSortingProgress(int itemCount, double savingsKg) {
+        int grams = Double.isFinite(savingsKg) ? (int) Math.min(10000, Math.max(0, savingsKg * 1000 + 0.000001)) : 0;
+        preferences.edit().putInt("loggedItemCount", Math.max(0, itemCount))
+                .putInt("estimatedSavingsGrams", grams).apply();
+        checkUnlocks();
+    }
+
+    private void migrateProgress() {
+        if (preferences.getBoolean("levelsMigrated", false)) return;
+        Set<String> legacy = set("unlocked");
+        SharedPreferences.Editor editor = preferences.edit();
+        for (Achievement achievement : ALL) {
+            int level = legacyLevel(achievement.id, legacy);
+            editor.putInt("level." + achievement.id, Math.max(earnedLevel(achievement), level));
+        }
+        editor.putInt("bestStreak", Math.max(preferences.getInt("bestStreak", 0), preferences.getInt("currentStreak", 0)))
+                .putBoolean("levelsMigrated", true).apply();
+    }
+
+    static int legacyLevel(String id, Set<String> legacy) {
+        switch (id) {
+            case "firstAnswer": return legacy.contains("hundredItems") || legacy.contains("twoHundredFiftyItems") ? 3 : legacy.contains("tenItems") ? 2 : 0;
+            case "tenPhotoSearches": return legacy.contains("hundredCameraItems") ? 3 : legacy.contains(id) ? 1 : 0;
+            case "fiveCategories": return legacy.contains("allFractions") ? 3 : legacy.contains(id) ? 1 : 0;
+            case "recyclingCenter": return legacy.contains("neighborhoodRegular") ? 2 : legacy.contains(id) ? 1 : 0;
+            case "helpfulEye": return legacy.contains("trueWasteExpert") ? 3 : legacy.contains(id) ? 1 : 0;
+            case "tenDayStreak": return legacy.contains("thirtyDayStreak") ? 2 : legacy.contains(id) ? 1 : 0;
+            case "tenLoggedItems": return legacy.contains("fiftyLoggedItems") ? 2 : legacy.contains(id) ? 1 : 0;
+            default: return legacy.contains(id) ? 1 : 0;
+        }
     }
 
     void recordItem(String danishName, String primaryCategory, boolean localRule) {
@@ -159,7 +210,8 @@ final class AchievementStore {
         long previous = preferences.getLong("lastActiveDay", Long.MIN_VALUE);
         if (previous == today) return;
         int streak = previous == today - 1 ? preferences.getInt("currentStreak", 0) + 1 : 1;
-        preferences.edit().putLong("lastActiveDay", today).putInt("currentStreak", streak).apply();
+        preferences.edit().putLong("lastActiveDay", today).putInt("currentStreak", streak)
+                .putInt("bestStreak", Math.max(streak, preferences.getInt("bestStreak", 0))).apply();
         checkUnlocks();
     }
 
@@ -180,18 +232,23 @@ final class AchievementStore {
         return true;
     }
 
-    private void checkUnlocks() {
-        Set<String> unlocked = set("unlocked");
-        List<String> newlyUnlocked = new ArrayList<>();
+    private void checkUnlocks() { checkUnlocks(true); }
+
+    private void checkUnlocks(boolean notify) {
+        SharedPreferences.Editor editor = preferences.edit();
+        boolean changed = false;
         for (Achievement achievement : ALL) {
-            if (!unlocked.contains(achievement.id) && count(achievement) >= achievement.target) {
-                unlocked.add(achievement.id);
-                newlyUnlocked.add(achievement.id);
+            int level = achievement.levelFor(count(achievement));
+            if (level <= earnedLevel(achievement)) continue;
+            editor.putInt("level." + achievement.id, level);
+            changed = true;
+            if (notify) {
+                pendingUnlocks.removeIf(unlock -> unlock.achievement.id.equals(achievement.id));
+                pendingUnlocks.addLast(new Unlock(achievement, level));
             }
         }
-        if (newlyUnlocked.isEmpty()) return;
-        preferences.edit().putStringSet("unlocked", unlocked).apply();
-        pendingUnlocks.addAll(newlyUnlocked);
-        if (unlockListener != null) unlockListener.run();
+        if (!changed) return;
+        editor.apply();
+        if (notify && unlockListener != null) unlockListener.run();
     }
 }

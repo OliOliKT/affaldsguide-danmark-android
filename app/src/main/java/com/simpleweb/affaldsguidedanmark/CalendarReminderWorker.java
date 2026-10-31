@@ -48,7 +48,7 @@ public final class CalendarReminderWorker extends Worker {
                 InfoPageText.get(context, "calendar.title"), NotificationManager.IMPORTANCE_DEFAULT));
         String titleKey = getInputData().getBoolean("today", false) ? "calendar.reminderTitleToday" : "calendar.reminderTitle";
         String body = InfoPageText.get(context, "calendar.reminderBody")
-                .replace("{0}", getInputData().getString("labels") == null ? "" : getInputData().getString("labels"));
+                .replace("{0}", CalendarPickupLabels.display(context, getInputData().getString("labels") == null ? "" : getInputData().getString("labels")));
         Intent openCalendar = new Intent(context, MainActivity.class)
                 .putExtra("open_calendar", true)
                 .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);

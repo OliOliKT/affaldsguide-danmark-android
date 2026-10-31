@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <item android:id="@+id/sorting_impact" android:title="@string/sorting_impact_page" />
+
     <item
         android:id="@+id/seneste_soegninger"
         android:title="@string/seneste_soegninger" />
@@ -28,5 +30,7 @@
     <item
         android:id="@+id/vilkårogbetingelser"
         android:title="@string/menu_5_vilkår_og_betingelser" />
+
+    <item android:id="@+id/rate_app" android:title="@string/rate_app" />
 
 </menu>

@@ -19,13 +19,21 @@
   },
   {
     "Navn": "Kulbanevej Genbrugsstation",
-    "Adresse": "Retortvej 2, 2500 Valby",
-    "Kommune": "Københavns Kommune"
+    "Adresse": "Retortvej 4, 2500 Valby",
+    "Kommune": "Københavns Kommune",
+    "lat": 55.6587164,
+    "lng": 12.4967572,
+    "KildeUrl": "https://a-r-c.dk/genbrugspladser/kulbanevej-genbrugsstation/",
+    "SidstTjekket": "2026-10-23"
   },
   {
     "Navn": "Vermlandsgade Genbrugsstation",
-    "Adresse": "Herjedalsgade 2, 2300 København S",
-    "Kommune": "Københavns Kommune"
+    "Adresse": "Herjedalgade 2-4, 2300 København S",
+    "Kommune": "Københavns Kommune",
+    "lat": 55.6692061,
+    "lng": 12.602091,
+    "KildeUrl": "https://a-r-c.dk/genbrugspladser/vermlandsgade-genbrugsstation/",
+    "SidstTjekket": "2026-10-23"
   },
   {
     "Navn": "Sydhavn Genbrugscenter",
@@ -75,7 +83,9 @@
   {
     "Navn": "Gartnergade Nærgenbrugsstation",
     "Adresse": "Gartnergade 8-14, 2200 København N",
-    "Kommune": "Københavns Kommune"
+    "Kommune": "Københavns Kommune",
+    "lat": 55.6858545,
+    "lng": 12.5537195
   },
   {
     "Navn": "Langgade Nærgenbrugsstation",
@@ -87,9 +97,13 @@
     "dawaBetegnelse": "Herman Bangs Plads 2, 2500 Valby"
   },
   {
-    "Navn": "Christiania Nærgenbrugsstation",
-    "Adresse": "Sydområdet 32, 1422 København K",
-    "Kommune": "Københavns Kommune"
+    "Navn": "Christiania Genbrugsstation",
+    "Adresse": "Sydområdet 32, 1440 Christiania",
+    "Kommune": "Københavns Kommune",
+    "KildeUrl": "https://a-r-c.dk/privat/find-din-genbrugsplads/",
+    "SidstTjekket": "2026-10-19",
+    "lat": 55.6738769,
+    "lng": 12.5983699
   },
   {
     "Navn": "Hørgården Nærgenbrugsstation",
@@ -119,22 +133,13 @@
     "dawaBetegnelse": "Tietgensvej 7, 8600 Silkeborg"
   },
   {
-    "Navn": "Charlotte Ammundsens Plads Nærgenbrugsstation",
-    "Adresse": "Charlotte Ammundsens Plads 3, 1359 København K",
-    "Kommune": "Københavns Kommune",
-    "lat": 55.68361057,
-    "lng": 12.56364839,
-    "dawaId": "6825e2c1-685b-501c-e044-00144f3ead67",
-    "dawaBetegnelse": "Charlotte Ammundsens Plads 3, 1359 København K"
-  },
-  {
     "Navn": "Østerbrohuset Nærgenbrugsstation",
-    "Adresse": "Århusgade 101, 2100 København Ø",
+    "Adresse": "Århusgade 103, 2100 København Ø",
     "Kommune": "Københavns Kommune",
     "lat": 55.7074427,
     "lng": 12.58759647,
-    "dawaId": "0a3f507b-381d-32b8-e044-0003ba298018",
-    "dawaBetegnelse": "Århusgade 101, 2100 København Ø"
+    "KildeUrl": "https://a-r-c.dk/genbrugspladser/oesterbrohuset/",
+    "SidstTjekket": "2026-10-19"
   },
   {
     "Navn": "Genbrugsstationen i Brøndby",
@@ -274,7 +279,9 @@
   {
     "Navn": "Genbrugsplads Højvangen",
     "Adresse": "Højvangen 25a, 3480 Fredensborg",
-    "Kommune": "Fredensborg Kommune"
+    "Kommune": "Fredensborg Kommune",
+    "lat": 55.964284847764,
+    "lng": 12.402257146142
   },
   {
     "Navn": "Genbrugspladsen Vandtårnsvej",
@@ -296,8 +303,12 @@
   },
   {
     "Navn": "Skibstrup Affaldscenter",
-    "Adresse": "Gørlundevej 4, 3140 Ålsgårde",
-    "Kommune": "Helsingør Kommune"
+    "Adresse": "Gørlundevej 4A, 3140 Ålsgårde",
+    "Kommune": "Helsingør Kommune",
+    "lat": 56.0679465,
+    "lng": 12.5208737,
+    "KildeUrl": "https://helsingor.dk/Media/638851420715597805/Miljvurderingsrapport%20for%20solcelleanlg%20ved%20Skibstrup%20inkl.%20bilag.pdf",
+    "SidstTjekket": "2026-10-23"
   },
   {
     "Navn": "Helsingør Genbrugsplads Cirklen",
@@ -383,12 +394,16 @@
   {
     "Navn": "Morsø Kommune Genbrugplads",
     "Adresse": "Nørrebro 196, 7900 Nykøbing Mors",
-    "Kommune": "Morsø Kommune"
+    "Kommune": "Morsø Kommune",
+    "lat": 56.8113177,
+    "lng": 8.8402075
   },
   {
     "Navn": "Vordingborg Genbrugsplads",
     "Adresse": "Spirevej 4, Ørslev, 4760 Vordingborg",
-    "Kommune": "Vordingborg Kommune"
+    "Kommune": "Vordingborg Kommune",
+    "lat": 55.0457651,
+    "lng": 11.9532764
   },
   {
     "Navn": "Møn Genbrugsplads",
@@ -677,12 +692,18 @@
   {
     "Navn": "Nykøbing Sjælland Genbrugsstation",
     "Adresse": "Vangen 3, 4500 Nykøbing Sjælland",
-    "Kommune": "Odsherred Kommune"
+    "Kommune": "Odsherred Kommune",
+    "lat": 55.9323394,
+    "lng": 11.6709675
   },
   {
     "Navn": "Askø Containerplads",
-    "Adresse": "Sundsørevej 1, 4930 Maribo",
-    "Kommune": "Lolland Kommune"
+    "Adresse": "Sundsørevej 1, 4942 Maribo",
+    "Kommune": "Lolland Kommune",
+    "KildeUrl": "https://www.refa.dk/genbrugsplads/askoe/",
+    "SidstTjekket": "2026-10-19",
+    "lat": 54.8967282,
+    "lng": 11.4771073
   },
   {
     "Navn": "Dannemare Genbrugsplads",
@@ -705,7 +726,9 @@
   {
     "Navn": "Lyngby-Taarbæk Genbrugsstation",
     "Adresse": "Firskovvej 7, 9, 2800 Kongens Lyngby",
-    "Kommune": "Lyngby-Taarbæk Kommune"
+    "Kommune": "Lyngby-Taarbæk Kommune",
+    "lat": 55.7715594,
+    "lng": 12.5138312
   },
   {
     "Navn": "Læsø Genbrugsplads",
@@ -877,7 +900,9 @@
   {
     "Navn": "Bullerup Genbrugsstation",
     "Adresse": "Bullerupvej 84 B, 5240 Odense NØ",
-    "Kommune": "Odense Kommune"
+    "Kommune": "Odense Kommune",
+    "lat": 55.4310982,
+    "lng": 10.4610737
   },
   {
     "Navn": "Højme Genbrugsstation",
@@ -891,7 +916,9 @@
   {
     "Navn": "Næsby Genbrugsstation",
     "Adresse": "Egestubben 2 F, 5270 Odense N",
-    "Kommune": "Odense Kommune"
+    "Kommune": "Odense Kommune",
+    "lat": 55.4254317,
+    "lng": 10.3581241
   },
   {
     "Navn": "Genbrugsstation Lindved",
@@ -919,15 +946,6 @@
     "lng": 10.35658896,
     "dawaId": "0a3f5089-bee5-32b8-e044-0003ba298018",
     "dawaBetegnelse": "Snapindvej 21, Bolbro, 5200 Odense V"
-  },
-  {
-    "Navn": "Genbrugsstation Holkebjergvej",
-    "Adresse": "Holkebjergvej 132, 5250 Odense",
-    "Kommune": "Odense Kommune",
-    "lat": 55.35867803,
-    "lng": 10.33378361,
-    "dawaId": "0a3f5089-48fb-32b8-e044-0003ba298018",
-    "dawaBetegnelse": "Holkebjergvej 132, Højme, 5250 Odense SV"
   },
   {
     "Navn": "Assens Genbrugsplads",
@@ -1057,8 +1075,12 @@
   },
   {
     "Navn": "Sandager Minigenbrugsstation",
-    "Adresse": "Sandagervej 21, 5854 Gislev",
-    "Kommune": "Faaborg-Midtfyn Kommune"
+    "Adresse": "Sandagervej 21A, 5854 Gislev",
+    "Kommune": "Faaborg-Midtfyn Kommune",
+    "lat": 55.2244968,
+    "lng": 10.5589106,
+    "KildeUrl": "https://dma.mst.dk/vis-sag/download/a08552cb-af13-4b3e-9847-fc0de362503c",
+    "SidstTjekket": "2026-10-23"
   },
   {
     "Navn": "Køstrup Genbrugsplads",
@@ -1152,8 +1174,12 @@
   },
   {
     "Navn": "Strynø Containerplads",
-    "Adresse": "Strynø Brovej 14, 5900 Rudkøbing",
-    "Kommune": "Langeland Kommune"
+    "Adresse": "Strynø Brovej 14, 5943 Strynø",
+    "Kommune": "Langeland Kommune",
+    "lat": 54.9034269,
+    "lng": 10.6245082,
+    "KildeUrl": "https://lef.dk/affald/genbrugspladser",
+    "SidstTjekket": "2026-10-23"
   },
   {
     "Navn": "Kerteminde Genbrugsplads",
@@ -1384,7 +1410,9 @@
   {
     "Navn": "Aarhus Ø Nærgenbrugsstation",
     "Adresse": "Johanne Bergs Gade 3, 8000 Aarhus Centrum",
-    "Kommune": "Aarhus Kommune"
+    "Kommune": "Aarhus Kommune",
+    "lat": 56.163638,
+    "lng": 10.2216094
   },
   {
     "Navn": "Godsbanen Nærgenbrugsstation",
@@ -1592,7 +1620,9 @@
   {
     "Navn": "Galten-Skovby Genbrugsplads",
     "Adresse": "Hjaltevej 24, 8464 Galten",
-    "Kommune": "Skanderborg Kommune"
+    "Kommune": "Skanderborg Kommune",
+    "lat": 56.1527414,
+    "lng": 9.9619943
   },
   {
     "Navn": "Værdipark Ry",
@@ -1667,15 +1697,6 @@
     "dawaBetegnelse": "Energivej 19, 8740 Brædstrup"
   },
   {
-    "Navn": "Hedensted Genbrugsplads",
-    "Adresse": "Remmerslundvej 35, 8723 Løsning",
-    "Kommune": "Hedensted Kommune",
-    "lat": 55.78690301,
-    "lng": 9.70862025,
-    "dawaId": "0a3f508f-7c84-32b8-e044-0003ba298018",
-    "dawaBetegnelse": "Remmerslundvej 35, 8723 Løsning"
-  },
-  {
     "Navn": "Odder Genbrugsplads",
     "Adresse": "Skovdalsvej 26A, 8300 Odder",
     "Kommune": "Odder Kommune",
@@ -1709,7 +1730,9 @@
     "lat": 55.78690301,
     "lng": 9.70862025,
     "dawaId": "0a3f508f-7c84-32b8-e044-0003ba298018",
-    "dawaBetegnelse": "Remmerslundvej 35, 8723 Løsning"
+    "dawaBetegnelse": "Remmerslundvej 35, 8723 Løsning",
+    "KildeUrl": "https://www.hedensted.dk/genbrugsstationer",
+    "SidstTjekket": "2026-10-19"
   },
   {
     "Navn": "Kalhave Genbrugsstation",
@@ -1769,15 +1792,6 @@
     "lng": 8.31165743,
     "dawaId": "0a3f5092-44ee-32b8-e044-0003ba298018",
     "dawaBetegnelse": "Søhusvænget 5, 7660 Bækmarksbro"
-  },
-  {
-    "Navn": "Ebeltoft Genbrugsplads",
-    "Adresse": "Hans Winthers Vej 19, 8400 Ebeltoft",
-    "Kommune": "Syddjurs Kommune",
-    "lat": 56.18170975,
-    "lng": 10.68563243,
-    "dawaId": "0a3f5093-37e3-32b8-e044-0003ba298018",
-    "dawaBetegnelse": "Hans Winthers Vej 19, 8400 Ebeltoft"
   },
   {
     "Navn": "Billund Genbrugsplads",
@@ -1914,11 +1928,6 @@
     "lng": 10.20398842,
     "dawaId": "0a3f509a-3b02-32b8-e044-0003ba298018",
     "dawaBetegnelse": "Barkholtvej 3B, 9881 Bindslev"
-  },
-  {
-    "Navn": "Genbrugsplads Bjergby",
-    "Adresse": "Asdalvej 53, 9800 Hjørring",
-    "Kommune": "Hjørring Kommune"
   },
   {
     "Navn": "Brønderslev Vest Genbrugsplads",
@@ -2120,15 +2129,6 @@
     "dawaBetegnelse": "Engvej 26, 9280 Storvorde"
   },
   {
-    "Navn": "Danmission Genbrug Svenstrup",
-    "Adresse": "Hobrovej 792, 9230 Svenstrup J",
-    "Kommune": "Aalborg Kommune",
-    "lat": 56.96866502,
-    "lng": 9.8548783,
-    "dawaId": "0a3f509c-5891-32b8-e044-0003ba298018",
-    "dawaBetegnelse": "Hobrovej 792, 9230 Svenstrup J"
-  },
-  {
     "Navn": "Hobro Genbrugsplads",
     "Adresse": "Humlemarken 5, 9500 Hobro",
     "Kommune": "Mariagerfjord Kommune",
@@ -2167,7 +2167,9 @@
   {
     "Navn": "Mariager Genbrugsplads",
     "Adresse": "Havndalvej 50 B, Edderup, 9550 Mariager",
-    "Kommune": "Mariagerfjord Kommune"
+    "Kommune": "Mariagerfjord Kommune",
+    "lat": 56.6477969,
+    "lng": 10.0901012
   },
   {
     "Navn": "Thisted Genbrugscenter",
@@ -2283,29 +2285,6 @@
     "dawaBetegnelse": "Strandvangen 17, 3600 Frederikssund"
   },
   {
-    "Navn": "Miljøautomat ved SuperBrugsen Slangerup",
-    "Adresse": "Københavnsvej 5, 3550 Slangerup",
-    "Kommune": "Frederikssund Kommune",
-    "lat": 55.84344218,
-    "lng": 12.17664785,
-    "dawaId": "0a3f5080-c076-32b8-e044-0003ba298018",
-    "dawaBetegnelse": "Københavnsvej 5, 3550 Slangerup"
-  },
-  {
-    "Navn": "Røde Kors Butik Slangerup",
-    "Adresse": "Kongensgade 8C, 3550 Slangerup",
-    "Kommune": "Frederikssund Kommune",
-    "lat": 55.84520314,
-    "lng": 12.17228067,
-    "dawaId": "0a3f5080-bede-32b8-e044-0003ba298018",
-    "dawaBetegnelse": "Kongensgade 8C, 3550 Slangerup"
-  },
-  {
-    "Navn": "Blå Kors Genbrug Ølstykke",
-    "Adresse": "Bryggertorvet 1, 3650 Ølstykke",
-    "Kommune": "Egedal Kommune"
-  },
-  {
     "Navn": "Stenløse Genbrugsplads",
     "Adresse": "Toppevadvej 28, 3660 Stenløse",
     "Kommune": "Egedal Kommune",
@@ -2342,38 +2321,6 @@
     "dawaBetegnelse": "Bronzeager 5, 4050 Skibby"
   },
   {
-    "Navn": "Bagergårdens Genbrug",
-    "Adresse": "Kirkevej 3, 4070 Kirke Hyllinge",
-    "Kommune": "Lejre Kommune",
-    "lat": 55.70575873,
-    "lng": 11.89950914,
-    "dawaId": "0a3f5081-049d-32b8-e044-0003ba298018",
-    "dawaBetegnelse": "Kirkevej 3, 4070 Kirke Hyllinge"
-  },
-  {
-    "Navn": "Folkekirkens Nødhjælps Genbrugsbutik",
-    "Adresse": "Bymidten 1, 4050 Skibby",
-    "Kommune": "Frederikssund Kommune",
-    "lat": 55.75181593,
-    "lng": 11.95798552,
-    "dawaId": "0a3f5080-9c56-32b8-e044-0003ba298018",
-    "dawaBetegnelse": "Bymidten 1, 4050 Skibby"
-  },
-  {
-    "Navn": "Røde Kors Butik Hvalsø",
-    "Adresse": "Hovedgaden 62, 4330 Hvalsø",
-    "Kommune": "Lejre Kommune",
-    "lat": 55.59000791,
-    "lng": 11.86229308,
-    "dawaId": "0a3f5081-791e-32b8-e044-0003ba298018",
-    "dawaBetegnelse": "Hovedgaden 62, 4330 Hvalsø"
-  },
-  {
-    "Navn": "Blå Kors Genbrug Tølløse",
-    "Adresse": "Industrivej 8, 4340 Tølløse",
-    "Kommune": "Holbæk Kommune"
-  },
-  {
     "Navn": "Stubbekøbing Genbrugsplads",
     "Adresse": "Tuemosevej 9, 4850 Stubbekøbing",
     "Kommune": "Guldborgsund Kommune",
@@ -2385,7 +2332,9 @@
   {
     "Navn": "Nykøbing F. Genbrugsplads",
     "Adresse": "Energivej 4, 4800 Nykøbing Falster",
-    "Kommune": "Guldborgsund Kommune"
+    "Kommune": "Guldborgsund Kommune",
+    "lat": 54.7800931,
+    "lng": 11.8839288
   },
   {
     "Navn": "Nørre Alslev Genbrugsplads",
@@ -2605,20 +2554,6 @@
     "Kommune": "Viborg Kommune"
   },
   {
-    "Navn": "Hammershøj Autoophug",
-    "Adresse": "Nørbækvej 17, 8830 Tjele",
-    "Kommune": "Viborg Kommune",
-    "lat": 56.51894471,
-    "lng": 9.7753003,
-    "dawaId": "0a3f5098-b52f-32b8-e044-0003ba298018",
-    "dawaBetegnelse": "Nørbækvej 17, Hvidding, 8830 Tjele"
-  },
-  {
-    "Navn": "Kirkens Korshær Genbrug Nimtofte",
-    "Adresse": "Torvet 1, st. tv, 8581 Nimtofte",
-    "Kommune": "Syddjurs Kommune"
-  },
-  {
     "Navn": "Ryomgård Genbrugsstation",
     "Adresse": "Industrivej 19, 8550 Ryomgård",
     "Kommune": "Syddjurs Kommune",
@@ -2693,7 +2628,9 @@
     "lat": 56.18170975,
     "lng": 10.68563243,
     "dawaId": "0a3f5093-37e3-32b8-e044-0003ba298018",
-    "dawaBetegnelse": "Hans Winthers Vej 19, 8400 Ebeltoft"
+    "dawaBetegnelse": "Hans Winthers Vej 19, 8400 Ebeltoft",
+    "KildeUrl": "https://renodjurs.dk/genbrugsstationer/ebeltoft-genbrugsstation",
+    "SidstTjekket": "2026-10-19"
   },
   {
     "Navn": "Pandrup Genbrugsplads",
@@ -2766,7 +2703,9 @@
   {
     "Navn": "Stoholm Genbrugsstation",
     "Adresse": "Tastumvej 18D, 7850 Stoholm Jylland",
-    "Kommune": "Viborg Kommune"
+    "Kommune": "Viborg Kommune",
+    "lat": 56.4931252,
+    "lng": 9.132576
   },
   {
     "Navn": "Rudkøbing Genbrugsplads",
@@ -2778,22 +2717,26 @@
     "dawaBetegnelse": "Dunsbjergvej 10, 5900 Rudkøbing"
   },
   {
-    "Navn": "Aakirkeby Containerplads",
+    "Navn": "Aakirkeby Genbrugsplads",
     "Adresse": "Brovangen 13, 3720 Aakirkeby",
     "Kommune": "Bornholms Regionskommune",
     "lat": 55.07441868,
     "lng": 14.91218858,
     "dawaId": "15ab4392-abd9-4968-abbb-db15a0f05c16",
-    "dawaBetegnelse": "Brovangen 13, Aakirkeby, 3720 Aakirkeby"
+    "dawaBetegnelse": "Brovangen 13, Aakirkeby, 3720 Aakirkeby",
+    "KildeUrl": "https://bofa.dk/om-bofa/abningstider/",
+    "SidstTjekket": "2026-10-19"
   },
   {
-    "Navn": "Østermarie Containerplads",
+    "Navn": "Østermarie Genbrugsplads",
     "Adresse": "Lyrsbyvej 6A, 3751 Østermarie",
     "Kommune": "Bornholms Regionskommune",
     "lat": 55.13400161,
     "lng": 15.03122336,
     "dawaId": "0a3f5087-8088-32b8-e044-0003ba298018",
-    "dawaBetegnelse": "Lyrsbyvej 6A, Østermarie, 3751 Østermarie"
+    "dawaBetegnelse": "Lyrsbyvej 6A, Østermarie, 3751 Østermarie",
+    "KildeUrl": "https://bofa.dk/om-bofa/abningstider/",
+    "SidstTjekket": "2026-10-19"
   },
   {
     "Navn": "Nexø Genbrugsplads",
@@ -2814,22 +2757,26 @@
     "dawaBetegnelse": "Almegårdsvej 8, Rønne, 3700 Rønne"
   },
   {
-    "Navn": "Hasle Containerplads",
+    "Navn": "Hasle Genbrugsplads",
     "Adresse": "Bykærvej 12, 3790 Hasle",
     "Kommune": "Bornholms Regionskommune",
     "lat": 55.18329629,
     "lng": 14.71551097,
     "dawaId": "0a3f5087-5bc2-32b8-e044-0003ba298018",
-    "dawaBetegnelse": "Bykærvej 12, Hasle, 3790 Hasle"
+    "dawaBetegnelse": "Bykærvej 12, Hasle, 3790 Hasle",
+    "KildeUrl": "https://bofa.dk/om-bofa/abningstider/",
+    "SidstTjekket": "2026-10-19"
   },
   {
-    "Navn": "Olsker Containerplads",
+    "Navn": "Olsker Genbrugsplads",
     "Adresse": "Rønnevej 68, 3770 Allinge",
     "Kommune": "Bornholms Regionskommune",
     "lat": 55.23410629,
     "lng": 14.79267594,
     "dawaId": "0a3f5087-94db-32b8-e044-0003ba298018",
-    "dawaBetegnelse": "Rønnevej 68, Olsker, 3770 Allinge"
+    "dawaBetegnelse": "Rønnevej 68, Olsker, 3770 Allinge",
+    "KildeUrl": "https://bofa.dk/om-bofa/abningstider/",
+    "SidstTjekket": "2026-10-19"
   },
   {
     "Navn": "Fanø Genbrugsplads",
@@ -2960,7 +2907,9 @@
   {
     "Navn": "Ravnshøj Genbrugsplads",
     "Adresse": "Stenvej 8, Ravnshøj, 9900 Frederikshavn",
-    "Kommune": "Frederikshavn Kommune"
+    "Kommune": "Frederikshavn Kommune",
+    "lat": 57.4507176,
+    "lng": 10.4473597
   },
   {
     "Navn": "Værløse Genbrugsstation",
@@ -3083,5 +3032,59 @@
     "lng": 11.14082315,
     "dawaId": "0a3f5082-88a7-32b8-e044-0003ba298018",
     "dawaBetegnelse": "Sejerøvej 7B, 4592 Sejerø"
+  },
+  {
+    "Navn": "Helga Larsens Plads Nærgenbrugsstation",
+    "Adresse": "Helga Larsens Plads 9, 2720 Vanløse",
+    "Kommune": "Københavns Kommune",
+    "KildeUrl": "https://a-r-c.dk/privat/find-din-genbrugsplads/",
+    "SidstTjekket": "2026-10-19",
+    "lat": 55.6847166,
+    "lng": 12.4843082
+  },
+  {
+    "Navn": "Kay Fiskers Plads Nærgenbrugsstation",
+    "Adresse": "Kay Fiskers Plads 2, 2300 København S",
+    "Kommune": "Københavns Kommune",
+    "KildeUrl": "https://kbhgenbruger.kk.dk/byens-genbrugsstationer/kay-fiskers-plads-naergenbrugsstation",
+    "SidstTjekket": "2026-10-19",
+    "lat": 55.6296769,
+    "lng": 12.5811833
+  },
+  {
+    "Navn": "Tingbjerg Nærgenbrugsstation",
+    "Adresse": "Ved Bygården 14, 2700 Brønshøj",
+    "Kommune": "Københavns Kommune",
+    "KildeUrl": "https://a-r-c.dk/genbrugspladser/tingbjerg-naergenbrugsstation/",
+    "SidstTjekket": "2026-10-19",
+    "lat": 55.7178008,
+    "lng": 12.4878283
+  },
+  {
+    "Navn": "Niels Bohrs Allé Genbrugsstation",
+    "Adresse": "Niels Bohrs Allé 148 B, 5230 Odense M",
+    "Kommune": "Odense Kommune",
+    "KildeUrl": "https://www.odenserenovation.dk/sorteringsguide/genbrugsstationer/niels-bohrs-alle-148-b-ved-bilka/",
+    "SidstTjekket": "2026-10-19",
+    "lat": 55.3772911,
+    "lng": 10.4293345
+  },
+  {
+    "Navn": "Rugårdsvej Genbrugsstation",
+    "Adresse": "Rugårdsvej 275, 5210 Odense NV",
+    "Kommune": "Odense Kommune",
+    "KildeUrl": "https://www.odenserenovation.dk/sorteringsguide/genbrugsstationer/rugaardsvej-275-villestofte/",
+    "SidstTjekket": "2026-10-19",
+    "lat": 55.4186129,
+    "lng": 10.3020078
+  },
+  {
+    "Navn": "Kongensgade Nærgenbrugsstation",
+    "Adresse": "Kongensgade 69A, 5000 Odense C",
+    "Kommune": "Odense Kommune",
+    "KildeUrl": "https://www.odenserenovation.dk/om-odense-renovation/nyheder/naergenbrugsstation-i-kongensgade/",
+    "SidstTjekket": "2026-10-19",
+    "lat": 55.3984328,
+    "lng": 10.3799983
   }
 ]

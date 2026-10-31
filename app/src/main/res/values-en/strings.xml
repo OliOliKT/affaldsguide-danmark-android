@@ -6,8 +6,9 @@
     <string name="municipality_self_service_title">Order, change or report</string>
     <string name="municipality_self_service_description">Report a missed collection, order an extra pickup, or see your municipality’s options for changing your waste service.</string>
     <string name="municipality_self_service_open">Open municipal self-service</string>
-    <string name="widget_title">Find the right sorting</string>
-    <string name="widget_search">Search waste</string>
+    <string name="widget_title">Sort your waste</string>
+    <string name="widget_picker_name">Search for waste</string>
+    <string name="widget_search">Search</string>
     <string name="widget_camera">Take photo</string>
     <string name="achievements_page">Achievements</string>
     <string name="arabic_language">العربية</string>
@@ -146,4 +147,12 @@
     <string name="laes_mere_om_fraktion">Read more about %1$s</string>
     <string name="skjul_detaljer">Hide details</string>
     <string name="begynd_med_det_samme">Start</string>
+    <string name="sorting_impact_page">My waste overview</string>
+    <string name="widget_search_description">Search for waste or open the camera from the widget.</string>
+    <string name="widget_calendar_name">Waste calendar</string>
+    <string name="widget_calendar_description">See your next four collections.</string>
+    <string name="widget_calendar_choose_address">Choose an address</string>
+    <string name="widget_calendar_empty">No upcoming collections found</string>
+    <string name="widget_calendar_unavailable">Open the calendar to load collections</string>
+    <string name="rate_app">Rate the app</string>
 </resources>

@@ -35,16 +35,19 @@ public class LanguageFragment extends Fragment {
         danishButton.setOnClickListener(v -> {
             LanguageManager.saveLanguage(requireContext(), LanguageManager.DANISH);
             PhotoSearchWidgetProvider.updateAll(requireContext());
+            CalendarWidgetProvider.updateAll(requireContext());
             requireActivity().recreate();
         });
         englishButton.setOnClickListener(v -> {
             LanguageManager.saveLanguage(requireContext(), LanguageManager.ENGLISH);
             PhotoSearchWidgetProvider.updateAll(requireContext());
+            CalendarWidgetProvider.updateAll(requireContext());
             requireActivity().recreate();
         });
         arabicButton.setOnClickListener(v -> {
             LanguageManager.saveLanguage(requireContext(), LanguageManager.ARABIC);
             PhotoSearchWidgetProvider.updateAll(requireContext());
+            CalendarWidgetProvider.updateAll(requireContext());
             requireActivity().recreate();
         });
     }

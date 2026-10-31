@@ -130,7 +130,7 @@
     "ar": "أقرب مركز لإعادة التدوير"
   },
   "searchview.023": {
-    "da": "Affaldsfraktioner",
+    "da": "Affaldstyper",
     "en": "Trash categories",
     "ar": "فئات النفايات"
   },
@@ -190,7 +190,7 @@
     "ar": "قاعدة محلية في {0}"
   },
   "searchview.035": {
-    "da": "Hvis fraktionen ikke findes lokalt",
+    "da": "Hvis affaldstypen ikke findes lokalt",
     "en": "If the category is not available locally",
     "ar": "إذا لم تكن الفئة متاحة محليًا"
   },
@@ -210,7 +210,7 @@
     "ar": "البديل: مركز إعادة التدوير أو حاوية المنسوجات التابعة للبلدية. لا توضع المنسوجات مع النفايات المتبقية إلا إذا كانت مبللة أو متعفنة أو شديدة الاتساخ."
   },
   "searchview.039": {
-    "da": "Ingen generel erstatningsfraktion. Kommunen skal have en restaffaldsordning; kontakt kommunen, hvis du ikke har adgang til den.",
+    "da": "Ingen generel alternativ affaldstype. Kommunen skal have en restaffaldsordning; kontakt kommunen, hvis du ikke har adgang til den.",
     "en": "There is no general substitute category. The municipality must provide a residual-waste scheme; contact it if you cannot access one.",
     "ar": "لا توجد فئة بديلة عامة. يجب أن توفر البلدية نظامًا للنفايات المتبقية؛ تواصل مع البلدية إذا لم يكن متاحًا لك."
   },
@@ -345,9 +345,9 @@
     "ar": "ابحث عن بلديتك لعرض خدمات النفايات المحلية ومراكز إعادة التدوير ومعلومات الاتصال وفئات النفايات التي تستخدمها البلدية."
   },
   "municipalitiesview.007": {
-    "da": "Gemt",
-    "en": "Saved",
-    "ar": "محفوظة"
+    "da": "Din kommune",
+    "en": "Your municipality",
+    "ar": "بلديتك"
   },
   "municipalitiesview.008": {
     "da": "Matcher {0}",
@@ -435,7 +435,7 @@
     "ar": "القواعد المحلية"
   },
   "municipalitiesview.017": {
-    "da": "Affaldsfraktioner: {0} af {1}",
+    "da": "Affaldstyper: {0} af {1}",
     "en": "Trash categories: {0} of {1}",
     "ar": "فئات النفايات: {0} من {1}"
   },
@@ -490,7 +490,7 @@
     "ar": "آخر تحقق"
   },
   "municipalitiesview.028": {
-    "da": "Ikke bekræftet betyder, at kommunens materiale ikke angiver fraktionen tydeligt.",
+    "da": "Ikke bekræftet betyder, at kommunens materiale ikke angiver affaldstypen tydeligt.",
     "en": "Not confirmed means the municipality's material does not identify the category clearly.",
     "ar": "غير مؤكد يعني أن مواد البلدية لا تذكر هذه الفئة بوضوح."
   },
@@ -525,7 +525,7 @@
     "ar": "حول التطبيق"
   },
   "moreinfoview.004": {
-    "da": "Kontaktinformation",
+    "da": "Kontaktoplysninger",
     "en": "Contact",
     "ar": "معلومات الاتصال"
   },
@@ -555,7 +555,7 @@
     "ar": "كيف يعمل التطبيق"
   },
   "moreinfoview.010": {
-    "da": "Du kan starte med det, du ved: Skriv navnet på en ting i søgefeltet, eller tag et billede, hvis du hellere vil lade kameraet hjælpe. Appen foreslår mulige matches, og når du vælger den rigtige genstand, kan du se, hvordan den skal sorteres.\n\nI Danmark bruger kommunerne mange af de samme affaldstyper, men reglerne kan stadig variere fra sted til sted. Når du vælger din kommune, tager appen højde for de lokale regler, der er registreret for den. Du har også mulighed for at finde relevante oplysninger om kommunens affaldsordninger og finde din nærmeste genbrugsplads.\n\nVil du lære systemet lidt bedre at kende, kan du gå på opdagelse i affaldsfraktionerne og bl.a. lære hvad affaldet bliver til og hvor meget vi smider ud. Dine seneste søgninger gør det nemt at finde tilbage til den genstand, du allerede én gang måtte slå op.\n\nAppen har også achievements, hvis du synes, det er sjovere at få et lille skulderklap undervejs. Og finder du et svar, der ser forkert ud, kan du melde det. Den slags hjælper med at gøre guiden bedre.\n\nSorteringsoplysningerne ligger lokalt i appens database, så du hurtigt kan slå ting op. Vi udbygger og retter løbende indholdet, men lokale ordninger kan ændre sig. Er du i tvivl, er din kommunes officielle vejledning altid det bedste sted at dobbelttjekke.",
+    "da": "Du kan starte med det, du ved: Skriv navnet på en ting i søgefeltet, eller tag et billede, hvis du hellere vil lade kameraet hjælpe. Appen foreslår mulige matches, og når du vælger den rigtige genstand, kan du se, hvordan den skal sorteres.\n\nI Danmark bruger kommunerne mange af de samme affaldstyper, men reglerne kan stadig variere fra sted til sted. Når du vælger din kommune, tager appen højde for de lokale regler, der er registreret for den. Du har også mulighed for at finde relevante oplysninger om kommunens affaldsordninger og finde din nærmeste genbrugsplads.\n\nVil du lære systemet lidt bedre at kende, kan du gå på opdagelse i affaldstyperne og bl.a. lære hvad affaldet bliver til og hvor meget vi smider ud. Dine seneste søgninger gør det nemt at finde tilbage til den genstand, du allerede én gang måtte slå op.\n\nAppen har også achievements, hvis du synes, det er sjovere at få et lille skulderklap undervejs. Og finder du et svar, der ser forkert ud, kan du melde det. Den slags hjælper med at gøre guiden bedre.\n\nSorteringsoplysningerne ligger lokalt i appens database, så du hurtigt kan slå ting op. Vi udbygger og retter løbende indholdet, men lokale ordninger kan ændre sig. Er du i tvivl, er din kommunes officielle vejledning altid det bedste sted at dobbelttjekke.",
     "en": "Start with what you know: type an item's name into the search field, or take a photo if you'd rather let the camera help. The app suggests possible matches, and once you choose the right item, you can see how to sort it.\n\nMunicipalities across Denmark use many of the same waste categories, but the rules can still vary from place to place. When you select your municipality, the app takes into account the local rules recorded for it. You can also find useful information about the municipality's waste collection schemes and locate your nearest recycling centre.\n\nWant to understand the system a little better? Explore the waste categories to learn, among other things, what the waste becomes and how much we throw away. Your recent searches make it easy to return to something you have already looked up.\n\nThe app also has achievements, if a little pat on the back makes the journey more fun. And if you find an answer that looks wrong, you can report it. That helps us make the guide better.\n\nThe sorting information is stored locally in the app's database, so you can look things up quickly. We continually add to and correct the content, but local schemes can change. If you are unsure, your municipality's official guidance is always the best place to double-check.",
     "ar": "ابدأ بما تعرفه: اكتب اسم الغرض في خانة البحث، أو التقط له صورة إذا فضّلت الاستعانة بالكاميرا. يقترح التطبيق نتائج محتملة، وعندما تختار الغرض الصحيح يمكنك معرفة كيفية فرزه.\n\nتستخدم البلديات في الدنمارك كثيرًا من فئات النفايات نفسها، لكن القواعد قد تختلف من مكان إلى آخر. عندما تختار بلديتك، يراعي التطبيق القواعد المحلية المسجّلة لها. ويمكنك أيضًا العثور على معلومات مفيدة عن أنظمة جمع النفايات في البلدية ومعرفة أقرب مركز لإعادة التدوير إليك.\n\nهل تريد فهم نظام الفرز بشكل أفضل؟ تصفّح فئات النفايات لتعرف، من بين أمور أخرى، إلى ماذا تتحول النفايات وكم نتخلص منها. وتسهّل عليك عمليات البحث الأخيرة الرجوع إلى غرض سبق أن بحثت عنه.\n\nيضم التطبيق أيضًا إنجازات، إذا كنت تحب الحصول على تشجيع صغير بين حين وآخر. وإذا وجدت إجابة تبدو غير صحيحة، يمكنك الإبلاغ عنها. فهذا يساعدنا على تحسين الدليل.\n\nتُخزَّن معلومات الفرز محليًا في قاعدة بيانات التطبيق، لتتمكن من البحث بسرعة. نواصل إضافة المحتوى وتصحيحه، لكن أنظمة البلديات المحلية قد تتغير. وإذا ساورك شك، فإرشادات بلديتك الرسمية هي دائمًا أفضل مرجع للتحقق."
   },
@@ -674,11 +674,6 @@
     "en": "Online search was unavailable. These suggestions were found on your Android phone.",
     "ar": "لم يكن البحث عبر الإنترنت متاحًا. تم العثور على هذه الاقتراحات على هاتف Android."
   },
-  "photo.onlineNoMatch": {
-    "da": "Online søgning fandt ikke et match i sorteringsguiden. Disse forslag er fundet på din Android-telefon.",
-    "en": "Online search found no match in the sorting guide. These suggestions were found on your Android phone.",
-    "ar": "لم يعثر البحث عبر الإنترنت على تطابق في دليل الفرز. تم العثور على هذه الاقتراحات على هاتف Android."
-  },
   "search.photoImportError.title": {
     "da": "Billedet kunne ikke åbnes",
     "en": "Could not open photo",
@@ -735,9 +730,9 @@
     "ar": "اختر البلدية"
   },
   "onboardingview.010": {
-    "da": "Indtast postnummer, by eller kommunenavn, så appen kan vise lokale oplysninger og nærmeste genbrugsplads.",
-    "en": "Enter postcode, town or municipality name so the app can show local information and the nearest recycling center.",
-    "ar": "أدخل الرمز البريدي أو المدينة أو اسم البلدية لعرض المعلومات المحلية وأقرب مركز لإعادة التدوير."
+    "da": "Indtast kommune, postnummer eller by, så appen kan vise dig lokale oplysninger",
+    "en": "Enter a municipality, postcode or town so the app can show you local information",
+    "ar": "أدخل اسم البلدية أو الرمز البريدي أو المدينة ليعرض لك التطبيق معلومات محلية"
   },
   "onboardingview.011": {
     "da": "Postnummer, by eller kommune",
@@ -780,8 +775,8 @@
     "ar": "بحث"
   },
   "contentview.002": {
-    "da": "Fraktioner",
-    "en": "Categories",
+    "da": "Affaldstyper",
+    "en": "Waste types",
     "ar": "فئات النفايات"
   },
   "contentview.003": {
@@ -800,18 +795,18 @@
     "ar": "المزيد"
   },
   "fractionsview.001": {
-    "da": "Indlæser affaldsfraktioner...",
+    "da": "Indlæser affaldstyper...",
     "en": "Loading waste categories...",
     "ar": "جارٍ تحميل فئات النفايات..."
   },
   "fractionsview.002": {
-    "da": "Fraktioner kunne ikke indlæses",
+    "da": "Affaldstyper kunne ikke indlæses",
     "en": "Categories could not be loaded",
     "ar": "تعذر تحميل فئات النفايات"
   },
   "fractionsview.003": {
-    "da": "Fraktioner",
-    "en": "Categories",
+    "da": "Affaldstyper",
+    "en": "Waste types",
     "ar": "فئات النفايات"
   },
   "fractionsview.004": {
@@ -870,17 +865,17 @@
     "ar": "يتم عرض أول 80 عنصرًا."
   },
   "fractionsview.015": {
-    "da": "Bruges fraktionen i din kommune?",
+    "da": "Bruges affaldstypen i din kommune?",
     "en": "Does your municipality use this category?",
     "ar": "هل تستخدم بلديتك هذه الفئة؟"
   },
   "fractionsview.016": {
-    "da": "Vælg din kommune for at se, om fraktionen bruges lokalt.",
+    "da": "Vælg din kommune for at se, om affaldstypen bruges lokalt.",
     "en": "Choose your municipality to see whether this category is used locally.",
     "ar": "اختر بلديتك لمعرفة ما إذا كانت هذه الفئة مستخدمة محليًا."
   },
   "fractionsview.017": {
-    "da": "Kommunens oplysninger bekræfter ikke, om denne fraktion bruges. Tjek kommunens officielle vejledning, hvis du er i tvivl.",
+    "da": "Kommunens oplysninger bekræfter ikke, om denne affaldstype bruges. Tjek kommunens officielle vejledning, hvis du er i tvivl.",
     "en": "The municipality information does not confirm whether this category is used. Check the municipality's official guidance if you are unsure.",
     "ar": "لا تؤكد معلومات البلدية ما إذا كانت هذه الفئة مستخدمة. راجع إرشادات البلدية الرسمية إذا لم تكن متأكدًا."
   },
@@ -3000,7 +2995,7 @@
     "ar": "يجب أن يكون نظيفًا"
   },
   "guidance.Særskilt fraktion": {
-    "da": "Særskilt fraktion",
+    "da": "Særskilt affaldstype",
     "en": "Separate waste category",
     "ar": "فئة جمع منفصلة"
   },
@@ -5315,7 +5310,7 @@
     "ar": "توفر Odense Renovation دليلًا رقميًا لفئات النفايات العشر وصفحات ويب ومواد مطبوعة عن الفرز في المنزل وفي محطات إعادة التدوير الثماني."
   },
   "municipality.wasteFractionCount": {
-    "da": "Bruger {0} ud af 10 fraktioner",
+    "da": "Bruger {0} ud af 10 affaldstyper",
     "en": "Uses {0} out of 10 waste categories",
     "ar": "تستخدم {0} من أصل 10 فئات من النفايات"
   },
@@ -5375,22 +5370,22 @@
     "ar": " يجب فرزه على النحو التالي:"
   },
   "search.fallbackAdvice.withMunicipality": {
-    "da": "Hvis {0} ikke indsamler fraktionen ved din bolig, kan du gøre dette.",
+    "da": "Hvis {0} ikke indsamler affaldstypen ved din bolig, kan du gøre dette.",
     "en": "If {0} does not collect this category at your home, you can do this.",
     "ar": "إذا كانت {0} لا تجمع هذه الفئة من منزلك، فيمكنك فعل ما يلي."
   },
   "search.fallbackAdvice.general": {
-    "da": "Hvis din kommune ikke indsamler fraktionen ved din bolig, kan du gøre dette.",
+    "da": "Hvis din kommune ikke indsamler affaldstypen ved din bolig, kan du gøre dette.",
     "en": "If your municipality does not collect this category at your home, you can do this.",
     "ar": "إذا كانت بلديتك لا تجمع هذه الفئة من منزلك، فيمكنك فعل ما يلي."
   },
   "errors.fractionsMissing": {
-    "da": "Affaldsfraktioner kunne ikke findes i appen.",
+    "da": "Affaldstyper kunne ikke findes i appen.",
     "en": "Waste categories could not be found in the app.",
     "ar": "تعذر العثور على فئات النفايات في التطبيق."
   },
   "errors.fractionsLoad": {
-    "da": "Affaldsfraktionerne kunne ikke indlæses.",
+    "da": "Affaldstyperne kunne ikke indlæses.",
     "en": "Waste categories could not be loaded.",
     "ar": "تعذر تحميل فئات النفايات."
   },
@@ -7010,7 +7005,7 @@
     "ar": "تطبيق النفايات"
   },
   "municipality.label.Affaldsfraktioner": {
-    "da": "Affaldsfraktioner",
+    "da": "Affaldstyper",
     "en": "Trash categories",
     "ar": "فئات النفايات"
   },
@@ -8355,7 +8350,7 @@
     "ar": "تستخدم بلدية Brøndby الخدمة الذاتية Mit Affald لتقويم النفايات والإبلاغ عن عدم التفريغ والرسائل النصية والحاويات ونفايات الحدائق وغيرها من الخدمات. وتشير البلدية أيضًا إلى تطبيق Affaldsportal."
   },
   "municipality.scheme.På Fanø sorteres affald i de 10 nationale fraktioner. Kommunen beskriver blandt andet madaffald, restaffald, tekstilaffald, mad- og drikkekartoner, glas, metal, plast, papir, pap og farligt affald.": {
-    "da": "På Fanø sorteres affald i de 10 nationale fraktioner. Kommunen beskriver blandt andet madaffald, restaffald, tekstilaffald, mad- og drikkekartoner, glas, metal, plast, papir, pap og farligt affald.",
+    "da": "På Fanø sorteres affald i de 10 nationale affaldstyper. Kommunen beskriver blandt andet madaffald, restaffald, tekstilaffald, mad- og drikkekartoner, glas, metal, plast, papir, pap og farligt affald.",
     "en": "On Fanø, waste is sorted into the 10 national trash categories. The municipality describes food waste, residual waste, textile waste, food and beverage cartons, glass, metal, plastic, paper, cardboard and hazardous waste.",
     "ar": "تُفرز النفايات في Fanø ضمن الفئات الوطنية العشر. وتوضح البلدية فرز نفايات الطعام والنفايات المتبقية والمنسوجات وعبوات الطعام والشراب والزجاج والمعادن والبلاستيك والورق والكرتون والنفايات الخطرة."
   },
@@ -8520,7 +8515,7 @@
     "ar": "تشمل اللائحة نفايات الطعام والنفايات المتبقية والورق والبلاستيك وعبوات الطعام والشراب والزجاج والمعادن والكرتون والنفايات الخطرة والمنسوجات. ويجب وضع الحاويات وترتيب طريق الوصول بحيث يمكن تفريغها بأمان."
   },
   "municipality.scheme.Arwos' digitale sorteringsside og sorteringshåndbog forklarer alle lokale fraktioner. Printbare vejledninger, skilte og klistermærker findes på dansk, tysk og engelsk til både private hjem og udlejningsejendomme.": {
-    "da": "Arwos' digitale sorteringsside og sorteringshåndbog forklarer alle lokale fraktioner. Printbare vejledninger, skilte og klistermærker findes på dansk, tysk og engelsk til både private hjem og udlejningsejendomme.",
+    "da": "Arwos' digitale sorteringsside og sorteringshåndbog forklarer alle lokale affaldstyper. Printbare vejledninger, skilte og klistermærker findes på dansk, tysk og engelsk til både private hjem og udlejningsejendomme.",
     "en": "Arwos' digital sorting pages and handbook explain all local categories. Printable guides, signs and labels are available in Danish, German and English for private homes and rental properties.",
     "ar": "تشرح صفحات الفرز الرقمية ودليل الفرز لدى Arwos جميع فئات النفايات المحلية. وتتوفر أدلة ولافتات وملصقات قابلة للطباعة بالدنماركية والألمانية والإنجليزية للمنازل الخاصة والعقارات المؤجرة."
   },
@@ -8580,7 +8575,7 @@
     "ar": "تُجمع النفايات الخطرة في الصندوق الأحمر. ضعه عند حدود العقار قبل الساعة 05:00 يوم الجمع، واكتب العنوان على الملصق، وتأكد من إغلاق الغطاء تمامًا وألا يتجاوز وزنه 4 كغ؛ وتُسلَّم الأدوية والإبر إلى الصيدلية."
   },
   "municipality.scheme.Renosyd administrerer ordningerne. I Mit Renosyd kan du se tømmekalender, beholdere og egne affaldsdata, bestille ekstra service og melde problemer; standardløsningen har tre beholdere til de almindelige fraktioner.": {
-    "da": "Renosyd administrerer ordningerne. I Mit Renosyd kan du se tømmekalender, beholdere og egne affaldsdata, bestille ekstra service og melde problemer; standardløsningen har tre beholdere til de almindelige fraktioner.",
+    "da": "Renosyd administrerer ordningerne. I Mit Renosyd kan du se tømmekalender, beholdere og egne affaldsdata, bestille ekstra service og melde problemer; standardløsningen har tre beholdere til de almindelige affaldstyper.",
     "en": "Renosyd administers the services. In Mit Renosyd you can view the collection calendar, bins and personal waste data, order extra services and report problems; the standard setup has three bins for the ordinary waste categories.",
     "ar": "تدير Renosyd خدمات النفايات. في Mit Renosyd يمكنك عرض تقويم التفريغ والحاويات وبيانات نفاياتك وطلب خدمات إضافية والإبلاغ عن المشكلات؛ ويضم النظام المعتاد ثلاث حاويات لفئات النفايات الأساسية."
   },
@@ -8670,7 +8665,7 @@
     "ar": "تُسلَّم الكميات الصغيرة من النفايات الخطرة في الصندوق الأحمر أو إلى مركز إعادة التدوير. يجب وضع السوائل في عبوات محكمة الإغلاق وموسومة وتغليف المصابيح؛ وتُسلَّم الذخيرة إلى الشرطة وبقايا الأدوية إلى الصيدلية."
   },
   "municipality.scheme.Den elektroniske sorteringsguide viser for hver genstand, om den skal i en beholder, miljøkassen, storskraldsordningen eller en bestemt fraktion på genbrugspladsen. Guiden indeholder også lokale pakke- og afleveringskrav.": {
-    "da": "Den elektroniske sorteringsguide viser for hver genstand, om den skal i en beholder, miljøkassen, storskraldsordningen eller en bestemt fraktion på genbrugspladsen. Guiden indeholder også lokale pakke- og afleveringskrav.",
+    "da": "Den elektroniske sorteringsguide viser for hver genstand, om den skal i en beholder, miljøkassen, storskraldsordningen eller en bestemt affaldstype på genbrugspladsen. Guiden indeholder også lokale pakke- og afleveringskrav.",
     "en": "The electronic sorting guide shows for each item whether it belongs in a bin, the environmental box, bulky-waste collection or a specific recycling-centre category. It also includes local packing and delivery requirements.",
     "ar": "يوضح دليل الفرز الإلكتروني لكل غرض ما إذا كان يوضع في حاوية أو صندوق النفايات الخطرة أو ضمن خدمة جمع النفايات كبيرة الحجم أو في فئة محددة بمركز إعادة التدوير. ويتضمن أيضًا متطلبات التغليف والتسليم المحلية."
   },
@@ -8715,7 +8710,7 @@
     "ar": "تُجمع النفايات الخطرة والأجهزة الإلكترونية الصغيرة والبطاريات والمصابيح في الصندوق الأحمر. يُحجز استبداله عبر خدمة الجمع لدى AffaldPlus؛ وتُسلَّم الأغراض غير المسموح بوضعها فيه إلى مركز Sorø أو Dianalund لإعادة التدوير."
   },
   "municipality.scheme.Storskrald indsamles cirka 20 gange om året ved helårsboliger og to gange om året i sommerhusområder. Affaldet skal sorteres og pakkes efter fraktion; personalet kan udtage brugbare møbler og andet indbo til direkte genbrug.": {
-    "da": "Storskrald indsamles cirka 20 gange om året ved helårsboliger og to gange om året i sommerhusområder. Affaldet skal sorteres og pakkes efter fraktion; personalet kan udtage brugbare møbler og andet indbo til direkte genbrug.",
+    "da": "Storskrald indsamles cirka 20 gange om året ved helårsboliger og to gange om året i sommerhusområder. Affaldet skal sorteres og pakkes efter affaldstype; personalet kan udtage brugbare møbler og andet indbo til direkte genbrug.",
     "en": "Bulky waste is collected about 20 times a year from permanent homes and twice a year in holiday-home areas. Waste must be separated and packed by category; staff may select usable furniture and household items for direct reuse.",
     "ar": "تُجمع النفايات كبيرة الحجم نحو 20 مرة سنويًا من المنازل المأهولة طوال العام، ومرتين سنويًا في مناطق بيوت العطلات. يجب فرزها وتغليفها حسب الفئة؛ ويمكن للموظفين اختيار الأثاث والأغراض المنزلية الصالحة لإعادة الاستخدام المباشر."
   },
@@ -8875,7 +8870,7 @@
     "ar": "تُحجز خدمة جمع النفايات كبيرة الحجم في Mit Renosyd، ويجب فرزها ووضعها وفق التعليمات المعروضة أثناء الحجز. ويمكن تسليم النفايات غير المشمولة إلى مراكز Renosyd المحلية في Skanderborg وHørning وRy وGalten-Skovby."
   },
   "municipality.scheme.Sorøs søgbare Affalds-ABC viser både korrekt fraktion og om genstanden kan hentes som storskrald eller haveaffald. AffaldPlus tilbyder desuden sorteringshæfter og særskilte guider til enfamilieboliger og boliger med fælles løsninger.": {
-    "da": "Sorøs søgbare Affalds-ABC viser både korrekt fraktion og om genstanden kan hentes som storskrald eller haveaffald. AffaldPlus tilbyder desuden sorteringshæfter og særskilte guider til enfamilieboliger og boliger med fælles løsninger.",
+    "da": "Sorøs søgbare Affalds-ABC viser både korrekt affaldstype og om genstanden kan hentes som storskrald eller haveaffald. AffaldPlus tilbyder desuden sorteringshæfter og særskilte guider til enfamilieboliger og boliger med fælles løsninger.",
     "en": "Sorø's searchable Affalds-ABC shows both the correct category and whether an item can be collected as bulky or garden waste. AffaldPlus also provides sorting booklets and separate guides for detached homes and properties with shared systems.",
     "ar": "يوضح دليل Affalds-ABC القابل للبحث في Sorø فئة الفرز الصحيحة وما إذا كان يمكن جمع الغرض مع النفايات كبيرة الحجم أو نفايات الحدائق. وتوفر AffaldPlus أيضًا كتيبات فرز وأدلة منفصلة للمنازل المنفصلة والمساكن ذات الأنظمة المشتركة."
   },
@@ -8925,7 +8920,7 @@
     "ar": "يشرح دليل الفرز لعام 2025 في Samsø فئات النفايات العشر ويتوفر بصيغة PDF بالدنماركية والإنجليزية والألمانية. ويعرض Affaldsportal أقرب نقطة إعادة تدوير ويساعد في الاختيار بين الحاوية ونقطة إعادة التدوير وموقع الموارد ومركز Harpesdal."
   },
   "municipality.scheme.Storskrald hentes fire gange om året efter bestilling i Affaldsportal eller RenoWeb. Der medtages højst 3 m³; affaldet skal opdeles, sække skal være gennemsigtige, og de enkelte fraktioner har egne grænser for antal, størrelse og vægt.": {
-    "da": "Storskrald hentes fire gange om året efter bestilling i Affaldsportal eller RenoWeb. Der medtages højst 3 m³; affaldet skal opdeles, sække skal være gennemsigtige, og de enkelte fraktioner har egne grænser for antal, størrelse og vægt.",
+    "da": "Storskrald hentes fire gange om året efter bestilling i Affaldsportal eller RenoWeb. Der medtages højst 3 m³; affaldet skal opdeles, sække skal være gennemsigtige, og de enkelte affaldstyper har egne grænser for antal, størrelse og vægt.",
     "en": "Bulky waste is collected four times a year after booking in Affaldsportal or RenoWeb. A maximum of 3 m³ is accepted; waste must be separated, sacks must be transparent, and individual categories have their own quantity, size and weight limits.",
     "ar": "تُجمع النفايات كبيرة الحجم أربع مرات سنويًا بعد الحجز في Affaldsportal أو RenoWeb. يُقبل 3 أمتار مكعبة كحد أقصى؛ ويجب فرز النفايات واستخدام أكياس شفافة، ولكل فئة حدودها الخاصة للعدد والحجم والوزن."
   },
@@ -8950,7 +8945,7 @@
     "ar": "يعرض AffaldsVejen موعد التفريغ التالي ويرسل تذكيرات تلقائية، ويتيح الإبلاغ عن مشكلات التفريغ أو الحاويات. وفي الخدمة الذاتية يمكنك أيضًا تنزيل تقويم PDF وتغيير النظام وطلب تفريغ إضافي أو كيس."
   },
   "municipality.scheme.Assens Forsyning står for indsamling af genanvendelige fraktioner og restaffald samt driften af kommunens genbrugspladser. Kommunen henviser borgere til forsyningens selvbetjening for tømningskalender, beholdere og sorteringsvejledning.": {
-    "da": "Assens Forsyning står for indsamling af genanvendelige fraktioner og restaffald samt driften af kommunens genbrugspladser. Kommunen henviser borgere til forsyningens selvbetjening for tømningskalender, beholdere og sorteringsvejledning.",
+    "da": "Assens Forsyning står for indsamling af genanvendelige affaldstyper og restaffald samt driften af kommunens genbrugspladser. Kommunen henviser borgere til forsyningens selvbetjening for tømningskalender, beholdere og sorteringsvejledning.",
     "en": "Assens Forsyning handles collection of recyclable trash categories and residual waste and operates the municipality's recycling centres. The municipality refers residents to the utility's self-service for collection calendars, bins and sorting guidance.",
     "ar": "تتولى Assens Forsyning جمع المواد القابلة لإعادة التدوير والنفايات المتبقية وتشغيل مراكز إعادة التدوير في البلدية. وتحيل البلدية السكان إلى خدمتها الذاتية لمعرفة تقويم التفريغ والحاويات وإرشادات الفرز."
   },
@@ -9025,7 +9020,7 @@
     "ar": "لا توفر Viborg خدمة عادية لجمع نفايات الحدائق من المنازل. يجب تسليمها إلى مركز إعادة التدوير أو تسميدها في المنزل؛ وتقدم Revas إرشادات التسميد، ولا يُسمح بحرقها إلا وفق الشروط المحدودة في قواعد البلدية."
   },
   "municipality.scheme.Thy Recycles adressebaserede sorteringsguide viser både beholderen hjemme, GenbrugsEkspressen og den rette container på genbrugscentret. Guiden har konkrete eksempler for de lokale fraktioner og separate oversigter for de to ekspresordninger.": {
-    "da": "Thy Recycles adressebaserede sorteringsguide viser både beholderen hjemme, GenbrugsEkspressen og den rette container på genbrugscentret. Guiden har konkrete eksempler for de lokale fraktioner og separate oversigter for de to ekspresordninger.",
+    "da": "Thy Recycles adressebaserede sorteringsguide viser både beholderen hjemme, GenbrugsEkspressen og den rette container på genbrugscentret. Guiden har konkrete eksempler for de lokale affaldstyper og separate oversigter for de to ekspresordninger.",
     "en": "Thy Recycle's address-based sorting guide shows the household bin, GenbrugsEkspressen and the correct recycling-centre container. It includes concrete examples for local categories and separate guides for the two express collection services.",
     "ar": "يوضح دليل الفرز لدى Thy Recycle المرتبط بالعنوان حاوية المنزل وخدمة GenbrugsEkspressen والحاوية المناسبة في مركز إعادة التدوير. ويضم أمثلة محددة للفئات المحلية وأدلة منفصلة لخدمتي الجمع السريع."
   },
@@ -9355,7 +9350,7 @@
     "ar": "تعرض الخدمة الذاتية مواعيد التفريغ القادمة."
   },
   "municipality.fact.10 nationale affaldsfraktioner": {
-    "da": "10 nationale affaldsfraktioner",
+    "da": "10 nationale affaldstyper",
     "en": "10 national trash categories",
     "ar": "10 فئات وطنية للنفايات"
   },
@@ -9450,7 +9445,7 @@
     "ar": "تقويم التفريغ والإبلاغ عن عدم الجمع وتغيير الحاويات"
   },
   "municipality.fact.Boliger har henteordninger for flere genanvendelige fraktioner.": {
-    "da": "Boliger har henteordninger for flere genanvendelige fraktioner.",
+    "da": "Boliger har henteordninger for flere genanvendelige affaldstyper.",
     "en": "Homes have collection schemes for several recyclable trash categories.",
     "ar": "للمنازل خدمات جمع لعدة فئات من المواد القابلة لإعادة التدوير."
   },
@@ -9510,7 +9505,7 @@
     "ar": "لا توفر بلدية Ringkøbing-Skjern خدمة جمع النفايات كبيرة الحجم. يجب تسليم الأثاث والأجهزة المنزلية الكبيرة وغيرها إلى مركز إعادة التدوير؛ ويمكن تسليم الأغراض الصالحة للاستخدام لإعادة استخدامها مباشرة في مراكز Videbæk وHvide Sande وRingkøbing وTarm."
   },
   "municipality.scheme.Rødovre Affald og Genbrugs digitale sorteringsvejledning bruges til konkrete opslag om beholdere, henteordninger og aflevering på genbrugsstationen. Den nye station på Sandbækvej 7 har tydelig fraktionsopdeling og et særskilt genbrugshus til brugbare ting.": {
-    "da": "Rødovre Affald og Genbrugs digitale sorteringsvejledning bruges til konkrete opslag om beholdere, henteordninger og aflevering på genbrugsstationen. Den nye station på Sandbækvej 7 har tydelig fraktionsopdeling og et særskilt genbrugshus til brugbare ting.",
+    "da": "Rødovre Affald og Genbrugs digitale sorteringsvejledning bruges til konkrete opslag om beholdere, henteordninger og aflevering på genbrugsstationen. Den nye station på Sandbækvej 7 har tydelig affaldstypesopdeling og et særskilt genbrugshus til brugbare ting.",
     "en": "Rødovre Affald og Genbrug's digital sorting guidance provides item-specific information about bins, collection services and delivery at the recycling station. The new site at Sandbækvej 7 has clearly separated waste types and a dedicated reuse house for usable items.",
     "ar": "تتيح إرشادات الفرز الرقمية لدى Rødovre Affald og Genbrug البحث عن أغراض محددة لمعرفة الحاويات وخدمات الجمع والتسليم إلى مركز إعادة التدوير. ويضم المركز الجديد في Sandbækvej 7 فئات واضحة ومبنى منفصلًا للأغراض الصالحة لإعادة الاستخدام."
   },
@@ -9775,7 +9770,7 @@
     "ar": "تستخدم بلدية Brøndby خدمة Mit Affald الذاتية لتقويم النفايات والإبلاغ عن عدم التفريغ والرسائل النصية والحاويات ونفايات الحدائق وخدمات أخرى. وتشير البلدية أيضًا إلى تطبيق Affaldsportal. وتُوجَّه الأسئلة عن الجمع والحاويات والخدمات المشابهة إلى متعهد البلدية Verdis."
   },
   "municipality.scheme.Billund Vand & Energi varetager affald i kommunen, herunder indsamling ved boligen, drift af genbrugspladser, affaldsportal, beholdere og farligt affald. På genbrugspladsen skal materialer sorteres i rene fraktioner. Pap og papir afleveres fx i hver sin container, selv om de kan være i samme rum derhjemme.": {
-    "da": "Billund Vand & Energi varetager affald i kommunen, herunder indsamling ved boligen, drift af genbrugspladser, affaldsportal, beholdere og farligt affald. På genbrugspladsen skal materialer sorteres i rene fraktioner. Pap og papir afleveres fx i hver sin container, selv om de kan være i samme rum derhjemme.",
+    "da": "Billund Vand & Energi varetager affald i kommunen, herunder indsamling ved boligen, drift af genbrugspladser, affaldsportal, beholdere og farligt affald. På genbrugspladsen skal materialer sorteres i rene affaldstyper. Pap og papir afleveres fx i hver sin container, selv om de kan være i samme rum derhjemme.",
     "en": "Billund Vand & Energi manages waste in the municipality, including household collection, recycling centres, the waste portal, bins and hazardous waste. At the recycling centre, materials must be sorted into clean trash categories. Cardboard and paper are placed in separate containers, even if they share a compartment at home.",
     "ar": "تتولى Billund Vand & Energi إدارة النفايات في البلدية، بما في ذلك الجمع من المنازل ومراكز إعادة التدوير وبوابة النفايات والحاويات والنفايات الخطرة. ويجب في مركز إعادة التدوير فرز المواد ضمن فئات نقية؛ فالكرتون والورق مثلًا يوضعان في حاويتين منفصلتين حتى لو جُمِعا في الحجرة نفسها في المنزل."
   },
@@ -9860,7 +9855,7 @@
     "ar": "يجمع Herning Affald إرشادات الفرز والتقويم ومراكز إعادة التدوير."
   },
   "municipality.fact.Ti nationale affaldsfraktioner": {
-    "da": "Ti nationale affaldsfraktioner",
+    "da": "Ti nationale affaldstyper",
     "en": "Ten national trash categories",
     "ar": "عشر فئات وطنية للنفايات"
   },
@@ -9925,7 +9920,7 @@
     "ar": "تُفرز عند المصدر ويُبلَّغ عنها في المشروعات المعنية"
   },
   "municipality.fact.10 fraktioner ved husholdningerne": {
-    "da": "10 fraktioner ved husholdningerne",
+    "da": "10 affaldstyper ved husholdningerne",
     "en": "10 trash categories at households",
     "ar": "10 فئات للنفايات المنزلية"
   },
@@ -10000,7 +9995,7 @@
     "ar": "تفرز المنازل المنفصلة والمتلاصقة ذات الحاويات الخاصة النفايات المنزلية العادية إلى عدة أنواع، منها النفايات المتبقية ونفايات الطعام والبلاستيك والورق والكرتون والزجاج والمعادن. ويجب وضع نفايات الطعام في الأكياس الخضراء التي توفرها البلدية، وعدم وضعها سائبة في الحاوية، مع ربط الأكياس بإحكام. يقع مركز Allerød لإعادة التدوير في Nordkranvej 10 بمدينة Lynge، ويُستخدم للنفايات التي لا توضع في الحاويات العادية. ويمكن أيضًا تسليم الكرتون والبلاستيك والورق والزجاج والمعادن المفروزة إليه عند الحاجة."
   },
   "municipality.scheme.Assens Forsyning står for indsamling af genanvendelige fraktioner og restaffald samt driften af kommunens genbrugspladser. Kommunen henviser borgere til forsyningens selvbetjening for tømningskalender, beholdere og sorteringsvejledning. Husstande bruger blandt andet en todelt beholder til mad- og restaffald, en todelt beholder til papir/pap og metal/glas samt en beholder til plast og mad- og drikkekartoner. Ordningerne er obligatoriske for almindelige husstande. Haveaffald skal afleveres på genbrugspladsen og må ikke lægges i beholderne ved husstanden. På genbrugspladserne bliver haveaffaldet til kompost, som private kan hente gratis.": {
-    "da": "Assens Forsyning står for indsamling af genanvendelige fraktioner og restaffald samt driften af kommunens genbrugspladser. Kommunen henviser borgere til forsyningens selvbetjening for tømningskalender, beholdere og sorteringsvejledning. Husstande bruger blandt andet en todelt beholder til mad- og restaffald, en todelt beholder til papir/pap og metal/glas samt en beholder til plast og mad- og drikkekartoner. Ordningerne er obligatoriske for almindelige husstande. Haveaffald skal afleveres på genbrugspladsen og må ikke lægges i beholderne ved husstanden. På genbrugspladserne bliver haveaffaldet til kompost, som private kan hente gratis.",
+    "da": "Assens Forsyning står for indsamling af genanvendelige affaldstyper og restaffald samt driften af kommunens genbrugspladser. Kommunen henviser borgere til forsyningens selvbetjening for tømningskalender, beholdere og sorteringsvejledning. Husstande bruger blandt andet en todelt beholder til mad- og restaffald, en todelt beholder til papir/pap og metal/glas samt en beholder til plast og mad- og drikkekartoner. Ordningerne er obligatoriske for almindelige husstande. Haveaffald skal afleveres på genbrugspladsen og må ikke lægges i beholderne ved husstanden. På genbrugspladserne bliver haveaffaldet til kompost, som private kan hente gratis.",
     "en": "Assens Forsyning handles collection of recyclable trash categories and residual waste and operates the municipality's recycling centres. The municipality refers residents to the utility's self-service for collection calendars, bins and sorting guidance. Households use, among other things, a split bin for food and residual waste, a split bin for paper/cardboard and metal/glass, and a bin for plastic and food and beverage cartons. The schemes are mandatory for ordinary households. Garden waste must be delivered to a recycling centre and must not be placed in household bins. At the recycling centres, garden waste is turned into compost that private residents can collect free of charge.",
     "ar": "تتولى Assens Forsyning جمع المواد القابلة لإعادة التدوير والنفايات المتبقية وتشغيل مراكز إعادة التدوير في البلدية. وتحيل البلدية السكان إلى الخدمة الذاتية لمعرفة تقويم الجمع والحاويات وإرشادات الفرز. تستخدم الأسر، من بين الحاويات، حاوية مقسمة لنفايات الطعام والمتبقية، وأخرى للورق والكرتون والمعادن والزجاج، وحاوية للبلاستيك وعبوات الطعام والشراب. وهذه الخدمات إلزامية للأسر العادية. يجب تسليم نفايات الحدائق إلى مركز إعادة التدوير وعدم وضعها في الحاويات المنزلية. وتُحوَّل هناك إلى سماد يمكن للأفراد أخذه مجانًا."
   },
@@ -10045,12 +10040,12 @@
     "ar": "تشارك بلدية Fredensborg في نظام مراكز إعادة التدوير لدى Norfors. وتشمل اللائحة استخدام مراكز في بلديات منها Allerød وFredensborg وHørsholm وRudersdal، ولا يجوز تسليم النفايات الخطرة إلا بحضور الموظفين. ويجب الإبلاغ عن نفايات الأسبستوس للبلدية إلا إذا كانت كمية صغيرة. لا يقبل مركز Højvangen ألواح الأسقف من الإسمنت الليفي، وتُوجَّه النفايات المتربة المحتوية على الأسبستوس وفق قواعد البلدية."
   },
   "municipality.scheme.Frederiksberg opkræver gebyrer for restaffald og genanvendelige fraktioner som madaffald, papir, pap, plast, metal, glas, tekstiler, farligt affald og genbrugsstationer. Tømmekalender og afvigelser håndteres via kommunens selvbetjening. For etageejendomme skal grundejer eller affaldsansvarlig bestille afhentning af storskrald. Kommunens digitale håndbog nævner også bestilling af afhentning for farligt affald, glas og haveaffald.": {
-    "da": "Frederiksberg opkræver gebyrer for restaffald og genanvendelige fraktioner som madaffald, papir, pap, plast, metal, glas, tekstiler, farligt affald og genbrugsstationer. Tømmekalender og afvigelser håndteres via kommunens selvbetjening. For etageejendomme skal grundejer eller affaldsansvarlig bestille afhentning af storskrald. Kommunens digitale håndbog nævner også bestilling af afhentning for farligt affald, glas og haveaffald.",
+    "da": "Frederiksberg opkræver gebyrer for restaffald og genanvendelige affaldstyper som madaffald, papir, pap, plast, metal, glas, tekstiler, farligt affald og genbrugsstationer. Tømmekalender og afvigelser håndteres via kommunens selvbetjening. For etageejendomme skal grundejer eller affaldsansvarlig bestille afhentning af storskrald. Kommunens digitale håndbog nævner også bestilling af afhentning for farligt affald, glas og haveaffald.",
     "en": "Frederiksberg charges waste fees for residual waste and recyclable trash categories such as food waste, paper, cardboard, plastic, metal, glass, textiles, hazardous waste and recycling centres. Collection calendars and missed collections are handled through the municipality's self-service. For apartment buildings, the property owner or waste manager must order bulky waste collection. The municipality's digital handbook also covers ordering collection of hazardous waste, glass and garden waste.",
     "ar": "تفرض Frederiksberg رسومًا على النفايات المتبقية والفئات القابلة لإعادة التدوير، مثل نفايات الطعام والورق والكرتون والبلاستيك والمعادن والزجاج والمنسوجات والنفايات الخطرة ومراكز إعادة التدوير. ويُدار تقويم التفريغ والإبلاغ عن عدم الجمع عبر الخدمة الذاتية للبلدية. وفي المباني السكنية يجب على مالك العقار أو المسؤول عن النفايات حجز جمع النفايات كبيرة الحجم. ويشرح الدليل الرقمي للبلدية أيضًا حجز جمع النفايات الخطرة والزجاج ونفايات الحدائق."
   },
   "municipality.scheme.Frederiksberg opkræver gebyrer for restaffald og genanvendelige fraktioner som madaffald, papir, pap, plast, metal, glas, tekstiler, farligt affald og genbrugsstationer. Tømmekalender og afvigelser håndteres via kommunens selvbetjening. For etageejendomme skal grundejer eller affaldsansvarlig bestille afhentning af storskrald. Kommunens digitale håndbog nævner også bestilling af afhentning for farligt affald, glas og haveaffald. Batterier skal afleveres i miljøskab eller rød miljøboks sammen med farligt affald. Frederiksberg oplyser, at batterier også fortsat kan afleveres på genbrugsstationen.": {
-    "da": "Frederiksberg opkræver gebyrer for restaffald og genanvendelige fraktioner som madaffald, papir, pap, plast, metal, glas, tekstiler, farligt affald og genbrugsstationer. Tømmekalender og afvigelser håndteres via kommunens selvbetjening. For etageejendomme skal grundejer eller affaldsansvarlig bestille afhentning af storskrald. Kommunens digitale håndbog nævner også bestilling af afhentning for farligt affald, glas og haveaffald. Batterier skal afleveres i miljøskab eller rød miljøboks sammen med farligt affald. Frederiksberg oplyser, at batterier også fortsat kan afleveres på genbrugsstationen.",
+    "da": "Frederiksberg opkræver gebyrer for restaffald og genanvendelige affaldstyper som madaffald, papir, pap, plast, metal, glas, tekstiler, farligt affald og genbrugsstationer. Tømmekalender og afvigelser håndteres via kommunens selvbetjening. For etageejendomme skal grundejer eller affaldsansvarlig bestille afhentning af storskrald. Kommunens digitale håndbog nævner også bestilling af afhentning for farligt affald, glas og haveaffald. Batterier skal afleveres i miljøskab eller rød miljøboks sammen med farligt affald. Frederiksberg oplyser, at batterier også fortsat kan afleveres på genbrugsstationen.",
     "en": "Frederiksberg charges waste fees for residual waste and recyclable trash categories such as food waste, paper, cardboard, plastic, metal, glass, textiles, hazardous waste and recycling centres. Collection calendars and missed collections are handled through the municipality's self-service. For apartment buildings, the property owner or waste manager must order bulky waste collection. The municipality's digital handbook also covers ordering collection of hazardous waste, glass and garden waste. Batteries must be placed in the hazardous waste cabinet or red environmental box together with hazardous waste. Frederiksberg states that batteries can also still be handed in at the recycling centre.",
     "ar": "تفرض Frederiksberg رسومًا على النفايات المتبقية والفئات القابلة لإعادة التدوير، مثل نفايات الطعام والورق والكرتون والبلاستيك والمعادن والزجاج والمنسوجات والنفايات الخطرة ومراكز إعادة التدوير. ويُدار تقويم التفريغ والإبلاغ عن عدم الجمع عبر الخدمة الذاتية. وفي المباني السكنية يجب على مالك العقار أو المسؤول عن النفايات حجز جمع النفايات كبيرة الحجم. ويشرح دليل البلدية الرقمي أيضًا حجز جمع النفايات الخطرة والزجاج ونفايات الحدائق. يجب تسليم البطاريات في خزانة النفايات الخطرة أو الصندوق الأحمر مع النفايات الخطرة، ويمكن أيضًا تسليمها إلى مركز إعادة التدوير."
   },
@@ -10440,12 +10435,12 @@
     "ar": "تتولى Odense Renovation أنظمة النفايات في البلدية"
   },
   "municipality.fact.10 nationale affaldsfraktioner ved husstandene": {
-    "da": "10 nationale affaldsfraktioner ved husstandene",
+    "da": "10 nationale affaldstyper ved husstandene",
     "en": "10 national trash categories at households",
     "ar": "10 فئات وطنية للنفايات لدى الأسر"
   },
   "municipality.fact.8 stationer med mere end 40 affaldsfraktioner": {
-    "da": "8 stationer med mere end 40 affaldsfraktioner",
+    "da": "8 stationer med mere end 40 affaldstyper",
     "en": "8 stations with more than 40 trash categories",
     "ar": "8 مراكز تستقبل أكثر من 40 نوعًا من النفايات"
   },
@@ -10660,7 +10655,7 @@
     "ar": "تقدم البلدية إرشادات عن جمع النفايات المنزلية وحاوية النفايات الحيوية ومراكز إعادة التدوير."
   },
   "municipality.fact.Husholdningsaffald sorteres i 10 fraktioner.": {
-    "da": "Husholdningsaffald sorteres i 10 fraktioner.",
+    "da": "Husholdningsaffald sorteres i 10 affaldstyper.",
     "en": "Household waste is sorted into 10 trash categories.",
     "ar": "تُفرز النفايات المنزلية إلى 10 فئات."
   },
@@ -12280,7 +12275,7 @@
     "ar": "إذا كان صالحًا للاستخدام فتبرّع به لإعادة الاستخدام؛ وإذا كان تالفًا فضعه في النفايات المتبقية"
   },
   "guidance.Tilmeld afhentning som storskrald og stil det frem i den rette fraktion; genbrugsstationen er også en mulighed": {
-    "da": "Tilmeld afhentning som storskrald og stil det frem i den rette fraktion; genbrugsstationen er også en mulighed",
+    "da": "Tilmeld afhentning som storskrald og stil det frem i den rette affaldstype; genbrugsstationen er også en mulighed",
     "en": "Book bulky-waste collection and set it out in the correct fraction; a recycling station is another option",
     "ar": "احجز جمعه كنفايات كبيرة وضعه ضمن الفئة الصحيحة؛ ويمكنك أيضًا تسليمه في محطة إعادة التدوير"
   },
@@ -12305,7 +12300,7 @@
     "ar": "لا يمكن إعادة تدوير PVC اللين مع PVC الصلب؛ سلّمه منفصلًا في مركز إعادة التدوير"
   },
   "guidance.Hård PVC: aflever i den særskilte PVC-fraktion på genbrugspladsen": {
-    "da": "Hård PVC: aflever i den særskilte PVC-fraktion på genbrugspladsen",
+    "da": "Hård PVC: aflever i den særskilte PVC-affaldstype på genbrugspladsen",
     "en": "Rigid PVC: take to the separate PVC fraction at the recycling centre",
     "ar": "PVC صلب: سلّمه في القسم المخصص لـ PVC في مركز إعادة التدوير"
   },
@@ -12395,7 +12390,7 @@
     "ar": "PVC صلب: سلّمه منفصلًا في مركز إعادة التدوير لإعادة تدويره"
   },
   "guidance.Aflever som elektronik på genbrugspladsen i den relevante fraktion": {
-    "da": "Aflever som elektronik på genbrugspladsen i den relevante fraktion",
+    "da": "Aflever som elektronik på genbrugspladsen i den relevante affaldstype",
     "en": "Take as electronics to the recycling centre in the appropriate fraction",
     "ar": "سلّمه كنفايات إلكترونية في القسم المناسب بمركز إعادة التدوير"
   },
@@ -12455,7 +12450,7 @@
     "ar": "لجمع النفايات الكبيرة، ضعه مع الخزف والسيراميك في دلو متين مقاوم للصدمات وعليه ملصق؛ يُعاد الدلو بعد التفريغ"
   },
   "guidance.Medtages ikke som storskrald; aflever på genbrugsstationen i den korrekte fraktion": {
-    "da": "Medtages ikke som storskrald; aflever på genbrugsstationen i den korrekte fraktion",
+    "da": "Medtages ikke som storskrald; aflever på genbrugsstationen i den korrekte affaldstype",
     "en": "Not collected as bulky waste; take to the recycling station in the correct fraction",
     "ar": "لا يُجمع ضمن النفايات الكبيرة؛ سلّمه في القسم الصحيح بمحطة إعادة التدوير"
   },
@@ -13063,171 +13058,6 @@
     "da": "Google Maps",
     "en": "Google Maps",
     "ar": "خرائط Google"
-  },
-  "achievements.page": {
-    "da": "Præstationer",
-    "en": "Achievements",
-    "ar": "الإنجازات"
-  },
-  "achievements.unlocked": {
-    "da": "Præstation opnået",
-    "en": "Achievement unlocked",
-    "ar": "تم فتح إنجاز"
-  },
-  "achievements.dismiss": {
-    "da": "Luk besked",
-    "en": "Dismiss notification",
-    "ar": "إغلاق الإشعار"
-  },
-  "achievements.firstAnswer.title": {
-    "da": "Første svar",
-    "en": "First answer",
-    "ar": "الإجابة الأولى"
-  },
-  "achievements.firstAnswer.detail": {
-    "da": "Se sorteringen af din første søgning",
-    "en": "View the sorting result of your first search",
-    "ar": "اطّلع على طريقة فرز نتيجة بحثك الأول"
-  },
-  "achievements.tenItems.title": {
-    "da": "Godt i gang",
-    "en": "Getting started",
-    "ar": "بداية موفقة"
-  },
-  "achievements.tenItems.detail": {
-    "da": "Se sorteringen af 50 forskellige søgninger",
-    "en": "View the sorting results of 50 different searches",
-    "ar": "اطّلع على طريقة فرز نتائج 50 عملية بحث مختلفة"
-  },
-  "achievements.fiveCategories.title": {
-    "da": "Fraktionsudforsker",
-    "en": "Waste fraction explorer",
-    "ar": "مستكشف فئات النفايات"
-  },
-  "achievements.fiveCategories.detail": {
-    "da": "Se affaldsgenstande fra 5 forskellige affaldsfraktioner",
-    "en": "View waste items from 5 different waste fractions",
-    "ar": "اطّلع على أغراض نفايات من 5 فئات مختلفة"
-  },
-  "achievements.tenPhotoSearches.title": {
-    "da": "Billeddetektiv",
-    "en": "Picture detective",
-    "ar": "محقق الصور"
-  },
-  "achievements.tenPhotoSearches.detail": {
-    "da": "Vælg et resultat fra 10 billedsøgninger",
-    "en": "Choose a result from 10 image searches",
-    "ar": "اختر نتيجة من 10 عمليات بحث بالصور"
-  },
-  "achievements.localExpert.title": {
-    "da": "Lokalkendt",
-    "en": "Local expert",
-    "ar": "خبير منطقتك"
-  },
-  "achievements.localExpert.detail": {
-    "da": "Vælg din kommune, og se dens oplysninger",
-    "en": "Choose your municipality and view its information",
-    "ar": "اختر بلديتك واطّلع على معلوماتها"
-  },
-  "achievements.recyclingCenter.title": {
-    "da": "Kend dine muligheder",
-    "en": "Know your options",
-    "ar": "تعرّف على خياراتك"
-  },
-  "achievements.calendarAddress.title": {
-    "da": "Klar til afhentning",
-    "en": "Ready for collection",
-    "ar": "جاهز لجمع النفايات"
-  },
-  "achievements.calendarAddress.detail": {
-    "da": "Tilføj din adresse til affaldskalenderen",
-    "en": "Add your address to the collection calendar",
-    "ar": "أضف عنوانك إلى تقويم جمع النفايات"
-  },
-  "achievements.recyclingCenter.detail": {
-    "da": "Åbn en genbrugsplads i kortet",
-    "en": "Open a recycling centre on the map",
-    "ar": "افتح موقع مركز إعادة التدوير على الخريطة"
-  },
-  "achievements.helpfulEye.title": {
-    "da": "En hjælpende hånd",
-    "en": "A helping hand",
-    "ar": "يد العون"
-  },
-  "achievements.helpfulEye.detail": {
-    "da": "Send et forslag til rettelse af en sortering",
-    "en": "Submit a correction to a sorting result",
-    "ar": "أرسل اقتراحًا لتصحيح نتيجة فرز"
-  },
-  "achievements.tenDayStreak.title": {
-    "da": "En uge med sortering",
-    "en": "A week of sorting",
-    "ar": "أسبوع من فرز النفايات"
-  },
-  "achievements.tenDayStreak.detail": {
-    "da": "Brug appen i 7 dage i træk",
-    "en": "Use the app on 7 consecutive days",
-    "ar": "استخدم التطبيق لمدة 7 أيام متتالية"
-  },
-  "achievements.hundredItems.title": {
-    "da": "Sorteringsekspert",
-    "en": "Sorting expert",
-    "ar": "خبير الفرز"
-  },
-  "achievements.hundredItems.detail": {
-    "da": "Se sorteringen af 100 forskellige søgninger",
-    "en": "View the sorting results of 100 different searches",
-    "ar": "اطّلع على طريقة فرز نتائج 100 عملية بحث مختلفة"
-  },
-  "achievements.hundredCameraItems.title": {
-    "da": "Fotomester",
-    "en": "Photo master",
-    "ar": "خبير الصور"
-  },
-  "achievements.hundredCameraItems.detail": {
-    "da": "Vælg et resultat fra 100 billedsøgninger",
-    "en": "Choose a result from 100 image searches",
-    "ar": "اختر نتيجة من 100 عملية بحث بالصور"
-  },
-  "achievements.twoHundredFiftyItems.title": {
-    "da": "Sorteringsleksikon",
-    "en": "Sorting encyclopaedia",
-    "ar": "موسوعة الفرز"
-  },
-  "achievements.twoHundredFiftyItems.detail": {
-    "da": "Se sorteringen af 500 forskellige søgninger",
-    "en": "View the sorting results of 500 different searches",
-    "ar": "اطّلع على طريقة فرز نتائج 500 عملية بحث مختلفة"
-  },
-  "achievements.allFractions.title": {
-    "da": "Fraktionsekspert",
-    "en": "Fraction expert",
-    "ar": "خبير فئات النفايات"
-  },
-  "achievements.allFractions.detail": {
-    "da": "Læs om alle 12 affaldsfraktioner",
-    "en": "Read about all 12 waste fractions",
-    "ar": "اقرأ عن فئات النفايات الاثنتي عشرة جميعها"
-  },
-  "achievements.localRulesExpert.title": {
-    "da": "Ekspert i lokale regler",
-    "en": "Local rules expert",
-    "ar": "خبير القواعد المحلية"
-  },
-  "achievements.localRulesExpert.detail": {
-    "da": "Se 25 forskellige affaldsgenstande med en lokal regel for din kommune",
-    "en": "View 25 different waste items with a local rule for your municipality",
-    "ar": "اطّلع على 25 غرضًا مختلفًا من النفايات لها قاعدة محلية في بلديتك"
-  },
-  "achievements.thirtyDayStreak.title": {
-    "da": "En måned med sortering",
-    "en": "A month of sorting",
-    "ar": "شهر من فرز النفايات"
-  },
-  "achievements.thirtyDayStreak.detail": {
-    "da": "Brug appen i 30 dage i træk",
-    "en": "Use the app on 30 consecutive days",
-    "ar": "استخدم التطبيق لمدة 30 يومًا متتاليًا"
   },
   "guidance.I klar sæk, adskilt fra anden isolering; kun på genbrugspladsen i Tønder eller Skærbæk i bemandet åbningstid.": {
     "da": "I klar sæk, adskilt fra anden isolering; kun på genbrugspladsen i Tønder eller Skærbæk i bemandet åbningstid.",
@@ -14130,7 +13960,7 @@
     "ar": "في النفايات المتبقية؛ غلّف النفايات المغبرة أولًا."
   },
   "guidance.I restaffald, ikke i genanvendelige fraktioner.": {
-    "da": "I restaffald, ikke i genanvendelige fraktioner.",
+    "da": "I restaffald, ikke i genanvendelige affaldstyper.",
     "en": "In residual waste, not the recycling bins.",
     "ar": "في النفايات المتبقية، وليس في حاويات إعادة التدوير."
   },
@@ -14930,7 +14760,7 @@
     "ar": "فقط إذا استُخدم مع الطعام: في كيس نفايات الطعام الأخضر. وإذا استُخدم لغير ذلك: في النفايات المتبقية."
   },
   "guidance.I beholderen til restaffald; ikke i madaffald eller genanvendelige fraktioner.": {
-    "da": "I beholderen til restaffald; ikke i madaffald eller genanvendelige fraktioner.",
+    "da": "I beholderen til restaffald; ikke i madaffald eller genanvendelige affaldstyper.",
     "en": "In the residual waste bin; not with food waste or recyclable materials.",
     "ar": "في حاوية النفايات المتبقية، وليس مع نفايات الطعام أو المواد القابلة لإعادة التدوير."
   },
@@ -15300,7 +15130,7 @@
     "ar": "في كيس شفاف منفصل للبطاريات الصغيرة؛ أبقها بعيدة عن بطاريات الليثيوم."
   },
   "guidance.På genbrugspladsen i fraktionen til bilbatterier; ikke i beholderen til almindelige batterier.": {
-    "da": "På genbrugspladsen i fraktionen til bilbatterier; ikke i beholderen til almindelige batterier.",
+    "da": "På genbrugspladsen i affaldstypen til bilbatterier; ikke i beholderen til almindelige batterier.",
     "en": "At a recycling centre in the car-battery section; not with ordinary batteries.",
     "ar": "في قسم بطاريات السيارات بمركز إعادة التدوير؛ وليس مع البطاريات العادية."
   },
@@ -15315,7 +15145,7 @@
     "ar": "في مركز إعادة التدوير مع الإلكترونيات الصغيرة؛ وليس في حاوية مصادر الإضاءة الأخرى."
   },
   "guidance.På genbrugspladsen i fraktionen til printerpatroner; fjern papemballagen.": {
-    "da": "På genbrugspladsen i fraktionen til printerpatroner; fjern papemballagen.",
+    "da": "På genbrugspladsen i affaldstypen til printerpatroner; fjern papemballagen.",
     "en": "At a recycling centre in the printer-cartridge section; remove cardboard packaging.",
     "ar": "في قسم خراطيش الطابعات بمركز إعادة التدوير؛ أزل العبوة الكرتونية."
   },
@@ -15325,7 +15155,7 @@
     "ar": "في مركز إعادة التدوير مع الإلكترونيات متوسطة الحجم؛ أزل البطاريات المنفصلة."
   },
   "guidance.På genbrugspladsen i fraktionen til ledninger og kabler.": {
-    "da": "På genbrugspladsen i fraktionen til ledninger og kabler.",
+    "da": "På genbrugspladsen i affaldstypen til ledninger og kabler.",
     "en": "At a recycling centre in the wires and cables section.",
     "ar": "في قسم الأسلاك والكابلات بمركز إعادة التدوير."
   },
@@ -15355,7 +15185,7 @@
     "ar": "سلّمه في مركز إعادة التدوير مع أجهزة التبريد."
   },
   "guidance.Afleveres på genbrugspladsen i fraktionen til vinduer.": {
-    "da": "Afleveres på genbrugspladsen i fraktionen til vinduer.",
+    "da": "Afleveres på genbrugspladsen i affaldstypen til vinduer.",
     "en": "Take it to a recycling centre in the windows section.",
     "ar": "سلّمه في قسم النوافذ بمركز إعادة التدوير."
   },
@@ -15370,7 +15200,7 @@
     "ar": "إذا أصبح غير صالح للاستعمال: ضعه مع المخلفات الكبيرة المتبقية في مركز إعادة التدوير."
   },
   "guidance.Ren emballageflamingo på genbrugspladsen; snavset flamingo hører ikke til fraktionen.": {
-    "da": "Ren emballageflamingo på genbrugspladsen; snavset flamingo hører ikke til fraktionen.",
+    "da": "Ren emballageflamingo på genbrugspladsen; snavset flamingo hører ikke til affaldstypen.",
     "en": "Clean packaging polystyrene at a recycling centre; dirty polystyrene does not belong in that section.",
     "ar": "ضع فلّين التغليف النظيف في مركز إعادة التدوير؛ ولا تضع الفلّين المتسخ في هذا القسم."
   },
@@ -16930,7 +16760,7 @@
     "ar": "خدمة جينبروغسبيلن في فايله لا تجمع مخلفات البناء. افرزها وخذها إلى مركز إعادة التدوير."
   },
   "guidance.Genbrugsbilen i Vejle henter ikke sten eller træ. Aflever det på genbrugspladsen i den relevante fraktion.": {
-    "da": "Genbrugsbilen i Vejle henter ikke sten eller træ. Aflever det på genbrugspladsen i den relevante fraktion.",
+    "da": "Genbrugsbilen i Vejle henter ikke sten eller træ. Aflever det på genbrugspladsen i den relevante affaldstype.",
     "en": "Vejle’s Genbrugsbil does not collect stone or wood. Take it to the appropriate section at a recycling centre.",
     "ar": "خدمة جينبروغسبيلن في فايله لا تجمع الحجارة أو الخشب. خذها إلى القسم المناسب في مركز إعادة التدوير."
   },
@@ -17504,26 +17334,6 @@
     "en": " can be disposed of like this:",
     "ar": " يمكن التخلص منه هكذا:"
   },
-  "achievements.neighborhoodRegular.title": {
-    "da": "Bekendt i nabolaget",
-    "en": "Neighbourhood regular",
-    "ar": "وجه مألوف في الحي"
-  },
-  "achievements.neighborhoodRegular.detail": {
-    "da": "Åbn 5 forskellige genbrugspladser i kortet",
-    "en": "Open 5 different recycling centres on the map",
-    "ar": "افتح 5 مراكز مختلفة لإعادة التدوير على الخريطة"
-  },
-  "achievements.trueWasteExpert.title": {
-    "da": "Den sande affaldsekspert",
-    "en": "The true waste expert",
-    "ar": "خبير النفايات الحقيقي"
-  },
-  "achievements.trueWasteExpert.detail": {
-    "da": "Send 10 forslag til rettelse af en sortering",
-    "en": "Submit 10 suggestions to correct sorting guidance",
-    "ar": "أرسل 10 اقتراحات لتصحيح إرشادات الفرز"
-  },
   "search.result.localDescription": {
     "da": "{0} skal sorteres som {1} i {2}.",
     "en": "{0} should be sorted as {1} in {2}.",
@@ -17540,9 +17350,9 @@
     "ar": "عرض مصدر البلدية"
   },
   "search.result.sourceChecked": {
-    "da": "Senest tjekket: {0}",
-    "en": "Last checked: {0}",
-    "ar": "آخر تحقق: {0}"
+    "da": "Kilde tjekket {0}",
+    "en": "Source checked {0}",
+    "ar": "تم التحقق من المصدر في {0}"
   },
   "search.result.share": {
     "da": "Del sortering",
@@ -17815,7 +17625,7 @@
     "ar": "بلديتك"
   },
   "fractionsview.alternativesIntro": {
-    "da": "Hvis {0} ikke indsamler fraktionen ved din bolig, kan du bruge følgende alternativer.",
+    "da": "Hvis {0} ikke indsamler affaldstypen ved din bolig, kan du bruge følgende alternativer.",
     "en": "If {0} does not collect this category at your home, you can use the following alternatives.",
     "ar": "إذا كانت {0} لا تجمع هذه الفئة من النفايات عند منزلك، فيمكنك استخدام البدائل التالية."
   },
@@ -19230,7 +19040,7 @@
     "ar": "إذا كان الكتاب لا يزال صالحًا للاستخدام، فسلّمه لإعادة الاستخدام المباشر."
   },
   "guidance.Udtjente bøger afleveres i fraktionen Pap og bøger på genbrugsstationen.": {
-    "da": "Udtjente bøger afleveres i fraktionen Pap og bøger på genbrugsstationen.",
+    "da": "Udtjente bøger afleveres i affaldstypen Pap og bøger på genbrugsstationen.",
     "en": "Take worn-out books to the Cardboard and books section at the recycling centre.",
     "ar": "سلّم الكتب غير الصالحة للاستخدام في قسم الكرتون والكتب في مركز إعادة التدوير."
   },
@@ -19395,7 +19205,7 @@
     "ar": "حول تقويم جمع النفايات"
   },
   "calendar.helpMessage": {
-    "da": "Indtast din adresse for at se kommende afhentninger. Du kan vælge at blive påmindet om en afhentning på et valgfrit tidspunkt, for de affaldsfraktioner du ønsker. Kalenderen kræver internet, og ikke alle kommuner understøttes.",
+    "da": "Indtast din adresse for at se kommende afhentninger. Du kan vælge at blive påmindet om en afhentning på et valgfrit tidspunkt, for de affaldstyper du ønsker. Kalenderen kræver internet, og ikke alle kommuner understøttes.",
     "en": "Enter your address to see upcoming collections. You can choose when to be reminded about a collection and which waste categories to receive reminders for. The calendar requires internet access, and not all municipalities are supported.",
     "ar": "أدخل عنوانك للاطلاع على مواعيد جمع النفايات القادمة. يمكنك اختيار موعد التذكير بعملية الجمع وفئات النفايات التي تريد تلقي تذكيرات بشأنها. يتطلب التقويم اتصالًا بالإنترنت، ولا يدعم جميع البلديات."
   },
@@ -19490,9 +19300,9 @@
     "ar": "تم العثور على العنوان، لكن تعذّر جلب مواعيد جمع النفايات من خدمة النفايات المحلية. حاول التحديث لاحقًا أو تحقق من المواعيد لدى بلديتك."
   },
   "calendar.sourceNote": {
-    "da": "Afhentningsdatoer leveres af den lokale affaldsordning via Affald-DK. Kontrollér altid ændringer hos din kommune. Ikke alle kommuner understøttes.",
-    "en": "Collection dates come from local waste providers via Affald-DK. Check changes with your municipality. Not all municipalities are supported.",
-    "ar": "تأتي مواعيد الجمع من الجهات المحلية عبر Affald-DK. تحقق من التغييرات لدى بلديتك. ليست كل البلديات مدعومة."
+    "da": "Kontrollér altid ændringer hos din kommune. Ikke alle kommuner understøttes.",
+    "en": "Check changes with your municipality. Not all municipalities are supported.",
+    "ar": "تحقق من التغييرات لدى بلديتك. ليست كل البلديات مدعومة."
   },
   "calendar.municipalityWebsite": {
     "da": "Se kommunens hjemmeside",
@@ -19525,12 +19335,12 @@
     "ar": "يوم الجمع · ٩ صباحًا"
   },
   "calendar.pickupTypes": {
-    "da": "Affaldsfraktioner",
+    "da": "Affaldstyper",
     "en": "Waste categories",
     "ar": "فئات النفايات"
   },
   "calendar.pickupTypesDetail": {
-    "da": "Angiv de affaldsfraktioner, som du vil modtage notifikationer for.",
+    "da": "Angiv de affaldstyper, som du vil modtage notifikationer for.",
     "en": "Choose which waste categories you want notifications for.",
     "ar": "حدد فئات النفايات التي تريد تلقي إشعارات بشأنها."
   },
@@ -19549,6 +19359,31 @@
     "en": "Put out: {0}",
     "ar": "أخرج: {0}"
   },
+  "calendar.newAddress": {
+    "da": "Ny adresse",
+    "en": "New address",
+    "ar": "عنوان جديد"
+  },
+  "calendar.favouriteAddresses": {
+    "da": "Favoritadresser",
+    "en": "Favourite addresses",
+    "ar": "العناوين المفضلة"
+  },
+  "calendar.addFavourite": {
+    "da": "Angiv adresse som favorit",
+    "en": "Mark as favourite",
+    "ar": "حفظ كعنوان مفضل"
+  },
+  "calendar.removeFavourite": {
+    "da": "Fjern adresse som favorit",
+    "en": "Remove favourite address",
+    "ar": "إزالة العنوان من المفضلة"
+  },
+  "calendar.remindersUnavailable": {
+    "da": "Påmindelserne kunne ikke opdateres. Prøv igen ved at opdatere afhentningerne.",
+    "en": "Reminders could not be updated. Refresh the collections to try again.",
+    "ar": "تعذر تحديث التذكيرات. حدّث مواعيد الجمع للمحاولة مرة أخرى."
+  },
   "calendar.notificationDenied": {
     "da": "Påmindelser kræver adgang til notifikationer. Du kan ændre det i Indstillinger.",
     "en": "Reminders need notification access. You can change this in Settings.",
@@ -19564,6 +19399,741 @@
     "en": "Try again",
     "ar": "حاول مرة أخرى"
   },
+  "impact.page": {
+    "da": "Mit affaldsoverblik",
+    "en": "Your waste overview",
+    "ar": "نظرة عامة على نفاياتك"
+  },
+  "impact.dashboardIntro": {
+    "da": "Registrer det affald, du sorterer, ved at trykke på ‘Jeg har sorteret dette’ på et søgeresultat. Så kan du følge din sortering her.",
+    "en": "Log the waste you sort by tapping ‘I sorted this’ on a search result. You can follow your sorting here.",
+    "ar": "سجّل النفايات التي تفرزها بالضغط على «لقد فرزت هذا» في إحدى نتائج البحث. يمكنك متابعة ما فرزته هنا."
+  },
+  "impact.logButton": {
+    "da": "Jeg har sorteret dette",
+    "en": "I sorted this",
+    "ar": "لقد فرزت هذا"
+  },
+  "impact.savedConfirmation": {
+    "da": "Sortering gemt",
+    "en": "Sorting saved",
+    "ar": "تم حفظ الفرز"
+  },
+  "impact.logTitle": {
+    "da": "Gem sortering",
+    "en": "Log sorting",
+    "ar": "سجّل الفرز"
+  },
+  "impact.chooseFraction": {
+    "da": "Hvilken affaldstype sorterede du?",
+    "en": "Which waste type did you sort?",
+    "ar": "ما نوع النفايات التي فرزتها؟"
+  },
+  "impact.chooseWeight": {
+    "da": "Hvor meget vejede det cirka?",
+    "en": "Approximately how much did it weigh?",
+    "ar": "كم كان وزنه تقريبًا؟"
+  },
+  "impact.other": {
+    "da": "Andet",
+    "en": "Other",
+    "ar": "غير ذلك"
+  },
+  "impact.customWeight": {
+    "da": "Indtast vægt",
+    "en": "Enter weight",
+    "ar": "أدخل الوزن"
+  },
+  "impact.weightUnit": {
+    "da": "Vægtenhed",
+    "en": "Weight unit",
+    "ar": "وحدة الوزن"
+  },
+  "impact.approximate": {
+    "da": "Vægten er et skøn. Klimaeffekten er ikke en målt besparelse.",
+    "en": "The weight is an estimate. Climate impact is not a measured saving.",
+    "ar": "الوزن تقديري. الأثر المناخي ليس توفيرًا مقاسًا."
+  },
+  "impact.noEstimate": {
+    "da": "Ingen pålidelig CO₂e-besparelse kan anslås for denne affaldstype.",
+    "en": "No reliable CO₂e saving can be estimated for this fraction.",
+    "ar": "لا يمكن تقدير توفير موثوق لانبعاثات مكافئ ثاني أكسيد الكربون لهذه الفئة."
+  },
+  "impact.hazardousNoEstimate": {
+    "da": "Farligt affald behandles forskelligt afhængigt af indholdet. Derfor kan vi ikke anslå én CO₂e-besparelse. Sorteringen gemmes stadig i dit overblik.",
+    "en": "Hazardous waste is treated differently depending on what it contains, so we cannot estimate one CO₂e saving. Your sorting will still be saved.",
+    "ar": "تختلف معالجة النفايات الخطرة حسب محتواها، لذا لا يمكن تقدير مقدار واحد من توفير انبعاثات مكافئ ثاني أكسيد الكربون. ستُحفظ عملية الفرز رغم ذلك."
+  },
+  "impact.residualNoEstimate": {
+    "da": "Restaffald går typisk til forbrænding. Det giver ikke en beregnelig besparelse ved sortering, men sorteringen gemmes stadig i dit overblik.",
+    "en": "Residual waste is usually incinerated. Sorting it does not provide a calculable saving, but your sorting will still be saved.",
+    "ar": "تُحرق النفايات المتبقية عادةً، ولا ينتج عن فرزها توفير يمكن حسابه. ستُحفظ عملية الفرز رغم ذلك."
+  },
+  "impact.recyclingCenterNoEstimate": {
+    "da": "Fordi genstanden skal sorteres på en genbrugsplads kan vi ikke anslå hvordan det bliver behandlet, og derfor heller ikke hvad CO2e besparelsen er. Sorteringen gemmes dog stadig i dit overblik.",
+    "en": "Because the item must be taken to a recycling centre, we cannot estimate how it will be treated or its CO₂e saving. Your sorting will still be saved in your overview.",
+    "ar": "لأن الغرض يجب تسليمه إلى مركز إعادة التدوير، لا يمكننا تقدير كيفية معالجته أو مقدار التوفير في انبعاثات مكافئ ثاني أكسيد الكربون. ستُحفظ عملية الفرز رغم ذلك في ملخصك."
+  },
+  "impact.save": {
+    "da": "Gem sortering",
+    "en": "Save sorting",
+    "ar": "حفظ الفرز"
+  },
+  "impact.cancel": {
+    "da": "Annuller",
+    "en": "Cancel",
+    "ar": "إلغاء"
+  },
+  "more.chooseAddress": {
+    "da": "Vælg adresse",
+    "en": "Choose address",
+    "ar": "اختر عنوانًا"
+  },
+  "more.yourMunicipality": {
+    "da": "Din kommune",
+    "en": "Your municipality",
+    "ar": "بلديتك"
+  },
+  "more.addressMunicipalityNotice": {
+    "da": "Adresse bruges til affaldskalender; kommune bruges til lokale sorteringsregler. De kan vælges hver for sig.",
+    "en": "Your address is used for the waste calendar; your municipality is used for local sorting rules. They can be chosen separately.",
+    "ar": "يُستخدم العنوان لتقويم جمع النفايات، وتُستخدم البلدية لقواعد الفرز المحلية. يمكن اختيارهما كلٌّ على حدة."
+  },
+  "impact.searchEstimate": {
+    "da": "Du har sparet klimaet for",
+    "en": "You have saved the climate",
+    "ar": "لقد جنّبت المناخ انبعاثات قدرها"
+  },
+  "impact.estimate": {
+    "da": "Anslået klimaeffekt",
+    "en": "Estimated climate impact",
+    "ar": "الأثر المناخي التقديري"
+  },
+  "impact.methodShort": {
+    "da": "Baseret på dine registrerede vægte og gennemsnitlige faktorer.",
+    "en": "Based on your logged weights and average factors.",
+    "ar": "بناءً على الأوزان المسجلة ومعاملات متوسطة."
+  },
+  "impact.empty": {
+    "da": "Ingen sorteringer endnu",
+    "en": "No sorting logged yet",
+    "ar": "لم تُسجَّل أي عمليات فرز بعد"
+  },
+  "impact.emptyHelp": {
+    "da": "Åbn et søgeresultat og tryk på “Jeg har sorteret dette”.",
+    "en": "Open a search result and tap “I sorted this”.",
+    "ar": "افتح نتيجة بحث واضغط «لقد فرزت هذا»."
+  },
+  "impact.climateByFraction": {
+    "da": "Klimaeffekt fordelt på affaldstyper",
+    "en": "Climate impact by waste category",
+    "ar": "الأثر المناخي حسب نوع النفايات"
+  },
+  "impact.climateByFractionEmpty": {
+    "da": "Registrer affald med et positivt klimaestimat for at se fordelingen.",
+    "en": "Log waste with a positive climate estimate to see the breakdown.",
+    "ar": "سجّل نفايات ذات تقدير مناخي إيجابي لعرض التوزيع."
+  },
+  "impact.byFraction": {
+    "da": "Sorteret vægt fordelt på affaldstyper",
+    "en": "By waste type",
+    "ar": "حسب نوع النفايات"
+  },
+  "impact.weightAxis": {
+    "da": "Vægt (g)",
+    "en": "Weight (g)",
+    "ar": "الوزن (غ)"
+  },
+  "impact.climateMixedUnits": {
+    "da": "Klimaeffekt (g eller kg CO₂e)",
+    "en": "Climate impact (g or kg CO₂e)",
+    "ar": "الأثر المناخي (غ أو كغ CO₂e)"
+  },
+  "impact.climateAxis": {
+    "da": "Klimaeffekt (kg CO₂e)",
+    "en": "Climate impact (kg CO₂e)",
+    "ar": "الأثر المناخي (كغ CO₂e)"
+  },
+  "impact.recent": {
+    "da": "Seneste sorteringer",
+    "en": "Recent sorting",
+    "ar": "عمليات الفرز الأخيرة"
+  },
+  "impact.edit": {
+    "da": "Ret vægt",
+    "en": "Edit weight",
+    "ar": "تعديل الوزن"
+  },
+  "impact.delete": {
+    "da": "Slet",
+    "en": "Delete",
+    "ar": "حذف"
+  },
+  "impact.methodTitle": {
+    "da": "Sådan beregnes tallet",
+    "en": "How this is calculated",
+    "ar": "كيف يُحسب هذا الرقم"
+  },
+  "impact.method": {
+    "da": "Klimaeffekten beregnes ud fra den vægt, du registrerer, og et skøn for affaldstypen. Hvor det er muligt, bruges et mere specifikt skøn for materialet. Beregningen bygger på kilder fra EPA og Miljøstyrelsen og er et vejledende CO₂e-skøn, ikke en målt personlig besparelse. Den faktiske effekt afhænger af materialer, behandling og lokale forhold. Nogle affaldstyper registreres uden beregnet besparelse; det betyder ikke, at sorteringen er uden miljøfordel.",
+    "en": "Climate impact is calculated from the weight you log and an estimate for the waste category. Where possible, a more specific material estimate is used. The calculation draws on EPA and Danish Environmental Protection Agency sources and is an indicative CO₂e estimate, not a measured personal saving. Actual impact depends on materials, treatment and local conditions. Some waste types are logged without a calculated saving; this does not mean sorting has no environmental benefit.",
+    "ar": "يُحسب الأثر المناخي بناءً على الوزن الذي تسجله وتقدير لفئة النفايات. ويُستخدم تقدير أكثر تحديدًا للمادة حيثما أمكن. يعتمد الحساب على مصادر وكالة حماية البيئة الأمريكية وهيئة البيئة الدنماركية، وهو تقدير استرشادي بمكافئ CO₂ وليس توفيرًا شخصيًا مقاسًا. يتوقف الأثر الفعلي على المواد والمعالجة والظروف المحلية. تُسجّل بعض أنواع النفايات دون توفير محسوب، وهذا لا يعني أن الفرز بلا فائدة بيئية."
+  },
+  "impact.source": {
+    "da": "Se kilde og metode (EPA WARM)",
+    "en": "View source and method (EPA WARM)",
+    "ar": "عرض المصدر والمنهجية (EPA WARM)"
+  },
+  "impact.foodSource": {
+    "da": "Kilde: Madaffald (Miljøstyrelsen)",
+    "en": "Source: Food waste (Danish EPA)",
+    "ar": "المصدر: نفايات الطعام (الهيئة الدنماركية للبيئة)"
+  },
+  "impact.cartonSource": {
+    "da": "Kilde: Mad- og drikkekartoner (Miljøstyrelsen)",
+    "en": "Source: Food and drink cartons (Danish EPA)",
+    "ar": "المصدر: عبوات الطعام والشراب الكرتونية (الهيئة الدنماركية للبيئة)"
+  },
+  "impact.textileSource": {
+    "da": "Kilde: Tekstilaffald (Miljøstyrelsen)",
+    "en": "Source: Textile waste (Danish EPA)",
+    "ar": "المصدر: نفايات المنسوجات (الهيئة الدنماركية للبيئة)"
+  },
+  "impact.batterySource": {
+    "da": "Kilde: Batterier (Miljøstyrelsen)",
+    "en": "Source: Batteries (Danish EPA)",
+    "ar": "المصدر: البطاريات (الهيئة الدنماركية للبيئة)"
+  },
+  "impact.chooseDestination": {
+    "da": "Hvor sorterede du det?",
+    "en": "Where did you sort it?",
+    "ar": "أين فرزته؟"
+  },
+  "impact.bothDestinations": {
+    "da": "I begge to",
+    "en": "In both",
+    "ar": "في كليهما"
+  },
+  "impact.allThreeDestinations": {
+    "da": "I alle tre",
+    "en": "In all three",
+    "ar": "في الثلاثة جميعًا"
+  },
+  "impact.weightSplit": {
+    "da": "Vægten fordeles ligeligt mellem affaldstyperne i beregningen.",
+    "en": "The estimated weight is split equally between the waste types.",
+    "ar": "يُقسَّم الوزن التقديري بالتساوي بين أنواع النفايات في الحساب."
+  },
+  "impact.monthly": {
+    "da": "Klimaeffekt over tid",
+    "en": "Climate impact over time",
+    "ar": "الأثر المناخي مع مرور الوقت"
+  },
+  "impact.comparison.car": {
+    "da": "Det svarer omtrent til udledningen fra {0} km i en benzinbil.",
+    "en": "That is roughly equivalent to the emissions from driving {0} km in a petrol car.",
+    "ar": "يعادل ذلك تقريبًا الانبعاثات الناتجة عن قيادة سيارة بنزين لمسافة {0} كم."
+  },
+  "impact.comparison.flight": {
+    "da": "Det svarer omtrent til udledningen fra {0} km flyrejse på økonomiklasse for én passager.",
+    "en": "That is roughly equivalent to the emissions from {0} km of economy-class air travel for one passenger.",
+    "ar": "يعادل ذلك تقريبًا انبعاثات رحلة جوية لمسافة {0} كم لراكب واحد في الدرجة الاقتصادية."
+  },
+  "impact.comparison.phone": {
+    "da": "Det svarer omtrent til udledningen fra {0} fulde opladninger af en smartphone.",
+    "en": "That is roughly equivalent to the emissions from {0} full smartphone charges.",
+    "ar": "يعادل ذلك تقريبًا الانبعاثات الناتجة عن شحن هاتف ذكي بالكامل {0} مرة."
+  },
+  "impact.comparison.light": {
+    "da": "Det svarer omtrent til udledningen fra at holde en LED-pære tændt i {0} timer.",
+    "en": "That is roughly equivalent to the emissions from keeping an LED bulb on for {0} hours.",
+    "ar": "يعادل ذلك تقريبًا الانبعاثات الناتجة عن تشغيل مصباح LED لمدة {0} ساعة."
+  },
+  "impact.comparison.television": {
+    "da": "Det svarer omtrent til udledningen fra {0} timers tv-kigning.",
+    "en": "That is roughly equivalent to the emissions from watching television for {0} hours.",
+    "ar": "يعادل ذلك تقريبًا الانبعاثات الناتجة عن مشاهدة التلفزيون لمدة {0} ساعة."
+  },
+  "impact.comparison.petrol": {
+    "da": "Det svarer omtrent til udledningen fra at forbrænde {0} liter benzin.",
+    "en": "That is roughly equivalent to the emissions from burning {0} litres of petrol.",
+    "ar": "يعادل ذلك تقريبًا الانبعاثات الناتجة عن حرق {0} لتر من البنزين."
+  },
+  "impact.comparison.kettle": {
+    "da": "Det svarer omtrent til CO₂-udledningen fra at koge {0} liter vand i en elkedel.",
+    "en": "That is roughly equivalent to the CO₂ emissions from boiling {0} litres of water in an electric kettle.",
+    "ar": "يعادل ذلك تقريبًا انبعاثات CO₂ الناتجة عن غلي {0} لتر من الماء في غلاية كهربائية."
+  },
+  "impact.comparison.oven": {
+    "da": "Det svarer omtrent til CO₂-udledningen fra at bruge en elektrisk ovn i {0} minutter.",
+    "en": "That is roughly equivalent to the CO₂ emissions from using an electric oven for {0} minutes.",
+    "ar": "يعادل ذلك تقريبًا انبعاثات CO₂ الناتجة عن استخدام فرن كهربائي لمدة {0} دقيقة."
+  },
+  "impact.comparison.empty": {
+    "da": "Registrer dine sorteringer for at se din estimerede klimaeffekt.",
+    "en": "Log your sorting to see your estimated climate impact.",
+    "ar": "سجّل عمليات الفرز للاطلاع على أثرك المناخي التقديري."
+  },
+  "impact.comparison.sources": {
+    "da": "Kilde til sammenligninger",
+    "en": "Comparison source",
+    "ar": "مصدر المقارنات"
+  },
+  "impact.comparison.method": {
+    "da": "Sammenligninger med fx bilture og strømforbrug gør tallet lettere at forstå. De bygger på faste antagelser og er kun illustrative.",
+    "en": "Comparisons with things like car journeys and electricity use help put the estimate into perspective. They use fixed assumptions and are illustrative only.",
+    "ar": "تساعد المقارنات، مثل رحلات السيارة واستهلاك الكهرباء، على فهم التقدير. وهي تعتمد على افتراضات ثابتة وللتوضيح فقط."
+  },
+  "impact.electronicsMethod": {
+    "da": "Elektronikskønnet tilpasses telefoner/tablets, fladskærme og udvalgt computerudstyr. Andre typer bruger fortsat gennemsnittet for blandet elektronik. Det er amerikanske scenarier, ikke målte danske besparelser. Elektronikkilden er kontrolleret 21. oktober 2026.",
+    "en": "Electronics estimates distinguish phones/tablets, flat-panel displays and selected computer equipment. Other types still use the mixed-electronics average. These are US scenarios, not measured Danish savings. Electronics source checked 21 October 2026.",
+    "ar": "تختلف تقديرات الإلكترونيات للهواتف والأجهزة اللوحية والشاشات المسطحة وبعض معدات الحاسوب. وتستخدم الأنواع الأخرى متوسط الإلكترونيات المختلطة. هذه سيناريوهات أمريكية وليست وفورات دنماركية مقاسة. روجع مصدر الإلكترونيات في 21 أكتوبر 2026."
+  },
+  "impact.electronicsSource": {
+    "da": "Kilde: Elektroniktyper (EPA WARM)",
+    "en": "Source: Electronics types (EPA WARM)",
+    "ar": "المصدر: أنواع الإلكترونيات (EPA WARM)"
+  },
+  "impact.materialMethod": {
+    "da": "Når typen er kendt, bruges et særskilt skøn for aviser, kontorpapir, magasiner, bøger, bølgepap, aluminium og PP-plast. Bøger og aluminium bruger tilnærmede materialegrupper. Kun blikdåser bruger faktoren for ståldåser. Øvrige typer beholder affaldstypens gennemsnit, når der mangler en passende faktor. Planglas og varmebestandigt glas har intet særskilt skøn. Kilder kontrolleret 21. oktober 2026.",
+    "en": "Known types use separate estimates for newspapers, office paper, magazines, books, corrugated cardboard, aluminium and PP plastic. Books and aluminium use approximate material-group proxies. Only tinplate cans use the steel-can factor. Other types retain the fraction average where a matching factor is unavailable. Flat and heat-resistant glass have no separate estimate. Sources checked 21 October 2026.",
+    "ar": "تُستخدم تقديرات منفصلة عند معرفة النوع للصحف وورق المكاتب والمجلات والكتب والكرتون المموج والألومنيوم وبلاستيك PP. تستخدم الكتب والألومنيوم مجموعات مواد تقريبية، ويُطبق معامل العلب الفولاذية على العلب المصنوعة من الصفيح فقط. تحتفظ الأنواع الأخرى بمتوسط فئة النفايات عند غياب معامل مناسب. لا يوجد تقدير منفصل للزجاج المسطح أو المقاوم للحرارة. روجعت المصادر في 21 أكتوبر 2026."
+  },
+  "impact.materialSource": {
+    "da": "Kilde: Materialer og papirtyper (EPA WARM)",
+    "en": "Source: Materials and paper types (EPA WARM)",
+    "ar": "المصدر: المواد وأنواع الورق (EPA WARM)"
+  },
+  "impact.materialNoEstimate": {
+    "da": "Der beregnes ikke en CO₂e-besparelse for denne glastype, fordi vi mangler et passende skøn for behandlingen. Den bruger ikke faktoren for glasemballage. Vægten gemmes stadig.",
+    "en": "No CO₂e saving is calculated for this glass type because a suitable treatment estimate is unavailable. It does not use the packaging-glass factor. Your weight is still recorded.",
+    "ar": "لا يُحسب توفير بمكافئ ثاني أكسيد الكربون لهذا النوع من الزجاج لعدم توفر تقدير مناسب لمعالجته. لا يُستخدم معامل العبوات الزجاجية، ويُسجَّل الوزن مع ذلك."
+  },
+  "impact.typePolicyMethod": {
+    "da": "Alle registrerede typer har en faktorpolitik. Et tal kan være et særskilt skøn, en tilnærmet materialegruppe eller affaldstypens gennemsnit. Mange brede produkttyper har ikke deres egen dokumenterede faktor. Uden et passende grundlag beregnes ingen besparelse; det betyder ikke, at sortering er uden miljøfordel. Genbrugsplads alene, restaffald og farligt affald giver fortsat ingen beregnet besparelse.",
+    "en": "Every classified type has a factor policy. A value may be a specific estimate, an approximate material-group proxy or the fraction average. Many broad product types do not have an independently documented factor. Where suitable evidence is unavailable, no saving is calculated; this does not mean sorting has no environmental benefit. Recycling-centre-only, residual and hazardous waste still receive no calculated saving.",
+    "ar": "لكل نوع مصنّف سياسة لمعامل التقدير. قد تكون القيمة تقديرًا منفصلًا أو تقريبًا لمجموعة مواد أو متوسط فئة النفايات. لا تملك كثير من مجموعات المنتجات العامة معاملًا موثقًا مستقلًا. عند غياب أساس مناسب لا يُحسب توفير، وهذا لا يعني أن الفرز بلا فائدة بيئية. لا يُحسب توفير للنفايات الموجهة فقط إلى مركز إعادة التدوير أو للنفايات المتبقية أو الخطرة."
+  },
+  "impact.typeRefinementResearch": {
+    "da": "Papirposer og almindelige tryksager bruger nu en papirtype-proxy; udvalgte kartonprodukter har en særskilt produkt-proxy. Skærme med ukendt teknologi bruger et skærmskøn, fordi modellens CRT- og fladskærmsscenarier giver samme afrundede forskel. Tallene er fortsat foreløbige og afhænger af den valgte sortering.",
+    "en": "Paper bags and general printed matter now use a paper-group proxy; selected paperboard products have a product-specific proxy. Screens with unknown technology use a display estimate because the model’s CRT and flat-panel scenarios yield the same rounded difference. Estimates remain provisional and depend on the selected sorting destination.",
+    "ar": "تستخدم الأكياس الورقية والمطبوعات العامة الآن تقديرًا تقريبيًا لمجموعة ورقية، وتستخدم بعض منتجات الكرتون تقديرًا خاصًا بالمنتج. وتستخدم الشاشات مجهولة التقنية تقديرًا للشاشات لأن سيناريوهَي الشاشات الأنبوبية والمسطحة في النموذج يعطيان الفرق المقرّب نفسه. تبقى التقديرات أولية وتعتمد على وجهة الفرز المختارة."
+  },
+  "impact.export": {
+    "da": "Eksportér CSV",
+    "en": "Export CSV",
+    "ar": "تصدير CSV"
+  },
+  "impact.exportDate": {
+    "da": "Dato",
+    "en": "Date",
+    "ar": "التاريخ"
+  },
+  "impact.exportItem": {
+    "da": "Genstand",
+    "en": "Item",
+    "ar": "العنصر"
+  },
+  "impact.exportFractions": {
+    "da": "Affaldstyper (vægten fordeles ligeligt)",
+    "en": "Waste categories (weight split equally)",
+    "ar": "فئات النفايات (الوزن موزع بالتساوي)"
+  },
+  "impact.exportMunicipality": {
+    "da": "Kommune",
+    "en": "Municipality",
+    "ar": "البلدية"
+  },
+  "impact.exportWeight": {
+    "da": "Vægt (g)",
+    "en": "Weight (g)",
+    "ar": "الوزن (غرام)"
+  },
+  "impact.exportImpact": {
+    "da": "Anslået klimaeffekt (kg CO₂e)",
+    "en": "Estimated climate impact (kg CO₂e)",
+    "ar": "الأثر المناخي التقديري (كغ مكافئ CO₂)"
+  },
+  "impact.exportVersion": {
+    "da": "Beregningsversion",
+    "en": "Calculation version",
+    "ar": "إصدار الحساب"
+  },
+  "impact.exportError": {
+    "da": "Filen kunne ikke eksporteres. Prøv igen.",
+    "en": "The file could not be exported. Please try again.",
+    "ar": "تعذّر تصدير الملف. يُرجى المحاولة مرة أخرى."
+  },
+  "impact.rhythmTitle": {
+    "da": "Din sorteringsrytme",
+    "en": "Your sorting rhythm",
+    "ar": "وتيرة فرزك"
+  },
+  "impact.rhythmIntro": {
+    "da": "Se, hvilke dage du har registreret affald.",
+    "en": "See which days you logged waste.",
+    "ar": "اعرف الأيام التي سجّلت فيها نفايات."
+  },
+  "impact.rhythmCount": {
+    "da": "Registreringer",
+    "en": "Entries",
+    "ar": "التسجيلات"
+  },
+  "impact.previousMonth": {
+    "da": "Forrige måned",
+    "en": "Previous month",
+    "ar": "الشهر السابق"
+  },
+  "impact.nextMonth": {
+    "da": "Næste måned",
+    "en": "Next month",
+    "ar": "الشهر التالي"
+  },
+  "impact.showAllEntries": {
+    "da": "Vis alle sorteringer",
+    "en": "Show all entries",
+    "ar": "عرض جميع التسجيلات"
+  },
+  "impact.showFewerEntries": {
+    "da": "Vis færre",
+    "en": "Show fewer",
+    "ar": "عرض أقل"
+  },
+  "impact.searchEmptyTitle": {
+    "da": "Se klimaeffekten af din sortering",
+    "en": "See the climate impact of your sorting",
+    "ar": "تعرّف على الأثر المناخي لفرزك"
+  },
+  "impact.searchEmptyPrompt": {
+    "da": "Tryk på ”Jeg har sorteret dette” i et søgeresultat for at registrere din første sortering.",
+    "en": "Tap “I sorted this” in a search result to log your first item.",
+    "ar": "اضغط على «لقد فرزت هذا» في نتيجة البحث لتسجيل أول عملية فرز."
+  },
+  "more.rateApp": {
+    "da": "Bedøm appen",
+    "en": "Rate the app",
+    "ar": "قيّم التطبيق"
+  },
+  "municipalityBox.findCentre": {
+    "da": "Find genbrugsplads",
+    "en": "Find a recycling centre",
+    "ar": "اعثر على مركز إعادة تدوير"
+  },
+  "municipalityBox.service": {
+    "da": "Affaldsservice",
+    "en": "Waste services",
+    "ar": "خدمات النفايات"
+  },
+  "municipalityBox.rules": {
+    "da": "Lokale sorteringsregler",
+    "en": "Local sorting rules",
+    "ar": "قواعد الفرز المحلية"
+  },
+  "municipalityBox.rulesTitle": {
+    "da": "Lokale regler i {0}",
+    "en": "Local rules in {0}",
+    "ar": "القواعد المحلية في {0}"
+  },
+  "municipalityBox.searchRules": {
+    "da": "Søg i lokale regler",
+    "en": "Search local rules",
+    "ar": "ابحث في القواعد المحلية"
+  },
+  "municipalityBox.noRules": {
+    "da": "Ingen lokale regler fundet.",
+    "en": "No local rules found.",
+    "ar": "لم يتم العثور على قواعد محلية."
+  },
+  "municipalityBox.useLocation": {
+    "da": "Brug min placering til at finde den nærmeste genbrugsplads",
+    "en": "Use my location to find the nearest recycling centre",
+    "ar": "استخدم موقعي للعثور على أقرب مركز لإعادة التدوير"
+  },
+  "municipalityBox.locationOptional": {
+    "da": "Du kan stadig vælge en genbrugsplads fra listen uden at dele din placering.",
+    "en": "You can still choose a centre from the list without sharing your location.",
+    "ar": "يمكنك اختيار مركز من القائمة دون مشاركة موقعك."
+  },
+  "municipalityBox.noCentres": {
+    "da": "Ingen genbrugspladser fundet. Se kommunens hjemmeside for muligheder.",
+    "en": "No recycling centres found. Check the municipality’s website for options.",
+    "ar": "لم يتم العثور على مراكز إعادة تدوير. راجع موقع البلدية لمعرفة الخيارات."
+  },
+  "municipalityBox.centres": {
+    "da": "Genbrugspladser",
+    "en": "Recycling centres",
+    "ar": "مراكز إعادة التدوير"
+  },
+  "municipalityBox.allCentres": {
+    "da": "Nærmeste genbrugspladser",
+    "en": "Nearest recycling centres",
+    "ar": "أقرب مراكز إعادة التدوير"
+  },
+  "municipalityBox.inYourMunicipality": {
+    "da": "I din kommune",
+    "en": "In your municipality",
+    "ar": "في بلديتك"
+  },
+  "municipalityBox.ruleCount": {
+    "da": "{0} lokale regler",
+    "en": "Local rules: {0}",
+    "ar": "القواعد المحلية: {0}"
+  },
+  "impact.chartTapHint": {
+    "da": "Tryk på en søjle for at se værdien.",
+    "en": "Tap a bar to see its value.",
+    "ar": "اضغط على شريط لعرض قيمته."
+  },
+  "impact.saveIntro": {
+    "da": "Gem din sortering for at følge dit sorterede affald og din anslåede klimaeffekt i Mit affaldsoverblik.",
+    "en": "Log your sorting to track your sorted waste and estimated climate impact in Your waste overview.",
+    "ar": "سجّل عملية الفرز لمتابعة نفاياتك المفروزة وأثرك المناخي التقديري في صفحة نظرة عامة على نفاياتك."
+  },
+  "municipalityBox.findNearestCentre": {
+    "da": "Find nærmeste genbrugsplads",
+    "en": "Find nearest recycling centre",
+    "ar": "اعثر على أقرب مركز لإعادة التدوير"
+  },
+  "calendar.loadingSuggestions": {
+    "da": "Søger efter adresseforslag…",
+    "en": "Looking up address suggestions…",
+    "ar": "جارٍ البحث عن اقتراحات للعناوين…"
+  },
+  "calendar.noSuggestionsYet": {
+    "da": "Ingen forslag endnu. Prøv at skrive mere af vejnavnet og eventuelt husnummeret.",
+    "en": "No suggestions yet. Try entering more of the street name and, if needed, the house number.",
+    "ar": "لا توجد اقتراحات بعد. حاول إدخال المزيد من اسم الشارع ورقم المنزل عند الحاجة."
+  },
+  "calendar.suggestionsUnavailable": {
+    "da": "Adresseforslag kunne ikke hentes. Du kan stadig bruge Find adresse.",
+    "en": "Address suggestions could not be loaded. You can still use Find address.",
+    "ar": "تعذّر تحميل اقتراحات العناوين. لا يزال بإمكانك استخدام البحث عن عنوان."
+  },
+  "recyclingCentres.sortDistance": {
+    "da": "Afstand",
+    "en": "Distance",
+    "ar": "المسافة"
+  },
+  "municipalityBox.distanceUnknown": {
+    "da": "Afstand ukendt",
+    "en": "Distance unknown",
+    "ar": "المسافة غير معروفة"
+  },
+  "impact.months": {
+    "da": "Måneder",
+    "en": "Months",
+    "ar": "أشهر"
+  },
+  "impact.weeks": {
+    "da": "Uger",
+    "en": "Weeks",
+    "ar": "أسابيع"
+  },
+  "impact.chartPeriod": {
+    "da": "Diagramperiode",
+    "en": "Chart period",
+    "ar": "فترة الرسم البياني"
+  },
+  "impact.weekNumber": {
+    "da": "Uge {0}",
+    "en": "Wk {0}",
+    "ar": "أسبوع {0}"
+  },
+  "history.search": {
+    "da": "Søg i historik",
+    "en": "Search history",
+    "ar": "ابحث في السجل"
+  },
+  "history.clearSearch": {
+    "da": "Ryd søgning",
+    "en": "Clear search",
+    "ar": "مسح البحث"
+  },
+  "history.sort": {
+    "da": "Sortering",
+    "en": "Sort order",
+    "ar": "ترتيب العرض"
+  },
+  "history.newest": {
+    "da": "Nyeste først",
+    "en": "Newest first",
+    "ar": "الأحدث أولاً"
+  },
+  "history.oldest": {
+    "da": "Ældste først",
+    "en": "Oldest first",
+    "ar": "الأقدم أولاً"
+  },
+  "history.name": {
+    "da": "Navn A–Å",
+    "en": "Name A–Z",
+    "ar": "حسب الاسم"
+  },
+  "history.weight": {
+    "da": "Højeste vægt",
+    "en": "Highest weight",
+    "ar": "الأعلى وزناً"
+  },
+  "history.climate": {
+    "da": "Største klimaeffekt",
+    "en": "Highest climate impact",
+    "ar": "الأعلى أثراً مناخياً"
+  },
+  "history.fraction": {
+    "da": "Affaldstype",
+    "en": "Waste type",
+    "ar": "نوع النفايات"
+  },
+  "history.allFractions": {
+    "da": "Alle affaldstyper",
+    "en": "All waste types",
+    "ar": "جميع أنواع النفايات"
+  },
+  "history.period": {
+    "da": "Periode",
+    "en": "Period",
+    "ar": "الفترة"
+  },
+  "history.period.all": {
+    "da": "Hele perioden",
+    "en": "All time",
+    "ar": "كل الفترات"
+  },
+  "history.period.week": {
+    "da": "Seneste 7 dage",
+    "en": "Last 7 days",
+    "ar": "آخر 7 أيام"
+  },
+  "history.period.month": {
+    "da": "Seneste 30 dage",
+    "en": "Last 30 days",
+    "ar": "آخر 30 يوماً"
+  },
+  "history.period.year": {
+    "da": "Seneste 365 dage",
+    "en": "Last 365 days",
+    "ar": "آخر 365 يوماً"
+  },
+  "history.reset": {
+    "da": "Nulstil",
+    "en": "Reset",
+    "ar": "إعادة ضبط"
+  },
+  "history.noMatches": {
+    "da": "Ingen resultater matcher din søgning eller dine filtre.",
+    "en": "No entries match your search or filters.",
+    "ar": "لا توجد نتائج تطابق بحثك أو عوامل التصفية."
+  },
+  "impact.saveWeight": {
+    "da": "Gem vægt",
+    "en": "Save weight",
+    "ar": "حفظ الوزن"
+  },
+  "calendar.showingSavedPickups": {
+    "da": "Kunne ikke opdatere afhentningerne. Viser senest hentede oplysninger, som kan være forældede. Tryk på Opdater for at prøve igen.",
+    "en": "Could not refresh pickups. Showing the last saved information, which may be out of date. Tap Refresh to try again.",
+    "ar": "تعذّر تحديث مواعيد الجمع. تُعرض آخر معلومات محفوظة وقد تكون قديمة. اضغط على تحديث للمحاولة مجددًا."
+  },
+  "calendar.lastUpdated": {
+    "da": "Sidst opdateret:",
+    "en": "Last updated:",
+    "ar": "آخر تحديث:"
+  },
+  "calendar.cancelAddressChange": {
+    "da": "Annuller",
+    "en": "Cancel",
+    "ar": "إلغاء"
+  },
+  "municipalityBox.searchCentres": {
+    "da": "Søg navn, by eller postnummer",
+    "en": "Search name, town or postcode",
+    "ar": "ابحث بالاسم أو المدينة أو الرمز البريدي"
+  },
+  "municipalityBox.noCentreMatches": {
+    "da": "Ingen genbrugspladser matcher din søgning.",
+    "en": "No recycling centres match your search.",
+    "ar": "لا توجد مراكز إعادة تدوير تطابق بحثك."
+  },
+  "calendar.exportAdd": {
+    "da": "Tilføj til Kalender",
+    "en": "Add to Calendar",
+    "ar": "إضافة إلى التقويم"
+  },
+  "calendar.exportTitle": {
+    "da": "Affald: {0}",
+    "en": "Waste collection: {0}",
+    "ar": "جمع النفايات: {0}"
+  },
+  "calendar.exportNotUpdated": {
+    "da": "Begivenheder tilføjet til Kalender opdateres ikke automatisk, hvis afhentningen ændres.",
+    "en": "Events added to Calendar do not update automatically if the pickup changes.",
+    "ar": "لا تُحدَّث الأحداث المضافة إلى التقويم تلقائيًا إذا تغيّر موعد الجمع."
+  },
+  "calendar.exportPreviouslyAdded": {
+    "da": "Tidligere tilføjet til Kalender",
+    "en": "Previously added to Calendar",
+    "ar": "سبق إضافته إلى التقويم"
+  },
+  "calendar.exportAlreadyAdded": {
+    "da": "Allerede tilføjet til Kalender",
+    "en": "Already added to Calendar",
+    "ar": "سبق إضافته إلى التقويم"
+  },
+  "calendar.exportAddAgain": {
+    "da": "Tilføj igen",
+    "en": "Add again",
+    "ar": "إضافة مجددًا"
+  },
+  "calendar.exportDuplicateMessage": {
+    "da": "Denne afhentning er tidligere blevet tilføjet fra appen. Vil du tilføje den igen? Appen kan ikke se, om begivenheden stadig findes i din kalender.",
+    "en": "This pickup was previously added from the app. Add it again? The app cannot check whether the event still exists in your calendar.",
+    "ar": "سبق إضافة موعد الجمع هذا من التطبيق. هل تريد إضافته مجددًا؟ لا يستطيع التطبيق التحقق مما إذا كان الحدث لا يزال موجودًا في تقويمك."
+  },
+  "calendar.exportDateError": {
+    "da": "Afhentningsdatoen kunne ikke læses. Prøv at opdatere afhentningerne.",
+    "en": "The pickup date could not be read. Try refreshing the pickups.",
+    "ar": "تعذّرت قراءة تاريخ الجمع. حاول تحديث مواعيد الجمع."
+  },
+  "calendar.moreSuggestions": {
+    "da": "Se flere forslag",
+    "en": "See more suggestions",
+    "ar": "عرض المزيد من الاقتراحات"
+  },
+  "municipalityBox.onlyMyMunicipality": {
+    "da": "Kun i min kommune",
+    "en": "Only in my municipality",
+    "ar": "في بلديتي فقط"
+  },
+  "municipalityBox.noCentresInMunicipality": {
+    "da": "Ingen genbrugspladser er registreret i din valgte kommune. Slå filteret fra for at se pladser i andre kommuner.",
+    "en": "No recycling centres are listed in your selected municipality. Turn off the filter to see centres in other municipalities.",
+    "ar": "لا توجد مراكز إعادة تدوير مسجّلة في البلدية التي اخترتها. أوقف عامل التصفية لعرض المراكز في البلديات الأخرى."
+  },
+  "search.cameraPermission.title": {
+    "da": "Tillad adgang til kameraet",
+    "en": "Allow camera access",
+    "ar": "السماح بالوصول إلى الكاميرا"
+  },
+  "search.cameraPermission.message": {
+    "da": "For at tage et billede skal du give appen adgang til kameraet i Indstillinger.",
+    "en": "To take a photo, allow the app to access your camera in Settings.",
+    "ar": "لالتقاط صورة، اسمح للتطبيق بالوصول إلى الكاميرا في الإعدادات."
+  },
+  "search.cameraPermission.restricted": {
+    "da": "Adgang til kameraet er begrænset på din enhed. Kontrollér indstillingerne for Skærmtid, eller kontakt den, der administrerer enheden.",
+    "en": "Camera access is restricted on this device. Check Screen Time settings or contact the person who manages the device.",
+    "ar": "الوصول إلى الكاميرا مقيّد على هذا الجهاز. راجع إعدادات مدة استخدام الجهاز أو تواصل مع المسؤول عن الجهاز."
+  },
+  "municipalityBox.localRulesExplanation": {
+    "da": "Når du søger efter affald, viser appen kommunens lokale regel, hvis den findes. Ellers vises den generelle sorteringsvejledning.",
+    "en": "When you search for waste, the app shows your municipality’s local rule if one is available. Otherwise, it shows the general sorting guidance.",
+    "ar": "عندما تبحث عن نفايات، يعرض التطبيق قاعدة الفرز المحلية لبلديتك إن وُجدت. وإلا، يعرض إرشادات الفرز العامة."
+  },
+  "photo.onlineNoMatch": {
+    "da": "Online søgning fandt ikke et match i sorteringsguiden. Disse forslag er fundet på din Android-telefon.",
+    "en": "Online search found no match in the sorting guide. These suggestions were found on your Android phone.",
+    "ar": "لم يعثر البحث عبر الإنترنت على تطابق في دليل الفرز. تم العثور على هذه الاقتراحات على هاتف Android."
+  },
   "android.about.how.body": {
     "da": "Skriv navnet på en ting i søgefeltet, eller tag eller vælg et billede. Ved billedsøgning kan du indramme genstanden, så appen bedre kan foreslå mulige matches. Vælg den rigtige genstand for at se, hvordan den skal sorteres.\n\nI Danmark bruger kommunerne mange af de samme affaldstyper, men reglerne kan stadig variere fra sted til sted. Når du vælger din kommune, tager appen højde for de lokale regler, der er registreret for den. Du kan også finde oplysninger om kommunens affaldsordninger og din nærmeste genbrugsplads.\n\nVil du lære systemet lidt bedre at kende, kan du gå på opdagelse i affaldsfraktionerne og blandt andet lære, hvad affaldet bliver til. Dine seneste søgninger gør det nemt at finde tilbage til en genstand, du allerede har slået op. Appen har også præstationer, som giver et lille skulderklap undervejs. Finder du et svar, der ser forkert ud, er du velkommen til at kontakte os.\n\nSorteringsoplysningerne ligger lokalt i appens database, så du hurtigt kan slå ting op. Vi udbygger og retter løbende indholdet, men lokale ordninger kan ændre sig. Er du i tvivl, er din kommunes officielle vejledning altid det bedste sted at dobbelttjekke.",
     "en": "Type an item’s name into the search field, or take or choose a photo. For photo search, you can frame the object to help the app suggest possible matches. Choose the right item to see how to sort it.\n\nMunicipalities across Denmark use many of the same waste categories, but the rules can still vary from place to place. When you select your municipality, the app takes into account the local rules recorded for it. You can also find information about its waste collection schemes and your nearest recycling centre.\n\nWant to understand the system a little better? Explore the waste categories to learn, among other things, what the waste becomes. Your recent searches make it easy to return to something you have already looked up. The app also has achievements to mark your progress along the way. If you find an answer that looks wrong, you are welcome to contact us.\n\nThe sorting information is stored locally in the app’s database, so you can look things up quickly. We continually add to and correct the content, but local schemes can change. If you are unsure, your municipality’s official guidance is always the best place to double-check.",
@@ -19575,8 +20145,183 @@
     "ar": "تُقدَّم نتائج البحث والقواعد المحلية والمعلومات عن البلديات ومراكز إعادة التدوير على سبيل الإرشاد. نعمل على إبقاء المحتوى صحيحًا ومحدَّثًا، لكن قد تكون بعض المعلومات غير مكتملة، وقد تتغير خدمات البلديات.\n\nلا يحدد اقتراح البحث بالصورة الغرض على نحو مؤكد. اختر النتيجة الأنسب.\n\nعندما تختار بلدية أو قاعدة محلية، يعرض الدليل المعلومات التي سجّلناها لها. وهذا لا يضمن شمول جميع الترتيبات الخاصة بمسكنك.\n\nإذا كنت غير متأكد، فاتبع الإرشادات الرسمية لبلديتك. وهذا مهم خصوصًا للنفايات الخطرة والأدوية والبطاريات والنفايات التي تخضع لشروط خاصة عند تسليمها."
   },
   "android.privacy.body": {
-    "da": "Affaldsguide Danmark kan bruges uden en konto. Du behøver ikke oplyse navn, adresse eller e-mail for at søge efter affald. Sorteringsdatabasen ligger i appen, og tekstsøgning behandles på din enhed. Når du bruger billedsøgning, sendes et formindsket billede via mit-affald.dk til Google Gemini for at foreslå genstande. Hvis online billedsøgning ikke virker, analyseres billedet på din enhed med Google ML Kit. Sorteringsresultatet findes fortsat i appens lokale database.\n\nHvis du giver adgang til din placering, bruger appen den til at beregne afstanden til nærliggende genbrugspladser. Placeringen bruges på din enhed og gemmes ikke af os. Du kan ændre tilladelsen i Androids indstillinger. Hvis du åbner en adresse i en kortapp, gælder den valgte kortapps egne vilkår og privatlivspolitik.\n\nAppen gemmer dine seneste søgninger, valgte kommune, sprog, onboardingstatus og fremskridt med præstationer lokalt på din enhed. Du kan fjerne disse oplysninger ved at slette appen. Der kræves ingen konto, og oplysningerne sendes ikke til os som led i almindelig brug.\n\nHvis du sender et forslag til rettelse i appen, sendes genstandens navn, den viste sortering, den kategori du foreslår, en eventuel kommentar og den valgte sprogkode til mit-affald.dk. Vi bruger oplysningerne til at undersøge forslaget og forbedre guiden. Skriv ikke følsomme oplysninger i kommentarfeltet.\n\nHvis du kontakter os via e-mail om en sortering eller et andet spørgsmål, behandler vi de oplysninger, du sender, for at kunne besvare og undersøge din henvendelse. Skriv ikke følsomme oplysninger. Vi opbevarer henvendelsen, så længe det er nødvendigt for at behandle den og vedligeholde guiden, og sletter eller anonymiserer den derefter, medmindre lovgivningen kræver længere opbevaring. Du kan bede om indsigt i eller sletning af oplysninger fra din henvendelse ved at skrive til info@simplecode.dk og give oplysninger nok til, at vi kan finde den.\n\nVi sælger ikke personoplysninger. Hvis appens databehandling ændres, opdaterer vi denne tekst. Spørgsmål om privatliv kan sendes til info@simplecode.dk.\n\nI affaldskalenderen sendes den kommune og adresse, du søger efter, via mit-affald.dk til Affald-DK og den lokale affaldsordning for at hente kommende afhentninger. Den valgte adresse og dine indstillinger for påmindelser gemmes på din enhed. Hvis du tillader notifikationer, planlægges påmindelser lokalt på enheden. Du kan slå dem fra eller skifte adresse i kalenderen.",
-    "en": "Affaldsguide Danmark can be used without an account. You do not need to provide your name, address or email address to search for waste items. The sorting database is stored in the app, and text searches are processed on your device. When you use photo search, a reduced photo is sent via mit-affald.dk to Google Gemini to suggest items. If online photo search fails, the photo is analyzed on your device with Google ML Kit. The sorting result still comes from the app’s local database.\n\nIf you allow location access, the app uses your location to calculate the distance to nearby recycling centres. Your location is used on your device and is not stored by us. You can change this permission in your Android settings. If you open an address in a maps app, that app’s own terms and privacy policy apply.\n\nThe app stores your recent searches, selected municipality, language, onboarding status and achievement progress locally on your device. You can remove this information by deleting the app. No account is required, and this information is not sent to us during ordinary use.\n\nIf you submit a sorting correction in the app, the item name, displayed sorting, suggested category, any comment and the selected language code are sent to mit-affald.dk. We use this information to review your suggestion and improve the guide. Do not include sensitive information in the comment.\n\nIf you contact us by email about a sorting result or another question, we process the information you send to investigate and answer your message. Do not include sensitive information. We keep the message for as long as needed to handle it and maintain the guide, then delete or anonymise it unless the law requires longer retention. To request access to or deletion of information in your message, write to info@simplecode.dk and provide enough detail for us to find it.\n\nWe do not sell personal information. If the app’s data practices change, we will update this text. Send privacy questions to info@simplecode.dk.\n\nIn the collection calendar, the municipality and address you search for are sent via mit-affald.dk to Affald-DK and the local waste provider to retrieve upcoming collections. Your selected address and reminder settings are stored on your device. If you allow notifications, reminders are scheduled locally on the device. You can turn them off or change your address in the calendar.",
-    "ar": "يمكن استخدام Affaldsguide Danmark دون إنشاء حساب. ولا تحتاج إلى تقديم اسمك أو عنوانك أو بريدك الإلكتروني للبحث عن النفايات. قاعدة بيانات الفرز محفوظة داخل التطبيق، وتُعالج عمليات البحث النصي على جهازك. عند استخدام البحث بالصورة، تُرسل صورة مصغّرة عبر mit-affald.dk إلى Google Gemini لاقتراح عناصر. وإذا فشل البحث عبر الإنترنت، تُحلَّل الصورة على جهازك باستخدام Google ML Kit. تظل نتيجة الفرز مستمدة من قاعدة البيانات المحلية في التطبيق.\n\nإذا سمحت بالوصول إلى موقعك، يستخدمه التطبيق لحساب المسافة إلى مراكز إعادة التدوير القريبة. يُستخدم الموقع على جهازك ولا نخزنه لدينا. يمكنك تغيير هذا الإذن من إعدادات Android. وإذا فتحت عنوانًا في تطبيق خرائط، فتسري شروط ذلك التطبيق وسياسة خصوصيته.\n\nيحفظ التطبيق عمليات البحث الأخيرة والبلدية المختارة واللغة وحالة الإعداد الأولي والتقدم في الإنجازات محليًا على جهازك. يمكنك إزالة هذه المعلومات بحذف التطبيق. لا يلزم إنشاء حساب، ولا تُرسل هذه المعلومات إلينا أثناء الاستخدام المعتاد.\n\nإذا أرسلت اقتراحًا لتصحيح الفرز من داخل التطبيق، يُرسل اسم الغرض وطريقة الفرز المعروضة والفئة التي تقترحها وأي تعليق ورمز اللغة المختارة إلى mit-affald.dk. نستخدم هذه المعلومات لمراجعة الاقتراح وتحسين الدليل. لا تكتب معلومات حساسة في حقل التعليق.\n\nإذا تواصلت معنا عبر البريد الإلكتروني بشأن نتيجة فرز أو أي سؤال آخر، نعالج المعلومات التي ترسلها للتحقيق في رسالتك والرد عليها. لا ترسل معلومات حساسة. نحتفظ بالرسالة ما دامت ضرورية لمعالجتها وصيانة الدليل، ثم نحذفها أو نجعلها مجهولة الهوية ما لم يقتضِ القانون الاحتفاظ بها مدة أطول. لطلب الاطلاع على معلومات رسالتك أو حذفها، راسل info@simplecode.dk وقدّم تفاصيل كافية للعثور عليها.\n\nلا نبيع المعلومات الشخصية. إذا تغيرت طريقة معالجة البيانات في التطبيق، فسنحدّث هذا النص. يمكنك إرسال أسئلة الخصوصية إلى info@simplecode.dk.\n\nفي تقويم جمع النفايات، تُرسل البلدية والعنوان اللذان تبحث عنهما عبر mit-affald.dk إلى Affald-DK والجهة المحلية المسؤولة عن النفايات لجلب مواعيد الجمع القادمة. يُحفظ العنوان المختار وإعدادات التذكير على جهازك. وإذا سمحت بالإشعارات، تُجدول التذكيرات محليًا على الجهاز. يمكنك إيقافها أو تغيير العنوان في التقويم."
+    "da": "Affaldsguide Danmark kan bruges uden en konto. Du behøver ikke oplyse navn, adresse eller e-mail for at søge efter affald. Sorteringsdatabasen ligger i appen, og tekstsøgning behandles på din enhed. Når du bruger billedsøgning, sendes et formindsket billede via mit-affald.dk til Google Gemini for at foreslå genstande. Hvis online billedsøgning ikke virker, analyseres billedet på din enhed med Google ML Kit. Sorteringsresultatet findes fortsat i appens lokale database.\n\nHvis du giver adgang til din placering, bruger appen den til at beregne afstanden til nærliggende genbrugspladser. Placeringen bruges på din enhed og gemmes ikke af os. Du kan ændre tilladelsen i Androids indstillinger. Hvis du åbner en adresse i en kortapp, gælder den valgte kortapps egne vilkår og privatlivspolitik.\n\nAppen gemmer dine seneste søgninger, valgte kommune, sprog, onboardingstatus og fremskridt med præstationer lokalt på din enhed. Du kan fjerne disse oplysninger ved at slette appen. Der kræves ingen konto, og oplysningerne sendes ikke til os som led i almindelig brug.\n\nHvis du sender et forslag til rettelse i appen, sendes genstandens navn, den viste sortering, den kategori du foreslår, en eventuel kommentar og den valgte sprogkode til mit-affald.dk. Vi bruger oplysningerne til at undersøge forslaget og forbedre guiden. Skriv ikke følsomme oplysninger i kommentarfeltet.\n\nHvis du kontakter os via e-mail om en sortering eller et andet spørgsmål, behandler vi de oplysninger, du sender, for at kunne besvare og undersøge din henvendelse. Skriv ikke følsomme oplysninger. Vi opbevarer henvendelsen, så længe det er nødvendigt for at behandle den og vedligeholde guiden, og sletter eller anonymiserer den derefter, medmindre lovgivningen kræver længere opbevaring. Du kan bede om indsigt i eller sletning af oplysninger fra din henvendelse ved at skrive til info@simplecode.dk og give oplysninger nok til, at vi kan finde den.\n\nVi sælger ikke personoplysninger. Hvis appens databehandling ændres, opdaterer vi denne tekst. Spørgsmål om privatliv kan sendes til info@simplecode.dk.\n\nI affaldskalenderen sendes den kommune og adresse, du søger efter, via mit-affald.dk til Affald-DK og den lokale affaldsordning for at hente kommende afhentninger. Den valgte adresse og dine indstillinger for påmindelser gemmes på din enhed. Hvis du tillader notifikationer, planlægges påmindelser lokalt på enheden. Du kan slå dem fra eller skifte adresse i kalenderen.\n\nHvis du bruger Mit affaldsoverblik, gemmes dine registrerede sorteringer, vægte, kommune og anslåede klimaeffekt på din enhed. De sendes ikke til os eller en ekstern klimatjeneste. Du kan rette vægt og slette registreringer i appen. Hvis du eksporterer en CSV-fil, bestemmer du selv, hvor filen gemmes eller deles.\n\nFavoritadresser gemmes også lokalt på din enhed. Du kan fjerne en favorit ved at åbne adressen i affaldskalenderen og vælge “Fjern adresse som favorit”.\n\nHvis du tilføjer affaldskalender-widgetten, bruges din valgte kalenderadresse til at opdatere afhentninger i baggrunden. De senest hentede datoer gemmes lokalt, så de kan vises ved en midlertidig forbindelsesfejl. Nye datoer bruges også til at opdatere de påmindelser, du har slået til.\n\nAppen gemmer lokalt, hvornår du først bruger appen, antal aktive dage og seneste forsøg på at bede om en anmeldelse, så vi ikke spørger for ofte. Ved en anmeldelse håndteres selve bedømmelsen af Google Play. Appen får ikke oplyst, om du har afgivet en anmeldelse.\n\nHvis du vælger at tilføje en afhentning til Kalender, åbnes din kalenderapps begivenhedsredigering. Du vælger selv, om begivenheden skal gemmes, og hvilken kalender der bruges. Appen læser ikke din kalender og medtager ikke din gadeadresse i begivenheden. Vi gemmer lokalt, hvilke afhentninger du har sendt til kalenderappen, så vi kan advare om mulige dubletter. Din kalenderudbyder kan gemme og synkronisere begivenheden efter sine egne vilkår.",
+    "en": "Affaldsguide Danmark can be used without an account. You do not need to provide your name, address or email address to search for waste items. The sorting database is stored in the app, and text searches are processed on your device. When you use photo search, a reduced photo is sent via mit-affald.dk to Google Gemini to suggest items. If online photo search fails, the photo is analyzed on your device with Google ML Kit. The sorting result still comes from the app’s local database.\n\nIf you allow location access, the app uses your location to calculate the distance to nearby recycling centres. Your location is used on your device and is not stored by us. You can change this permission in your Android settings. If you open an address in a maps app, that app’s own terms and privacy policy apply.\n\nThe app stores your recent searches, selected municipality, language, onboarding status and achievement progress locally on your device. You can remove this information by deleting the app. No account is required, and this information is not sent to us during ordinary use.\n\nIf you submit a sorting correction in the app, the item name, displayed sorting, suggested category, any comment and the selected language code are sent to mit-affald.dk. We use this information to review your suggestion and improve the guide. Do not include sensitive information in the comment.\n\nIf you contact us by email about a sorting result or another question, we process the information you send to investigate and answer your message. Do not include sensitive information. We keep the message for as long as needed to handle it and maintain the guide, then delete or anonymise it unless the law requires longer retention. To request access to or deletion of information in your message, write to info@simplecode.dk and provide enough detail for us to find it.\n\nWe do not sell personal information. If the app’s data practices change, we will update this text. Send privacy questions to info@simplecode.dk.\n\nIn the collection calendar, the municipality and address you search for are sent via mit-affald.dk to Affald-DK and the local waste provider to retrieve upcoming collections. Your selected address and reminder settings are stored on your device. If you allow notifications, reminders are scheduled locally on the device. You can turn them off or change your address in the calendar.\n\nIf you use My waste overview, your logged sorting, weights, municipality and estimated climate impact are stored on your device. They are not sent to us or an external climate service. You can edit weights and delete entries in the app. If you export a CSV file, you choose where to save or share it.\n\nFavourite addresses are also stored locally on your device. To remove a favourite, open that address in the collection calendar and choose “Remove favourite address”.\n\nIf you add the waste-calendar widget, your selected calendar address is used to refresh collections in the background. The last successful dates are cached locally so they remain available during a temporary connection failure. Fresh dates also update any reminders you have enabled.\n\nThe app stores your first-use date, active-day count and latest review-request attempt locally so it does not ask too often. Reviews themselves are handled by Google Play. The app is not told whether you submitted a review.\n\nIf you choose to add a pickup to Calendar, your calendar app opens its event editor. You choose whether to save the event and which calendar to use. This app does not read your calendar or include your street address in the event. We store locally which pickups you sent to the calendar app so we can warn about possible duplicates. Your calendar provider may store and synchronise the event under its own terms.",
+    "ar": "يمكن استخدام Affaldsguide Danmark دون إنشاء حساب. ولا تحتاج إلى تقديم اسمك أو عنوانك أو بريدك الإلكتروني للبحث عن النفايات. قاعدة بيانات الفرز محفوظة داخل التطبيق، وتُعالج عمليات البحث النصي على جهازك. عند استخدام البحث بالصورة، تُرسل صورة مصغّرة عبر mit-affald.dk إلى Google Gemini لاقتراح عناصر. وإذا فشل البحث عبر الإنترنت، تُحلَّل الصورة على جهازك باستخدام Google ML Kit. تظل نتيجة الفرز مستمدة من قاعدة البيانات المحلية في التطبيق.\n\nإذا سمحت بالوصول إلى موقعك، يستخدمه التطبيق لحساب المسافة إلى مراكز إعادة التدوير القريبة. يُستخدم الموقع على جهازك ولا نخزنه لدينا. يمكنك تغيير هذا الإذن من إعدادات Android. وإذا فتحت عنوانًا في تطبيق خرائط، فتسري شروط ذلك التطبيق وسياسة خصوصيته.\n\nيحفظ التطبيق عمليات البحث الأخيرة والبلدية المختارة واللغة وحالة الإعداد الأولي والتقدم في الإنجازات محليًا على جهازك. يمكنك إزالة هذه المعلومات بحذف التطبيق. لا يلزم إنشاء حساب، ولا تُرسل هذه المعلومات إلينا أثناء الاستخدام المعتاد.\n\nإذا أرسلت اقتراحًا لتصحيح الفرز من داخل التطبيق، يُرسل اسم الغرض وطريقة الفرز المعروضة والفئة التي تقترحها وأي تعليق ورمز اللغة المختارة إلى mit-affald.dk. نستخدم هذه المعلومات لمراجعة الاقتراح وتحسين الدليل. لا تكتب معلومات حساسة في حقل التعليق.\n\nإذا تواصلت معنا عبر البريد الإلكتروني بشأن نتيجة فرز أو أي سؤال آخر، نعالج المعلومات التي ترسلها للتحقيق في رسالتك والرد عليها. لا ترسل معلومات حساسة. نحتفظ بالرسالة ما دامت ضرورية لمعالجتها وصيانة الدليل، ثم نحذفها أو نجعلها مجهولة الهوية ما لم يقتضِ القانون الاحتفاظ بها مدة أطول. لطلب الاطلاع على معلومات رسالتك أو حذفها، راسل info@simplecode.dk وقدّم تفاصيل كافية للعثور عليها.\n\nلا نبيع المعلومات الشخصية. إذا تغيرت طريقة معالجة البيانات في التطبيق، فسنحدّث هذا النص. يمكنك إرسال أسئلة الخصوصية إلى info@simplecode.dk.\n\nفي تقويم جمع النفايات، تُرسل البلدية والعنوان اللذان تبحث عنهما عبر mit-affald.dk إلى Affald-DK والجهة المحلية المسؤولة عن النفايات لجلب مواعيد الجمع القادمة. يُحفظ العنوان المختار وإعدادات التذكير على جهازك. وإذا سمحت بالإشعارات، تُجدول التذكيرات محليًا على الجهاز. يمكنك إيقافها أو تغيير العنوان في التقويم.\n\nإذا استخدمت ملخص نفاياتي، تُحفظ عمليات الفرز والأوزان والبلدية والأثر المناخي التقديري على جهازك. ولا تُرسل إلينا أو إلى خدمة مناخية خارجية. يمكنك تعديل الأوزان وحذف السجلات داخل التطبيق. وعند تصدير ملف CSV، تختار بنفسك مكان حفظه أو مشاركته.\n\nتُحفظ العناوين المفضلة أيضًا محليًا على جهازك. لإزالة عنوان مفضل، افتحه في تقويم جمع النفايات واختر إزالة العنوان المفضل.\n\nعند إضافة أداة تقويم النفايات، يُستخدم عنوان التقويم المحدد لتحديث مواعيد الجمع في الخلفية. وتُحفظ آخر المواعيد محليًا لعرضها عند انقطاع الاتصال مؤقتًا. كما تُستخدم المواعيد الجديدة لتحديث التذكيرات التي فعّلتها.\n\nيحفظ التطبيق محليًا تاريخ أول استخدام وعدد أيام الاستخدام وآخر محاولة لطلب تقييم، حتى لا يطلب ذلك كثيرًا. تتولى Google Play معالجة التقييم نفسه، ولا يُبلّغ التطبيق بما إذا كنت قد أرسلت تقييمًا.\n\nإذا اخترت إضافة موعد جمع إلى التقويم، يفتح محرر الأحداث في تطبيق التقويم. تختار بنفسك حفظ الحدث والتقويم المستخدم. لا يقرأ هذا التطبيق تقويمك ولا يضيف عنوان شارعك إلى الحدث. نحفظ محليًا مواعيد الجمع التي أرسلتها إلى تطبيق التقويم للتحذير من التكرار المحتمل. وقد يحفظ مزوّد التقويم الحدث ويزامنه وفقًا لشروطه."
+  },
+  "achievements.page": {
+    "da": "Præstationer",
+    "en": "Achievements",
+    "ar": "الإنجازات"
+  },
+  "achievements.unlocked": {
+    "da": "Præstation opnået",
+    "en": "Achievement unlocked",
+    "ar": "تم فتح إنجاز"
+  },
+  "achievements.dismiss": {
+    "da": "Luk besked",
+    "en": "Dismiss notification",
+    "ar": "إغلاق الإشعار"
+  },
+  "achievements.firstAnswer.title": {
+    "da": "Søgeekspert",
+    "en": "Search explorer",
+    "ar": "مستكشف البحث"
+  },
+  "achievements.firstAnswer.detail": {
+    "da": "Se sorteringen af {0} forskellige søgninger",
+    "en": "View sorting results for {0} different searches",
+    "ar": "اطّلع على نتائج فرز {0} عمليات بحث مختلفة"
+  },
+  "achievements.fiveCategories.title": {
+    "da": "Affaldsudforsker",
+    "en": "Waste explorer",
+    "ar": "مستكشف النفايات"
+  },
+  "achievements.fiveCategories.detail": {
+    "da": "Udforsk {0} forskellige affaldstyper",
+    "en": "Explore {0} different waste categories",
+    "ar": "استكشف {0} فئات مختلفة من النفايات"
+  },
+  "achievements.tenPhotoSearches.title": {
+    "da": "Billeddetektiv",
+    "en": "Photo detective",
+    "ar": "محقق الصور"
+  },
+  "achievements.tenPhotoSearches.detail": {
+    "da": "Brug billedsøgning {0} gange",
+    "en": "Use photo search {0} times",
+    "ar": "استخدم البحث بالصور {0} مرة"
+  },
+  "achievements.recyclingCenter.title": {
+    "da": "Genbrugsopdager",
+    "en": "Recycling explorer",
+    "ar": "مستكشف إعادة التدوير"
+  },
+  "achievements.calendarAddress.title": {
+    "da": "Klar til afhentning",
+    "en": "Ready for collection",
+    "ar": "جاهز لجمع النفايات"
+  },
+  "achievements.calendarAddress.detail": {
+    "da": "Tilføj din adresse til affaldskalenderen",
+    "en": "Add your address to the collection calendar",
+    "ar": "أضف عنوانك إلى تقويم جمع النفايات"
+  },
+  "achievements.recyclingCenter.detail": {
+    "da": "Åbn {0} forskellige genbrugspladser på kortet",
+    "en": "Open {0} different recycling centres on the map",
+    "ar": "افتح {0} مراكز مختلفة لإعادة التدوير على الخريطة"
+  },
+  "achievements.helpfulEye.title": {
+    "da": "En hjælpende hånd",
+    "en": "A helping hand",
+    "ar": "يد العون"
+  },
+  "achievements.helpfulEye.detail": {
+    "da": "Foreslå {0} rettelser",
+    "en": "Suggest {0} corrections",
+    "ar": "اقترح {0} تصحيحات"
+  },
+  "achievements.tenDayStreak.title": {
+    "da": "Sorteringsrytme",
+    "en": "Sorting streak",
+    "ar": "وتيرة الفرز"
+  },
+  "achievements.tenDayStreak.detail": {
+    "da": "Brug appen {0} dage i træk",
+    "en": "Use the app {0} days in a row",
+    "ar": "استخدم التطبيق {0} يومًا متتاليًا"
+  },
+  "achievements.localRulesExpert.title": {
+    "da": "Ekspert i lokale regler",
+    "en": "Local rules expert",
+    "ar": "خبير القواعد المحلية"
+  },
+  "achievements.localRulesExpert.detail": {
+    "da": "Se 25 forskellige affaldsgenstande med en lokal regel for din kommune",
+    "en": "View 25 different waste items with a local rule for your municipality",
+    "ar": "اطّلع على 25 غرضًا مختلفًا من النفايات لها قاعدة محلية في بلديتك"
+  },
+  "achievements.tenLoggedItems.title": {
+    "da": "Sorteringsvaner",
+    "en": "Sorting habits",
+    "ar": "عادات الفرز"
+  },
+  "achievements.tenLoggedItems.detail": {
+    "da": "Registrer {0} sorterede genstande",
+    "en": "Log {0} sorted items",
+    "ar": "سجّل {0} أغراض تم فرزها"
+  },
+  "achievements.tenKgClimateSavings.title": {
+    "da": "10 kg for klimaet",
+    "en": "10 kg for the climate",
+    "ar": "10 كغ من أجل المناخ"
+  },
+  "achievements.tenKgClimateSavings.detail": {
+    "da": "Nå en samlet estimeret klimabesparelse på 10.000 g CO₂e.",
+    "en": "Reach total estimated savings of 10,000 g CO₂e.",
+    "ar": "حقق إجمالي وفورات تقديرية يبلغ 10٬000 غرام من مكافئ ثاني أكسيد الكربون."
+  },
+  "achievements.stars": {
+    "da": "{0} af 3 stjerner",
+    "en": "{0} of 3 stars",
+    "ar": "{0} من 3 نجوم"
+  },
+  "achievements.helpfulEye.detail.one": {
+    "da": "Foreslå 1 rettelse",
+    "en": "Suggest 1 correction",
+    "ar": "اقترح تصحيحًا واحدًا"
+  },
+  "achievements.recyclingCenter.detail.one": {
+    "da": "Åbn 1 genbrugsplads på kortet",
+    "en": "Open 1 recycling centre on the map",
+    "ar": "افتح مركزًا واحدًا لإعادة التدوير على الخريطة"
+  },
+  "impact.saveError": {
+    "da": "Sorteringen kunne ikke gemmes. Prøv igen.",
+    "en": "The sorting could not be saved. Please try again.",
+    "ar": "تعذّر حفظ عملية الفرز. يُرجى المحاولة مرة أخرى."
+  },
+  "calendar.addressSaveError": {
+    "da": "Adressen kunne ikke gemmes. Prøv igen.",
+    "en": "The address could not be saved. Please try again.",
+    "ar": "تعذّر حفظ العنوان. يُرجى المحاولة مرة أخرى."
+  },
+  "impact.searchEmptyPromptCompact": {
+    "da": "Tryk på “Jeg har sorteret dette” på et søgeresultat for at komme i gang.",
+    "en": "Tap “I sorted this” on a search result to get started.",
+    "ar": "اضغط على «لقد فرزت هذا» في نتيجة البحث للبدء."
+  },
+  "impact.openOverview": {
+    "da": "Se overblik",
+    "en": "View overview",
+    "ar": "عرض الملخص"
+  },
+  "review.openError": {
+    "da": "Google Play-linket kunne ikke åbnes. Prøv igen senere.",
+    "en": "The Google Play link could not be opened. Please try again later.",
+    "ar": "تعذّر فتح رابط Google Play. يُرجى المحاولة لاحقًا."
+  },
+  "calendar.exportPreviouslyOpened": {
+    "da": "Tidligere åbnet i kalenderappen",
+    "en": "Previously opened in the calendar app",
+    "ar": "سبق فتحه في تطبيق التقويم"
+  },
+  "calendar.exportDuplicateOpenedTitle": {
+    "da": "Åbn afhentningen igen?",
+    "en": "Open this pickup again?",
+    "ar": "هل تريد فتح موعد الجمع مجددًا؟"
+  },
+  "calendar.exportDuplicateOpenedMessage": {
+    "da": "Denne afhentning er tidligere sendt til din kalenderapp. Vil du åbne den igen? Appen kan ikke se, om du gemte begivenheden, eller om den stadig findes i din kalender.",
+    "en": "This pickup was previously sent to your calendar app. Open it again? The app cannot check whether you saved the event or whether it still exists in your calendar.",
+    "ar": "سبق إرسال موعد الجمع هذا إلى تطبيق التقويم. هل تريد فتحه مجددًا؟ لا يستطيع التطبيق التحقق مما إذا كنت قد حفظت الحدث أو ما إذا كان لا يزال موجودًا في تقويمك."
+  },
+  "calendar.exportNoCalendarApp": {
+    "da": "Ingen kalenderapp kunne åbnes. Installer eller aktivér en kalenderapp, og prøv igen.",
+    "en": "No calendar app could be opened. Install or enable a calendar app and try again.",
+    "ar": "تعذّر فتح تطبيق تقويم. ثبّت تطبيق تقويم أو فعّله، ثم حاول مجددًا."
   }
 }

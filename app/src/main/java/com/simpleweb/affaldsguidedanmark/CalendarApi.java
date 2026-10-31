@@ -17,6 +17,7 @@ import java.util.List;
 final class CalendarApi {
     private static final String ENDPOINT = "https://mit-affald.dk/api/calendar";
 
+    @androidx.annotation.Keep
     static final class Address {
         final String municipality, id, label;
         Address(String municipality, String id, String label) {
@@ -24,6 +25,7 @@ final class CalendarApi {
         }
     }
 
+    @androidx.annotation.Keep
     static final class Pickup {
         final String date, kind, label;
         Pickup(String date, String kind, String label) {
@@ -56,6 +58,15 @@ final class CalendarApi {
             result.add(new Address(municipality, value.getString("id"), value.getString("label")));
         }
         return result;
+    }
+
+    static List<String> suggestions(String municipality, String postcode, String street, String houseNumber) throws Exception {
+        JSONObject body = new JSONObject().put("action", "suggest").put("municipality", municipality)
+                .put("postcode", postcode).put("street", street).put("house_number", houseNumber);
+        JSONArray values = request(body).getJSONArray("suggestions");
+        java.util.Set<String> unique = new java.util.LinkedHashSet<>();
+        for (int i = 0; i < values.length(); i++) unique.add(values.getString(i));
+        return new ArrayList<>(unique);
     }
 
     static List<Pickup> pickups(Address address) throws Exception {

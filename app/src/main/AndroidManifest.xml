@@ -47,6 +47,7 @@
 
         <receiver
             android:name=".PhotoSearchWidgetProvider"
+            android:label="@string/widget_picker_name"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
@@ -54,6 +55,16 @@
             <meta-data
                 android:name="android.appwidget.provider"
                 android:resource="@xml/photo_search_widget_info" />
+        </receiver>
+
+        <receiver android:name=".CalendarWidgetProvider"
+            android:label="@string/widget_calendar_name" android:exported="false">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="android.intent.action.DATE_CHANGED" />
+                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/calendar_widget_info" />
         </receiver>
 
     </application>

@@ -1,61 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/page_background">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:background="@color/page_background">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:clipToPadding="false"
-        android:paddingTop="14dp">
+    <TextView android:id="@+id/recentSearchesHeader"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:gravity="center" android:paddingStart="16dp" android:paddingEnd="16dp"
+        android:paddingTop="26dp" android:paddingBottom="18dp"
+        android:text="@string/seneste_soegninger" android:textColor="@color/green_light"
+        android:textSize="26sp" android:textStyle="bold" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/recentSearchesHeader"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:paddingStart="16dp"
-                android:paddingTop="26dp"
-                android:paddingEnd="16dp"
-                android:paddingBottom="18dp"
-                android:text="@string/seneste_soegninger"
-                android:textColor="@color/green_light"
-                android:textSize="26sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/emptyRecentSearchesText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:lineSpacingExtra="6dp"
-                android:paddingStart="28dp"
-                android:paddingTop="18dp"
-                android:paddingEnd="28dp"
-                android:paddingBottom="18dp"
-                android:text="@string/seneste_soegninger_tom"
-                android:textAlignment="center"
-                android:textColor="@color/text_color"
-                android:textSize="16sp"
-                android:visibility="gone" />
-
-            <LinearLayout
-                android:id="@+id/recentSearchesList"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:paddingStart="16dp"
-                android:paddingEnd="16dp"
-                android:paddingBottom="24dp" />
-
+    <LinearLayout android:id="@+id/recentSearchControls"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:layout_marginStart="16dp" android:layout_marginEnd="16dp"
+        android:background="@drawable/search_group_background" android:orientation="vertical"
+        android:padding="12dp" android:visibility="gone">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:minHeight="48dp" android:gravity="center_vertical"
+            android:background="@drawable/recent_search_tile_background">
+            <ImageView android:layout_width="20dp" android:layout_height="20dp"
+                android:layout_marginStart="12dp" android:src="@drawable/search_icon_search_trash"
+                android:importantForAccessibility="no" />
+            <EditText android:id="@+id/recentSearchInput"
+                android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                android:minHeight="48dp" android:paddingStart="10dp" android:paddingEnd="4dp"
+                android:background="@android:color/transparent" android:singleLine="true"
+                android:inputType="text|textNoSuggestions" android:imeOptions="actionSearch"
+                android:textSize="16sp" android:textColor="@color/text_color" />
+            <ImageButton android:id="@+id/recentSearchClear"
+                android:layout_width="48dp" android:layout_height="48dp"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:padding="15dp" android:src="@drawable/clear_text_x" android:visibility="gone" />
         </LinearLayout>
+        <HorizontalScrollView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="4dp" android:scrollbars="none" android:fillViewport="true">
+            <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_vertical">
+                <TextView android:id="@+id/recentSearchSort" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:minHeight="44dp" android:gravity="center_vertical"
+                    android:paddingStart="4dp" android:paddingEnd="16dp" android:textColor="@color/green_light" android:textSize="14sp"
+                    android:background="?android:attr/selectableItemBackground" android:clickable="true" android:focusable="true" />
+                <TextView android:id="@+id/recentSearchFilter" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:minHeight="44dp" android:gravity="center_vertical"
+                    android:paddingStart="4dp" android:paddingEnd="16dp" android:textColor="@color/green_light" android:textSize="14sp"
+                    android:background="?android:attr/selectableItemBackground" android:clickable="true" android:focusable="true" />
+                <TextView android:id="@+id/recentSearchReset" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:minHeight="44dp" android:gravity="center_vertical"
+                    android:paddingStart="4dp" android:paddingEnd="8dp" android:textColor="@color/green_light" android:textSize="14sp"
+                    android:background="?android:attr/selectableItemBackground" android:clickable="true" android:focusable="true" android:visibility="gone" />
+            </LinearLayout>
+        </HorizontalScrollView>
+    </LinearLayout>
 
-    </ScrollView>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ProgressBar android:id="@+id/recentSearchLoading" android:layout_width="32dp"
+        android:layout_height="32dp" android:layout_gravity="center_horizontal" android:layout_marginTop="12dp" />
+    <TextView android:id="@+id/emptyRecentSearchesText"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:paddingStart="24dp" android:paddingEnd="24dp" android:paddingTop="16dp" android:paddingBottom="16dp"
+        android:text="@string/seneste_soegninger_tom" android:gravity="center"
+        android:textColor="@color/grey_black" android:textSize="16sp" android:visibility="gone" />
+    <androidx.recyclerview.widget.RecyclerView android:id="@+id/recentSearchesList"
+        android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1"
+        android:layout_marginTop="12dp" android:paddingStart="16dp" android:paddingEnd="16dp"
+        android:paddingBottom="24dp" android:clipToPadding="false" />
+</LinearLayout>
